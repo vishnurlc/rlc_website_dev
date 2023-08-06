@@ -71,7 +71,14 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-transparent absolute w-screen top-0 z-20">
+    <header
+      className="bg-transparent fixed w-screen top-0 z-20"
+      style={{
+        background: mobileMenuOpen
+          ? ''
+          : 'linear-gradient(180deg, #000 0%, rgba(41, 41, 41, 0.00) 100%)',
+      }}
+    >
       <nav
         className="px-6 py-2 mx-auto flex max-w-7xl items-center justify-between lg:px-8"
         aria-label="Global"
@@ -89,24 +96,30 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex lg:hidden">
-          <button
-            type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-            onClick={() => setMobileMenuOpen(true)}
-          >
-            <span className="sr-only">Open main menu</span>
-            <BiMenuAltRight className="h-6 w-6" aria-hidden="true" />
-          </button>
+          {!mobileMenuOpen && (
+            <button
+              type="button"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <span className="sr-only">Open main menu</span>
+              <BiMenuAltRight
+                className="h-6 w-6"
+                aria-hidden="true"
+                color="white"
+              />
+            </button>
+          )}
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-6">
           {links.map((item, index) => (
             <span key={index}>
               {item.dropdown ? (
                 <Popover className="relative">
-                  <Popover.Button className="flex items-center gap-x-1 text-sm font-inter leading-6 text-gray-900 focus:outline-none">
+                  <Popover.Button className="flex items-center gap-x-1 text-sm font-inter leading-6 text-white focus:outline-none">
                     {item.name}
                     <HiOutlineChevronDown
-                      className="h-5 w-5 flex-none text-gray-600"
+                      className="h-5 w-5 flex-none text-white"
                       aria-hidden="true"
                     />
                   </Popover.Button>
@@ -140,7 +153,7 @@ export default function Header() {
               ) : (
                 <Link
                   href={item.link}
-                  className="text-sm leading-6 text-gray-900 font-inter "
+                  className="text-sm leading-6 text-white font-inter "
                 >
                   {item.name}
                 </Link>
@@ -184,31 +197,31 @@ export default function Header() {
                   href={links[0].link}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  {links[0].link}
+                  {links[0].name}
                 </Link>
                 <Link
                   href={links[1].link}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  {links[1].link}
+                  {links[1].name}
                 </Link>
                 <Link
                   href={links[2].link}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  {links[2].link}
+                  {links[2].name}
                 </Link>
                 <Link
                   href={links[3].link}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  {links[3].link}
+                  {links[3].name}
                 </Link>
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                        {links[4].link}
+                        {links[4].name}
                         <HiOutlineChevronDown
                           className={classNames(
                             open ? 'rotate-180' : '',
@@ -238,7 +251,7 @@ export default function Header() {
                   href={links[5].link}
                   className="text-sm  leading-6 text-gray-900"
                 >
-                  {links[5].link}
+                  {links[5].name}
                 </Link>
               </div>
             </div>

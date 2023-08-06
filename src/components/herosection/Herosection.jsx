@@ -1,4 +1,6 @@
+'use client';
 import React from 'react';
+import { Button } from '../ui/button/Button';
 
 const Herosection = ({ url, type, posterurl }) => {
   return (
@@ -15,12 +17,16 @@ const Herosection = ({ url, type, posterurl }) => {
             poster={posterurl}
             className="h-[100vh] absolute object-cover top-0 w-full "
           >
-            <source src={url} type="video/mp4" />
+            <source src={''} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         )}
 
-        <div className={styles.overlay}></div>
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 h-fit">
+          <Button variant={'whiteborder'} href="#services">
+            Book Now
+          </Button>
+        </div>
       </div>
     </div>
   );
