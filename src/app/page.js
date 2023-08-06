@@ -1,4 +1,4 @@
-import { HeroSection } from '@/components';
+import { HeroSection, ServiceBanner } from '@/components';
 import Card from '@/components/ui/card/card';
 import CardV1 from '@/components/ui/card/cardv1';
 import Image from 'next/image';
@@ -11,6 +11,7 @@ export default function Home() {
         type={'video'}
         url={'/assets/home/hero.mp4'}
       />
+      <ServiceBanner />
       {/* <section>
         <Card />
         <CardV1 />
