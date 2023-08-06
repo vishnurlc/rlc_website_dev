@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import { Button } from "../button/Button";
@@ -5,18 +6,27 @@ import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import { BsWhatsapp } from "react-icons/bs";
 import { PiStarThin } from "react-icons/pi";
 
+// s
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import styles from "./main.css";
+import Link from "next/link";
+import "swiper/css";
+import "swiper/css/navigation";
+
 function Card() {
   return (
     <div className="lg:flex w-full max-w-[1200px] lg:h-[320px] mx-auto bg-white">
       <div className="relative w-full aspect-[70/40] bg-black lg:w-2/3 lg:max-w-[512px]">
-        <Image
+        {/* <Image
           src="/assets/test/porch.jpg"
           // width={1200}
           // height={1200}
           fill
           priority
           alt="car"
-        />
+        /> */}
+        <Carasoul />
       </div>
       <div className="bg-white p-5">
         <div className="text-black">
@@ -80,6 +90,35 @@ function Card() {
         </div>
       </div>
     </div>
+  );
+}
+
+function Carasoul() {
+  const serviceCarousel = [
+    { slug: "ss", serviceimage: "/assets/test/porch.jpg" },
+    { slug: "ss", serviceimage: "/assets/test/jet.png" },
+    { slug: "ss", serviceimage: "/assets/test/porch.jpg" },
+  ];
+  return (
+    <>
+      <Swiper modules={[Navigation]} navigation className={styles.mySwiper}>
+        {serviceCarousel.map((e, index) => (
+          <SwiperSlide
+            key={`slide${index}`}
+            className="relative w-full aspect-[70/40] bg-black lg:w-2/3 lg:max-w-[512px]"
+          >
+            <Image
+              src={e.serviceimage}
+              // width={1200}
+              // height={1200}
+              fill
+              priority
+              alt="car"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </>
   );
 }
 
