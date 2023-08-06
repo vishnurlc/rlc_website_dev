@@ -71,7 +71,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-transparent">
+    <header className="bg-transparent absolute w-screen top-0 z-20">
       <nav
         className="px-6 py-2 mx-auto flex max-w-7xl items-center justify-between lg:px-8"
         aria-label="Global"
