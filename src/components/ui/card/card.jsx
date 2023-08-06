@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { Button } from "./button/Button";
+import { Button } from "../button/Button";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import { BsWhatsapp } from "react-icons/bs";
 import { PiStarThin } from "react-icons/pi";

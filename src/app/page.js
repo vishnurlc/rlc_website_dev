@@ -1,4 +1,5 @@
-import Card from "@/components/ui/card";
+import Card from "@/components/ui/card/card";
+import CardV1 from "@/components/ui/card/cardv1";
 import Image from "next/image";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <main className="overflow-hidden">
       <section>
         <Card />
+        <CardV1 />
       </section>
     </main>
   );

@@ -16,7 +16,7 @@ export function Button({
 
   const variants = {
     primary: `${baseButtonClasses} bg-teal-900 text-white`,
-    secondary: `${baseButtonClasses} bg-white border-2 border-teal-900 text-teal-900`,
+    secondary: `${baseButtonClasses} bg-white border border-teal-900 text-teal-900`,
   };
 
   const widths = {
