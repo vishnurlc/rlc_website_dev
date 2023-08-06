@@ -1,39 +1,47 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
+import React from 'react';
 
 function Aboutsection() {
   const data = [
     {
-      title: "Private events ",
-      number: "11k",
+      title: 'Private events ',
+      number: '11k',
     },
     {
-      title: "Customer Satisfaction",
-      number: "100%",
+      title: 'Customer Satisfaction',
+      number: '100%',
     },
     {
-      title: "Private events ",
-      number: "100%",
+      title: 'Private events ',
+      number: '100%',
     },
     {
-      title: "Private events ",
-      number: "180+",
+      title: 'Private events ',
+      number: '180+',
     },
     {
-      title: "Private events ",
-      number: "30",
+      title: 'Private events ',
+      number: '30',
     },
   ];
   return (
     <div className="py-20 bg-white">
       <div className="lg:flex w-full max-w-[1200px] lg:h-[320px] mx-auto bg-white">
-        <div className="hidden lg:block relative w-full aspect-[557/557] lg:w-2/3 lg:max-w-[512px]">
-          <Image src="/assets/test/farrari.png" fill priority alt="car" />
+        <div className="hidden lg:block relative w-full aspect-square flex-1">
+          <Image
+            src="/assets/test/farrari.png"
+            fill
+            priority
+            alt="car"
+            style={{
+              objectFit: 'contain',
+            }}
+          />
         </div>
-        <div className="bg-white text-black mx-20">
+        <div className="bg-white text-black mx-20 flex-1">
           <h2 className="text-teal-900 text-[42px] font-extrabold leading-10">
             RICHYLIFE <br />
-            CLUB{" "}
+            CLUB{' '}
           </h2>
 
           <p className="py-10 text-md font-thin text-secondary">
