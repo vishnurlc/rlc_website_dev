@@ -12,15 +12,11 @@ export function Button({
 }) {
   const Component = props?.href ? Link : as;
 
-  const baseButtonClasses =
-    "inline-block rounded font-medium text-center py-2 px-6 ";
+  const baseButtonClasses = "font-medium text-center py-2 px-6";
 
   const variants = {
-    primary: `${baseButtonClasses} bg-teal-900 border-2 border-white text-white`,
-    secondary: `${baseButtonClasses} border border-secondary bg-contrast text-secondary`,
-    inline: "border-b border-primary/10 leading-none pb-1",
-    hover: `${baseButtonClasses} border border-secondary bg-secondary/50 text-white/50`,
-    trans: `${baseButtonClasses} text-white border-2 border-secondary bg-contrast text-secondary`,
+    primary: `${baseButtonClasses} bg-teal-900 text-white`,
+    secondary: `${baseButtonClasses} bg-white border-2 border-teal-900 text-teal-900`,
   };
 
   const widths = {
