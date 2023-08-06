@@ -25,3 +25,8 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+.car_swiper .swiper-button-next{
+  color:white
+}

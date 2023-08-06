@@ -13,6 +13,7 @@ import styles from "./main.css";
 import Link from "next/link";
 import "swiper/css";
 import "swiper/css/navigation";
+import VideoPlayer from "../videoplayer/videoPlayer";
 
 function Card() {
   return (
@@ -95,26 +96,34 @@ function Card() {
 
 function Carasoul() {
   const serviceCarousel = [
-    { slug: "ss", serviceimage: "/assets/test/porch.jpg" },
+    {
+      slug: "ss",
+      serviceimage: "https://www.youtube.com/watch?v=H4CqfE3Syy0",
+      video: true,
+    },
     { slug: "ss", serviceimage: "/assets/test/jet.png" },
     { slug: "ss", serviceimage: "/assets/test/porch.jpg" },
   ];
   return (
     <>
-      <Swiper modules={[Navigation]} navigation className={styles.mySwiper}>
+      <Swiper modules={[Navigation]} navigation className="card_swiper">
         {serviceCarousel.map((e, index) => (
           <SwiperSlide
             key={`slide${index}`}
             className="relative w-full aspect-[70/40] bg-black lg:w-2/3 lg:max-w-[512px]"
           >
-            <Image
-              src={e.serviceimage}
-              // width={1200}
-              // height={1200}
-              fill
-              priority
-              alt="car"
-            />
+            {e.video ? (
+              <VideoPlayer url={e.serviceimage} />
+            ) : (
+              <Image
+                src={e.serviceimage}
+                // width={1200}
+                // height={1200}
+                fill
+                priority
+                alt="car"
+              />
+            )}
           </SwiperSlide>
         ))}
       </Swiper>
