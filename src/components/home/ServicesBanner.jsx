@@ -73,11 +73,11 @@ const ServicesBanner = () => {
           {servicesData.map((item, index) => (
             <SwiperSlide key={index} className="z-10">
               <div className="grid grid-cols-1 md:grid-cols-2 max-w-[1200px] mx-auto ">
-                <div className="order-2 md:order-1 flex flex-col gap-5 pt-4 md:pt-12 font-inter">
+                <div className="order-2 md:order-1 flex flex-col gap-5 pt-4 md:pt-12 font-inter md:px-[50px]">
                   <span className="text-[#3DB7CD] font-medium text-sm">
                     {item.subheading}
                   </span>
-                  <h2 className="text-white font-bold text-2xl md:text-5xl">
+                  <h2 className="text-white font-bold text-2xl md:text-3xl lg:text-5xl">
                     {item.title}
                   </h2>
                   <p className="text-gray-400 font-light text-sm">
@@ -90,13 +90,17 @@ const ServicesBanner = () => {
                     Book Now
                   </Link>
                 </div>
-                <div className="order-1 md:order-2">
+                <div className="order-1 md:order-2 relative">
                   <Image
                     src={item.mainimg}
                     width={427}
                     height={464}
                     alt={item.title}
-                    className="block mx-auto"
+                    style={{
+                      objectFit: 'cover',
+                      display: 'block',
+                      marginInline: 'auto',
+                    }}
                   />
                 </div>
               </div>
