@@ -17,6 +17,11 @@ module.exports = {
         secondary: "#6A7285",
         tertiary: "#CBB26A",
       },
+      fontFamily: {
+        sans: ["var(--font-nunito)"],
+        poppins: ["var(--font-poppins)"],
+        inter: ["var(--font-inter)"],
+      },
     },
   },
   plugins: [],
