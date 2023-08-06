@@ -98,7 +98,7 @@ function Carasoul() {
   const serviceCarousel = [
     {
       slug: "ss",
-      serviceimage: "https://www.youtube.com/watch?v=H4CqfE3Syy0",
+      serviceimage: "/assets/home/hero.mp4",
       video: true,
     },
     { slug: "ss", serviceimage: "/assets/test/jet.png" },

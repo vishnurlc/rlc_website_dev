@@ -1,13 +1,12 @@
 import React from "react";
-import ReactPlayer from "react-player";
-import styled from "styled-components";
 
-const StyledPlayer = styled(ReactPlayer)`
-  margin: 0 auto;
-`;
-
-const VideoPlayer = async ({ url }) => {
-  return <ReactPlayer url={url} width="100%" height="auto" />;
+const VideoPlayer = ({ url }) => {
+  return (
+    <video play preload="metadata">
+      <source src={url} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  );
 };
 
 export default VideoPlayer;
