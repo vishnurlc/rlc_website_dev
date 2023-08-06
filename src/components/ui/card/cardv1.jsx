@@ -1,9 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import { Button } from "../button/Button";
-import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import { FaPhoneAlt, FaWhatsapp, FaLuggageCart } from "react-icons/fa";
 import { BsWhatsapp } from "react-icons/bs";
 import { PiStarThin } from "react-icons/pi";
+import { BiSolidPlane, BiSolidTimeFive } from "react-icons/bi";
 
 function CardV1() {
   return (
@@ -24,12 +25,30 @@ function CardV1() {
             Gulfstream g650
           </h3>
           <p className="text-tertiary text-sm">Ultra-Long-Range Aircraft</p>
-          <p className=" text-sm font-normal leading-relaxed pt-5">
+          <p className=" text-sm font-normal leading-relaxed pt-10">
             The G650ER holds the record for the farthest fastest flight in
             business aviation history.
           </p>
 
-          <div className="flex justify-between py-5">
+          <div className="flex items-center justify-between pt-10">
+            <div className="text-center">
+              <FaLuggageCart className="mx-auto text-2xl" />
+              <p className="text-tertiary text-xs">passeger</p>
+              <p className="text-xs pt-2">12</p>
+            </div>
+            <div className="text-center">
+              <BiSolidPlane className="mx-auto text-2xl" />
+              <p className="text-tertiary text-xs">Max. Performance Range</p>
+              <p className="text-xs pt-2">11263 KM</p>
+            </div>
+            <div className="text-center">
+              <BiSolidTimeFive className="mx-auto text-2xl" />
+              <p className="text-tertiary text-xs">Endurance</p>
+              <p className="text-xs pt-2">16 HRS</p>
+            </div>
+          </div>
+
+          <div className="flex justify-between py-10">
             <Button variant="secondary">Book Now</Button>
           </div>
         </div>
