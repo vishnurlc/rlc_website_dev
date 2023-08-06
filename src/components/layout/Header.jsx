@@ -3,8 +3,6 @@
 import { Fragment, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import { HiOutlineChevronDown } from 'react-icons/hi';
-import { BsTelephoneFill, BsFillPlayCircleFill } from 'react-icons/bs';
-import { HiMiniArrowPath } from 'react-icons/hi2';
 import { BiMenuAltRight } from 'react-icons/bi';
 import { AiOutlineClose } from 'react-icons/ai';
 import Image from 'next/image';
@@ -12,39 +10,57 @@ import Link from 'next/link';
 
 const products = [
   {
-    name: 'Analytics',
-    description: 'Get a better understanding of your traffic',
+    name: 'Chauffer / Airport Transfer',
     href: '#',
-    icon: HiMiniArrowPath,
   },
   {
-    name: 'Engagement',
-    description: 'Speak directly to your customers',
+    name: 'Photo / Video Shoot',
     href: '#',
-    icon: HiMiniArrowPath,
   },
   {
-    name: 'Security',
-    description: 'Your customers’ data will be safe and secure',
+    name: 'Coorporate Hire',
     href: '#',
-    icon: HiMiniArrowPath,
   },
   {
-    name: 'Integrations',
-    description: 'Connect with third-party tools',
+    name: 'Premium Desert Adventure',
     href: '#',
-    icon: HiMiniArrowPath,
   },
   {
-    name: 'Automations',
-    description: 'Build strategic funnels that will convert',
+    name: 'Helicopter Rentals',
     href: '#',
-    icon: HiMiniArrowPath,
+  },
+  {
+    name: 'Private Jet Rentals',
+    href: '#',
   },
 ];
-const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: BsFillPlayCircleFill },
-  { name: 'Contact sales', href: '#', icon: BsTelephoneFill },
+
+const links = [
+  {
+    name: 'Rent A Car',
+    link: '#',
+  },
+  {
+    name: 'Luxury Yacht Rentals',
+    link: '#',
+  },
+  {
+    name: 'Premium Gold Jetski',
+    link: '#',
+  },
+  {
+    name: 'Exotic Pet VIP Experiences',
+    link: '#',
+  },
+  {
+    name: 'Services',
+    link: '#',
+    dropdown: true,
+  },
+  {
+    name: 'Contact Us',
+    link: '#',
+  },
 ];
 
 function classNames(...classes) {
@@ -57,10 +73,10 @@ export default function Header() {
   return (
     <header className="bg-transparent">
       <nav
-        className="px-4 mx-auto flex max-w-7xl items-center justify-between lg:px-8"
+        className="px-6 py-2 mx-auto flex max-w-7xl items-center justify-between lg:px-8"
         aria-label="Global"
       >
-        <div className="flex flex-1">
+        <div className="flex ">
           <Link href="/">
             <span className="sr-only">Richylife Club</span>
             <Image
@@ -68,10 +84,7 @@ export default function Header() {
               height={100}
               src="/assets/logos/logo-dark.svg"
               alt="Richylife Club"
-              style={{
-                aspectRatio: 'calc(98.04/100)',
-                minWidth: '48px',
-              }}
+              className="aspect-[98.04/100] w-[70px] md:w-[98.04px]"
             />
           </Link>
         </div>
@@ -85,81 +98,55 @@ export default function Header() {
             <BiMenuAltRight className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <Link href="#" className="text-sm leading-6 text-gray-900">
-            Rent A Car
-          </Link>
-          <Link href="#" className="text-sm leading-6 text-gray-900">
-            Luxury Yacht Rentals
-          </Link>
-          <Link href="#" className="text-sm leading-6 text-gray-900">
-            Premium Gold Jetski
-          </Link>
-          <Link href="#" className="text-sm leading-6 text-gray-900">
-            Exotic Pet VIP experiences
-          </Link>
-          <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm leading-6 text-gray-900">
-              Services
-              <HiOutlineChevronDown
-                className="h-5 w-5 flex-none text-gray-400"
-                aria-hidden="true"
-              />
-            </Popover.Button>
+        <Popover.Group className="hidden lg:flex lg:gap-x-6">
+          {links.map((item, index) => (
+            <span key={index}>
+              {item.dropdown ? (
+                <Popover className="relative">
+                  <Popover.Button className="flex items-center gap-x-1 text-sm font-inter leading-6 text-gray-900 focus:outline-none">
+                    {item.name}
+                    <HiOutlineChevronDown
+                      className="h-5 w-5 flex-none text-gray-600"
+                      aria-hidden="true"
+                    />
+                  </Popover.Button>
 
-            <Transition
-              as={Fragment}
-              enter="transition ease-out duration-200"
-              enterFrom="opacity-0 translate-y-1"
-              enterTo="opacity-100 translate-y-0"
-              leave="transition ease-in duration-150"
-              leaveFrom="opacity-100 translate-y-0"
-              leaveTo="opacity-0 translate-y-1"
-            >
-              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
-                <div className="p-4">
-                  {products.map((item) => (
-                    <div
-                      key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-                    >
-                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <item.icon
-                          className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
-                          aria-hidden="true"
-                        />
-                      </div>
-                      <div className="flex-auto">
-                        <Link href={item.href} className="block text-gray-900">
-                          {item.name}
-                          <span className="absolute inset-0" />
-                        </Link>
-                        <p className="mt-1 text-gray-600">{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                  {callsToAction.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-                    >
-                      <item.icon
-                        className="h-5 w-5 flex-none text-gray-400"
-                        aria-hidden="true"
-                      />
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              </Popover.Panel>
-            </Transition>
-          </Popover>
-          <Link href="#" className="text-sm  leading-6 text-gray-900">
-            Contact Us
-          </Link>
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-200"
+                    enterFrom="opacity-0 translate-y-1"
+                    enterTo="opacity-100 translate-y-0"
+                    leave="transition ease-in duration-150"
+                    leaveFrom="opacity-100 translate-y-0"
+                    leaveTo="opacity-0 translate-y-1"
+                  >
+                    <Popover.Panel className="py-2 absolute -left-1/2 top-full z-10 mt-3 overflow-hidden rounded-sm bg-white shadow-lg ring-1 ring-gray-900/5">
+                      {products.map((item) => (
+                        <div
+                          key={item.name}
+                          className="py-2 px-7 text-sm leading-6 hover:bg-gray-50 w-full"
+                        >
+                          <Link
+                            href={item.href}
+                            className="block text-gray-900 whitespace-nowrap"
+                          >
+                            {item.name}
+                          </Link>
+                        </div>
+                      ))}
+                    </Popover.Panel>
+                  </Transition>
+                </Popover>
+              ) : (
+                <Link
+                  href={item.link}
+                  className="text-sm leading-6 text-gray-900 font-inter "
+                >
+                  {item.name}
+                </Link>
+              )}
+            </span>
+          ))}
         </Popover.Group>
       </nav>
       <Dialog
@@ -169,7 +156,7 @@ export default function Header() {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-2 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Richylife Club</span>
@@ -178,9 +165,7 @@ export default function Header() {
                 height={100}
                 src="/assets/logos/logo-dark.svg"
                 alt="Richylife Club"
-                style={{
-                  aspectRatio: 'calc(98.04/100)',
-                }}
+                className="aspect-[98.04/100] w-[70px] md:w-[98.04px]"
               />
             </Link>
             <button
@@ -195,11 +180,35 @@ export default function Header() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
+                <Link
+                  href={links[0].link}
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  {links[0].link}
+                </Link>
+                <Link
+                  href={links[1].link}
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  {links[1].link}
+                </Link>
+                <Link
+                  href={links[2].link}
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  {links[2].link}
+                </Link>
+                <Link
+                  href={links[3].link}
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  {links[3].link}
+                </Link>
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                        Product
+                        {links[4].link}
                         <HiOutlineChevronDown
                           className={classNames(
                             open ? 'rotate-180' : '',
@@ -209,7 +218,7 @@ export default function Header() {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
-                        {[...products, ...callsToAction].map((item) => (
+                        {[...products].map((item) => (
                           <Disclosure.Button
                             key={item.name}
                             as="a"
@@ -223,31 +232,13 @@ export default function Header() {
                     </>
                   )}
                 </Disclosure>
-                <Link
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Features
-                </Link>
-                <Link
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Marketplace
-                </Link>
-                <Link
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Company
-                </Link>
               </div>
               <div className="py-6">
                 <Link
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  href={links[5].link}
+                  className="text-sm  leading-6 text-gray-900"
                 >
-                  Log in
+                  {links[5].link}
                 </Link>
               </div>
             </div>
