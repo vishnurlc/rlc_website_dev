@@ -54,7 +54,7 @@ const Ourservices = () => {
               nextEl: '.swiper-next-el',
               prevEl: '.swiper-prev-el',
             }}
-            className="max-w-[1200px] mx-auto p-5"
+            className="max-w-[1200px] mx-auto p-5 serviceswiper"
             coverflowEffect={{
               rotate: 0,
               stretch: 0,

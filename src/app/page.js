@@ -1,4 +1,9 @@
-import { HeroSection, OurServices, ServiceBanner } from '@/components';
+import {
+  HeroSection,
+  OurServices,
+  ServiceBanner,
+  Testimonials,
+} from '@/components';
 import Aboutsection from '@/components/home/aboutsection';
 import Faq from '@/components/home/faq';
 import FaqAccordation from '@/components/ui/accordation/accordation';
@@ -19,7 +24,7 @@ export default function Home() {
       <Aboutsection />
 
       <ServiceBanner />
-
+      <Testimonials />
       <Card />
       <CardV1 />
       <Faq />

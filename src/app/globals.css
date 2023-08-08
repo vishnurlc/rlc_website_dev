@@ -30,6 +30,11 @@ body {
   color: white;
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+  color: #a6a6a6 !important;
+}
+
 .serviceslide {
   width: auto !important;
   height: 60vh !important;

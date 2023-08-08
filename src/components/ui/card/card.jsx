@@ -1,19 +1,19 @@
-"use client";
-import Image from "next/image";
-import React from "react";
-import { Button } from "../button/Button";
-import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
-import { BsWhatsapp } from "react-icons/bs";
-import { PiStarThin } from "react-icons/pi";
+'use client';
+import Image from 'next/image';
+import React from 'react';
+import { Button } from '../button/Button';
+import { FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
+import { BsWhatsapp } from 'react-icons/bs';
+import { PiStarThin } from 'react-icons/pi';
 
 // s
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import styles from "./main.css";
-import Link from "next/link";
-import "swiper/css";
-import "swiper/css/navigation";
-import VideoPlayer from "../videoplayer/videoPlayer";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import styles from './main.css';
+import Link from 'next/link';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import VideoPlayer from '../videoplayer/videoPlayer';
 
 function Card() {
   return (
@@ -60,7 +60,7 @@ function Card() {
             </div>
             <div className="w-[90px] h-[37.19px] bg-slate-100 flex items-center justify-center">
               <div className="text-primary text-base font-medium leading-tight">
-                30"ft
+                30&quot;ft
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ function Card() {
             <div>
               <p className="text-secondary text-sm">From</p>
               <p className="text-primary font-normal text-xl">
-                $200{" "}
+                $200{' '}
                 <span className="text-secondary text-sm font-normala">
                   /Day
                 </span>
@@ -97,12 +97,12 @@ function Card() {
 function Carasoul() {
   const serviceCarousel = [
     {
-      slug: "ss",
-      serviceimage: "/assets/home/hero.mp4",
+      slug: 'ss',
+      serviceimage: '/assets/home/hero.mp4',
       video: true,
     },
-    { slug: "ss", serviceimage: "/assets/test/jet.png" },
-    { slug: "ss", serviceimage: "/assets/test/porch.jpg" },
+    { slug: 'ss', serviceimage: '/assets/test/jet.png' },
+    { slug: 'ss', serviceimage: '/assets/test/porch.jpg' },
   ];
   return (
     <>

@@ -80,7 +80,7 @@ const ServicesBanner = () => {
                   <h2 className="text-white font-bold text-2xl md:text-3xl lg:text-5xl">
                     {item.title}
                   </h2>
-                  <p className="text-gray-400 font-light text-sm">
+                  <p className="text-gray font-light text-sm">
                     {item.description}
                   </p>
                   <Link

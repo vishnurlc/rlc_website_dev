@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { Button } from '../ui/button/Button';
+import Image from 'next/image';
 
 const Herosection = ({ url, type, posterurl }) => {
   return (
