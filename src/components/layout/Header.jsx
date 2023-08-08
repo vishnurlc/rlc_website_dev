@@ -8,33 +8,6 @@ import { AiOutlineClose } from 'react-icons/ai';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const products = [
-  {
-    name: 'Chauffer / Airport Transfer',
-    href: '#',
-  },
-  {
-    name: 'Photo / Video Shoot',
-    href: '#',
-  },
-  {
-    name: 'Coorporate Hire',
-    href: '#',
-  },
-  {
-    name: 'Premium Desert Adventure',
-    href: '#',
-  },
-  {
-    name: 'Helicopter Rentals',
-    href: '#',
-  },
-  {
-    name: 'Private Jet Rentals',
-    href: '#',
-  },
-];
-
 const links = [
   {
     name: 'Rent A Car',
@@ -45,8 +18,15 @@ const links = [
     link: '#',
   },
   {
-    name: 'Premium Gold Jetski',
+    name: 'Exclusive Water Sports',
     link: '#',
+    dropdown: true,
+    products: [
+      {
+        name: 'Premium Gold Jetski',
+        href: '#',
+      },
+    ],
   },
   {
     name: 'Exotic Pet VIP Experiences',
@@ -56,6 +36,32 @@ const links = [
     name: 'Services',
     link: '#',
     dropdown: true,
+    products: [
+      {
+        name: 'Chauffer / Airport Transfer',
+        href: '#',
+      },
+      {
+        name: 'Photo / Video Shoot',
+        href: '#',
+      },
+      {
+        name: 'Coorporate Hire',
+        href: '#',
+      },
+      {
+        name: 'Premium Desert Adventure',
+        href: '#',
+      },
+      {
+        name: 'Helicopter Rentals',
+        href: '#',
+      },
+      {
+        name: 'Private Jet Rentals',
+        href: '#',
+      },
+    ],
   },
   {
     name: 'Contact Us',
@@ -133,8 +139,8 @@ export default function Header() {
                     leaveFrom="opacity-100 translate-y-0"
                     leaveTo="opacity-0 translate-y-1"
                   >
-                    <Popover.Panel className="py-2 absolute -left-1/2 top-full z-10 mt-3 overflow-hidden rounded-sm bg-white shadow-lg ring-1 ring-gray-900/5">
-                      {products.map((item) => (
+                    <Popover.Panel className="py-2 absolute right-0 top-full z-10 mt-3  overflow-hidden rounded-sm bg-white shadow-lg ring-1 ring-gray-900/5">
+                      {item.products.map((item) => (
                         <div
                           key={item.name}
                           className="py-2 px-7 text-sm leading-6 hover:bg-gray-50 w-full"

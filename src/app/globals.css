@@ -26,7 +26,38 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.car_swiper .swiper-button-next {
+  color: white;
+}
 
-.car_swiper .swiper-button-next{
-  color:white
+.serviceslide {
+  width: auto !important;
+  height: 60vh !important;
+  aspect-ratio: calc(2 / 1);
+  max-height: 400px;
+}
+
+@media (max-width: 600px) {
+  .serviceslide {
+    width: 90vw !important;
+    height: auto !important;
+    aspect-ratio: calc(1 / 2);
+  }
+}
+
+.servicebullet,
+.serviceactivebullet {
+  width: 7px;
+  height: 7px;
+  border-radius: 100%;
+  background: #7e7d7d;
+  display: inline-block;
+  margin-inline: 4px;
+  cursor: pointer;
+}
+
+.serviceactivebullet {
+  background: #dca24b;
+  width: 10px;
+  height: 10px;
 }
