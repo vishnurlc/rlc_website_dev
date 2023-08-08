@@ -1,12 +1,12 @@
-"use client";
-import React, { useState } from "react";
-import FaqCard from "./faqcard";
+'use client';
+import React, { useState } from 'react';
+import FaqCard from './faqcard';
 
 function FaqAccordation({ data }) {
   const [expanded, setExpanded] = useState();
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-6">
       {data.map((item, index) => (
         <FaqCard
           key={index}

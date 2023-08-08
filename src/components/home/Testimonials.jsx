@@ -30,10 +30,15 @@ const data = [
 
 const Testimonials = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-4 ">
+    <div className="grid grid-cols-1 sm:grid-cols-2 ">
       {data.map((item, index) => (
-        <>
-          <div className="w-full relative h-full min-h-[279px]" key={index}>
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2">
+          <div
+            className={`w-full relative h-full min-h-[279px] ${
+              index > 1 && 'order-1 sm:order-2'
+            }`}
+            key={index}
+          >
             <Image
               src={item.image}
               alt={item.name}
@@ -44,11 +49,20 @@ const Testimonials = () => {
               }}
             />
           </div>
-          <div className={``} key={`${index}_content`}>
-            <p>{item.comment}</p>
-            <span>{item.name}</span>
+          <div
+            className={`${
+              index % 2 !== 0
+                ? 'bg-[#0A212D] text-white'
+                : 'bg-white text-primary'
+            }  ${
+              index > 1 && 'order-2 sm:order-1'
+            } font-inter flex flex-col gap-6 items-start justify-center font-thin p-5`}
+            key={`${index}_content`}
+          >
+            <p className="text-sm">{item.comment}</p>
+            <spa className="font-medium">{item.name}</spa>
           </div>
-        </>
+        </div>
       ))}
     </div>
   );

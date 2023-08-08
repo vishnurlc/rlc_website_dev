@@ -24,7 +24,7 @@ const Ourservices = () => {
     >
       <div>
         <div className="mb-10 md:mb-20 flex flex-col gap-6 md:gap-10 items-center justify-center ">
-          <h2 className="uppercase font-inter text-base md:text-xl font-light text-gray">
+          <h2 className="uppercase font-inter text-base md:text-xl font-light text-grey">
             Our Services
           </h2>
           <div>
