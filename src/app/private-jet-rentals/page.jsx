@@ -5,7 +5,7 @@ import React from 'react';
 
 const page = () => {
   return (
-    <div>
+    <main>
       <HeroSection url={'/assets/privatejet/bannerimg.png'} />
       <div className="py-[43px] md:py-[86px]">
         <SectionHeading
@@ -35,7 +35,7 @@ const page = () => {
           description={'Book your journey with our private jet rental now'}
         />
       </div>
-    </div>
+    </main>
   );
 };
 
