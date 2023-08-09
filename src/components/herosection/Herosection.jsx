@@ -7,9 +7,7 @@ const Herosection = ({ url, type, posterurl }) => {
   return (
     <div className="min-h-screen min-w-screen relative">
       <div className="w-screen h-screen relative">
-        {type === 'image' ? (
-          <Image src={url} fill alt="Hero Section Image" />
-        ) : (
+        {type === 'video' ? (
           <video
             playsInline
             autoPlay
@@ -21,6 +19,16 @@ const Herosection = ({ url, type, posterurl }) => {
             <source src={''} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
+        ) : (
+          <Image
+            src={url}
+            fill
+            alt="Hero Section Image"
+            style={{
+              objectFit: 'cover',
+              objectPosition: 'center',
+            }}
+          />
         )}
 
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 h-fit">
