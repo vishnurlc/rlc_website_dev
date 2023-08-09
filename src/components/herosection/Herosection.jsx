@@ -5,8 +5,8 @@ import Image from 'next/image';
 
 const Herosection = ({ url, type, posterurl }) => {
   return (
-    <div className="min-h-screen min-w-screen relative">
-      <div className="w-screen h-screen relative">
+    <div className="h-screen w-screen relative">
+      <div className="w-full h-full">
         {type === 'video' ? (
           <video
             playsInline
