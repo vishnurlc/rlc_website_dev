@@ -11,26 +11,26 @@ import Link from 'next/link';
 const links = [
   {
     name: 'Rent A Car',
-    link: '#',
+    link: '/luxury-car-rentals',
   },
   {
     name: 'Luxury Yacht Rentals',
-    link: '#',
+    link: '/luxury-yacht-rentals',
   },
   {
     name: 'Exclusive Water Sports',
-    link: '#',
+    link: '/exclusive-water-sports',
     dropdown: true,
     products: [
       {
         name: 'Premium Gold Jetski',
-        href: '#',
+        href: '/premium-gold-jetski',
       },
     ],
   },
   {
     name: 'Exotic Pet VIP Experiences',
-    link: '#',
+    link: '/exotic-pet-experiences',
   },
   {
     name: 'Services',
@@ -39,33 +39,33 @@ const links = [
     products: [
       {
         name: 'Chauffer / Airport Transfer',
-        href: '#',
+        href: '/airport-transfer',
       },
       {
         name: 'Photo / Video Shoot',
-        href: '#',
+        href: '/photo-video-shoot',
       },
       {
-        name: 'Coorporate Hire',
-        href: '#',
+        name: 'Corporate Hire',
+        href: '/corporate-hire',
       },
       {
         name: 'Premium Desert Adventure',
-        href: '#',
+        href: '/premium-desert-adventure',
       },
       {
         name: 'Helicopter Rentals',
-        href: '#',
+        href: '/helicopter-rentals',
       },
       {
         name: 'Private Jet Rentals',
-        href: '#',
+        href: '/private-jet-rentals',
       },
     ],
   },
   {
     name: 'Contact Us',
-    link: '#',
+    link: '/contact-us',
   },
 ];
 
