@@ -170,12 +170,12 @@ export default function Header() {
       </nav>
       <Dialog
         as="div"
-        className="lg:hidden"
+        className="lg:hidden z-30"
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-2 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-30 w-full overflow-y-auto bg-white px-6 py-2 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Richylife Club</span>
@@ -193,7 +193,11 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
-              <AiOutlineClose className="h-6 w-6" aria-hidden="true" />
+              <AiOutlineClose
+                className="h-6 w-6"
+                aria-hidden="true"
+                color="#253242"
+              />
             </button>
           </div>
           <div className="mt-6 flow-root">

@@ -6,7 +6,9 @@ import React from 'react';
 const page = () => {
   return (
     <main>
+      <h1 className="sr-only ">Private Jet Rentals - Richylife Club</h1>
       <HeroSection url={'/assets/privatejet/bannerimg.png'} />
+
       <div className="py-[43px] md:py-[86px]">
         <SectionHeading
           title={'Indulge in Extravagance'}
