@@ -66,3 +66,12 @@
   width: 10px;
   height: 10px;
 }
+
+.privatejetswiper .swiper-slide {
+  height: 50vh;
+  max-height: 400px;
+  aspect-ratio: calc(640 / 400);
+  width: auto;
+  position: relative;
+  cursor: grab;
+}

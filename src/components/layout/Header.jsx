@@ -1,12 +1,13 @@
 'use client';
 
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import { HiOutlineChevronDown } from 'react-icons/hi';
 import { BiMenuAltRight } from 'react-icons/bi';
 import { AiOutlineClose } from 'react-icons/ai';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const links = [
   {
@@ -75,14 +76,29 @@ function classNames(...classes) {
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [headerType, setHeaderType] = useState(0);
+  const path = usePathname();
 
+  const variantPath = ['/private-jet-rentals/'];
+  useEffect(() => {
+    function updatePosition() {
+      const varPath = variantPath.some((item) => path.includes(item));
+      if (varPath || mobileMenuOpen) {
+        setHeaderType(1);
+      } else {
+        setHeaderType(0);
+      }
+    }
+    updatePosition();
+  }, [path]);
   return (
     <header
-      className="bg-transparent fixed w-screen top-0 z-20"
+      className="fixed w-screen top-0 z-20"
       style={{
-        background: mobileMenuOpen
-          ? ''
-          : 'linear-gradient(180deg, #000 0%, rgba(41, 41, 41, 0.00) 100%)',
+        background:
+          headerType === 1
+            ? '#fff'
+            : 'linear-gradient(180deg, #000 0%, rgba(41, 41, 41, 0.00) 100%)',
       }}
     >
       <nav
@@ -112,7 +128,7 @@ export default function Header() {
               <BiMenuAltRight
                 className="h-6 w-6"
                 aria-hidden="true"
-                color="white"
+                color={headerType === 1 ? '#214842' : 'white'}
               />
             </button>
           )}
@@ -122,10 +138,16 @@ export default function Header() {
             <span key={index}>
               {item.dropdown ? (
                 <Popover className="relative">
-                  <Popover.Button className="flex items-center gap-x-1 text-sm font-inter leading-6 text-white focus:outline-none">
+                  <Popover.Button
+                    className={`flex items-center gap-x-1 text-sm font-inter leading-6 ${
+                      headerType === 1 ? 'text-primary' : 'text-white'
+                    }  focus:outline-none`}
+                  >
                     {item.name}
                     <HiOutlineChevronDown
-                      className="h-5 w-5 flex-none text-white"
+                      className={`h-5 w-5 flex-none ${
+                        headerType === 1 ? 'text-primary' : 'text-white'
+                      } `}
                       aria-hidden="true"
                     />
                   </Popover.Button>
@@ -159,7 +181,9 @@ export default function Header() {
               ) : (
                 <Link
                   href={item.link}
-                  className="text-sm leading-6 text-white font-inter "
+                  className={`text-sm leading-6 ${
+                    headerType === 1 ? 'text-primary' : 'text-white'
+                  } font-inter`}
                 >
                   {item.name}
                 </Link>
