@@ -1,4 +1,4 @@
-import { GalleryJet } from '@/components';
+import { ContactForm, GalleryJet } from '@/components';
 import Image from 'next/image';
 import React from 'react';
 
@@ -23,13 +23,17 @@ const page = () => {
           }}
         />
       </div>
-      <div className="max-w-[1200px] mx-auto pt-10 md:pt-16 px-6">
+      <div className="max-w-[1200px] mx-auto py-10 md:py-16 px-6 flex flex-col gap-8 md:gap-16">
         <div>
           <div>
-            <h1>Pilatus Aircraft</h1>
-            <span>PC-12</span>
+            <h1 className="text-sm md:text-base text-justify md:text-left text-gray-500">
+              Pilatus Aircraft
+            </h1>
+            <span className=" inline-block my-4 font-inter text-primary font-semibold text-xl md:text-[40px]">
+              PC-12
+            </span>
           </div>
-          <p>
+          <p className="text-sm md:text-base text-justify md:text-left text-gray-500">
             The Pilatus PC-12 is a single-engine turboprop passenger and cargo
             aircraft manufactured by Pilatus Aircraft of Stans, Switzerland in
             1991. The main market for this aircraft is corporate transportation
@@ -40,7 +44,9 @@ const page = () => {
         </div>
 
         <div>
-          <h2>Technical Specifications</h2>
+          <h2 className="inline-block mb-8 font-inter text-primary font-semibold text-xl md:text-[40px]">
+            Technical Specifications
+          </h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-9">
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
               <span>Cabin Length</span>
@@ -93,11 +99,17 @@ const page = () => {
           </ul>
         </div>
         <div>
-          <h2>Gallery</h2>
+          <h2 className="inline-block mb-8 font-inter text-primary font-semibold text-xl md:text-[40px]">
+            Gallery
+          </h2>
           <div>
             <GalleryJet />
           </div>
         </div>
+        <ContactForm
+          title={'Soar to New Heights'}
+          description={'Book your journey with our private jet rental now'}
+        />
       </div>
     </main>
   );
