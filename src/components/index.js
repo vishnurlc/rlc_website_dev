@@ -11,3 +11,7 @@ export { default as FormComponent } from './formComponent/FormComponent';
 export { default as GalleryJet } from './privatejetrental/GalleryJet';
 
 export { default as ListingComponent } from './yachtrental/ListingComponent';
+
+export { default as ModalComponent } from './ui/Modalcomponent/Modalcomponent';
+
+export { default as VideoPlayer } from './ui/videoplayer/VideoPlayer';
