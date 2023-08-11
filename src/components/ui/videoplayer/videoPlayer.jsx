@@ -1,12 +1,10 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
+
+const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
 const VideoPlayer = ({ url }) => {
-  return (
-    <video playsInline autoPlay muted loop preload="metadata">
-      <source src={url} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  );
+  return <ReactPlayer url={url} width={'100%'} height={'100%'} />;
 };
 
 export default VideoPlayer;

@@ -2,35 +2,35 @@
 import Image from 'next/image';
 import React from 'react';
 import { Button } from '../button/Button';
-import { FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
+import { FaPhoneAlt } from 'react-icons/fa';
 import { BsWhatsapp } from 'react-icons/bs';
 import { PiStarThin } from 'react-icons/pi';
 
 // s
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-import styles from './main.css';
-import Link from 'next/link';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import VideoPlayer from '../videoplayer/videoPlayer';
 
 function Card() {
   return (
-    <div className="lg:flex w-full max-w-[1200px] lg:h-[320px] mx-auto bg-white">
-      <div className="relative w-full aspect-[70/40] bg-black lg:w-2/3 lg:max-w-[512px]">
-        {/* <Image
-          src="/assets/test/porch.jpg"
-          // width={1200}
-          // height={1200}
+    <div className="grid grid-cols-1 w-full md:grid-cols-3  max-w-[1200px] rounded-md mx-auto bg-[#fbfbfb]">
+      <div className="col-span-1 relative h-full aspect-square max-h-[380px] w-full">
+        <Image
+          src="/assets/privatejet/1.png"
+          alt="privatejet"
           fill
-          priority
-          alt="car"
-        /> */}
-        <Carasoul />
+          style={{
+            objectFit: 'cover',
+            objectPosition: 'center',
+          }}
+        />
+        <div className="absoulte inset-0 flex items-start gap-4">
+          <button></button>
+        </div>
       </div>
-      <div className="bg-white p-5">
-        <div className="text-black">
+      <div className="p-5 col-span-1 md:col-span-2">
+        <div className="text-black h-full flex flex-col items-start justify-between">
           <h3 className="text-primary text-2xl font-bold leading-[29.04px]">
             Pershing 2018 Yacht
           </h3>
@@ -39,8 +39,10 @@ function Card() {
             <PiStarThin />
             <PiStarThin />
             <PiStarThin />
+            <PiStarThin />
             <span className="text-secondary text-xs">(5.00 rating)</span>
           </p>
+
           <div className="py-3 flex gap-5">
             <div className="w-[90px] h-[37.19px] bg-slate-100 flex items-center justify-center">
               <div className="text-primary text-base font-medium leading-tight">
@@ -72,7 +74,7 @@ function Card() {
             coach roof, but with a much lower, sleeker profile.
           </p>
 
-          <div className="flex justify-between py-5">
+          <div className="flex justify-between w-full py-5">
             <div>
               <p className="text-secondary text-sm">From</p>
               <p className="text-primary font-normal text-xl">
@@ -98,36 +100,34 @@ function Carasoul() {
   const serviceCarousel = [
     {
       slug: 'ss',
-      serviceimage: '/assets/home/hero.mp4',
+      source: 'https://youtu.be/ilQxsj4ipM8',
+      posterurl: '/assets/home/heroposter.png',
       video: true,
     },
-    { slug: 'ss', serviceimage: '/assets/test/jet.png' },
-    { slug: 'ss', serviceimage: '/assets/test/porch.jpg' },
+    { slug: 'ss', source: '/assets/test/jet.png' },
+    { slug: 'ss', source: '/assets/test/porch.jpg' },
   ];
   return (
-    <>
-      <Swiper modules={[Navigation]} navigation className="card_swiper">
-        {serviceCarousel.map((e, index) => (
-          <SwiperSlide
-            key={`slide${index}`}
-            className="relative w-full aspect-[70/40] bg-black lg:w-2/3 lg:max-w-[512px]"
-          >
-            {e.video ? (
-              <VideoPlayer url={e.serviceimage} />
-            ) : (
-              <Image
-                src={e.serviceimage}
-                // width={1200}
-                // height={1200}
-                fill
-                priority
-                alt="car"
-              />
-            )}
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </>
+    <Swiper modules={[Navigation]} navigation className="product_swiper">
+      {serviceCarousel.map((e, index) => (
+        <SwiperSlide key={`slide${index}`}>
+          {e.video ? (
+            <VideoPlayer url={e.source} />
+          ) : (
+            <Image
+              src={e.source}
+              fill
+              priority
+              alt="car"
+              style={{
+                objectFit: 'cover',
+                objectPosition: 'center',
+              }}
+            />
+          )}
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 }
 

@@ -75,3 +75,8 @@
   position: relative;
   cursor: grab;
 }
+
+.product_swiper {
+  height: 100%;
+  width: 100%;
+}

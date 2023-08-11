@@ -9,3 +9,5 @@ export { default as Testimonials } from './home/Testimonials';
 export { default as ContactForm } from './formComponent/ContactForm';
 export { default as FormComponent } from './formComponent/FormComponent';
 export { default as GalleryJet } from './privatejetrental/GalleryJet';
+
+export { default as ListingComponent } from './yachtrental/ListingComponent';

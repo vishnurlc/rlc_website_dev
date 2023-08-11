@@ -1,4 +1,4 @@
-import { HeroSection } from '@/components';
+import { HeroSection, ListingComponent } from '@/components';
 import React from 'react';
 
 const page = () => {
@@ -10,6 +10,9 @@ const page = () => {
         type={'video'}
         url={'/assets/home/hero.mp4'}
       />
+      <div className="mx-auto max-w-[1200px]">
+        <ListingComponent />
+      </div>
     </main>
   );
 };
