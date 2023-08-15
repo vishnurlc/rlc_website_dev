@@ -1,13 +1,14 @@
 import { HeroSection, ListingComponent, SectionHeading } from '@/components';
+import MasonryGrid from '@/components/yachtrental/PictureGallery';
 import React from 'react';
-import dynamic from 'next/dynamic';
-const DynamicAnimatedCarousel = dynamic(
-  () => import('@/components/yachtrental/AnimatedCarousel'),
-  {
-    loading: () => <div>Loading...</div>,
-    ssr: false,
-  }
-);
+// import dynamic from 'next/dynamic';
+// const DynamicAnimatedCarousel = dynamic(
+//   () => import('@/components/yachtrental/AnimatedCarousel'),
+//   {
+//     loading: () => <div>Loading...</div>,
+//     ssr: false,
+//   }
+// );
 const page = () => {
   return (
     <main>
@@ -28,7 +29,7 @@ const page = () => {
           }
         />
 
-        <DynamicAnimatedCarousel
+        {/* <DynamicAnimatedCarousel
           data={[
             '/assets/home/heroposter.png',
             '/assets/home/heroposter.png',
@@ -46,7 +47,8 @@ const page = () => {
             '/assets/home/heroposter.png',
             '/assets/home/heroposter.png',
           ]}
-        />
+        /> */}
+        <MasonryGrid />
       </div>
     </main>
   );
