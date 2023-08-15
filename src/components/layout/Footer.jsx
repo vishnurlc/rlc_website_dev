@@ -3,7 +3,7 @@ import { SectionHeading } from '..';
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer min-h-screen">
       <SectionHeading
         title={'Follow us on Instagram'}
         description={

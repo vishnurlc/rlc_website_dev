@@ -18,9 +18,9 @@ const ImageCarousel = ({ data }) => {
   };
 
   const setNewConstraints = useCallback(() => {
-    if (window.innerWidth < 650) {
-      setChunks(4);
-    }
+    // if (window.innerWidth < 650) {
+    //   setChunks(4);
+    // }
   }, []);
 
   useEffect(() => {
