@@ -1,10 +1,15 @@
+'use client';
 import React from 'react';
-import { SectionHeading } from '..';
+import { Pagination, PaginationComponent, SectionHeading } from '..';
 import Card from '../ui/card/card';
-
+import { useRouter } from 'next/navigation';
 const ListingComponent = () => {
+  const router = useRouter();
+  const handlePageChange = (number) => {
+    console.log(number);
+  };
   return (
-    <div className="">
+    <div className="py-[40px] flex flex-col items-center gap-8 md:gap-16 px-6">
       <SectionHeading
         title={'Sail in Splendor'}
         description={
@@ -17,6 +22,13 @@ const ListingComponent = () => {
         <Card />
         <Card />
         <Card />
+      </div>
+      <div>
+        <PaginationComponent
+          currentPage={1}
+          totalPages={7}
+          onPageChange={handlePageChange}
+        />
       </div>
     </div>
   );

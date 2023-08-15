@@ -1,0 +1,41 @@
+.carouselGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  gap: 40px;
+  width: 100%;
+  overflow: hidden;
+
+  .carouselRow {
+    display: flex;
+    margin-inline: auto;
+    height: 20vh;
+    gap: 16px;
+    min-width: 1264px;
+
+    img {
+      border-radius: 4px;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+
+      &[data-span='1'] {
+        flex: 1;
+      }
+
+      &[data-span='2'] {
+        flex: 0.5;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      gap: 16px;
+      height: 15vh;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    gap: 24px;
+  }
+}

@@ -21,8 +21,8 @@ function Card() {
   const [videoModal, setVideoModal] = useState(false);
   return (
     <>
-      <div className="grid grid-cols-1 w-full md:grid-cols-3  max-w-[1200px] rounded-md mx-auto bg-[#fbfbfb]">
-        <div className="col-span-1 relative h-full  aspect-square max-h-[380px] w-full">
+      <div className="grid grid-cols-1 w-full md:grid-cols-3  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-[#fbfbfb]">
+        <div className="col-span-1 relative h-full  aspect-square max-h-[380px] w-full ">
           <Image
             src="/assets/privatejet/1.png"
             alt="privatejet"
@@ -99,17 +99,17 @@ function Card() {
               coach roof, but with a much lower, sleeker profile.
             </p>
 
-            <div className="flex justify-between w-full py-5">
-              <div>
+            <div className="flex flex-col sm:flex-row justify-between w-full py-5 gap-6">
+              <div className="flex items-center gap-2">
                 <p className="text-secondary text-sm">From</p>
-                <p className="text-primary font-normal text-xl">
+                <span className="text-primary font-normal text-xl">
                   $200{' '}
-                  <span className="text-secondary text-sm font-normala">
+                  <span className="text-secondary text-sm font-normal">
                     /Day
                   </span>
-                </p>
+                </span>
               </div>
-              <div className="flex justify-between items-center gap-2">
+              <div className="flex justify-between items-center gap-2 ">
                 <FaPhoneAlt className="text-lg mx-3" />
                 <BsWhatsapp className="text-xl mx-3" />
                 <Button>Book Now</Button>
