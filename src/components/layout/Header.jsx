@@ -68,6 +68,10 @@ const links = [
     dropdown: true,
     products: [
       {
+        name: 'Premium Jetski',
+        href: '/premium-jetski-rental',
+      },
+      {
         name: 'Premium Gold Jetski',
         href: '/premium-gold-jetski',
       },
@@ -83,25 +87,25 @@ const links = [
     dropdown: true,
     products: [
       {
-        name: 'Chauffer / Airport Transfer',
-        href: '/airport-transfer',
+        name: 'Chauffer service',
+        href: '/chauffer-service',
       },
       {
         name: 'Photo / Video Shoot',
         href: '/photo-video-shoot',
       },
-      {
-        name: 'Corporate Hire',
-        href: '/corporate-hire',
-      },
+      // {
+      //   name: 'Corporate Hire',
+      //   href: '/corporate-hire',
+      // },
       {
         name: 'Premium Desert Adventure',
         href: '/premium-desert-adventure',
       },
-      {
-        name: 'Helicopter Rentals',
-        href: '/helicopter-rentals',
-      },
+      // {
+      //   name: 'Helicopter Rentals',
+      //   href: '/helicopter-rentals',
+      // },
       {
         name: 'Private Jet Rentals',
         href: '/private-jet-rentals',
