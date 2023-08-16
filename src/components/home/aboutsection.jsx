@@ -38,7 +38,7 @@ function Aboutsection() {
             }}
           />
         </div>
-        <div className="bg-white text-black mx-20 flex-1">
+        <div className="bg-white text-black mx-6 md:mx-20 flex-1">
           <h2 className="text-teal-900 text-[42px] font-extrabold leading-10">
             RICHYLIFE <br />
             CLUB{' '}
@@ -63,10 +63,10 @@ function Aboutsection() {
         <div className="mt-10 flex flex-wrap gap-10 justify-center lg:justify-between max-w-[1000px] mx-auto">
           {data.map((e, index) => (
             <div key={index}>
-              <div className="text-emerald-600 text-[61.71px] font-black">
+              <div className="text-emerald-600 text-5xl md:text-[61.71px] font-black">
                 {e.number}
               </div>
-              <p className="text-black text-xs">{e.title}</p>
+              <p className="text-black text-sm md:text-xs">{e.title}</p>
             </div>
           ))}
         </div>
