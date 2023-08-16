@@ -1,22 +1,29 @@
-'use client';
-import Image from 'next/image';
-import React, { useState } from 'react';
-import { Button } from '../button/Button';
-import { FaPhoneAlt } from 'react-icons/fa';
-import { BsWhatsapp, BsPeople } from 'react-icons/bs';
-import { PiStarThin } from 'react-icons/pi';
-import { AiOutlinePlayCircle } from 'react-icons/ai';
-import { IoMdPhotos } from 'react-icons/io';
-import { LiaToolsSolid, LiaRulerCombinedSolid } from 'react-icons/lia';
-import { BiBadgeCheck } from 'react-icons/bi';
+"use client";
+import Image from "next/image";
+import React, { useState } from "react";
+import { Button } from "../button/Button";
+import { FaPhoneAlt } from "react-icons/fa";
+import {
+  BsWhatsapp,
+  BsPeople,
+  BsFillFuelPumpFill,
+  BsCarFrontFill,
+} from "react-icons/bs";
+import { PiStarThin } from "react-icons/pi";
+import { AiOutlinePlayCircle } from "react-icons/ai";
+import { IoMdPhotos } from "react-icons/io";
+import { LiaToolsSolid, LiaRulerCombinedSolid } from "react-icons/lia";
+import { BiBadgeCheck } from "react-icons/bi";
+import { MdOutlineAirlineSeatReclineExtra } from "react-icons/md";
+import { GiCarDoor } from "react-icons/gi";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { ModalComponent, VideoPlayer } from '@/components';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import { ModalComponent, VideoPlayer } from "@/components";
 
-function Card() {
+function Card({ variant }) {
   const [open, setOpen] = useState(false);
   const [videoModal, setVideoModal] = useState(false);
   return (
@@ -28,8 +35,8 @@ function Card() {
             alt="privatejet"
             fill
             style={{
-              objectFit: 'cover',
-              objectPosition: 'center',
+              objectFit: "cover",
+              objectPosition: "center",
             }}
           />
           <div className="absolute inset-0 flex text-[#6A7285] font-sans text-xs items-end p-5 gap-4 z-10">
@@ -67,30 +74,7 @@ function Card() {
               <PiStarThin />
               <span className="text-secondary text-xs">(5.00 rating)</span>
             </p>
-
-            <div className="py-3 flex gap-5 flex-wrap">
-              <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
-                <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
-                  <BiBadgeCheck /> 4 Star
-                </div>
-              </div>
-              <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
-                <div className="text-primary text-base flex items-center gap-2 font-medium leading-tight">
-                  <BsPeople /> 19 People
-                </div>
-              </div>
-
-              <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
-                <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
-                  <LiaToolsSolid /> 2016
-                </div>
-              </div>
-              <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
-                <div className="text-primary text-base font-medium flex items-center gap-2 leading-tight">
-                  <LiaRulerCombinedSolid /> 30&quot;ft
-                </div>
-              </div>
-            </div>
+            {variant === "car" ? <CarDetail /> : <YachtDetail />}
 
             <p className="text-secondary text-base font-normal leading-relaxed">
               Pershing 2014 Yacht is a stylish-looking sailing yacht, 30
@@ -103,7 +87,7 @@ function Card() {
               <div className="flex items-center gap-2">
                 <p className="text-secondary text-sm">From</p>
                 <span className="text-primary font-normal text-xl">
-                  $200{' '}
+                  $200{" "}
                   <span className="text-secondary text-sm font-normal">
                     /Day
                   </span>
@@ -121,7 +105,7 @@ function Card() {
       <ModalComponent open={open} setOpen={setOpen}>
         <div className="h-[50vh] max-h-[500px]">
           {videoModal ? (
-            <VideoPlayer url={'https://www.youtube.com/watch?v=XZnuFdUPIzE'} />
+            <VideoPlayer url={"https://www.youtube.com/watch?v=XZnuFdUPIzE"} />
           ) : (
             <Carousel />
           )}
@@ -133,9 +117,9 @@ function Card() {
 
 function Carousel() {
   const serviceCarousel = [
-    { slug: 'ss', source: '/assets/test/jet.png' },
-    { slug: 'ss', source: '/assets/test/jet.png' },
-    { slug: 'ss', source: '/assets/test/porch.jpg' },
+    { slug: "ss", source: "/assets/test/jet.png" },
+    { slug: "ss", source: "/assets/test/jet.png" },
+    { slug: "ss", source: "/assets/test/porch.jpg" },
   ];
   return (
     <Swiper modules={[Navigation]} navigation className="product_swiper">
@@ -147,8 +131,8 @@ function Carousel() {
             priority
             alt="car"
             style={{
-              objectFit: 'cover',
-              objectPosition: 'center',
+              objectFit: "cover",
+              objectPosition: "center",
             }}
           />
         </SwiperSlide>
@@ -157,4 +141,59 @@ function Carousel() {
   );
 }
 
+function YachtDetail() {
+  return (
+    <div className="py-3 flex gap-5 flex-wrap">
+      <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
+        <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
+          <BiBadgeCheck /> 4 Star
+        </div>
+      </div>
+      <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
+        <div className="text-primary text-base flex items-center gap-2 font-medium leading-tight">
+          <BsPeople /> 19 People
+        </div>
+      </div>
+
+      <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
+        <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
+          <LiaToolsSolid /> 2016
+        </div>
+      </div>
+      <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
+        <div className="text-primary text-base font-medium flex items-center gap-2 leading-tight">
+          <LiaRulerCombinedSolid /> 30&quot;ft
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function CarDetail() {
+  return (
+    <div className="py-3 flex gap-5 flex-wrap">
+      <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
+        <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
+          <BsFillFuelPumpFill /> Petrol
+        </div>
+      </div>
+      <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
+        <div className="text-primary text-base flex items-center gap-2 font-medium leading-tight">
+          <MdOutlineAirlineSeatReclineExtra /> 2 Seats
+        </div>
+      </div>
+
+      <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
+        <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
+          <LiaToolsSolid /> 2016
+        </div>
+      </div>
+      <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
+        <div className="text-primary text-base font-medium flex items-center gap-2 leading-tight">
+          <BsCarFrontFill /> Coupe
+        </div>
+      </div>
+    </div>
+  );
+}
 export default Card;

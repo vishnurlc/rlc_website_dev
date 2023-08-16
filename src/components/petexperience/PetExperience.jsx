@@ -1,15 +1,15 @@
-import Image from 'next/image';
-import React from 'react';
-import { SectionHeading } from '..';
-import Section2 from './Section2';
+import Image from "next/image";
+import React from "react";
+import { SectionHeading } from "..";
+import Section2 from "./Section2";
 
 const PetExperience = () => {
   return (
     <div className="relative h-auto px-6 py-9 md:p-20">
       <div className="relative z-20 max-w-[1200px] mx-auto">
         <SectionHeading
-          title={'Explore a World of Wonders'}
-          title_color={'gold'}
+          title={"Explore a World of Wonders"}
+          title_color={"gold"}
         />
         <Section2 />
       </div>
@@ -19,7 +19,7 @@ const PetExperience = () => {
           alt="exotic vip pet services"
           fill
           style={{
-            objectFit: 'cover',
+            objectFit: "cover",
           }}
         />
       </div>
