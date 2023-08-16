@@ -1,13 +1,19 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Pagination, PaginationComponent, SectionHeading } from "..";
 import Card from "../ui/card/card";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
 const ListingComponent = ({ variant }) => {
   const router = useRouter();
+
+  const params = useSearchParams();
   const handlePageChange = (number) => {
     console.log(number);
   };
+
+  useEffect(() => {
+    console.log(params.get("key"));
+  }, [params]);
   return (
     <div className="py-[40px] flex flex-col items-center gap-8 md:gap-16 px-6">
       <SectionHeading

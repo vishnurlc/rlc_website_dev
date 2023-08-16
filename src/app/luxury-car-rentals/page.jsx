@@ -1,4 +1,5 @@
 import { HeroSection, ListingComponent, SectionHeading } from "@/components";
+import Filter from "@/components/ui/filter/filter";
 import MasonryGrid from "@/components/yachtrental/PictureGallery";
 import React from "react";
 // import dynamic from 'next/dynamic';
@@ -18,6 +19,7 @@ const page = () => {
         type={"video"}
         url={"/assets/home/hero.mp4"}
       />
+      <Filter />
       <div className="mx-auto max-w-[1200px]">
         <ListingComponent variant={"car"} />
       </div>
