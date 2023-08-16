@@ -36,7 +36,7 @@ function Filter() {
 
   return (
     <div className="p-10">
-      <div className="flex justify-end gap-5">
+      <div className="flex justify-end md:gap-5 overscroll-auto ">
         <div
           className={`${
             bodyTypeOpen ? "bg-teal-900 bg-opacity-10 text-white" : ""
@@ -46,7 +46,7 @@ function Filter() {
           <div className="text-center text-black text-sm font-medium leading-tight inline-flex items-center gap-3">
             Body type <BiChevronDown />
           </div>
-          <div className="absolute top-11">
+          <div className="absolute top-11 z-50 bg-white">
             <AnimatePresence>
               {bodyTypeOpen && (
                 <motion.div
@@ -82,7 +82,7 @@ function Filter() {
           <div className="text-center text-black text-sm font-medium leading-tight inline-flex items-center gap-3">
             Price <BiChevronDown />
           </div>
-          <div className="absolute top-11">
+          <div className="absolute top-11 bg-white">
             <AnimatePresence>
               {priceOpen && (
                 <motion.div
