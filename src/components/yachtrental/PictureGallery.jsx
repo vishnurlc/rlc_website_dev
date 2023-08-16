@@ -61,7 +61,7 @@ const MasonryGrid = () => {
         </div>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-12  gap-2">
-        <div className="w-full relative h-[200px] col-span-2 md:col-span-3">
+        <div className="w-full relative h-[200px] col-span-2 md:col-span-2">
           <Image
             src={images[4]}
             fill
@@ -71,7 +71,7 @@ const MasonryGrid = () => {
             }}
           />
         </div>
-        <div className="w-full relative h-[200px] col-span-1 md:col-span-2">
+        <div className="w-full relative h-[200px] col-span-1 md:col-span-3">
           <Image
             src={images[5]}
             fill
@@ -81,7 +81,7 @@ const MasonryGrid = () => {
             }}
           />
         </div>
-        <div className="w-full relative h-[200px] col-span-1 md:col-span-3">
+        <div className="w-full relative h-[200px] col-span-1 md:col-span-4">
           <Image
             src={images[6]}
             fill
@@ -91,7 +91,7 @@ const MasonryGrid = () => {
             }}
           />
         </div>
-        <div className="w-full relative h-[200px] col-span-2 md:col-span-4">
+        <div className="w-full relative h-[200px] col-span-2 md:col-span-3">
           <Image
             src={images[7]}
             fill

@@ -31,7 +31,7 @@ const Herosection = ({ url, type, posterurl }) => {
           />
         )}
 
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 h-fit">
+        <div className="absolute bottom-[10vh] left-1/2 -translate-x-1/2 z-10 h-fit">
           <Button variant={'whiteborder'} href="#services">
             Book Now
           </Button>
