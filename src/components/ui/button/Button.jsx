@@ -1,17 +1,17 @@
-import Link from 'next/link';
-import clsx from 'clsx';
-import { missingClass } from '@/lib/utils';
+"use client";
+import Link from "next/link";
+import clsx from "clsx";
+import { missingClass } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 export function Button({
-  as = 'button',
-  className = '',
-  variant = 'primary',
-  width = 'auto',
+  as = "button",
+  className = "",
+  variant = "primary",
+  width = "auto",
   ...props
 }) {
-  const Component = props?.href ? Link : as;
-
-  const baseButtonClasses = 'font-medium text-center py-2 px-6';
+  const baseButtonClasses = "font-medium text-center py-2 px-6";
 
   const variants = {
     primary: `${baseButtonClasses} bg-teal-900 text-white`,
@@ -20,15 +20,24 @@ export function Button({
   };
 
   const widths = {
-    auto: 'w-auto',
-    full: 'w-full',
+    auto: "w-auto",
+    full: "w-full",
   };
 
   const styles = clsx(
-    missingClass(className, 'bg-') && variants[variant],
-    missingClass(className, 'w-') && widths[width],
+    missingClass(className, "bg-") && variants[variant],
+    missingClass(className, "w-") && widths[width],
     className
   );
 
-  return <Component href={''} className={styles} {...props} />;
+  return (
+    <motion.button
+      href={""}
+      className={styles}
+      {...props}
+      whileHover={{
+        scale: 1.05,
+      }}
+    />
+  );
 }

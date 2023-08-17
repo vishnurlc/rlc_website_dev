@@ -1,16 +1,17 @@
-'use client';
-import Link from 'next/link';
-import React, { useState } from 'react';
-import { BsWhatsapp } from 'react-icons/bs';
+"use client";
+import Link from "next/link";
+import React, { useState } from "react";
+import { BsWhatsapp } from "react-icons/bs";
+import { Button } from "../ui/button/Button";
 
 const FormComponent = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
   });
 
   const handleChange = (e) => {
@@ -83,20 +84,21 @@ const FormComponent = () => {
           />
         </div>
         <div className="flex gap-8 items-center justify-center mt-8 md:mt-16">
-          <button
+          <Button
             type="submit"
             className="px-4 md:px-10 py-2 md:py-3 text-white font-medium bg-primary border border-solid border-primary"
           >
             Book Now
-          </button>
-          <Link
-            href={'#'}
+          </Button>
+          <Button
+            variant="secondary"
+            href={"#"}
             type="submit"
             className="px-4 md:px-10 py-2 md:py-3 flex items-center justify-center font-medium border border-solid border-primary text-primary gap-2"
           >
             <BsWhatsapp />
             <span>Talk to us</span>
-          </Link>
+          </Button>
         </div>
       </form>
     </div>

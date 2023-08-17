@@ -112,3 +112,12 @@
     rgba(17, 22, 24, 1) 100%
   );
 }
+
+
+.btn_hover:hover{
+  background-color: #7e7d7d;
+  color: #dca24b;
+  scale: 1.05;
+  transition: background-color 0.3s, transform 0.3s;
+
+}
