@@ -22,10 +22,13 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { ModalComponent, VideoPlayer } from "@/components";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 function Card({ variant }) {
   const [open, setOpen] = useState(false);
   const [videoModal, setVideoModal] = useState(false);
+  const path = usePathname();
   return (
     <>
       <div className="grid grid-cols-1 w-full md:grid-cols-3  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-[#fbfbfb]">
@@ -64,7 +67,7 @@ function Card({ variant }) {
         <div className="p-5 col-span-1 md:col-span-2">
           <div className="text-black h-full flex flex-col items-start justify-between">
             <h3 className="text-primary text-2xl font-bold leading-[29.04px]">
-              Pershing 2018 Yacht
+              <Link href={`${path}/1`}>Pershing 2018 Yacht</Link>
             </h3>
             <p className="py-2 flex gap-1 items-center ">
               <PiStarThin />
