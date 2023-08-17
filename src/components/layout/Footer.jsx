@@ -1,60 +1,51 @@
-import React from "react";
-import { SectionHeading } from "..";
-import Image from "next/image";
+import React from 'react';
+import { SectionHeading } from '..';
+import Image from 'next/image';
 
 const Footer = () => {
   const data = {
     images: [
-      "/assets/test/farrari.png",
-      "/assets/test/farrari.png",
-      "/assets/test/farrari.png",
-      "/assets/test/farrari.png",
-      "/assets/test/farrari.png",
+      '/assets/test/farrari.png',
+      '/assets/test/farrari.png',
+      '/assets/test/farrari.png',
+      '/assets/test/farrari.png',
+      '/assets/test/farrari.png',
     ],
     navigation: [
       {
-        title: "Rent a car",
-        link: "",
+        title: 'Rent a car',
+        link: '',
       },
       {
-        title: "Laxury Yacht Rentals",
-        link: "",
+        title: 'Laxury Yacht Rentals',
+        link: '',
       },
       {
-        title: "Premium Gold Jetski",
-        link: "",
+        title: 'Premium Gold Jetski',
+        link: '',
       },
       {
-        title: "Exoic Pet VIP Services",
-        link: "",
+        title: 'Exoic Pet VIP Services',
+        link: '',
       },
       {
-        title: "Services",
-        link: "",
+        title: 'Services',
+        link: '',
       },
       {
-        title: "Contact Us",
-        link: "",
+        title: 'Contact Us',
+        link: '',
       },
     ],
   };
   return (
-    <footer>
-      {/* <SectionHeading
+    <footer className="pt-12">
+      <SectionHeading
         title={'Follow us on Instagram'}
         description={
           'Accumsan sit amet nulla facilisi morbi tempus. Suscipit tellus mauris a diam maecenas sed enim ut sem'
         }
-      /> */}
-
-      <div className="text-center text-teal-900 text-5xl font-extrabold leading-loose">
-        Follow Us on Instagram
-      </div>
-      <div className="text-center text-gray-600 text-base font-normal leading-tight">
-        Accumsan sit amet nulla facilisi morbi tempus. Suscipit
-        <br />
-        tellus mauris a diam maecenas sed enim ut sem
-      </div>
+      />
 
       {/* images */}
       <div className="flex">

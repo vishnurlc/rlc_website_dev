@@ -91,24 +91,28 @@ const links = [
         href: '/chauffer-service',
       },
       {
-        name: 'Photo / Video Shoot',
-        href: '/photo-video-shoot',
+        name: 'Premium Jetski',
+        href: '/premium-jetski-rental',
       },
-      // {
-      //   name: 'Corporate Hire',
-      //   href: '/corporate-hire',
-      // },
+      {
+        name: 'Premium Gold Jetski',
+        href: '/premium-gold-jetski',
+      },
       {
         name: 'Premium Desert Adventure',
         href: '/premium-desert-adventure',
       },
-      // {
-      //   name: 'Helicopter Rentals',
-      //   href: '/helicopter-rentals',
-      // },
       {
         name: 'Private Jet Rentals',
         href: '/private-jet-rentals',
+      },
+      {
+        name: 'Luxury Yacht Rentals',
+        href: '/luxury-yacht-rentals',
+      },
+      {
+        name: 'Rent A Car',
+        href: '/luxury-car-rentals',
       },
     ],
   },
