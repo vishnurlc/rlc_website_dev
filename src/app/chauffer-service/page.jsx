@@ -32,7 +32,7 @@ const page = () => {
         Chauffer & Airport Transfer Services - Richylife Club
       </h1>
       <HeroSection
-        posterurl={"/assets/home/heroposter.png"}
+        posterurl={"/assets/chauffer/hero.png"}
         type={"video"}
         alt="Luxury Car rentals"
         url={"/assets/home/hero.mp4"}
