@@ -1,4 +1,5 @@
 import { HeroSection, ListingComponent, SectionHeading } from "@/components";
+import Marquee from "@/components/marquee/Marquee";
 import Filter from "@/components/ui/filter/filter";
 import MasonryGrid from "@/components/yachtrental/PictureGallery";
 import React from "react";
@@ -11,6 +12,13 @@ import React from "react";
 //   }
 // );
 const page = () => {
+  const carLogos = [
+    "/assets/petpage/bear.png",
+    "/assets/petpage/bear.png",
+    "/assets/petpage/bear.png",
+    "/assets/petpage/bear.png",
+    "/assets/petpage/bear.png",
+  ];
   return (
     <main>
       <h1 className="sr-only ">Luxury Car Rentals - Richylife Club</h1>
@@ -22,6 +30,9 @@ const page = () => {
       <Filter />
       <div className="mx-auto max-w-[1200px]">
         <ListingComponent variant={"car"} />
+      </div>
+      <div className="container mx-auto mt-10">
+        <Marquee images={carLogos} />
       </div>
       <div className=" my-16 flex flex-col gap-9 md:gap-16">
         <SectionHeading
