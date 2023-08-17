@@ -18,7 +18,7 @@ const page = () => {
             description={' Unveiling the Ultimate Thrills and Hourly Rates'}
             title_color={'gold'}
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 md:mt-16">
             <div className="">
               <div className="text-white mb-7">
                 <h2 className="text-4xl mb-6">
@@ -38,7 +38,7 @@ const page = () => {
               </div>
               <AnimatedBtn text={'Book Now'} />
             </div>
-            <div className="relative w-full h-full">
+            <div className="relative w-full h-full min-h-[200px]">
               <Image
                 src={'/assets/premiumgoldjetski/goldenjetski.png'}
                 alt="Yamaha Golden Jetski "
