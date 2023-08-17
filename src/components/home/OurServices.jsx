@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import CarouselSlide from './CarouselSlide';
 import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
+import { Loader } from '..';
 
 const getData = async () => {
   try {
@@ -61,57 +62,70 @@ const Ourservices = () => {
           </div>
         </div>
         <div>
-          {data.length > 0 && (
-            <Swiper
-              effect="coverflow"
-              grabCursor={true}
-              modules={[EffectCoverflow, Pagination, Navigation]}
-              centeredSlides={true}
-              loop={true}
-              slidesPerView="auto"
-              pagination={{
-                clickable: true,
-                el: '.swiper-pagination-el',
-                bulletActiveClass: 'serviceactivebullet',
-                bulletClass: 'servicebullet',
-              }}
-              navigation={{
-                nextEl: '.swiper-next-el',
-                prevEl: '.swiper-prev-el',
-              }}
-              className="max-w-[1200px] mx-auto p-5 serviceswiper"
-              coverflowEffect={{
-                rotate: 0,
-                stretch: 0,
-                depth: 300,
-                modifier: 5,
-                slideShadows: false,
-              }}
-              initialSlide={2}
-            >
-              {data.map((service, index) => (
-                <SwiperSlide className="serviceslide" key={index}>
-                  <CarouselSlide
-                    url={
-                      service.attributes.image.data.attributes.formats.medium
-                        .url || service.attributes.image.data.attributes.url
-                    }
-                    title={service.attributes.name}
-                    price={service.attributes.price}
+          {data.length > 0 ? (
+            <>
+              <Swiper
+                effect="coverflow"
+                grabCursor={true}
+                modules={[EffectCoverflow, Pagination, Navigation]}
+                centeredSlides={true}
+                loop={true}
+                slidesPerView="auto"
+                pagination={{
+                  clickable: true,
+                  el: '.swiper-pagination-el',
+                  bulletActiveClass: 'serviceactivebullet',
+                  bulletClass: 'servicebullet',
+                }}
+                navigation={{
+                  nextEl: '.swiper-next-el',
+                  prevEl: '.swiper-prev-el',
+                }}
+                className="max-w-[1200px] mx-auto p-5 serviceswiper"
+                coverflowEffect={{
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 300,
+                  modifier: 5,
+                  slideShadows: false,
+                }}
+                initialSlide={2}
+              >
+                {data.map((service, index) => (
+                  <SwiperSlide className="serviceslide" key={index}>
+                    <CarouselSlide
+                      url={
+                        service.attributes.image.data.attributes.formats.medium
+                          .url || service.attributes.image.data.attributes.url
+                      }
+                      title={service.attributes.name}
+                      price={service.attributes.price}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+
+              <div className="flex gap-5 justify-center items-center mt-20 ">
+                <div className="swiper-prev-el">
+                  <BsArrowLeftCircle
+                    size={24}
+                    color="white"
+                    cursor={'pointer'}
                   />
-                </SwiperSlide>
-              ))}
-            </Swiper>
+                </div>
+                <div className="swiper-pagination-el !w-fit flex items-center"></div>
+                <div className="swiper-next-el">
+                  <BsArrowRightCircle
+                    size={24}
+                    color="white"
+                    cursor={'pointer'}
+                  />
+                </div>
+              </div>
+            </>
+          ) : (
+            <Loader />
           )}
-          <div className="flex gap-5 justify-center items-center mt-20 ">
-            <div className="swiper-prev-el">
-              <BsArrowLeftCircle size={24} color="white" cursor={'pointer'} />
-            </div>
-            <div className="swiper-pagination-el !w-fit flex items-center"></div>
-            <div className="swiper-next-el">
-              <BsArrowRightCircle size={24} color="white" cursor={'pointer'} />
-            </div>
-          </div>
         </div>
       </div>
     </div>

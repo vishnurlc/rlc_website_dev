@@ -23,3 +23,5 @@ export { default as HeroCarousel } from './ui/herocarousel/Herocarousel';
 export { default as AnimatedCarousel } from './yachtrental/AnimatedCarousel';
 
 export { default as PetExperience } from './petexperience/PetExperience';
+
+export { default as Loader } from './ui/loader/Loader';
