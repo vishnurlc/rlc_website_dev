@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '../ui/button/Button';
 import Image from 'next/image';
 
-const Herosection = ({ url, type, posterurl }) => {
+const Herosection = ({ url, type, posterurl, alt }) => {
   return (
     <div className="h-screen w-full relative">
       <div className="w-full h-full">
@@ -23,7 +23,7 @@ const Herosection = ({ url, type, posterurl }) => {
           <Image
             src={url}
             fill
-            alt="Hero Section Image"
+            alt={alt || 'Hero Section Image'}
             style={{
               objectFit: 'cover',
               objectPosition: 'center',

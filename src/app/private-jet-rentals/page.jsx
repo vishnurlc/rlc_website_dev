@@ -7,7 +7,10 @@ const page = () => {
   return (
     <main>
       <h1 className="sr-only ">Private Jet Rentals - Richylife Club</h1>
-      <HeroSection url={'/assets/privatejet/bannerimg.png'} />
+      <HeroSection
+        url={'/assets/privatejet/bannerimg.png'}
+        alt="Private Jet Rentals"
+      />
 
       <div className="py-[43px] md:py-[86px]">
         <SectionHeading

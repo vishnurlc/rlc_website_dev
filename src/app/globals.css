@@ -103,3 +103,12 @@
   width: 0; /* Webkit */
   height: 0; /* Webkit */
 }
+.jetskigradient {
+  background: linear-gradient(
+    180deg,
+    rgba(17, 22, 24, 1) 0%,
+    rgba(0, 0, 0, 0.2) 10%,
+    rgba(0, 0, 0, 0.2) 85%,
+    rgba(17, 22, 24, 1) 100%
+  );
+}

@@ -2,7 +2,7 @@ import React from 'react';
 
 const SectionHeading = ({ title, description, title_color }) => {
   return (
-    <div className="text-center max-w-[475px] mx-auto">
+    <div className="text-center max-w-[600px] mx-auto px-6">
       <h3
         className={`${
           title_color ? `text-${title_color}` : 'text-primary'

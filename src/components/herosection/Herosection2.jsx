@@ -36,11 +36,11 @@ const Herosection2 = ({
           }}
         />
       )}
-      <div className="absolute z-10 top-3/4 md:top-1/2 left-[5vw] text-white -translate-y-1/2 p-8 backdrop-blur-[2px]  ">
+      <div className="absolute z-10 top-3/4 md:top-1/2 left-[5vw] text-white -translate-y-1/2 p-4 md:p-8 backdrop-blur-[2px]  ">
         <span className="text-gold text-opacity-70 font-inter text-sm md:text-lg">
           {subheading}
         </span>
-        <h1 className="text-white text-5xl md:text-[64px] leading-tight font-poppins font-bold">
+        <h1 className="text-white text-4xl md:text-[64px] leading-tight font-poppins font-bold">
           {heading1} <br /> {heading2}
         </h1>
         <button className="bg-primary px-6 py-2 mt-6 bg-opacity-80 rounded-sm text-gold border border-solid border-gold border-opacity-50">

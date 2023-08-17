@@ -25,6 +25,7 @@ const page = () => {
       <HeroSection
         posterurl={"/assets/home/heroposter.png"}
         type={"video"}
+        alt="Luxury Car rentals"
         url={"/assets/home/hero.mp4"}
       />
       <Filter />
