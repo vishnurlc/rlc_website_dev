@@ -12,7 +12,7 @@ export default function Home() {
       <HeroSection
         posterurl={'/assets/home/heroposter.png'}
         type={'video'}
-        url={'/assets/home/hero.mp4'}
+        url={'/assets/home/bannervideo.mp4'}
       />
       <OurServices />
       <Aboutsection />
