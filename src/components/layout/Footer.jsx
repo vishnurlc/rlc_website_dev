@@ -1,10 +1,17 @@
 import React from 'react';
 import { SectionHeading } from '..';
 import Image from 'next/image';
+import FooterInstagram from './FooterInstagram';
 
 const Footer = () => {
   const data = {
     images: [
+      '/assets/test/farrari.png',
+      '/assets/test/farrari.png',
+      '/assets/test/farrari.png',
+      '/assets/test/farrari.png',
+      '/assets/test/farrari.png',
+      '/assets/test/farrari.png',
       '/assets/test/farrari.png',
       '/assets/test/farrari.png',
       '/assets/test/farrari.png',
@@ -48,12 +55,8 @@ const Footer = () => {
       />
 
       {/* images */}
-      <div className="flex">
-        {data.images.map((e, index) => (
-          <div key={index}>
-            <Image src={e} width={300} height={200} alt="car" />
-          </div>
-        ))}
+      <div className="overflow-hidden w-full">
+        <FooterInstagram images={data.images} />
       </div>
 
       {/* footer content */}
