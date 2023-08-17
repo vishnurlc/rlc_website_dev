@@ -6,19 +6,19 @@ import React from 'react';
 
 const locations = [
   {
-    imageSrc: '/assets/jetskipage/jumeirah.png', // Replace with actual image path
+    url: '/assets/jetskipage/jumeirah.png', // Replace with actual image path
     location: 'Jumeriah',
-    startingPrice: 150,
+    price: 150,
   },
   {
-    imageSrc: '/assets/jetskipage/jumeirah.png', // Replace with actual image path
+    url: '/assets/jetskipage/jumeirah.png', // Replace with actual image path
     location: 'Burj Al Arab',
-    startingPrice: 250,
+    price: 250,
   },
   {
-    imageSrc: '/assets/jetskipage/jumeirah.png', // Replace with actual image path
+    url: '/assets/jetskipage/jumeirah.png', // Replace with actual image path
     location: 'Atlantis View',
-    startingPrice: 180,
+    price: 180,
   },
 ];
 
@@ -156,7 +156,7 @@ const page = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 md:mt-16">
             <div className="">
               <div className="text-white mb-7">
                 <h2 className="text-4xl mb-6">
@@ -176,7 +176,7 @@ const page = () => {
               </div>
               <AnimatedBtn text={'Book Now'} />
             </div>
-            <div className="relative w-full h-full">
+            <div className="relative w-full h-full min-h-[250px]">
               <Image
                 src={'/assets/premiumgoldjetski/goldenjetski.png'}
                 alt="Yamaha Golden Jetski "
@@ -194,13 +194,31 @@ const page = () => {
               Our Premium Locations
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-              {locations.map((location, index) => (
-                <LocationCard
-                  key={index}
-                  imageSrc={location.imageSrc}
-                  location={location.location}
-                  startingPrice={location.startingPrice}
-                />
+              {locations.map((item, index) => (
+                <div className="relative  w-full aspect-[357/406]" key={index}>
+                  <Image
+                    src={item.url}
+                    alt={item.location}
+                    fill
+                    style={{
+                      objectFit: 'cover',
+                    }}
+                  />
+                  <div className="absolute p-4 text-white w-full h-fit bg-black bg-opacity-60 bottom-0 left-0 right-0 z-10">
+                    <div>
+                      <h2 className="uppercase font-medium tracking-wide text-xl font-poppins">
+                        {item.location}
+                      </h2>
+                      <span className="text-gray-400 text-sm">
+                        Starting from AED{item.price}
+                      </span>
+                    </div>
+
+                    <button className="mt-4 px-4 py-2 bg-primary text-gold">
+                      Book Now
+                    </button>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
