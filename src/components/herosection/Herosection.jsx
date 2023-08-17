@@ -16,7 +16,7 @@ const Herosection = ({ url, type, posterurl, alt }) => {
             poster={posterurl}
             className="h-[100vh] absolute object-cover top-0 w-full "
           >
-            <source src={''} type="video/mp4" />
+            <source src={url} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         ) : (
