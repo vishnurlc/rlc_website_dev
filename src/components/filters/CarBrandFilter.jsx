@@ -24,14 +24,14 @@ const loadOptions = (inputValue, callback) => {
   });
 };
 
-const CarBrandFilter = ({ setFilters }) => {
+const CarBrandFilter = ({ handleFilters }) => {
   return (
     <AsyncSelect
       cacheOptions
       defaultOptions
-      //   onChange={(selectedOption) => {
-      //     setFilters({ name: 'type', value: selectedOption?.value });
-      //   }}
+      onChange={(selectedOption) => {
+        handleFilters({ name: 'brand', value: selectedOption?.value });
+      }}
       placeholder={
         <span className="text-gray-400 font-thin text-sm">Brand</span>
       }

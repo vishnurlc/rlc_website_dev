@@ -40,19 +40,12 @@ const data = [
   },
 ];
 
-const PriceFilter = ({ setFilters }) => {
+const PriceFilter = ({ handleFilters }) => {
   const handleChange = (option) => {
     if (option) {
-      console.log(option);
-      //   setFilters({
-      //     name: 'price',
-      //     value: option.value,
-      //   });
+      handleFilters({ name: 'price', value: option?.value });
     } else {
-      //   setFilters({
-      //     name: 'price',
-      //     value: '',
-      //   });
+      handleFilters({ name: 'price', value: '' });
     }
   };
 
