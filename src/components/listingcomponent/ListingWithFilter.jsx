@@ -6,7 +6,7 @@ import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import CarbodyFilter from '../filters/CarBodyFilter';
 import CarBrandFilter from '../filters/CarBrandFilter';
 import PriceFilter from '../filters/PriceFilter';
-const ListingComponent = ({ variant }) => {
+const ListingComponent = ({ variant, title, description }) => {
   const router = useRouter();
 
   const params = useSearchParams();
@@ -24,12 +24,7 @@ const ListingComponent = ({ variant }) => {
         <CarBrandFilter />
         <PriceFilter />
       </div>
-      <SectionHeading
-        title={'Sail in Splendor'}
-        description={
-          'Chart Your Course to Unparalleled Luxury with our Exclusive Yachts'
-        }
-      />
+      <SectionHeading title={title} description={description} />
       <div className="flex flex-col gap-8 w-full">
         <Card variant={variant} />
         <Card variant={variant} />

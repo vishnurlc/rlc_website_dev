@@ -1,15 +1,13 @@
-import { HeroSection, ListingComponent, SectionHeading } from '@/components';
+import {
+  HeroSection,
+  ListingComponent,
+  SectionHeading,
+  YachtListing,
+} from '@/components';
 import Filter from '@/components/ui/filter/filter';
 import MasonryGrid from '@/components/yachtrental/PictureGallery';
 import React from 'react';
-// import dynamic from 'next/dynamic';
-// const DynamicAnimatedCarousel = dynamic(
-//   () => import('@/components/yachtrental/AnimatedCarousel'),
-//   {
-//     loading: () => <div>Loading...</div>,
-//     ssr: false,
-//   }
-// );
+
 const page = () => {
   return (
     <main>
@@ -20,9 +18,8 @@ const page = () => {
         alt="Luxury Yacht Rental"
         url={'/assets/home/hero.mp4'}
       />
-      <Filter />
       <div className="mx-auto max-w-[1200px]">
-        <ListingComponent />
+        <YachtListing />
       </div>
       <div className=" my-16 flex flex-col gap-9 md:gap-16">
         <SectionHeading
@@ -32,25 +29,6 @@ const page = () => {
           }
         />
 
-        {/* <DynamicAnimatedCarousel
-          data={[
-            '/assets/home/heroposter.png',
-            '/assets/home/heroposter.png',
-            '/assets/home/heroposter.png',
-            '/assets/home/heroposter.png',
-            '/assets/home/heroposter.png',
-            '/assets/home/heroposter.png',
-            '/assets/home/heroposter.png',
-            '/assets/home/heroposter.png',
-            '/assets/home/heroposter.png',
-            '/assets/home/heroposter.png',
-            '/assets/home/heroposter.png',
-            '/assets/home/heroposter.png',
-            '/assets/home/heroposter.png',
-            '/assets/home/heroposter.png',
-            '/assets/home/heroposter.png',
-          ]}
-        /> */}
         <MasonryGrid />
       </div>
     </main>
