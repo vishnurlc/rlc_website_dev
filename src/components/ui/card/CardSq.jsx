@@ -5,7 +5,7 @@ function CardSq({ key, title }) {
   return (
     <div key={key} className="relative  w-full aspect-[357/406]">
       <Image
-        src={"/assets/home/heroposter.png"}
+        src={"/assets/chauffer/hero.png"}
         alt={"sss"}
         fill
         style={{

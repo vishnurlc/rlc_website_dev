@@ -1,61 +1,56 @@
-import React from 'react';
-import { SectionHeading } from '..';
-import Image from 'next/image';
-import FooterInstagram from './FooterInstagram';
+import React from "react";
+import { SectionHeading } from "..";
+import Image from "next/image";
+import FooterInstagram from "./FooterInstagram";
 
 const Footer = () => {
   const data = {
     images: [
-      '/assets/test/farrari.png',
-      '/assets/test/farrari.png',
-      '/assets/test/farrari.png',
-      '/assets/test/farrari.png',
-      '/assets/test/farrari.png',
-      '/assets/test/farrari.png',
-      '/assets/test/farrari.png',
-      '/assets/test/farrari.png',
-      '/assets/test/farrari.png',
-      '/assets/test/farrari.png',
-      '/assets/test/farrari.png',
+      "/assets/footer/1.png",
+      "/assets/footer/2.png",
+      "/assets/footer/3.png",
+      "/assets/footer/4.png",
+      "/assets/footer/1.png",
+      "/assets/footer/2.png",
     ],
     navigation: [
       {
-        title: 'Rent a car',
-        link: '',
+        title: "Rent a car",
+        link: "",
       },
       {
-        title: 'Laxury Yacht Rentals',
-        link: '',
+        title: "Laxury Yacht Rentals",
+        link: "",
       },
       {
-        title: 'Premium Gold Jetski',
-        link: '',
+        title: "Premium Gold Jetski",
+        link: "",
       },
       {
-        title: 'Exoic Pet VIP Services',
-        link: '',
+        title: "Exoic Pet VIP Services",
+        link: "",
       },
       {
-        title: 'Services',
-        link: '',
+        title: "Services",
+        link: "",
       },
       {
-        title: 'Contact Us',
-        link: '',
+        title: "Contact Us",
+        link: "",
       },
     ],
   };
   return (
     <footer className="pt-12">
       <SectionHeading
-        title={'Follow us on Instagram'}
+        title={"Follow us on Instagram"}
         description={
-          'Accumsan sit amet nulla facilisi morbi tempus. Suscipit tellus mauris a diam maecenas sed enim ut sem'
+          "Accumsan sit amet nulla facilisi morbi tempus. Suscipit tellus mauris a diam maecenas sed enim ut sem"
         }
       />
 
       {/* images */}
-      <div className="overflow-hidden w-full">
+      <div className="overflow-hidden w-full mt-5">
         <FooterInstagram images={data.images} />
       </div>
 

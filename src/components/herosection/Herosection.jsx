@@ -1,13 +1,14 @@
-'use client';
-import React from 'react';
-import { Button } from '../ui/button/Button';
-import Image from 'next/image';
+"use client";
+import React from "react";
+import { Button } from "../ui/button/Button";
+import Image from "next/image";
+import AnimatedBtn from "../premiumjetski/AnimatedBtn";
 
 const Herosection = ({ url, type, posterurl, alt }) => {
   return (
     <div className="h-screen w-full relative">
       <div className="w-full h-full">
-        {type === 'video' ? (
+        {type === "video" ? (
           <video
             playsInline
             autoPlay
@@ -23,16 +24,16 @@ const Herosection = ({ url, type, posterurl, alt }) => {
           <Image
             src={url}
             fill
-            alt={alt || 'Hero Section Image'}
+            alt={alt || "Hero Section Image"}
             style={{
-              objectFit: 'cover',
-              objectPosition: 'center',
+              objectFit: "cover",
+              objectPosition: "center",
             }}
           />
         )}
 
         <div className="absolute bottom-[10vh] left-1/2 -translate-x-1/2 z-10 h-fit">
-          <Button variant={'whiteborder'} href="#services">
+          <Button variant={"whiteborder"} href="#services">
             Book Now
           </Button>
         </div>

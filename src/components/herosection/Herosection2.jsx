@@ -1,5 +1,6 @@
-import Image from 'next/image';
-import React from 'react';
+import Image from "next/image";
+import React from "react";
+import { Button } from "../ui/button/Button";
 
 const Herosection2 = ({
   type,
@@ -13,7 +14,7 @@ const Herosection2 = ({
 }) => {
   return (
     <div className="w-full h-screen md:h-[90vh] relative">
-      {type === 'video' ? (
+      {type === "video" ? (
         <video
           playsInline
           autoPlay
@@ -22,7 +23,7 @@ const Herosection2 = ({
           poster={posterurl}
           className="h-full absolute object-cover top-0 w-full "
         >
-          <source src={''} type="video/mp4" />
+          <source src={""} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       ) : (
@@ -31,8 +32,8 @@ const Herosection2 = ({
           fill
           alt="Hero Section Image"
           style={{
-            objectFit: 'cover',
-            objectPosition: 'center',
+            objectFit: "cover",
+            objectPosition: "center",
           }}
         />
       )}
@@ -43,9 +44,9 @@ const Herosection2 = ({
         <h1 className="text-white text-4xl md:text-[64px] leading-tight font-poppins font-bold">
           {heading1} <br /> {heading2}
         </h1>
-        <button className="bg-primary px-6 py-2 mt-6 bg-opacity-80 rounded-sm text-gold border border-solid border-gold border-opacity-50">
+        <Button className="bg-primary px-6 py-2 mt-6 bg-opacity-80 rounded-sm text-gold border border-solid border-gold border-opacity-50">
           {btntext}
-        </button>
+        </Button>
       </div>
       {overlay === 1 ? (
         <div className="absolute inset-0 select-none z-0 bg-[#625A4A] bg-opacity-50"></div>
@@ -54,7 +55,7 @@ const Herosection2 = ({
           className="absolute inset-0 select-none z-1 "
           style={{
             background:
-              'linear-gradient(0deg, #162428 0%, rgba(22, 36, 40, 0.00) 100%)',
+              "linear-gradient(0deg, #162428 0%, rgba(22, 36, 40, 0.00) 100%)",
           }}
         ></div>
       )}
