@@ -162,7 +162,7 @@ export default function Header() {
 
   return (
     <header
-      className="fixed w-screen top-0 z-20 "
+      className="fixed w-screen top-0 z-50 "
       style={{
         background:
           headerType === 1 || mobileMenuOpen

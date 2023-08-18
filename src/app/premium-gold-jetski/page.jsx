@@ -24,7 +24,7 @@ const page = () => {
                 <h2 className="text-4xl mb-6">
                   Luxury and Speed
                   <br />
-                  Yamaha's Golden Jetski
+                  Yamaha&apos;s Golden Jetski
                 </h2>
                 <p className="text-gray-500 text-base tracking-wide ">
                   Introducing the epitome of aquatic opulence - the Yamaha

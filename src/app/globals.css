@@ -113,9 +113,8 @@
 }
 
 .react-select-container {
-  flex: 1; /* This will make all buttons take equal width */
-  min-width: 200px; /* Minimum width for the buttons */
-  max-width: 300px;
+  width: 200px;
+  min-width: 150px;
   border-radius: 25px;
 }
 
@@ -124,6 +123,9 @@
   box-shadow: none !important;
   border-radius: 50px !important;
   border-color: #cbcbcb !important;
+}
+.react-select__single-value {
+  color: #7e7d7d !important;
 }
 
 .btn_hover:hover {

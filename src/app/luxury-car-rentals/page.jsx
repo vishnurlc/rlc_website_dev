@@ -21,7 +21,13 @@ const page = () => {
         url={'/assets/home/hero.mp4'}
       />
       <div className="mx-auto max-w-[1200px]">
-        <ListingComponent variant={'car'} />
+        <ListingComponent
+          variant={'car'}
+          title={'Crafting Driving Experiences'}
+          description={
+            'Choose from Our Handpicked Selection of Luxurious Cars for an Unforgettable Ride'
+          }
+        />
       </div>
       <div className="container mx-auto mt-10">
         <Marquee images={carLogos} />
