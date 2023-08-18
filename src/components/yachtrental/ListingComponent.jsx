@@ -1,8 +1,11 @@
-"use client";
-import React, { useEffect } from "react";
-import { Pagination, PaginationComponent, SectionHeading } from "..";
-import Card from "../ui/card/card";
-import { useParams, useRouter, useSearchParams } from "next/navigation";
+'use client';
+import React, { useEffect } from 'react';
+import { Pagination, PaginationComponent, SectionHeading } from '..';
+import Card from '../ui/card/card';
+import { useParams, useRouter, useSearchParams } from 'next/navigation';
+import CarbodyFilter from '../filters/CarBodyFilter';
+import CarBrandFilter from '../filters/CarBrandFilter';
+import PriceFilter from '../filters/PriceFilter';
 const ListingComponent = ({ variant }) => {
   const router = useRouter();
 
@@ -12,22 +15,27 @@ const ListingComponent = ({ variant }) => {
   };
 
   useEffect(() => {
-    console.log(params.get("key"));
+    console.log(params.get('key'));
   }, [params]);
   return (
     <div className="py-[40px] flex flex-col items-center gap-8 md:gap-16 px-6">
+      <div className=" flex items-end justify-end gap-5">
+        <CarbodyFilter />
+        <CarBrandFilter />
+        <PriceFilter />
+      </div>
       <SectionHeading
-        title={"Sail in Splendor"}
+        title={'Sail in Splendor'}
         description={
-          "Chart Your Course to Unparalleled Luxury with our Exclusive Yachts"
+          'Chart Your Course to Unparalleled Luxury with our Exclusive Yachts'
         }
       />
       <div className="flex flex-col gap-8 w-full">
         <Card variant={variant} />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card variant={variant} />
+        <Card variant={variant} />
+        <Card variant={variant} />
+        <Card variant={variant} />
       </div>
       <div>
         <PaginationComponent
