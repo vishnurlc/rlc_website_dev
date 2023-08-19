@@ -7,17 +7,17 @@ import React from 'react';
 
 const locations = [
   {
-    url: '/assets/jetskipage/jumeirah.png', // Replace with actual image path
+    url: '/assets/jetskipage/jumeirah.webp', // Replace with actual image path
     location: 'Jumeriah',
     price: 150,
   },
   {
-    url: '/assets/jetskipage/jumeirah.png', // Replace with actual image path
+    url: '/assets/jetskipage/burjalarab.avif', // Replace with actual image path
     location: 'Burj Al Arab',
     price: 250,
   },
   {
-    url: '/assets/jetskipage/jumeirah.png', // Replace with actual image path
+    url: '/assets/jetskipage/atlantisview.jpeg', // Replace with actual image path
     location: 'Atlantis View',
     price: 180,
   },
@@ -94,7 +94,7 @@ const page = () => {
       <div className="bg-black px-6 py-9 md:py-16 ">
         <div className="max-w-[1200px] mx-auto flex flex-col gap-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="relative w-full h-[50vh] max-h-[700px]">
+            <div className="relative w-full h-[30vh]  md:h-[50vh] max-h-[700px]">
               <Image
                 src="/assets/jetskipage/jetskisample.jpg"
                 fill
@@ -195,7 +195,7 @@ const page = () => {
 
           <div className=" flex flex-col gap-8 items-center justify-center w-full">
             <h3 className="text-2xl text-center md:text-5xl text-gold capitalize font-inter">
-              Our Premium Locations
+              Our Service Locations
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
               {locations.map((item, index) => (

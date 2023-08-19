@@ -1,5 +1,8 @@
 import { ContactForm, GalleryJet, HeroCarousel } from '@/components';
+import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
+import { Button } from '@/components/ui/button/Button';
 import Image from 'next/image';
+import Link from 'next/link';
 import qs from 'qs';
 import React from 'react';
 
@@ -17,7 +20,7 @@ export async function getData(slug) {
       'technicalspec.body',
       'technicalspec.color',
       'technicalspec.cylinder',
-      'technicalspec.interior_color',
+      'technicalspec.interior_colors',
       'technicalspec.seat',
       'technicalspec.transmission',
       'technicalspec.fuel',
@@ -32,7 +35,7 @@ export async function getData(slug) {
     );
 
     const data = await res.json();
-    console.log(data.data[0].attributes);
+
     return data;
   } catch (error) {
     console.log('s', error);
@@ -50,6 +53,19 @@ export default async function CarDetail({ params: { slug } }) {
           data={car.data[0].attributes.image}
           name={car.data[0].attributes.name}
         />
+        <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5">
+          <h2 className="text-right">
+            <span className="text-xl text-primary">
+              AED{car.data[0].attributes.price}/Day
+            </span>
+          </h2>
+          <Link href={'#'}>
+            <AnimatedBtn
+              styles={'rounded-md bg-primary text-white'}
+              text={'Book Now'}
+            />
+          </Link>
+        </div>
       </div>
       <div className="max-w-[1200px] mx-auto py-10 md:py-16 px-6 flex flex-col gap-8 md:gap-16">
         <div>
@@ -57,7 +73,7 @@ export default async function CarDetail({ params: { slug } }) {
             <h1 className="text-sm md:text-base text-justify md:text-left text-gray-500">
               {car.data[0].attributes.make.data.attributes.make}
             </h1>
-            <span className=" inline-block my-4 font-inter text-primary font-semibold text-xl md:text-[40px]">
+            <span className=" inline-block my-2 md:my-4 font-inter text-primary font-semibold text-2xl md:text-[40px]">
               {car.data[0].attributes.name}
             </span>
           </div>
@@ -66,7 +82,7 @@ export default async function CarDetail({ params: { slug } }) {
           </p>
         </div>
 
-        <div>
+        <div className="">
           <h2 className="inline-block mb-8 font-inter text-primary font-semibold text-xl md:text-[40px]">
             Technical Specifications
           </h2>
@@ -95,10 +111,9 @@ export default async function CarDetail({ params: { slug } }) {
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
               <span>Interior Color</span>
               <span className="text-[#8a97a4]">
-                {
-                  car.data[0].attributes.technicalspec.interior_color.data
-                    .attributes.color
-                }
+                {car.data[0].attributes.technicalspec.interior_colors.data
+                  .map((item) => item.attributes.color)
+                  .join('+')}
               </span>
             </li>
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
@@ -140,6 +155,12 @@ export default async function CarDetail({ params: { slug } }) {
                 {car.data[0].attributes.year.data.attributes.year}
               </span>
             </li>
+            <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
+              <span>Mileage Limit</span>
+              <span className="text-[#8a97a4]">
+                {car.data[0].attributes.technicalspec.mileage_limit}
+              </span>
+            </li>
           </ul>
         </div>
         <div>
@@ -165,14 +186,14 @@ export default async function CarDetail({ params: { slug } }) {
             ))}
           </ul>
         </div>
-        <div>
+        {/* <div>
           <h2 className="inline-block mb-8 font-inter text-primary font-semibold text-xl md:text-[40px]">
             Gallery
           </h2>
           <div>
             <GalleryJet />
           </div>
-        </div>
+        </div> */}
         <ContactForm
           title={'Soar to New Heights'}
           description={'Book your journey with our private jet rental now'}

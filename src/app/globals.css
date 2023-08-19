@@ -76,7 +76,7 @@ ul {
 }
 
 .herocarousel {
-  width: 100vw;
+  width: 100%;
   aspect-ratio: calc(16 / 9);
   min-height: 40vh;
   max-height: 700px;

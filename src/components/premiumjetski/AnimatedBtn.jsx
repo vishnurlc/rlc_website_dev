@@ -1,16 +1,11 @@
-"use client";
-import React from "react";
-import { motion } from "framer-motion";
+'use client';
+import React from 'react';
+
 const AnimatedBtn = ({ styles, text }) => {
   return (
-    <motion.button
-      className={`px-6 py-2 ${styles}`}
-      whileHover={{
-        scale: 1.05,
-      }}
-    >
+    <button className={`px-6 py-2 hover:scale-105 ${styles} transition-all`}>
       {text}
-    </motion.button>
+    </button>
   );
 };
 

@@ -1,4 +1,9 @@
-import { HeroSection, SectionHeading, YachtListing } from '@/components';
+import {
+  HeroSection,
+  HeroSection2,
+  SectionHeading,
+  YachtListing,
+} from '@/components';
 import Filter from '@/components/ui/filter/filter';
 import MasonryGrid from '@/components/yachtrental/PictureGallery';
 import React from 'react';
@@ -13,7 +18,7 @@ export async function getData() {
     );
 
     const data = await res.json();
-    console.log(data);
+
     return data;
   } catch (error) {
     console.log('s', error);
@@ -26,11 +31,15 @@ export default async function page() {
   return (
     <main>
       <h1 className="sr-only ">Luxury Yacht Rentals - Richylife Club</h1>
-      <HeroSection
-        posterurl={'/assets/home/heroposter.png'}
+      <HeroSection2
         type={'video'}
-        alt="Luxury Yacht Rental"
+        heading1={'Luxury Yacht'}
+        heading2={'Rental in Dubai'}
+        subheading={'Experience the sea breeze in luxury'}
+        posterurl={'/assets/privateyachts/banner.png'}
+        btntext={'Book your trip'}
         url={'/assets/home/hero.mp4'}
+        overlay={1}
       />
       <div className="mx-auto max-w-[1200px]">
         <YachtListing data={yachts} variant={'yacht'} />
