@@ -3,12 +3,8 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { Button } from '../button/Button';
 import { FaPhoneAlt } from 'react-icons/fa';
-import {
-  BsWhatsapp,
-  BsPeople,
-  BsFillFuelPumpFill,
-  BsCarFrontFill,
-} from 'react-icons/bs';
+import { BsPeople, BsFillFuelPumpFill, BsCarFrontFill } from 'react-icons/bs';
+import { RiWhatsappFill } from 'react-icons/ri';
 import { PiStarFill } from 'react-icons/pi';
 import { AiOutlinePlayCircle } from 'react-icons/ai';
 import { IoMdPhotos } from 'react-icons/io';
@@ -112,9 +108,9 @@ function Card({ variant, data }) {
                   </span>
                 </span>
               </div>
-              <div className="flex justify-start items-center gap-2 ">
-                <FaPhoneAlt className="text-lg mx-3" />
-                <BsWhatsapp className="text-xl mx-3" />
+              <div className="flex justify-start items-center gap-4 ">
+                <FaPhoneAlt size={24} color="#DCA24B" />
+                <RiWhatsappFill size={24} color="#25D366" />
                 <Button>Book Now</Button>
               </div>
             </div>

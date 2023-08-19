@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
             href="#"
             className="backdrop-blur-md  p-3 block rounded-full md:w-[48px] aspect-square hover:scale-110 transition-all"
           >
-            <BsTelephoneFill color="red" className="w-full h-full" />
+            <BsTelephoneFill color="#DCA24B" className="w-full h-full" />
           </Link>
           <Link
             href="#"

@@ -11,6 +11,7 @@ const page = () => {
     '/assets/petpage/bear.png',
     '/assets/petpage/bear.png',
   ];
+
   return (
     <main>
       <h1 className="sr-only ">Luxury Car Rentals - Richylife Club</h1>

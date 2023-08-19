@@ -16,16 +16,18 @@ const ListingComponent = ({ variant, title, description }) => {
   const [cars, setCars] = useState({});
   const [drag, setDrag] = useState(false);
   const searchParams = useSearchParams();
+  const [pageNumber, setPageNumber] = useState(
+    searchParams.get('pageNumber') || 1
+  );
+  const pageSize = 5;
   const [status, setStatus] = useState(false);
   const [filters, setFilters] = useState({
     make: '',
     body: '',
     price: '',
     year: '',
+    pageNumber: pageNumber,
   });
-  const handlePageChange = (number) => {
-    console.log(number);
-  };
 
   async function getData({ params }) {
     const queryParameters = {};
@@ -65,7 +67,7 @@ const ListingComponent = ({ variant, title, description }) => {
       },
     });
 
-    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?${queryString}&populate=*`;
+    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?${queryString}&populate=*&pagination[page]=${params.pageNumber}&pagination[pageSize]=${pageSize}`;
 
     try {
       const res = await fetch(api, { next: { revalidate: 10 } });
@@ -140,17 +142,18 @@ const ListingComponent = ({ variant, title, description }) => {
       ...prevFilters,
       ...urlFilters,
     }));
-
+    urlFilters['pageNumber'] = pageNumber;
     getData({ params: urlFilters }).then((newData) => {
       setCars(newData);
     });
   }, [searchParams]);
+  console.log(cars);
   return (
     <div className="w-full overflow-hidden">
       <div className="w-full my-[40px] ">
         <motion.div
           ref={containerRef}
-          className="relative flex items-center justify-start md:justify-end gap-4 md:gap-5 px-6"
+          className="relative flex items-center justify-center gap-4 md:gap-5 px-6"
           drag="x"
           dragConstraints={{ right: 0, left: -containerWidth }}
           dragListener={drag}
@@ -169,13 +172,16 @@ const ListingComponent = ({ variant, title, description }) => {
             <Card variant={variant} data={car} key={index} />
           ))}
         </div>
-        <div>
-          <PaginationComponent
-            currentPage={1}
-            totalPages={7}
-            onPageChange={handlePageChange}
-          />
-        </div>
+        {cars.meta && (
+          <div>
+            <PaginationComponent
+              currentPage={pageNumber}
+              totalPages={cars.meta.pagination.pageCount}
+              onPageChange={handleFilters}
+              setPageNumber={setPageNumber}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
