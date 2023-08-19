@@ -147,7 +147,11 @@ const ListingComponent = ({ variant, title, description }) => {
       setCars(newData);
     });
   }, [searchParams]);
-  console.log(cars);
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [pageNumber]);
   return (
     <div className="w-full overflow-hidden">
       <div className="w-full my-[40px] ">
