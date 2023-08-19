@@ -4,7 +4,7 @@ import AsyncSelect from 'react-select/async';
 const fetchOptions = async (inputValue) => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/car-brands`
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/car-makes`
     );
     const data = await response.json();
     return data.data;
@@ -17,7 +17,7 @@ const fetchOptions = async (inputValue) => {
 const loadOptions = (inputValue, callback) => {
   fetchOptions(inputValue).then((brand) => {
     const options = brand.map((type) => ({
-      label: `${type.attributes.brand}`,
+      label: `${type.attributes.make}`,
       value: type.attributes.slug,
     }));
     callback(options);
@@ -30,10 +30,10 @@ const CarBrandFilter = ({ handleFilters }) => {
       cacheOptions
       defaultOptions
       onChange={(selectedOption) => {
-        handleFilters({ name: 'brand', value: selectedOption?.value });
+        handleFilters({ name: 'make', value: selectedOption?.value });
       }}
       placeholder={
-        <span className="text-gray-400 font-thin text-sm">Brand</span>
+        <span className="text-gray-400 font-thin text-sm">Make</span>
       }
       className="react-select-container"
       classNamePrefix="react-select"

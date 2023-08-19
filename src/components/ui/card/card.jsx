@@ -9,11 +9,11 @@ import {
   BsFillFuelPumpFill,
   BsCarFrontFill,
 } from 'react-icons/bs';
-import { PiStarThin } from 'react-icons/pi';
+import { PiStarFill } from 'react-icons/pi';
 import { AiOutlinePlayCircle } from 'react-icons/ai';
 import { IoMdPhotos } from 'react-icons/io';
 import { LiaToolsSolid, LiaRulerCombinedSolid } from 'react-icons/lia';
-import { BiBadgeCheck, BiSolidColor } from 'react-icons/bi';
+import { BiBadgeCheck, BiCategoryAlt, BiSolidColor } from 'react-icons/bi';
 import { MdOutlineAirlineSeatReclineExtra } from 'react-icons/md';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -31,13 +31,10 @@ function Card({ variant, data }) {
 
   return (
     <>
-      <div className="grid grid-cols-1 w-full md:grid-cols-3  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-[#fbfbfb]">
-        <div className="col-span-1 relative h-full  aspect-square max-h-[380px] w-full ">
+      <div className="grid grid-cols-1 w-full lg:grid-cols-5  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-[#fbfbfb]">
+        <div className="col-span-3 relative w-full aspect-[2/1] min-h-[220px] ">
           <Image
-            src={
-              data.attributes.image.data[0].attributes.formats.medium.url ||
-              data.attributes.image.data[0].attributes.url
-            }
+            src={data.attributes.image.data[0].attributes.url}
             alt={data.attributes.name}
             fill
             style={{
@@ -74,32 +71,48 @@ function Card({ variant, data }) {
               <Link href={`${path}/${data.attributes.slug}`}>
                 {data.attributes.name}
               </Link>
+              {variant === 'yacht' && (
+                <p className="text-gray-500 text-base font-normal">
+                  {data.attributes.make.data.attributes.make}
+                </p>
+              )}
             </h3>
-            <p className="py-2 flex gap-1 items-center ">
-              <PiStarThin />
-              <PiStarThin />
-              <PiStarThin />
-              <PiStarThin />
-              <PiStarThin />
-              <span className="text-secondary text-xs">(5.00 rating)</span>
-            </p>
-            {variant === 'car' ? <CarDetail data={data} /> : <YachtDetail />}
+            {/* <p className="py-2 flex gap-1 items-center ">
+              {[1, 2, 3, 4, 5].map((index) => (
+                <PiStarFill
+                  key={index}
+                  className={
+                    index <= data.attributes.rating
+                      ? 'text-primary'
+                      : 'text-gray-400'
+                  }
+                />
+              ))}
+              <span className="ml-2 text-secondary text-xs">
+                {data.attributes.rating}.00 rating
+              </span>
+            </p> */}
+            {variant === 'car' ? (
+              <CarDetail data={data} />
+            ) : (
+              <YachtDetail data={data} />
+            )}
 
-            <p className="text-secondary text-base font-normal leading-relaxed">
+            {/* <p className="text-secondary text-base font-normal leading-relaxed">
               {data.attributes.short_description}
-            </p>
+            </p> */}
 
-            <div className="flex flex-col sm:flex-row justify-between w-full py-5 gap-6">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full py-5 gap-6">
               <div className="flex items-center gap-2">
-                <p className="text-secondary text-sm">From</p>
-                <span className="text-primary font-normal text-xl">
+                {/* <p className="text-secondary text-sm">From</p> */}
+                <span className="text-primary font-normal text-2xl">
                   AED{data.attributes.price}{' '}
                   <span className="text-secondary text-sm font-normal">
-                    /hr
+                    /Day
                   </span>
                 </span>
               </div>
-              <div className="flex justify-between items-center gap-2 ">
+              <div className="flex justify-start items-center gap-2 ">
                 <FaPhoneAlt className="text-lg mx-3" />
                 <BsWhatsapp className="text-xl mx-3" />
                 <Button>Book Now</Button>
@@ -130,7 +143,7 @@ function Carousel({ data, name }) {
       {data.map((e, index) => (
         <SwiperSlide key={`slide${index}`}>
           <Image
-            src={e.attributes.formats.medium.url || e.attributes.url}
+            src={e.attributes.formats.medium?.url || e.attributes.url}
             fill
             priority
             alt={name}
@@ -145,31 +158,39 @@ function Carousel({ data, name }) {
   );
 }
 
-function YachtDetail() {
+function YachtDetail({ data }) {
   return (
-    <div className="py-3 flex gap-5 flex-wrap">
-      <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
-        <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
-          <BiBadgeCheck /> 4 Star
+    <>
+      <div className="py-3 flex gap-5 flex-wrap">
+        <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
+          <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
+            <BiBadgeCheck /> {data.attributes.technicalspec.star} Star
+          </div>
         </div>
-      </div>
-      <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
-        <div className="text-primary text-base flex items-center gap-2 font-medium leading-tight">
-          <BsPeople /> 19 People
+        <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
+          <div className="text-primary text-base flex items-center gap-2 font-medium leading-tight">
+            <BsPeople /> {data.attributes.technicalspec.capacity} People
+          </div>
         </div>
-      </div>
+        <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
+          <div className="text-primary text-base flex items-center gap-2 font-medium leading-tight">
+            <BiCategoryAlt /> {data.attributes.technicalspec.category}
+          </div>
+        </div>
 
-      <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
-        <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
-          <LiaToolsSolid /> 2016
+        <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
+          <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
+            <LiaToolsSolid /> {data.attributes.technicalspec.make_year}
+          </div>
+        </div>
+        <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
+          <div className="text-primary text-base font-medium flex items-center gap-2 leading-tight">
+            <LiaRulerCombinedSolid /> {data.attributes.technicalspec.length}
+            &quot;ft
+          </div>
         </div>
       </div>
-      <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
-        <div className="text-primary text-base font-medium flex items-center gap-2 leading-tight">
-          <LiaRulerCombinedSolid /> 30&quot;ft
-        </div>
-      </div>
-    </div>
+    </>
   );
 }
 

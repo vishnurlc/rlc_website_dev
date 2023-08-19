@@ -1,29 +1,68 @@
 import { ContactForm, GalleryJet, HeroCarousel } from '@/components';
+import Image from 'next/image';
+import qs from 'qs';
 import React from 'react';
 
-const page = () => {
+export async function getData(slug) {
+  const query = qs.stringify({
+    populate: [
+      'image',
+      'body',
+      'fuel',
+      'make',
+      'seat',
+      'year',
+      'car_color',
+      'features.icon',
+      'technicalspec.body',
+      'technicalspec.color',
+      'technicalspec.cylinder',
+      'technicalspec.interior_color',
+      'technicalspec.seat',
+      'technicalspec.transmission',
+      'technicalspec.fuel',
+    ],
+  });
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?filters[slug][$eq]=${slug}&${query}`,
+      {
+        next: { revalidate: 40 },
+      }
+    );
+
+    const data = await res.json();
+    console.log(data.data[0].attributes);
+    return data;
+  } catch (error) {
+    console.log('s', error);
+    return {};
+  }
+}
+
+export default async function CarDetail({ params: { slug } }) {
+  const car = await getData(slug);
+
   return (
     <main className="">
       <div>
-        <HeroCarousel />
+        <HeroCarousel
+          data={car.data[0].attributes.image}
+          name={car.data[0].attributes.name}
+        />
       </div>
       <div className="max-w-[1200px] mx-auto py-10 md:py-16 px-6 flex flex-col gap-8 md:gap-16">
         <div>
           <div>
             <h1 className="text-sm md:text-base text-justify md:text-left text-gray-500">
-              Pilatus Aircraft
+              {car.data[0].attributes.make.data.attributes.make}
             </h1>
             <span className=" inline-block my-4 font-inter text-primary font-semibold text-xl md:text-[40px]">
-              PC-12
+              {car.data[0].attributes.name}
             </span>
           </div>
           <p className="text-sm md:text-base text-justify md:text-left text-gray-500">
-            The Pilatus PC-12 is a single-engine turboprop passenger and cargo
-            aircraft manufactured by Pilatus Aircraft of Stans, Switzerland in
-            1991. The main market for this aircraft is corporate transportation
-            and regional airliner operators, and it is in direct competition
-            with the King Air product line. The Pilatus PC-12 NG (Next
-            Generation) was launched in 2007 and first delivered in May 2008.
+            {car.data[0].attributes.description}
           </p>
         </div>
 
@@ -33,53 +72,97 @@ const page = () => {
           </h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-9">
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-              <span>Cabin Length</span>
-              <span className="text-[#8a97a4]">5,16m</span>
+              <span>Car Body</span>
+              <span className="text-[#8a97a4]">
+                {car.data[0].attributes.body.data.attributes.type}
+              </span>
             </li>
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-              <span>Suitcases</span>
-              <span className="text-[#8a97a4]">3</span>
+              <span>Fuel Type</span>
+              <span className="text-[#8a97a4]">
+                {car.data[0].attributes.fuel.data.attributes.type}
+              </span>
             </li>
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-              <span>Trolleys</span>
-              <span className="text-[#8a97a4]">5</span>
+              <span>No of Cylinder</span>
+              <span className="text-[#8a97a4]">
+                {
+                  car.data[0].attributes.technicalspec.cylinder.data.attributes
+                    .cylinders
+                }
+              </span>
             </li>
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-              <span>Range NM</span>
-              <span className="text-[#8a97a4]">1242NM</span>
+              <span>Interior Color</span>
+              <span className="text-[#8a97a4]">
+                {
+                  car.data[0].attributes.technicalspec.interior_color.data
+                    .attributes.color
+                }
+              </span>
             </li>
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-              <span>Category</span>
-              <span className="text-[#8a97a4]">Turbo Prop</span>
+              <span>Exterior Color</span>
+              <span className="text-[#8a97a4]">
+                {car.data[0].attributes.car_color.data.attributes.color}
+              </span>
             </li>
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
               <span>Seats</span>
-              <span className="text-[#8a97a4]">8</span>
+              <span className="text-[#8a97a4]">
+                {car.data[0].attributes.seat.data.attributes.seat}
+              </span>
             </li>
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-              <span>No stop flyng time</span>
-              <span className="text-[#8a97a4]">4,4h</span>
+              <span>Transmission</span>
+              <span className="text-[#8a97a4]">
+                {
+                  car.data[0].attributes.technicalspec.transmission.data
+                    .attributes.type
+                }
+              </span>
             </li>
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-              <span>Cabin Height</span>
-              <span className="text-[#8a97a4]">1,47</span>
+              <span>Horse Power</span>
+              <span className="text-[#8a97a4]">
+                {car.data[0].attributes.technicalspec.horsepower}
+              </span>
             </li>
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-              <span>Cabin Width</span>
-              <span className="text-[#8a97a4]">1,53</span>
+              <span>Engine Capacity</span>
+              <span className="text-[#8a97a4]">
+                {car.data[0].attributes.technicalspec.engine_capacity}
+              </span>
             </li>
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-              <span>Cabin floor area</span>
-              <span className="text-[#8a97a4]">1,30M</span>
+              <span>Year</span>
+              <span className="text-[#8a97a4]">
+                {car.data[0].attributes.year.data.attributes.year}
+              </span>
             </li>
-            <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-              <span>Range KM</span>
-              <span className="text-[#8a97a4]">2,804km</span>
-            </li>
-            <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-              <span>Speed Km/h</span>
-              <span className="text-[#8a97a4]">500Km/h</span>
-            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="inline-block mb-8 font-inter text-primary font-semibold text-xl md:text-[40px]">
+            Car Specifications
+          </h2>
+          <ul className="grid grid-cols-1 list-disc">
+            {car.data[0].attributes.features.data.map((feature, index) => (
+              <li
+                key={index}
+                className="flex  font-inter text-sm md:text-lg w-full items-center gap-4 justify-start py-2 md:py-4 "
+              >
+                <span className="text-[#8a97a4]">
+                  <Image
+                    src={feature.attributes.icon.data.attributes.url}
+                    alt={feature.feature}
+                    width={30}
+                    height={30}
+                  />
+                </span>
+                <span>{feature.attributes.feature}</span>
+              </li>
+            ))}
           </ul>
         </div>
         <div>
@@ -97,6 +180,4 @@ const page = () => {
       </div>
     </main>
   );
-};
-
-export default page;
+}

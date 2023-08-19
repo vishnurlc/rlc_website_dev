@@ -15,7 +15,7 @@ const page = () => {
     <main>
       <h1 className="sr-only ">Luxury Car Rentals - Richylife Club</h1>
       <HeroSection
-        posterurl={'/assets/home/heroposter.png'}
+        posterurl={'/assets/rentacar/banner.png'}
         type={'video'}
         alt="Luxury Car rentals"
         url={'/assets/home/hero.mp4'}

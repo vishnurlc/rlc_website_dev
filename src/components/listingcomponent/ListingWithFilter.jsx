@@ -18,7 +18,7 @@ const ListingComponent = ({ variant, title, description }) => {
   const searchParams = useSearchParams();
   const [status, setStatus] = useState(false);
   const [filters, setFilters] = useState({
-    brand: '',
+    make: '',
     body: '',
     price: '',
     year: '',
@@ -37,10 +37,10 @@ const ListingComponent = ({ variant, title, description }) => {
         },
       };
     }
-    if (params.brand) {
-      queryParameters.brand = {
+    if (params.make) {
+      queryParameters.make = {
         slug: {
-          $eq: params.brand,
+          $eq: params.make,
         },
       };
     }
@@ -66,7 +66,7 @@ const ListingComponent = ({ variant, title, description }) => {
     });
 
     let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?${queryString}&populate=*`;
-    console.log(api);
+
     try {
       const res = await fetch(api, { next: { revalidate: 10 } });
       const data = await res.json();
@@ -161,7 +161,7 @@ const ListingComponent = ({ variant, title, description }) => {
           <PriceFilter handleFilters={handleFilters} />
         </motion.div>
       </div>
-      {console.log(cars)}
+
       <div className="my-[40px] flex flex-col items-center gap-8 md:gap-16 px-6">
         <SectionHeading title={title} description={description} />
         <div className="flex flex-col gap-8 w-full">

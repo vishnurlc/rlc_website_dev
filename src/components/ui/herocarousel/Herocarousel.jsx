@@ -11,7 +11,7 @@ import Image from 'next/image';
 
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 
-export default function App() {
+export default function HeroCarousel({ data, name }) {
   return (
     <div className="relative">
       <Swiper
@@ -29,102 +29,20 @@ export default function App() {
           prevEl: '.hero-carousel__button--left',
         }}
       >
-        <SwiperSlide>
-          <Image
-            src={'/assets/test/jet.png'}
-            fill
-            priority
-            alt="car"
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center',
-            }}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={'/assets/test/porch.jpg'}
-            fill
-            priority
-            alt="car"
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center',
-            }}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={'/assets/test/jet.png'}
-            fill
-            priority
-            alt="car"
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center',
-            }}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={'/assets/test/porch.jpg'}
-            fill
-            priority
-            alt="car"
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center',
-            }}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={'/assets/test/jet.png'}
-            fill
-            priority
-            alt="car"
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center',
-            }}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={'/assets/test/porch.jpg'}
-            fill
-            priority
-            alt="car"
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center',
-            }}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={'/assets/test/jet.png'}
-            fill
-            priority
-            alt="car"
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center',
-            }}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={'/assets/test/porch.jpg'}
-            fill
-            priority
-            alt="car"
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center',
-            }}
-          />
-        </SwiperSlide>
+        {data.data.map((item, index) => (
+          <SwiperSlide key={index}>
+            <Image
+              src={item.attributes.url}
+              fill
+              priority
+              alt={name}
+              style={{
+                objectFit: 'cover',
+                objectPosition: 'center',
+              }}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
       <div className="z-10 absolute left-8 bottom-6 flex gap-6 items-center ">
         <motion.div
