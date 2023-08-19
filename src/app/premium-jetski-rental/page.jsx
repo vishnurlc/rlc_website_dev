@@ -3,6 +3,7 @@ import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
 import LocationCard from '@/components/premiumjetski/LocationCard';
 import { Button } from '@/components/ui/button/Button';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const locations = [
@@ -23,63 +24,84 @@ const locations = [
   },
 ];
 
-const jetski = [
-  {
-    name: 'JetSki One Yamahaa',
-    price: '600',
-    url: '/assets/jetskipage/jetskisample.jpg',
-    slug: 'jetski-one-yamaha',
-  },
-  {
-    name: 'JetSki One Yamahaa',
-    price: '600',
-    url: '/assets/jetskipage/jetskisample.jpg',
-    slug: 'jetski-one-yamaha',
-  },
-  {
-    name: 'JetSki One Yamahaa',
-    price: '600',
-    url: '/assets/jetskipage/jetskisample.jpg',
-    slug: 'jetski-one-yamaha',
-  },
-  {
-    name: 'JetSki One Yamahaa',
-    price: '600',
-    url: '/assets/jetskipage/jetskisample.jpg',
-    slug: 'jetski-one-yamaha',
-  },
-  {
-    name: 'JetSki One Yamahaa',
-    price: '600',
-    url: '/assets/jetskipage/jetskisample.jpg',
-    slug: 'jetski-one-yamaha',
-  },
-  {
-    name: 'JetSki One Yamahaa',
-    price: '600',
-    url: '/assets/jetskipage/jetskisample.jpg',
-    slug: 'jetski-one-yamaha',
-  },
-  {
-    name: 'JetSki One Yamahaa',
-    price: '600',
-    url: '/assets/jetskipage/jetskisample.jpg',
-    slug: 'jetski-one-yamaha',
-  },
-  {
-    name: 'JetSki One Yamahaa',
-    price: '600',
-    url: '/assets/jetskipage/jetskisample.jpg',
-    slug: 'jetski-one-yamaha',
-  },
-  {
-    name: 'JetSki One Yamahaa',
-    price: '600',
-    url: '/assets/jetskipage/jetskisample.jpg',
-    slug: 'jetski-one-yamaha',
-  },
-];
-const page = () => {
+// const jetski = [
+//   {
+//     name: 'JetSki One Yamahaa',
+//     price: '600',
+//     url: '/assets/jetskipage/jetskisample.jpg',
+//     slug: 'jetski-one-yamaha',
+//   },
+//   {
+//     name: 'JetSki One Yamahaa',
+//     price: '600',
+//     url: '/assets/jetskipage/jetskisample.jpg',
+//     slug: 'jetski-one-yamaha',
+//   },
+//   {
+//     name: 'JetSki One Yamahaa',
+//     price: '600',
+//     url: '/assets/jetskipage/jetskisample.jpg',
+//     slug: 'jetski-one-yamaha',
+//   },
+//   {
+//     name: 'JetSki One Yamahaa',
+//     price: '600',
+//     url: '/assets/jetskipage/jetskisample.jpg',
+//     slug: 'jetski-one-yamaha',
+//   },
+//   {
+//     name: 'JetSki One Yamahaa',
+//     price: '600',
+//     url: '/assets/jetskipage/jetskisample.jpg',
+//     slug: 'jetski-one-yamaha',
+//   },
+//   {
+//     name: 'JetSki One Yamahaa',
+//     price: '600',
+//     url: '/assets/jetskipage/jetskisample.jpg',
+//     slug: 'jetski-one-yamaha',
+//   },
+//   {
+//     name: 'JetSki One Yamahaa',
+//     price: '600',
+//     url: '/assets/jetskipage/jetskisample.jpg',
+//     slug: 'jetski-one-yamaha',
+//   },
+//   {
+//     name: 'JetSki One Yamahaa',
+//     price: '600',
+//     url: '/assets/jetskipage/jetskisample.jpg',
+//     slug: 'jetski-one-yamaha',
+//   },
+//   {
+//     name: 'JetSki One Yamahaa',
+//     price: '600',
+//     url: '/assets/jetskipage/jetskisample.jpg',
+//     slug: 'jetski-one-yamaha',
+//   },
+// ];
+
+export async function getData() {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/jetskis?populate=*`,
+      {
+        next: { revalidate: 40 },
+      }
+    );
+
+    const data = await res.json();
+
+    return data;
+  } catch (error) {
+    console.log('s', error);
+    return {};
+  }
+}
+
+export default async function JetSkiPage() {
+  const jetski = await getData();
+  console.log('s', jetski);
   return (
     <main>
       <HeroSection2
@@ -128,11 +150,11 @@ const page = () => {
               Our Premium Jetski
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-8">
-              {jetski.map((item, index) => (
+              {jetski.data.map((item, index) => (
                 <div className="relative  w-full aspect-[357/406]" key={index}>
                   <Image
-                    src={item.url}
-                    alt={item.name}
+                    src={item.attributes.image.data[0].attributes.url}
+                    alt={item.attributes.name}
                     fill
                     style={{
                       objectFit: 'cover',
@@ -141,16 +163,18 @@ const page = () => {
                   <div className="absolute p-4 text-white w-full h-fit bg-black bg-opacity-60 bottom-0 left-0 right-0 z-10">
                     <div>
                       <h2 className="uppercase font-medium tracking-wide text-xl font-poppins">
-                        {item.name}
+                        {item.attributes.name}
                       </h2>
                       <span className="text-gray-400 text-sm">
-                        Starting from AED{item.price}
+                        Starting from AED {item.attributes.price}
                       </span>
                     </div>
 
-                    <Button className="mt-4 px-4 py-2 bg-primary text-gold">
-                      Book Now
-                    </Button>
+                    <Link href={'#'}>
+                      <Button className="mt-4 px-4 py-2 bg-gold text-white rounded-sm">
+                        Book Now
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -230,6 +254,4 @@ const page = () => {
       </div>
     </main>
   );
-};
-
-export default page;
+}
