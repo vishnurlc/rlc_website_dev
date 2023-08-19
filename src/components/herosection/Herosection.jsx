@@ -49,6 +49,7 @@ import React from 'react';
 import { Button } from '../ui/button/Button';
 import Image from 'next/image';
 import AnimatedBtn from '../premiumjetski/AnimatedBtn';
+import Link from 'next/link';
 
 const Herosection = ({ url, type, posterurl, alt }) => {
   return (
@@ -76,11 +77,14 @@ const Herosection = ({ url, type, posterurl, alt }) => {
           />
         )}
 
-        <div className="absolute bottom-[10vh] left-1/2 -translate-x-1/2 z-10">
+        <Link
+          href="#"
+          className="absolute bottom-[7vh] left-1/2 -translate-x-1/2 z-10"
+        >
           <Button variant={'whiteborder'} href="#services">
             Book Now
           </Button>
-        </div>
+        </Link>
       </div>
     </div>
   );

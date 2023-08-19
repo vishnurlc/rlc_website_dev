@@ -43,13 +43,13 @@ export default function RootLayout({ children }) {
         <div className="fixed bottom-[30px] right-[30px] z-20 flex flex-col gap-5">
           <Link
             href="#"
-            className="backdrop-blur-md  p-3 block rounded-full md:w-[48px] aspect-square"
+            className="backdrop-blur-md  p-3 block rounded-full md:w-[48px] aspect-square hover:scale-110 transition-all"
           >
             <BsTelephoneFill color="red" className="w-full h-full" />
           </Link>
           <Link
             href="#"
-            className="backdrop-blur-md p-2 block rounded-full md:w-[48px] aspect-square"
+            className="backdrop-blur-md p-2 block rounded-full md:w-[48px] aspect-square hover:scale-110 transition-all"
           >
             <IoLogoWhatsapp color="#25d366" className="w-full h-full" />
           </Link>
