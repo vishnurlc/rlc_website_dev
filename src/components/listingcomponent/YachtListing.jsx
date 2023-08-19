@@ -14,11 +14,6 @@ const ListingComponent = ({ variant, data }) => {
         {data.data.map((yacht, index) => (
           <Card data={yacht} variant={variant} key={index} />
         ))}
-        {/* <Card variant={variant} />
-        <Card variant={variant} />
-        <Card variant={variant} />
-        <Card variant={variant} />
-        <Card variant={variant} /> */}
       </div>
     </div>
   );
