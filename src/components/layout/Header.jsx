@@ -103,6 +103,10 @@ const links = [
         href: '/premium-desert-adventure',
       },
       {
+        name: 'Helicopter Rentals',
+        href: '/helicopter-rentals',
+      },
+      {
         name: 'Private Jet Rentals',
         href: '/private-jet-rentals',
       },

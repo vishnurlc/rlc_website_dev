@@ -12,23 +12,23 @@ const page = () => {
   const data = [
     {
       title: 'Airport Transfer',
-      image: '/assets/home/heroposter.png',
+      image: '/assets/chauffer/transfers.jpeg',
     },
     {
       title: 'Half/Full Day',
-      image: '/assets/home/heroposter.png',
+      image: '/assets/chauffer/halfday.avif',
     },
     {
       title: 'Dubai City Tour',
-      image: '/assets/home/heroposter.png',
+      image: '/assets/chauffer/dubaitour.jpeg',
     },
     {
       title: 'A-B Transfer',
-      image: '/assets/home/heroposter.png',
+      image: '/assets/chauffer/a-b.jpeg',
     },
     {
       title: 'Events',
-      image: '/assets/home/heroposter.png',
+      image: '/assets/chauffer/event.png',
     },
   ];
   return (
@@ -47,7 +47,7 @@ const page = () => {
         <div className="container mx-auto mt-10">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-items-center gap-4 md:gap-6">
             {data.map((e, index) => (
-              <CardSq key={index} title={e.title} />
+              <CardSq key={index} data={e} />
             ))}
           </div>
         </div>
