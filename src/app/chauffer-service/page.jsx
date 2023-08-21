@@ -26,6 +26,21 @@ export const metadata = {
     title: 'Luxury Chauffeur Service in Dubai',
     description:
       "'Book a luxury chauffeur service in Dubai for your airport transfers, half and full day car rentals, full Dubai tours, or events pickup and drop. We offer a wide range of vehicles to choose from, including limousines, SUVs, and vans. Our professional chauffeurs will make sure you have a safe and comfortable journey.",
+    siteName: 'Richylife Club',
+    images: [
+      {
+        url: `${process.env.WEB_URL}/assets/chauffer/hero.png`,
+        width: 800,
+        height: 600,
+      },
+      {
+        url: `${process.env.WEB_URL}/assets/chauffer/hero.png`,
+        width: 300,
+        height: 200,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
 };
 

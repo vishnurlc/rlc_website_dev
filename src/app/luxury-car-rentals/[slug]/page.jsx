@@ -29,6 +29,11 @@ export async function generateMetadata({ params }) {
             width: 800,
             height: 600,
           },
+          {
+            url: `${car.data[0].attributes.image.data[0].attributes.url}`,
+            width: 300,
+            height: 200,
+          },
         ],
       },
     };

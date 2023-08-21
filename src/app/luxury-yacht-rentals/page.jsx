@@ -45,6 +45,11 @@ export const metadata = {
         width: 800,
         height: 600,
       },
+      {
+        url: `${process.env.WEB_URL}/assets/privateyachts/banner.png`,
+        width: 300,
+        height: 200,
+      },
     ],
     locale: 'en_US',
     type: 'website',

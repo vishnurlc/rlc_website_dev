@@ -57,6 +57,11 @@ export const metadata = {
         width: 800,
         height: 600,
       },
+      {
+        url: `${process.env.WEB_URL}/assets/jetskipage/jetskibanner.png`,
+        width: 300,
+        height: 200,
+      },
     ],
     locale: 'en_US',
     type: 'website',

@@ -31,6 +31,21 @@ export const metadata = {
     title: 'Private Zoo Visit in Dubai',
     description:
       "Embark on a unique adventure with Richylife Club's Exotic Pet Experience. Book a private zoo visit in Dubai to see, touch, and play with exclusive animals up close.",
+    siteName: 'Richylife Club',
+    images: [
+      {
+        url: `${process.env.WEB_URL}/assets/petpage/vippetbanner.png`,
+        width: 800,
+        height: 600,
+      },
+      {
+        url: `${process.env.WEB_URL}/assets/petpage/vippetbanner.png`,
+        width: 300,
+        height: 200,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
 };
 
