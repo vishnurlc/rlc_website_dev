@@ -1,52 +1,53 @@
-import React from 'react';
-import { SectionHeading } from '..';
-import Image from 'next/image';
-import FooterInstagram from './FooterInstagram';
-import Link from 'next/link';
+import React from "react";
+import { SectionHeading } from "..";
+import Image from "next/image";
+import FooterInstagram from "./FooterInstagram";
+import Link from "next/link";
+import FooterAdress from "./FooterAdress";
 
 const Footer = () => {
   const data = {
     images: [
-      '/assets/footer/1.png',
-      '/assets/footer/2.png',
-      '/assets/footer/3.png',
-      '/assets/footer/4.png',
-      '/assets/footer/1.png',
-      '/assets/footer/2.png',
+      "/assets/footer/1.png",
+      "/assets/footer/2.png",
+      "/assets/footer/3.png",
+      "/assets/footer/4.png",
+      "/assets/footer/1.png",
+      "/assets/footer/2.png",
     ],
     navigation: [
       {
-        title: 'Rent a car',
-        link: '',
+        title: "Rent a car",
+        link: "",
       },
       {
-        title: 'Laxury Yacht Rentals',
-        link: '',
+        title: "Laxury Yacht Rentals",
+        link: "",
       },
       {
-        title: 'Premium Gold Jetski',
-        link: '',
+        title: "Premium Gold Jetski",
+        link: "",
       },
       {
-        title: 'Exoic Pet VIP Services',
-        link: '',
+        title: "Exoic Pet VIP Services",
+        link: "",
       },
       {
-        title: 'Services',
-        link: '',
+        title: "Services",
+        link: "",
       },
       {
-        title: 'Contact Us',
-        link: '',
+        title: "Contact Us",
+        link: "",
       },
     ],
   };
   return (
     <footer className="pt-12">
       <SectionHeading
-        title={'Follow us on Instagram'}
+        title={"Follow us on Instagram"}
         description={
-          'Accumsan sit amet nulla facilisi morbi tempus. Suscipit tellus mauris a diam maecenas sed enim ut sem'
+          "Accumsan sit amet nulla facilisi morbi tempus. Suscipit tellus mauris a diam maecenas sed enim ut sem"
         }
       />
 
@@ -84,59 +85,7 @@ const Footer = () => {
             <div className="text-white text-lg font-bold leading-tight pb-5">
               Contacts information
             </div>
-            <div className="h-36 flex-col justify-start items-start gap-3 flex">
-              <div className="w-52 h-10 relative">
-                <div className="w-7 h-7 left-[-0px] top-[6.29px] absolute bg-orange-300 rounded-xl">
-                  <div className="w-2.5 pt-0.5 pb-px left-[8.82px] top-[20.05px] absolute justify-start items-start inline-flex" />
-                </div>
-                <div className="left-[43.26px] top-[-1.34px] absolute flex-col justify-start items-start inline-flex">
-                  <div className="pb-px justify-start items-start inline-flex">
-                    <div className="text-white text-sm font-normal leading-tight">
-                      +1-202-555-0133
-                    </div>
-                  </div>
-                  <div className=" pb-px justify-start items-start inline-flex">
-                    <div className="text-white text-sm font-normal leading-tight">
-                      +1-202-555-0133
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="w-52 h-10 relative">
-                <div className="w-7 h-7 left-[-0px] top-[6.29px] absolute bg-orange-300 rounded-xl">
-                  <div className="w-2 py-px left-[10.17px] top-[20.05px] absolute justify-start items-start inline-flex" />
-                </div>
-                <div className="left-[43.26px] top-[-1.34px] absolute flex-col justify-start items-start inline-flex">
-                  <div className="w-40 pb-px justify-start items-start inline-flex">
-                    <div className="text-white text-sm font-normal leading-tight">
-                      192 North Border Street
-                    </div>
-                  </div>
-                  <div className="w-40 pr-8 pb-px justify-start items-start inline-flex">
-                    <div className="text-white text-sm font-normal leading-tight">
-                      Lithonia, GA 30038
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="w-52 h-10 relative">
-                <div className="w-7 h-7 left-[-0px] top-[6.29px] absolute bg-orange-300 rounded-xl">
-                  <div className="w-3 pr-px py-px left-[7.47px] top-[20.05px] absolute justify-start items-start inline-flex" />
-                </div>
-                <div className="left-[43.26px] top-[-1.34px] absolute flex-col justify-start items-start inline-flex">
-                  <div className="pr-1 pb-px justify-start items-start inline-flex">
-                    <div className="text-white text-sm font-normal leading-tight">
-                      9:00 am to 5:00 pm
-                    </div>
-                  </div>
-                  <div className="w-32 pb-px justify-start items-start inline-flex">
-                    <div className="text-white text-sm font-normal leading-tight">
-                      Monday to Saturday
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <FooterAdress />
           </div>
           <div className="mb-10 md:h-56 w-full md:w-auto flex-col justify-start items-start gap-4 sm:inline-flex">
             <div className="text-white text-lg font-bold leading-tight pb-5">
@@ -167,14 +116,14 @@ const Footer = () => {
                     key={index}
                     className="relative w-full aspect-[64/80] h-auto min-w-[64px] "
                   >
-                    <Link href={'#'} target="_blank" rel="noreferrer">
+                    <Link href={"#"} target="_blank" rel="noreferrer">
                       <Image
                         src={item}
                         fill
                         alt="Instagram links"
                         style={{
-                          objectFit: 'cover',
-                          borderRadius: '5px',
+                          objectFit: "cover",
+                          borderRadius: "5px",
                         }}
                       />
                     </Link>
