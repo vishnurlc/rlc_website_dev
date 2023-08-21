@@ -67,7 +67,6 @@ export async function getData() {
 
 export default async function JetSkiPage() {
   const jetski = await getData();
-  console.log('s', jetski);
   return (
     <main>
       <HeroSection2
