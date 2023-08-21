@@ -154,24 +154,24 @@ export default function Header() {
       setMobileMenuDropdown(index);
     }
   };
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 500) {
-        setHeaderType(1);
-      } else {
-        setHeaderType(0);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 500) {
+  //       setHeaderType(1);
+  //     } else {
+  //       setHeaderType(0);
+  //     }
+  //   };
 
-    window.addEventListener('scroll', handleScroll);
+  //   window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
   return (
     <header
-      className="fixed w-screen top-0 z-50 transition-all "
+      className="fixed w-screen top-0 z-50 transition-all backdrop-blur-lg"
       style={{
         background:
           headerType === 1 || mobileMenuOpen
@@ -192,7 +192,7 @@ export default function Header() {
               height={100}
               src="/assets/logos/logo-dark.svg"
               alt="Richylife Club"
-              className="aspect-[98.04/100] w-[70px] md:w-[98.04px]"
+              className="aspect-[98.04/100] w-[60px] md:w-[80px]"
             />
           </Link>
         </div>
