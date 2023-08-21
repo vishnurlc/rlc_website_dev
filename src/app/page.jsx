@@ -13,7 +13,7 @@ export default function Home() {
       <HeroSection
         posterurl={'/assets/home/heroposter.png'}
         type={'video'}
-        url={'/assets/home/bannervideo.mp4'}
+        url={'https://admin.richylife.ae/rlchome.mp4'}
       />
       <OurServices />
       <Aboutsection />
