@@ -1,4 +1,5 @@
 import {
+  ContactForm,
   HeroSection,
   OurServices,
   ServiceBanner,
@@ -20,6 +21,12 @@ export default function Home() {
       <ServiceBanner />
       <Faq />
       <Testimonials />
+      <div className="my-9 md:my-16">
+        <ContactForm
+          title={'Get In touch'}
+          description={'Experience Elegance & Convenience'}
+        />
+      </div>
     </main>
   );
 }

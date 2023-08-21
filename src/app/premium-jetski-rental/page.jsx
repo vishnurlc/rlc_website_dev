@@ -1,4 +1,4 @@
-import { HeroSection2 } from '@/components';
+import { ContactForm, HeroSection2 } from '@/components';
 import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
 import LocationCard from '@/components/premiumjetski/LocationCard';
 import { Button } from '@/components/ui/button/Button';
@@ -251,6 +251,12 @@ export default async function JetSkiPage() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="my-9 md:my-16">
+        <ContactForm
+          title={'Get In touch'}
+          description={'Experience Elegance & Convenience'}
+        />
       </div>
     </main>
   );

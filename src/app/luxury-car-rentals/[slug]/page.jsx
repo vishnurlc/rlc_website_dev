@@ -195,8 +195,8 @@ export default async function CarDetail({ params: { slug } }) {
           </div>
         </div> */}
         <ContactForm
-          title={'Soar to New Heights'}
-          description={'Book your journey with our private jet rental now'}
+          title={'Sail in Luxury'}
+          description={'Book your journey with our luxury yacht rentals now'}
         />
       </div>
     </main>

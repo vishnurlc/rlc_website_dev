@@ -54,7 +54,7 @@ const page = () => {
         <div className="my-9 md:my-16 ">
           <ContactForm
             title={'Get in Touch with Us'}
-            description={'Get in Touch with Us'}
+            description={'Experience Elegance & Convenience'}
           />
         </div>
       </div>
