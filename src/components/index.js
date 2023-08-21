@@ -15,7 +15,8 @@ export { default as ListingComponent } from './listingcomponent/ListingWithFilte
 export { default as YachtListing } from './listingcomponent/YachtListing';
 
 export { default as ModalComponent } from './ui/Modalcomponent/Modalcomponent';
-export { default as VideoPlayer } from './ui/videoplayer/VideoPlayer';
+
+export { default as CustomVideoPlayer } from './ui/customVideoPlayer/CustomVideoPlayer';
 
 export { default as PaginationComponent } from './ui/pagination/PaginationComponent';
 
