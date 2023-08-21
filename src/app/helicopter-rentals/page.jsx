@@ -31,11 +31,11 @@ export const metadata = {
     title: 'Luxury Helicopter Rental Dubai',
     description:
       "Experience Dubai from a new perspective with Richylife Club's luxury helicopter rental. Enjoy VIP helicopter tours over Dubai's iconic landmarks and breathtaking views.",
-    url: `${process.env.WEB_URL}`,
+    url: `https://richylifeae.vercel.app`,
     siteName: 'Richylife Club',
     images: [
       {
-        url: `${process.env.WEB_URL}/assets/helicopter/banner.png`,
+        url: `https://richylifeae.vercel.app/assets/helicopter/banner.png`,
         width: 800,
         height: 600,
       },

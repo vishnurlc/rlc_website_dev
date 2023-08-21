@@ -27,7 +27,7 @@ export const poppins = Poppins({
 });
 
 export const metadata = {
-  metadataBase: new URL(`${process.env.WEB_URL}`),
+  metadataBase: new URL(`https://richylifeae.vercel.app`),
   title: {
     default: 'Richylife Club Luxury Experiences in Dubai',
     template: '%s | Richylife Club Luxury Experiences in Dubai ',
