@@ -1,9 +1,13 @@
+'use client';
 import Image from 'next/image';
 import React from 'react';
 import { Button } from '../ui/button/Button';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Jetcard = ({ data }) => {
+  const pathName = usePathname();
+
   return (
     <div className=" px-5">
       <div className="max-w-[1152px] mx-auto relative rounded-md overflow-hidden">
@@ -29,8 +33,8 @@ const Jetcard = ({ data }) => {
               </span>
             </div>
             <Link
-              href={'#'}
-              className="text-center text-xs md:text-base py-2 md:px-6 md:py-3 border border-solid border-white text-white "
+              href={`${pathName}/${data.slug}`}
+              className="text-center w-fit text-xs md:text-base py-2 md:px-6 md:py-3 border border-solid border-white text-white "
             >
               Know More
             </Link>

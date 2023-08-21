@@ -147,11 +147,13 @@ const ListingComponent = ({ variant, title, description }) => {
       setCars(newData);
     });
   }, [searchParams]);
-  useEffect(() => {
+
+  const scrollToViewMethod = () => {
     if (containerRef.current) {
       containerRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  }, [pageNumber]);
+  };
+
   return (
     <div className="w-full overflow-hidden">
       <div className="w-full my-[40px] ">
@@ -183,6 +185,7 @@ const ListingComponent = ({ variant, title, description }) => {
               totalPages={cars.meta.pagination.pageCount}
               onPageChange={handleFilters}
               setPageNumber={setPageNumber}
+              scrollIntoView={scrollToViewMethod}
             />
           </div>
         )}

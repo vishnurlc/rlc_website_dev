@@ -40,23 +40,25 @@ const Herosection2 = ({
           />
         )}
       </div>
-      <AnimatedHeroText
-        subheading={subheading}
-        heading1={heading1}
-        heading2={heading2}
-        btntext={btntext}
-      />
-      {overlay === 1 ? (
-        <div className="absolute inset-0 select-none z-0 bg-[#625A4A] bg-opacity-50"></div>
-      ) : (
-        <div
-          className="absolute inset-0 select-none z-1 "
-          style={{
-            background:
-              'linear-gradient(0deg, #162428 0%, rgba(22, 36, 40, 0.00) 100%)',
-          }}
-        ></div>
-      )}
+      <>
+        <AnimatedHeroText
+          subheading={subheading}
+          heading1={heading1}
+          heading2={heading2}
+          btntext={btntext}
+        />
+        {overlay === 1 ? (
+          <div className="absolute inset-0 select-none z-0 bg-[#625A4A] bg-opacity-50"></div>
+        ) : (
+          <div
+            className="absolute inset-0 select-none z-1 "
+            style={{
+              background:
+                'linear-gradient(0deg, #162428 0%, rgba(22, 36, 40, 0.00) 100%)',
+            }}
+          ></div>
+        )}
+      </>
     </div>
   );
 };
