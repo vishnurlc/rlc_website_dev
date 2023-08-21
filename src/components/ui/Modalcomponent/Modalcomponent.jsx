@@ -1,8 +1,8 @@
-'use client';
-import { Fragment, useRef, useState } from 'react';
-import { Dialog, Transition } from '@headlessui/react';
-import { BsWallet } from 'react-icons/bs';
-import { AiOutlineClose } from 'react-icons/ai';
+"use client";
+import { Fragment, useRef, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import { BsWallet } from "react-icons/bs";
+import { AiOutlineClose } from "react-icons/ai";
 
 export default function ModalComponent({ open, setOpen, children }) {
   const cancelButtonRef = useRef(null);
@@ -45,7 +45,7 @@ export default function ModalComponent({ open, setOpen, children }) {
                 >
                   <AiOutlineClose color="white" />
                 </div>
-                <div className="bg-white">{children}</div>
+                <div>{children}</div>
               </Dialog.Panel>
             </Transition.Child>
           </div>

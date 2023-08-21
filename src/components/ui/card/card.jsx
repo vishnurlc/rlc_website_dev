@@ -1,24 +1,24 @@
-'use client';
-import Image from 'next/image';
-import React, { useState } from 'react';
-import { Button } from '../button/Button';
-import { FaPhoneAlt } from 'react-icons/fa';
-import { BsPeople, BsFillFuelPumpFill, BsCarFrontFill } from 'react-icons/bs';
-import { RiWhatsappFill } from 'react-icons/ri';
-import { PiStarFill } from 'react-icons/pi';
-import { AiOutlinePlayCircle } from 'react-icons/ai';
-import { IoMdPhotos } from 'react-icons/io';
-import { LiaToolsSolid, LiaRulerCombinedSolid } from 'react-icons/lia';
-import { BiBadgeCheck, BiCategoryAlt, BiSolidColor } from 'react-icons/bi';
-import { MdOutlineAirlineSeatReclineExtra } from 'react-icons/md';
+"use client";
+import Image from "next/image";
+import React, { useState } from "react";
+import { Button } from "../button/Button";
+import { FaPhoneAlt } from "react-icons/fa";
+import { BsPeople, BsFillFuelPumpFill, BsCarFrontFill } from "react-icons/bs";
+import { RiWhatsappFill } from "react-icons/ri";
+import { PiStarFill } from "react-icons/pi";
+import { AiOutlinePlayCircle } from "react-icons/ai";
+import { IoMdPhotos } from "react-icons/io";
+import { LiaToolsSolid, LiaRulerCombinedSolid } from "react-icons/lia";
+import { BiBadgeCheck, BiCategoryAlt, BiSolidColor } from "react-icons/bi";
+import { MdOutlineAirlineSeatReclineExtra } from "react-icons/md";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { ModalComponent, VideoPlayer } from '@/components';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import { ModalComponent, VideoPlayer } from "@/components";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 function Card({ variant, data }) {
   const [open, setOpen] = useState(false);
@@ -34,8 +34,8 @@ function Card({ variant, data }) {
             alt={data.attributes.name}
             fill
             style={{
-              objectFit: 'cover',
-              objectPosition: 'center',
+              objectFit: "cover",
+              objectPosition: "center",
             }}
           />
           <div className="absolute inset-0 flex text-[#6A7285] font-sans text-xs items-end p-5 gap-4 z-10">
@@ -67,7 +67,7 @@ function Card({ variant, data }) {
               <Link href={`${path}/${data.attributes.slug}`}>
                 {data.attributes.name}
               </Link>
-              {variant === 'yacht' && (
+              {variant === "yacht" && (
                 <p className="text-gray-500 text-base font-normal">
                   {data.attributes.make.data.attributes.make}
                 </p>
@@ -88,7 +88,7 @@ function Card({ variant, data }) {
                 {data.attributes.rating}.00 rating
               </span>
             </p> */}
-            {variant === 'car' ? (
+            {variant === "car" ? (
               <CarDetail data={data} />
             ) : (
               <YachtDetail data={data} />
@@ -102,7 +102,7 @@ function Card({ variant, data }) {
               <div className="flex items-center gap-2">
                 {/* <p className="text-secondary text-sm">From</p> */}
                 <span className="text-primary font-normal text-2xl">
-                  AED{data.attributes.price}{' '}
+                  AED{data.attributes.price}{" "}
                   <span className="text-secondary text-sm font-normal">
                     /Day
                   </span>
@@ -143,10 +143,7 @@ function Carousel({ data, name }) {
             fill
             priority
             alt={name}
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center',
-            }}
+            className="object-contain"
           />
         </SwiperSlide>
       ))}
@@ -200,7 +197,7 @@ function CarDetail({ data }) {
       </div>
       <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-base flex items-center gap-2 font-medium leading-tight">
-          <MdOutlineAirlineSeatReclineExtra />{' '}
+          <MdOutlineAirlineSeatReclineExtra />{" "}
           {data.attributes.seat.data.attributes.seat} Seats
         </div>
       </div>
