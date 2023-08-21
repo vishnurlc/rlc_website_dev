@@ -1,4 +1,9 @@
-import { ContactForm, HeroSection, SectionHeading } from '@/components';
+import {
+  ContactForm,
+  HeroSection,
+  HeroSection2,
+  SectionHeading,
+} from '@/components';
 
 import Jetcard from '@/components/privatejetrental/Jetcard';
 import React from 'react';
@@ -7,9 +12,14 @@ const page = () => {
   return (
     <main>
       <h1 className="sr-only ">Private Jet Rentals - Richylife Club</h1>
-      <HeroSection
-        url={'/assets/privatejet/bannerimg.png'}
-        alt="Private Jet Rentals"
+      <HeroSection2
+        type={'video'}
+        heading1={'Private Jets'}
+        heading2={'Rental in Dubai'}
+        subheading={'Experience the extreme luxury with us'}
+        posterurl={'/assets/privatejet/bannerimg.png'}
+        btntext={'Book Now'}
+        overlay={0}
       />
 
       <div className="py-[43px] md:py-[86px]">

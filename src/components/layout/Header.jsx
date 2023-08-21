@@ -133,19 +133,19 @@ export default function Header() {
   const [mobileMenuDropdown, setMobileMenuDropdown] = useState(null);
   const path = usePathname();
 
-  const variantPath = ['/private-jet-rentals/'];
+  const variantPath = [''];
 
   useEffect(() => {
     setMobileMenuOpen(false);
-    async function updatePosition() {
-      const varPath = variantPath.some((item) => path.includes(item));
-      if (varPath) {
-        setHeaderType(1);
-      } else {
-        setHeaderType(0);
-      }
-    }
-    updatePosition();
+    // async function updatePosition() {
+    //   const varPath = variantPath.some((item) => path.includes(item));
+    //   if (varPath) {
+    //     setHeaderType(1);
+    //   } else {
+    //     setHeaderType(0);
+    //   }
+    // }
+    // updatePosition();
   }, [path]);
 
   // Function to handle dropdown hover
