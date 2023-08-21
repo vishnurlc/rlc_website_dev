@@ -11,10 +11,22 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Golden Jetski",
-  description: "Desert Safari Dubai.",
-  og: {
+  description: `Introducing the epitome of aquatic opulence - the Yamaha
+  Golden Jetski. This masterpiece of engineering combines sleek
+  design with unparalleled performance, promising an
+  adrenaline-packed ride like no other. Feel the rush as you
+  take control of this powerful beast, capable of reaching a top
+  speed of 67 mph, ensuring an exhilarating ride that will leave
+  you craving for more.`,
+  openGraph: {
     title: "Golden Jetski",
-    description: "This is my website Open Graph description.",
+    description: `Introducing the epitome of aquatic opulence - the Yamaha
+    Golden Jetski. This masterpiece of engineering combines sleek
+    design with unparalleled performance, promising an
+    adrenaline-packed ride like no other. Feel the rush as you
+    take control of this powerful beast, capable of reaching a top
+    speed of 67 mph, ensuring an exhilarating ride that will leave
+    you craving for more.`,
     image: "/assets/premiumgoldjetski/goldenjetski.png",
   },
 };

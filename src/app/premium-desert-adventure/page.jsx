@@ -1,6 +1,7 @@
 import { ContactForm, HeroSection2 } from "@/components";
 import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
 import { Button } from "@/components/ui/button/Button";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -41,12 +42,26 @@ export async function getData() {
 }
 
 export const metadata = {
-  title: "Desert Safari Dubai",
-  description: "Desert Safari Dubai.",
-  og: {
-    title: "Desert Safari Dubai",
-    description: "This is my website Open Graph description.",
-    image: "/assets/footer/1.png",
+  title: "Desert Safari Dubai | richylife",
+  description: `Embark on an immersive journey into the heart of Dubai&apos;s
+  majestic desert landscape with our captivating Desert Safari
+  experience. Brace yourself for a thrilling adventure that will
+  transport you to a world of mesmerizing sand dunes,
+  awe-inspiring vistas, and unforgettable moments. Our commitment
+  to delivering exceptional experiences ensures that your desert
+  safari transcends expectations, leaving you with memories that
+  will last a lifetime.`,
+  openGraph: {
+    title: "Desert Safari Dubai | richylife",
+    description: `Embark on an immersive journey into the heart of Dubai&apos;s
+    majestic desert landscape with our captivating Desert Safari
+    experience. Brace yourself for a thrilling adventure that will
+    transport you to a world of mesmerizing sand dunes,
+    awe-inspiring vistas, and unforgettable moments. Our commitment
+    to delivering exceptional experiences ensures that your desert
+    safari transcends expectations, leaving you with memories that
+    will last a lifetime.`,
+    openGraph: "/assets/footer/1.png",
   },
 };
 export default async function page() {
