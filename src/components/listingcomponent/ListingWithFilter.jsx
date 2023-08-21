@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
-import { Pagination, PaginationComponent, SectionHeading } from '..';
+import { Loader, Pagination, PaginationComponent, SectionHeading } from '..';
 import Card from '../ui/card/card';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import CarbodyFilter from '../filters/CarBodyFilter';
@@ -20,7 +20,7 @@ const ListingComponent = ({ variant, title, description }) => {
     searchParams.get('pageNumber') || 1
   );
   const pageSize = 5;
-  const [status, setStatus] = useState(false);
+  const [status, setStatus] = useState(0);
   const [filters, setFilters] = useState({
     make: '',
     body: '',
@@ -31,7 +31,7 @@ const ListingComponent = ({ variant, title, description }) => {
 
   async function getData({ params }) {
     const queryParameters = {};
-    setStatus(true);
+    setStatus(0);
     if (params.body) {
       queryParameters.body = {
         slug: {
@@ -73,7 +73,9 @@ const ListingComponent = ({ variant, title, description }) => {
       const res = await fetch(api, { next: { revalidate: 10 } });
       const data = await res.json();
       if (data == {}) {
-        setStatus(true);
+        setStatus(1);
+      } else {
+        setStatus(2);
       }
       return data;
     } catch (error) {
@@ -177,6 +179,8 @@ const ListingComponent = ({ variant, title, description }) => {
           {cars.data?.map((car, index) => (
             <Card variant={variant} data={car} key={index} />
           ))}
+          {status === 1 && <p>No Cars found</p>}
+          {status === 0 && <Loader color={'#000'} />}
         </div>
         {cars.meta && (
           <div>

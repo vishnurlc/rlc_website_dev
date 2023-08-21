@@ -2,7 +2,7 @@
 import React from 'react';
 import { FiLoader } from 'react-icons/fi';
 import { motion } from 'framer-motion';
-const Loader = () => {
+const Loader = ({ color }) => {
   return (
     <motion.div
       initial={{
@@ -21,7 +21,7 @@ const Loader = () => {
       }}
       className="flex items-center justify-center"
     >
-      <FiLoader size={32} color="white" />
+      <FiLoader size={32} color={color || 'white'} />
     </motion.div>
   );
 };
