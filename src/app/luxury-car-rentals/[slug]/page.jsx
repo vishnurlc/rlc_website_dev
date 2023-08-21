@@ -6,6 +6,22 @@ import Link from 'next/link';
 import qs from 'qs';
 import React from 'react';
 
+export async function generateMetadata({ params }) {
+  try {
+    const car = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?filters[slug][$eq]=${params.slug}`
+    ).then((res) => res.json());
+    return {
+      title: car.data[0].attributes.name || 'Luxury Cars for Rental In Dubai ',
+      description:
+        car.data[0].attributes.description ||
+        'Luxury Cars rental with Richylife Club',
+    };
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export async function getData(slug) {
   const query = qs.stringify({
     populate: [

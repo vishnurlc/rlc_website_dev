@@ -9,6 +9,33 @@ import Filter from '@/components/ui/filter/filter';
 import MasonryGrid from '@/components/yachtrental/PictureGallery';
 import React from 'react';
 
+export const metadata = {
+  title: 'Luxury Yacht Rental Dubai | Exclusive Yacht Charters',
+  description:
+    'Discover the ultimate luxury yacht rental experience in Dubai with Richylife Club. Explore our fleet of exclusive yachts for unforgettable charters and sea adventures.',
+  keywords: [
+    'Luxury Yacht Rental Dubai',
+    'Exclusive Yacht Charters',
+    'Yacht Charter Services',
+    'Luxury Yacht Fleet',
+    'Private Yacht Hire',
+    'Yacht Charter Dubai',
+    'Yacht Rental Packages',
+    'Yacht Cruises',
+    'Luxury Yacht Tours',
+    'Private Yacht Experiences',
+    'Dubai Yacht Rentals',
+    'Yacht Charter Destinations',
+    'Yacht Rental Offers',
+    'Yacht Vacation Dubai',
+    'Luxury Yacht Events',
+    'Sea Adventures',
+    'Private Yacht Tours',
+    'Richylife Club',
+    'Dubai UAE',
+  ],
+};
+
 export async function getData() {
   try {
     const res = await fetch(

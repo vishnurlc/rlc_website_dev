@@ -8,6 +8,33 @@ import {
 import Jetcard from '@/components/privatejetrental/Jetcard';
 import React from 'react';
 
+export const metadata = {
+  title: 'Private Jet Rentals Dubai | Luxury Jet Charters',
+  description:
+    'Experience unparalleled luxury and comfort with private jet rentals in Dubai. Explore our fleet of exclusive jets for personalized travel and jet charters with Richylife Club.',
+  keywords: [
+    'Private Jet Rentals Dubai',
+    'Luxury Jet Charters',
+    'Private Jet Charter Services',
+    'Exclusive Jet Hire',
+    'Private Jet Charter Dubai',
+    'Luxury Aircraft Rentals',
+    'Personalized Jet Travel',
+    'Jet Charter Packages',
+    'Luxury Jet Experiences',
+    'Private Aviation Dubai',
+    'Private Jet Charter Destinations',
+    'Jet Rental Offers',
+    'Jet Travel Services',
+    'VIP Jet Flights',
+    'Executive Jet Rentals',
+    'Dubai Jet Charters',
+    'Luxury Air Travel',
+    'Richylife Club',
+    'Dubai UAE',
+  ],
+};
+
 export async function getData() {
   try {
     const res = await fetch(

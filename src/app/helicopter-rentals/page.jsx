@@ -1,6 +1,33 @@
 import { ContactForm, HeroSection2 } from '@/components';
 import React from 'react';
 
+export const metadata = {
+  title: 'Luxury Helicopter Rental Dubai',
+  description:
+    "Experience Dubai from a new perspective with Richylife Club's luxury helicopter rental. Enjoy VIP helicopter tours over Dubai's iconic landmarks and breathtaking views.",
+  keywords: [
+    'Helicopter Rental Dubai',
+    'VIP Helicopter Tours',
+    'Luxury Helicopter Rentals',
+    'Helicopter Charter Dubai',
+    'Aerial Tours Dubai',
+    'Helicopter Sightseeing',
+    'Dubai Landmarks',
+    'Breathtaking Views',
+    'Aerial Perspective',
+    'Helicopter Adventure',
+    'Dubai Skyline',
+    'Private Helicopter Flights',
+    'Iconic Landmarks',
+    'Helicopter Excursions',
+    'Dubai Aerial Experience',
+    'Explore Dubai from Above',
+    'Helicopter Ride Dubai',
+    'VIP Sky Tours',
+    'Richylife Club',
+    'Dubai UAE',
+  ],
+};
 const page = () => {
   return (
     <main>

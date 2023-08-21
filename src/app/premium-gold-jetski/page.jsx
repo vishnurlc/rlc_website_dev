@@ -3,23 +3,34 @@ import {
   HeroSection,
   HeroSection2,
   SectionHeading,
-} from "@/components";
-import Image from "next/image";
-import React from "react";
-import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
-import Link from "next/link";
+} from '@/components';
+import Image from 'next/image';
+import React from 'react';
+import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
+import Link from 'next/link';
 
 export const metadata = {
-  title: "Golden Jetski",
-  description: `Introducing the epitome of aquatic opulence - the Yamaha
-  Golden Jetski. This masterpiece of engineering combines sleek
-  design with unparalleled performance, promising an
-  adrenaline-packed ride like no other. Feel the rush as you
-  take control of this powerful beast, capable of reaching a top
-  speed of 67 mph, ensuring an exhilarating ride that will leave
-  you craving for more.`,
+  title: 'Premium Gold Jetski Rental Dubai | Exclusive Jetski Experiences',
+  description: `Experience the ultimate luxury with premium gold jetski rentals in Dubai. Enjoy the thrill of riding high-performance watercrafts and explore Dubai's waters in style with Richylife Club.`,
+  keywords: [
+    'Premium Gold Jetski Rental Dubai',
+    'Exclusive Jetski Experiences',
+    'Luxury Jetski Hire',
+    'High-Performance Watercrafts',
+    'Gold Jetski Adventure',
+    'Luxury Watersports',
+    'Adrenaline Watersports',
+    'Dubai Jetski Tours',
+    'Watercraft Rental Dubai',
+    'Jetskiing Excursions',
+    'Luxury Jetskiing',
+    'Jetski Rental Packages',
+    'Dubai Watersports',
+    'Richylife Club',
+    'Dubai UAE',
+  ],
   openGraph: {
-    title: "Golden Jetski",
+    title: 'Golden Jetski',
     description: `Introducing the epitome of aquatic opulence - the Yamaha
     Golden Jetski. This masterpiece of engineering combines sleek
     design with unparalleled performance, promising an
@@ -27,7 +38,7 @@ export const metadata = {
     take control of this powerful beast, capable of reaching a top
     speed of 67 mph, ensuring an exhilarating ride that will leave
     you craving for more.`,
-    image: "/assets/premiumgoldjetski/goldenjetski.png",
+    image: '/assets/premiumgoldjetski/goldenjetski.png',
   },
 };
 
@@ -35,14 +46,14 @@ const page = () => {
   return (
     <main>
       <HeroSection2
-        type={"image"}
-        heading1={"Golden Jetski"}
-        heading2={"Rental in Dubai"}
+        type={'image'}
+        heading1={'Golden Jetski'}
+        heading2={'Rental in Dubai'}
         subheading={
-          "Ignite Your Adventurous Spirit with the Golden Jetski Experience"
+          'Ignite Your Adventurous Spirit with the Golden Jetski Experience'
         }
-        url={"/assets/premiumgoldjetski/goldenjetski.png"}
-        btntext={"Book your ride"}
+        url={'/assets/premiumgoldjetski/goldenjetski.png'}
+        btntext={'Book your ride'}
         overlay={0}
       />
 
@@ -50,9 +61,9 @@ const page = () => {
       <div className="px-6 py-16 bg-[#111618]">
         <div className="max-w-[1200px] mx-auto">
           <SectionHeading
-            title={"Golden Jetski Delight"}
-            description={" Unveiling the Ultimate Thrills and Hourly Rates"}
-            title_color={"gold"}
+            title={'Golden Jetski Delight'}
+            description={' Unveiling the Ultimate Thrills and Hourly Rates'}
+            title_color={'gold'}
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 md:mt-16">
             <div className="">
@@ -74,18 +85,18 @@ const page = () => {
               </div>
               <Link href="#">
                 <AnimatedBtn
-                  text={"Book Now"}
-                  styles={"bg-gold text-white rounded-md"}
+                  text={'Book Now'}
+                  styles={'bg-gold text-white rounded-md'}
                 />
               </Link>
             </div>
             <div className="relative w-full h-full min-h-[200px]">
               <Image
-                src={"/assets/premiumgoldjetski/goldenjetski.png"}
+                src={'/assets/premiumgoldjetski/goldenjetski.png'}
                 alt="Yamaha Golden Jetski "
                 fill
                 style={{
-                  objectFit: "cover",
+                  objectFit: 'cover',
                 }}
               />
               <div className="jetskigradient absolute inset-0"></div>
@@ -95,8 +106,8 @@ const page = () => {
       </div>
       <div className="my-8 md:my-16">
         <ContactForm
-          title={"Unleash Luxury and Speed"}
-          description={"Book now for an Unforgettable Jetski Adventure"}
+          title={'Unleash Luxury and Speed'}
+          description={'Book now for an Unforgettable Jetski Adventure'}
         />
       </div>
     </main>

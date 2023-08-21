@@ -9,6 +9,22 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { Suspense } from 'react';
 
+export async function generateMetadata({ params }) {
+  try {
+    const jet = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/private-jets?filters[slug][$eq]=${params.slug}`
+    ).then((res) => res.json());
+    return {
+      title: jet.data[0].attributes.name || 'Private Jet for Rental In Dubai ',
+      description:
+        jet.data[0].attributes.description ||
+        'Private Jet rental with Richylife Club',
+    };
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export async function getData(slug) {
   try {
     const res = await fetch(

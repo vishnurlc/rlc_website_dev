@@ -9,6 +9,23 @@ import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
 import Link from 'next/link';
 import React from 'react';
 
+export async function generateMetadata({ params }) {
+  try {
+    const yacht = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/yachts?filters[slug][$eq]=${params.slug}`
+    ).then((res) => res.json());
+    return {
+      title:
+        yacht.data[0].attributes.name || 'Luxury Yachts for Rental In Dubai ',
+      description:
+        yacht.data[0].attributes.description ||
+        'Luxury Yachts rental with Richylife Club',
+    };
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export async function getData(slug) {
   try {
     const res = await fetch(

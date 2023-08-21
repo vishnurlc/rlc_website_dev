@@ -24,63 +24,29 @@ const locations = [
   },
 ];
 
-// const jetski = [
-//   {
-//     name: 'JetSki One Yamahaa',
-//     price: '600',
-//     url: '/assets/jetskipage/jetskisample.jpg',
-//     slug: 'jetski-one-yamaha',
-//   },
-//   {
-//     name: 'JetSki One Yamahaa',
-//     price: '600',
-//     url: '/assets/jetskipage/jetskisample.jpg',
-//     slug: 'jetski-one-yamaha',
-//   },
-//   {
-//     name: 'JetSki One Yamahaa',
-//     price: '600',
-//     url: '/assets/jetskipage/jetskisample.jpg',
-//     slug: 'jetski-one-yamaha',
-//   },
-//   {
-//     name: 'JetSki One Yamahaa',
-//     price: '600',
-//     url: '/assets/jetskipage/jetskisample.jpg',
-//     slug: 'jetski-one-yamaha',
-//   },
-//   {
-//     name: 'JetSki One Yamahaa',
-//     price: '600',
-//     url: '/assets/jetskipage/jetskisample.jpg',
-//     slug: 'jetski-one-yamaha',
-//   },
-//   {
-//     name: 'JetSki One Yamahaa',
-//     price: '600',
-//     url: '/assets/jetskipage/jetskisample.jpg',
-//     slug: 'jetski-one-yamaha',
-//   },
-//   {
-//     name: 'JetSki One Yamahaa',
-//     price: '600',
-//     url: '/assets/jetskipage/jetskisample.jpg',
-//     slug: 'jetski-one-yamaha',
-//   },
-//   {
-//     name: 'JetSki One Yamahaa',
-//     price: '600',
-//     url: '/assets/jetskipage/jetskisample.jpg',
-//     slug: 'jetski-one-yamaha',
-//   },
-//   {
-//     name: 'JetSki One Yamahaa',
-//     price: '600',
-//     url: '/assets/jetskipage/jetskisample.jpg',
-//     slug: 'jetski-one-yamaha',
-//   },
-// ];
-
+export const metadata = {
+  title: 'Premium Jetski Rental Dubai | Exclusive Jetski Experiences',
+  description:
+    "Experience the thrill of riding premium jetskis in Dubai's crystal-clear waters. Book your exclusive jetski adventure with Richylife Club and enjoy adrenaline-pumping watersports.",
+  keywords: [
+    'Premium Jetski Rental Dubai',
+    'Exclusive Jetski Experiences',
+    'Luxury Jetski Hire',
+    'Adrenaline Watersports',
+    'Jetski Adventure Dubai',
+    'Jetski Rentals Dubai',
+    'Luxury Watersports',
+    'Watercraft Rental',
+    'Jetski Tour Packages',
+    'Watersports Activities',
+    'Jetski Excursions',
+    'Dubai Watersports',
+    'Jetski Riding',
+    'Jetskiing Dubai',
+    'Richylife Club',
+    'Dubai UAE',
+  ],
+};
 export async function getData() {
   try {
     const res = await fetch(
