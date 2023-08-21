@@ -7,6 +7,21 @@ import {
 } from '@/components';
 import Aboutsection from '@/components/home/aboutsection';
 import Faq from '@/components/home/faq';
+
+export const metadata = {
+  title: 'Welcome to Richylife Club - Luxury Experiences',
+  description:
+    'Experience luxury like never before with Richylife Club. Explore luxury car rentals, yacht rentals, water sports, and more.',
+  keywords: [
+    'Richylife Club, Luxury Experiences, Car Rentals, Yacht Rentals, Water Sports',
+  ],
+  openGraph: {
+    title: 'Welcome to Richylife Club - Luxury Experiences',
+    description: 'Experience luxury like never before with Richylife Club.',
+    image: '/assets/home/heroposter.png',
+  },
+};
+
 export default function Home() {
   return (
     <main className="overflow-hidden">
