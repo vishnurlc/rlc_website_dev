@@ -61,7 +61,16 @@ export const metadata = {
     to delivering exceptional experiences ensures that your desert
     safari transcends expectations, leaving you with memories that
     will last a lifetime.`,
-    openGraph: '/assets/footer/1.png',
+    siteName: 'Richylife Club',
+    images: [
+      {
+        url: `${process.env.WEB_URL}/assets/footer/1.png`,
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
 };
 export default async function page() {

@@ -31,7 +31,6 @@ export const metadata = {
     title: 'Luxury Helicopter Rental Dubai',
     description:
       "Experience Dubai from a new perspective with Richylife Club's luxury helicopter rental. Enjoy VIP helicopter tours over Dubai's iconic landmarks and breathtaking views.",
-    url: `${process.env.WEB_URL}`,
     siteName: 'Richylife Club',
     images: [
       {

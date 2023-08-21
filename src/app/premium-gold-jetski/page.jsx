@@ -30,15 +30,19 @@ export const metadata = {
     'Dubai UAE',
   ],
   openGraph: {
-    title: 'Golden Jetski',
-    description: `Introducing the epitome of aquatic opulence - the Yamaha
-    Golden Jetski. This masterpiece of engineering combines sleek
-    design with unparalleled performance, promising an
-    adrenaline-packed ride like no other. Feel the rush as you
-    take control of this powerful beast, capable of reaching a top
-    speed of 67 mph, ensuring an exhilarating ride that will leave
-    you craving for more.`,
-    image: '/assets/premiumgoldjetski/goldenjetski.png',
+    title: 'Premium Gold Jetski Rental Dubai | Exclusive Jetski Experiences',
+    description: `Experience the ultimate luxury with premium gold jetski rentals in Dubai. Enjoy the thrill of riding high-performance watercrafts and explore Dubai's waters in style with Richylife Club.`,
+
+    siteName: 'Richylife Club',
+    images: [
+      {
+        url: `${process.env.WEB_URL}/assets/premiumgoldjetski/goldenjetski.png`,
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
 };
 

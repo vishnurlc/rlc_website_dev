@@ -12,13 +12,29 @@ import React, { Suspense } from 'react';
 export async function generateMetadata({ params }) {
   try {
     const jet = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/private-jets?filters[slug][$eq]=${params.slug}`
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/private-jets?filters[slug][$eq]=${params.slug}&populate=image`
     ).then((res) => res.json());
     return {
       title: jet.data[0].attributes.name || 'Private Jet for Rental In Dubai ',
       description:
         jet.data[0].attributes.description ||
         'Private Jet rental with Richylife Club',
+
+      openGraph: {
+        type: 'website',
+        title:
+          jet.data[0].attributes.name || 'Private Jet for Rental In Dubai ',
+        description:
+          jet.data[0].attributes.description ||
+          'Private Jet rental with Richylife Club',
+        images: [
+          {
+            url: `${jet.data[0].attributes.image.data[0].attributes.url}`,
+            width: 800,
+            height: 600,
+          },
+        ],
+      },
     };
   } catch (error) {
     console.log(error);

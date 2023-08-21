@@ -26,6 +26,21 @@ export const metadata = {
     'Contact Us Form',
     'Richylife Club',
   ],
+  openGraph: {
+    title: 'Contact Us',
+    description:
+      'Get in touch with Richylife Club for unforgettable luxury experiences in Dubai. Contact us for inquiries, reservations, and more."',
+    siteName: 'Richylife Club',
+    images: [
+      {
+        url: `${process.env.WEB_URL}/assets/home/heroposter.png`,
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 const page = () => {

@@ -34,6 +34,21 @@ export const metadata = {
     'Richylife Club',
     'Dubai UAE',
   ],
+  openGraph: {
+    title: 'Luxury Car Rental Dubai',
+    description:
+      "Experience luxury and style with Richylife Club's premium luxury car rental services in Dubai. Choose from a fleet of exotic cars for a memorable driving experience.",
+    siteName: 'Richylife Club',
+    images: [
+      {
+        url: `${process.env.WEB_URL}/assets/rentacar/banner.png`,
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 async function getData() {

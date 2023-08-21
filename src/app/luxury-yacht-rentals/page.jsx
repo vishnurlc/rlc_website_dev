@@ -34,6 +34,21 @@ export const metadata = {
     'Richylife Club',
     'Dubai UAE',
   ],
+  openGraph: {
+    title: 'Luxury Yacht Rental Dubai | Exclusive Yacht Charters',
+    description:
+      'Discover the ultimate luxury yacht rental experience in Dubai with Richylife Club. Explore our fleet of exclusive yachts for unforgettable charters and sea adventures.',
+    siteName: 'Richylife Club',
+    images: [
+      {
+        url: `${process.env.WEB_URL}/assets/privateyachts/banner.png`,
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 export async function getData() {

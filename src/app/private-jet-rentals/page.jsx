@@ -33,6 +33,21 @@ export const metadata = {
     'Richylife Club',
     'Dubai UAE',
   ],
+  openGraph: {
+    title: 'Premium Jetski Rental Dubai | Exclusive Jetski Experiences',
+    description:
+      "Experience the thrill of riding premium jetskis in Dubai's crystal-clear waters. Book your exclusive jetski adventure with Richylife Club and enjoy adrenaline-pumping watersports.",
+    siteName: 'Richylife Club',
+    images: [
+      {
+        url: `${process.env.WEB_URL}/assets/privatejet/bannerimg.png`,
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 export async function getData() {
