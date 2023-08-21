@@ -1,7 +1,6 @@
 import { HeroSection, ListingComponent, SectionHeading } from "@/components";
 import Marquee from "@/components/marquee/Marquee";
 import MasonryGrid from "@/components/yachtrental/PictureGallery";
-import { CarLogoData } from "@/lib/carlogo";
 import React from "react";
 
 async function getData() {
