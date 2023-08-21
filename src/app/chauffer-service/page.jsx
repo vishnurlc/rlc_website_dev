@@ -21,6 +21,12 @@ export const metadata = {
     'full dubai tours',
     'events pickup and drop dubai',
   ],
+
+  openGraph: {
+    title: 'Luxury Chauffeur Service in Dubai',
+    description:
+      "'Book a luxury chauffeur service in Dubai for your airport transfers, half and full day car rentals, full Dubai tours, or events pickup and drop. We offer a wide range of vehicles to choose from, including limousines, SUVs, and vans. Our professional chauffeurs will make sure you have a safe and comfortable journey.",
+  },
 };
 
 const page = () => {

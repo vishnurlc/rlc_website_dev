@@ -32,11 +32,6 @@ export const metadata = {
     'Luxury Travel',
     'Richylife Club',
   ],
-  openGraph: {
-    title: 'Welcome to Richylife Club - Luxury Experiences',
-    description: 'Experience luxury like never before with Richylife Club.',
-    image: '/assets/home/heroposter.png',
-  },
 };
 
 export default function Home() {

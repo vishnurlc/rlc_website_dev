@@ -27,6 +27,22 @@ export const metadata = {
     'Richylife Club',
     'Dubai UAE',
   ],
+  openGraph: {
+    title: 'Luxury Helicopter Rental Dubai',
+    description:
+      "Experience Dubai from a new perspective with Richylife Club's luxury helicopter rental. Enjoy VIP helicopter tours over Dubai's iconic landmarks and breathtaking views.",
+    url: `${process.env.WEB_URL}`,
+    siteName: 'Richylife Club',
+    images: [
+      {
+        url: `${process.env.WEB_URL}/assets/helicopter/banner.png`,
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 const page = () => {
   return (

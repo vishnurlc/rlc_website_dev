@@ -26,6 +26,12 @@ export const metadata = {
     'Dubai UAE',
     'Richylife Club',
   ],
+
+  openGraph: {
+    title: 'Private Zoo Visit in Dubai',
+    description:
+      "Embark on a unique adventure with Richylife Club's Exotic Pet Experience. Book a private zoo visit in Dubai to see, touch, and play with exclusive animals up close.",
+  },
 };
 
 const page = () => {
