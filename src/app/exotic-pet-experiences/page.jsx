@@ -9,7 +9,7 @@ const page = () => {
         heading1="Exotic Pet"
         heading2="Experiences"
         subheading={'Journey into the Extraordinary'}
-        btntext={'Visit Us'}
+        btntext={'Book an appointment'}
         url="/assets/petpage/vippetbanner.png"
       />
       <PetExperience />

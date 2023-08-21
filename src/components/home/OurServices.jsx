@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -10,8 +10,32 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import CarouselSlide from './CarouselSlide';
 import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
+import { Loader } from '..';
+
+const getData = async () => {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/services?populate=*`
+    );
+    const data = await res.json();
+
+    return data;
+  } catch (error) {
+    return;
+  }
+};
 
 const Ourservices = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getData();
+      setData(data.data);
+    };
+    fetchData();
+  }, []);
+
   return (
     <div
       style={{
@@ -37,79 +61,70 @@ const Ourservices = () => {
           </div>
         </div>
         <div>
-          <Swiper
-            effect="coverflow"
-            grabCursor={true}
-            modules={[EffectCoverflow, Pagination, Navigation]}
-            centeredSlides={true}
-            loop={true}
-            slidesPerView="auto"
-            pagination={{
-              clickable: true,
-              el: '.swiper-pagination-el',
-              bulletActiveClass: 'serviceactivebullet',
-              bulletClass: 'servicebullet',
-            }}
-            navigation={{
-              nextEl: '.swiper-next-el',
-              prevEl: '.swiper-prev-el',
-            }}
-            className="max-w-[1200px] mx-auto p-5 serviceswiper"
-            coverflowEffect={{
-              rotate: 0,
-              stretch: 0,
-              depth: 300,
-              modifier: 5,
-              slideShadows: false,
-            }}
-            initialSlide={2}
-          >
-            {/* Add your service images here */}
-            <SwiperSlide className="serviceslide">
-              <CarouselSlide
-                url={'/assets/servicecarousel/1.png'}
-                title={'Testing the shit'}
-                price={300}
-              />
-            </SwiperSlide>
-            <SwiperSlide className="serviceslide">
-              <CarouselSlide
-                url={'/assets/servicecarousel/2.png'}
-                title={'Testing the shit'}
-                price={300}
-              />
-            </SwiperSlide>
-            <SwiperSlide className="serviceslide">
-              <CarouselSlide
-                url={'/assets/servicecarousel/3.png'}
-                title={'Testing the shit'}
-                price={300}
-              />
-            </SwiperSlide>
-            <SwiperSlide className="serviceslide">
-              <CarouselSlide
-                url={'/assets/servicecarousel/4.png'}
-                title={'Testing the shit'}
-                price={300}
-              />
-            </SwiperSlide>
-            <SwiperSlide className="serviceslide">
-              <CarouselSlide
-                url={'/assets/servicecarousel/5.png'}
-                title={'Testing the shit'}
-                price={300}
-              />
-            </SwiperSlide>
-          </Swiper>
-          <div className="flex gap-5 justify-center items-center mt-20 ">
-            <div className="swiper-prev-el">
-              <BsArrowLeftCircle size={24} color="white" cursor={'pointer'} />
-            </div>
-            <div className="swiper-pagination-el !w-fit flex items-center"></div>
-            <div className="swiper-next-el">
-              <BsArrowRightCircle size={24} color="white" cursor={'pointer'} />
-            </div>
-          </div>
+          {data.length > 0 ? (
+            <>
+              <Swiper
+                effect="coverflow"
+                grabCursor={true}
+                modules={[EffectCoverflow, Pagination, Navigation]}
+                centeredSlides={true}
+                loop={true}
+                slidesPerView="auto"
+                pagination={{
+                  clickable: true,
+                  el: '.swiper-pagination-el',
+                  bulletActiveClass: 'serviceactivebullet',
+                  bulletClass: 'servicebullet',
+                }}
+                navigation={{
+                  nextEl: '.swiper-next-el',
+                  prevEl: '.swiper-prev-el',
+                }}
+                className="max-w-[1200px] mx-auto p-5 serviceswiper"
+                coverflowEffect={{
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 300,
+                  modifier: 5,
+                  slideShadows: false,
+                }}
+                initialSlide={2}
+              >
+                {data.map((service, index) => (
+                  <SwiperSlide className="serviceslide" key={index}>
+                    <CarouselSlide
+                      url={
+                        service.attributes.image.data.attributes.formats.medium
+                          .url || service.attributes.image.data.attributes.url
+                      }
+                      title={service.attributes.name}
+                      price={service.attributes.price}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+
+              <div className="flex gap-5 justify-center items-center mt-20 ">
+                <div className="swiper-prev-el">
+                  <BsArrowLeftCircle
+                    size={24}
+                    color="white"
+                    cursor={'pointer'}
+                  />
+                </div>
+                <div className="swiper-pagination-el !w-fit flex items-center"></div>
+                <div className="swiper-next-el">
+                  <BsArrowRightCircle
+                    size={24}
+                    color="white"
+                    cursor={'pointer'}
+                  />
+                </div>
+              </div>
+            </>
+          ) : (
+            <Loader />
+          )}
         </div>
       </div>
     </div>

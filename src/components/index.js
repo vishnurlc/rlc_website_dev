@@ -11,7 +11,8 @@ export { default as ContactForm } from './formComponent/ContactForm';
 export { default as FormComponent } from './formComponent/FormComponent';
 export { default as GalleryJet } from './privatejetrental/GalleryJet';
 
-export { default as ListingComponent } from './yachtrental/ListingComponent';
+export { default as ListingComponent } from './listingcomponent/ListingWithFilter';
+export { default as YachtListing } from './listingcomponent/YachtListing';
 
 export { default as ModalComponent } from './ui/Modalcomponent/Modalcomponent';
 
@@ -23,3 +24,7 @@ export { default as HeroCarousel } from './ui/herocarousel/Herocarousel';
 export { default as AnimatedCarousel } from './yachtrental/AnimatedCarousel';
 
 export { default as PetExperience } from './petexperience/PetExperience';
+
+export { default as Loader } from './ui/loader/Loader';
+
+export { default as RichTextComponent } from './richytextComponent/RichtextComponent';

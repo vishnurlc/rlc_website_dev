@@ -9,7 +9,7 @@ const page = () => {
         style={{
           background: 'linear-gradient(180deg, #1F83B7 0%, #A7C3DB 100%)',
         }}
-        className="w-screen h-auto mt-[88px] max-h-[350px] grid grid-cols-1 items-center justify-items-center"
+        className="w-full h-auto mt-[88px] max-h-[350px] grid grid-cols-1 items-center justify-items-center"
       >
         <Image
           src="/assets/privatejet/flight.png"

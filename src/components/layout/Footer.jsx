@@ -1,51 +1,52 @@
-import React from "react";
-import { SectionHeading } from "..";
-import Image from "next/image";
-import FooterInstagram from "./FooterInstagram";
+import React from 'react';
+import { SectionHeading } from '..';
+import Image from 'next/image';
+import FooterInstagram from './FooterInstagram';
+import Link from 'next/link';
 
 const Footer = () => {
   const data = {
     images: [
-      "/assets/footer/1.png",
-      "/assets/footer/2.png",
-      "/assets/footer/3.png",
-      "/assets/footer/4.png",
-      "/assets/footer/1.png",
-      "/assets/footer/2.png",
+      '/assets/footer/1.png',
+      '/assets/footer/2.png',
+      '/assets/footer/3.png',
+      '/assets/footer/4.png',
+      '/assets/footer/1.png',
+      '/assets/footer/2.png',
     ],
     navigation: [
       {
-        title: "Rent a car",
-        link: "",
+        title: 'Rent a car',
+        link: '',
       },
       {
-        title: "Laxury Yacht Rentals",
-        link: "",
+        title: 'Laxury Yacht Rentals',
+        link: '',
       },
       {
-        title: "Premium Gold Jetski",
-        link: "",
+        title: 'Premium Gold Jetski',
+        link: '',
       },
       {
-        title: "Exoic Pet VIP Services",
-        link: "",
+        title: 'Exoic Pet VIP Services',
+        link: '',
       },
       {
-        title: "Services",
-        link: "",
+        title: 'Services',
+        link: '',
       },
       {
-        title: "Contact Us",
-        link: "",
+        title: 'Contact Us',
+        link: '',
       },
     ],
   };
   return (
     <footer className="pt-12">
       <SectionHeading
-        title={"Follow us on Instagram"}
+        title={'Follow us on Instagram'}
         description={
-          "Accumsan sit amet nulla facilisi morbi tempus. Suscipit tellus mauris a diam maecenas sed enim ut sem"
+          'Accumsan sit amet nulla facilisi morbi tempus. Suscipit tellus mauris a diam maecenas sed enim ut sem'
         }
       />
 
@@ -159,7 +160,29 @@ const Footer = () => {
             <div className="text-white text-lg font-bold leading-tight mb-5">
               Instagram
             </div>
-            <div className="w-60 h-44 relative">
+            <div className="grid grid-cols-3 w-full gap-2">
+              {data.images.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="relative w-full aspect-[64/80] h-auto min-w-[64px] "
+                  >
+                    <Link href={'#'} target="_blank" rel="noreferrer">
+                      <Image
+                        src={item}
+                        fill
+                        alt="Instagram links"
+                        style={{
+                          objectFit: 'cover',
+                          borderRadius: '5px',
+                        }}
+                      />
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
+            {/* <div className="w-60 h-44 relative">
               <div className="w-16 left-0 top-0 absolute rounded-md justify-start items-start inline-flex">
                 <img
                   className="w-16 h-20"
@@ -196,7 +219,7 @@ const Footer = () => {
                   src="https://via.placeholder.com/71x79"
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

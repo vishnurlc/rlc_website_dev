@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Navigation } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -65,7 +65,11 @@ const ServicesBanner = () => {
       {/* Swiper */}
       <div className="relative z-10">
         <Swiper
-          modules={[Navigation]}
+          modules={[Navigation, Autoplay]}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: true,
+          }}
           navigation={true}
           onSlideChange={(obj) => setSlideNumber(obj.activeIndex)}
           className="max-w-[1500px] mx-auto"

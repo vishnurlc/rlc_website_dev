@@ -1,107 +1,129 @@
-import { HeroSection2 } from "@/components";
-import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
-import LocationCard from "@/components/premiumjetski/LocationCard";
-import { Button } from "@/components/ui/button/Button";
-import Image from "next/image";
-import React from "react";
+import { HeroSection2 } from '@/components';
+import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
+import LocationCard from '@/components/premiumjetski/LocationCard';
+import { Button } from '@/components/ui/button/Button';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
 const locations = [
   {
-    url: "/assets/jetskipage/jumeirah.png", // Replace with actual image path
-    location: "Jumeriah",
+    url: '/assets/jetskipage/jumeirah.webp', // Replace with actual image path
+    location: 'Jumeriah',
     price: 150,
   },
   {
-    url: "/assets/jetskipage/jumeirah.png", // Replace with actual image path
-    location: "Burj Al Arab",
+    url: '/assets/jetskipage/burjalarab.avif', // Replace with actual image path
+    location: 'Burj Al Arab',
     price: 250,
   },
   {
-    url: "/assets/jetskipage/jumeirah.png", // Replace with actual image path
-    location: "Atlantis View",
+    url: '/assets/jetskipage/atlantisview.jpeg', // Replace with actual image path
+    location: 'Atlantis View',
     price: 180,
   },
 ];
 
-const jetski = [
-  {
-    name: "JetSki One Yamahaa",
-    price: "600",
-    url: "/assets/jetskipage/jetskisample.jpg",
-    slug: "jetski-one-yamaha",
-  },
-  {
-    name: "JetSki One Yamahaa",
-    price: "600",
-    url: "/assets/jetskipage/jetskisample.jpg",
-    slug: "jetski-one-yamaha",
-  },
-  {
-    name: "JetSki One Yamahaa",
-    price: "600",
-    url: "/assets/jetskipage/jetskisample.jpg",
-    slug: "jetski-one-yamaha",
-  },
-  {
-    name: "JetSki One Yamahaa",
-    price: "600",
-    url: "/assets/jetskipage/jetskisample.jpg",
-    slug: "jetski-one-yamaha",
-  },
-  {
-    name: "JetSki One Yamahaa",
-    price: "600",
-    url: "/assets/jetskipage/jetskisample.jpg",
-    slug: "jetski-one-yamaha",
-  },
-  {
-    name: "JetSki One Yamahaa",
-    price: "600",
-    url: "/assets/jetskipage/jetskisample.jpg",
-    slug: "jetski-one-yamaha",
-  },
-  {
-    name: "JetSki One Yamahaa",
-    price: "600",
-    url: "/assets/jetskipage/jetskisample.jpg",
-    slug: "jetski-one-yamaha",
-  },
-  {
-    name: "JetSki One Yamahaa",
-    price: "600",
-    url: "/assets/jetskipage/jetskisample.jpg",
-    slug: "jetski-one-yamaha",
-  },
-  {
-    name: "JetSki One Yamahaa",
-    price: "600",
-    url: "/assets/jetskipage/jetskisample.jpg",
-    slug: "jetski-one-yamaha",
-  },
-];
-const page = () => {
+// const jetski = [
+//   {
+//     name: 'JetSki One Yamahaa',
+//     price: '600',
+//     url: '/assets/jetskipage/jetskisample.jpg',
+//     slug: 'jetski-one-yamaha',
+//   },
+//   {
+//     name: 'JetSki One Yamahaa',
+//     price: '600',
+//     url: '/assets/jetskipage/jetskisample.jpg',
+//     slug: 'jetski-one-yamaha',
+//   },
+//   {
+//     name: 'JetSki One Yamahaa',
+//     price: '600',
+//     url: '/assets/jetskipage/jetskisample.jpg',
+//     slug: 'jetski-one-yamaha',
+//   },
+//   {
+//     name: 'JetSki One Yamahaa',
+//     price: '600',
+//     url: '/assets/jetskipage/jetskisample.jpg',
+//     slug: 'jetski-one-yamaha',
+//   },
+//   {
+//     name: 'JetSki One Yamahaa',
+//     price: '600',
+//     url: '/assets/jetskipage/jetskisample.jpg',
+//     slug: 'jetski-one-yamaha',
+//   },
+//   {
+//     name: 'JetSki One Yamahaa',
+//     price: '600',
+//     url: '/assets/jetskipage/jetskisample.jpg',
+//     slug: 'jetski-one-yamaha',
+//   },
+//   {
+//     name: 'JetSki One Yamahaa',
+//     price: '600',
+//     url: '/assets/jetskipage/jetskisample.jpg',
+//     slug: 'jetski-one-yamaha',
+//   },
+//   {
+//     name: 'JetSki One Yamahaa',
+//     price: '600',
+//     url: '/assets/jetskipage/jetskisample.jpg',
+//     slug: 'jetski-one-yamaha',
+//   },
+//   {
+//     name: 'JetSki One Yamahaa',
+//     price: '600',
+//     url: '/assets/jetskipage/jetskisample.jpg',
+//     slug: 'jetski-one-yamaha',
+//   },
+// ];
+
+export async function getData() {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/jetskis?populate=*`,
+      {
+        next: { revalidate: 40 },
+      }
+    );
+
+    const data = await res.json();
+
+    return data;
+  } catch (error) {
+    console.log('s', error);
+    return {};
+  }
+}
+
+export default async function JetSkiPage() {
+  const jetski = await getData();
+  console.log('s', jetski);
   return (
     <main>
       <HeroSection2
-        type={"video"}
-        heading1={"Luxury Jetski"}
-        heading2={"Rental in Dubai"}
-        subheading={"Unleash Your Inner Maverick on Jetski"}
-        posterurl={"/assets/jetskipage/jetskibanner.png"}
-        btntext={"Book your ride"}
+        type={'video'}
+        heading1={'Luxury Jetski'}
+        heading2={'Rental in Dubai'}
+        subheading={'Unleash Your Inner Maverick on Jetski'}
+        posterurl={'/assets/jetskipage/jetskibanner.png'}
+        btntext={'Book your ride'}
         overlay={1}
       />
       <div className="bg-black px-6 py-9 md:py-16 ">
         <div className="max-w-[1200px] mx-auto flex flex-col gap-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="relative w-full h-[50vh] max-h-[700px]">
+            <div className="relative w-full h-[30vh]  md:h-[50vh] max-h-[700px]">
               <Image
                 src="/assets/jetskipage/jetskisample.jpg"
                 fill
                 alt="Premium jet ski"
                 style={{
-                  objectFit: "cover",
-                  borderRadius: "8px",
+                  objectFit: 'cover',
+                  borderRadius: '8px',
                 }}
               />
             </div>
@@ -128,29 +150,31 @@ const page = () => {
               Our Premium Jetski
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-8">
-              {jetski.map((item, index) => (
+              {jetski.data.map((item, index) => (
                 <div className="relative  w-full aspect-[357/406]" key={index}>
                   <Image
-                    src={item.url}
-                    alt={item.name}
+                    src={item.attributes.image.data[0].attributes.url}
+                    alt={item.attributes.name}
                     fill
                     style={{
-                      objectFit: "cover",
+                      objectFit: 'cover',
                     }}
                   />
                   <div className="absolute p-4 text-white w-full h-fit bg-black bg-opacity-60 bottom-0 left-0 right-0 z-10">
                     <div>
                       <h2 className="uppercase font-medium tracking-wide text-xl font-poppins">
-                        {item.name}
+                        {item.attributes.name}
                       </h2>
                       <span className="text-gray-400 text-sm">
-                        Starting from AED{item.price}
+                        Starting from AED {item.attributes.price}
                       </span>
                     </div>
 
-                    <Button className="mt-4 px-4 py-2 bg-primary text-gold">
-                      Book Now
-                    </Button>
+                    <Link href={'#'}>
+                      <Button className="mt-4 px-4 py-2 bg-gold text-white rounded-sm">
+                        Book Now
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -163,7 +187,7 @@ const page = () => {
                 <h2 className="text-4xl mb-6">
                   Luxury and Speed
                   <br />
-                  Yamaha's Golden Jetski
+                  Yamaha&apos;s Golden Jetski
                 </h2>
                 <p className="text-gray-500 text-base tracking-wide ">
                   Introducing the epitome of aquatic opulence - the Yamaha
@@ -176,17 +200,17 @@ const page = () => {
                 </p>
               </div>
               <AnimatedBtn
-                text={"Book Now"}
-                styles={"bg-gold text-white rounded-sm"}
+                text={'Book Now'}
+                styles={'bg-gold text-white rounded-sm'}
               />
             </div>
             <div className="relative w-full h-full min-h-[250px]">
               <Image
-                src={"/assets/premiumgoldjetski/goldenjetski.png"}
+                src={'/assets/premiumgoldjetski/goldenjetski.png'}
                 alt="Yamaha Golden Jetski "
                 fill
                 style={{
-                  objectFit: "cover",
+                  objectFit: 'cover',
                 }}
               />
               <div className="jetskigradient absolute inset-0"></div>
@@ -195,7 +219,7 @@ const page = () => {
 
           <div className=" flex flex-col gap-8 items-center justify-center w-full">
             <h3 className="text-2xl text-center md:text-5xl text-gold capitalize font-inter">
-              Our Premium Locations
+              Our Service Locations
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
               {locations.map((item, index) => (
@@ -205,7 +229,7 @@ const page = () => {
                     alt={item.location}
                     fill
                     style={{
-                      objectFit: "cover",
+                      objectFit: 'cover',
                     }}
                   />
                   <div className="absolute p-4 text-white w-full h-fit bg-black bg-opacity-60 bottom-0 left-0 right-0 z-10">
@@ -230,6 +254,4 @@ const page = () => {
       </div>
     </main>
   );
-};
-
-export default page;
+}

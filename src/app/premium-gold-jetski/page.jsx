@@ -1,15 +1,28 @@
-import { ContactForm, HeroSection, SectionHeading } from '@/components';
+import {
+  ContactForm,
+  HeroSection,
+  HeroSection2,
+  SectionHeading,
+} from '@/components';
 import Image from 'next/image';
 import React from 'react';
 import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
+import Link from 'next/link';
 const page = () => {
   return (
     <main>
-      <HeroSection
+      <HeroSection2
         type={'image'}
+        heading1={'Golden Jetski'}
+        heading2={'Rental in Dubai'}
+        subheading={
+          'Ignite Your Adventurous Spirit with the Golden Jetski Experience'
+        }
         url={'/assets/premiumgoldjetski/goldenjetski.png'}
-        alt={'Premium Golden Jetski'}
+        btntext={'Book your ride'}
+        overlay={0}
       />
+
       <h1 className="sr-only"> Premium Golden Jetski Rental </h1>
       <div className="px-6 py-16 bg-[#111618]">
         <div className="max-w-[1200px] mx-auto">
@@ -24,7 +37,7 @@ const page = () => {
                 <h2 className="text-4xl mb-6">
                   Luxury and Speed
                   <br />
-                  Yamaha's Golden Jetski
+                  Yamaha&apos;s Golden Jetski
                 </h2>
                 <p className="text-gray-500 text-base tracking-wide ">
                   Introducing the epitome of aquatic opulence - the Yamaha
@@ -36,7 +49,12 @@ const page = () => {
                   you craving for more.
                 </p>
               </div>
-              <AnimatedBtn text={'Book Now'} />
+              <Link href="#">
+                <AnimatedBtn
+                  text={'Book Now'}
+                  styles={'bg-gold text-white rounded-md'}
+                />
+              </Link>
             </div>
             <div className="relative w-full h-full min-h-[200px]">
               <Image
