@@ -1,24 +1,24 @@
-import { HeroSection2 } from '@/components';
-import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
-import { Button } from '@/components/ui/button/Button';
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import { ContactForm, HeroSection2 } from "@/components";
+import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
+import { Button } from "@/components/ui/button/Button";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 const locations = [
   {
-    url: '/assets/jetskipage/jumeirah.webp', // Replace with actual image path
-    location: 'ABU DABHAI',
+    url: "/assets/jetskipage/jumeirah.webp", // Replace with actual image path
+    location: "ABU DABHAI",
     price: 150,
   },
   {
-    url: '/assets/jetskipage/burjalarab.avif', // Replace with actual image path
-    location: 'Burj Al Arab',
+    url: "/assets/jetskipage/burjalarab.avif", // Replace with actual image path
+    location: "Burj Al Arab",
     price: 250,
   },
   {
-    url: '/assets/jetskipage/atlantisview.jpeg', // Replace with actual image path
-    location: 'Atlantis View',
+    url: "/assets/jetskipage/atlantisview.jpeg", // Replace with actual image path
+    location: "Atlantis View",
     price: 180,
   },
 ];
@@ -35,7 +35,7 @@ export async function getData() {
 
     return data;
   } catch (error) {
-    console.log('s', error);
+    console.log("s", error);
     return {};
   }
 }
@@ -48,8 +48,8 @@ export default async function page() {
         type="image"
         heading1="Desert Safari Dubai"
         heading2="Experiences"
-        subheading={'Journey into the Extraordinary'}
-        btntext={'Book an appointment'}
+        subheading={"Journey into the Extraordinary"}
+        btntext={"Book an appointment"}
         url="/assets/footer/1.png"
       />
 
@@ -58,12 +58,12 @@ export default async function page() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="relative w-full h-[30vh]  md:h-[50vh] max-h-[700px]">
               <Image
-                src="/assets/jetskipage/jetskisample.jpg"
+                src="/assets/footer/1.png"
                 fill
                 alt="Premium jet ski"
                 style={{
-                  objectFit: 'cover',
-                  borderRadius: '8px',
+                  objectFit: "cover",
+                  borderRadius: "8px",
                 }}
               />
             </div>
@@ -84,7 +84,7 @@ export default async function page() {
             </div>
           </div>
 
-          {desert.data.map((item, index) => (
+          {desert.data?.map((item, index) => (
             <div
               key={index}
               className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 md:mt-16"
@@ -98,8 +98,8 @@ export default async function page() {
                   </p>
                 </div>
                 <AnimatedBtn
-                  text={'Book Now'}
-                  styles={'bg-gold text-white rounded-sm'}
+                  text={"Book Now"}
+                  styles={"bg-gold text-white rounded-sm"}
                 />
               </div>
               <div className="relative w-full h-full min-h-[250px]">
@@ -108,7 +108,7 @@ export default async function page() {
                   alt="Yamaha Golden Jetski "
                   fill
                   style={{
-                    objectFit: 'cover',
+                    objectFit: "cover",
                   }}
                 />
                 <div className="jetskigradient absolute inset-0"></div>
@@ -128,7 +128,7 @@ export default async function page() {
                     alt={item.location}
                     fill
                     style={{
-                      objectFit: 'cover',
+                      objectFit: "cover",
                     }}
                   />
                   <div className="absolute p-4 text-white w-full h-fit bg-black bg-opacity-60 bottom-0 left-0 right-0 z-10">
@@ -150,6 +150,13 @@ export default async function page() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="my-9 md:my-16 px-6">
+        <ContactForm
+          title={"Get In Touch"}
+          description={"Experience The Ultimate Adrenaline Rush"}
+        />
       </div>
     </main>
   );
