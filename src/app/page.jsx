@@ -21,7 +21,7 @@ export default function Home() {
       <ServiceBanner />
       <Faq />
       <Testimonials />
-      <div className="my-9 md:my-16">
+      <div className="my-9 md:my-16 px-6 ">
         <ContactForm
           title={'Get In touch'}
           description={'Experience Elegance & Convenience'}

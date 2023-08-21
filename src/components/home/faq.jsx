@@ -34,7 +34,7 @@ function Faq() {
         <h3 className="text-primary font-sans text-3xl md:text-4xl font-extrabold text-center">
           FAQ
         </h3>
-        <div className="w-full max-w-4xl mx-auto mb-6">
+        <div className="w-full max-w-4xl mx-auto mb-6 ">
           <FaqAccordation data={faqData} />
         </div>
       </div>

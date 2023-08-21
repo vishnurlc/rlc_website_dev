@@ -14,7 +14,7 @@ const FaqCard = ({ i, expanded, setExpanded, question, answer }) => {
   return (
     <div className="bg-white text-black drop-shadow-md rounded-lg shadow-primary">
       <motion.div
-        className={`py-4 px-2 ${styles.accordionHeader} cursor-pointer`}
+        className={`py-4 px-2 ${styles.accordionHeader} `}
         initial={false}
         onClick={() => setExpanded(isOpen ? false : i)}
       >
@@ -35,7 +35,7 @@ const FaqCard = ({ i, expanded, setExpanded, question, answer }) => {
               initial="collapsed"
               animate="open"
               exit="collapsed"
-              className="text-gray-500 font-thin text-base"
+              className="text-gray-500 font-thin text-base select-none"
               variants={accordionVariants}
               transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
             >

@@ -64,7 +64,7 @@ export default async function page() {
         />
         <MasonryGrid />
       </div>
-      <div className="my-9 md:my-16">
+      <div className="my-9 md:my-16 px-6">
         <ContactForm
           title={'Get In touch'}
           description={'Experience Elegance & Convenience'}

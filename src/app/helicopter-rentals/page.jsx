@@ -13,7 +13,7 @@ const page = () => {
         url="/assets/helicopter/banner.png"
       />
 
-      <div className="my-9 md:my-16">
+      <div className="my-9 md:my-16 px-6">
         <ContactForm title={'Get in touch with us'} />
       </div>
     </main>

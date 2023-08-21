@@ -77,7 +77,7 @@ const ServicesBanner = () => {
           {servicesData.map((item, index) => (
             <SwiperSlide key={index} className="z-10">
               <div className="grid grid-cols-1 md:grid-cols-2 max-w-[1200px] mx-auto ">
-                <div className="order-2 md:order-1 flex flex-col gap-5 pt-4 md:pt-12 font-inter md:px-[50px]">
+                <div className="py-2 order-2 md:order-1 flex flex-col gap-5 pt-4 md:pt-12 font-inter md:px-[50px]">
                   <span className="text-[#3DB7CD] font-medium text-sm">
                     {item.subheading}
                   </span>
