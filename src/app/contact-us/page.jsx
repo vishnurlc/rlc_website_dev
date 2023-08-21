@@ -11,8 +11,9 @@ const page = () => {
         alt="Luxury Car rentals"
         url={"/assets/home/hero.mp4"}
       />
-
-      <ContactForm title={"Contact Us"} />
+      <div className="mt-5 px-5 md:p-0">
+        <ContactForm title={"Contact Us"} />
+      </div>
     </main>
   );
 };
