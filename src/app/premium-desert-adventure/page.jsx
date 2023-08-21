@@ -41,12 +41,12 @@ export async function getData() {
 }
 
 export const metadata = {
-  title: "My Website",
-  description: "This is my website.",
+  title: "Desert Safari Dubai",
+  description: "Desert Safari Dubai.",
   og: {
-    title: "My Website Open Graph Title",
+    title: "Desert Safari Dubai",
     description: "This is my website Open Graph description.",
-    image: "https://mywebsite.com/image.jpg",
+    image: "/assets/footer/1.png",
   },
 };
 export default async function page() {
