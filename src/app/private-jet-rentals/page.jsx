@@ -52,6 +52,7 @@ export default async function PrivateJet() {
           {jets.data.map((item, index) => {
             return (
               <Jetcard
+                key={index}
                 data={{
                   title: item.attributes.name,
                   price: item.attributes.price,

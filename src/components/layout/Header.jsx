@@ -133,19 +133,8 @@ export default function Header() {
   const [mobileMenuDropdown, setMobileMenuDropdown] = useState(null);
   const path = usePathname();
 
-  const variantPath = [''];
-
   useEffect(() => {
     setMobileMenuOpen(false);
-    // async function updatePosition() {
-    //   const varPath = variantPath.some((item) => path.includes(item));
-    //   if (varPath) {
-    //     setHeaderType(1);
-    //   } else {
-    //     setHeaderType(0);
-    //   }
-    // }
-    // updatePosition();
   }, [path]);
 
   // Function to handle dropdown hover
@@ -165,10 +154,24 @@ export default function Header() {
       setMobileMenuDropdown(index);
     }
   };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 500) {
+        setHeaderType(1);
+      } else {
+        setHeaderType(0);
+      }
+    };
 
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <header
-      className="fixed w-screen top-0 z-50 "
+      className="fixed w-screen top-0 z-50 transition-all "
       style={{
         background:
           headerType === 1 || mobileMenuOpen

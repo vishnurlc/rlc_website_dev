@@ -7,7 +7,7 @@ import {
 import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { Suspense } from 'react';
 
 export async function getData(slug) {
   try {
@@ -32,25 +32,27 @@ export default async function JetDetail({ params: { slug } }) {
 
   return (
     <main>
-      <div>
-        <HeroCarousel
-          data={jets.data[0].attributes.image}
-          name={jets.data[0].name}
-        />
-        <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5">
-          <h2 className="text-right">
-            <span className="text-xl text-primary">
-              AED{jets.data[0].attributes.price}/Day
-            </span>
-          </h2>
-          <Link href={'#'}>
-            <AnimatedBtn
-              styles={'rounded-md bg-primary text-white'}
-              text={'Book Now'}
-            />
-          </Link>
+      <Suspense fallback="Loading">
+        <div>
+          <HeroCarousel
+            data={jets.data[0].attributes.image}
+            name={jets.data[0].name}
+          />
+          <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5">
+            <h2 className="text-right">
+              <span className="text-xl text-primary">
+                AED{jets.data[0].attributes.price}/Day
+              </span>
+            </h2>
+            <Link href={'#'}>
+              <AnimatedBtn
+                styles={'rounded-md bg-primary text-white'}
+                text={'Book Now'}
+              />
+            </Link>
+          </div>
         </div>
-      </div>
+      </Suspense>
       <div className="max-w-[1200px] mx-auto py-10 md:py-16 px-6 flex flex-col gap-8 md:gap-16">
         <div>
           <div>
