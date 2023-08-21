@@ -69,10 +69,10 @@ export default async function page() {
             </div>
             <div className=" flex flex-col items-start justify-center">
               <h3 className="text-2xl md:text-5xl text-gold capitalize font-inter">
-                Unveil the Enchantment of Dubai's Desert Wonders
+                Unveil the Enchantment of Dubai&apos;s Desert Wonders
               </h3>
               <p className="text-gray-300 my-6 ">
-                Embark on an immersive journey into the heart of Dubai's
+                Embark on an immersive journey into the heart of Dubai&apos;s
                 majestic desert landscape with our captivating Desert Safari
                 experience. Brace yourself for a thrilling adventure that will
                 transport you to a world of mesmerizing sand dunes,
