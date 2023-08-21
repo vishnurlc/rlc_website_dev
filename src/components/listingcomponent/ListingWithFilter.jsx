@@ -1,14 +1,14 @@
-'use client';
-import React, { useEffect, useRef, useState } from 'react';
-import { Pagination, PaginationComponent, SectionHeading } from '..';
-import Card from '../ui/card/card';
-import { useParams, useRouter, useSearchParams } from 'next/navigation';
-import CarbodyFilter from '../filters/CarBodyFilter';
-import CarBrandFilter from '../filters/CarBrandFilter';
-import PriceFilter from '../filters/PriceFilter';
-import CaryearFilter from '../filters/CarYearfilter';
-import { motion } from 'framer-motion';
-import qs from 'qs';
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+import { Pagination, PaginationComponent, SectionHeading } from "..";
+import Card from "../ui/card/card";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
+import CarbodyFilter from "../filters/CarBodyFilter";
+import CarBrandFilter from "../filters/CarBrandFilter";
+import PriceFilter from "../filters/PriceFilter";
+import CaryearFilter from "../filters/CarYearfilter";
+import { motion } from "framer-motion";
+import qs from "qs";
 const ListingComponent = ({ variant, title, description }) => {
   const router = useRouter();
   const containerRef = useRef(null);
@@ -17,15 +17,15 @@ const ListingComponent = ({ variant, title, description }) => {
   const [drag, setDrag] = useState(false);
   const searchParams = useSearchParams();
   const [pageNumber, setPageNumber] = useState(
-    searchParams.get('pageNumber') || 1
+    searchParams.get("pageNumber") || 1
   );
   const pageSize = 5;
   const [status, setStatus] = useState(false);
   const [filters, setFilters] = useState({
-    make: '',
-    body: '',
-    price: '',
-    year: '',
+    make: "",
+    body: "",
+    price: "",
+    year: "",
     pageNumber: pageNumber,
   });
 
@@ -47,8 +47,8 @@ const ListingComponent = ({ variant, title, description }) => {
       };
     }
     if (params.price) {
-      let pricemin = parseInt(params.price.split('-')[0]);
-      let pricemax = parseInt(params.price.split('-')[1]);
+      let pricemin = parseInt(params.price.split("-")[0]);
+      let pricemax = parseInt(params.price.split("-")[1]);
       queryParameters.price = {
         $between: [pricemin, pricemax],
       };
@@ -72,7 +72,7 @@ const ListingComponent = ({ variant, title, description }) => {
     try {
       const res = await fetch(api, { next: { revalidate: 10 } });
       const data = await res.json();
-      if (data === {}) {
+      if (data == {}) {
         setStatus(true);
       }
       return data;
@@ -105,7 +105,7 @@ const ListingComponent = ({ variant, title, description }) => {
     }
 
     // Update URL without triggering a full page reload
-    window.history.pushState({}, '', '?' + newSearchParams.toString());
+    window.history.pushState({}, "", "?" + newSearchParams.toString());
 
     // Update local state with the new filters
     setFilters(updatedFilters);
@@ -113,7 +113,7 @@ const ListingComponent = ({ variant, title, description }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (containerRef.current && typeof window !== 'undefined') {
+      if (containerRef.current && typeof window !== "undefined") {
         if (window.innerWidth < 700) {
           setDrag(true);
         } else {
@@ -125,10 +125,10 @@ const ListingComponent = ({ variant, title, description }) => {
 
     handleResize(); // Call the function once on initial load
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [containerRef]);
 
@@ -142,14 +142,14 @@ const ListingComponent = ({ variant, title, description }) => {
       ...prevFilters,
       ...urlFilters,
     }));
-    urlFilters['pageNumber'] = pageNumber;
+    urlFilters["pageNumber"] = pageNumber;
     getData({ params: urlFilters }).then((newData) => {
       setCars(newData);
     });
   }, [searchParams]);
   useEffect(() => {
     if (containerRef.current) {
-      containerRef.current.scrollIntoView({ behavior: 'smooth' });
+      containerRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [pageNumber]);
   return (
