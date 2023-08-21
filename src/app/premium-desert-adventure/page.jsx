@@ -1,4 +1,4 @@
-import { HeroSection2 } from "@/components";
+import { ContactForm, HeroSection2 } from "@/components";
 import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
 import { Button } from "@/components/ui/button/Button";
 import Image from "next/image";
@@ -58,7 +58,7 @@ export default async function page() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="relative w-full h-[30vh]  md:h-[50vh] max-h-[700px]">
               <Image
-                src="/assets/jetskipage/jetskisample.jpg"
+                src="/assets/footer/1.png"
                 fill
                 alt="Premium jet ski"
                 style={{
@@ -84,7 +84,7 @@ export default async function page() {
             </div>
           </div>
 
-          {desert.data.map((item, index) => (
+          {desert.data?.map((item, index) => (
             <div
               key={index}
               className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 md:mt-16"
@@ -150,6 +150,13 @@ export default async function page() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="my-9 md:my-16 px-6">
+        <ContactForm
+          title={"Get In Touch"}
+          description={"Experience The Ultimate Adrenaline Rush"}
+        />
       </div>
     </main>
   );
