@@ -39,6 +39,16 @@ export async function getData() {
     return {};
   }
 }
+
+export const metadata = {
+  title: "My Website",
+  description: "This is my website.",
+  og: {
+    title: "My Website Open Graph Title",
+    description: "This is my website Open Graph description.",
+    image: "https://mywebsite.com/image.jpg",
+  },
+};
 export default async function page() {
   const desert = await getData();
 
