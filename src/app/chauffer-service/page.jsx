@@ -81,7 +81,7 @@ const page = () => {
       <div className="mt-10 max-w-[1200px] mx-auto px-5">
         <SectionHeading title={'Our Services'} description={''} />
         <div className="container mx-auto mt-10">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-items-center gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-4 md:gap-6">
             {data.map((e, index) => (
               <CardSq key={index} data={e} />
             ))}
