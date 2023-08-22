@@ -20,7 +20,7 @@ const Pagination = ({
     { length: endPage - startPage + 1 },
     (_, index) => startPage + index
   );
-
+  console.log(currentPage);
   return (
     <nav aria-label="Page navigation example">
       <ul className=" !list-none flex">
@@ -28,7 +28,10 @@ const Pagination = ({
           <button
             className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
             onClick={() => {
-              onPageChange({ name: 'pageNumber', value: currentPage - 1 });
+              onPageChange({
+                name: 'pageNumber',
+                value: currentPage - 1,
+              });
               setPageNumber(currentPage - 1);
               scrollIntoView();
             }}
@@ -45,7 +48,7 @@ const Pagination = ({
             <button
               className={`relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white ${
                 currentPage === pageNumber
-                  ? 'dark:hover:text-white dark:bg-neutral-700'
+                  ? 'dark:hover:text-white dark:bg-neutral-700 bg-red-600'
                   : ''
               }`}
               onClick={() => {
@@ -64,7 +67,7 @@ const Pagination = ({
             onClick={() => {
               onPageChange({
                 name: 'pageNumber',
-                value: Number(currentPage) + 1,
+                value: currentPage + 1,
               });
               setPageNumber(currentPage + 1);
               scrollIntoView();
