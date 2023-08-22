@@ -26,15 +26,16 @@ function Aboutsection() {
   ];
   return (
     <div className="py-20 bg-white max-w-[1200px] mx-auto px-6 flex flex-col gap-9">
-      <div className="lg:flex w-full">
-        <div className="hidden lg:block relative w-full aspect-square flex-1">
+      <div className="lg:flex w-full items-center">
+        <div className="hidden lg:block relative w-full aspect-square h-auto flex-1">
           <Image
-            src="/assets/test/farrari.png"
+            src="/assets/home/bugatti.png"
             fill
             priority
             alt="car"
             style={{
-              objectFit: 'contain',
+              objectFit: 'cover',
+              borderRadius: '5px',
             }}
           />
         </div>
@@ -59,7 +60,7 @@ function Aboutsection() {
         </div>
       </div>
 
-      <div className=" flex flex-wrap justify-center lg:justify-between gap-6">
+      <div className=" flex flex-wrap justify-center lg:justify-between gap-6 md:mt-10">
         {data.map((e, index) => (
           <div
             key={index}

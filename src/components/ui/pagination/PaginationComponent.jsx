@@ -19,7 +19,6 @@ const Pagination = ({
     { length: endPage - startPage + 1 },
     (_, index) => startPage + index
   );
-  console.log(currentPage);
   return (
     <nav aria-label="Page navigation example">
       <ul className=" !list-none flex">

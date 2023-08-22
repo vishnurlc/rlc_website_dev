@@ -79,7 +79,6 @@ const ListingComponent = ({ variant, title, description }) => {
       }
       return data;
     } catch (error) {
-      console.log(error);
       return {};
     }
   }
@@ -184,7 +183,6 @@ const ListingComponent = ({ variant, title, description }) => {
         </div>
         {cars.meta && (
           <div>
-            {console.log(cars.meta)}
             <PaginationComponent
               currentPage={cars.meta.pagination.page}
               totalPages={cars.meta.pagination.pageCount}

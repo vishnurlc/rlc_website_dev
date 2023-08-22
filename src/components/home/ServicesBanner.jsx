@@ -1,14 +1,14 @@
-"use client";
-import Image from "next/image";
-import React, { useState, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+'use client';
+import Image from 'next/image';
+import React, { useState, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from 'swiper/modules';
 
-import "swiper/css";
-import "swiper/css/navigation";
-import { FiArrowRightCircle, FiArrowLeftCircle } from "react-icons/fi";
-import Link from "next/link";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { FiArrowRightCircle, FiArrowLeftCircle } from 'react-icons/fi';
+import Link from 'next/link';
 
 const getData = async () => {
   try {
@@ -25,36 +25,36 @@ const getData = async () => {
 
 const servicesData = [
   {
-    subheading: "Get a unique feeling",
-    title: "Discover Amazing and Luxurious Yachts1",
+    subheading: 'Get a unique feeling',
+    title: 'Discover Amazing and Luxurious Yachts1',
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation dolore magna aliqua.",
-    bgimg: "/assets/home/bannerservicebg1.png",
-    mainimg: "/assets/home/bannerservice1.png",
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation dolore magna aliqua.',
+    bgimg: '/assets/home/bannerservicebg1.png',
+    mainimg: '/assets/home/bannerservice1.png',
   },
   {
-    subheading: "Get a unique feeling",
-    title: "Discover Amazing and Luxurious Yachts2",
+    subheading: 'Get a unique feeling',
+    title: 'Discover Amazing and Luxurious Yachts2',
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation dolore magna aliqua.",
-    bgimg: "/assets/home/bannerservicebg1.png",
-    mainimg: "/assets/home/bannerservice1.png",
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation dolore magna aliqua.',
+    bgimg: '/assets/home/bannerservicebg1.png',
+    mainimg: '/assets/home/bannerservice1.png',
   },
   {
-    subheading: "Get a unique feeling",
-    title: "Discover Amazing and Luxurious Yachts3",
+    subheading: 'Get a unique feeling',
+    title: 'Discover Amazing and Luxurious Yachts3',
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation dolore magna aliqua.",
-    bgimg: "/assets/home/bannerservicebg1.png",
-    mainimg: "/assets/home/bannerservice1.png",
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation dolore magna aliqua.',
+    bgimg: '/assets/home/bannerservicebg1.png',
+    mainimg: '/assets/home/bannerservice1.png',
   },
   {
-    subheading: "Get a unique feeling",
-    title: "Discover Amazing and Luxurious Yachts4",
+    subheading: 'Get a unique feeling',
+    title: 'Discover Amazing and Luxurious Yachts4',
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation dolore magna aliqua.",
-    bgimg: "/assets/home/bannerservicebg1.png",
-    mainimg: "/assets/home/bannerservice1.png",
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation dolore magna aliqua.',
+    bgimg: '/assets/home/bannerservicebg1.png',
+    mainimg: '/assets/home/bannerservice1.png',
   },
 ];
 
@@ -69,7 +69,6 @@ const ServicesBanner = () => {
     };
     fetchData();
   }, []);
-  console.log(data);
 
   return (
     <div className="w-screen relative px-5 py-[42px] max-h-none md:max-h-[600px]">
@@ -80,7 +79,7 @@ const ServicesBanner = () => {
           fill
           alt="Somthing"
           style={{
-            objectFit: "cover",
+            objectFit: 'cover',
           }}
         />
         <div className="absolute inset-0 z-10 opacity-60 bg-[#142f39]"></div>
@@ -112,7 +111,7 @@ const ServicesBanner = () => {
                     {item.attributes.description}
                   </p>
                   <Link
-                    href={"#"}
+                    href={'#'}
                     className="border border-solid border-white px-6 py-2 w-fit text-white"
                   >
                     Book Now
@@ -125,9 +124,9 @@ const ServicesBanner = () => {
                     height={464}
                     alt={item.title}
                     style={{
-                      objectFit: "cover",
-                      display: "block",
-                      marginInline: "auto",
+                      objectFit: 'cover',
+                      display: 'block',
+                      marginInline: 'auto',
                     }}
                   />
                 </div>
