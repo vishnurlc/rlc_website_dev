@@ -37,6 +37,7 @@ const Herosection2 = ({
               objectFit: 'cover',
               objectPosition: 'center',
             }}
+            priority
           />
         )}
       </div>

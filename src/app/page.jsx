@@ -13,12 +13,44 @@ export const metadata = {
   description:
     'Experience luxury like never before with Richylife Club. Explore luxury car rentals, yacht rentals, water sports, and more.',
   keywords: [
-    'Richylife Club, Luxury Experiences, Car Rentals, Yacht Rentals, Water Sports',
+    'Luxury Experiences Dubai',
+    'Luxury Car Rentals',
+    'Yacht Rentals Dubai',
+    'Water Sports',
+    'Luxury Lifestyle',
+    'Dubai Luxury',
+    'Exotic Experiences',
+    'Exclusive Services',
+    'High-End Rentals',
+    'VIP Experiences',
+    'Luxury Adventures',
+    'Dubai UAE',
+    'Premium Leisure',
+    'Travel and Leisure',
+    'Bespoke Services',
+    'Dubai Holidays',
+    'Luxury Travel',
+    'Richylife Club',
   ],
   openGraph: {
     title: 'Welcome to Richylife Club - Luxury Experiences',
-    description: 'Experience luxury like never before with Richylife Club.',
-    image: '/assets/home/heroposter.png',
+    description:
+      'Experience luxury like never before with Richylife Club. Explore luxury car rentals, yacht rentals, water sports, and more.',
+    siteName: 'Richylife Club',
+    images: [
+      {
+        url: `${process.env.WEB_URL}/assets/home/homeposter.png`,
+        width: 800,
+        height: 600,
+      },
+      {
+        url: `${process.env.WEB_URL}/assets/home/homeposter.png`,
+        width: 300,
+        height: 200,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
 };
 

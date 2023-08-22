@@ -67,7 +67,7 @@ const Pagination = ({
                 value: Number(currentPage) + 1,
               });
               setPageNumber(currentPage + 1);
-              scrollIntoView;
+              scrollIntoView();
             }}
             disabled={currentPage === totalPages}
           >

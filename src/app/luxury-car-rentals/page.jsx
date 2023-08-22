@@ -8,6 +8,54 @@ import Marquee from '@/components/marquee/Marquee';
 import MasonryGrid from '@/components/yachtrental/PictureGallery';
 import React from 'react';
 
+export const metadata = {
+  title: 'Luxury Car Rental Dubai',
+  description:
+    "Experience luxury and style with Richylife Club's premium luxury car rental services in Dubai. Choose from a fleet of exotic cars for a memorable driving experience.",
+  keywords: [
+    'Luxury Car Rental Dubai',
+    'Exotic Car Hire',
+    'Premium Car Rentals',
+    'Luxury Car Fleet',
+    'Drive Exotic Cars',
+    'Exotic Car Rental Dubai',
+    'High-End Car Rentals',
+    'Luxury Vehicle Rentals',
+    'Luxury Car Brands',
+    'Exotic Car Collection',
+    'Sports Car Rental',
+    'Supercar Hire Dubai',
+    'Exotic Car Tours',
+    'Luxury Driving Experience',
+    'Rent Exotic Cars',
+    'Prestige Car Rentals',
+    'Luxury Car Models',
+    'Dubai Luxury Car Hire',
+    'Richylife Club',
+    'Dubai UAE',
+  ],
+  openGraph: {
+    title: 'Luxury Car Rental Dubai',
+    description:
+      "Experience luxury and style with Richylife Club's premium luxury car rental services in Dubai. Choose from a fleet of exotic cars for a memorable driving experience.",
+    siteName: 'Richylife Club',
+    images: [
+      {
+        url: `${process.env.WEB_URL}/assets/rentacar/banner.png`,
+        width: 800,
+        height: 600,
+      },
+      {
+        url: `${process.env.WEB_URL}/assets/rentacar/banner.png`,
+        width: 300,
+        height: 200,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+};
+
 async function getData() {
   let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/car-makes?populate=*`;
 

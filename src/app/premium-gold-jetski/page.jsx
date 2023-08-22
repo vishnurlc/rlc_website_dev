@@ -8,28 +8,48 @@ import Image from "next/image";
 import React from "react";
 import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
 import Link from "next/link";
-import Head from "next/head";
 
-// export const metadata = {
-//   title: "Golden Jetski",
-//   description: `Introducing the epitome of aquatic opulence - the Yamaha
-//   Golden Jetski. This masterpiece of engineering combines sleek
-//   design with unparalleled performance, promising an
-//   adrenaline-packed ride like no other. Feel the rush as you
-//   take control of this powerful beast, capable of reaching a top
-//   speed of 67 mph, ensuring an exhilarating ride that will leave
-//   you craving for more.`,
-//   openGraph: {
-//     title: "Golden Jetski",
-//     description: `Introducing the epitome of aquatic opulence - the Yamaha
-//     Golden Jetski. This masterpiece of engineering combines sleek
-//     design with unparalleled performance, promising an
-//     adrenaline-packed ride like no other. Feel the rush as you
-//     take control of this powerful beast, capable of reaching a top
-//     speed of 67 mph, ensuring an exhilarating ride that will leave
-//     you craving for more.`,
-//   },
-// };
+export const metadata = {
+  title: "Premium Gold Jetski Rental Dubai | Exclusive Jetski Experiences",
+  description: `Experience the ultimate luxury with premium gold jetski rentals in Dubai. Enjoy the thrill of riding high-performance watercrafts and explore Dubai's waters in style with Richylife Club.`,
+  keywords: [
+    "Premium Gold Jetski Rental Dubai",
+    "Exclusive Jetski Experiences",
+    "Luxury Jetski Hire",
+    "High-Performance Watercrafts",
+    "Gold Jetski Adventure",
+    "Luxury Watersports",
+    "Adrenaline Watersports",
+    "Dubai Jetski Tours",
+    "Watercraft Rental Dubai",
+    "Jetskiing Excursions",
+    "Luxury Jetskiing",
+    "Jetski Rental Packages",
+    "Dubai Watersports",
+    "Richylife Club",
+    "Dubai UAE",
+  ],
+  openGraph: {
+    title: "Premium Gold Jetski Rental Dubai | Exclusive Jetski Experiences",
+    description: `Experience the ultimate luxury with premium gold jetski rentals in Dubai. Enjoy the thrill of riding high-performance watercrafts and explore Dubai's waters in style with Richylife Club.`,
+
+    siteName: "Richylife Club",
+    images: [
+      {
+        url: `${process.env.WEB_URL}/assets/premiumgoldjetski/goldenjetski.png`,
+        width: 800,
+        height: 600,
+      },
+      {
+        url: `${process.env.WEB_URL}/assets/premiumgoldjetski/goldenjetski.png`,
+        width: 300,
+        height: 200,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
 
 const page = () => {
   return (

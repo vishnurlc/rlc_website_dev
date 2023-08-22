@@ -74,6 +74,7 @@ const Herosection = ({ url, type, posterurl, alt }) => {
             alt={alt || 'Hero Section Image'}
             objectFit="cover"
             objectPosition="center"
+            priority
           />
         )}
 

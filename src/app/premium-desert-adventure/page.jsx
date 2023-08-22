@@ -1,25 +1,25 @@
-import { ContactForm, HeroSection2 } from "@/components";
-import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
-import { Button } from "@/components/ui/button/Button";
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import { ContactForm, HeroSection2 } from '@/components';
+import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
+import { Button } from '@/components/ui/button/Button';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
 const locations = [
   {
-    url: "/assets/jetskipage/jumeirah.webp", // Replace with actual image path
-    location: "ABU DABHAI",
+    url: '/assets/jetskipage/jumeirah.webp', // Replace with actual image path
+    location: 'ABU DABHAI',
     price: 150,
   },
   {
-    url: "/assets/jetskipage/burjalarab.avif", // Replace with actual image path
-    location: "Burj Al Arab",
+    url: '/assets/jetskipage/burjalarab.avif', // Replace with actual image path
+    location: 'Burj Al Arab',
     price: 250,
   },
   {
-    url: "/assets/jetskipage/atlantisview.jpeg", // Replace with actual image path
-    location: "Atlantis View",
+    url: '/assets/jetskipage/atlantisview.jpeg', // Replace with actual image path
+    location: 'Atlantis View',
     price: 180,
   },
 ];
@@ -36,13 +36,13 @@ export async function getData() {
 
     return data;
   } catch (error) {
-    console.log("s", error);
+    console.log('s', error);
     return {};
   }
 }
 
 export const metadata = {
-  title: "Desert Safari Dubai | richylife",
+  title: 'Desert Safari Dubai | richylife',
   description: `Embark on an immersive journey into the heart of Dubai&apos;s
   majestic desert landscape with our captivating Desert Safari
   experience. Brace yourself for a thrilling adventure that will
@@ -52,7 +52,7 @@ export const metadata = {
   safari transcends expectations, leaving you with memories that
   will last a lifetime.`,
   openGraph: {
-    title: "Desert Safari Dubai | richylife",
+    title: 'Desert Safari Dubai | richylife',
     description: `Embark on an immersive journey into the heart of Dubai&apos;s
     majestic desert landscape with our captivating Desert Safari
     experience. Brace yourself for a thrilling adventure that will
@@ -61,7 +61,21 @@ export const metadata = {
     to delivering exceptional experiences ensures that your desert
     safari transcends expectations, leaving you with memories that
     will last a lifetime.`,
-    openGraph: "/assets/footer/1.png",
+    siteName: 'Richylife Club',
+    images: [
+      {
+        url: `${process.env.WEB_URL}/assets/footer/1.png`,
+        width: 800,
+        height: 600,
+      },
+      {
+        url: `${process.env.WEB_URL}/assets/footer/1.png`,
+        width: 300,
+        height: 200,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
 };
 export default async function page() {
@@ -73,8 +87,8 @@ export default async function page() {
         type="image"
         heading1="Desert Safari Dubai"
         heading2="Experiences"
-        subheading={"Journey into the Extraordinary"}
-        btntext={"Book an appointment"}
+        subheading={'Journey into the Extraordinary'}
+        btntext={'Book an appointment'}
         url="/assets/footer/1.png"
       />
 
@@ -87,8 +101,8 @@ export default async function page() {
                 fill
                 alt="Premium jet ski"
                 style={{
-                  objectFit: "cover",
-                  borderRadius: "8px",
+                  objectFit: 'cover',
+                  borderRadius: '8px',
                 }}
               />
             </div>
@@ -123,8 +137,8 @@ export default async function page() {
                   </p>
                 </div>
                 <AnimatedBtn
-                  text={"Book Now"}
-                  styles={"bg-gold text-white rounded-sm"}
+                  text={'Book Now'}
+                  styles={'bg-gold text-white rounded-sm'}
                 />
               </div>
               <div className="relative w-full h-full min-h-[250px]">
@@ -133,7 +147,7 @@ export default async function page() {
                   alt="Yamaha Golden Jetski "
                   fill
                   style={{
-                    objectFit: "cover",
+                    objectFit: 'cover',
                   }}
                 />
                 <div className="jetskigradient absolute inset-0"></div>
@@ -141,7 +155,7 @@ export default async function page() {
             </div>
           ))}
 
-          <div className=" flex flex-col gap-8 items-center justify-center w-full">
+          {/* <div className=" flex flex-col gap-8 items-center justify-center w-full">
             <h3 className="text-2xl text-center md:text-5xl text-gold capitalize font-inter">
               Our Service Locations
             </h3>
@@ -173,14 +187,14 @@ export default async function page() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
       <div className="my-9 md:my-16 px-6">
         <ContactForm
-          title={"Get In Touch"}
-          description={"Experience The Ultimate Adrenaline Rush"}
+          title={'Get In Touch'}
+          description={'Experience The Ultimate Adrenaline Rush'}
         />
       </div>
     </main>

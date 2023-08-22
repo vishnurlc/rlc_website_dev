@@ -8,6 +8,53 @@ import {
 import Jetcard from '@/components/privatejetrental/Jetcard';
 import React from 'react';
 
+export const metadata = {
+  title: 'Private Jet Rentals Dubai | Luxury Jet Charters',
+  description:
+    'Experience unparalleled luxury and comfort with private jet rentals in Dubai. Explore our fleet of exclusive jets for personalized travel and jet charters with Richylife Club.',
+  keywords: [
+    'Private Jet Rentals Dubai',
+    'Luxury Jet Charters',
+    'Private Jet Charter Services',
+    'Exclusive Jet Hire',
+    'Private Jet Charter Dubai',
+    'Luxury Aircraft Rentals',
+    'Personalized Jet Travel',
+    'Jet Charter Packages',
+    'Luxury Jet Experiences',
+    'Private Aviation Dubai',
+    'Private Jet Charter Destinations',
+    'Jet Rental Offers',
+    'Jet Travel Services',
+    'VIP Jet Flights',
+    'Executive Jet Rentals',
+    'Dubai Jet Charters',
+    'Luxury Air Travel',
+    'Richylife Club',
+    'Dubai UAE',
+  ],
+  openGraph: {
+    title: 'Premium Jetski Rental Dubai | Exclusive Jetski Experiences',
+    description:
+      "Experience the thrill of riding premium jetskis in Dubai's crystal-clear waters. Book your exclusive jetski adventure with Richylife Club and enjoy adrenaline-pumping watersports.",
+    siteName: 'Richylife Club',
+    images: [
+      {
+        url: `${process.env.WEB_URL}/assets/privatejet/bannerimg.png`,
+        width: 800,
+        height: 600,
+      },
+      {
+        url: `${process.env.WEB_URL}/assets/privatejet/bannerimg.png`,
+        width: 300,
+        height: 200,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+};
+
 export async function getData() {
   try {
     const res = await fetch(

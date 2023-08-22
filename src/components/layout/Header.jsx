@@ -190,7 +190,11 @@ export default function Header() {
             <Image
               width={98.04}
               height={100}
-              src="/assets/logos/logo-dark.svg"
+              src={
+                mobileMenuOpen
+                  ? 'assets/logos/logo-dark.svg'
+                  : '/assets/logos/richy-logoX.png'
+              }
               alt="Richylife Club"
               className="aspect-[98.04/100] w-[60px] md:w-[80px]"
             />
