@@ -41,12 +41,12 @@ export const metadata = {
     siteName: 'Richylife Club',
     images: [
       {
-        url: `${process.env.WEB_URL}/assets/privateyachts/banner.png`,
+        url: `${process.env.WEB_URL}/assets/privateyachts/opengraphimage.png`,
         width: 800,
         height: 600,
       },
       {
-        url: `${process.env.WEB_URL}/assets/privateyachts/banner.png`,
+        url: `${process.env.WEB_URL}/assets/privateyachts/opengraphimage.png`,
         width: 300,
         height: 200,
       },
