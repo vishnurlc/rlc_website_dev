@@ -4,7 +4,6 @@ const Pagination = ({
   currentPage,
   totalPages,
   onPageChange,
-  setPageNumber,
   scrollIntoView,
 }) => {
   const showPages = 3; // Number of page numbers to show
@@ -32,7 +31,6 @@ const Pagination = ({
                 name: 'pageNumber',
                 value: currentPage - 1,
               });
-              setPageNumber(currentPage - 1);
               scrollIntoView();
             }}
             disabled={currentPage === 1}
@@ -53,7 +51,7 @@ const Pagination = ({
               }`}
               onClick={() => {
                 onPageChange({ name: 'pageNumber', value: pageNumber });
-                setPageNumber(pageNumber);
+
                 scrollIntoView();
               }}
             >
@@ -69,7 +67,6 @@ const Pagination = ({
                 name: 'pageNumber',
                 value: currentPage + 1,
               });
-              setPageNumber(currentPage + 1);
               scrollIntoView();
             }}
             disabled={currentPage === totalPages}

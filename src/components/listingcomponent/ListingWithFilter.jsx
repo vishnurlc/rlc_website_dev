@@ -184,11 +184,11 @@ const ListingComponent = ({ variant, title, description }) => {
         </div>
         {cars.meta && (
           <div>
+            {console.log(cars.meta)}
             <PaginationComponent
-              currentPage={pageNumber}
+              currentPage={cars.meta.pagination.page}
               totalPages={cars.meta.pagination.pageCount}
               onPageChange={handleFilters}
-              setPageNumber={setPageNumber}
               scrollIntoView={scrollToViewMethod}
             />
           </div>
