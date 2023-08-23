@@ -4,7 +4,7 @@ import Section2Card from './Section2Card';
 
 const Section2 = ({ data }) => {
   const [hovered, setHovered] = useState(0);
-  console.log('a', data);
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
       {data.data.map((item, index) => {

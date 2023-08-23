@@ -2,6 +2,8 @@ import Image from 'next/image';
 import React from 'react';
 import { SectionHeading } from '..';
 import Section2 from './Section2';
+import { Button } from '../ui/button/Button';
+import AnimatedBtn from '../premiumjetski/AnimatedBtn';
 
 const PetExperience = ({ data }) => {
   return (
@@ -11,8 +13,15 @@ const PetExperience = ({ data }) => {
           title={'Explore a World of Wonders'}
           title_color={'gold'}
         />
+        {/* <div className="flex items-center justify-center my-4">
+          <AnimatedBtn
+            text={'Book an Appointment'}
+            styles={'bg-primary text-gold border border-gold '}
+          />
+        </div> */}
         <Section2 data={data} />
       </div>
+
       <div className="absolute inset-0 ">
         <Image
           src="/assets/petpage/bg.png"
