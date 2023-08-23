@@ -11,21 +11,17 @@ const AboutCounter = ({ data }) => {
       ref={ref}
     >
       {data.map((e, index) => (
-        <>
+        <div key={index} className="flex-1 min-w-[120px]">
           {isInView ? (
             <CountUp
               start={e.startNumber}
               end={e.endNumber}
               suffix={e.suffix}
-              key={index}
               duration={3}
               delay={0}
             >
               {({ countUpRef }) => (
-                <div
-                  key={index}
-                  className="flex-1 flex flex-col items-start md:items-center justify-center"
-                >
+                <div className="flex flex-col items-start md:items-center justify-center">
                   <span
                     ref={countUpRef}
                     className="text-emerald-600 text-5xl md:text-[61.71px] font-black"
@@ -35,7 +31,7 @@ const AboutCounter = ({ data }) => {
               )}
             </CountUp>
           ) : null}
-        </>
+        </div>
         // <div
         //   key={index}
         //   className="flex-1 flex flex-col items-start md:items-center justify-center"

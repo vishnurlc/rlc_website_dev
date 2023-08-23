@@ -1,16 +1,16 @@
-"use client";
-import Image from "next/image";
-import React, { useState, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+'use client';
+import Image from 'next/image';
+import React, { useState, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from 'swiper/modules';
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from 'framer-motion';
 
-import "swiper/css";
-import "swiper/css/navigation";
+import 'swiper/css';
+import 'swiper/css/navigation';
 
-import Link from "next/link";
+import Link from 'next/link';
 
 const getData = async () => {
   try {
@@ -65,12 +65,12 @@ const ServicesBanner = () => {
                 data[slideNumber]?.attributes.bgimage.data.attributes.formats
                   .medium.url ||
                 data[slideNumber]?.attributes.bgimage.data.attributes.url ||
-                "/assets/home/bannerservicebg1.png"
+                '/assets/home/bannerservicebg1.png'
               }
               fill
               alt="Banner Service Bg"
               style={{
-                objectFit: "cover",
+                objectFit: 'cover',
               }}
             />
             <div className="absolute inset-0 z-10 opacity-60 bg-[#142f39]"></div>
@@ -82,6 +82,7 @@ const ServicesBanner = () => {
       <div className="relative z-10">
         <Swiper
           modules={[Navigation, Autoplay]}
+          spaceBetween={30}
           // autoplay={{
           //   delay: 2500,
           //   disableOnInteraction: true,
@@ -119,14 +120,14 @@ const ServicesBanner = () => {
                     height={464}
                     alt={item.title}
                     style={{
-                      objectFit: "cover",
-                      display: "block",
-                      marginInline: "auto",
-                      width: "100%",
-                      height: "auto",
-                      aspectRatio: "1",
-                      maxWidth: "427px",
-                      borderRadius: "5px",
+                      objectFit: 'cover',
+                      display: 'block',
+                      marginInline: 'auto',
+                      width: '100%',
+                      height: 'auto',
+                      aspectRatio: '1',
+                      maxWidth: '427px',
+                      borderRadius: '5px',
                     }}
                   />
                 </div>
