@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@headlessui/react": "^1.7.16",
     "@motionone/utils": "^10.15.1",
     "@react-spring/parallax": "^9.7.3",
