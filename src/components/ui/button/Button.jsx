@@ -1,15 +1,16 @@
 "use client";
-import Link from "next/link";
 import clsx from "clsx";
 import { missingClass } from "@/lib/utils";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function Button({
   as = "button",
   className = "",
   variant = "primary",
   width = "auto",
-  ...props
+  msg,
+  children,
 }) {
   const baseButtonClasses = "font-medium text-center py-2 px-6";
 
@@ -31,13 +32,18 @@ export function Button({
   );
 
   return (
-    <motion.button
-      href={""}
+    <motion.div
       className={styles}
-      {...props}
       whileHover={{
         scale: 1.05,
       }}
-    />
+    >
+      <Link
+        href={`https://wa.me/${process.env.WHATSAPP_NUMBER}?text=${msg}?`}
+        target="_blank"
+      >
+        {children}
+      </Link>
+    </motion.div>
   );
 }
