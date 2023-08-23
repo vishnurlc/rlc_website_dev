@@ -1,27 +1,38 @@
 import Image from 'next/image';
 import React from 'react';
+import AboutCounter from './AboutCounter';
 
 function Aboutsection() {
   const data = [
     {
       title: 'Private events ',
-      number: '11k',
+      startNumber: '5',
+      endNumber: '11',
+      suffix: 'k',
     },
     {
       title: 'Customer Satisfaction',
-      number: '100%',
+      startNumber: '30',
+      endNumber: '100',
+      suffix: '%',
     },
     {
       title: 'Private events ',
-      number: '100%',
+      startNumber: '30',
+      endNumber: '100',
+      suffix: '%',
     },
     {
       title: 'Private events ',
-      number: '180+',
+      startNumber: '30',
+      endNumber: '180',
+      suffix: '+',
     },
     {
       title: 'Private events ',
-      number: '30',
+      startNumber: '30',
+      endNumber: '100',
+      suffix: '',
     },
   ];
   return (
@@ -60,19 +71,7 @@ function Aboutsection() {
         </div>
       </div>
 
-      <div className=" flex flex-wrap justify-center lg:justify-between gap-6 md:mt-10">
-        {data.map((e, index) => (
-          <div
-            key={index}
-            className="flex-1 flex flex-col items-start md:items-center justify-center"
-          >
-            <div className="text-emerald-600 text-5xl md:text-[61.71px] font-black">
-              {e.number}
-            </div>
-            <p className="text-black text-sm md:text-xs">{e.title}</p>
-          </div>
-        ))}
-      </div>
+      <AboutCounter data={data} />
     </div>
   );
 }
