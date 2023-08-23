@@ -45,15 +45,15 @@ const Section2Card = ({ data, hovered, setHovered }) => {
           )}
         </AnimatePresence>
       </div>
-      <div className="py-6 flex flex-col gap-4 ">
-        {/* <div>
+      {/* <div className="py-6 flex flex-col gap-4 ">
+         <div>
           <h3 className="text-gold mb-4">{data?.title}</h3>
           <p className="text-white w-full md:w-10/12">{data?.description}</p>
-        </div> */}
+        </div> 
         <button className="bg-primary w-fit px-6 py-2  bg-opacity-50 rounded-sm text-white ">
           {data.buttontext}
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -28,6 +28,17 @@ const Section2 = () => {
         hovered={hovered}
         setHovered={setHovered}
       />
+      <Section2Card
+        data={{
+          id: 2,
+          img: '/assets/petpage/img3.jpg',
+          title: '',
+          description: '',
+          buttontext: 'Book an appointment',
+        }}
+        hovered={hovered}
+        setHovered={setHovered}
+      />
     </div>
   );
 };
