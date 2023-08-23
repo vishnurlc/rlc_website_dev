@@ -47,3 +47,4 @@ const AboutCounter = ({ data }) => {
 };
 
 export default AboutCounter;
+//
