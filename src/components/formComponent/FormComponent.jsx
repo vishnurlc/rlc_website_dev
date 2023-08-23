@@ -16,7 +16,7 @@ const FormComponent = () => {
   const [isSending, setIsSending] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formErrors, setFormErrors] = useState({
-    firstName: 'Hello',
+    firstName: '',
     lastName: '',
     email: '',
     phone: '',

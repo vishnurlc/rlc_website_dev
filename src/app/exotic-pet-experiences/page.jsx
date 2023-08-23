@@ -49,7 +49,25 @@ export const metadata = {
   },
 };
 
-const page = () => {
+async function getData() {
+  let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/private-zoos?populate=*`;
+
+  try {
+    const res = await fetch(api, { next: { revalidate: 10 } });
+    const data = await res.json();
+    if (data == {}) {
+      setStatus(true);
+    }
+    return data;
+  } catch (error) {
+    console.log(error);
+    return {};
+  }
+}
+
+export default async function PetPage() {
+  const data = await getData();
+
   return (
     <main>
       <HeroSection2
@@ -61,12 +79,10 @@ const page = () => {
         posterurl="/assets/petpage/vippetbanner.png"
         url="/assets/petpage/pets.mov"
       />
-      <PetExperience />
+      <PetExperience data={data} />
       <div className="my-9 md:my-16 px-6">
         <ContactForm title={'Get in touch with us'} />
       </div>
     </main>
   );
-};
-
-export default page;
+}
