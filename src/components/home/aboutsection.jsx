@@ -1,38 +1,38 @@
-import Image from 'next/image';
-import React from 'react';
-import AboutCounter from './AboutCounter';
+import Image from "next/image";
+import React from "react";
+import AboutCounter from "./AboutCounter";
 
 function Aboutsection() {
   const data = [
     {
-      title: 'Private events ',
-      startNumber: '5',
-      endNumber: '11',
-      suffix: 'k',
+      title: "Private events ",
+      startNumber: "5",
+      endNumber: "11",
+      suffix: "k",
     },
     {
-      title: 'Customer Satisfaction',
-      startNumber: '30',
-      endNumber: '100',
-      suffix: '%',
+      title: "Customer Satisfaction",
+      startNumber: "30",
+      endNumber: "100",
+      suffix: "%",
     },
     {
-      title: 'Private events ',
-      startNumber: '30',
-      endNumber: '100',
-      suffix: '%',
+      title: "Private events ",
+      startNumber: "30",
+      endNumber: "100",
+      suffix: "%",
     },
     {
-      title: 'Private events ',
-      startNumber: '30',
-      endNumber: '180',
-      suffix: '+',
+      title: "Private events ",
+      startNumber: "30",
+      endNumber: "180",
+      suffix: "+",
     },
     {
-      title: 'Private events ',
-      startNumber: '30',
-      endNumber: '100',
-      suffix: '',
+      title: "Private events ",
+      startNumber: "30",
+      endNumber: "100",
+      suffix: "",
     },
   ];
   return (
@@ -40,20 +40,20 @@ function Aboutsection() {
       <div className="lg:flex w-full items-center">
         <div className="hidden lg:block relative w-full aspect-square h-auto flex-1">
           <Image
-            src="/assets/home/bugatti.png"
+            src="/assets/home/bugattitop.png"
             fill
             priority
             alt="car"
             style={{
-              objectFit: 'cover',
-              borderRadius: '5px',
+              objectFit: "contain",
+              borderRadius: "5px",
             }}
           />
         </div>
         <div className="bg-white text-black  md:mx-20 flex-1">
           <h2 className="text-teal-900 text-[42px] font-extrabold leading-10">
             RICHYLIFE <br />
-            CLUB{' '}
+            CLUB{" "}
           </h2>
 
           <p className="py-10 text-md font-thin text-secondary">
