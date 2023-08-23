@@ -15,8 +15,11 @@ const FormComponent = () => {
   });
   const [isSending, setIsSending] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState(
+    'Thank you for your submission!'
+  );
   const [formErrors, setFormErrors] = useState({
-    firstName: 'Hello',
+    firstName: '',
     lastName: '',
     email: '',
     phone: '',
@@ -86,19 +89,23 @@ const FormComponent = () => {
     e.preventDefault();
     if (validateForm()) {
       setIsSending(true);
-      await sendEmail({ data: formData });
-      setTimeout(() => {
-        setIsSending(false);
-        setIsSubmitted(true);
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          phone: '',
-          subject: '',
-          message: '',
-        });
-      }, 2000);
+      const res = await sendEmail({ data: formData });
+      if (res === 'success') {
+        setTimeout(() => {
+          setIsSending(false);
+          setIsSubmitted(true);
+          setFormData({
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            subject: '',
+            message: '',
+          });
+        }, 2000);
+      } else {
+        setSubmitMessage('Sorry, Something went wrong!');
+      }
     } else {
       console.log('not done');
     }
@@ -107,7 +114,7 @@ const FormComponent = () => {
   return (
     <div className="max-w-[800px] mx-auto w-full px-0 md:px-6">
       <form onSubmit={handleSubmit}>
-        <div className="grid grid-cols-1  gap-y-[px] md:gap-y-[24px]">
+        <div className="grid grid-cols-1  gap-y-[24px] md:gap-y-[24px]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[22px]">
             <div className="relative">
               <input
@@ -204,13 +211,13 @@ const FormComponent = () => {
             )}
           </div>
         </div>
-        <div className="flex gap-8 items-center justify-center mt-8 md:mt-16">
+        <div className="flex gap-8 items-center justify-center mt-8 md:mt-12">
           <button
             disabled={isSending}
             type="submit"
             className="px-4 md:px-10 py-2 md:py-3 text-white font-medium bg-primary border border-solid border-primary"
           >
-            {isSending ? 'Sending...' : 'Book Now'}
+            {isSending ? 'Submitting...' : 'Submit'}
           </button>
           <Button
             variant="secondary"
@@ -225,7 +232,7 @@ const FormComponent = () => {
       </form>
       {isSubmitted && (
         <div className="mt-4 text-center">
-          <p className="text-green-500">Thank you for your submission!</p>
+          <p className="text-green-500">{submitMessage}</p>
         </div>
       )}
     </div>
