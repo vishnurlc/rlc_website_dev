@@ -13,11 +13,12 @@ const Section2Card = ({ data, hovered, setHovered }) => {
           height={422}
           style={{
             objectFit: 'cover',
-            objectPosition: 'center',
-            aspectRatio: 'calc(800/422)',
+            objectPosition: 'top',
+            aspectRatio: 'calc(800/600)',
             width: '100%',
             height: 'auto',
             maxWidth: '800px',
+            borderRadius: '5px',
           }}
         />
         <AnimatePresence>

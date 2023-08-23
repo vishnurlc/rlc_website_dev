@@ -9,11 +9,10 @@ const Section2 = () => {
       <Section2Card
         data={{
           id: 0,
-          img: '/assets/petpage/bear.png',
-          title: 'African Lion Safari',
-          description:
-            'Embark on a thrilling journey through the heart of Africa as you witness the raw power and beauty of the king of the savannah. Our guided safari takes you up close to these magnificent creatures in their natural habitat.',
-          buttontext: 'Explore Safari Tours',
+          img: '/assets/petpage/img1.jpg',
+          title: '',
+          description: '',
+          buttontext: 'Book an appointment',
         }}
         hovered={hovered}
         setHovered={setHovered}
@@ -21,11 +20,10 @@ const Section2 = () => {
       <Section2Card
         data={{
           id: 1,
-          img: '/assets/petpage/python.png',
-          title: 'Enchanted Rainforest Discovery',
-          description:
-            'Step into a world of vibrant colors and melodious calls as you enter our enchanting rainforest exhibit. Immerse yourself in the sounds and sights of tropical birds from around the globe, surrounded by lush greenery.',
-          buttontext: 'Discover Rainforest Oasis',
+          img: '/assets/petpage/img2.jpg',
+          title: '',
+          description: '',
+          buttontext: 'Book an appointment',
         }}
         hovered={hovered}
         setHovered={setHovered}
