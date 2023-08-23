@@ -26,9 +26,7 @@ const CarouselSlide = ({ url, title, price }) => {
         </div>
         <Button
           variant="whiteborder"
-          msg={
-            "I'm writing to you today to inquire about the Golden Jetski. I'm interested in learning more about its specifications, price, and availability."
-          }
+          msg={`I'm writing to you today to inquire about the ${title}. I'm interested in learning more about its specifications, price, and availability.`}
         >
           Book now
         </Button>
