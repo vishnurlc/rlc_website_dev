@@ -1,7 +1,6 @@
 import { ContactForm, HeroSection2 } from '@/components';
 import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
 import { Button } from '@/components/ui/button/Button';
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -9,7 +8,7 @@ import React from 'react';
 const locations = [
   {
     url: '/assets/jetskipage/jumeirah.webp', // Replace with actual image path
-    location: 'ABU DABHAI',
+    location: 'ABU DHABI',
     price: 150,
   },
   {

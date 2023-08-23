@@ -53,12 +53,13 @@ const page = () => {
   return (
     <main>
       <HeroSection2
-        type="image"
+        type="video"
         heading1="Exotic Pet"
         heading2="Experiences"
         subheading={'Journey into the Extraordinary'}
         btntext={'Book an appointment'}
-        url="/assets/petpage/vippetbanner.png"
+        posterurl="/assets/petpage/vippetbanner.png"
+        url="/assets/petpage/pets.mov"
       />
       <PetExperience />
       <div className="my-9 md:my-16 px-6">
