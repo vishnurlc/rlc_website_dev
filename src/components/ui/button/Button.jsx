@@ -41,6 +41,7 @@ export function Button({
       <Link
         href={`https://wa.me/${process.env.WHATSAPP_NUMBER}?text=${msg}?`}
         target="_blank"
+        className="flex justify-center items-center gap-4"
       >
         {children}
       </Link>
