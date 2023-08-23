@@ -5,9 +5,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Autoplay, Navigation } from 'swiper/modules';
 
+import { motion, AnimatePresence } from 'framer-motion';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { FiArrowRightCircle, FiArrowLeftCircle } from 'react-icons/fi';
+
 import Link from 'next/link';
 
 const getData = async () => {
@@ -23,41 +25,6 @@ const getData = async () => {
   }
 };
 
-const servicesData = [
-  {
-    subheading: 'Get a unique feeling',
-    title: 'Discover Amazing and Luxurious Yachts1',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation dolore magna aliqua.',
-    bgimg: '/assets/home/bannerservicebg1.png',
-    mainimg: '/assets/home/bannerservice1.png',
-  },
-  {
-    subheading: 'Get a unique feeling',
-    title: 'Discover Amazing and Luxurious Yachts2',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation dolore magna aliqua.',
-    bgimg: '/assets/home/bannerservicebg1.png',
-    mainimg: '/assets/home/bannerservice1.png',
-  },
-  {
-    subheading: 'Get a unique feeling',
-    title: 'Discover Amazing and Luxurious Yachts3',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation dolore magna aliqua.',
-    bgimg: '/assets/home/bannerservicebg1.png',
-    mainimg: '/assets/home/bannerservice1.png',
-  },
-  {
-    subheading: 'Get a unique feeling',
-    title: 'Discover Amazing and Luxurious Yachts4',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation dolore magna aliqua.',
-    bgimg: '/assets/home/bannerservicebg1.png',
-    mainimg: '/assets/home/bannerservice1.png',
-  },
-];
-
 const ServicesBanner = () => {
   const [data, setData] = useState([]);
   const [slideNumber, setSlideNumber] = useState(0);
@@ -71,28 +38,55 @@ const ServicesBanner = () => {
   }, []);
 
   return (
-    <div className="w-screen relative px-5 py-[42px] max-h-none md:max-h-[600px]">
-      {/* Overlay */}
-      <div className="absolute inset-0 ">
-        <Image
-          src={servicesData[slideNumber].bgimg}
-          fill
-          alt="Somthing"
-          style={{
-            objectFit: 'cover',
-          }}
-        />
-        <div className="absolute inset-0 z-10 opacity-60 bg-[#142f39]"></div>
-      </div>
+    <div className="w-screen relative px-5 py-[42px] overflow-hidden ">
+      <AnimatePresence mode="popLayout">
+        {data[slideNumber] && (
+          <motion.div
+            className="absolute inset-0 "
+            key={slideNumber}
+            initial={{
+              scale: 1,
+              opacity: 0.8,
+            }}
+            animate={{
+              scale: 1.2,
+              opacity: 1,
+            }}
+            exit={{
+              scale: 1.4,
+              opacity: 0,
+            }}
+            transition={{
+              duration: 1,
+            }}
+          >
+            <Image
+              src={
+                data[slideNumber]?.attributes.bgimage.data.attributes.formats
+                  .medium.url ||
+                data[slideNumber]?.attributes.bgimage.data.attributes.url ||
+                '/assets/home/bannerservicebg1.png'
+              }
+              fill
+              alt="Banner Service Bg"
+              style={{
+                objectFit: 'cover',
+              }}
+            />
+            <div className="absolute inset-0 z-10 opacity-60 bg-[#142f39]"></div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Swiper */}
       <div className="relative z-10">
         <Swiper
           modules={[Navigation, Autoplay]}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: true,
-          }}
+          // autoplay={{
+          //   delay: 2500,
+          //   disableOnInteraction: true,
+          // }}
+          speed={1500}
           navigation={true}
           onSlideChange={(obj) => setSlideNumber(obj.activeIndex)}
           className="max-w-[1500px] mx-auto"
@@ -117,7 +111,7 @@ const ServicesBanner = () => {
                     Book Now
                   </Link>
                 </div>
-                <div className="order-1 md:order-2 relative">
+                <div className="order-1 md:order-2 relative w-full h-full">
                   <Image
                     src={item.attributes.image.data.attributes.url}
                     width={427}
@@ -127,6 +121,11 @@ const ServicesBanner = () => {
                       objectFit: 'cover',
                       display: 'block',
                       marginInline: 'auto',
+                      width: '100%',
+                      height: 'auto',
+                      aspectRatio: '1',
+                      maxWidth: '427px',
+                      borderRadius: '5px',
                     }}
                   />
                 </div>
