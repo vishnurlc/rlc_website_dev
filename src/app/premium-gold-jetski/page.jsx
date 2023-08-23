@@ -96,6 +96,7 @@ const page = () => {
                 <AnimatedBtn
                   text={"Book Now"}
                   styles={"bg-gold text-white rounded-md"}
+                  msg={`I'm writing to you today to inquire about the Golden Jetski. I'm interested in learning more about its specifications, price, and availability.`}
                 />
               </Link>
             </div>
