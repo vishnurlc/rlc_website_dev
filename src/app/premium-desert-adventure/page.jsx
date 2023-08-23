@@ -84,12 +84,13 @@ export default async function page() {
   return (
     <main>
       <HeroSection2
-        type="image"
+        type="video"
         heading1="Desert Safari Dubai"
         heading2="Experiences"
         subheading={'Journey into the Extraordinary'}
         btntext={'Book an appointment'}
-        url="/assets/footer/1.png"
+        posterurl={'/assets/footer/1.png'}
+        url="/assets/premiumdesert/bannervideo.mov"
       />
 
       <div className="bg-black px-6 py-9 md:py-16 ">
