@@ -18,11 +18,14 @@ const AboutCounter = ({ data }) => {
               end={e.endNumber}
               suffix={e.suffix}
               key={index}
-              duration={2}
+              duration={3}
               delay={0}
             >
               {({ countUpRef }) => (
-                <div className="flex-1 flex flex-col items-start md:items-center justify-center">
+                <div
+                  key={index}
+                  className="flex-1 flex flex-col items-start md:items-center justify-center"
+                >
                   <span
                     ref={countUpRef}
                     className="text-emerald-600 text-5xl md:text-[61.71px] font-black"
