@@ -1,6 +1,6 @@
-'use client';
-import Link from 'next/link';
-import React from 'react';
+"use client";
+import Link from "next/link";
+import React from "react";
 
 const AnimatedBtn = ({ styles, text, msg }) => {
   return (
@@ -8,7 +8,7 @@ const AnimatedBtn = ({ styles, text, msg }) => {
       <Link
         href={`https://wa.me/${process.env.WHATSAPP_NUMBER}?text=${msg}?`}
         target="_blank"
-        className="flex justify-center items-center gap-4"
+        className="flex justify-center items-center gap-4 uppercase whitespace-nowrap text-xs md:text-sm"
       >
         {text}
       </Link>
