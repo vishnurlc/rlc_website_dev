@@ -13,11 +13,12 @@ const Section2Card = ({ data, hovered, setHovered }) => {
           height={422}
           style={{
             objectFit: 'cover',
-            objectPosition: 'center',
-            aspectRatio: 'calc(800/422)',
+            objectPosition: 'top',
+            aspectRatio: 'calc(800/600)',
             width: '100%',
             height: 'auto',
             maxWidth: '800px',
+            borderRadius: '5px',
           }}
         />
         <AnimatePresence>
@@ -45,10 +46,10 @@ const Section2Card = ({ data, hovered, setHovered }) => {
         </AnimatePresence>
       </div>
       <div className="py-6 flex flex-col gap-4 ">
-        <div>
+        {/* <div>
           <h3 className="text-gold mb-4">{data?.title}</h3>
           <p className="text-white w-full md:w-10/12">{data?.description}</p>
-        </div>
+        </div> */}
         <button className="bg-primary w-fit px-6 py-2  bg-opacity-50 rounded-sm text-white ">
           {data.buttontext}
         </button>
