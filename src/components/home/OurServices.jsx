@@ -15,7 +15,12 @@ import { Loader } from '..';
 const getData = async () => {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/services?populate=*`
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/services?populate=*`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
+        },
+      }
     );
     const data = await res.json();
 

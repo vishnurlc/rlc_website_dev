@@ -15,7 +15,12 @@ import Link from 'next/link';
 const getData = async () => {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/promotions?populate=*`
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/promotions?populate=*`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
+        },
+      }
     );
     const data = await res.json();
 

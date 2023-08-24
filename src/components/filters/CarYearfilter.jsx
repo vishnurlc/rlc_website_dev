@@ -4,7 +4,12 @@ import AsyncSelect from 'react-select/async';
 const fetchOptions = async (inputValue) => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/car-years`
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/car-years`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
+        },
+      }
     );
     const data = await response.json();
     return data.data;

@@ -56,7 +56,7 @@ async function getData() {
     const res = await fetch(api, {
       next: { revalidate: 10 },
       headers: {
-        Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
       },
     });
     const data = await res.json();

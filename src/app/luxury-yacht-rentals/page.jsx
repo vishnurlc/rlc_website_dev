@@ -63,7 +63,7 @@ export async function getData() {
       {
         next: { revalidate: 40 },
         headers: {
-          Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
         },
       }
     );

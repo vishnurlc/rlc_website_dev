@@ -12,7 +12,7 @@ export async function generateMetadata({ params }) {
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?filters[slug][$eq]=${params.slug}&populate=image`,
       {
         headers: {
-          Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
         },
       }
     ).then((res) => res.json());
@@ -73,7 +73,7 @@ export async function getData(slug) {
       {
         next: { revalidate: 40 },
         headers: {
-          Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
         },
       }
     );

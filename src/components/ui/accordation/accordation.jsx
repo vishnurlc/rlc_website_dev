@@ -4,7 +4,11 @@ import FaqCard from './faqcard';
 
 const getData = async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/faqs`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/faqs`, {
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
+      },
+    });
     const data = await res.json();
 
     return data;

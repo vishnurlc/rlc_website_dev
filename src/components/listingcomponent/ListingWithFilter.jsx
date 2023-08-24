@@ -70,7 +70,12 @@ const ListingComponent = ({ variant, title, description }) => {
     let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?${queryString}&populate=*&pagination[page]=${params.pageNumber}&pagination[pageSize]=${pageSize}`;
 
     try {
-      const res = await fetch(api, { next: { revalidate: 10 } });
+      const res = await fetch(api, {
+        next: { revalidate: 10 },
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
+        },
+      });
       const data = await res.json();
       if (data == {}) {
         setStatus(1);
