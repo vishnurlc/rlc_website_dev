@@ -87,7 +87,7 @@ export default async function page() {
     <main>
       <HeroSection2
         type="video"
-        heading1="Desert Safari Dubai"
+        heading1="Desert Adventure"
         heading2="Experiences"
         subheading={'Journey into the Extraordinary'}
         btntext={'Book an appointment'}

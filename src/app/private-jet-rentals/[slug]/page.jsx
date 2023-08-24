@@ -83,7 +83,7 @@ export default async function JetDetail({ params: { slug } }) {
             data={jets.data[0].attributes.image}
             name={jets.data[0].name}
           />
-          <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5">
+          <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5 max-w-[1200px] mx-auto">
             <h2 className="text-right">
               <span className="text-xl text-primary">
                 AED{jets.data[0].attributes.price}/Day
