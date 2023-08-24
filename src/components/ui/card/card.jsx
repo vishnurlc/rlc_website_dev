@@ -111,9 +111,23 @@ function Card({ variant, data }) {
                 </span>
               </div>
               <div className="flex justify-start items-center gap-4 ">
-                <FaPhoneAlt size={24} color="#DCA24B" />
-                <RiWhatsappFill size={24} color="#25D366" />
-                <Button>Book Now</Button>
+                <Link
+                  href={`tel:${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
+                  className="cursor-pointer"
+                >
+                  <FaPhoneAlt size={24} color="#DCA24B" />
+                </Link>
+                <Link
+                  className="cursor-pointer"
+                  href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=I would like to know more about ${data.attributes.name} booking`}
+                >
+                  <RiWhatsappFill size={24} color="#25D366" />
+                </Link>
+                <Button
+                  msg={`I would like to know more about ${data.attributes.name} booking`}
+                >
+                  Book Now
+                </Button>
               </div>
             </div>
           </div>

@@ -221,7 +221,7 @@ const FormComponent = () => {
           </button>
           <Button
             variant="secondary"
-            href={'#'}
+            msg="I would like know more about Richylife Club Services."
             type="submit"
             className="px-4 md:px-10 py-2 md:py-3 flex items-center justify-center font-medium border border-solid border-primary text-primary gap-2"
           >
