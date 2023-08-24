@@ -1,8 +1,8 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
-import { Loader, Pagination, PaginationComponent, SectionHeading } from '..';
+import { Loader, PaginationComponent, SectionHeading } from '..';
 import Card from '../ui/card/card';
-import { useParams, useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import CarbodyFilter from '../filters/CarBodyFilter';
 import CarBrandFilter from '../filters/CarBrandFilter';
 import PriceFilter from '../filters/PriceFilter';
@@ -10,15 +10,12 @@ import CaryearFilter from '../filters/CarYearfilter';
 import { motion } from 'framer-motion';
 import qs from 'qs';
 const ListingComponent = ({ variant, title, description }) => {
-  const router = useRouter();
   const containerRef = useRef(null);
   const [containerWidth, setContainerWidth] = useState(0);
   const [cars, setCars] = useState({});
   const [drag, setDrag] = useState(false);
   const searchParams = useSearchParams();
-  const [pageNumber, setPageNumber] = useState(
-    searchParams.get('pageNumber') || 1
-  );
+  const [pageNumber, _] = useState(searchParams.get('pageNumber') || '');
   const pageSize = 5;
   const [status, setStatus] = useState(0);
   const [filters, setFilters] = useState({
@@ -26,7 +23,7 @@ const ListingComponent = ({ variant, title, description }) => {
     body: '',
     price: '',
     year: '',
-    pageNumber: pageNumber,
+    pageNumber: '',
   });
 
   async function getData({ params }) {
@@ -89,32 +86,34 @@ const ListingComponent = ({ variant, title, description }) => {
   }
 
   const handleFilters = async ({ name, value }) => {
-    const updatedFilters = {
-      ...filters,
-      [name]: value,
-    };
+    // Create a copy of the current filters
+    const updatedFilters = { ...filters, [name]: value };
+
+    // Reset page number to 1 when any filter is applied
+    const newFilters = { ...updatedFilters, pageNumber: 1 };
 
     // Remove empty filters
-    Object.keys(updatedFilters).forEach((key) => {
-      if (!updatedFilters[key]) {
-        delete updatedFilters[key];
+    Object.keys(newFilters).forEach((key) => {
+      if (!newFilters[key]) {
+        delete newFilters[key];
       }
     });
 
-    const newData = await getData({ params: updatedFilters });
+    // Fetch data based on the new filters
+    const newData = await getData({ params: newFilters });
     setCars(newData);
 
     // Create a new URLSearchParams object with updated filters
     const newSearchParams = new URLSearchParams();
-    for (const key in updatedFilters) {
-      newSearchParams.set(key, updatedFilters[key]);
+    for (const key in newFilters) {
+      newSearchParams.set(key, newFilters[key]);
     }
 
     // Update URL without triggering a full page reload
     window.history.pushState({}, '', '?' + newSearchParams.toString());
 
     // Update local state with the new filters
-    setFilters(updatedFilters);
+    setFilters(newFilters);
   };
 
   useEffect(() => {
@@ -159,6 +158,26 @@ const ListingComponent = ({ variant, title, description }) => {
       containerRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  const handlePaginationChange = async (newPageNumber) => {
+    // Create a copy of the current filters and update the page number
+    const newFilters = { ...filters, pageNumber: newPageNumber };
+
+    // Fetch data based on the new page number
+    const newData = await getData({ params: newFilters });
+    setCars(newData);
+
+    // Create a new URLSearchParams object with updated page number
+    const newSearchParams = new URLSearchParams();
+    for (const key in newFilters) {
+      newSearchParams.set(key, newFilters[key]);
+    }
+
+    // Update URL without triggering a full page reload
+    window.history.pushState({}, '', '?' + newSearchParams.toString());
+
+    // Update local state with the new page number
+    setFilters(newFilters);
+  };
 
   return (
     <div className="w-full overflow-hidden">
@@ -191,7 +210,7 @@ const ListingComponent = ({ variant, title, description }) => {
             <PaginationComponent
               currentPage={cars.meta.pagination.page}
               totalPages={cars.meta.pagination.pageCount}
-              onPageChange={handleFilters}
+              onPageChange={handlePaginationChange}
               scrollIntoView={scrollToViewMethod}
             />
           </div>

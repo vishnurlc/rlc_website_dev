@@ -26,10 +26,7 @@ const Pagination = ({
           <button
             className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
             onClick={() => {
-              onPageChange({
-                name: 'pageNumber',
-                value: currentPage - 1,
-              });
+              onPageChange(currentPage - 1);
               scrollIntoView();
             }}
             disabled={currentPage === 1}
@@ -44,12 +41,10 @@ const Pagination = ({
           >
             <button
               className={`relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white ${
-                currentPage === pageNumber
-                  ? 'dark:hover:text-white dark:bg-neutral-700 bg-red-600'
-                  : ''
+                currentPage === pageNumber ? 'bg-neutral-50 text-primary' : ''
               }`}
               onClick={() => {
-                onPageChange({ name: 'pageNumber', value: pageNumber });
+                onPageChange(pageNumber);
 
                 scrollIntoView();
               }}
@@ -62,10 +57,7 @@ const Pagination = ({
           <button
             className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
             onClick={() => {
-              onPageChange({
-                name: 'pageNumber',
-                value: currentPage + 1,
-              });
+              onPageChange(currentPage + 1);
               scrollIntoView();
             }}
             disabled={currentPage === totalPages}
