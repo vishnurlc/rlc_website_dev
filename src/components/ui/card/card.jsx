@@ -214,7 +214,10 @@ function CarDetail({ data }) {
       </div>
       <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-base font-medium flex items-center gap-2 leading-tight">
-          <BiSolidColor /> {data.attributes.car_color.data.attributes.color}
+          <BiSolidColor />{' '}
+          {data.attributes.car_colors.data
+            .map((item) => item.attributes.color)
+            .join(',')}
         </div>
       </div>
     </div>

@@ -1,10 +1,10 @@
-import { ContactForm, GalleryJet, HeroCarousel } from "@/components";
-import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
-import { Button } from "@/components/ui/button/Button";
-import Image from "next/image";
-import Link from "next/link";
-import qs from "qs";
-import React from "react";
+import { ContactForm, GalleryJet, HeroCarousel } from '@/components';
+import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
+import { Button } from '@/components/ui/button/Button';
+import Image from 'next/image';
+import Link from 'next/link';
+import qs from 'qs';
+import React from 'react';
 
 export async function generateMetadata({ params }) {
   try {
@@ -12,17 +12,17 @@ export async function generateMetadata({ params }) {
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?filters[slug][$eq]=${params.slug}&populate=image`
     ).then((res) => res.json());
     return {
-      title: car.data[0].attributes.name || "Luxury Cars for Rental In Dubai ",
+      title: car.data[0].attributes.name || 'Luxury Cars for Rental In Dubai ',
       description:
         car.data[0].attributes.description ||
-        "Luxury Cars rental with Richylife Club",
+        'Luxury Cars rental with Richylife Club',
       openGraph: {
-        type: "website",
+        type: 'website',
         title:
-          car.data[0].attributes.name || "Luxury Cars for Rental In Dubai ",
+          car.data[0].attributes.name || 'Luxury Cars for Rental In Dubai ',
         description:
           car.data[0].attributes.description ||
-          "Luxury Cars rental with Richylife Club",
+          'Luxury Cars rental with Richylife Club',
         images: [
           {
             url: `${car.data[0].attributes.image.data[0].attributes.url}`,
@@ -45,21 +45,21 @@ export async function generateMetadata({ params }) {
 export async function getData(slug) {
   const query = qs.stringify({
     populate: [
-      "image",
-      "body",
-      "fuel",
-      "make",
-      "seat",
-      "year",
-      "car_color",
-      "features.icon",
-      "technicalspec.body",
-      "technicalspec.color",
-      "technicalspec.cylinder",
-      "technicalspec.interior_colors",
-      "technicalspec.seat",
-      "technicalspec.transmission",
-      "technicalspec.fuel",
+      'image',
+      'body',
+      'fuel',
+      'make',
+      'seat',
+      'year',
+      'car_colors',
+      'features.icon',
+      'technicalspec.body',
+      'technicalspec.color',
+      'technicalspec.cylinder',
+      'technicalspec.interior_colors',
+      'technicalspec.seat',
+      'technicalspec.transmission',
+      'technicalspec.fuel',
     ],
   });
   try {
@@ -74,7 +74,7 @@ export async function getData(slug) {
 
     return data;
   } catch (error) {
-    console.log("s", error);
+    console.log('s', error);
     return {};
   }
 }
@@ -95,11 +95,11 @@ export default async function CarDetail({ params: { slug } }) {
               AED{car.data[0].attributes.price}/Day
             </span>
           </h2>
-          <Link href={"#"}>
+          <Link href={'#'}>
             <AnimatedBtn
-              styles={"rounded-md bg-primary text-white"}
-              text={"Book Now"}
-              msg={"Hi, I would like to know about your services."}
+              styles={'rounded-md bg-primary text-white'}
+              text={'Book Now'}
+              msg={'Hi, I would like to know about your services.'}
             />
           </Link>
         </div>
@@ -150,13 +150,15 @@ export default async function CarDetail({ params: { slug } }) {
               <span className="text-[#8a97a4]">
                 {car.data[0].attributes.technicalspec.interior_colors.data
                   .map((item) => item.attributes.color)
-                  .join("+")}
+                  .join('+')}
               </span>
             </li>
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
               <span>Exterior Color</span>
               <span className="text-[#8a97a4]">
-                {car.data[0].attributes.car_color.data.attributes.color}
+                {car.data[0].attributes.car_colors?.data
+                  .map((item) => item.attributes.color)
+                  .join(',')}
               </span>
             </li>
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
@@ -232,8 +234,8 @@ export default async function CarDetail({ params: { slug } }) {
           </div>
         </div> */}
         <ContactForm
-          title={"Sail in Luxury"}
-          description={"Book your journey with our luxury yacht rentals now"}
+          title={'Sail in Luxury'}
+          description={'Book your journey with our luxury yacht rentals now'}
         />
       </div>
     </main>
