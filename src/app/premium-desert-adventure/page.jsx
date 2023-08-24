@@ -1,24 +1,24 @@
-import { ContactForm, HeroSection2 } from "@/components";
-import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
-import { Button } from "@/components/ui/button/Button";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import { ContactForm, HeroSection2 } from '@/components';
+import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
+import { Button } from '@/components/ui/button/Button';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
 const locations = [
   {
-    url: "/assets/jetskipage/jumeirah.webp", // Replace with actual image path
-    location: "ABU DHABI",
+    url: '/assets/jetskipage/jumeirah.webp', // Replace with actual image path
+    location: 'ABU DHABI',
     price: 150,
   },
   {
-    url: "/assets/jetskipage/burjalarab.avif", // Replace with actual image path
-    location: "Burj Al Arab",
+    url: '/assets/jetskipage/burjalarab.avif', // Replace with actual image path
+    location: 'Burj Al Arab',
     price: 250,
   },
   {
-    url: "/assets/jetskipage/atlantisview.jpeg", // Replace with actual image path
-    location: "Atlantis View",
+    url: '/assets/jetskipage/atlantisview.jpeg', // Replace with actual image path
+    location: 'Atlantis View',
     price: 180,
   },
 ];
@@ -28,6 +28,9 @@ export async function getData() {
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/desert-safari-packages?populate=*`,
       {
         next: { revalidate: 40 },
+        headers: {
+          Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
+        },
       }
     );
 
@@ -35,13 +38,13 @@ export async function getData() {
 
     return data;
   } catch (error) {
-    console.log("s", error);
+    console.log('s', error);
     return {};
   }
 }
 
 export const metadata = {
-  title: "Desert Safari Dubai | richylife",
+  title: 'Desert Safari Dubai | richylife',
   description: `Embark on an immersive journey into the heart of Dubai&apos;s
   majestic desert landscape with our captivating Desert Safari
   experience. Brace yourself for a thrilling adventure that will
@@ -51,7 +54,7 @@ export const metadata = {
   safari transcends expectations, leaving you with memories that
   will last a lifetime.`,
   openGraph: {
-    title: "Desert Safari Dubai | richylife",
+    title: 'Desert Safari Dubai | richylife',
     description: `Embark on an immersive journey into the heart of Dubai&apos;s
     majestic desert landscape with our captivating Desert Safari
     experience. Brace yourself for a thrilling adventure that will
@@ -60,7 +63,7 @@ export const metadata = {
     to delivering exceptional experiences ensures that your desert
     safari transcends expectations, leaving you with memories that
     will last a lifetime.`,
-    siteName: "Richylife Club",
+    siteName: 'Richylife Club',
     images: [
       {
         url: `${process.env.WEB_URL}/assets/footer/1.png`,
@@ -73,8 +76,8 @@ export const metadata = {
         height: 200,
       },
     ],
-    locale: "en_US",
-    type: "website",
+    locale: 'en_US',
+    type: 'website',
   },
 };
 export default async function page() {
@@ -86,9 +89,9 @@ export default async function page() {
         type="video"
         heading1="Desert Safari Dubai"
         heading2="Experiences"
-        subheading={"Journey into the Extraordinary"}
-        btntext={"Book an appointment"}
-        posterurl={"/assets/footer/1.png"}
+        subheading={'Journey into the Extraordinary'}
+        btntext={'Book an appointment'}
+        posterurl={'/assets/footer/1.png'}
         url="/assets/premiumdesert/bannervideo.mov"
       />
 
@@ -101,8 +104,8 @@ export default async function page() {
                 fill
                 alt="Premium jet ski"
                 style={{
-                  objectFit: "cover",
-                  borderRadius: "8px",
+                  objectFit: 'cover',
+                  borderRadius: '8px',
                 }}
               />
             </div>
@@ -137,8 +140,8 @@ export default async function page() {
                   </p>
                 </div>
                 <AnimatedBtn
-                  text={"Book Now"}
-                  styles={"bg-gold text-white rounded-sm"}
+                  text={'Book Now'}
+                  styles={'bg-gold text-white rounded-sm'}
                   msg={`I'm writing to you today to inquire about the ${item.attributes.name}. I'm interested in learning more about its specifications, price, and availability.`}
                 />
               </div>
@@ -148,7 +151,7 @@ export default async function page() {
                   alt="Yamaha Golden Jetski "
                   fill
                   style={{
-                    objectFit: "cover",
+                    objectFit: 'cover',
                   }}
                 />
                 <div className="jetskigradient absolute inset-0"></div>
@@ -194,8 +197,8 @@ export default async function page() {
 
       <div className="my-9 md:my-16 px-6">
         <ContactForm
-          title={"Get In Touch"}
-          description={"Experience The Ultimate Adrenaline Rush"}
+          title={'Get In Touch'}
+          description={'Experience The Ultimate Adrenaline Rush'}
         />
       </div>
     </main>

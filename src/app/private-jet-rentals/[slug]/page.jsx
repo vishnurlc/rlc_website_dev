@@ -3,30 +3,35 @@ import {
   GalleryJet,
   HeroCarousel,
   RichTextComponent,
-} from "@/components";
-import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
-import Image from "next/image";
-import Link from "next/link";
-import React, { Suspense } from "react";
+} from '@/components';
+import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { Suspense } from 'react';
 
 export async function generateMetadata({ params }) {
   try {
     const jet = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/private-jets?filters[slug][$eq]=${params.slug}&populate=image`
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/private-jets?filters[slug][$eq]=${params.slug}&populate=image`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
+        },
+      }
     ).then((res) => res.json());
     return {
-      title: jet.data[0].attributes.name || "Private Jet for Rental In Dubai ",
+      title: jet.data[0].attributes.name || 'Private Jet for Rental In Dubai ',
       description:
         jet.data[0].attributes.description ||
-        "Private Jet rental with Richylife Club",
+        'Private Jet rental with Richylife Club',
 
       openGraph: {
-        type: "website",
+        type: 'website',
         title:
-          jet.data[0].attributes.name || "Private Jet for Rental In Dubai ",
+          jet.data[0].attributes.name || 'Private Jet for Rental In Dubai ',
         description:
           jet.data[0].attributes.description ||
-          "Private Jet rental with Richylife Club",
+          'Private Jet rental with Richylife Club',
         images: [
           {
             url: `${jet.data[0].attributes.image.data[0].attributes.url}`,
@@ -52,6 +57,9 @@ export async function getData(slug) {
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/private-jets?filters[slug][$eq]=${slug}&populate=*`,
       {
         next: { revalidate: 40 },
+        headers: {
+          Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
+        },
       }
     );
 
@@ -59,7 +67,7 @@ export async function getData(slug) {
 
     return data;
   } catch (error) {
-    console.log("s", error);
+    console.log('s', error);
     return {};
   }
 }
@@ -81,10 +89,10 @@ export default async function JetDetail({ params: { slug } }) {
                 AED{jets.data[0].attributes.price}/Day
               </span>
             </h2>
-            <Link href={"#"}>
+            <Link href={'#'}>
               <AnimatedBtn
-                styles={"rounded-md bg-primary text-white"}
-                text={"Book Now"}
+                styles={'rounded-md bg-primary text-white'}
+                text={'Book Now'}
                 msg={`I'm writing to you today to inquire about the ${jets.data[0].name}. I'm interested in learning more about its specifications, price, and availability.`}
               />
             </Link>
@@ -195,8 +203,8 @@ export default async function JetDetail({ params: { slug } }) {
           </div>
         </div> */}
         <ContactForm
-          title={"Soar to New Heights"}
-          description={"Book your journey with our private jet rental now"}
+          title={'Soar to New Heights'}
+          description={'Book your journey with our private jet rental now'}
         />
       </div>
     </main>

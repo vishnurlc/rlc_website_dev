@@ -9,7 +9,12 @@ import React from 'react';
 export async function generateMetadata({ params }) {
   try {
     const car = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?filters[slug][$eq]=${params.slug}&populate=image`
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?filters[slug][$eq]=${params.slug}&populate=image`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
+        },
+      }
     ).then((res) => res.json());
     return {
       title: car.data[0].attributes.name || 'Luxury Cars for Rental In Dubai ',
@@ -67,6 +72,9 @@ export async function getData(slug) {
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?filters[slug][$eq]=${slug}&${query}`,
       {
         next: { revalidate: 40 },
+        headers: {
+          Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
+        },
       }
     );
 

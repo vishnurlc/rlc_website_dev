@@ -62,6 +62,9 @@ export async function getData() {
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/yachts?populate=*`,
       {
         next: { revalidate: 40 },
+        headers: {
+          Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
+        },
       }
     );
 
