@@ -156,7 +156,7 @@ export default async function CarDetail({ params: { slug } }) {
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
               <span>Exterior Color</span>
               <span className="text-[#8a97a4]">
-                {car.data[0].attributes.car_colors?.data
+                {car.data[0].attributes.car_colors.data
                   .map((item) => item.attributes.color)
                   .join(',')}
               </span>
