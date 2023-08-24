@@ -39,16 +39,18 @@ function Card({ variant, data }) {
             }}
           />
           <div className="absolute inset-0 flex text-[#6A7285] font-sans text-xs items-end p-5 gap-4 z-10">
-            <button
-              onClick={() => {
-                setOpen(true);
-                setVideoModal(true);
-              }}
-              className="flex gap-1 items-center p-2 bg-white bg-opacity-80 rounded"
-            >
-              <AiOutlinePlayCircle />
-              View Video
-            </button>
+            {data.attributes.video_url && (
+              <button
+                onClick={() => {
+                  setOpen(true);
+                  setVideoModal(true);
+                }}
+                className="flex gap-1 items-center p-2 bg-white bg-opacity-80 rounded"
+              >
+                <AiOutlinePlayCircle />
+                View Video
+              </button>
+            )}
             <button
               onClick={() => {
                 setOpen(true);
