@@ -89,7 +89,7 @@ export default async function page() {
 
   return (
     <main>
-      <h1 className="sr-only ">Luxury Car Rentals - Richylife Club</h1>
+      <h1 className="sr-only">Luxury Car Rentals - Richylife Club</h1>
       <HeroSection
         posterurl={'/assets/rentacar/banner.png'}
         type={'video'}

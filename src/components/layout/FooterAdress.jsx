@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import React from 'react';
+import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from 'react-icons/bs';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { MdLocationPin, MdOutlineAvTimer } from 'react-icons/md';
 
@@ -38,6 +39,20 @@ function FooterAdress() {
             Business Bay, Dubai
           </div>
         </div>
+      </div>
+      <div className="flex mt-4 items-center justify-between w-full pr-8">
+        <Link href={'#'}>
+          <BsInstagram color="#DCA24B" size={24} />
+        </Link>
+        <Link href={'#'}>
+          <BsYoutube color="#DCA24B" size={24} />
+        </Link>
+        <Link href={'#'}>
+          <BsFacebook color="#DCA24B" size={24} />
+        </Link>
+        <Link href={'#'}>
+          <BsTwitter color="#DCA24B" size={24} />
+        </Link>
       </div>
     </div>
   );

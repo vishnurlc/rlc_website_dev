@@ -11,6 +11,7 @@ import 'swiper/css/navigation';
 import CarouselSlide from './CarouselSlide';
 import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
 import { Loader } from '..';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const getData = async () => {
   try {
@@ -28,6 +29,18 @@ const getData = async () => {
   } catch (error) {
     return;
   }
+};
+
+const headingVariant = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+  },
+  exit: {
+    opacity: 0,
+  },
 };
 
 const Ourservices = () => {
@@ -56,13 +69,27 @@ const Ourservices = () => {
           <h2 className="uppercase font-inter text-base md:text-xl font-light text-grey">
             Our Services
           </h2>
-          <div>
-            <p className="text-white capitalize text-center font-inter font-normal text-sm md:text-2xl  mb-2 ">
-              {data[slideIndex]?.attributes.heading}
-            </p>
-            <h3 className="text-gold text-center uppercase font-bold text-xl md:text-5xl font-sans  max-w-[80vw]">
-              {data[slideIndex]?.attributes.subheading}
-            </h3>
+          <div className="min-h-[56px] md:min-h-[88px]">
+            <AnimatePresence mode="popLayout">
+              <motion.div
+                className="w-full"
+                // variants={headingVariant}
+                // initial="initial"
+                // animate="animate"
+                // exit={'exit'}
+                // key={slideIndex}
+                // transition={{
+                //   duration: 0.5,
+                // }}
+              >
+                <p className="text-white capitalize text-center font-inter font-normal text-sm md:text-2xl  mb-2 ">
+                  {data[slideIndex]?.attributes.heading}
+                </p>
+                <h3 className="text-gold text-center uppercase font-bold text-lg md:text-5xl font-sans  max-w-[80vw]">
+                  {data[slideIndex]?.attributes.subheading}
+                </h3>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
         <div className="min-h-[350px]">

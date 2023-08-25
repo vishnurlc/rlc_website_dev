@@ -41,6 +41,7 @@ export const metadata = {
 const page = () => {
   return (
     <div>
+      <h1 className="sr-only">About Richylife Club</h1>
       <HeroSection
         posterurl={'/assets/home/heroposter.jpg'}
         type={'video'}

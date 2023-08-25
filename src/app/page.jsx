@@ -57,6 +57,9 @@ export const metadata = {
 export default function Home() {
   return (
     <main className="overflow-hidden">
+      <h1 className="sr-only">
+        Welcome to Richylife Club - Experience Luxury in Dubai
+      </h1>
       <HeroSection
         posterurl={'/assets/home/heroposter.jpg'}
         type={'video'}
