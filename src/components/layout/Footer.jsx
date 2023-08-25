@@ -1,53 +1,65 @@
-import React from "react";
-import { SectionHeading } from "..";
-import Image from "next/image";
-import FooterInstagram from "./FooterInstagram";
-import Link from "next/link";
-import FooterAdress from "./FooterAdress";
+import React from 'react';
+import { SectionHeading } from '..';
+import Image from 'next/image';
+import FooterInstagram from './FooterInstagram';
+import Link from 'next/link';
+import FooterAdress from './FooterAdress';
 
 const Footer = () => {
   const data = {
     images: [
-      "/assets/footer/1.png",
-      "/assets/footer/2.png",
-      "/assets/footer/3.png",
-      "/assets/footer/4.png",
-      "/assets/footer/1.png",
-      "/assets/footer/2.png",
+      '/assets/footer/1.png',
+      '/assets/footer/2.png',
+      '/assets/footer/3.png',
+      '/assets/footer/4.png',
+      '/assets/footer/1.png',
+      '/assets/footer/2.png',
     ],
     navigation: [
       {
-        title: "Rent a car",
-        link: "",
+        title: 'Rent a car',
+        link: '/luxury-car-rentals',
       },
       {
-        title: "Laxury Yacht Rentals",
-        link: "",
+        title: 'Luxury Yacht Rentals',
+        link: '/luxury-yacht-rentals',
       },
       {
-        title: "Premium Gold Jetski",
-        link: "",
+        title: 'Premium Jetski Rentals',
+        link: '/premium-jetski-rentals',
       },
       {
-        title: "Exoic Pet VIP Services",
-        link: "",
+        title: 'Private Jet Rentals',
+        link: '/private-jet-rentals',
       },
       {
-        title: "Services",
-        link: "",
+        title: 'Exotic Pet VIP Services',
+        link: '/exotic-pet-experiences',
       },
       {
-        title: "Contact Us",
-        link: "",
+        title: 'Chauffer Services',
+        link: '/chauffer-service',
+      },
+      {
+        title: 'Helicopter Rentals',
+        link: '/helicopter-rentals',
+      },
+      {
+        title: 'About us',
+        link: '/aboutus',
+      },
+      {
+        title: 'Contact Us',
+        link: '/contact-us',
       },
     ],
   };
   return (
     <footer className="pt-12">
       <SectionHeading
-        title={"Follow us on Instagram"}
+        title={'Follow us on Instagram'}
         description={
-          "Accumsan sit amet nulla facilisi morbi tempus. Suscipit tellus mauris a diam maecenas sed enim ut sem"
+          'Join our global community on Instagram for an exclusive glimpse into a world where opulence knows no bounds. '
         }
       />
 
@@ -58,7 +70,7 @@ const Footer = () => {
 
       {/* footer content */}
       <div className="footer bg-gradient-to-b from-teal-900 to-black">
-        <div className="container mx-auto px-10 py-10 lg:px-20 lg:py-20 bg-gradient-to-b from-teal-900 to-black sm:flex  justify-between flex-wrap">
+        <div className="container mx-auto px-5 py-10 lg:px-20 lg:pt-20 lg:pb-10 bg-gradient-to-b from-teal-900 to-black sm:flex  justify-between flex-wrap">
           <div className="pb-12 w-full md:w-auto  flex-col justify-start gap-2 sm:inline-flex">
             <div className=" pr-16 justify-start inline-flex">
               <div className="justify-start items-start flex">
@@ -116,14 +128,14 @@ const Footer = () => {
                     key={index}
                     className="relative w-full aspect-[64/80] h-auto min-w-[64px] "
                   >
-                    <Link href={"#"} target="_blank" rel="noreferrer">
+                    <Link href={'#'} target="_blank" rel="noreferrer">
                       <Image
                         src={item}
                         fill
                         alt="Instagram links"
                         style={{
-                          objectFit: "cover",
-                          borderRadius: "5px",
+                          objectFit: 'cover',
+                          borderRadius: '5px',
                         }}
                       />
                     </Link>
@@ -131,44 +143,16 @@ const Footer = () => {
                 );
               })}
             </div>
-            {/* <div className="w-60 h-44 relative">
-              <div className="w-16 left-0 top-0 absolute rounded-md justify-start items-start inline-flex">
-                <img
-                  className="w-16 h-20"
-                  src="https://via.placeholder.com/71x79"
-                />
-              </div>
-              <div className="w-16 left-[87.03px] top-[-0px] absolute rounded-md justify-start items-start inline-flex">
-                <img
-                  className="w-16 h-20"
-                  src="https://via.placeholder.com/71x79"
-                />
-              </div>
-              <div className="w-16 left-[174.07px] top-[-0px] absolute rounded-md justify-start items-start inline-flex">
-                <img
-                  className="w-16 h-20"
-                  src="https://via.placeholder.com/71x79"
-                />
-              </div>
-              <div className="w-16 left-0 top-[94.37px] absolute rounded-md justify-start items-start inline-flex">
-                <img
-                  className="w-16 h-20"
-                  src="https://via.placeholder.com/71x79"
-                />
-              </div>
-              <div className="w-16 left-[87.03px] top-[94.37px] absolute rounded-md justify-start items-start inline-flex">
-                <img
-                  className="w-16 h-20"
-                  src="https://via.placeholder.com/71x79"
-                />
-              </div>
-              <div className="w-16 left-[174.07px] top-[94.37px] absolute rounded-md justify-start items-start inline-flex">
-                <img
-                  className="w-16 h-20"
-                  src="https://via.placeholder.com/71x79"
-                />
-              </div>
-            </div> */}
+          </div>
+        </div>
+
+        <div className="container mx-auto text-white ">
+          <div className="flex items-center py-6 flex-col-reverse md:flex-row justify-between text-secondary font-thin text-sm gap-6">
+            <p>&copy;&nbsp;All Rights Reserved Richylife Club 2023</p>
+            <div className="flex gap-4">
+              <Link href="/privacy-policy">Privacy Policy</Link>
+              <Link href="/terms-of-use">Terms of use</Link>
+            </div>
           </div>
         </div>
       </div>
