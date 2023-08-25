@@ -132,3 +132,39 @@ ul {
   scale: 1.05;
   transition: background-color 0.3s, transform 0.3s;
 }
+
+.privacy-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-family: 'Poppins', sans-serif;
+  padding-top: 100px;
+}
+.privacycontent {
+  max-width: 1024px;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+.privacycontent p {
+  margin-block: 24px;
+}
+.privacycontent h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.privacycontent h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-block: 1rem;
+}
+
+.privacycontent li {
+  margin-block: 0.5rem;
+}
