@@ -18,22 +18,34 @@ const Footer = () => {
     navigation: [
       {
         title: 'Rent a car',
-        link: '',
+        link: '/luxury-car-rentals',
       },
       {
-        title: 'Laxury Yacht Rentals',
-        link: '',
+        title: 'Luxury Yacht Rentals',
+        link: '/luxury-yacht-rentals',
       },
       {
-        title: 'Premium Gold Jetski',
-        link: '',
+        title: 'Premium Jetski Rentals',
+        link: '/premium-jetski-rentals',
       },
       {
-        title: 'Exoic Pet VIP Services',
-        link: '',
+        title: 'Private Jet Rentals',
+        link: '/private-jet-rentals',
       },
       {
-        title: 'Services',
+        title: 'Exotic Pet VIP Services',
+        link: '/exotic-pet-experiences',
+      },
+      {
+        title: 'Chauffer Services',
+        link: '/chauffer-service',
+      },
+      {
+        title: 'Helicopter Rentals',
+        link: '/helicopter-rentals',
+      },
+      {
+        title: 'About us',
         link: '',
       },
       {
@@ -58,7 +70,7 @@ const Footer = () => {
 
       {/* footer content */}
       <div className="footer bg-gradient-to-b from-teal-900 to-black">
-        <div className="container mx-auto px-10 py-10 lg:px-20 lg:py-20 bg-gradient-to-b from-teal-900 to-black sm:flex  justify-between flex-wrap">
+        <div className="container mx-auto px-5 py-10 lg:px-20 lg:pt-20 lg:pb-10 bg-gradient-to-b from-teal-900 to-black sm:flex  justify-between flex-wrap">
           <div className="pb-12 w-full md:w-auto  flex-col justify-start gap-2 sm:inline-flex">
             <div className=" pr-16 justify-start inline-flex">
               <div className="justify-start items-start flex">
@@ -131,44 +143,17 @@ const Footer = () => {
                 );
               })}
             </div>
-            {/* <div className="w-60 h-44 relative">
-              <div className="w-16 left-0 top-0 absolute rounded-md justify-start items-start inline-flex">
-                <img
-                  className="w-16 h-20"
-                  src="https://via.placeholder.com/71x79"
-                />
-              </div>
-              <div className="w-16 left-[87.03px] top-[-0px] absolute rounded-md justify-start items-start inline-flex">
-                <img
-                  className="w-16 h-20"
-                  src="https://via.placeholder.com/71x79"
-                />
-              </div>
-              <div className="w-16 left-[174.07px] top-[-0px] absolute rounded-md justify-start items-start inline-flex">
-                <img
-                  className="w-16 h-20"
-                  src="https://via.placeholder.com/71x79"
-                />
-              </div>
-              <div className="w-16 left-0 top-[94.37px] absolute rounded-md justify-start items-start inline-flex">
-                <img
-                  className="w-16 h-20"
-                  src="https://via.placeholder.com/71x79"
-                />
-              </div>
-              <div className="w-16 left-[87.03px] top-[94.37px] absolute rounded-md justify-start items-start inline-flex">
-                <img
-                  className="w-16 h-20"
-                  src="https://via.placeholder.com/71x79"
-                />
-              </div>
-              <div className="w-16 left-[174.07px] top-[94.37px] absolute rounded-md justify-start items-start inline-flex">
-                <img
-                  className="w-16 h-20"
-                  src="https://via.placeholder.com/71x79"
-                />
-              </div>
-            </div> */}
+          </div>
+        </div>
+
+        <div className="container mx-auto text-white ">
+          <hr className="bg-slate-100 w-full " />
+          <div className="flex items-center py-6 flex-col-reverse md:flex-row justify-between text-secondary font-thin text-sm gap-6">
+            <p>&copy;&nbsp;All Rights Reserved Richylife Club 2023</p>
+            <div className="flex gap-4">
+              <Link href="/privacy-policy">Privacy Policy</Link>
+              <Link href="/terms-of-use">Terms of use</Link>
+            </div>
           </div>
         </div>
       </div>
