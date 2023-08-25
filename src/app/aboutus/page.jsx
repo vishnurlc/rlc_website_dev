@@ -1,6 +1,42 @@
-import { HeroSection } from "@/components";
+import { ContactForm, HeroSection } from "@/components";
 import Image from "next/image";
 import React from "react";
+
+export const metadata = {
+  title: "About Us - Richylife Club | Luxury Experiences in Dubai",
+  description:
+    "Discover unforgettable luxury experiences in Dubai with Richylife Club. Contact us for inquiries, reservations, and more.",
+  keywords: [
+    "Richylife Club",
+    "Luxury Experiences Dubai",
+    "Contact Information",
+    "Inquiries",
+    "Reservations",
+    "Luxury Lifestyle",
+    "Exclusive Experiences",
+    "Dubai UAE",
+    "Premium Leisure",
+    "Bespoke Services",
+    "Dubai Holidays",
+    "VIP Support",
+  ],
+  openGraph: {
+    title: "About Us",
+    description:
+      "Discover unforgettable luxury experiences in Dubai with Richylife Club. Contact us for inquiries, reservations, and more.",
+    siteName: "Richylife Club",
+    images: [
+      {
+        url: `${process.env.WEB_URL}/`,
+        width: 800,
+        height: 600,
+        alt: "Richylife Club Luxury Experiences in Dubai",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
 
 const page = () => {
   return (
@@ -46,7 +82,7 @@ const page = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           <div className="relative w-full h-[30vh]  md:h-[50vh] max-h-[700px]">
             <Image
-              src="/assets/footer/5.png"
+              src="/assets/footer/6.png"
               fill
               alt="Premium jet ski"
               style={{
@@ -94,7 +130,7 @@ const page = () => {
           </div>
           <div className="relative w-full h-[30vh]  md:h-[50vh] max-h-[700px]">
             <Image
-              src="/assets/footer/2.png"
+              src="/assets/footer/8.jpeg"
               fill
               alt="Premium jet ski"
               style={{
@@ -104,6 +140,11 @@ const page = () => {
             />
           </div>
         </div>
+
+        <ContactForm
+          title={"Get In touch"}
+          description={"Experience Elegance & Convenience"}
+        />
       </div>
     </div>
   );
