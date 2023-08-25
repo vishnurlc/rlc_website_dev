@@ -57,16 +57,25 @@ function Aboutsection() {
           </h2>
 
           <p className="py-10 text-md font-thin text-secondary">
-            Quis risus sed vulputate odio ut. Arcu vitae elementum curabitur
-            vitae nunc sed. Mauris a diam maecenas sed enim ut sem. Non enim
-            praesent elementum facilisis. Sapien nec sagittis aliquam malesuada
-            bibendum arcu vitae elementum
+            Richy Life, based in Dubai and Turkey, is a leading provider of
+            luxurious holidays. Visit Richy Life for your next fantastic getaway
+            from your bustling daily schedule and to live life to the fullest.
+            We serve as a substitute for and synonym for the opulent existence.
+            There is no better site than Richy Life if you want to have an
+            enjoyable vacation away from home. We welcome visitors and travelers
+            who want to stay in luxurious villas and opulent bungalows. Our
+            acclaimed and exclusive trip packages are available to travelers
+            worldwide.
           </p>
           <p className=" text-md font-thin text-secondary">
-            Quis risus sed vulputate odio ut. Arcu vitae elementum curabitur
-            vitae nunc sed. Mauris a diam maecenas sed enim ut sem. Non enim
-            praesent elementum facilisis. Sapien nec sagittis aliquam malesuada
-            bibendum arcu vitae elementum
+            At Richy Life, everything is lavish and upscale. The moment you make
+            a reservation with us, you begin living a grand and opulent
+            existence. High-class automobiles, helicopters, private aircraft,
+            and YACHT are available to our guests for luxurious and exotic
+            excursions. Your time with us will be some of the finest times of
+            your life. Your luxury vacations will be planned and mapped out by
+            our highly skilled and experienced team of travel experts. Our goal
+            is to provide our visitors a vacation like none they've had before.
           </p>
         </div>
       </div>
