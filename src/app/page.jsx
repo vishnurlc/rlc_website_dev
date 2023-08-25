@@ -58,7 +58,7 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       <HeroSection
-        posterurl={'/assets/home/heroposter.png'}
+        posterurl={'/assets/home/heroposter.jpg'}
         type={'video'}
         url={'https://admin.richylife.ae/rlchome.mp4'}
       />
