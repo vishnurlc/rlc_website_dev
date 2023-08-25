@@ -65,7 +65,7 @@ const Ourservices = () => {
             </h3>
           </div>
         </div>
-        <div className="min-h-[700px]">
+        <div className="min-h-[350px]">
           {data.length > 0 ? (
             <>
               <Swiper
@@ -94,7 +94,7 @@ const Ourservices = () => {
                   modifier: 5,
                   slideShadows: false,
                 }}
-                initialSlide={data.length / 2}
+                initialSlide={data?.length / 2}
               >
                 {data.map((service, index) => (
                   <SwiperSlide className="serviceslide" key={index}>
@@ -110,7 +110,7 @@ const Ourservices = () => {
                 ))}
               </Swiper>
 
-              <div className="flex gap-5 justify-center items-center mt-20 ">
+              <div className="flex gap-5 justify-center items-center mt-14 md:mt-20 ">
                 <div className="swiper-prev-el">
                   <BsArrowLeftCircle
                     size={24}
