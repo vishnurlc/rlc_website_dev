@@ -1,53 +1,53 @@
-import React from "react";
-import { SectionHeading } from "..";
-import Image from "next/image";
-import FooterInstagram from "./FooterInstagram";
-import Link from "next/link";
-import FooterAdress from "./FooterAdress";
+import React from 'react';
+import { SectionHeading } from '..';
+import Image from 'next/image';
+import FooterInstagram from './FooterInstagram';
+import Link from 'next/link';
+import FooterAdress from './FooterAdress';
 
 const Footer = () => {
   const data = {
     images: [
-      "/assets/footer/1.png",
-      "/assets/footer/2.png",
-      "/assets/footer/3.png",
-      "/assets/footer/4.png",
-      "/assets/footer/1.png",
-      "/assets/footer/2.png",
+      '/assets/footer/1.png',
+      '/assets/footer/2.png',
+      '/assets/footer/3.png',
+      '/assets/footer/4.png',
+      '/assets/footer/1.png',
+      '/assets/footer/2.png',
     ],
     navigation: [
       {
-        title: "Rent a car",
-        link: "",
+        title: 'Rent a car',
+        link: '',
       },
       {
-        title: "Laxury Yacht Rentals",
-        link: "",
+        title: 'Laxury Yacht Rentals',
+        link: '',
       },
       {
-        title: "Premium Gold Jetski",
-        link: "",
+        title: 'Premium Gold Jetski',
+        link: '',
       },
       {
-        title: "Exoic Pet VIP Services",
-        link: "",
+        title: 'Exoic Pet VIP Services',
+        link: '',
       },
       {
-        title: "Services",
-        link: "",
+        title: 'Services',
+        link: '',
       },
       {
-        title: "Contact Us",
-        link: "",
+        title: 'Contact Us',
+        link: '',
       },
     ],
   };
   return (
     <footer className="pt-12">
       <SectionHeading
-        title={"Follow us on Instagram"}
+        title={'Follow us on Instagram'}
         description={
-          "Accumsan sit amet nulla facilisi morbi tempus. Suscipit tellus mauris a diam maecenas sed enim ut sem"
+          'Join our global community on Instagram for an exclusive glimpse into a world where opulence knows no bounds. '
         }
       />
 
@@ -116,14 +116,14 @@ const Footer = () => {
                     key={index}
                     className="relative w-full aspect-[64/80] h-auto min-w-[64px] "
                   >
-                    <Link href={"#"} target="_blank" rel="noreferrer">
+                    <Link href={'#'} target="_blank" rel="noreferrer">
                       <Image
                         src={item}
                         fill
                         alt="Instagram links"
                         style={{
-                          objectFit: "cover",
-                          borderRadius: "5px",
+                          objectFit: 'cover',
+                          borderRadius: '5px',
                         }}
                       />
                     </Link>

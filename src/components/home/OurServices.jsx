@@ -32,7 +32,7 @@ const getData = async () => {
 
 const Ourservices = () => {
   const [data, setData] = useState([]);
-
+  const [slideIndex, setSlideIndex] = useState(data.length / 2 || 2);
   useEffect(() => {
     const fetchData = async () => {
       const data = await getData();
@@ -58,10 +58,10 @@ const Ourservices = () => {
           </h2>
           <div>
             <p className="text-white capitalize text-center font-inter font-normal text-sm md:text-2xl  mb-2 ">
-              Take to the Skies: Private Jet Charters
+              {data[slideIndex]?.attributes.heading}
             </p>
             <h3 className="text-gold text-center uppercase font-bold text-xl md:text-5xl font-sans  max-w-[80vw]">
-              Your Exclusive Flight Awaits
+              {data[slideIndex]?.attributes.subheading}
             </h3>
           </div>
         </div>
@@ -73,8 +73,9 @@ const Ourservices = () => {
                 grabCursor={true}
                 modules={[EffectCoverflow, Pagination, Navigation]}
                 centeredSlides={true}
-                loop={true}
+                // loop={true}
                 slidesPerView="auto"
+                onSlideChange={(obj) => setSlideIndex(obj.activeIndex)}
                 pagination={{
                   clickable: true,
                   el: '.swiper-pagination-el',
@@ -93,7 +94,7 @@ const Ourservices = () => {
                   modifier: 5,
                   slideShadows: false,
                 }}
-                initialSlide={2}
+                initialSlide={data.length / 2}
               >
                 {data.map((service, index) => (
                   <SwiperSlide className="serviceslide" key={index}>
