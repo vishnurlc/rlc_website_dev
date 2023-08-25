@@ -147,7 +147,6 @@ const Footer = () => {
         </div>
 
         <div className="container mx-auto text-white ">
-          <hr className="bg-slate-100 w-full " />
           <div className="flex items-center py-6 flex-col-reverse md:flex-row justify-between text-secondary font-thin text-sm gap-6">
             <p>&copy;&nbsp;All Rights Reserved Richylife Club 2023</p>
             <div className="flex gap-4">

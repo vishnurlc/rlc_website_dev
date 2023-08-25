@@ -36,7 +36,7 @@ const Ourservices = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getData();
-      setData(data.data);
+      setData(data?.data);
     };
     fetchData();
   }, []);
@@ -65,7 +65,7 @@ const Ourservices = () => {
             </h3>
           </div>
         </div>
-        <div>
+        <div className="min-h-[700px]">
           {data.length > 0 ? (
             <>
               <Swiper
