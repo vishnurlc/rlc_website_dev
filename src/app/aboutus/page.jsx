@@ -6,10 +6,9 @@ const page = () => {
   return (
     <div>
       <HeroSection
-        posterurl={"/assets/rentacar/banner.png"}
+        posterurl={"/assets/home/heroposter.png"}
         type={"video"}
-        alt="Luxury Car rentals"
-        url={"/assets/home/hero.mp4"}
+        url={"https://admin.richylife.ae/rlchome.mp4"}
       />
 
       <div className="max-w-[1200px] mx-auto flex flex-col gap-6 px-6">
@@ -44,10 +43,10 @@ const page = () => {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           <div className="relative w-full h-[30vh]  md:h-[50vh] max-h-[700px]">
             <Image
-              src="/assets/jetskipage/jetskisample.jpg"
+              src="/assets/footer/5.png"
               fill
               alt="Premium jet ski"
               style={{
@@ -74,7 +73,7 @@ const page = () => {
           </div>
         </div>
         {/* left */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           <div className=" flex flex-col items-start justify-center text-justify">
             <h3 className="text-2xl md:text-5xl text-gold capitalize font-inter">
               Our Mission
@@ -95,7 +94,7 @@ const page = () => {
           </div>
           <div className="relative w-full h-[30vh]  md:h-[50vh] max-h-[700px]">
             <Image
-              src="/assets/jetskipage/jetskisample.jpg"
+              src="/assets/footer/2.png"
               fill
               alt="Premium jet ski"
               style={{

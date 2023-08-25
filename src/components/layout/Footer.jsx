@@ -1,65 +1,65 @@
-import React from 'react';
-import { SectionHeading } from '..';
-import Image from 'next/image';
-import FooterInstagram from './FooterInstagram';
-import Link from 'next/link';
-import FooterAdress from './FooterAdress';
+import React from "react";
+import { SectionHeading } from "..";
+import Image from "next/image";
+import FooterInstagram from "./FooterInstagram";
+import Link from "next/link";
+import FooterAdress from "./FooterAdress";
 
 const Footer = () => {
   const data = {
     images: [
-      '/assets/footer/1.png',
-      '/assets/footer/2.png',
-      '/assets/footer/3.png',
-      '/assets/footer/4.png',
-      '/assets/footer/1.png',
-      '/assets/footer/2.png',
+      "/assets/footer/1.png",
+      "/assets/footer/2.png",
+      "/assets/footer/3.png",
+      "/assets/footer/5.png",
+      "/assets/footer/6.png",
+      "/assets/footer/2.png",
     ],
     navigation: [
       {
-        title: 'Rent a car',
-        link: '/luxury-car-rentals',
+        title: "Rent a car",
+        link: "/luxury-car-rentals",
       },
       {
-        title: 'Luxury Yacht Rentals',
-        link: '/luxury-yacht-rentals',
+        title: "Luxury Yacht Rentals",
+        link: "/luxury-yacht-rentals",
       },
       {
-        title: 'Premium Jetski Rentals',
-        link: '/premium-jetski-rentals',
+        title: "Premium Jetski Rentals",
+        link: "/premium-jetski-rentals",
       },
       {
-        title: 'Private Jet Rentals',
-        link: '/private-jet-rentals',
+        title: "Private Jet Rentals",
+        link: "/private-jet-rentals",
       },
       {
-        title: 'Exotic Pet VIP Services',
-        link: '/exotic-pet-experiences',
+        title: "Exotic Pet VIP Services",
+        link: "/exotic-pet-experiences",
       },
       {
-        title: 'Chauffer Services',
-        link: '/chauffer-service',
+        title: "Chauffer Services",
+        link: "/chauffer-service",
       },
       {
-        title: 'Helicopter Rentals',
-        link: '/helicopter-rentals',
+        title: "Helicopter Rentals",
+        link: "/helicopter-rentals",
       },
       {
-        title: 'About us',
-        link: '/aboutus',
+        title: "About us",
+        link: "/aboutus",
       },
       {
-        title: 'Contact Us',
-        link: '/contact-us',
+        title: "Contact Us",
+        link: "/contact-us",
       },
     ],
   };
   return (
     <footer className="pt-12">
       <SectionHeading
-        title={'Follow us on Instagram'}
+        title={"Follow us on Instagram"}
         description={
-          'Join our global community on Instagram for an exclusive glimpse into a world where opulence knows no bounds. '
+          "Join our global community on Instagram for an exclusive glimpse into a world where opulence knows no bounds. "
         }
       />
 
@@ -128,14 +128,14 @@ const Footer = () => {
                     key={index}
                     className="relative w-full aspect-[64/80] h-auto min-w-[64px] "
                   >
-                    <Link href={'#'} target="_blank" rel="noreferrer">
+                    <Link href={"#"} target="_blank" rel="noreferrer">
                       <Image
                         src={item}
                         fill
                         alt="Instagram links"
                         style={{
-                          objectFit: 'cover',
-                          borderRadius: '5px',
+                          objectFit: "cover",
+                          borderRadius: "5px",
                         }}
                       />
                     </Link>
