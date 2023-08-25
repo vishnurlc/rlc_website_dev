@@ -1,5 +1,41 @@
-import Link from "next/link";
-import React from "react";
+import React from 'react';
+
+export const metadata = {
+  title: 'Terms of Use - Richylife Club',
+  description:
+    'Explore the terms and conditions for using Richylife Club services. Learn about the policies that govern your use of our luxury car rentals, private jets, yachts, and more.',
+  keywords: [
+    'Richylife Club',
+    'Terms of Use',
+    'Terms and Conditions',
+    'Luxury Services',
+    'Premium Car Rentals',
+    'Private Jet Charters',
+    'Luxury Yacht Rentals',
+    'Helicopter Services',
+    'UAE-based',
+  ],
+  openGraph: {
+    title: 'Terms of Use - Richylife Club',
+    description:
+      "Discover the terms and conditions for enjoying Richylife Club's luxury services. Explore premium car rentals, private jet charters, luxury yachts, and helicopter services.",
+    siteName: 'Richylife Club',
+    images: [
+      {
+        url: `${process.env.WEB_URL}/assets/terms-of-use/bannerimg.png`,
+        width: 800,
+        height: 600,
+      },
+      {
+        url: `${process.env.WEB_URL}/assets/terms-of-use/bannerimg.png`,
+        width: 300,
+        height: 200,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+};
 
 const TermsAndConditions = () => {
   return (
@@ -61,7 +97,7 @@ const TermsAndConditions = () => {
               &quot;Terms&quot;) mean these Terms and Conditions that form the
               entire agreement between You and the Company regarding the use of
               the Service. This Terms and Conditions agreement has been created
-              with the help of the{" "}
+              with the help of the{' '}
               <a
                 href="https://www.termsfeed.com/terms-conditions-generator/"
                 target="_blank"
@@ -81,7 +117,7 @@ const TermsAndConditions = () => {
           </li>
           <li>
             <p>
-              <strong>Website</strong> refers to Richylife Club, accessible from{" "}
+              <strong>Website</strong> refers to Richylife Club, accessible from{' '}
               <a
                 href="https://richylife.ae"
                 rel="external nofollow noopener"

@@ -1,4 +1,44 @@
-import React from "react";
+import React from 'react';
+
+export const metadata = {
+  title: 'Privacy Policy - Richylife Club',
+  description:
+    'Learn about how Richylife Club collects, uses, and protects your personal information. Explore our commitment to privacy and data security in luxury services.',
+  keywords: [
+    'Richylife Club',
+    'Privacy Policy',
+    'Data Protection',
+    'Personal Information',
+    'Privacy Commitment',
+    'Data Security',
+    'Luxury Services',
+    'Premium Car Rentals',
+    'Private Jet Charters',
+    'Luxury Yacht Rentals',
+    'Helicopter Services',
+    'UAE-based',
+  ],
+  openGraph: {
+    title: 'Privacy Policy - Richylife Club',
+    description:
+      'Discover how Richylife Club safeguards your personal information. Explore our privacy commitment and data security practices in luxury car rentals, private jets, yachts, and more.',
+    siteName: 'Richylife Club',
+    images: [
+      {
+        url: `${process.env.WEB_URL}/assets/privacy-policy/bannerimg.png`,
+        width: 800,
+        height: 600,
+      },
+      {
+        url: `${process.env.WEB_URL}/assets/privacy-policy/bannerimg.png`,
+        width: 300,
+        height: 200,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+};
 
 const page = () => {
   return (
@@ -7,7 +47,7 @@ const page = () => {
         <h1>Privacy Policy for Richy Life Club</h1>
 
         <p>
-          At Richylife Club, accessible from{" "}
+          At Richylife Club, accessible from{' '}
           <a href="/">https://www.richylife.ae</a>, one of our main priorities
           is the privacy of our visitors. This Privacy Policy document contains
           types of information that is collected and recorded by Richylife Club
@@ -116,7 +156,7 @@ const page = () => {
           advertisers or websites. Thus, we are advising you to consult the
           respective Privacy Policies of these third-party ad servers for more
           detailed information. It may include their practices and instructions
-          about how to opt-out of certain options.{" "}
+          about how to opt-out of certain options.{' '}
         </p>
 
         <p>
@@ -216,7 +256,7 @@ const page = () => {
         </p>
 
         <p>
-          Our Privacy Policy was created with the help of the{" "}
+          Our Privacy Policy was created with the help of the{' '}
           <a href="https://www.termsfeed.com/privacy-policy-generator/">
             Privacy Policy Generator
           </a>
@@ -227,7 +267,7 @@ const page = () => {
 
         <p>
           If you have any questions or suggestions about our Privacy Policy, do
-          not hesitate to contact us by{" "}
+          not hesitate to contact us by{' '}
           <a href="mailto:info@richylife.ae">info@richylife.ae</a>
         </p>
       </div>
