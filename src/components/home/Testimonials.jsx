@@ -5,26 +5,26 @@ const data = [
   {
     image: '/assets/home/testimonials/1.png',
     comment:
-      'Lorem ipsum dolor sit amet, consectetur adip iscing elit. sed do eius mod tempor incididunt labore magna sed do eius mod tempor tota rem aperiam quae abillo. ',
-    name: 'Cheryl Butler',
+      'RichyLife Club turned my dream of cruising on a luxury yacht into reality. Their attention to detail and impeccable service made my day truly extraordinary. ',
+    name: 'Sara Al-Mansoori',
   },
   {
     image: '/assets/home/testimonials/2.png',
     comment:
-      'Lorem ipsum dolor sit amet, consectetur adip iscing elit. sed do eius mod tempor incididunt labore magna sed do eius mod tempor tota rem aperiam quae abillo. ',
-    name: 'Cheryl Butler',
+      "Im a car enthusiast, and RichyLife Club's premium car rentals allowed me to experience some of the finest cars in the world. It's like having a garage of dreams! ",
+    name: 'Ahmed Khan',
   },
   {
     image: '/assets/home/testimonials/3.png',
     comment:
-      'Lorem ipsum dolor sit amet, consectetur adip iscing elit. sed do eius mod tempor incididunt labore magna sed do eius mod tempor tota rem aperiam quae abillo. ',
-    name: 'Cheryl Butler',
+      "When I needed to travel in style, RichyLife Club's private jet service was the perfect choice. Seamless, comfortable, and a true taste of luxury.",
+    name: 'Aisha Ibrahim',
   },
   {
     image: '/assets/home/testimonials/4.png',
     comment:
-      'Lorem ipsum dolor sit amet, consectetur adip iscing elit. sed do eius mod tempor incididunt labore magna sed do eius mod tempor tota rem aperiam quae abillo. ',
-    name: 'Cheryl Butler',
+      'Being a UAE resident, RichyLife Club has shown me the hidden gems of my own country through their exclusive services. An amazing way to explore!',
+    name: 'Ali Khalfan',
   },
 ];
 
