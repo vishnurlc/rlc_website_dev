@@ -89,13 +89,12 @@ export default async function JetDetail({ params: { slug } }) {
                 AED{jets.data[0].attributes.price}/Day
               </span>
             </h2>
-            <Link href={'#'}>
-              <AnimatedBtn
-                styles={'rounded-md bg-primary text-white'}
-                text={'Book Now'}
-                msg={`I'm writing to you today to inquire about the ${jets.data[0].name}. I'm interested in learning more about its specifications, price, and availability.`}
-              />
-            </Link>
+
+            <AnimatedBtn
+              styles={'rounded-md bg-primary text-white '}
+              text={'Book Now'}
+              msg={`I'm writing to you today to inquire about the ${jets.data[0].name}. I'm interested in learning more about its specifications, price, and availability.`}
+            />
           </div>
         </div>
       </Suspense>

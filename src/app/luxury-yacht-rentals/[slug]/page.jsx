@@ -76,22 +76,21 @@ export default async function YacthDetail({ params: { slug } }) {
   const yacht = await getData(slug);
 
   return (
-    <main className="">
+    <main>
       <div>
-        <HeroCarousel data={yacht.data[0].attributes.image} />
+        <HeroCarousel data={yacht?.data[0].attributes.image} />
         <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5 max-w-[1200px] mx-auto">
           <h2 className="text-right">
             <span className="text-xl text-primary">
               AED{yacht.data[0].attributes.price}/Day
             </span>
           </h2>
-          <Link href={'#'}>
-            <AnimatedBtn
-              styles={'rounded-md bg-primary text-white'}
-              text={'Book Now'}
-              msg={'Hi, I would like to know about your services.'}
-            />
-          </Link>
+
+          <AnimatedBtn
+            styles={'rounded-sm bg-primary text-white'}
+            text={'Book Now'}
+            msg={'Hi, I would like to know about your services.'}
+          />
         </div>
       </div>
       <div className="max-w-[1200px] mx-auto py-10 md:py-16 px-6 flex flex-col gap-8 md:gap-16">

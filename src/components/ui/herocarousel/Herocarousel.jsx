@@ -14,36 +14,38 @@ import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 export default function HeroCarousel({ data, name }) {
   return (
     <div className="relative">
-      <Swiper
-        className="herocarousel"
-        fadeEffect={{
-          crossFade: true,
-        }}
-        speed={1000}
-        effect={'fade'}
-        freeMode
-        loop
-        modules={[EffectFade, Navigation, Autoplay]}
-        navigation={{
-          nextEl: '.hero-carousel__button--right',
-          prevEl: '.hero-carousel__button--left',
-        }}
-      >
-        {data.data.map((item, index) => (
-          <SwiperSlide key={index}>
-            <Image
-              src={item.attributes.url}
-              fill
-              priority
-              alt={name}
-              style={{
-                objectFit: 'cover',
-                objectPosition: 'center',
-              }}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {data && (
+        <Swiper
+          className="herocarousel"
+          fadeEffect={{
+            crossFade: true,
+          }}
+          speed={1000}
+          effect={'fade'}
+          freeMode
+          loop
+          modules={[EffectFade, Navigation, Autoplay]}
+          navigation={{
+            nextEl: '.hero-carousel__button--right',
+            prevEl: '.hero-carousel__button--left',
+          }}
+        >
+          {data.data.map((item, index) => (
+            <SwiperSlide key={index}>
+              <Image
+                src={item.attributes.url}
+                fill
+                priority
+                alt={name}
+                style={{
+                  objectFit: 'cover',
+                  objectPosition: 'center',
+                }}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
       <div className="z-10 absolute left-8 bottom-6 flex gap-6 items-center ">
         <motion.div
           whileHover={{
