@@ -1,40 +1,40 @@
-import { ContactForm, HeroSection } from "@/components";
-import Image from "next/image";
-import React from "react";
+import { ContactForm, HeroSection } from '@/components';
+import Image from 'next/image';
+import React from 'react';
 
 export const metadata = {
-  title: "About Us - Richylife Club | Luxury Experiences in Dubai",
+  title: 'About Us - Richylife Club | Luxury Experiences in Dubai',
   description:
-    "Discover unforgettable luxury experiences in Dubai with Richylife Club. Contact us for inquiries, reservations, and more.",
+    'Discover unforgettable luxury experiences in Dubai with Richylife Club. Contact us for inquiries, reservations, and more.',
   keywords: [
-    "Richylife Club",
-    "Luxury Experiences Dubai",
-    "Contact Information",
-    "Inquiries",
-    "Reservations",
-    "Luxury Lifestyle",
-    "Exclusive Experiences",
-    "Dubai UAE",
-    "Premium Leisure",
-    "Bespoke Services",
-    "Dubai Holidays",
-    "VIP Support",
+    'Richylife Club',
+    'Luxury Experiences Dubai',
+    'Contact Information',
+    'Inquiries',
+    'Reservations',
+    'Luxury Lifestyle',
+    'Exclusive Experiences',
+    'Dubai UAE',
+    'Premium Leisure',
+    'Bespoke Services',
+    'Dubai Holidays',
+    'VIP Support',
   ],
   openGraph: {
-    title: "About Us",
+    title: 'About Us',
     description:
-      "Discover unforgettable luxury experiences in Dubai with Richylife Club. Contact us for inquiries, reservations, and more.",
-    siteName: "Richylife Club",
+      'Discover unforgettable luxury experiences in Dubai with Richylife Club. Contact us for inquiries, reservations, and more.',
+    siteName: 'Richylife Club',
     images: [
       {
         url: `${process.env.WEB_URL}/`,
         width: 800,
         height: 600,
-        alt: "Richylife Club Luxury Experiences in Dubai",
+        alt: 'Richylife Club Luxury Experiences in Dubai',
       },
     ],
-    locale: "en_US",
-    type: "website",
+    locale: 'en_US',
+    type: 'website',
   },
 };
 
@@ -42,9 +42,9 @@ const page = () => {
   return (
     <div>
       <HeroSection
-        posterurl={"/assets/home/heroposter.png"}
-        type={"video"}
-        url={"https://admin.richylife.ae/rlchome.mp4"}
+        posterurl={'/assets/home/heroposter.jpg'}
+        type={'video'}
+        url={'https://admin.richylife.ae/rlchome.mp4'}
       />
 
       <div className="max-w-[1200px] mx-auto flex flex-col gap-6 px-6">
@@ -86,8 +86,8 @@ const page = () => {
               fill
               alt="Premium jet ski"
               style={{
-                objectFit: "cover",
-                borderRadius: "8px",
+                objectFit: 'cover',
+                borderRadius: '8px',
               }}
             />
           </div>
@@ -134,16 +134,16 @@ const page = () => {
               fill
               alt="Premium jet ski"
               style={{
-                objectFit: "cover",
-                borderRadius: "8px",
+                objectFit: 'cover',
+                borderRadius: '8px',
               }}
             />
           </div>
         </div>
 
         <ContactForm
-          title={"Get In touch"}
-          description={"Experience Elegance & Convenience"}
+          title={'Get In touch'}
+          description={'Experience Elegance & Convenience'}
         />
       </div>
     </div>

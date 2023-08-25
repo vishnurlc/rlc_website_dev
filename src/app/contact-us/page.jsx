@@ -33,12 +33,12 @@ export const metadata = {
     siteName: 'Richylife Club',
     images: [
       {
-        url: `${process.env.WEB_URL}/assets/home/heroposter.png`,
+        url: `${process.env.WEB_URL}/assets/home/heroposter.jpg`,
         width: 800,
         height: 600,
       },
       {
-        url: `${process.env.WEB_URL}/assets/home/heroposter.png`,
+        url: `${process.env.WEB_URL}/assets/home/heroposter.jpg`,
         width: 300,
         height: 200,
       },
