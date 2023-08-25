@@ -13,7 +13,7 @@ const Footer = () => {
       "/assets/footer/3.png",
       "/assets/footer/5.png",
       "/assets/footer/6.png",
-      "/assets/footer/2.png",
+      "/assets/footer/7.png",
     ],
     navigation: [
       {

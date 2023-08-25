@@ -75,7 +75,8 @@ function Aboutsection() {
             excursions. Your time with us will be some of the finest times of
             your life. Your luxury vacations will be planned and mapped out by
             our highly skilled and experienced team of travel experts. Our goal
-            is to provide our visitors a vacation like none they've had before.
+            is to provide our visitors a vacation like none they&apos;ve had
+            before.
           </p>
         </div>
       </div>
