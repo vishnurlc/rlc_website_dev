@@ -40,7 +40,7 @@ function FooterAdress() {
           </div>
         </div>
       </div>
-      <div className="flex mt-4 items-center justify-between w-full pr-8">
+      <div className="flex mt-4 items-center justify-start w-full gap-8 pl-1">
         <Link href={'#'}>
           <BsInstagram color="#DCA24B" size={24} />
         </Link>
