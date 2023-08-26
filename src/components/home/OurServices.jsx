@@ -69,18 +69,18 @@ const Ourservices = () => {
           <h2 className="uppercase font-inter text-base md:text-xl font-light text-grey">
             Our Services
           </h2>
-          <div className="min-h-[56px] md:min-h-[88px]">
+          <div className=" relative w-full min-h-[56px] md:min-h-[88px]">
             <AnimatePresence mode="popLayout">
               <motion.div
-                className="w-full"
-                // variants={headingVariant}
-                // initial="initial"
-                // animate="animate"
-                // exit={'exit'}
-                // key={slideIndex}
-                // transition={{
-                //   duration: 0.5,
-                // }}
+                className="w-full absolute flex flex-col items-center justify-center"
+                variants={headingVariant}
+                initial="initial"
+                animate="animate"
+                exit={'exit'}
+                key={slideIndex}
+                transition={{
+                  duration: 0.5,
+                }}
               >
                 <p className="text-white capitalize text-center font-inter font-normal text-sm md:text-2xl  mb-2 ">
                   {data[slideIndex]?.attributes.heading}
