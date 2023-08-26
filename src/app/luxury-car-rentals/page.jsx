@@ -4,7 +4,7 @@ import {
   ListingComponent,
   SectionHeading,
 } from '@/components';
-import Marquee from '@/components/marquee/Marquee';
+
 import MasonryGrid from '@/components/yachtrental/PictureGallery';
 import React from 'react';
 
@@ -103,11 +103,10 @@ export default async function page() {
           description={
             'Choose from Our Handpicked Selection of Luxurious Cars for an Unforgettable Ride'
           }
+          images={make}
         />
       </div>
-      <div className="container mx-auto mt-10">
-        <Marquee images={make} />
-      </div>
+
       <div className=" my-16 flex flex-col gap-9 md:gap-16">
         <SectionHeading
           title={'Picture Gallery'}

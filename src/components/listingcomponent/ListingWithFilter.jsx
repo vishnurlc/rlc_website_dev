@@ -9,7 +9,8 @@ import PriceFilter from '../filters/PriceFilter';
 import CaryearFilter from '../filters/CarYearfilter';
 import { motion } from 'framer-motion';
 import qs from 'qs';
-const ListingComponent = ({ variant, title, description }) => {
+import Marquee from '@/components/marquee/Marquee';
+const ListingComponent = ({ variant, title, description, images }) => {
   const containerRef = useRef(null);
   const scrollRef = useRef(null);
   const [containerWidth, setContainerWidth] = useState(0);
@@ -216,6 +217,9 @@ const ListingComponent = ({ variant, title, description }) => {
             />
           </div>
         )}
+      </div>
+      <div className="container mx-auto my-14 md:my-20">
+        <Marquee images={images} />
       </div>
     </div>
   );
