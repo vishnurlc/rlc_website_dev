@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Pagination = ({
   currentPage,
@@ -24,7 +24,7 @@ const Pagination = ({
       <ul className=" !list-none flex">
         <li>
           <button
-            className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
+            className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100"
             onClick={() => {
               onPageChange(currentPage - 1);
               scrollIntoView();
@@ -37,11 +37,11 @@ const Pagination = ({
         {pageNumbers.map((pageNumber) => (
           <li
             key={pageNumber}
-            aria-current={currentPage === pageNumber ? 'page' : undefined}
+            aria-current={currentPage === pageNumber ? "page" : undefined}
           >
             <button
-              className={`relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white ${
-                currentPage === pageNumber ? 'bg-neutral-50 text-primary' : ''
+              className={`relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 ${
+                currentPage === pageNumber ? "bg-neutral-50 text-primary" : ""
               }`}
               onClick={() => {
                 onPageChange(pageNumber);
@@ -55,7 +55,7 @@ const Pagination = ({
         ))}
         <li>
           <button
-            className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
+            className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100"
             onClick={() => {
               onPageChange(currentPage + 1);
               scrollIntoView();
