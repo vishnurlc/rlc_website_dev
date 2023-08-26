@@ -52,6 +52,10 @@ const Footer = () => {
         title: 'Contact Us',
         link: '/contact-us',
       },
+      {
+        title: 'Faq',
+        link: '/faq',
+      },
     ],
   };
   return (
