@@ -1,13 +1,24 @@
+'use client';
 import React from 'react';
 import Marquee from 'react-fast-marquee';
 import Image from 'next/image';
 
-const Marqueesection = ({ images }) => {
+const Marqueesection = ({ make, handleFilters, scrollIntoView }) => {
+  const clickHandler = async (slug) => {
+    await handleFilters({ name: 'make', value: slug });
+    scrollIntoView();
+  };
   return (
     <div className="marquee overflow-hidden">
       <Marquee autoFill>
-        {images.data.map((e, index) => (
-          <div className="relative w-[200px] min-h-[100px]" key={index}>
+        {make.data.map((e, index) => (
+          <div
+            className="relative w-[200px] min-h-[100px] cursor-pointer"
+            key={index}
+            onClick={() => {
+              clickHandler(e.attributes.slug);
+            }}
+          >
             <Image
               key={index}
               fill

@@ -79,13 +79,6 @@ async function getData() {
 
 export default async function page() {
   const make = await getData();
-  const carLogos = [
-    '/assets/petpage/bear.png',
-    '/assets/petpage/bear.png',
-    '/assets/petpage/bear.png',
-    '/assets/petpage/bear.png',
-    '/assets/petpage/bear.png',
-  ];
 
   return (
     <main>
@@ -103,7 +96,7 @@ export default async function page() {
           description={
             'Choose from Our Handpicked Selection of Luxurious Cars for an Unforgettable Ride'
           }
-          images={make}
+          make={make}
         />
       </div>
 
