@@ -3,11 +3,12 @@ import {
   GalleryJet,
   HeroCarousel,
   RichTextComponent,
-} from '@/components';
-import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
+} from "@/components";
+import Amenitys from "@/components/amenitys/Amenitys";
+import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
 
-import Link from 'next/link';
-import React from 'react';
+import Link from "next/link";
+import React from "react";
 
 export async function generateMetadata({ params }) {
   try {
@@ -21,17 +22,17 @@ export async function generateMetadata({ params }) {
     ).then((res) => res.json());
     return {
       title:
-        yacht.data[0].attributes.name || 'Luxury Yachts for Rental In Dubai ',
+        yacht.data[0].attributes.name || "Luxury Yachts for Rental In Dubai ",
       description:
         yacht.data[0].attributes.description ||
-        'Luxury Yachts rental with Richylife Club',
+        "Luxury Yachts rental with Richylife Club",
       openGraph: {
-        type: 'website',
+        type: "website",
         title:
-          yacht.data[0].attributes.name || 'Luxury Yachts for Rental In Dubai ',
+          yacht.data[0].attributes.name || "Luxury Yachts for Rental In Dubai ",
         description:
           yacht.data[0].attributes.description ||
-          'Luxury Yachts rental with Richylife Club',
+          "Luxury Yachts rental with Richylife Club",
         images: [
           {
             url: `${yacht.data[0].attributes.image.data[0].attributes.url}`,
@@ -67,7 +68,7 @@ export async function getData(slug) {
 
     return data;
   } catch (error) {
-    console.log('s', error);
+    console.log("s", error);
     return {};
   }
 }
@@ -87,9 +88,9 @@ export default async function YacthDetail({ params: { slug } }) {
           </h2>
 
           <AnimatedBtn
-            styles={'rounded-sm bg-primary text-white'}
-            text={'Book Now'}
-            msg={'Hi, I would like to know about your services.'}
+            styles={"rounded-sm bg-primary text-white"}
+            text={"Book Now"}
+            msg={"Hi, I would like to know about your services."}
           />
         </div>
       </div>
@@ -104,7 +105,16 @@ export default async function YacthDetail({ params: { slug } }) {
             </span>
           </div>
           <p className="text-sm md:text-base text-justify md:text-left text-gray-500">
-            {yacht.data[0].attributes.description}
+            <RichTextComponent bio={yacht.data[0].attributes.description} />
+          </p>
+        </div>
+
+        <div>
+          <h2 className="inline-block mb-4 md:mb-8 font-inter text-primary font-semibold text-xl md:text-[40px]">
+            Destinations
+          </h2>
+          <p className="text-sm md:text-base text-justify md:text-left text-gray-500">
+            <RichTextComponent bio={yacht.data[0].attributes.destinations} />
           </p>
         </div>
 
@@ -131,7 +141,7 @@ export default async function YacthDetail({ params: { slug } }) {
                 {`${yacht.data[0].attributes.technicalspec.capacity} People ${
                   yacht.data[0].attributes.technicalspec.overnight
                     ? `, ${yacht.data[0].attributes.technicalspec.overnight} overnight`
-                    : ''
+                    : ""
                 }`}
               </span>
             </li>
@@ -168,13 +178,23 @@ export default async function YacthDetail({ params: { slug } }) {
           </ul>
         </div>
 
+        {yacht.data[0].attributes.onboard && (
+          <div>
+            <h2 className="inline-block mb-4 md:mb-8 font-inter text-primary font-semibold text-xl md:text-[40px]">
+              On Board
+            </h2>
+
+            <div>
+              <RichTextComponent bio={yacht.data[0].attributes.onboard} />
+            </div>
+          </div>
+        )}
+
         <div>
           <h2 className="inline-block mb-4 md:mb-8 font-inter text-primary font-semibold text-xl md:text-[40px]">
-            On Board
+            Amenities
           </h2>
-          <div>
-            <RichTextComponent bio={yacht.data[0].attributes.onboard} />
-          </div>
+          <Amenitys data={yacht.data[0].attributes.amenities} />
         </div>
 
         {/* <div>
@@ -186,8 +206,8 @@ export default async function YacthDetail({ params: { slug } }) {
           </div>
         </div> */}
         <ContactForm
-          title={'Sail in Luxury'}
-          description={'Book your journey with our luxury yacht rentals now'}
+          title={"Sail in Luxury"}
+          description={"Book your journey with our luxury yacht rentals now"}
         />
       </div>
     </main>
