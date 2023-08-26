@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Pagination = ({
   currentPage,
@@ -37,11 +37,11 @@ const Pagination = ({
         {pageNumbers.map((pageNumber) => (
           <li
             key={pageNumber}
-            aria-current={currentPage === pageNumber ? "page" : undefined}
+            aria-current={currentPage === pageNumber ? 'page' : undefined}
           >
             <button
               className={`relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 ${
-                currentPage === pageNumber ? "bg-neutral-50 text-primary" : ""
+                currentPage === pageNumber ? 'bg-neutral-200 text-primary' : ''
               }`}
               onClick={() => {
                 onPageChange(pageNumber);
