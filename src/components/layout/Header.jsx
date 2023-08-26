@@ -180,7 +180,7 @@ export default function Header() {
         background:
           headerType === 1 || mobileMenuOpen
             ? '#fff'
-            : 'linear-gradient(180deg, #000 0%, rgba(41, 41, 41, 0.00) 100%)',
+            : 'linear-gradient(180deg, #000 0%, rgba(41, 41, 41, .1) 100%)',
       }}
       onMouseLeave={handleDropdownLeave}
     >

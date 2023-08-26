@@ -11,6 +11,7 @@ import { motion } from 'framer-motion';
 import qs from 'qs';
 const ListingComponent = ({ variant, title, description }) => {
   const containerRef = useRef(null);
+  const scrollRef = useRef(null);
   const [containerWidth, setContainerWidth] = useState(0);
   const [cars, setCars] = useState({});
   const [drag, setDrag] = useState(false);
@@ -154,8 +155,8 @@ const ListingComponent = ({ variant, title, description }) => {
   }, [searchParams]);
 
   const scrollToViewMethod = () => {
-    if (containerRef.current) {
-      containerRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (scrollRef.current) {
+      scrollRef.current.scrollIntoView();
     }
   };
   const handlePaginationChange = async (newPageNumber) => {
@@ -180,7 +181,7 @@ const ListingComponent = ({ variant, title, description }) => {
   };
 
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full overflow-hidden" ref={scrollRef}>
       <div className="w-full my-[40px] ">
         <motion.div
           ref={containerRef}
