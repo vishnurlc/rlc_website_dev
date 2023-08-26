@@ -1,9 +1,4 @@
-import {
-  ContactForm,
-  GalleryJet,
-  HeroCarousel,
-  RichTextComponent,
-} from '@/components';
+import { ContactForm, HeroCarousel } from '@/components';
 import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -193,14 +188,7 @@ export default async function JetDetail({ params: { slug } }) {
             </li>
           </ul>
         </div>
-        {/* <div>
-          <h2 className="inline-block mb-8 font-inter text-primary font-semibold text-xl md:text-[40px]">
-            Gallery
-          </h2>
-          <div>
-            <GalleryJet />
-          </div>
-        </div> */}
+
         <ContactForm
           title={'Soar to New Heights'}
           description={'Book your journey with our private jet rental now'}
