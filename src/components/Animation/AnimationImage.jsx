@@ -16,8 +16,6 @@ function AnimationImage({ children }) {
   useEffect(() => {
     if (inView) {
       controls.start('visible');
-    } else {
-      controls.start('hidden');
     }
   }, [controls, inView]);
 
