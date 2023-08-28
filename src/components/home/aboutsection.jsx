@@ -1,43 +1,43 @@
-import Image from "next/image";
-import React from "react";
-import AboutCounter from "./AboutCounter";
-import AnimationImage from "../Animation/AnimationImage";
+import Image from 'next/image';
+import React from 'react';
+import AboutCounter from './AboutCounter';
+import AnimationImage from '../Animation/AnimationImage';
 
 function Aboutsection() {
   const data = [
     {
-      title: "Private events ",
-      startNumber: "5",
-      endNumber: "11",
-      suffix: "k",
+      title: 'Private events ',
+      startNumber: '5',
+      endNumber: '11',
+      suffix: 'k',
     },
     {
-      title: "Customer Satisfaction",
-      startNumber: "30",
-      endNumber: "100",
-      suffix: "%",
+      title: 'Customer Satisfaction',
+      startNumber: '30',
+      endNumber: '100',
+      suffix: '%',
     },
     {
-      title: "Private events ",
-      startNumber: "30",
-      endNumber: "100",
-      suffix: "%",
+      title: 'Private events ',
+      startNumber: '30',
+      endNumber: '100',
+      suffix: '%',
     },
     {
-      title: "Private events ",
-      startNumber: "30",
-      endNumber: "180",
-      suffix: "+",
+      title: 'Private events ',
+      startNumber: '30',
+      endNumber: '180',
+      suffix: '+',
     },
     {
-      title: "Private events ",
-      startNumber: "30",
-      endNumber: "100",
-      suffix: "",
+      title: 'Private events ',
+      startNumber: '30',
+      endNumber: '100',
+      suffix: '',
     },
   ];
   return (
-    <div className="py-20 bg-white max-w-[1200px] mx-auto px-6 flex flex-col gap-9">
+    <div className="py-20 bg-white max-w-[1200px]  overflow-hidden mx-auto px-6 flex flex-col gap-9">
       <div className="lg:flex w-full items-center">
         <div className="hidden lg:block relative w-full aspect-square h-auto flex-1">
           <AnimationImage>
@@ -47,8 +47,8 @@ function Aboutsection() {
               priority
               alt="car"
               style={{
-                objectFit: "contain",
-                borderRadius: "5px",
+                objectFit: 'contain',
+                borderRadius: '5px',
               }}
             />
           </AnimationImage>
@@ -56,7 +56,7 @@ function Aboutsection() {
         <div className="bg-white text-black  md:mx-20 flex-1">
           <h2 className="text-teal-900 text-[42px] font-extrabold leading-10">
             RICHYLIFE <br />
-            CLUB{" "}
+            CLUB{' '}
           </h2>
 
           <p className="py-10 text-md font-thin text-secondary">

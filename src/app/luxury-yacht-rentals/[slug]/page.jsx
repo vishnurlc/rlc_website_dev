@@ -134,13 +134,19 @@ export default async function YacthDetail({ params: { slug } }) {
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
               <span>Make</span>
               <span className="text-[#8a97a4]">
-                {yacht.data[0].attributes.make.data.attributes.make}&quot; ft.
+                {yacht.data[0].attributes.make.data.attributes.make}
+              </span>
+            </li>
+            <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
+              <span>Model</span>
+              <span className="text-[#8a97a4]">
+                {yacht.data[0].attributes.model.data.attributes.model}
               </span>
             </li>
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
               <span>Length</span>
               <span className="text-[#8a97a4]">
-                {yacht.data[0].attributes.technicalspec.length}&quot; ft.
+                {yacht.data[0].attributes.technicalspec.length}
               </span>
             </li>
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
@@ -165,12 +171,14 @@ export default async function YacthDetail({ params: { slug } }) {
                 {yacht.data[0].attributes.technicalspec.rooms}
               </span>
             </li>
-            <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-              <span>Stereo System</span>
-              <span className="text-[#8a97a4]">
-                {yacht.data[0].attributes.technicalspec.stereo_system}
-              </span>
-            </li>
+            {yacht.data[0].attributes.technicalspec.stereo_system && (
+              <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
+                <span>Stereo System</span>
+                <span className="text-[#8a97a4]">
+                  {yacht.data[0].attributes.technicalspec.stereo_system}
+                </span>
+              </li>
+            )}
             <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
               <span>Make Year</span>
               <span className="text-[#8a97a4]">
@@ -181,6 +189,12 @@ export default async function YacthDetail({ params: { slug } }) {
               <span>Speed</span>
               <span className="text-[#8a97a4]">
                 {yacht.data[0].attributes.technicalspec.speed} knots
+              </span>
+            </li>
+            <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
+              <span>Minimum Hours</span>
+              <span className="text-[#8a97a4]">
+                {yacht.data[0].attributes.technicalspec.min_hours} hours
               </span>
             </li>
           </ul>
