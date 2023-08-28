@@ -1,7 +1,7 @@
-import React from 'react';
-import AsyncSelect from 'react-select/async';
+import React, { useEffect, useState } from 'react';
+import Select from 'react-select';
 
-const fetchOptions = async (inputValue) => {
+const fetchOptions = async () => {
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/car-bodies`,
@@ -19,22 +19,31 @@ const fetchOptions = async (inputValue) => {
   }
 };
 
-const loadOptions = (inputValue, callback) => {
-  fetchOptions(inputValue).then((bodytype) => {
-    const options = bodytype.map((type) => ({
-      label: `${type.attributes.type}`,
-      value: type.attributes.slug,
-    }));
-    callback(options);
-  });
-};
+const CarbodyFilter = ({ handleFilters, selectedValue }) => {
+  const [fetchedOptions, setFetchedOptions] = useState();
+  const [selectedOption, setSelectedOption] = useState(null);
+  useEffect(() => {
+    fetchOptions().then((body) => {
+      const options = body.map((type) => ({
+        label: `${type.attributes.type}`,
+        value: type.attributes.slug,
+      }));
+      setFetchedOptions(options);
 
-const CarbodyFilter = ({ handleFilters }) => {
+      // Set the selected option based on the selectedValue
+      const initialSelectedOption = options.find(
+        (option) => option.value === selectedValue
+      );
+      setSelectedOption(initialSelectedOption);
+    });
+  }, [selectedValue]);
   return (
-    <AsyncSelect
+    <Select
       cacheOptions
-      defaultOptions
+      options={fetchedOptions}
+      value={selectedOption}
       onChange={(selectedOption) => {
+        setSelectedOption(selectedOption);
         handleFilters({ name: 'body', value: selectedOption?.value });
       }}
       placeholder={
@@ -42,7 +51,6 @@ const CarbodyFilter = ({ handleFilters }) => {
       }
       className="react-select-container"
       classNamePrefix="react-select"
-      loadOptions={loadOptions}
       isClearable
       isSearchable={false}
     />

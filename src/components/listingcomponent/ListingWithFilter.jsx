@@ -21,10 +21,10 @@ const ListingComponent = ({ variant, title, description, make }) => {
   const pageSize = 5;
   const [status, setStatus] = useState(0);
   const [filters, setFilters] = useState({
-    make: '',
-    body: '',
-    price: '',
-    year: '',
+    make: searchParams.get('make') || '',
+    body: searchParams.get('body') || '',
+    price: searchParams.get('price') || '',
+    year: searchParams.get('year') || '',
     pageNumber: '',
   });
 
@@ -191,10 +191,22 @@ const ListingComponent = ({ variant, title, description, make }) => {
           dragConstraints={{ right: 0, left: -containerWidth }}
           dragListener={drag}
         >
-          <CarbodyFilter handleFilters={handleFilters} />
-          <CarBrandFilter handleFilters={handleFilters} />
-          <CaryearFilter handleFilters={handleFilters} />
-          <PriceFilter handleFilters={handleFilters} />
+          <CarbodyFilter
+            handleFilters={handleFilters}
+            selectedValue={filters.body}
+          />
+          <CarBrandFilter
+            handleFilters={handleFilters}
+            selectedValue={filters.make}
+          />
+          <CaryearFilter
+            handleFilters={handleFilters}
+            selectedValue={filters.year}
+          />
+          <PriceFilter
+            handleFilters={handleFilters}
+            selectedValue={filters.price}
+          />
         </motion.div>
       </div>
 

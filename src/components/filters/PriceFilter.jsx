@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
 
 const data = [
@@ -40,7 +40,15 @@ const data = [
   },
 ];
 
-const PriceFilter = ({ handleFilters }) => {
+const PriceFilter = ({ handleFilters, selectedValue }) => {
+  const [selectedOption, setSelectedOption] = useState(null);
+  useEffect(() => {
+    const initialSelectedOption = data.find(
+      (option) => option.value === selectedValue
+    );
+    setSelectedOption(initialSelectedOption);
+  }, [selectedValue]);
+
   const handleChange = (option) => {
     if (option) {
       handleFilters({ name: 'price', value: option?.value });
@@ -52,7 +60,11 @@ const PriceFilter = ({ handleFilters }) => {
   return (
     <>
       <Select
-        onChange={(selectedOption) => handleChange(selectedOption)}
+        value={selectedOption}
+        onChange={(selectedOption) => {
+          setSelectedOption(selectedOption);
+          handleChange(selectedOption);
+        }}
         options={data}
         placeholder={
           <span className="text-gray-400 font-thin text-sm">Select Price</span>
