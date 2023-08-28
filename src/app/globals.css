@@ -168,3 +168,8 @@ ul {
 .privacycontent li {
   margin-block: 0.5rem;
 }
+
+.nav_link:hover{
+  color: #dca24b;
+  transition: all ease 800;
+}
