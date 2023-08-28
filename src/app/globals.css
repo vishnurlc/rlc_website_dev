@@ -173,3 +173,16 @@ ul {
   color: #dca24b;
   transition: all ease 800;
 }
+
+/* shhs */
+
+.hover-underline {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+
+.hover-underline:hover::before {
+  transform: scaleX(1);
+}
