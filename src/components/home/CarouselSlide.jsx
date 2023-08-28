@@ -1,6 +1,6 @@
-import Image from "next/image";
-import React from "react";
-import { Button } from "../ui/button/Button";
+import Image from 'next/image';
+import React from 'react';
+import { Button } from '../ui/button/Button';
 
 const CarouselSlide = ({ url, title, price }) => {
   return (
@@ -10,9 +10,9 @@ const CarouselSlide = ({ url, title, price }) => {
         fill
         alt={title}
         style={{
-          objectFit: "cover",
-          objectPosition: "50%",
-          borderRadius: "5px",
+          objectFit: 'cover',
+          objectPosition: '50%',
+          borderRadius: '5px',
         }}
       />
       <div className="absolute inset-0 z-10 flex items-start p-6 md:p-10 justify-end flex-col gap-4">
@@ -21,7 +21,7 @@ const CarouselSlide = ({ url, title, price }) => {
             {title}
           </h3>
           <span className="text-sm md:text-lg font-poppins font-light ">
-            AED {price}/hr
+            AED {price}
           </span>
         </div>
         <Button
