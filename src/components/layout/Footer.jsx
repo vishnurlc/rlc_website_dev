@@ -108,7 +108,7 @@ const Footer = () => {
               {data.navigation.map((e, index) => (
                 <Link
                   href={e.link}
-                  className="text-white text-sm font-normal leading-tight hover-underline"
+                  className="text-white text-sm font-normal leading-tight hover-underline w-fit "
                   key={index}
                 >
                   {e.title}
