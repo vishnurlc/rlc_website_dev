@@ -141,11 +141,12 @@ const page = () => {
             />
           </div>
         </div>
-
-        <ContactForm
-          title={'Get In touch'}
-          description={'Experience Elegance & Convenience'}
-        />
+        <div className="my-8">
+          <ContactForm
+            title={'Get In touch'}
+            description={'Experience Elegance & Convenience'}
+          />
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import AboutCounter from "./AboutCounter";
+import AnimationImage from "../Animation/AnimationImage";
 
 function Aboutsection() {
   const data = [
@@ -39,16 +40,18 @@ function Aboutsection() {
     <div className="py-20 bg-white max-w-[1200px] mx-auto px-6 flex flex-col gap-9">
       <div className="lg:flex w-full items-center">
         <div className="hidden lg:block relative w-full aspect-square h-auto flex-1">
-          <Image
-            src="/assets/home/bugattitop.png"
-            fill
-            priority
-            alt="car"
-            style={{
-              objectFit: "contain",
-              borderRadius: "5px",
-            }}
-          />
+          <AnimationImage>
+            <Image
+              src="/assets/home/bugattitop.png"
+              fill
+              priority
+              alt="car"
+              style={{
+                objectFit: "contain",
+                borderRadius: "5px",
+              }}
+            />
+          </AnimationImage>
         </div>
         <div className="bg-white text-black  md:mx-20 flex-1">
           <h2 className="text-teal-900 text-[42px] font-extrabold leading-10">

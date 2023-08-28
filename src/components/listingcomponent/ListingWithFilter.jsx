@@ -9,8 +9,10 @@ import PriceFilter from '../filters/PriceFilter';
 import CaryearFilter from '../filters/CarYearfilter';
 import { motion } from 'framer-motion';
 import qs from 'qs';
-const ListingComponent = ({ variant, title, description }) => {
+import Marquee from '@/components/marquee/Marquee';
+const ListingComponent = ({ variant, title, description, make }) => {
   const containerRef = useRef(null);
+  const scrollRef = useRef(null);
   const [containerWidth, setContainerWidth] = useState(0);
   const [cars, setCars] = useState({});
   const [drag, setDrag] = useState(false);
@@ -154,8 +156,8 @@ const ListingComponent = ({ variant, title, description }) => {
   }, [searchParams]);
 
   const scrollToViewMethod = () => {
-    if (containerRef.current) {
-      containerRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (scrollRef.current) {
+      scrollRef.current.scrollIntoView();
     }
   };
   const handlePaginationChange = async (newPageNumber) => {
@@ -180,7 +182,7 @@ const ListingComponent = ({ variant, title, description }) => {
   };
 
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full overflow-hidden" ref={scrollRef}>
       <div className="w-full my-[40px] ">
         <motion.div
           ref={containerRef}
@@ -215,6 +217,13 @@ const ListingComponent = ({ variant, title, description }) => {
             />
           </div>
         )}
+      </div>
+      <div className="container mx-auto my-14 md:my-20">
+        <Marquee
+          make={make}
+          handleFilters={handleFilters}
+          scrollIntoView={scrollToViewMethod}
+        />
       </div>
     </div>
   );

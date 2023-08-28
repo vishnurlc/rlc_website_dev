@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Pagination = ({
   currentPage,
@@ -19,6 +19,11 @@ const Pagination = ({
     { length: endPage - startPage + 1 },
     (_, index) => startPage + index
   );
+
+  const clickHandler = async (number) => {
+    await onPageChange(number);
+    scrollIntoView();
+  };
   return (
     <nav aria-label="Page navigation example">
       <ul className=" !list-none flex">
@@ -26,8 +31,7 @@ const Pagination = ({
           <button
             className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100"
             onClick={() => {
-              onPageChange(currentPage - 1);
-              scrollIntoView();
+              clickHandler(currentPage - 1);
             }}
             disabled={currentPage === 1}
           >
@@ -37,19 +41,14 @@ const Pagination = ({
         {pageNumbers.map((pageNumber) => (
           <li
             key={pageNumber}
-            aria-current={currentPage === pageNumber ? "page" : undefined}
-            className={
-              currentPage === pageNumber ? " bg-primary text-white" : ""
-            }
+            aria-current={currentPage === pageNumber ? 'page' : undefined}
           >
             <button
               className={`relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 ${
-                currentPage === pageNumber ? "bg-primary text-white" : ""
+                currentPage === pageNumber ? 'bg-neutral-200 text-primary' : ''
               }`}
               onClick={() => {
-                onPageChange(pageNumber);
-
-                scrollIntoView();
+                clickHandler(pageNumber);
               }}
             >
               {pageNumber}
@@ -60,8 +59,7 @@ const Pagination = ({
           <button
             className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100"
             onClick={() => {
-              onPageChange(currentPage + 1);
-              scrollIntoView();
+              clickHandler(currentPage + 1);
             }}
             disabled={currentPage === totalPages}
           >
