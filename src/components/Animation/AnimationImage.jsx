@@ -9,7 +9,7 @@ function AnimationImage({ children }) {
   };
 
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { threshold: 50 });
 
   console.log(isInView);
 
@@ -20,6 +20,7 @@ function AnimationImage({ children }) {
       animate={isInView ? "visible" : "hidden"}
       variants={variants}
       className="h-full"
+      g
       transition={{ duration: 1, ease: "easeOut" }}
     >
       {children}
