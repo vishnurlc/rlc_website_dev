@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { AnimatePresence } from 'framer-motion';
-import { HiOutlineChevronDown } from 'react-icons/hi';
-import { BiMenuAltRight } from 'react-icons/bi';
-import { AiOutlineClose } from 'react-icons/ai';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { AnimatePresence } from "framer-motion";
+import { HiOutlineChevronDown } from "react-icons/hi";
+import { BiMenuAltRight } from "react-icons/bi";
+import { AiOutlineClose } from "react-icons/ai";
+import { motion } from "framer-motion";
 const dropdownvariant = {
   visible: {
     opacity: 1,
@@ -38,7 +38,7 @@ const mobileMenuVariant = {
   open: {
     opacity: 1,
     transition: {
-      type: 'spring',
+      type: "spring",
       duration: 0.4,
       // delayChildren: 0.2,
       staggerChildren: 0.05,
@@ -55,78 +55,78 @@ const menuitemVariant = {
 
 const links = [
   {
-    name: 'Rent A Car',
-    link: '/luxury-car-rentals',
+    name: "Rent A Car",
+    link: "/luxury-car-rentals",
   },
   {
-    name: 'Luxury Yacht Rentals',
-    link: '/luxury-yacht-rentals',
+    name: "Luxury Yacht Rentals",
+    link: "/luxury-yacht-rentals",
   },
   {
-    name: 'Exclusive Water Sports',
-    link: '/exclusive-water-sports',
+    name: "Exclusive Water Sports",
+    link: "/exclusive-water-sports",
     dropdown: true,
     products: [
       {
-        name: 'Premium Jetski',
-        href: '/premium-jetski-rental',
+        name: "Premium Jetski",
+        href: "/premium-jetski-rental",
       },
       {
-        name: 'Premium Gold Jetski',
-        href: '/premium-gold-jetski',
+        name: "Premium Gold Jetski",
+        href: "/premium-gold-jetski",
       },
     ],
   },
   {
-    name: 'Exotic Pet VIP Experiences',
-    link: '/exotic-pet-experiences',
+    name: "Exotic Pet VIP Experiences",
+    link: "/exotic-pet-experiences",
   },
   {
-    name: 'Services',
-    link: '#',
+    name: "Services",
+    link: "#",
     dropdown: true,
     products: [
       {
-        name: 'Chauffer service',
-        href: '/chauffer-service',
+        name: "Chauffer service",
+        href: "/chauffer-service",
       },
       {
-        name: 'Premium Jetski',
-        href: '/premium-jetski-rental',
+        name: "Premium Jetski",
+        href: "/premium-jetski-rental",
       },
       {
-        name: 'Premium Gold Jetski',
-        href: '/premium-gold-jetski',
+        name: "Premium Gold Jetski",
+        href: "/premium-gold-jetski",
       },
       {
-        name: 'Premium Desert Adventure',
-        href: '/premium-desert-adventure',
+        name: "Premium Desert Adventure",
+        href: "/premium-desert-adventure",
       },
       {
-        name: 'Helicopter Rentals',
-        href: '/helicopter-rentals',
+        name: "Helicopter Rentals",
+        href: "/helicopter-rentals",
       },
       {
-        name: 'Private Jet Rentals',
-        href: '/private-jet-rentals',
+        name: "Private Jet Rentals",
+        href: "/private-jet-rentals",
       },
       {
-        name: 'Luxury Yacht Rentals',
-        href: '/luxury-yacht-rentals',
+        name: "Luxury Yacht Rentals",
+        href: "/luxury-yacht-rentals",
       },
       {
-        name: 'Rent A Car',
-        href: '/luxury-car-rentals',
+        name: "Rent A Car",
+        href: "/luxury-car-rentals",
       },
     ],
   },
   {
-    name: 'About Us',
-    link: '/aboutus',
+    name: "About Us",
+    link: "/aboutus",
   },
   {
-    name: 'Contact Us',
-    link: '/contact-us',
+    name: "Contact Us",
+    link: "/contact-us",
   },
 ];
 
@@ -179,8 +179,8 @@ export default function Header() {
       style={{
         background:
           headerType === 1 || mobileMenuOpen
-            ? '#fff'
-            : 'linear-gradient(180deg, #000 0%, rgba(41, 41, 41, .1) 100%)',
+            ? "#fff"
+            : "linear-gradient(180deg, #000 0%, rgba(41, 41, 41, .1) 100%)",
       }}
       onMouseLeave={handleDropdownLeave}
     >
@@ -196,8 +196,8 @@ export default function Header() {
               height={100}
               src={
                 mobileMenuOpen
-                  ? 'assets/logos/logo-dark.svg'
-                  : '/assets/logos/richy-logoX.png'
+                  ? "assets/logos/logo-dark.svg"
+                  : "/assets/logos/richy-logoX.png"
               }
               alt="Richylife Club"
               className="aspect-[98.04/100] w-[60px] md:w-[80px]"
@@ -214,7 +214,7 @@ export default function Header() {
               <BiMenuAltRight
                 className="h-6 w-6"
                 aria-hidden="true"
-                color={headerType === 1 ? '#214842' : 'white'}
+                color={headerType === 1 ? "#214842" : "white"}
                 onClick={() => setMobileMenuOpen(true)}
               />
             ) : (
@@ -233,14 +233,14 @@ export default function Header() {
               {item.dropdown ? (
                 <div className="relative group">
                   <div
-                    className={`flex items-center gap-x-1 text-sm font-inter leading-6 cursor-pointer ${
-                      headerType === 1 ? 'text-primary' : 'text-white'
+                    className={`flex items-center gap-x-1 text-sm font-inter leading-6 cursor-pointer nav_link ${
+                      headerType === 1 ? "text-primary" : "text-white"
                     }  focus:outline-none`}
                   >
                     {item.name}
                     <HiOutlineChevronDown
                       className={`h-5 w-5 flex-none ${
-                        headerType === 1 ? 'text-primary' : 'text-white'
+                        headerType === 1 ? "text-primary" : "text-white"
                       } `}
                       aria-hidden="true"
                     />
@@ -249,9 +249,9 @@ export default function Header() {
                     {activeDropdown === index && (
                       <motion.div
                         variants={dropdownvariant}
-                        animate={'visible'}
+                        animate={"visible"}
                         initial="hidden"
-                        exit={'exit'}
+                        exit={"exit"}
                         className={` py-2 absolute right-0 top-full z-10 mt-3  overflow-hidden rounded-sm bg-white shadow-lg ring-1 ring-gray-900/5 `}
                         onMouseLeave={handleDropdownLeave}
                       >
@@ -262,7 +262,7 @@ export default function Header() {
                           >
                             <Link
                               href={product.href}
-                              className="block text-gray-900 whitespace-nowrap"
+                              className="block text-gray-900 whitespace-nowrap nav_link"
                             >
                               {product.name}
                             </Link>
@@ -275,8 +275,8 @@ export default function Header() {
               ) : (
                 <Link
                   href={item.link}
-                  className={`text-sm leading-6 ${
-                    headerType === 1 ? 'text-primary' : 'text-white'
+                  className={`text-sm leading-6 nav_link ${
+                    headerType === 1 ? "text-primary" : "text-white"
                   } font-inter`}
                 >
                   {item.name}
@@ -288,7 +288,7 @@ export default function Header() {
       </nav>
       <div
         className={`lg:hidden h-screen ${
-          mobileMenuOpen ? 'block bg-white' : 'hidden'
+          mobileMenuOpen ? "block bg-white" : "hidden"
         } px-8`}
       >
         <div className="flex flex-col space-y-4 py-6">
@@ -313,12 +313,12 @@ export default function Header() {
                       <motion.div
                         key={index}
                         className={`py-2 relative ${
-                          mobileMenuOpen ? 'block' : 'hidden'
+                          mobileMenuOpen ? "block" : "hidden"
                         }`}
                         variants={mobileMenuVariant}
                         initial="closed"
                         exit="closed"
-                        animate={mobileMenuDropdown ? 'open' : 'closed'}
+                        animate={mobileMenuDropdown ? "open" : "closed"}
                       >
                         {item.products.map((product) => (
                           <motion.div
