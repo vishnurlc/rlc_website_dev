@@ -88,6 +88,7 @@ export default async function page() {
         type={'video'}
         alt="Luxury Car rentals"
         url={'/assets/home/hero.mp4'}
+        btntext={'Book now'}
       />
       <div className="mx-auto max-w-[1200px]">
         <ListingComponent

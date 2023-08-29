@@ -1,9 +1,4 @@
-import {
-  ContactForm,
-  HeroSection,
-  HeroSection2,
-  SectionHeading,
-} from '@/components';
+import { ContactForm, HeroSection2, SectionHeading } from '@/components';
 import CardSq from '@/components/ui/card/CardSq';
 import Image from 'next/image';
 import React from 'react';

@@ -1,6 +1,5 @@
 import {
   ContactForm,
-  HeroSection,
   HeroSection2,
   SectionHeading,
   YachtListing,
