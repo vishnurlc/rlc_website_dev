@@ -1,17 +1,17 @@
-"use client";
-import React, { useEffect, useState } from "react";
+'use client';
+import React, { useEffect, useState } from 'react';
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import CarouselSlide from "./CarouselSlide";
-import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
-import { Loader } from "..";
-import { AnimatePresence, motion } from "framer-motion";
+import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import CarouselSlide from './CarouselSlide';
+import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
+import { Loader } from '..';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const getData = async () => {
   try {
@@ -58,9 +58,9 @@ const Ourservices = () => {
     <div
       style={{
         background: "url('/assets/servicecarousel/bg.png')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }}
       className="px-8 py-20  flex justify-center items-center"
     >
@@ -77,7 +77,7 @@ const Ourservices = () => {
                   variants={headingVariant}
                   initial="initial"
                   animate="animate"
-                  exit={"exit"}
+                  exit={'exit'}
                   key={slideIndex}
                   transition={{
                     duration: 0.5,
@@ -106,13 +106,13 @@ const Ourservices = () => {
                   onSlideChange={(obj) => setSlideIndex(obj.activeIndex)}
                   pagination={{
                     clickable: true,
-                    el: ".swiper-pagination-el",
-                    bulletActiveClass: "serviceactivebullet",
-                    bulletClass: "servicebullet",
+                    el: '.swiper-pagination-el',
+                    bulletActiveClass: 'serviceactivebullet',
+                    bulletClass: 'servicebullet',
                   }}
                   navigation={{
-                    nextEl: ".swiper-next-el",
-                    prevEl: ".swiper-prev-el",
+                    nextEl: '.swiper-next-el',
+                    prevEl: '.swiper-prev-el',
                   }}
                   className="max-w-[1200px] mx-auto p-5 serviceswiper"
                   coverflowEffect={{
@@ -144,7 +144,7 @@ const Ourservices = () => {
                     <BsArrowLeftCircle
                       size={24}
                       color="white"
-                      cursor={"pointer"}
+                      cursor={'pointer'}
                     />
                   </div>
                   <div className="swiper-pagination-el !w-fit flex items-center"></div>
@@ -152,7 +152,7 @@ const Ourservices = () => {
                     <BsArrowRightCircle
                       size={24}
                       color="white"
-                      cursor={"pointer"}
+                      cursor={'pointer'}
                     />
                   </div>
                 </div>
