@@ -1,39 +1,39 @@
-import Image from 'next/image';
-import React from 'react';
-import AboutCounter from './AboutCounter';
-import AnimationImage from '../Animation/AnimationImage';
+import Image from "next/image";
+import React from "react";
+import AboutCounter from "./AboutCounter";
+import AnimationImage from "../Animation/AnimationImage";
 
 function Aboutsection() {
   const data = [
     {
-      title: 'Private events ',
-      startNumber: '5',
-      endNumber: '11',
-      suffix: 'k',
+      title: "Private events ",
+      startNumber: "5",
+      endNumber: "11",
+      suffix: "k",
     },
     {
-      title: 'Customer Satisfaction',
-      startNumber: '30',
-      endNumber: '100',
-      suffix: '%',
+      title: "Customer Satisfaction",
+      startNumber: "30",
+      endNumber: "100",
+      suffix: "%",
     },
     {
-      title: 'Private events ',
-      startNumber: '30',
-      endNumber: '100',
-      suffix: '%',
+      title: "Private events ",
+      startNumber: "30",
+      endNumber: "100",
+      suffix: "%",
     },
     {
-      title: 'Private events ',
-      startNumber: '30',
-      endNumber: '180',
-      suffix: '+',
+      title: "Private events ",
+      startNumber: "30",
+      endNumber: "180",
+      suffix: "+",
     },
     {
-      title: 'Private events ',
-      startNumber: '30',
-      endNumber: '100',
-      suffix: '',
+      title: "Private events ",
+      startNumber: "30",
+      endNumber: "100",
+      suffix: "",
     },
   ];
   return (
@@ -47,8 +47,8 @@ function Aboutsection() {
               priority
               alt="car"
               style={{
-                objectFit: 'contain',
-                borderRadius: '5px',
+                objectFit: "contain",
+                borderRadius: "5px",
               }}
             />
           </AnimationImage>
@@ -56,7 +56,7 @@ function Aboutsection() {
         <div className="bg-white text-black  md:mx-20 flex-1">
           <h2 className="text-teal-900 text-[42px] font-extrabold leading-10">
             RICHYLIFE <br />
-            CLUB{' '}
+            CLUB{" "}
           </h2>
 
           <p className="py-10 text-md font-thin text-secondary">
@@ -74,7 +74,7 @@ function Aboutsection() {
             At Richy Life, everything is lavish and upscale. The moment you make
             a reservation with us, you begin living a grand and opulent
             existence. High-class automobiles, helicopters, private aircraft,
-            and YACHT are available to our guests for luxurious and exotic
+            and yacht are available to our guests for luxurious and exotic
             excursions. Your time with us will be some of the finest times of
             your life. Your luxury vacations will be planned and mapped out by
             our highly skilled and experienced team of travel experts. Our goal
