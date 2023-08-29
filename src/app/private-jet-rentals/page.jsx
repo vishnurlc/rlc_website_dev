@@ -1,11 +1,12 @@
 import {
   ContactForm,
-  HeroSection,
   HeroSection2,
+  Loader,
   SectionHeading,
 } from '@/components';
 
 import Jetcard from '@/components/privatejetrental/Jetcard';
+import Link from 'next/link';
 import React from 'react';
 
 export const metadata = {
@@ -92,28 +93,43 @@ export default async function PrivateJet() {
       />
 
       <div className="py-[43px] md:py-[86px]">
-        <SectionHeading
-          title={'Indulge in Extravagance'}
-          description={
-            'Elevate Your Journey with Our Exclusive Private Jet Rentals'
-          }
-        />
-        <div className="grid grid-cols-1 gap-6 md:gap-16 my-8 md:my-16">
-          {jets.data.map((item, index) => {
-            return (
-              <Jetcard
-                key={index}
-                data={{
-                  title: item.attributes.name,
-                  price: item.attributes.price,
-                  url: item.attributes.image.data[0].attributes.formats.medium
-                    .url,
-                  slug: item.attributes.slug,
-                }}
-              />
-            );
-          })}
-        </div>
+        {jets.data.length > 0 ? (
+          <>
+            <SectionHeading
+              title={'Indulge in Extravagance'}
+              description={
+                'Elevate Your Journey with Our Exclusive Private Jet Rentals'
+              }
+            />
+            <div className="grid grid-cols-1 gap-6 md:gap-16 my-8 md:my-16">
+              {jets.data.map((item, index) => {
+                return (
+                  <Jetcard
+                    key={index}
+                    data={{
+                      title: item.attributes.name,
+                      price: item.attributes.price,
+                      url: item.attributes.image.data[0].attributes.formats
+                        .medium.url,
+                      slug: item.attributes.slug,
+                    }}
+                  />
+                );
+              })}
+            </div>
+          </>
+        ) : (
+          <div className="min-h-[50vh] flex flex-col items-center justify-center">
+            <h2 className="text-center text-primary text-xl">
+              No Private Jets available.{' '}
+              <Link
+                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=I would like to know more about Richylife Club Private Jet Rentals?`}
+              >
+                Contact us
+              </Link>
+            </h2>
+          </div>
+        )}
         <ContactForm
           title={'Soar to New Heights'}
           description={'Book your journey with our private jet rental now'}
