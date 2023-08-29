@@ -1,8 +1,8 @@
-"use client";
-import React from "react";
-import { Button } from "../ui/button/Button";
-import { motion } from "framer-motion";
-import AnimatedBtn from "../premiumjetski/AnimatedBtn";
+'use client';
+import React from 'react';
+import { Button } from '../ui/button/Button';
+import { motion } from 'framer-motion';
+import AnimatedBtn from '../premiumjetski/AnimatedBtn';
 const AnimatedHeroText = ({ subheading, heading1, heading2, btntext }) => {
   return (
     <>
@@ -30,9 +30,9 @@ const AnimatedHeroText = ({ subheading, heading1, heading2, btntext }) => {
         </motion.div>
       </div>
       <AnimatedBtn
-        styles=" absolute bottom-12 left-1/2 -translate-x-1/2 z-10 bg-primary px-6 py-2 bg-opacity-80 rounded-sm text-gold border border-solid border-gold border-opacity-50"
+        styles=" absolute bottom-6 left-1/2 -translate-x-1/2 z-10 bg-primary px-6 py-2 bg-opacity-80 rounded-sm text-gold border border-solid border-gold border-opacity-50"
         text={btntext}
-        msg={"Hi, I would like to know about your services."}
+        msg={'Hi, I would like to know about your services.'}
       />
     </>
   );
