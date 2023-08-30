@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 function CardSq({ data }) {
@@ -23,14 +24,14 @@ function CardSq({ data }) {
         </div>
 
         <button className="mt-2 px-2 py-1 bg-primary text-gold">
-          <a
-            href="https://wa.me/1234567890"
+          <Link
+            href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=I would like to know Richylife Club's Premium Chauffer Service on ${data.title}`}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm"
           >
             Book Now
-          </a>
+          </Link>
         </button>
       </div>
     </div>

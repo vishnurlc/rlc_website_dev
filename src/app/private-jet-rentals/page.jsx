@@ -130,10 +130,12 @@ export default async function PrivateJet() {
             </h2>
           </div>
         )}
-        <ContactForm
-          title={'Soar to New Heights'}
-          description={'Book your journey with our private jet rental now'}
-        />
+        <div className="px-4">
+          <ContactForm
+            title={'Soar to New Heights'}
+            description={'Book your journey with our private jet rental now'}
+          />
+        </div>
       </div>
     </main>
   );

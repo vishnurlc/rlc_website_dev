@@ -46,6 +46,7 @@ const page = () => {
         posterurl={'/assets/home/heroposter.jpg'}
         type={'video'}
         url={'https://admin.richylife.ae/rlchome.mp4'}
+        btntext={'Get in touch'}
       />
 
       <div className="max-w-[1200px] mx-auto flex flex-col gap-6 px-6">
