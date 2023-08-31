@@ -31,7 +31,7 @@ const ListingComponent = ({ variant, title, description, make }) => {
   async function getData({ params }) {
     const queryParameters = {};
     setStatus(0);
-    if (params.body) {
+    if (params.body && params.body !== 'all') {
       queryParameters.body = {
         slug: {
           $eq: params.body,

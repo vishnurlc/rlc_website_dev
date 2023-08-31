@@ -40,8 +40,9 @@ function Card({ variant, data }) {
               objectFit: 'cover',
               objectPosition: 'center',
             }}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 80vw"
           />
-          <div className="absolute inset-0 flex text-[#6A7285] font-sans text-xs items-end p-5 gap-4 z-10">
+          {/* <div className="absolute inset-0 flex text-[#6A7285] font-sans text-xs items-end p-5 gap-4 z-10">
             {data.attributes.video_url && (
               <button
                 onClick={() => {
@@ -64,7 +65,7 @@ function Card({ variant, data }) {
               <IoMdPhotos />
               {data.attributes.image.data.length} Photo
             </button>
-          </div>
+          </div> */}
         </div>
         <div className="p-5 col-span-1 md:col-span-2">
           <div className="text-black h-full flex flex-col items-start justify-between">

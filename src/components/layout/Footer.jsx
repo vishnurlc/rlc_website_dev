@@ -136,6 +136,7 @@ const Footer = () => {
                           objectFit: 'cover',
                           borderRadius: '5px',
                         }}
+                        sizes="20vw"
                       />
                     </Link>
                   </div>

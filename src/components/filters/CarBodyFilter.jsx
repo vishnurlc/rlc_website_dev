@@ -30,10 +30,13 @@ const CarbodyFilter = ({ handleFilters, selectedValue }) => {
           label: `${type.attributes.type}`,
           value: type.attributes.slug,
         }));
-      setFetchedOptions(options);
+
+      const allOption = { label: 'All', value: 'all' };
+      const optionsWithAll = [allOption, ...options];
+      setFetchedOptions(optionsWithAll);
 
       // Set the selected option based on the selectedValue
-      const initialSelectedOption = options.find(
+      const initialSelectedOption = optionsWithAll.find(
         (option) => option.value === selectedValue
       );
       setSelectedOption(initialSelectedOption);
