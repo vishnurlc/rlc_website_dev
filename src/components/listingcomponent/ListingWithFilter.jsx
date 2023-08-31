@@ -76,7 +76,6 @@ const ListingComponent = ({ variant, title, description, make }) => {
         },
       });
       const data = await res.json();
-      console.log(data);
       if (data.data.length === 0) {
         setStatus(1);
       } else {
