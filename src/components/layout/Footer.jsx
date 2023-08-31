@@ -68,9 +68,13 @@ const Footer = () => {
       />
 
       {/* images */}
-      <div className="overflow-hidden w-full mt-5">
+      <Link
+        href={'https://www.instagram.com/richylifecom/'}
+        target="_blank"
+        className="overflow-hidden w-full mt-5 block"
+      >
         <FooterInstagram images={data.images} />
-      </div>
+      </Link>
 
       {/* footer content */}
       <div className="footer bg-gradient-to-b from-teal-900 to-black">
@@ -127,7 +131,10 @@ const Footer = () => {
                     key={index}
                     className="relative w-full aspect-[64/80] h-auto min-w-[64px] "
                   >
-                    <Link href={'#'} target="_blank" rel="noreferrer">
+                    <Link
+                      href={'https://www.instagram.com/richylifecom/'}
+                      target="_blank"
+                    >
                       <Image
                         src={item}
                         fill
