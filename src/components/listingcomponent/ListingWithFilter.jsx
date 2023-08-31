@@ -76,7 +76,8 @@ const ListingComponent = ({ variant, title, description, make }) => {
         },
       });
       const data = await res.json();
-      if (data == {}) {
+      console.log(data);
+      if (data.data.length === 0) {
         setStatus(1);
       } else {
         setStatus(2);
@@ -216,7 +217,9 @@ const ListingComponent = ({ variant, title, description, make }) => {
           {cars.data?.map((car, index) => (
             <Card variant={variant} data={car} key={index} />
           ))}
-          {status === 1 && <p>No Cars found</p>}
+          {status === 1 && (
+            <p className="text-center text-xl ">No Cars found !</p>
+          )}
           {status === 0 && <Loader color={'#000'} />}
         </div>
         {cars.meta && (

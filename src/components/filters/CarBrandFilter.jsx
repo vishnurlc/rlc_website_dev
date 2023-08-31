@@ -4,7 +4,7 @@ import Select from 'react-select';
 const fetchOptions = async () => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/car-makes`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/car-makes?populate=*`,
       {
         headers: {
           Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
@@ -25,10 +25,13 @@ const CarBrandFilter = ({ handleFilters, selectedValue }) => {
 
   useEffect(() => {
     fetchOptions().then((brand) => {
-      const options = brand.map((type) => ({
-        label: `${type.attributes.make}`,
-        value: type.attributes.slug,
-      }));
+      const options = brand
+        .filter((type) => type.attributes.cars.data.length > 0) // Filter out types with empty cars.data
+        .map((type) => ({
+          label: `${type.attributes.make}`,
+          value: type.attributes.slug,
+        }));
+
       setFetchedOptions(options);
 
       // Set the selected option based on the selectedValue

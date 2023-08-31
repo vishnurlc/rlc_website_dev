@@ -3,7 +3,7 @@ import Select from 'react-select';
 const fetchOptions = async () => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/car-years`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/car-years?populate=*`,
       {
         headers: {
           Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
@@ -24,10 +24,12 @@ const CaryearFilter = ({ handleFilters, selectedValue }) => {
 
   useEffect(() => {
     fetchOptions().then((years) => {
-      const options = years.map((type) => ({
-        label: `${type.attributes.year}`,
-        value: type.attributes.year,
-      }));
+      const options = years
+        .filter((type) => type.attributes.cars.data.length > 0) // Filter out types with empty cars.data
+        .map((type) => ({
+          label: `${type.attributes.year}`,
+          value: type.attributes.year,
+        }));
       setFetchedOptions(options);
 
       // Set the selected option based on the selectedValue

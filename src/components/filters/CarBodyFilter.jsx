@@ -4,7 +4,7 @@ import Select from 'react-select';
 const fetchOptions = async () => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/car-bodies`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/car-bodies?populate=*`,
       {
         headers: {
           Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
@@ -24,10 +24,12 @@ const CarbodyFilter = ({ handleFilters, selectedValue }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   useEffect(() => {
     fetchOptions().then((body) => {
-      const options = body.map((type) => ({
-        label: `${type.attributes.type}`,
-        value: type.attributes.slug,
-      }));
+      const options = body
+        .filter((type) => type.attributes.cars.data.length > 0) // Filter out types with empty cars.data
+        .map((type) => ({
+          label: `${type.attributes.type}`,
+          value: type.attributes.slug,
+        }));
       setFetchedOptions(options);
 
       // Set the selected option based on the selectedValue
