@@ -20,9 +20,9 @@ const CarouselSlide = ({ url, title, price }) => {
           <h3 className="text-xl md:text-3xl font-inter font-medium ">
             {title}
           </h3>
-          <span className="text-sm md:text-lg font-poppins font-light ">
+          {/* <span className="text-sm md:text-lg font-poppins font-light ">
             AED {price}
-          </span>
+          </span> */}
         </div>
         <Button
           variant="whiteborder"

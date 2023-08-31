@@ -17,7 +17,7 @@ function FooterAdress() {
             href={`tel:${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
             className=" text-white text-sm font-normal leading-tight"
           >
-            +1-202-555-0133
+            +971542661354
           </Link>
           <Link
             href={'mailto:info@richylife.ae'}

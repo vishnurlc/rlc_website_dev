@@ -153,9 +153,11 @@ export default async function JetSkiPage() {
                       <h2 className="uppercase font-medium tracking-wide text-xl font-poppins">
                         {item.attributes.name}
                       </h2>
-                      <span className="text-gray-400 text-sm">
-                        Starting from AED {item.attributes.price}
-                      </span>
+                      {item.attributes.price && (
+                        <span className="text-gray-400 text-sm">
+                          Starting from AED {item.attributes.price}
+                        </span>
+                      )}
                     </div>
 
                     <Link href={'#'}>
