@@ -74,7 +74,7 @@ function Aboutsection() {
             At Richy Life, everything is lavish and upscale. The moment you make
             a reservation with us, you begin living a grand and opulent
             existence. High-class automobiles, helicopters, private aircraft,
-            and YACHT are available to our guests for luxurious and exotic
+            and yacht are available to our guests for luxurious and exotic
             excursions. Your time with us will be some of the finest times of
             your life. Your luxury vacations will be planned and mapped out by
             our highly skilled and experienced team of travel experts. Our goal
