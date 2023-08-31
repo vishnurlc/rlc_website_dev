@@ -54,9 +54,9 @@ const page = () => {
       <h1 className="sr-only">Contact Us - Richylife Club</h1>
       <HeroSection
         posterurl={'/assets/chauffer/hero.png'}
-        type={'video'}
+        type={''}
         alt="Luxury Car rentals"
-        url={'/assets/home/hero.mp4'}
+        url={'/assets/chauffer/hero.png'}
         btntext={'Get in touch'}
       />
       <div className="mt-5 px-5 md:p-0">

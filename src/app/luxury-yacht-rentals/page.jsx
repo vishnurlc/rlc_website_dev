@@ -1,11 +1,9 @@
 import {
   ContactForm,
   HeroSection2,
-  SectionHeading,
+  PictureGallery,
   YachtListing,
 } from '@/components';
-import Filter from '@/components/ui/filter/filter';
-import MasonryGrid from '@/components/yachtrental/PictureGallery';
 import React from 'react';
 
 export const metadata = {
@@ -82,33 +80,31 @@ export default async function page() {
     <main>
       <h1 className="sr-only ">Luxury Yacht Rentals - Richylife Club</h1>
       <HeroSection2
-        type={'video'}
+        type={'image'}
         heading1={'Luxury Yacht'}
         heading2={'Rental in Dubai'}
         subheading={'Experience the sea breeze in luxury'}
         posterurl={'/assets/privateyachts/banner.png'}
         btntext={'Book your trip'}
-        url={'/assets/home/hero.mp4'}
+        url={'/assets/privateyachts/banner.png'}
         overlay={1}
       />
       <div className="mx-auto max-w-[1200px]">
         <YachtListing data={yachts} variant={'yacht'} />
       </div>
-      <div className=" my-16 flex flex-col gap-9 md:gap-16">
-        <SectionHeading
+      {/* <div className=" my-16 flex flex-col gap-9 md:gap-16">
+        <PictureGallery
           title={'Picture Gallery'}
           description={
-            'Duis aute irure dolorin reprehenderits vol dolore fugiat nulla pariatur excepteur sint occaecat cupidatat.'
+            'Join our global community on Instagram for an exclusive glimpse into a world where opulence knows no bounds.'
           }
         />
-
-        <MasonryGrid />
-        <div className="my-9 md:my-16 px-6">
-          <ContactForm
-            title={'Set Sailing Now'}
-            description={'Book your adventurous Journey with us'}
-          />
-        </div>
+      </div> */}
+      <div className="my-9 md:my-16 px-6">
+        <ContactForm
+          title={'Set Sailing Now'}
+          description={'Book your adventurous Journey with us'}
+        />
       </div>
     </main>
   );

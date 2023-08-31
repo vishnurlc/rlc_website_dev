@@ -24,11 +24,13 @@ const Herosection = ({ url, type, posterurl, alt, btntext }) => {
         ) : (
           <Image
             src={url}
-            layout="fill"
+            fill
             alt={alt || 'Hero Section Image'}
-            objectFit="cover"
-            objectPosition="center"
             priority
+            style={{
+              objectFit: 'cover',
+            }}
+            sizes="100vw"
           />
         )}
 

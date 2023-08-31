@@ -1,11 +1,9 @@
 import {
   ContactForm,
-  HeroSection,
+  HeroSection2,
   ListingComponent,
-  SectionHeading,
+  PictureGallery,
 } from '@/components';
-
-import MasonryGrid from '@/components/yachtrental/PictureGallery';
 import React from 'react';
 
 export const metadata = {
@@ -83,12 +81,15 @@ export default async function page() {
   return (
     <main>
       <h1 className="sr-only">Luxury Car Rentals - Richylife Club</h1>
-      <HeroSection
+      <HeroSection2
+        type={'image'}
+        heading1={'Luxury Car'}
+        heading2={'Rental in Dubai'}
+        subheading={'Experience luxury on wheels'}
         posterurl={'/assets/rentacar/banner.png'}
-        type={'video'}
-        alt="Luxury Car rentals"
-        url={'/assets/home/hero.mp4'}
-        btntext={'Book now'}
+        btntext={'Book your ride'}
+        url={'/assets/rentacar/banner.png'}
+        overlay={1}
       />
       <div className="mx-auto max-w-[1200px]">
         <ListingComponent
@@ -102,13 +103,12 @@ export default async function page() {
       </div>
 
       <div className=" my-16 flex flex-col gap-9 md:gap-16">
-        <SectionHeading
+        <PictureGallery
           title={'Picture Gallery'}
           description={
-            'Duis aute irure dolorin reprehenderits vol dolore fugiat nulla pariatur excepteur sint occaecat cupidatat.'
+            'Join our global community on Instagram for an exclusive glimpse into a world where opulence knows no bounds.'
           }
         />
-        <MasonryGrid />
       </div>
       <div className="my-9 md:my-16 px-6">
         <ContactForm

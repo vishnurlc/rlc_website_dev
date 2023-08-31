@@ -27,6 +27,7 @@ const MasonryGrid = () => {
             style={{
               objectFit: 'cover',
             }}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
         <div className="w-full relative h-[200px] col-span-1 md:col-span-2">
@@ -37,6 +38,7 @@ const MasonryGrid = () => {
             style={{
               objectFit: 'cover',
             }}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
         <div className="w-full relative h-[200px] col-span-1 md:col-span-3">
@@ -47,6 +49,7 @@ const MasonryGrid = () => {
             style={{
               objectFit: 'cover',
             }}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
         <div className="w-full relative h-[200px] col-span-2 md:col-span-4">
@@ -57,6 +60,7 @@ const MasonryGrid = () => {
             style={{
               objectFit: 'cover',
             }}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
       </div>
@@ -69,6 +73,7 @@ const MasonryGrid = () => {
             style={{
               objectFit: 'cover',
             }}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
         <div className="w-full relative h-[200px] col-span-1 md:col-span-3">
@@ -79,6 +84,7 @@ const MasonryGrid = () => {
             style={{
               objectFit: 'cover',
             }}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
         <div className="w-full relative h-[200px] col-span-1 md:col-span-4">
@@ -89,6 +95,7 @@ const MasonryGrid = () => {
             style={{
               objectFit: 'cover',
             }}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
         <div className="w-full relative h-[200px] col-span-2 md:col-span-3">
@@ -99,6 +106,7 @@ const MasonryGrid = () => {
             style={{
               objectFit: 'cover',
             }}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
       </div>

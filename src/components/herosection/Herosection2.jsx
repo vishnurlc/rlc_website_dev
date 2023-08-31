@@ -38,6 +38,7 @@ const Herosection2 = ({
               objectPosition: 'center',
             }}
             priority
+            sizes="100vw"
           />
         )}
       </div>

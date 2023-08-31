@@ -121,10 +121,6 @@ const links = [
     ],
   },
   {
-    name: 'About Us',
-    link: '/aboutus',
-  },
-  {
     name: 'Contact Us',
     link: '/contact-us',
   },
