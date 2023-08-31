@@ -104,7 +104,7 @@ function Card({ variant, data }) {
             </p> */}
 
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full py-5 gap-6">
-              <div className="flex items-center gap-2">
+              <div className="w-full md:w-fit">
                 {/* <p className="text-secondary text-sm">From</p> */}
                 <span className="text-primary font-normal text-2xl">
                   AED{data.attributes.price}{' '}
@@ -113,19 +113,21 @@ function Card({ variant, data }) {
                   </span>
                 </span>
               </div>
-              <div className="flex justify-start items-center gap-4 ">
-                <Link
-                  href={`tel:${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
-                  className="cursor-pointer"
-                >
-                  <FaPhoneAlt size={24} color="#DCA24B" />
-                </Link>
-                <Link
-                  className="cursor-pointer"
-                  href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=I would like to know more about ${data.attributes.name} booking`}
-                >
-                  <RiWhatsappFill size={24} color="#25D366" />
-                </Link>
+              <div className="flex justify-between md:justify-start items-center gap-4 w-full md:w-fit">
+                <div className="flex gap-4 ">
+                  <Link
+                    href={`tel:${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
+                    className="cursor-pointer"
+                  >
+                    <FaPhoneAlt size={24} color="#DCA24B" />
+                  </Link>
+                  <Link
+                    className="cursor-pointer"
+                    href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=I would like to know more about ${data.attributes.name} booking`}
+                  >
+                    <RiWhatsappFill size={24} color="#25D366" />
+                  </Link>
+                </div>
                 <Button
                   msg={`I would like to know more about ${data.attributes.name} booking`}
                 >
@@ -175,28 +177,28 @@ function YachtDetail({ data }) {
     <>
       <div className="py-3 flex gap-5 flex-wrap">
         <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
-          <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
+          <div className="text-primary flex items-center gap-2 text-sm md:text-base font-medium leading-tight">
             <BiBadgeCheck /> {data.attributes.technicalspec.star} Star
           </div>
         </div>
         <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
-          <div className="text-primary text-base flex items-center gap-2 font-medium leading-tight">
+          <div className="text-primary text-sm md:text-base flex items-center gap-2 font-medium leading-tight">
             <BsPeople /> {data.attributes.technicalspec.capacity} People
           </div>
         </div>
         <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
-          <div className="text-primary text-base flex items-center gap-2 font-medium leading-tight">
+          <div className="text-primary text-sm md:text-base flex items-center gap-2 font-medium leading-tight">
             <BiCategoryAlt /> {data.attributes.technicalspec.category}
           </div>
         </div>
 
         <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
-          <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
+          <div className="text-primary flex items-center gap-2 text-sm md:text-base font-medium leading-tight">
             <LiaToolsSolid /> {data.attributes.technicalspec.make_year}
           </div>
         </div>
         <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
-          <div className="text-primary text-base font-medium flex items-center gap-2 leading-tight">
+          <div className="text-primary text-sm md:text-base font-medium flex items-center gap-2 leading-tight">
             <LiaRulerCombinedSolid /> {data.attributes.technicalspec.length}
             &quot;ft
           </div>
@@ -214,7 +216,7 @@ function CarDetail({ data }) {
           <BsFillFuelPumpFill /> {data.attributes.fuel.data.attributes.type}
         </div> */}
         {data.attributes.deposit.data && (
-          <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
+          <div className="text-primary flex items-center gap-2 text-sm md:text-base font-medium leading-tight">
             {data.attributes.deposit.data?.attributes.type === 'No Deposit' ? (
               <>
                 <AiOutlineCheckCircle />{' '}
@@ -230,24 +232,24 @@ function CarDetail({ data }) {
         )}
       </div>
       <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
-        <div className="text-primary text-base flex items-center gap-2 font-medium leading-tight">
+        <div className="text-primary text-sm md:text-base flex items-center gap-2 font-medium leading-tight">
           <MdOutlineAirlineSeatReclineExtra />{' '}
           {data.attributes.seat.data.attributes.seat} Seats
         </div>
       </div>
 
       <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
-        <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
+        <div className="text-primary flex items-center gap-2 text-sm md:text-base font-medium leading-tight">
           <LiaToolsSolid /> {data.attributes.year.data.attributes.year}
         </div>
       </div>
       <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
-        <div className="text-primary text-base font-medium flex items-center gap-2 leading-tight">
+        <div className="text-primary text-sm md:text-base font-medium flex items-center gap-2 leading-tight">
           <BsCarFrontFill /> {data.attributes.body.data.attributes.type}
         </div>
       </div>
       <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
-        <div className="text-primary text-base font-medium flex items-center gap-2 leading-tight">
+        <div className="text-primary text-sm md:text-base font-medium flex items-center gap-2 leading-tight">
           <BiSolidColor />{' '}
           {data.attributes.car_colors.data
             .map((item) => item.attributes.color)
