@@ -197,3 +197,19 @@ export default async function JetDetail({ params: { slug } }) {
     </main>
   );
 }
+
+export const generateStaticParams = async () => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/private-jets`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
+      },
+    }
+  );
+
+  const data = await res.json();
+  return data.data.map((car) => ({
+    slug: car.attributes.slug,
+  }));
+};

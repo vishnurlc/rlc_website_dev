@@ -268,7 +268,6 @@ export const generateStaticParams = async () => {
   });
 
   const data = await res.json();
-  console.log(data.data[0].attributes.slug);
   return data.data.map((car) => ({
     slug: car.attributes.slug,
   }));
