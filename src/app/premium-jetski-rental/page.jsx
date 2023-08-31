@@ -160,11 +160,9 @@ export default async function JetSkiPage() {
                       )}
                     </div>
 
-                    <Link href={'#'}>
-                      <Button className="mt-4 px-4 py-2 bg-gold text-white rounded-sm">
-                        Book Now
-                      </Button>
-                    </Link>
+                    <Button className="mt-4 px-4 py-2 bg-gold text-white rounded-sm">
+                      Book Now
+                    </Button>
                   </div>
                 </div>
               ))}
