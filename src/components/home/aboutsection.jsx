@@ -6,6 +6,12 @@ import AnimationImage from '../Animation/AnimationImage';
 function Aboutsection() {
   const data = [
     {
+      title: 'Years Of Experience',
+      startNumber: '1',
+      endNumber: '5',
+      suffix: '',
+    },
+    {
       title: 'Private events ',
       startNumber: '5',
       endNumber: '11',
@@ -18,22 +24,16 @@ function Aboutsection() {
       suffix: '%',
     },
     {
-      title: 'Private events ',
-      startNumber: '30',
-      endNumber: '100',
+      title: 'Concierge Assistance',
+      startNumber: '3000',
+      endNumber: '5000',
       suffix: '%',
     },
     {
-      title: 'Private events ',
-      startNumber: '30',
-      endNumber: '180',
+      title: 'Customized Experiences',
+      startNumber: '1000',
+      endNumber: '2200',
       suffix: '+',
-    },
-    {
-      title: 'Private events ',
-      startNumber: '30',
-      endNumber: '100',
-      suffix: '',
     },
   ];
   return (
