@@ -12,12 +12,6 @@ function Aboutsection() {
       suffix: '',
     },
     {
-      title: 'Private events ',
-      startNumber: '5',
-      endNumber: '11',
-      suffix: 'k',
-    },
-    {
       title: 'Customer Satisfaction',
       startNumber: '30',
       endNumber: '100',
@@ -25,14 +19,20 @@ function Aboutsection() {
     },
     {
       title: 'Concierge Assistance',
-      startNumber: '3000',
-      endNumber: '5000',
-      suffix: '%',
+      startNumber: '1000',
+      endNumber: '2000',
+      suffix: '+',
+    },
+    {
+      title: 'Private events ',
+      startNumber: '3',
+      endNumber: '6',
+      suffix: 'k',
     },
     {
       title: 'Customized Experiences',
-      startNumber: '1000',
-      endNumber: '2200',
+      startNumber: '800',
+      endNumber: '1400',
       suffix: '+',
     },
   ];
