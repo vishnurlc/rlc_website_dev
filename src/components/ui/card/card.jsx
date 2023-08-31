@@ -222,7 +222,7 @@ function CarDetail({ data }) {
               </>
             ) : (
               <>
-                <AiOutlineExclamationCircle /> Deposit: AED
+                <AiOutlineExclamationCircle /> Deposit: AED&nbsp;
                 {data.attributes.deposit.data.attributes.type}
               </>
             )}
