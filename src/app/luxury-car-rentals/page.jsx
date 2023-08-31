@@ -102,14 +102,14 @@ export default async function page() {
         />
       </div>
 
-      <div className=" my-16 flex flex-col gap-9 md:gap-16">
+      {/* <div className=" my-16 flex flex-col gap-9 md:gap-16">
         <PictureGallery
           title={'Picture Gallery'}
           description={
             'Join our global community on Instagram for an exclusive glimpse into a world where opulence knows no bounds.'
           }
         />
-      </div>
+      </div> */}
       <div className="my-9 md:my-16 px-6">
         <ContactForm
           title={'Get In touch'}
