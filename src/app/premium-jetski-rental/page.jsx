@@ -226,9 +226,9 @@ export default async function JetSkiPage() {
                       <h2 className="uppercase font-medium tracking-wide text-xl font-poppins">
                         {item.location}
                       </h2>
-                      <span className="text-gray-400 text-sm">
+                      {/* <span className="text-gray-400 text-sm">
                         Starting from AED{item.price}
-                      </span>
+                      </span> */}
                     </div>
 
                     <Button className="mt-4 px-4 py-2 bg-primary text-gold">

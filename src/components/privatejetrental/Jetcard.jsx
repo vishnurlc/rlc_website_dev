@@ -28,9 +28,9 @@ const Jetcard = ({ data }) => {
               <h3 className="text-xl md:text-3xl  font-inter font-medium text-left">
                 {data.title}
               </h3>
-              <span className="text-sm md:text-base font-poppins font-light">
+              {/* <span className="text-sm md:text-base font-poppins font-light">
                 AED {data.price}/hr
-              </span>
+              </span> */}
             </div>
             <Link
               href={`${pathName}/${data.slug}`}

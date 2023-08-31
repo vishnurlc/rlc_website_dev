@@ -85,7 +85,7 @@ export default async function PrivateJet() {
       <HeroSection2
         type={'video'}
         heading1={'Private Jets'}
-        heading2={'Rental in Dubai'}
+        heading2={'Chaters in Dubai'}
         subheading={'Experience the extreme luxury with us'}
         posterurl={'/assets/privatejet/bannerimg.png'}
         btntext={'Book Now'}
