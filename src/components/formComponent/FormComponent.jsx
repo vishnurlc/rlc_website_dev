@@ -211,7 +211,7 @@ const FormComponent = () => {
             )}
           </div>
         </div>
-        <div className="flex gap-8 items-center justify-center mt-8 md:mt-12">
+        <div className="grid grid-cols-2 gap-8 items-center justify-center mt-8 md:mt-12 max-w-[400px] mx-auto">
           <button
             disabled={isSending}
             type="submit"
