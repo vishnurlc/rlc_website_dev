@@ -10,6 +10,7 @@ import { BiMenuAltRight } from 'react-icons/bi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import CurrencyDropdown from './CurrencyDropdown';
+import MobileCurrency from './MobileCurrency';
 const dropdownvariant = {
   visible: {
     opacity: 1,
@@ -346,6 +347,7 @@ export default function Header() {
               )}
             </span>
           ))}
+          <MobileCurrency />
         </div>
       </div>
     </header>

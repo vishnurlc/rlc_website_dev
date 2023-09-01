@@ -223,6 +223,20 @@ function YachtDetail({ data }) {
 }
 
 function CarDetail({ data }) {
+  const { selectedCurrency, conversionRates } = useCurrency();
+
+  const convertPrice = (price) => {
+    const rate = conversionRates.rates[selectedCurrency];
+
+    const amt = Math.round(Number(price) * rate);
+    const priceFormatted = new Intl.NumberFormat('ae', {
+      style: 'currency',
+      currency: selectedCurrency,
+      minimumFractionDigits: 0, // Set minimumFractionDigits to 0
+      maximumFractionDigits: 0, // Set maximumFractionDigits to 0
+    }).format(amt);
+    return priceFormatted;
+  };
   return (
     <div className="py-3 flex gap-5 flex-wrap">
       <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
@@ -238,8 +252,8 @@ function CarDetail({ data }) {
               </>
             ) : (
               <>
-                <AiOutlineExclamationCircle /> Deposit: AED&nbsp;
-                {data.attributes.deposit.data.attributes.type}
+                <AiOutlineExclamationCircle /> Deposit:&nbsp;
+                {convertPrice(data.attributes.deposit.data.attributes.type)}
               </>
             )}
           </div>
