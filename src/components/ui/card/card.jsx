@@ -123,7 +123,7 @@ function Card({ variant, data }) {
                 <span className="text-primary font-normal text-2xl">
                   {convertPrice(data.attributes.price)}{' '}
                   <span className="text-secondary text-sm font-normal">
-                    /Day
+                    {variant === 'car' ? '/Day' : '/hour'}
                   </span>
                 </span>
                 {variant === 'car' && (
