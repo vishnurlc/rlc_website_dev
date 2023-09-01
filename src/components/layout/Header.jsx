@@ -9,6 +9,7 @@ import { HiOutlineChevronDown } from 'react-icons/hi';
 import { BiMenuAltRight } from 'react-icons/bi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { motion } from 'framer-motion';
+import CurrencyDropdown from './CurrencyDropdown';
 const dropdownvariant = {
   visible: {
     opacity: 1,
@@ -280,6 +281,7 @@ export default function Header() {
               )}
             </span>
           ))}
+          <CurrencyDropdown />
         </div>
       </nav>
       <div

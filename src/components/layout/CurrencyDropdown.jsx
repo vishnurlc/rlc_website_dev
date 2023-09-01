@@ -37,14 +37,14 @@ const CurrencyDropdown = () => {
   return (
     <div className="relative">
       <div
-        className="flex items-center gap-x-1 cursor-pointer"
+        className="flex items-center gap-x-2 cursor-pointer text-white text-sm"
         onClick={toggleDropdown}
       >
         <Image
           src={currencies.find((c) => c.currency === selectedCurrency)?.flag}
           alt={selectedCurrency}
-          width={24}
-          height={15}
+          width={20}
+          height={12}
         />
         {selectedCurrency} <FiChevronDown />
       </div>
@@ -53,14 +53,14 @@ const CurrencyDropdown = () => {
           {availableCurrencies.map((currency) => (
             <div
               key={currency.id}
-              className="flex items-center gap-x-1 cursor-pointer text-primary my-2 w-full"
+              className="flex items-center gap-x-2 cursor-pointer text-primary my-2 w-full text-sm"
               onClick={() => handleCurrencyChange(currency.currency)}
             >
               <Image
                 src={currency.flag}
                 alt={currency.currency}
-                width={24}
-                height={15}
+                width={20}
+                height={12}
               />
               {currency.currency}
             </div>
