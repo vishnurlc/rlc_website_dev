@@ -22,12 +22,25 @@ import 'swiper/css/navigation';
 import { CustomVideoPlayer, ModalComponent } from '@/components';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
+import { useCurrency } from '@/context/currencyContext';
 function Card({ variant, data }) {
   const [open, setOpen] = useState(false);
   const [videoModal, setVideoModal] = useState(false);
+  const { selectedCurrency, conversionRates } = useCurrency();
   const path = usePathname();
 
+  const convertPrice = (price) => {
+    const rate = conversionRates.rates[selectedCurrency];
+
+    const amt = Math.round(Number(price) * rate);
+    const priceFormatted = new Intl.NumberFormat('ae', {
+      style: 'currency',
+      currency: selectedCurrency,
+      minimumFractionDigits: 0, // Set minimumFractionDigits to 0
+      maximumFractionDigits: 0, // Set maximumFractionDigits to 0
+    }).format(amt);
+    return priceFormatted;
+  };
   return (
     <>
       <div className="grid grid-cols-1 w-full lg:grid-cols-5  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-[#fbfbfb]">
@@ -108,7 +121,7 @@ function Card({ variant, data }) {
               <div className="w-full md:w-fit">
                 {/* <p className="text-secondary text-sm">From</p> */}
                 <span className="text-primary font-normal text-2xl">
-                  AED{data.attributes.price}{' '}
+                  {convertPrice(data.attributes.price)}{' '}
                   <span className="text-secondary text-sm font-normal">
                     /Day
                   </span>

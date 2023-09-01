@@ -1,24 +1,25 @@
-import { ContactForm, HeroSection2 } from "@/components";
-import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
-import { Button } from "@/components/ui/button/Button";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import { ContactForm, HeroSection2 } from '@/components';
+import DesertSafariCard from '@/components/desertsafari/DesertSafariCard';
+import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
+import { Button } from '@/components/ui/button/Button';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
 const locations = [
   {
-    url: "/assets/jetskipage/jumeirah.webp", // Replace with actual image path
-    location: "ABU DHABI",
+    url: '/assets/jetskipage/jumeirah.webp', // Replace with actual image path
+    location: 'ABU DHABI',
     price: 150,
   },
   {
-    url: "/assets/jetskipage/burjalarab.avif", // Replace with actual image path
-    location: "Burj Al Arab",
+    url: '/assets/jetskipage/burjalarab.avif', // Replace with actual image path
+    location: 'Burj Al Arab',
     price: 250,
   },
   {
-    url: "/assets/jetskipage/atlantisview.jpeg", // Replace with actual image path
-    location: "Atlantis View",
+    url: '/assets/jetskipage/atlantisview.jpeg', // Replace with actual image path
+    location: 'Atlantis View',
     price: 180,
   },
 ];
@@ -38,13 +39,13 @@ export async function getData() {
 
     return data;
   } catch (error) {
-    console.log("s", error);
+    console.log('s', error);
     return {};
   }
 }
 
 export const metadata = {
-  title: "Desert Safari Dubai | richylife",
+  title: 'Desert Safari Dubai | richylife',
   description: `Embark on an immersive journey into the heart of Dubai&apos;s
   majestic desert landscape with our captivating Desert Safari
   experience. Brace yourself for a thrilling adventure that will
@@ -54,7 +55,7 @@ export const metadata = {
   safari transcends expectations, leaving you with memories that
   will last a lifetime.`,
   openGraph: {
-    title: "Desert Safari Dubai | richylife",
+    title: 'Desert Safari Dubai | richylife',
     description: `Embark on an immersive journey into the heart of Dubai&apos;s
     majestic desert landscape with our captivating Desert Safari
     experience. Brace yourself for a thrilling adventure that will
@@ -63,7 +64,7 @@ export const metadata = {
     to delivering exceptional experiences ensures that your desert
     safari transcends expectations, leaving you with memories that
     will last a lifetime.`,
-    siteName: "Richylife Club",
+    siteName: 'Richylife Club',
     images: [
       {
         url: `${process.env.WEB_URL}/assets/footer/1.png`,
@@ -76,8 +77,8 @@ export const metadata = {
         height: 200,
       },
     ],
-    locale: "en_US",
-    type: "website",
+    locale: 'en_US',
+    type: 'website',
   },
 };
 export default async function page() {
@@ -89,14 +90,14 @@ export default async function page() {
         type="video"
         heading1="Desert Adventure"
         heading2="Experiences"
-        subheading={"Journey into the Extraordinary"}
-        btntext={"Book an appointment"}
-        posterurl={"/assets//premiumdesert/desert.png"}
+        subheading={'Journey into the Extraordinary'}
+        btntext={'Book an appointment'}
+        posterurl={'/assets//premiumdesert/desert.png'}
         url="/assets/premiumdesert/bannervideo.mov"
       />
 
       <div className="bg-black px-6 py-9 md:py-16 ">
-        <div className="max-w-[1200px] mx-auto flex flex-col gap-16">
+        <div className="max-w-[1200px] mx-auto flex flex-col gap-8 md:gap-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="relative w-full h-[30vh]  md:h-[50vh] max-h-[700px]">
               <Image
@@ -104,8 +105,8 @@ export default async function page() {
                 fill
                 alt="Premium jet ski"
                 style={{
-                  objectFit: "cover",
-                  borderRadius: "8px",
+                  objectFit: 'cover',
+                  borderRadius: '8px',
                 }}
               />
             </div>
@@ -127,36 +128,7 @@ export default async function page() {
           </div>
 
           {desert.data?.map((item, index) => (
-            <div
-              key={index}
-              className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 md:mt-16"
-            >
-              <div className="">
-                <div className="text-white mb-7">
-                  <h2 className="text-4xl mb-6">{item.attributes.name}</h2>
-                  <p>{item.attributes.price} AED / PERSON</p>
-                  <p className="text-gray-500 text-base tracking-wide ">
-                    {item.attributes.description}
-                  </p>
-                </div>
-                <AnimatedBtn
-                  text={"Book Now"}
-                  styles={"bg-gold text-white rounded-sm"}
-                  msg={`I'm writing to you today to inquire about the ${item.attributes.name}. I'm interested in learning more about its specifications, price, and availability.`}
-                />
-              </div>
-              <div className="relative w-full h-full min-h-[250px]">
-                <Image
-                  src={item.attributes.image.data[0].attributes.url}
-                  alt="Yamaha Golden Jetski "
-                  fill
-                  style={{
-                    objectFit: "cover",
-                  }}
-                />
-                <div className="jetskigradient absolute inset-0"></div>
-              </div>
-            </div>
+            <DesertSafariCard item={item} key={index} />
           ))}
 
           {/* <div className=" flex flex-col gap-8 items-center justify-center w-full">
@@ -197,8 +169,8 @@ export default async function page() {
 
       <div className="my-9 md:my-16 px-6">
         <ContactForm
-          title={"Get In Touch"}
-          description={"Experience The Ultimate Adrenaline Rush"}
+          title={'Get In Touch'}
+          description={'Experience The Ultimate Adrenaline Rush'}
         />
       </div>
     </main>
