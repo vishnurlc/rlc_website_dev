@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { Button } from '../button/Button';
 import { FaPhoneAlt } from 'react-icons/fa';
-import { BsPeople, BsCarFrontFill } from 'react-icons/bs';
+import { BsPeople, BsCarFrontFill, BsFillFuelPumpFill } from 'react-icons/bs';
 import { RiWhatsappFill } from 'react-icons/ri';
 import {
   AiOutlineCheckCircle,
@@ -126,6 +126,28 @@ function Card({ variant, data }) {
                     /Day
                   </span>
                 </span>
+                {variant === 'car' && (
+                  <span className="text-primary text-xs">
+                    {data.attributes.deposit.data && (
+                      <div className="text-primary flex items-center gap-1  font-medium leading-tight">
+                        {data.attributes.deposit.data?.attributes.type ===
+                        'No Deposit' ? (
+                          <>
+                            <AiOutlineCheckCircle />{' '}
+                            {data.attributes.deposit.data?.attributes.type}
+                          </>
+                        ) : (
+                          <>
+                            <AiOutlineExclamationCircle /> Deposit:&nbsp;
+                            {convertPrice(
+                              data.attributes.deposit.data.attributes.type
+                            )}
+                          </>
+                        )}
+                      </div>
+                    )}
+                  </span>
+                )}
               </div>
               <div className="flex justify-between md:justify-start items-center gap-4 w-full md:w-fit">
                 <div className="flex gap-4 ">
@@ -240,24 +262,9 @@ function CarDetail({ data }) {
   return (
     <div className="py-3 flex gap-5 flex-wrap">
       <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
-        {/* <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
+        <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
           <BsFillFuelPumpFill /> {data.attributes.fuel.data.attributes.type}
-        </div> */}
-        {data.attributes.deposit.data && (
-          <div className="text-primary flex items-center gap-2 text-sm md:text-base font-medium leading-tight">
-            {data.attributes.deposit.data?.attributes.type === 'No Deposit' ? (
-              <>
-                <AiOutlineCheckCircle />{' '}
-                {data.attributes.deposit.data?.attributes.type}
-              </>
-            ) : (
-              <>
-                <AiOutlineExclamationCircle /> Deposit:&nbsp;
-                {convertPrice(data.attributes.deposit.data.attributes.type)}
-              </>
-            )}
-          </div>
-        )}
+        </div>
       </div>
       <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-sm md:text-base flex items-center gap-2 font-medium leading-tight">
