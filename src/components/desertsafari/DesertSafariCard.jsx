@@ -22,9 +22,9 @@ const DesertSafariCard = ({ item }) => {
       <div className="">
         <div className="text-white mb-7">
           <h2 className=" text-2xl md:text-4xl mb-6">{item.attributes.name}</h2>
-          <p className="text-sm md:text-xl">
+          {/* <p className="text-sm md:text-xl">
             {convertPrice(item.attributes.price)} / PERSON
-          </p>
+          </p> */}
           <p className="text-gray-500 text-sm md:text-base tracking-wide ">
             {item.attributes.description}
           </p>
