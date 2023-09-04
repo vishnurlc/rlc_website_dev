@@ -70,8 +70,8 @@ const Ourservices = () => {
             <h2 className="uppercase font-inter text-base md:text-xl font-light text-grey">
               Our Services
             </h2>
-            <div className=" relative w-full min-h-[56px] md:min-h-[88px]">
-              <AnimatePresence mode="popLayout">
+            <div className="relative w-full min-h-[56px] md:min-h-[88px]">
+              <AnimatePresence>
                 <motion.div
                   className="w-full absolute flex flex-col items-center justify-center"
                   variants={headingVariant}
@@ -80,7 +80,7 @@ const Ourservices = () => {
                   exit={'exit'}
                   key={slideIndex}
                   transition={{
-                    duration: 0.5,
+                    duration: 0.2,
                   }}
                 >
                   <p className="text-white capitalize text-center font-inter font-normal text-sm md:text-2xl  mb-2 ">

@@ -37,7 +37,7 @@ const FaqCard = ({ i, expanded, setExpanded, question, answer }) => {
               exit="collapsed"
               className="text-gray-500 font-thin text-base select-none"
               variants={accordionVariants}
-              transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+              transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
             >
               {answer}
             </motion.section>
