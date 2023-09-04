@@ -43,7 +43,7 @@ const page = () => {
     <div>
       <h1 className="sr-only">About Richylife Club</h1>
       <HeroSection
-        posterurl={'/assets/home/heroposter.jpg'}
+        posterurl={'/assets/home/heroposter1.png'}
         type={'video'}
         url={'https://admin.richylife.ae/rlchome.mp4'}
         btntext={'Get in touch'}
