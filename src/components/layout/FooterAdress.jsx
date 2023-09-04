@@ -1,7 +1,13 @@
 'use client';
 import Link from 'next/link';
 import React from 'react';
-import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from 'react-icons/bs';
+import {
+  BsFacebook,
+  BsInstagram,
+  BsLinkedin,
+  BsTwitter,
+  BsYoutube,
+} from 'react-icons/bs';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { MdLocationPin, MdOutlineAvTimer } from 'react-icons/md';
 
@@ -44,14 +50,23 @@ function FooterAdress() {
         <Link href={'https://www.instagram.com/richylifecom/'} target="_blank">
           <BsInstagram color="#DCA24B" size={24} />
         </Link>
-        <Link href={'#'}>
+        <Link
+          href={'https://www.youtube.com/channel/UCnMbmjAfQqUf42K_ClJaYww'}
+          target="_blank"
+        >
           <BsYoutube color="#DCA24B" size={24} />
         </Link>
-        <Link href={'#'}>
+        <Link
+          href={'https://www.facebook.com/profile.php?id=61550870554790'}
+          target="_blank"
+        >
           <BsFacebook color="#DCA24B" size={24} />
         </Link>
-        <Link href={'#'}>
-          <BsTwitter color="#DCA24B" size={24} />
+        <Link
+          href={'https://www.linkedin.com/company/richylife-club/'}
+          target="_blank"
+        >
+          <BsLinkedin color="#DCA24B" size={24} />
         </Link>
       </div>
     </div>

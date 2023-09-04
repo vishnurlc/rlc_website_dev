@@ -126,10 +126,11 @@ export default async function page() {
               </p>
             </div>
           </div>
-
-          {desert.data?.map((item, index) => (
-            <DesertSafariCard item={item} key={index} />
-          ))}
+          <div className="my-10">
+            {desert.data?.map((item, index) => (
+              <DesertSafariCard item={item} key={index} />
+            ))}
+          </div>
 
           {/* <div className=" flex flex-col gap-8 items-center justify-center w-full">
             <h3 className="text-2xl text-center md:text-5xl text-gold capitalize font-inter">
