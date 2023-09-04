@@ -85,7 +85,7 @@ export default async function YacthDetail({ params: { slug } }) {
             <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5 max-w-[1200px] mx-auto">
               <h2 className="text-right">
                 <span className="text-xl text-primary">
-                  AED{yacht.data[0].attributes.price}/Day
+                  AED{yacht.data[0].attributes.price}/hour
                 </span>
               </h2>
 
