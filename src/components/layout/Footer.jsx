@@ -26,7 +26,7 @@ const Footer = () => {
       },
       {
         title: 'Premium Jetski Rentals',
-        link: '/premium-jetski-rentals',
+        link: '/premium-jetski-rental',
       },
       {
         title: 'Private Jet Charter',
