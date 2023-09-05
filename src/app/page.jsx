@@ -61,7 +61,7 @@ export default function Home() {
         Welcome to Richylife Club - Experience Luxury in Dubai
       </h1>
       <HeroSection
-        posterurl={'/assets/home/heroposter1.png'}
+        posterurl={'/assets/home/heroposter1.webp'}
         type={'video'}
         url={'https://admin.richylife.ae/rlchome.mp4'}
         btntext={'Experience Luxury'}

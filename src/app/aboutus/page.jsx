@@ -43,7 +43,7 @@ const page = () => {
     <div>
       <h1 className="sr-only">About Richylife Club</h1>
       <HeroSection
-        posterurl={'/assets/home/heroposter1.png'}
+        posterurl={'/assets/home/heroposter1.webp'}
         type={'video'}
         url={'https://admin.richylife.ae/rlchome.mp4'}
         btntext={'Get in touch'}
@@ -84,7 +84,7 @@ const page = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           <div className="relative w-full h-[30vh]  md:h-[50vh] max-h-[700px]">
             <Image
-              src="/assets/footer/6.png"
+              src="/assets/footer/6.webp"
               fill
               alt="Premium jet ski"
               style={{
@@ -132,7 +132,7 @@ const page = () => {
           </div>
           <div className="relative w-full h-[30vh]  md:h-[50vh] max-h-[700px]">
             <Image
-              src="/assets/footer/8.jpeg"
+              src="/assets/footer/8.webp"
               fill
               alt="Premium jet ski"
               style={{
