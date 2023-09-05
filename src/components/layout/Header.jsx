@@ -192,6 +192,7 @@ export default function Header() {
             <Image
               width={98.04}
               height={100}
+              loading="lazy"
               src={
                 mobileMenuOpen
                   ? 'assets/logos/logo-dark.svg'
