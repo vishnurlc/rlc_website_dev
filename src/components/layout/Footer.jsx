@@ -71,6 +71,7 @@ const Footer = () => {
       <Link
         href={'https://www.instagram.com/richylifecom/'}
         target="_blank"
+        rel="noreferrer"
         className="overflow-hidden w-full mt-5 block"
       >
         <FooterInstagram images={data.images} />
@@ -134,6 +135,7 @@ const Footer = () => {
                     <Link
                       href={'https://www.instagram.com/richylifecom/'}
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <Image
                         src={item}

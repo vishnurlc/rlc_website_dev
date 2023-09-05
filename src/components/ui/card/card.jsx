@@ -154,12 +154,14 @@ function Card({ variant, data }) {
                   <Link
                     href={`tel:${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
                     target="_blank"
+                    rel="noreferrer"
                     className="cursor-pointer"
                   >
                     <FaPhoneAlt size={24} color="#DCA24B" />
                   </Link>
                   <Link
                     target="_blank"
+                    rel="noreferrer"
                     className="cursor-pointer"
                     href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=I would like to know more about ${data.attributes.name} booking`}
                   >

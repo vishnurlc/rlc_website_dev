@@ -101,6 +101,7 @@ const TermsAndConditions = () => {
               <a
                 href="https://www.termsfeed.com/terms-conditions-generator/"
                 target="_blank"
+                rel="noreferrer"
               >
                 Terms and Conditions Generator
               </a>
@@ -118,11 +119,7 @@ const TermsAndConditions = () => {
           <li>
             <p>
               <strong>Website</strong> refers to Richylife Club, accessible from{' '}
-              <a
-                href="https://richylife.ae"
-                rel="external nofollow noopener"
-                target="_blank"
-              >
+              <a href="https://richylife.ae" rel="noreferrer" target="_blank">
                 https://richylife.ae
               </a>
             </p>

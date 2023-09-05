@@ -8,6 +8,7 @@ const AnimatedBtn = ({ styles, text, msg }) => {
       <Link
         href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${msg}?`}
         target="_blank"
+        rel="noreferrer"
         className="flex justify-center items-center gap-4 uppercase whitespace-nowrap text-xs md:text-sm"
       >
         {text}

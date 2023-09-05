@@ -115,6 +115,7 @@ const ServicesBanner = () => {
                       <Link
                         href={`https://wa.me/${process.env.WHATSAPP_NUMBER}?text=Hi, I would like to know about your services?`}
                         target="_blank"
+                        rel="noreferrer"
                         className="border border-solid border-white px-6 py-2 w-fit text-white"
                       >
                         Book Now

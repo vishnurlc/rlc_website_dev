@@ -53,18 +53,21 @@ function FooterAdress() {
         <Link
           href={'https://www.youtube.com/channel/UCnMbmjAfQqUf42K_ClJaYww'}
           target="_blank"
+          rel="noreferrer"
         >
           <BsYoutube color="#DCA24B" size={24} />
         </Link>
         <Link
           href={'https://www.facebook.com/profile.php?id=61550870554790'}
           target="_blank"
+          rel="noreferrer"
         >
           <BsFacebook color="#DCA24B" size={24} />
         </Link>
         <Link
           href={'https://www.linkedin.com/company/richylife-club/'}
           target="_blank"
+          rel="noreferrer"
         >
           <BsLinkedin color="#DCA24B" size={24} />
         </Link>
