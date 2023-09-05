@@ -67,12 +67,12 @@ export const metadata = {
     siteName: 'Richylife Club',
     images: [
       {
-        url: `${process.env.WEB_URL}/assets/footer/1.png`,
+        url: `${process.env.WEB_URL}/assets/footer/1.webp`,
         width: 800,
         height: 600,
       },
       {
-        url: `${process.env.WEB_URL}/assets/footer/1.png`,
+        url: `${process.env.WEB_URL}/assets/footer/1.webp`,
         width: 300,
         height: 200,
       },
@@ -101,7 +101,7 @@ export default async function page() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="relative w-full h-[30vh]  md:h-[50vh] max-h-[700px]">
               <Image
-                src="/assets/footer/5.png"
+                src="/assets/footer/5.webp"
                 fill
                 alt="Premium jet ski"
                 style={{

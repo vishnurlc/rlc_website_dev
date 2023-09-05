@@ -8,12 +8,12 @@ import FooterAdress from './FooterAdress';
 const Footer = () => {
   const data = {
     images: [
-      '/assets/footer/1.png',
-      '/assets/footer/2.png',
-      '/assets/footer/3.png',
-      '/assets/footer/5.png',
-      '/assets/footer/6.png',
-      '/assets/footer/7.png',
+      '/assets/footer/1.webp',
+      '/assets/footer/2.webp',
+      '/assets/footer/3.webp',
+      '/assets/footer/5.webp',
+      '/assets/footer/6.webp',
+      '/assets/footer/7.webp',
     ],
     navigation: [
       {

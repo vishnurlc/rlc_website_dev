@@ -72,7 +72,7 @@ const ServicesBanner = () => {
                     data[slideNumber]?.attributes.bgimage.data.attributes
                       .formats.medium.url ||
                     data[slideNumber]?.attributes.bgimage.data.attributes.url ||
-                    '/assets/home/bannerservicebg1.png'
+                    '/assets/home/bannerservicebg1.webp'
                   }
                   fill
                   alt="Banner Service Bg"

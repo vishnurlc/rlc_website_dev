@@ -42,7 +42,7 @@ function Aboutsection() {
         <div className="hidden lg:block relative w-full aspect-square h-auto flex-1">
           <AnimationImage>
             <Image
-              src="/assets/home/bugattitop.png"
+              src="/assets/home/bugattitop.webp"
               fill
               priority
               alt="car"
