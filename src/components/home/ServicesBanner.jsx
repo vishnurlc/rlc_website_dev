@@ -126,7 +126,7 @@ const ServicesBanner = () => {
                         src={item.attributes.image.data.attributes.url}
                         width={427}
                         height={464}
-                        alt={item.title}
+                        alt={item.title || 'Service Banner'}
                         style={{
                           objectFit: 'cover',
                           display: 'block',

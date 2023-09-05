@@ -190,7 +190,7 @@ export default function Header() {
           <Link href="/">
             <span className="sr-only">Richylife Club</span>
             <Image
-              width={98.04}
+              width={100}
               height={100}
               loading="lazy"
               src={
@@ -199,7 +199,7 @@ export default function Header() {
                   : '/assets/logos/richy-logoX.png'
               }
               alt="Richylife Club"
-              className="aspect-[98.04/100] w-[60px] md:w-[80px]"
+              className="aspect-square w-[60px] md:w-[80px]"
             />
           </Link>
         </div>
