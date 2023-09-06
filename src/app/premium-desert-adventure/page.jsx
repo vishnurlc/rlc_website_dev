@@ -54,6 +54,33 @@ export const metadata = {
   to delivering exceptional experiences ensures that your desert
   safari transcends expectations, leaving you with memories that
   will last a lifetime.`,
+  keywords: [
+    'Desert Safari Dubai',
+    'Luxury Desert Safari',
+    'Desert Adventure Tours',
+    ' Exclusive Desert Experiences',
+    'VIP Desert Safari',
+    ' Private Desert Tours',
+    ' Dubai Sand Dunes',
+    'Sunset Desert Safari',
+    'Dune Bashing Experience',
+    'Camel Riding Safari',
+    'Desert Camps in Dubai',
+    'Arabian Nights in the Desert',
+    'Bedouin-style Desert Dinner',
+    'Starlit Desert Experience',
+    'Dubai Desert Wildlife',
+    'Luxury 4x4 Desert Tours',
+    ' Quad Biking in the Desert',
+    'Sandboarding Adventure',
+    ' Desert Photography Tours',
+    'Desert Safari Packages',
+    'Desert Safari Deals',
+    ' Best Desert Safari in Dubai',
+    'Family-friendly Desert Tours',
+    ' Romantic Desert Getaways',
+    'Desert Safari Reviews',
+  ],
   openGraph: {
     title: 'Desert Safari Dubai | richylife',
     description: `Embark on an immersive journey into the heart of Dubai&apos;s
