@@ -4,6 +4,7 @@ import Image from 'next/image';
 import FooterInstagram from './FooterInstagram';
 import Link from 'next/link';
 import FooterAdress from './FooterAdress';
+import SubscribeToNewsLetter from './SubscribeToNewsLetter';
 
 const Footer = () => {
   const data = {
@@ -79,7 +80,7 @@ const Footer = () => {
 
       {/* footer content */}
       <div className="footer bg-gradient-to-b from-teal-900 to-black">
-        <div className="container mx-auto px-5 py-10 lg:px-20 lg:pt-20 lg:pb-10 flex justify-between flex-wrap">
+        <div className="container mx-auto px-5 py-10 lg:px-20 lg:pt-20 lg:pb-4 flex justify-between flex-wrap">
           <div className="pb-12  flex-col justify-start gap-2 ">
             <div className="pr-16 justify-start inline-flex">
               <div className="justify-start items-start flex">
@@ -136,6 +137,7 @@ const Footer = () => {
                       href={'https://www.instagram.com/richylifecom/'}
                       target="_blank"
                       rel="noreferrer"
+                      className="relative w-full h-full block"
                     >
                       <Image
                         src={item}
@@ -154,7 +156,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
+        <div className="flex justify-center max-w-[1116px] mx-auto mb-10">
+          <SubscribeToNewsLetter />
+        </div>
         <div className="container mx-auto text-white ">
           <div className="flex items-center py-6 flex-col-reverse md:flex-row justify-between text-secondary font-thin text-sm gap-6">
             <p>&copy;&nbsp;All Rights Reserved Richylife Club 2023</p>
