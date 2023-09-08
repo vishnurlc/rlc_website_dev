@@ -3,28 +3,28 @@ import React from 'react';
 
 const data = [
   {
-    image: '/assets/home/testimonials/1.png',
-    comment:
-      'RichyLife Club turned my dream of cruising on a luxury yacht into reality. Their attention to detail and impeccable service made my day truly extraordinary. ',
-    name: 'Sara Al-Mansoori',
-  },
-  {
-    image: '/assets/home/testimonials/2.png',
+    image: '/assets/home/testimonials/1.webp',
     comment:
       "Im a car enthusiast, and RichyLife Club's premium car rentals allowed me to experience some of the finest cars in the world. It's like having a garage of dreams! ",
-    name: 'Ahmed Khan',
+    name: '- Thrilled Guest',
   },
   {
-    image: '/assets/home/testimonials/3.png',
+    image: '/assets/home/testimonials/2.webp',
     comment:
-      "When I needed to travel in style, RichyLife Club's private jet service was the perfect choice. Seamless, comfortable, and a true taste of luxury.",
-    name: 'Aisha Ibrahim',
+      'Being a UAE resident, RichyLife Club has shown me the hidden gems of my own country through their exclusive services. An amazing way to explore! ',
+    name: '- Joyful Adventurer',
   },
   {
-    image: '/assets/home/testimonials/4.png',
+    image: '/assets/home/testimonials/3.webp',
     comment:
-      'Being a UAE resident, RichyLife Club has shown me the hidden gems of my own country through their exclusive services. An amazing way to explore!',
-    name: 'Ali Khalfan',
+      'RichyLife Club turned my dream of cruising on a luxury yacht into reality. Their attention to detail and impeccable service made my day truly extraordinary.',
+    name: '- Delighted Client',
+  },
+  {
+    image: '/assets/home/testimonials/4.jpeg',
+    comment:
+      'Renting a car from Richylife was a breeze. Luxury at its finest! Highly recommended.',
+    name: '- Happy Customer',
   },
 ];
 
@@ -45,7 +45,7 @@ const Testimonials = () => {
               fill
               style={{
                 objectFit: 'cover',
-                objectPosition: 'center',
+                objectPosition: '10%',
               }}
             />
           </div>
