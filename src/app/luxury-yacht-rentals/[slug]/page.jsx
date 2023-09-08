@@ -3,6 +3,7 @@ import {
   GalleryJet,
   HeroCarousel,
   RichTextComponent,
+  YachtTechnicalSpec,
 } from '@/components';
 import Amenitys from '@/components/amenitys/Amenitys';
 import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
@@ -128,81 +129,7 @@ export default async function YacthDetail({ params: { slug } }) {
               />
             </div>
 
-            <div>
-              <h2 className="inline-block mb-4 md:mb-8 font-inter text-primary font-semibold text-xl md:text-[40px]">
-                Technical Specifications
-              </h2>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-9  ">
-                <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-                  <span>Make</span>
-                  <span className="text-[#8a97a4]">
-                    {yacht.data[0].attributes.make.data.attributes.make}
-                  </span>
-                </li>
-                <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-                  <span>Model</span>
-                  <span className="text-[#8a97a4]">
-                    {yacht.data[0].attributes.model.data.attributes.model}
-                  </span>
-                </li>
-                <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-                  <span>Length</span>
-                  <span className="text-[#8a97a4]">
-                    {yacht.data[0].attributes.technicalspec.length}
-                  </span>
-                </li>
-                <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-                  <span>Capacity</span>
-                  <span className="text-[#8a97a4]">
-                    {`${
-                      yacht.data[0].attributes.technicalspec.capacity
-                    } People ${
-                      yacht.data[0].attributes.technicalspec.overnight
-                        ? `, ${yacht.data[0].attributes.technicalspec.overnight} overnight`
-                        : ''
-                    }`}
-                  </span>
-                </li>
-                <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-                  <span>Category</span>
-                  <span className="text-[#8a97a4]">
-                    {yacht.data[0].attributes.technicalspec.category}
-                  </span>
-                </li>
-                <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-                  <span>Rooms</span>
-                  <span className="text-[#8a97a4]">
-                    {yacht.data[0].attributes.technicalspec.rooms}
-                  </span>
-                </li>
-                {yacht.data[0].attributes.technicalspec.stereo_system && (
-                  <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-                    <span>Stereo System</span>
-                    <span className="text-[#8a97a4]">
-                      {yacht.data[0].attributes.technicalspec.stereo_system}
-                    </span>
-                  </li>
-                )}
-                <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-                  <span>Make Year</span>
-                  <span className="text-[#8a97a4]">
-                    {yacht.data[0].attributes.technicalspec.make_year}
-                  </span>
-                </li>
-                <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-                  <span>Speed</span>
-                  <span className="text-[#8a97a4]">
-                    {yacht.data[0].attributes.technicalspec.speed} knots
-                  </span>
-                </li>
-                <li className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] ">
-                  <span>Minimum Hours</span>
-                  <span className="text-[#8a97a4]">
-                    {yacht.data[0].attributes.technicalspec.min_hours} hours
-                  </span>
-                </li>
-              </ul>
-            </div>
+            <YachtTechnicalSpec yacht={yacht} />
 
             {yacht.data[0].attributes.onboard && (
               <div>
@@ -246,6 +173,9 @@ export default async function YacthDetail({ params: { slug } }) {
 
 export const generateStaticParams = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/yachts`, {
+    next: {
+      revalidate: 40,
+    },
     headers: {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
     },

@@ -154,6 +154,9 @@ export default async function CarDetail({ params: { slug } }) {
 
 export const generateStaticParams = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/cars`, {
+    next: {
+      revalidate: 40,
+    },
     headers: {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
     },

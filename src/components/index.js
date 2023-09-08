@@ -33,3 +33,5 @@ export { default as PictureGallery } from './PictureGallery/PictureGallery';
 
 export { default as TechnicalSpec } from './cars/TechnicalSpec';
 export { default as CarSpec } from './cars/CarSpec';
+
+export { default as YachtTechnicalSpec } from './yachtrental/TechnicalSpec';
