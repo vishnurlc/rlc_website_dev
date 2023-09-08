@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import FaqAccordation from '../ui/accordation/accordation';
 import { Loader } from '..';
+
 const getData = async () => {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/faqs`, {

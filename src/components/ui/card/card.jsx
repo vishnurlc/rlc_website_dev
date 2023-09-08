@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '../button/Button';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { BsPeople, BsCarFrontFill, BsFillFuelPumpFill } from 'react-icons/bs';
@@ -23,12 +23,20 @@ import { CustomVideoPlayer, ModalComponent } from '@/components';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useCurrency } from '@/context/currencyContext';
+
+import { itemVariant } from '@/lib/animation';
+import { AnimatePresence, motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
 function Card({ variant, data }) {
   const [open, setOpen] = useState(false);
   const [videoModal, setVideoModal] = useState(false);
   const { selectedCurrency, conversionRates } = useCurrency();
   const path = usePathname();
-
+  const animationControl = useAnimation();
+  const [ref, inView, entry] = useInView({
+    threshold: [0.1, 0.2, 0.3, 0.4, 0.6, 0.8, 0.9, 1],
+  });
   const convertPrice = (price) => {
     const rate = conversionRates.rates[selectedCurrency];
 
@@ -41,21 +49,37 @@ function Card({ variant, data }) {
     }).format(amt);
     return priceFormatted;
   };
+
+  useEffect(() => {
+    if (inView || entry) {
+      animationControl.start('visible');
+    }
+  }, [inView, entry]);
   return (
-    <>
-      <div className="grid grid-cols-1 w-full lg:grid-cols-5  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-[#fbfbfb]">
-        <div className="col-span-3 relative w-full aspect-[2/1] min-h-[220px] ">
-          <Image
-            src={data.attributes.image.data[0].attributes.url}
-            alt={data.attributes.name}
-            fill
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center',
-            }}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 80vw"
-          />
-          {/* <div className="absolute inset-0 flex text-[#6A7285] font-sans text-xs items-end p-5 gap-4 z-10">
+    <div ref={ref}>
+      <AnimatePresence>
+        <motion.div
+          key={data.attributes.name}
+          exit={{
+            opacity: 0,
+          }}
+          initial="hidden"
+          variants={itemVariant}
+          animate={animationControl}
+          className="grid grid-cols-1 w-full lg:grid-cols-5  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-[#fbfbfb]"
+        >
+          <div className="col-span-3 relative w-full aspect-[2/1] min-h-[220px] ">
+            <Image
+              src={data.attributes.image.data[0].attributes.url}
+              alt={data.attributes.name}
+              fill
+              style={{
+                objectFit: 'cover',
+                objectPosition: 'center',
+              }}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 80vw"
+            />
+            {/* <div className="absolute inset-0 flex text-[#6A7285] font-sans text-xs items-end p-5 gap-4 z-10">
             {data.attributes.video_url && (
               <button
                 onClick={() => {
@@ -79,20 +103,20 @@ function Card({ variant, data }) {
               {data.attributes.image.data.length} Photo
             </button>
           </div> */}
-        </div>
-        <div className="p-5 col-span-1 md:col-span-2">
-          <div className="text-black h-full flex flex-col items-start justify-between">
-            <h3 className="text-primary text-2xl font-bold leading-[29.04px]">
-              <Link href={`${path}/${data.attributes.slug}`}>
-                {data.attributes.name}
-              </Link>
-              {variant === 'yacht' && (
-                <p className="text-gray-500 text-base font-normal">
-                  {data.attributes.make.data.attributes.make}
-                </p>
-              )}
-            </h3>
-            {/* <p className="py-2 flex gap-1 items-center ">
+          </div>
+          <div className="p-5 col-span-1 md:col-span-2">
+            <div className="text-black h-full flex flex-col items-start justify-between">
+              <h3 className="text-primary text-2xl font-bold leading-[29.04px]">
+                <Link href={`${path}/${data.attributes.slug}`}>
+                  {data.attributes.name}
+                </Link>
+                {variant === 'yacht' && (
+                  <p className="text-gray-500 text-base font-normal">
+                    {data.attributes.make.data.attributes.make}
+                  </p>
+                )}
+              </h3>
+              {/* <p className="py-2 flex gap-1 items-center ">
               {[1, 2, 3, 4, 5].map((index) => (
                 <PiStarFill
                   key={index}
@@ -107,77 +131,78 @@ function Card({ variant, data }) {
                 {data.attributes.rating}.00 rating
               </span>
             </p> */}
-            {variant === 'car' ? (
-              <CarDetail data={data} />
-            ) : (
-              <YachtDetail data={data} />
-            )}
+              {variant === 'car' ? (
+                <CarDetail data={data} />
+              ) : (
+                <YachtDetail data={data} />
+              )}
 
-            {/* <p className="text-secondary text-base font-normal leading-relaxed">
+              {/* <p className="text-secondary text-base font-normal leading-relaxed">
               {data.attributes.short_description}
             </p> */}
 
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full py-5 gap-6">
-              <div className="w-full md:w-fit">
-                {/* <p className="text-secondary text-sm">From</p> */}
-                <span className="text-primary font-normal text-2xl">
-                  {convertPrice(data.attributes.price)}{' '}
-                  <span className="text-secondary text-sm font-normal">
-                    {variant === 'car' ? '/Day' : '/hour'}
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full py-5 gap-6">
+                <div className="w-full md:w-fit">
+                  {/* <p className="text-secondary text-sm">From</p> */}
+                  <span className="text-primary font-normal text-2xl">
+                    {convertPrice(data.attributes.price)}{' '}
+                    <span className="text-secondary text-sm font-normal">
+                      {variant === 'car' ? '/Day' : '/hour'}
+                    </span>
                   </span>
-                </span>
-                {variant === 'car' && (
-                  <span className="text-primary text-xs">
-                    {data.attributes.deposit.data && (
-                      <div className="text-primary flex items-center gap-1  font-medium leading-tight">
-                        {data.attributes.deposit.data?.attributes.type ===
-                        'No Deposit' ? (
-                          <>
-                            <AiOutlineCheckCircle />{' '}
-                            {data.attributes.deposit.data?.attributes.type}
-                          </>
-                        ) : (
-                          <>
-                            <AiOutlineExclamationCircle /> Deposit:&nbsp;
-                            {convertPrice(
-                              data.attributes.deposit.data.attributes.type
-                            )}
-                          </>
-                        )}
-                      </div>
-                    )}
-                  </span>
-                )}
-              </div>
-              <div className="flex justify-between md:justify-start items-center gap-4 w-full md:w-fit">
-                <div className="flex gap-4 ">
-                  <Link
-                    href={`tel:${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="cursor-pointer"
-                  >
-                    <FaPhoneAlt size={24} color="#DCA24B" />
-                  </Link>
-                  <Link
-                    target="_blank"
-                    rel="noreferrer"
-                    className="cursor-pointer"
-                    href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=I would like to know more about ${data.attributes.name} booking`}
-                  >
-                    <RiWhatsappFill size={24} color="#25D366" />
-                  </Link>
+                  {variant === 'car' && (
+                    <span className="text-primary text-xs">
+                      {data.attributes.deposit.data && (
+                        <div className="text-primary flex items-center gap-1  font-medium leading-tight">
+                          {data.attributes.deposit.data?.attributes.type ===
+                          'No Deposit' ? (
+                            <>
+                              <AiOutlineCheckCircle />{' '}
+                              {data.attributes.deposit.data?.attributes.type}
+                            </>
+                          ) : (
+                            <>
+                              <AiOutlineExclamationCircle /> Deposit:&nbsp;
+                              {convertPrice(
+                                data.attributes.deposit.data.attributes.type
+                              )}
+                            </>
+                          )}
+                        </div>
+                      )}
+                    </span>
+                  )}
                 </div>
-                <Button
-                  msg={`I would like to know more about ${data.attributes.name} booking`}
-                >
-                  Book Now
-                </Button>
+                <div className="flex justify-between md:justify-start items-center gap-4 w-full md:w-fit">
+                  <div className="flex gap-4 ">
+                    <Link
+                      href={`tel:${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="cursor-pointer"
+                    >
+                      <FaPhoneAlt size={24} color="#DCA24B" />
+                    </Link>
+                    <Link
+                      target="_blank"
+                      rel="noreferrer"
+                      className="cursor-pointer"
+                      href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=I would like to know more about ${data.attributes.name} booking`}
+                    >
+                      <RiWhatsappFill size={24} color="#25D366" />
+                    </Link>
+                  </div>
+                  <Button
+                    msg={`I would like to know more about ${data.attributes.name} booking`}
+                  >
+                    Book Now
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </AnimatePresence>
       <ModalComponent open={open} setOpen={setOpen}>
         <div className="h-[50vh] max-h-[500px]">
           {videoModal ? (
@@ -190,7 +215,7 @@ function Card({ variant, data }) {
           )}
         </div>
       </ModalComponent>
-    </>
+    </div>
   );
 }
 

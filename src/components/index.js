@@ -30,3 +30,6 @@ export { default as Loader } from './ui/loader/Loader';
 export { default as RichTextComponent } from './richytextComponent/RichtextComponent';
 
 export { default as PictureGallery } from './PictureGallery/PictureGallery';
+
+export { default as TechnicalSpec } from './cars/TechnicalSpec';
+export { default as CarSpec } from './cars/CarSpec';

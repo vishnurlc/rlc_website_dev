@@ -1,23 +1,42 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import FaqCard from './faqcard';
-
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { parentVariant, itemVariant } from '@/lib/animation';
 function FaqAccordation({ data }) {
   const [expanded, setExpanded] = useState();
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+  });
+  const animationControl = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animationControl.start('visible');
+    }
+  }, [inView]);
 
   return (
-    <div className="flex flex-col gap-6 w-full">
+    <motion.div
+      ref={ref}
+      className="flex flex-col gap-6 w-full"
+      initial="hidden"
+      animate={animationControl}
+      variants={parentVariant}
+    >
       {data?.slice(0, 5).map((item, index) => (
-        <FaqCard
-          key={index}
-          i={index}
-          expanded={expanded}
-          setExpanded={setExpanded}
-          question={item.attributes.question}
-          answer={item.attributes.answer}
-        />
+        <motion.div key={index} variants={itemVariant}>
+          <FaqCard
+            i={index}
+            expanded={expanded}
+            setExpanded={setExpanded}
+            question={item.attributes.question}
+            answer={item.attributes.answer}
+          />
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 }
 
