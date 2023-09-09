@@ -37,3 +37,4 @@ export { default as CarSpec } from './cars/CarSpec';
 export { default as YachtTechnicalSpec } from './yachtrental/TechnicalSpec';
 
 export { default as GoogleAnalytics } from './GoogleAnalytics/GoogleAnalytics';
+export { default as CookieBanner } from './GoogleAnalytics/CookieBanner';

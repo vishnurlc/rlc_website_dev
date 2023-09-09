@@ -1,8 +1,18 @@
 'use client';
 import Script from 'next/script';
 import * as gtag from '../../lib/gtag';
-
+import { usePathname, useSearchParams } from 'next/navigation';
+import { useEffect } from 'react';
 const GoogleAnalytics = () => {
+  const pathName = usePathname();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const url = pathName + searchParams.toString();
+
+    gtag.pageview(url);
+  }, [pathName, searchParams]);
+
   return (
     <>
       <Script
@@ -17,8 +27,13 @@ const GoogleAnalytics = () => {
                  window.dataLayer = window.dataLayer || [];
                  function gtag(){dataLayer.push(arguments);}
                  gtag('js', new Date());
+
+                 gtag('consent', 'default', {
+                    'analytics_storage' : 'denied'
+                 })
+                 
                  gtag('config', '${gtag.GA_TRACKING_ID}', {
-                page_path: window.location.pathname,
+                    page_path: window.location.pathname,
                       });`,
         }}
       />
