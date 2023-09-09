@@ -35,3 +35,5 @@ export { default as TechnicalSpec } from './cars/TechnicalSpec';
 export { default as CarSpec } from './cars/CarSpec';
 
 export { default as YachtTechnicalSpec } from './yachtrental/TechnicalSpec';
+
+export { default as GoogleAnalytics } from './GoogleAnalytics/GoogleAnalytics';
