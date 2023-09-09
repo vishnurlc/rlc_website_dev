@@ -27,14 +27,27 @@ export default function CookieBanner() {
     setCookieConsent(true);
     setShowBanner(false);
     setLocalStorage('cookie_consent', true);
+
+    // Update consent in Google Analytics (assuming you have a function like window.gtag)
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        analytics_storage: 'granted',
+      });
+    }
   };
 
   const declineCookies = () => {
     setCookieConsent(false);
     setShowBanner(false);
     setLocalStorage('cookie_consent', false);
-  };
 
+    // Update consent in Google Analytics (assuming you have a function like window.gtag)
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        analytics_storage: 'denied',
+      });
+    }
+  };
   return (
     <AnimatePresence>
       {showBanner && cookieConsent === null && (
