@@ -1,8 +1,6 @@
 import RootLayout from '@/components/rootLayout/RootLayout';
 import './globals.css';
 import { Inter, Poppins, Nunito_Sans } from 'next/font/google';
-import { CookieBanner, GoogleAnalytics } from '@/components';
-import { Suspense } from 'react';
 
 export const inter = Inter({
   subsets: ['latin'],
@@ -39,10 +37,7 @@ export default function Layout({ children }) {
       className={`${inter.variable} ${nunito_sans.variable} ${poppins.variable}`}
     >
       <body>
-        <GoogleAnalytics />
-
         <RootLayout>{children}</RootLayout>
-        <CookieBanner />
       </body>
     </html>
   );
