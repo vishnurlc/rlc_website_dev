@@ -2,9 +2,10 @@ import {
   ContactForm,
   HeroSection2,
   ListingComponent,
+  Loader,
   PictureGallery,
 } from '@/components';
-import React from 'react';
+import React, { Suspense } from 'react';
 
 export const metadata = {
   title: 'Luxury Car Rental Dubai',
@@ -92,14 +93,16 @@ export default async function page() {
         overlay={1}
       />
       <div className="mx-auto max-w-[1200px]">
-        <ListingComponent
-          variant={'car'}
-          title={'Crafting Driving Experiences'}
-          description={
-            'Choose from Our Handpicked Selection of Luxurious Cars for an Unforgettable Ride'
-          }
-          make={make}
-        />
+        <Suspense fallback={<Loader />}>
+          <ListingComponent
+            variant={'car'}
+            title={'Crafting Driving Experiences'}
+            description={
+              'Choose from Our Handpicked Selection of Luxurious Cars for an Unforgettable Ride'
+            }
+            make={make}
+          />
+        </Suspense>
       </div>
 
       {/* <div className=" my-16 flex flex-col gap-9 md:gap-16">
