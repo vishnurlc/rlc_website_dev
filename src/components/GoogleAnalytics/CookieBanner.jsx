@@ -16,6 +16,7 @@ export default function CookieBanner() {
     window.gtag('consent', 'update', {
       analytics_storage: newValue,
     });
+
     setLocalStorage('cookie_consent', cookieConsent);
   }, [cookieConsent]);
 

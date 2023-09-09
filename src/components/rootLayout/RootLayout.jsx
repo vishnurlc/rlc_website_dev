@@ -11,6 +11,7 @@ const RootLayout = ({ children }) => {
     <>
       <Suspense fallback="Loading">
         <GoogleAnalytics />
+        <CookieBanner />
       </Suspense>
       <CurrencyProvider>
         <Header />
@@ -31,7 +32,6 @@ const RootLayout = ({ children }) => {
         </div>
         <Footer />
       </CurrencyProvider>
-      <CookieBanner />
     </>
   );
 };
