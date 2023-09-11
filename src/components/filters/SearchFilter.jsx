@@ -1,5 +1,6 @@
 import React from 'react';
 import AsyncSelect from 'react-select/async';
+import { components } from 'react-select';
 import { BsSearch } from 'react-icons/bs';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -7,7 +8,7 @@ import Link from 'next/link';
 const fetchProperties = async (inputValue) => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?filters[$or][0][name][$containsi]=${inputValue}&populate=car_colors`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?filters[$or][0][name][$containsi]=${inputValue}`,
       {
         next: { revalidate: 10 },
         headers: {
@@ -27,7 +28,7 @@ const loadOptions = (inputValue, callback = (options) => {}) => {
   fetchProperties(inputValue)
     .then((cars) => {
       const options = cars.map((car) => ({
-        label: `${car.attributes.name} - ${car.attributes.car_colors.data[0].attributes.color}`,
+        label: `${car.attributes.name}`,
         value: car.attributes.slug,
       }));
       callback(options);
@@ -47,10 +48,8 @@ const SearchInput = () => {
       components={{
         DropdownIndicator: () => null,
         IndicatorSeparator: () => null,
+        Option,
       }}
-      onChange={(selectedOption) =>
-        router.push(`/luxury-car-rentals/${selectedOption?.value}`)
-      }
       placeholder={
         <div className="flex items-center justify-between">
           <span className="pl-4 text-gray-400 font-thin text-sm">
@@ -68,3 +67,11 @@ const SearchInput = () => {
 };
 
 export default SearchInput;
+
+const Option = (props) => {
+  return (
+    <Link href={`/luxury-car-rentals/${props.data.value}`} className="flex">
+      <components.Option {...props} />
+    </Link>
+  );
+};
