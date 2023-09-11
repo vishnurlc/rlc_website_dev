@@ -40,7 +40,7 @@ const CarSpec = ({ car }) => {
             <span className="text-[#8a97a4]">
               <Image
                 src={feature.attributes.icon.data.attributes.url}
-                alt={feature.feature}
+                alt={feature.attributes.feature}
                 width={30}
                 height={30}
               />

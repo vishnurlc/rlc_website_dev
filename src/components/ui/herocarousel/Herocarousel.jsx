@@ -36,7 +36,7 @@ export default function HeroCarousel({ data, name }) {
                 src={item.attributes.url}
                 fill
                 priority
-                alt={name}
+                alt={name || 'Luxury Car'}
                 style={{
                   objectFit: 'cover',
                   objectPosition: 'center',

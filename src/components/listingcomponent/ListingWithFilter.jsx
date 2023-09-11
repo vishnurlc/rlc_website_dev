@@ -10,6 +10,7 @@ import CaryearFilter from '../filters/CarYearfilter';
 import { motion } from 'framer-motion';
 import qs from 'qs';
 import Marquee from '@/components/marquee/Marquee';
+import SearchFilter from '../filters/SearchFilter';
 const ListingComponent = ({ variant, title, description, make }) => {
   const containerRef = useRef(null);
   const scrollRef = useRef(null);
@@ -186,11 +187,12 @@ const ListingComponent = ({ variant, title, description, make }) => {
       <div className="w-full my-[40px] ">
         <motion.div
           ref={containerRef}
-          className="relative flex items-center justify-start md:justify-center gap-4 md:gap-5 px-6"
+          className="relative flex items-center justify-start md:justify-center gap-4 md:gap-5 px-6 z-40"
           drag="x"
           dragConstraints={{ right: 0, left: -containerWidth }}
           dragListener={drag}
         >
+          <SearchFilter />
           <CarbodyFilter
             handleFilters={handleFilters}
             selectedValue={filters.body}

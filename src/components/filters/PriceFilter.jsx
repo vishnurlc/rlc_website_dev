@@ -3,14 +3,6 @@ import Select from 'react-select';
 
 const data = [
   {
-    label: '200 - 500',
-    value: '200-500',
-  },
-  {
-    label: '500 - 800',
-    value: '500-800',
-  },
-  {
     label: '800 - 1200',
     value: '800-1200',
   },
