@@ -44,9 +44,9 @@ const Pagination = ({
             aria-current={currentPage === pageNumber ? 'page' : undefined}
           >
             <button
-              className={`relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 ${
+              className={`relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 ${
                 currentPage == pageNumber
-                  ? 'bg-slate-200 text-primary font-bold'
+                  ? 'bg-neutral-100 text-primary font-bold'
                   : ''
               }`}
               onClick={() => {
