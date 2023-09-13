@@ -11,7 +11,7 @@ import Faq from '@/components/home/faq';
 export const metadata = {
   title: 'Welcome to Richylife Club - Luxury Experiences',
   description:
-    'Indulge in unparalleled luxury with Richylife Club. Elevate your lifestyle with our exclusive offerings, including premium car rentals, private yacht charters, thrilling water sports adventures, and much more. Discover a world where opulence meets convenience, and where every experience is tailored to exceed your highest expectations. Join us in redefining luxury and creating memories that last a lifetime.',
+    'Experience ultimate luxury with Richylife Club: premium car rentals, private yacht charters, water sports, and more. Redefine luxury today!',
   keywords: [
     'Luxury Experiences Dubai',
     'Luxury Car Rentals',

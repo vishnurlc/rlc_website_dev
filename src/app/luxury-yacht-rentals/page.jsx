@@ -9,7 +9,7 @@ import React from 'react';
 export const metadata = {
   title: 'Luxury Yacht Rental Dubai | Exclusive Yacht Charters',
   description:
-    'Discover the ultimate luxury yacht rental experience in Dubai with Richylife Club. Explore our fleet of exclusive yachts for unforgettable charters and sea adventures.',
+    "Immerse yourself in luxury and style with Richylife Club's ultimate yacht rental experience in Dubai. Explore our fleet of exclusive yachts for unforgettable charters and sea adventures",
   keywords: [
     'Luxury Yacht Rental Dubai',
     'Exclusive Yacht Charters',
@@ -28,13 +28,22 @@ export const metadata = {
     'Luxury Yacht Events',
     'Sea Adventures',
     'Private Yacht Tours',
-    'Richylife Club',
-    'Dubai UAE',
+    'Dubai yacht rental',
+    'Luxury yacht rental in Dubai',
+    'Private yacht rental Dubai',
+    'Yacht charter Dubai',
+    ' Yacht rental deals Dubai',
+    'Yacht rental packages Dubai',
+    'Yacht rental for events Dubai',
+    ' Yacht rental for weddings Dubai',
+    'Yacht rental for parties Dubai',
+    'Yacht rental for corporate events Dubai',
+    'Yacht rental for photoshoots Dubai',
   ],
   openGraph: {
     title: 'Luxury Yacht Rental Dubai | Exclusive Yacht Charters',
     description:
-      'Discover the ultimate luxury yacht rental experience in Dubai with Richylife Club. Explore our fleet of exclusive yachts for unforgettable charters and sea adventures.',
+      "Immerse yourself in luxury and style with Richylife Club's ultimate yacht rental experience in Dubai. Explore our fleet of exclusive yachts for unforgettable charters and sea adventures",
     siteName: 'Richylife Club',
     images: [
       {

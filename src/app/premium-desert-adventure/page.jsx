@@ -46,14 +46,8 @@ export async function getData() {
 
 export const metadata = {
   title: 'Desert Safari Dubai | richylife',
-  description: `Embark on an immersive journey into the heart of Dubai&apos;s
-  majestic desert landscape with our captivating Desert Safari
-  experience. Brace yourself for a thrilling adventure that will
-  transport you to a world of mesmerizing sand dunes,
-  awe-inspiring vistas, and unforgettable moments. Our commitment
-  to delivering exceptional experiences ensures that your desert
-  safari transcends expectations, leaving you with memories that
-  will last a lifetime.`,
+  description:
+    'Experience the magic of the Dubai desert on a thrilling desert safari. Enjoy dune bashing, camel riding, and sandboarding, and savor a delicious barbecue dinner under the stars.',
   keywords: [
     'Desert Safari Dubai',
     'Luxury Desert Safari',
@@ -80,17 +74,21 @@ export const metadata = {
     'Family-friendly Desert Tours',
     ' Romantic Desert Getaways',
     'Desert Safari Reviews',
+    'Dubai desert safari',
+    'Dune bashing',
+    'Camel riding',
+    'Sandboarding',
+    'Barbecue dinner',
+    'Stars',
+    'Magic',
+    'Thrilling',
+    'Enjoy',
+    'Savor',
   ],
   openGraph: {
     title: 'Desert Safari Dubai | richylife',
-    description: `Embark on an immersive journey into the heart of Dubai&apos;s
-    majestic desert landscape with our captivating Desert Safari
-    experience. Brace yourself for a thrilling adventure that will
-    transport you to a world of mesmerizing sand dunes,
-    awe-inspiring vistas, and unforgettable moments. Our commitment
-    to delivering exceptional experiences ensures that your desert
-    safari transcends expectations, leaving you with memories that
-    will last a lifetime.`,
+    description:
+      'Experience the magic of the Dubai desert on a thrilling desert safari. Enjoy dune bashing, camel riding, and sandboarding, and savor a delicious barbecue dinner under the stars.',
     siteName: 'Richylife Club',
     images: [
       {

@@ -1,37 +1,37 @@
-import { ContactForm, HeroSection2, PetExperience } from "@/components";
-import React from "react";
+import { ContactForm, HeroSection2, PetExperience } from '@/components';
+import React from 'react';
 
 export const metadata = {
-  title: "Private Zoo Visit in Dubai",
+  title: 'Private Zoo Visit in Dubai',
   description:
-    "Embark on a unique adventure with Richylife Club's Exotic Pet Experience. Book a private zoo visit in Dubai to see, touch, and play with exclusive animals up close.",
+    "Embark on a unique adventure with Richylife Club's Exotic Pet Experience in Dubai. See, touch, and play with exclusive animals up close in a private zoo setting.",
   keywords: [
-    "Exotic Pet Experience",
-    "Private Zoo Visit Dubai",
-    "Exclusive Animal Encounters",
-    "Animal Interaction",
-    "Play with Exotic Animals",
-    "Zoo Tour",
-    "Dubai Animal Adventure",
-    "Touch and Feel Animals",
-    "Petting Zoo Dubai",
-    "Animal Enthusiast",
-    "Private Animal Sanctuary",
-    "Animal Lovers",
-    "Dubai Experiences",
-    "Unique Adventure",
-    "VIP Animal Encounters",
-    "Exotic Animal Interaction",
-    "Book Private Zoo",
-    "Dubai UAE",
-    "Richylife Club",
+    'Exotic Pet Experience',
+    'Private Zoo Visit Dubai',
+    'Exclusive Animal Encounters',
+    'Animal Interaction',
+    'Play with Exotic Animals',
+    'Zoo Tour',
+    'Dubai Animal Adventure',
+    'Touch and Feel Animals',
+    'Petting Zoo Dubai',
+    'Animal Enthusiast',
+    'Private Animal Sanctuary',
+    'Animal Lovers',
+    'Dubai Experiences',
+    'Unique Adventure',
+    'VIP Animal Encounters',
+    'Exotic Animal Interaction',
+    'Book Private Zoo',
+    'Dubai UAE',
+    'Richylife Club',
   ],
 
   openGraph: {
-    title: "Private Zoo Visit in Dubai",
+    title: 'Private Zoo Visit in Dubai',
     description:
-      "Embark on a unique adventure with Richylife Club's Exotic Pet Experience. Book a private zoo visit in Dubai to see, touch, and play with exclusive animals up close.",
-    siteName: "Richylife Club",
+      "Embark on a unique adventure with Richylife Club's Exotic Pet Experience in Dubai. See, touch, and play with exclusive animals up close in a private zoo setting.",
+    siteName: 'Richylife Club',
     images: [
       {
         url: `${process.env.WEB_URL}/assets/petpage/vippetbanner.png`,
@@ -44,8 +44,8 @@ export const metadata = {
         height: 200,
       },
     ],
-    locale: "en_US",
-    type: "website",
+    locale: 'en_US',
+    type: 'website',
   },
 };
 
@@ -79,14 +79,14 @@ export default async function PetPage() {
         type="video"
         heading1="Exotic Pet"
         heading2="Experiences"
-        subheading={"Journey into the Extraordinary"}
-        btntext={"Book an appointment"}
+        subheading={'Journey into the Extraordinary'}
+        btntext={'Book an appointment'}
         posterurl="/assets/petpage/vippetbanner.png"
         url="/assets/petpage/pets.mov"
       />
       <PetExperience data={data} />
       <div className="my-9 md:my-16 px-6">
-        <ContactForm title={"Get in touch with us"} />
+        <ContactForm title={'Get in touch with us'} />
       </div>
     </main>
   );

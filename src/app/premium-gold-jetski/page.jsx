@@ -22,7 +22,6 @@ export const metadata = {
     'Jetski Rental Packages',
     'Dubai Watersports',
     'Richylife Club',
-    'Dubai UAE',
   ],
   openGraph: {
     title: 'Premium Gold Jetski Rental Dubai | Exclusive Jetski Experiences',
