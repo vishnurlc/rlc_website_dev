@@ -192,18 +192,17 @@ export default function Header() {
             <Image
               width={100}
               height={100}
-              loading="lazy"
               src={
                 mobileMenuOpen
                   ? 'assets/logos/logo-dark.svg'
                   : '/assets/logos/richy-logoX.png'
               }
               alt="Richylife Club"
-              className="aspect-square w-[60px] md:w-[80px]"
+              className="aspect-square h-auto w-[60px] md:w-[80px]"
             />
           </Link>
         </div>
-        <div className="flex lg:hidden">
+        <div className="flex xl:hidden">
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
@@ -226,7 +225,7 @@ export default function Header() {
             )}
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-6">
+        <div className="hidden xl:flex xl:gap-x-6">
           {links.map((item, index) => (
             <span key={index} onMouseEnter={() => handleDropdownHover(index)}>
               {item.dropdown ? (
@@ -287,7 +286,7 @@ export default function Header() {
         </div>
       </nav>
       <div
-        className={`lg:hidden h-screen ${
+        className={`xl:hidden h-screen ${
           mobileMenuOpen ? 'block bg-white' : 'hidden'
         } px-8`}
       >
@@ -297,7 +296,7 @@ export default function Header() {
               {item.dropdown ? (
                 <div className="relative group">
                   <div
-                    className={`flex items-center gap-x-1 text-sm font-inter leading-6 cursor-pointer
+                    className={`flex items-center gap-x-1 text-sm md:text-base  font-inter leading-6 cursor-pointer
          text-primary
                    focus:outline-none`}
                     onClick={() => handleMobileDropdown(index)}
@@ -324,7 +323,7 @@ export default function Header() {
                           <motion.div
                             {...menuitemVariant}
                             key={product.name}
-                            className="py-2 relative px-7 text-sm leading-6 hover:bg-gray-50 w-full"
+                            className="py-2 relative px-7 text-sm md:text-base leading-6 hover:bg-gray-50 w-full"
                           >
                             <Link
                               href={product.href}
@@ -341,7 +340,7 @@ export default function Header() {
               ) : (
                 <Link
                   href={item.link}
-                  className={`text-sm leading-6 text-primary font-inter`}
+                  className={`text-sm md:text-base leading-6 text-primary font-inter`}
                 >
                   {item.name}
                 </Link>

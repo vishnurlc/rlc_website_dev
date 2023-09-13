@@ -19,15 +19,21 @@ const FooterInstagram = ({ images }) => {
       dragConstraints={{ right: 0, left: -containerWidth }}
     >
       {images.map((e, index) => (
-        <div
-          key={index}
-          className="min-w-[200px] h-auto aspect-square flex-1"
-          style={{
-            background: `url(${e})`,
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-          }}
-        ></div>
+        <div className="relative">
+          <Image
+            loading="lazy"
+            key={index}
+            width={200}
+            height={200}
+            className="min-w-[200px] h-auto aspect-square flex-1"
+            src={e}
+            alt="Instagram Images Richylife"
+            style={{
+              objectFit: 'cover',
+            }}
+          />
+          <div className="absolute inset-0 z-10 cursor-grab"></div>
+        </div>
       ))}
     </motion.div>
   );
