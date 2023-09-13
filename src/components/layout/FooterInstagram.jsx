@@ -19,10 +19,9 @@ const FooterInstagram = ({ images }) => {
       dragConstraints={{ right: 0, left: -containerWidth }}
     >
       {images.map((e, index) => (
-        <div className="relative">
+        <div className="relative" key={index}>
           <Image
             loading="lazy"
-            key={index}
             width={200}
             height={200}
             className="min-w-[200px] h-auto aspect-square flex-1"
