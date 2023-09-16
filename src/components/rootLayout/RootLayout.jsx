@@ -27,6 +27,15 @@ const RootLayout = ({ children }) => {
   }
 `}
       </Script>
+      <Script id="smartlook" type="text/javascript">
+        {`window.smartlook||(function(d) {
+    var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+    var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+    c.charset='utf-8';c.src='https://web-sdk.smartlook.com/recorder.js';h.appendChild(c);
+    })(document);
+    smartlook('init', '0d2d2ea78d8d4876a36d92bb3918cf8d0843d3c0', { region: 'eu' });
+  `}
+      </Script>
       <Script id="google-tag-manager" strategy="afterInteractive">
         {`
    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -37,15 +46,6 @@ const RootLayout = ({ children }) => {
         `}
       </Script>
 
-      <Script id="smartlook" type="text/javascript">
-        {`window.smartlook||(function(d) {
-    var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
-    var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
-    c.charset='utf-8';c.src='https://web-sdk.smartlook.com/recorder.js';h.appendChild(c);
-    })(document);
-    smartlook('init', '0d2d2ea78d8d4876a36d92bb3918cf8d0843d3c0', { region: 'eu' });
-  `}
-      </Script>
       <body>
         <CurrencyProvider>
           <Header />
