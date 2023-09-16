@@ -7,14 +7,8 @@ import { IoLogoWhatsapp } from 'react-icons/io';
 import Link from 'next/link';
 import { CurrencyProvider } from '@/context/currencyContext';
 import Script from 'next/script';
-import Smartlook from 'smartlook-client';
 
 const RootLayout = ({ children }) => {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      Smartlook.init('0d2d2ea78d8d4876a36d92bb3918cf8d0843d3c0');
-    }
-  }, []);
   return (
     <>
       <Script id="gtm-manager-init">
