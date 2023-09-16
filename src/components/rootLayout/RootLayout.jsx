@@ -27,7 +27,6 @@ const RootLayout = ({ children }) => {
   }
 `}
       </Script>
-
       <Script id="google-tag-manager" strategy="afterInteractive">
         {`
    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -38,7 +37,7 @@ const RootLayout = ({ children }) => {
         `}
       </Script>
 
-      <Script id="smartlook" strategy="afterInteractive" type="text/javascript">
+      <Script id="smartlook" type="text/javascript">
         {`window.smartlook||(function(d) {
     var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
     var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
