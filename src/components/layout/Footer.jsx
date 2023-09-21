@@ -70,7 +70,7 @@ const Footer = () => {
 
       {/* images */}
       <Link
-        href={'https://www.instagram.com/richylifecom/'}
+        href={'https://www.instagram.com/richylife.ae/'}
         target="_blank"
         rel="noreferrer"
         className="overflow-hidden w-full mt-5 block"
@@ -126,18 +126,17 @@ const Footer = () => {
             <div className="text-white text-lg font-bold leading-tight mb-5">
               Instagram
             </div>
-            <div className="grid grid-cols-3 w-full gap-2">
-              {data.images.map((item, index) => {
-                return (
-                  <div
-                    key={index}
-                    className="relative w-full aspect-[64/80] h-auto min-w-[64px] "
-                  >
-                    <Link
-                      href={'https://www.instagram.com/richylifecom/'}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="relative w-full h-full block"
+            <Link
+              href={'https://www.instagram.com/richylife.ae/'}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="grid grid-cols-3 w-full gap-2">
+                {data.images.map((item, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className="relative w-full aspect-[64/80] h-auto min-w-[64px] "
                     >
                       <Image
                         src={item}
@@ -149,11 +148,11 @@ const Footer = () => {
                         }}
                         sizes="20vw"
                       />
-                    </Link>
-                  </div>
-                );
-              })}
-            </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </Link>
           </div>
         </div>
         <div className="flex justify-center max-w-[1116px] mx-auto mb-10">
