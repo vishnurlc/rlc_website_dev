@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Premium Gold Jetski Rental Dubai | Exclusive Jetski Experiences',
-  description: `Experience the ultimate luxury with premium gold jetski rentals in Dubai. Enjoy the thrill of riding high-performance watercrafts and explore Dubai's waters in style with Richylife Club.`,
+  description: `Experience the ultimate luxury with premium gold jetski rentals in Dubai. Enjoy the thrill of riding high-performance watercrafts and explore Dubai&apos;s waters in style with Richylife Club.`,
   keywords: [
     'Premium Gold Jetski Rental Dubai',
     'Exclusive Jetski Experiences',
@@ -25,7 +25,7 @@ export const metadata = {
   ],
   openGraph: {
     title: 'Premium Gold Jetski Rental Dubai | Exclusive Jetski Experiences',
-    description: `Experience the ultimate luxury with premium gold jetski rentals in Dubai. Enjoy the thrill of riding high-performance watercrafts and explore Dubai's waters in style with Richylife Club.`,
+    description: `Experience the ultimate luxury with premium gold jetski rentals in Dubai. Enjoy the thrill of riding high-performance watercrafts and explore Dubai&apos;s waters in style with Richylife Club.`,
 
     siteName: 'Richylife Club',
     images: [

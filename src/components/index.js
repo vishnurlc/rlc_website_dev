@@ -43,3 +43,6 @@ export { default as Whyus } from './yachtrental/Whyus';
 export { default as WhyusPet } from './petexperience/Whyus';
 export { default as WhyusJetski } from './premiumjetski/Whyus';
 export { default as Whyushelicopter } from './helicopter/Whyus';
+export { default as WhyusChauffer } from './chaufferservice/Whyus';
+export { default as WhyusPrivatejet } from './privatejetrental/Whyus';
+export { default as WhyusdesertSafari } from './desertsafari/Whyus';

@@ -3,6 +3,7 @@ import {
   HeroSection2,
   Loader,
   SectionHeading,
+  WhyusPrivatejet,
 } from '@/components';
 
 import Jetcard from '@/components/privatejetrental/Jetcard';
@@ -37,7 +38,7 @@ export const metadata = {
   openGraph: {
     title: 'Premium Jetski Rental Dubai | Exclusive Jetski Experiences',
     description:
-      "Experience the thrill of riding premium jetskis in Dubai's crystal-clear waters. Book your exclusive jetski adventure with Richylife Club and enjoy adrenaline-pumping watersports.",
+      'Experience the thrill of riding premium jetskis in Dubai&apos;s crystal-clear waters. Book your exclusive jetski adventure with Richylife Club and enjoy adrenaline-pumping watersports.',
     siteName: 'Richylife Club',
     images: [
       {
@@ -130,6 +131,10 @@ export default async function PrivateJet() {
             </h2>
           </div>
         )}
+
+        <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
+          <WhyusPrivatejet />
+        </div>
         <div className="px-4">
           <ContactForm
             title={'Soar to New Heights'}

@@ -1,4 +1,4 @@
-import { ContactForm, HeroSection2 } from '@/components';
+import { ContactForm, HeroSection2, WhyusdesertSafari } from '@/components';
 import DesertSafariCard from '@/components/desertsafari/DesertSafariCard';
 import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
 import { Button } from '@/components/ui/button/Button';
@@ -191,6 +191,9 @@ export default async function page() {
             </div>
           </div> */}
         </div>
+      </div>
+      <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
+        <WhyusdesertSafari />
       </div>
 
       <div className="my-9 md:my-16 px-6">

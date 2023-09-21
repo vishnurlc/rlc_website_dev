@@ -1,4 +1,9 @@
-import { ContactForm, HeroSection2, SectionHeading } from '@/components';
+import {
+  ContactForm,
+  HeroSection2,
+  SectionHeading,
+  WhyusChauffer,
+} from '@/components';
 import CardSq from '@/components/ui/card/CardSq';
 import Image from 'next/image';
 import React from 'react';
@@ -81,6 +86,9 @@ const page = () => {
               <CardSq key={index} data={e} />
             ))}
           </div>
+        </div>
+        <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
+          <WhyusChauffer />
         </div>
         <div className="my-9 md:my-16 px-6 ">
           <ContactForm

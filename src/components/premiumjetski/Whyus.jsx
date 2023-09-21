@@ -10,18 +10,18 @@ const Whyus = () => {
       <SectionHeading title={'Jet Ski Adventures in Dubai with Richylife'} />
       <p className="text-center text-gray-500">
         Dubai, the city of grandeur, where sky-high buildings touch the clouds
-        and luxury knows no bounds. If you're planning to visit this
-        awe-inspiring city, we've got an adventure that will make your trip
+        and luxury knows no bounds. If you&apos;re planning to visit this
+        awe-inspiring city, we&apos;ve got an adventure that will make your trip
         truly unforgettable – Jet Skiing on the pristine waters of the Arabian
-        Gulf. Welcome to Richylife's Jet Ski Rental Services in Dubai!
+        Gulf. Welcome to Richylife&apos;s Jet Ski Rental Services in Dubai!
       </p>
       <div className="text-gray-500 my-9">
         <h3 className="text-2xl text-primary mb-4">Why Choose Richylife:</h3>
         <p>
-          Dubai is all about pushing the limits, and we're no different. What
-          sets Richylife apart? It's not just about renting a jet ski; it's
-          about experiencing the thrill of the open sea while being in safe
-          hands. We prioritize your safety while ensuring you have an
+          Dubai is all about pushing the limits, and we&apos;re no different.
+          What sets Richylife apart? It&apos;s not just about renting a jet ski;
+          it&apos;s about experiencing the thrill of the open sea while being in
+          safe hands. We prioritize your safety while ensuring you have an
           exhilarating ride.
         </p>
         <div className="mt-6 flex flex-col gap-6">
@@ -54,9 +54,9 @@ const Whyus = () => {
                 <span className="font-bold text-gray-600">
                   Personalized Tours:
                 </span>
-                &nbsp;Whether you're solo, with friends, or planning a corporate
-                event, we offer bespoke tours tailored to your preferences,
-                duration, and places you want to explore.
+                &nbsp;Whether you&apos;re solo, with friends, or planning a
+                corporate event, we offer bespoke tours tailored to your
+                preferences, duration, and places you want to explore.
               </li>
               <li className="text-base leading-8">
                 <span className="font-bold text-gray-600">
@@ -74,14 +74,14 @@ const Whyus = () => {
               </li>
               <li className="text-base leading-8">
                 <span className="font-bold text-gray-600">Safety First:</span>
-                &nbsp;While we ensure safety is paramount, we don't compromise
-                on the intensity and excitement of the sport.
+                &nbsp;While we ensure safety is paramount, we don&apos;t
+                compromise on the intensity and excitement of the sport.
               </li>
             </ul>
           </div>
           <div>
             <h4 className="font-semibold text-gray-600 text-lg">
-              What's Included:
+              What&apos;s Included:
             </h4>
             <ul className="pl-4">
               <li className="text-base leading-8">
@@ -96,7 +96,7 @@ const Whyus = () => {
               </li>
               <li className="text-base leading-8">
                 Capture the memories! Our tour leader snaps photos and videos
-                which we'll share with you at no extra cost.
+                which we&apos;ll share with you at no extra cost.
               </li>
             </ul>
           </div>
@@ -150,11 +150,11 @@ const Whyus = () => {
                 our marina to the Burj Al Arab, capturing picture-perfect
                 moments. As we ride towards His Highness Sheikh Mohammed bin
                 Rashid Al Maktoum island, get ready to marvel at one of the
-                world's top 5 luxurious yachts. We'll take a beach break in
-                front of Jumeirah Beach Residence for more photo ops. Next stop,
-                the Palm Jumeirah and the Atlantis Hotel. Return to the marina
-                with the Burj Khalifa in sight, having completed your tour of
-                Dubai's iconic landmarks.
+                world&apos;s top 5 luxurious yachts. We&apos;ll take a beach
+                break in front of Jumeirah Beach Residence for more photo ops.
+                Next stop, the Palm Jumeirah and the Atlantis Hotel. Return to
+                the marina with the Burj Khalifa in sight, having completed your
+                tour of Dubai&apos;s iconic landmarks.
               </p>
               <AnimatedBtn
                 text={'Book 2-Hour Tour'}
@@ -163,13 +163,13 @@ const Whyus = () => {
               />
             </div>
             <p>
-              Dubai's breathtaking skyline takes on a new dimension when you
-              experience it from the water. Richylife's Jet Ski Adventures are
-              designed to combine adrenaline-pumping fun with safety and
-              awe-inspiring views. Whether you're a beginner or a seasoned
-              rider, our jet ski tours will add an extra layer of excitement to
-              your Dubai trip. Book your adventure today and make waves in the
-              city of dreams!
+              Dubai&apos;s breathtaking skyline takes on a new dimension when
+              you experience it from the water. Richylife&apos;s Jet Ski
+              Adventures are designed to combine adrenaline-pumping fun with
+              safety and awe-inspiring views. Whether you&apos;re a beginner or
+              a seasoned rider, our jet ski tours will add an extra layer of
+              excitement to your Dubai trip. Book your adventure today and make
+              waves in the city of dreams!
             </p>
           </div>
         </div>

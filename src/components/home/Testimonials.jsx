@@ -5,7 +5,7 @@ const data = [
   {
     image: '/assets/home/testimonials/1.webp',
     comment:
-      "Im a car enthusiast, and RichyLife Club's premium car rentals allowed me to experience some of the finest cars in the world. It's like having a garage of dreams! ",
+      "Im a car enthusiast, and RichyLife Club's premium car rentals allowed me to experience some of the finest cars in the world. It&apos;s like having a garage of dreams! ",
     name: '- Thrilled Guest',
   },
   {
