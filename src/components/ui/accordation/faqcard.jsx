@@ -3,6 +3,7 @@ import * as React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './partnerstep.css';
 import { BiSolidDownArrow, BiSolidUpArrow } from 'react-icons/bi';
+import { RichTextComponent } from '@/components';
 const FaqCard = ({ i, expanded, setExpanded, question, answer }) => {
   const isOpen = i === expanded;
 
@@ -39,7 +40,7 @@ const FaqCard = ({ i, expanded, setExpanded, question, answer }) => {
               variants={accordionVariants}
               transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
             >
-              {answer}
+              <RichTextComponent bio={answer} />
             </motion.section>
           )}
         </AnimatePresence>

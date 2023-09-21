@@ -33,7 +33,11 @@ function Faq() {
           FAQ
         </h3>
         <div className="w-full max-w-4xl mx-auto mb-6 min-h-[300px] flex items-center justify-center ">
-          {data ? <FaqAccordation data={data} /> : <Loader color={'#000'} />}
+          {data ? (
+            <FaqAccordation data={data.slice(0, 5)} />
+          ) : (
+            <Loader color={'#000'} />
+          )}
         </div>
       </div>
     </div>
