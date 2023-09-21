@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Whyus = () => {
   return (
     <div>
-      <SectionHeading title={'Richylife&apos;s Luxury Chauffeur Service'} />
+      <SectionHeading title={`Richylife's Luxury Chauffeur Service`} />
       <p className="text-center text-gray-500">
         Explore Dubai in unmatched luxury with Richylife&apos;s chauffeur-driven
         cars. Our professional chauffeurs ensure a stress-free journey as you
