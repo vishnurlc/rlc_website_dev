@@ -37,3 +37,9 @@ export { default as CarSpec } from './cars/CarSpec';
 export { default as YachtTechnicalSpec } from './yachtrental/TechnicalSpec';
 
 export { default as CookieBanner } from './GoogleAnalytics/CookieBanner';
+
+export { default as Requirementforrent } from './cars/Requirementsforrent';
+export { default as Whyus } from './yachtrental/Whyus';
+export { default as WhyusPet } from './petexperience/Whyus';
+export { default as WhyusJetski } from './premiumjetski/Whyus';
+export { default as Whyushelicopter } from './helicopter/Whyus';

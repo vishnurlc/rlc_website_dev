@@ -2,6 +2,7 @@ import {
   ContactForm,
   HeroSection2,
   PictureGallery,
+  Whyus,
   YachtListing,
 } from '@/components';
 import React from 'react';
@@ -109,6 +110,9 @@ export default async function page() {
           }
         />
       </div> */}
+      <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
+        <Whyus />
+      </div>
       <div className="my-9 md:my-16 px-6">
         <ContactForm
           title={'Set Sailing Now'}

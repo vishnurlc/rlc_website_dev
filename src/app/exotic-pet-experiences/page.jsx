@@ -1,4 +1,9 @@
-import { ContactForm, HeroSection2, PetExperience } from '@/components';
+import {
+  ContactForm,
+  HeroSection2,
+  PetExperience,
+  WhyusPet,
+} from '@/components';
 import React from 'react';
 
 export const metadata = {
@@ -85,6 +90,9 @@ export default async function PetPage() {
         url="/assets/petpage/pets.mov"
       />
       <PetExperience data={data} />
+      <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
+        <WhyusPet />
+      </div>
       <div className="my-9 md:my-16 px-6">
         <ContactForm title={'Get in touch with us'} />
       </div>
