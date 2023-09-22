@@ -1,65 +1,66 @@
-import { ContactForm, HeroSection2, WhyusJetski } from '@/components';
-import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
-import LocationCard from '@/components/premiumjetski/LocationCard';
-import { Button } from '@/components/ui/button/Button';
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import { ContactForm, HeroSection2, WhyusJetski } from "@/components";
+import Faq from "@/components/home/faq";
+import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
+import LocationCard from "@/components/premiumjetski/LocationCard";
+import { Button } from "@/components/ui/button/Button";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 const locations = [
   {
-    url: '/assets/jetskipage/jumeirah.webp', // Replace with actual image path
-    location: 'Jumeriah',
+    url: "/assets/jetskipage/jumeirah.webp", // Replace with actual image path
+    location: "Jumeriah",
     price: 150,
   },
   {
-    url: '/assets/jetskipage/burjalarab.avif', // Replace with actual image path
-    location: 'Burj Al Arab',
+    url: "/assets/jetskipage/burjalarab.avif", // Replace with actual image path
+    location: "Burj Al Arab",
     price: 250,
   },
   {
-    url: '/assets/jetskipage/atlantisview.jpeg', // Replace with actual image path
-    location: 'Atlantis View',
+    url: "/assets/jetskipage/atlantisview.jpeg", // Replace with actual image path
+    location: "Atlantis View",
     price: 180,
   },
 ];
 
 export const metadata = {
-  title: 'Premium Jetski Rental Dubai | Exclusive Jetski Experiences',
+  title: "Premium Jetski Rental Dubai | Exclusive Jetski Experiences",
   description:
-    'Experience the thrill of riding premium jetskis in Dubai&apos;s crystal-clear waters. Book your exclusive jetski adventure with Richylife Club and enjoy adrenaline-pumping watersports.',
+    "Experience the thrill of riding premium jetskis in Dubai&apos;s crystal-clear waters. Book your exclusive jetski adventure with Richylife Club and enjoy adrenaline-pumping watersports.",
   keywords: [
-    'Premium Jetski Rental Dubai',
-    'Exclusive Jetski Experiences',
-    'Luxury Jetski Hire',
-    'Adrenaline Watersports',
-    'Jetski Adventure Dubai',
-    'Jetski Rentals Dubai',
-    'Luxury Watersports',
-    'Watercraft Rental',
-    'Jetski Tour Packages',
-    'Watersports Activities',
-    'Jetski Excursions',
-    'Dubai Watersports',
-    'Jetski Riding',
-    'Jetskiing Dubai',
-    'Dubai jetski rental',
-    'Luxury jetski rental in Dubai',
-    'Private jetski rental Dubai',
-    'Jetski charter Dubai',
-    'Jetski rental deals Dubai',
-    'Jetski rental packages Dubai',
-    'Jetski rental for events Dubai',
-    'Jetski rental for weddings Dubai',
-    'Jetski rental for parties Dubai',
-    'Jetski rental for corporate events Dubai',
-    'Jetski rental for photoshoots Dubai',
+    "Premium Jetski Rental Dubai",
+    "Exclusive Jetski Experiences",
+    "Luxury Jetski Hire",
+    "Adrenaline Watersports",
+    "Jetski Adventure Dubai",
+    "Jetski Rentals Dubai",
+    "Luxury Watersports",
+    "Watercraft Rental",
+    "Jetski Tour Packages",
+    "Watersports Activities",
+    "Jetski Excursions",
+    "Dubai Watersports",
+    "Jetski Riding",
+    "Jetskiing Dubai",
+    "Dubai jetski rental",
+    "Luxury jetski rental in Dubai",
+    "Private jetski rental Dubai",
+    "Jetski charter Dubai",
+    "Jetski rental deals Dubai",
+    "Jetski rental packages Dubai",
+    "Jetski rental for events Dubai",
+    "Jetski rental for weddings Dubai",
+    "Jetski rental for parties Dubai",
+    "Jetski rental for corporate events Dubai",
+    "Jetski rental for photoshoots Dubai",
   ],
   openGraph: {
-    title: 'Premium Jetski Rental Dubai | Exclusive Jetski Experiences',
+    title: "Premium Jetski Rental Dubai | Exclusive Jetski Experiences",
     description:
-      'Experience the thrill of riding premium jetskis in Dubai&apos;s crystal-clear waters. Book your exclusive jetski adventure with Richylife Club and enjoy adrenaline-pumping watersports.',
-    siteName: 'Richylife Club',
+      "Experience the thrill of riding premium jetskis in Dubai&apos;s crystal-clear waters. Book your exclusive jetski adventure with Richylife Club and enjoy adrenaline-pumping watersports.",
+    siteName: "Richylife Club",
     images: [
       {
         url: `${process.env.WEB_URL}/assets/jetskipage/jetskibanner.png`,
@@ -72,8 +73,8 @@ export const metadata = {
         height: 200,
       },
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
 };
 export async function getData() {
@@ -92,7 +93,7 @@ export async function getData() {
 
     return data;
   } catch (error) {
-    console.log('s', error);
+    console.log("s", error);
     return {};
   }
 }
@@ -102,12 +103,12 @@ export default async function JetSkiPage() {
   return (
     <main>
       <HeroSection2
-        type={'video'}
-        heading1={'Luxury Jetski'}
-        heading2={'Rental in Dubai'}
-        subheading={'Unleash Your Inner Maverick on Jetski'}
-        posterurl={'/assets/jetskipage/jetskibanner.png'}
-        btntext={'Book your ride'}
+        type={"video"}
+        heading1={"Luxury Jetski"}
+        heading2={"Rental in Dubai"}
+        subheading={"Unleash Your Inner Maverick on Jetski"}
+        posterurl={"/assets/jetskipage/jetskibanner.png"}
+        btntext={"Book your ride"}
         overlay={1}
       />
       <div className="bg-black px-6 py-9 md:py-16 ">
@@ -119,8 +120,8 @@ export default async function JetSkiPage() {
                 fill
                 alt="Premium jet ski"
                 style={{
-                  objectFit: 'cover',
-                  borderRadius: '8px',
+                  objectFit: "cover",
+                  borderRadius: "8px",
                 }}
               />
             </div>
@@ -154,7 +155,7 @@ export default async function JetSkiPage() {
                     alt={item.attributes.name}
                     fill
                     style={{
-                      objectFit: 'cover',
+                      objectFit: "cover",
                     }}
                   />
                   <div className="absolute p-4 text-white w-full h-fit bg-black bg-opacity-60 bottom-0 left-0 right-0 z-10">
@@ -197,18 +198,18 @@ export default async function JetSkiPage() {
                 </p>
               </div>
               <AnimatedBtn
-                text={'Book Now'}
-                styles={'bg-gold text-white rounded-sm'}
+                text={"Book Now"}
+                styles={"bg-gold text-white rounded-sm"}
                 msg={`I'm writing to you today to inquire about the Golden Jetski. I'm interested in learning more about its specifications, price, and availability.`}
               />
             </div>
             <div className="relative w-full h-full min-h-[250px]">
               <Image
-                src={'/assets/premiumgoldjetski/goldenjetski.png'}
+                src={"/assets/premiumgoldjetski/goldenjetski.png"}
                 alt="Yamaha Golden Jetski "
                 fill
                 style={{
-                  objectFit: 'cover',
+                  objectFit: "cover",
                 }}
               />
               <div className="jetskigradient absolute inset-0"></div>
@@ -227,7 +228,7 @@ export default async function JetSkiPage() {
                     alt={item.location}
                     fill
                     style={{
-                      objectFit: 'cover',
+                      objectFit: "cover",
                     }}
                   />
                   <div className="absolute p-4 text-white w-full h-fit bg-black bg-opacity-60 bottom-0 left-0 right-0 z-10">
@@ -253,10 +254,11 @@ export default async function JetSkiPage() {
       <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
         <WhyusJetski />
       </div>
+      <Faq category={"jetski"} />
       <div className="my-9 md:my-16 px-6">
         <ContactForm
-          title={'Get In touch'}
-          description={'Experience Elegance & Convenience'}
+          title={"Get In touch"}
+          description={"Experience Elegance & Convenience"}
         />
       </div>
     </main>
