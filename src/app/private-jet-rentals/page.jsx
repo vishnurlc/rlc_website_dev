@@ -11,7 +11,7 @@ import Link from 'next/link';
 import React from 'react';
 
 export const metadata = {
-  title: 'Private Jet Rentals Dubai | Luxury Jet Charters',
+  title: 'Private Jet Charters in Dubai',
   description:
     'Experience unparalleled luxury and comfort with private jet rentals in Dubai. Explore our fleet of exclusive jets for personalized travel and jet charters with Richylife Club.',
   keywords: [
@@ -36,7 +36,7 @@ export const metadata = {
     'Dubai UAE',
   ],
   openGraph: {
-    title: 'Premium Jetski Rental Dubai | Exclusive Jetski Experiences',
+    title: 'Private Jet Charters in Dubai',
     description:
       'Experience the thrill of riding premium jetskis in Dubai&apos;s crystal-clear waters. Book your exclusive jetski adventure with Richylife Club and enjoy adrenaline-pumping watersports.',
     siteName: 'Richylife Club',

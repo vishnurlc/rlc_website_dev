@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const metadata = {
-  title: 'Privacy Policy - Richylife Club',
+  title: 'Privacy Policy',
   description:
     'Learn about how Richylife Club collects, uses, and protects your personal information. Explore our commitment to privacy and data security in luxury services.',
   keywords: [
@@ -19,7 +19,7 @@ export const metadata = {
     'UAE-based',
   ],
   openGraph: {
-    title: 'Privacy Policy - Richylife Club',
+    title: 'Privacy Policy',
     description:
       'Discover how Richylife Club safeguards your personal information. Explore our privacy commitment and data security practices in luxury car rentals, private jets, yachts, and more.',
     siteName: 'Richylife Club',

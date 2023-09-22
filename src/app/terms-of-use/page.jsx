@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const metadata = {
-  title: 'Terms of Use - Richylife Club',
+  title: 'Terms of Use',
   description:
     'Explore the terms and conditions for using Richylife Club services. Learn about the policies that govern your use of our luxury car rentals, private jets, yachts, and more.',
   keywords: [
@@ -16,7 +16,7 @@ export const metadata = {
     'UAE-based',
   ],
   openGraph: {
-    title: 'Terms of Use - Richylife Club',
+    title: 'Terms of Use',
     description:
       "Discover the terms and conditions for enjoying Richylife Club's luxury services. Explore premium car rentals, private jet charters, luxury yachts, and helicopter services.",
     siteName: 'Richylife Club',

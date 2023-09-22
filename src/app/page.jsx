@@ -9,7 +9,7 @@ import Aboutsection from '@/components/home/aboutsection';
 import Faq from '@/components/home/faq';
 
 export const metadata = {
-  title: 'Welcome to Richylife Club - Luxury Experiences',
+  title: 'Richylife Club',
   description:
     'Experience ultimate luxury with Richylife Club: premium car rentals, private yacht charters, water sports, and more. Redefine luxury today!',
   keywords: [

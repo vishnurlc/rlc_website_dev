@@ -9,7 +9,7 @@ import {
 import React, { Suspense } from 'react';
 
 export const metadata = {
-  title: 'Luxury Car Rental Dubai',
+  title: 'Luxury Car Rentals Dubai',
   description:
     "Experience the thrill of driving a luxury car in Dubai with Richylife Club's premium car rental service. Choose from a fleet of exotic cars, including Bentleys, Ferraris, and Lamborghinis, and enjoy a memorable driving experience.",
   keywords: [

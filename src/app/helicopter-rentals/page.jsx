@@ -2,7 +2,7 @@ import { ContactForm, HeroSection2, Whyushelicopter } from '@/components';
 import React from 'react';
 
 export const metadata = {
-  title: 'Luxury Helicopter Rental Dubai',
+  title: 'Helicopter Rentals Dubai',
   description:
     "Experience Dubai from a new perspective with Richylife Club's luxury helicopter rental. Enjoy VIP helicopter tours over Dubai&apos;s iconic landmarks and breathtaking views.",
   keywords: [

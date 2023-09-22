@@ -45,7 +45,7 @@ export async function getData() {
 }
 
 export const metadata = {
-  title: 'Desert Safari Dubai | richylife',
+  title: 'Premium Desert Safari Dubai',
   description:
     'Experience the magic of the Dubai desert on a thrilling desert safari. Enjoy dune bashing, camel riding, and sandboarding, and savor a delicious barbecue dinner under the stars.',
   keywords: [
@@ -86,7 +86,7 @@ export const metadata = {
     'Savor',
   ],
   openGraph: {
-    title: 'Desert Safari Dubai | richylife',
+    title: 'Premium Desert Safari Dubai',
     description:
       'Experience the magic of the Dubai desert on a thrilling desert safari. Enjoy dune bashing, camel riding, and sandboarding, and savor a delicious barbecue dinner under the stars.',
     siteName: 'Richylife Club',

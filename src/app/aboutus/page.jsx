@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
-  title: 'About Us - Richylife Club | Luxury Experiences in Dubai',
+  title: 'About Us',
   description:
     'Discover unforgettable luxury experiences in Dubai with Richylife Club. Contact us for inquiries, reservations, and more.',
   keywords: [

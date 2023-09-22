@@ -25,7 +25,7 @@ const locations = [
 ];
 
 export const metadata = {
-  title: 'Premium Jetski Rental Dubai | Exclusive Jetski Experiences',
+  title: 'Premium Jetski Rental Dubai',
   description:
     'Experience the thrill of riding premium jetskis in Dubai&apos;s crystal-clear waters. Book your exclusive jetski adventure with Richylife Club and enjoy adrenaline-pumping watersports.',
   keywords: [
