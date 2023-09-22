@@ -1,5 +1,6 @@
 import { ContactForm, HeroSection2, WhyusdesertSafari } from '@/components';
 import DesertSafariCard from '@/components/desertsafari/DesertSafariCard';
+import Faq from '@/components/home/faq';
 import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
 import { Button } from '@/components/ui/button/Button';
 import Image from 'next/image';
