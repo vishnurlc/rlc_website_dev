@@ -70,7 +70,7 @@ export default function Home() {
       <Aboutsection />
 
       <ServiceBanner />
-      <Faq />
+      <Faq category={'car'} />
       <Testimonials />
       <div className="my-9 md:my-16 px-6 ">
         <ContactForm
