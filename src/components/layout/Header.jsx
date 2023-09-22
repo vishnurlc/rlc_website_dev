@@ -347,6 +347,12 @@ export default function Header() {
               )}
             </span>
           ))}
+          <Link
+            href={'/faq'}
+            className={`text-sm md:text-base leading-6 text-primary font-inter`}
+          >
+            Faq
+          </Link>
           <MobileCurrency />
         </div>
       </div>

@@ -15,18 +15,18 @@ function FaqAccordation({ data }) {
     if (inView) {
       animationControl.start('visible');
     }
-  }, [inView]);
+  }, [inView, data]);
 
   return (
     <motion.div
       ref={ref}
-      className="flex flex-col gap-6 w-full"
+      className="flex flex-col gap-6 w-full py-2"
       initial="hidden"
       animate={animationControl}
       variants={parentVariant}
     >
-      {data?.slice(0, 5).map((item, index) => (
-        <motion.div key={index} variants={itemVariant}>
+      {data?.map((item, index) => (
+        <motion.div key={item.attributes.question} variants={itemVariant}>
           <FaqCard
             i={index}
             expanded={expanded}

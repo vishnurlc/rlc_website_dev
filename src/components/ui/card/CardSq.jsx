@@ -1,10 +1,17 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-
+import { motion } from 'framer-motion';
+import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
 function CardSq({ data }) {
   return (
-    <div className="relative w-full aspect-[1/1.5] ">
+    <motion.div
+      className="relative w-full aspect-[1/1.5] max-h-[35vh]"
+      whileHover={{
+        scale: 1.02,
+      }}
+    >
       <Image
         src={data.image}
         alt={data.title}
@@ -23,18 +30,13 @@ function CardSq({ data }) {
         </span> */}
         </div>
 
-        <button className="mt-2 px-2 py-1 bg-primary text-gold">
-          <Link
-            href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=I would like to know Richylife Club's Premium Chauffer Service on ${data.title}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm"
-          >
-            Book Now
-          </Link>
-        </button>
+        <AnimatedBtn
+          text={'Book Now'}
+          msg={`I would like to book ${data.title} from Richylife Club`}
+          styles={'mt-2 px-2 py-1 bg-primary text-gold rounded-sm'}
+        />
       </div>
-    </div>
+    </motion.div>
   );
 }
 

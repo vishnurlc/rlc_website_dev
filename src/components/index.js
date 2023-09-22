@@ -46,3 +46,5 @@ export { default as Whyushelicopter } from './helicopter/Whyus';
 export { default as WhyusChauffer } from './chaufferservice/Whyus';
 export { default as WhyusPrivatejet } from './privatejetrental/Whyus';
 export { default as WhyusdesertSafari } from './desertsafari/Whyus';
+
+export { default as FilterBtn } from './ui/faqfilter/FilterBtn';
