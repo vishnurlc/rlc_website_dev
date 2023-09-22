@@ -195,7 +195,7 @@ export default async function page() {
       <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
         <WhyusdesertSafari />
       </div>
-
+      <Faq category={'desertsafari'} />
       <div className="my-9 md:my-16 px-6">
         <ContactForm
           title={'Get In Touch'}

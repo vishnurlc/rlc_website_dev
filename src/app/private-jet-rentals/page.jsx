@@ -5,6 +5,7 @@ import {
   SectionHeading,
   WhyusPrivatejet,
 } from '@/components';
+import Faq from '@/components/home/faq';
 
 import Jetcard from '@/components/privatejetrental/Jetcard';
 import Link from 'next/link';
@@ -135,6 +136,7 @@ export default async function PrivateJet() {
         <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
           <WhyusPrivatejet />
         </div>
+        <Faq category={'privatejet'} />
         <div className="px-4">
           <ContactForm
             title={'Soar to New Heights'}

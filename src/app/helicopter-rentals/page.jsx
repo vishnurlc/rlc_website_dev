@@ -1,4 +1,5 @@
 import { ContactForm, HeroSection2, Whyushelicopter } from '@/components';
+import Faq from '@/components/home/faq';
 import React from 'react';
 
 export const metadata = {
@@ -63,6 +64,7 @@ const page = () => {
       <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
         <Whyushelicopter />
       </div>
+      <Faq category={'helicopter'} />
       <div className="my-9 md:my-16 px-6">
         <ContactForm title={'Get in touch with us'} />
       </div>

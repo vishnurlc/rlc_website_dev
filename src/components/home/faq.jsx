@@ -1,7 +1,7 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import FaqAccordation from "../ui/accordation/accordation";
-import { Loader } from "..";
+'use client';
+import React, { useEffect, useState } from 'react';
+import FaqAccordation from '../ui/accordation/accordation';
+import { Loader } from '..';
 
 const getData = async (category) => {
   try {
@@ -29,7 +29,6 @@ function Faq({ category }) {
     };
     fetchData();
   }, []);
-  console.log(data);
   return (
     <div className="bg-white px-5 py-8 md:py-16">
       <div className="flex flex-col gap-6 md:gap-10 max-w-[1200px] mx-auto">
@@ -38,9 +37,9 @@ function Faq({ category }) {
         </h3>
         <div className="w-full max-w-4xl mx-auto mb-6 min-h-[300px] flex items-center justify-center ">
           {data ? (
-            <FaqAccordation data={data[0].attributes.faqs.data} />
+            <FaqAccordation data={data[0].attributes.faqs.data.slice(0, 5)} />
           ) : (
-            <Loader color={"#000"} />
+            <Loader color={'#000'} />
           )}
         </div>
       </div>

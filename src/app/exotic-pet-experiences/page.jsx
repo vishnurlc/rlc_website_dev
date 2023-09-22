@@ -4,6 +4,7 @@ import {
   PetExperience,
   WhyusPet,
 } from '@/components';
+import Faq from '@/components/home/faq';
 import React from 'react';
 
 export const metadata = {
@@ -93,6 +94,7 @@ export default async function PetPage() {
       <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
         <WhyusPet />
       </div>
+      <Faq category={'pet'} />
       <div className="my-9 md:my-16 px-6">
         <ContactForm title={'Get in touch with us'} />
       </div>

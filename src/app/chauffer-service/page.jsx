@@ -4,6 +4,7 @@ import {
   SectionHeading,
   WhyusChauffer,
 } from '@/components';
+import Faq from '@/components/home/faq';
 import CardSq from '@/components/ui/card/CardSq';
 import Image from 'next/image';
 import React from 'react';
@@ -89,6 +90,7 @@ const page = () => {
         <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
           <WhyusChauffer />
         </div>
+        <Faq category={'chauffer'} />
         <div className="my-9 md:my-16 px-6 ">
           <ContactForm
             title={'Get in Touch with Us'}
