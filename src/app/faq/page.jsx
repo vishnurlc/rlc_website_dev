@@ -56,7 +56,7 @@ const FaqPage = () => {
           title={'FAQ'}
           description={'All your concerns are answered'}
         />
-        <div className=" my-8">
+        <div className="my-8 max-w-[1200px] mx-auto">
           <FilterBtn
             items={categoryData}
             category={category}
