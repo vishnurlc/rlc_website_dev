@@ -9,7 +9,7 @@ import Faq from '@/components/home/faq';
 import React from 'react';
 
 export const metadata = {
-  title: 'Luxury Yacht Rental Dubai',
+  title: 'Luxury Yacht Rental in Dubai',
   description:
     "Immerse yourself in luxury and style with Richylife Club's ultimate yacht rental experience in Dubai. Explore our fleet of exclusive yachts for unforgettable charters and sea adventures",
   keywords: [
@@ -32,7 +32,7 @@ export const metadata = {
     'Yacht rental for photoshoots Dubai',
   ],
   openGraph: {
-    title: 'Luxury Yacht Rental Dubai',
+    title: 'Luxury Yacht Rental in Dubai',
     description:
       "Immerse yourself in luxury and style with Richylife Club's ultimate yacht rental experience in Dubai. Explore our fleet of exclusive yachts for unforgettable charters and sea adventures",
     siteName: 'Richylife Club',

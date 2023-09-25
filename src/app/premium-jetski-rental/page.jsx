@@ -26,7 +26,7 @@ const locations = [
 ];
 
 export const metadata = {
-  title: 'Premium Jetski Rental Dubai',
+  title: 'Premium Jetski Rental in Dubai',
   description:
     'Experience the thrill of riding premium jetskis in Dubai&apos;s crystal-clear waters. Book your exclusive jetski adventure with Richylife Club and enjoy adrenaline-pumping watersports.',
   keywords: [
@@ -44,7 +44,7 @@ export const metadata = {
     'Jetski rental packages Dubai',
   ],
   openGraph: {
-    title: 'Premium Jetski Rental Dubai | Exclusive Jetski Experiences',
+    title: 'Premium Jetski Rental in Dubai',
     description:
       'Experience the thrill of riding premium jetskis in Dubai&apos;s crystal-clear waters. Book your exclusive jetski adventure with Richylife Club and enjoy adrenaline-pumping watersports.',
     siteName: 'Richylife Club',

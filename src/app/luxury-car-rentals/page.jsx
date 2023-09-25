@@ -10,7 +10,7 @@ import Faq from '@/components/home/faq';
 import React, { Suspense } from 'react';
 
 export const metadata = {
-  title: 'Luxury Car Rentals',
+  title: 'Luxury Car Rentals in Dubai',
   description:
     "Experience the thrill of driving a luxury car in Dubai with Richylife Club's premium car rental service. Choose from a fleet of exotic cars, including Bentleys, Ferraris, and Lamborghinis, and enjoy a memorable driving experience.",
   keywords: [
@@ -35,7 +35,7 @@ export const metadata = {
     'Lamborghini rentals Dubai',
   ],
   openGraph: {
-    title: 'Luxury Car Rental',
+    title: 'Luxury Car Rental in Dubai',
     description:
       "Experience the thrill of driving a luxury car in Dubai with Richylife Club's premium car rental service. Choose from a fleet of exotic cars, including Bentleys, Ferraris, and Lamborghinis, and enjoy a memorable driving experience.",
     siteName: 'Richylife Club',
