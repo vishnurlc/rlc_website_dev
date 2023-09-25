@@ -21,25 +21,26 @@ const FooterInstagram = ({ images }) => {
       {images.map((e, index) => (
         <div
           key={index}
-          className="min-w-[200px] h-auto aspect-square flex-1"
-          style={{
-            background: `url(${e})`,
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-          }}
-        ></div>
+          className="min-w-[200px] h-auto aspect-square flex-1 relative"
+          // style={{
+          //   background: `url(${e})`,
+          //   backgroundSize: 'cover',
+          //   backgroundRepeat: 'no-repeat',
+          // }}
+        >
+          <Image
+            loading="lazy"
+            fill
+            src={e}
+            alt="Instagram Images Richylife"
+            style={{
+              objectFit: 'cover',
+            }}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        </div>
         // <div className="relative" key={index}>
-        //   <Image
-        //     loading="lazy"
-        //     fill
-        //     className="min-w-[200px] h-auto aspect-square flex-1"
-        //     src={e}
-        //     alt="Instagram Images Richylife"
-        //     style={{
-        //       objectFit: 'cover',
-        //     }}
-        //     sizes="33vw"
-        //   />
+
         //   <div className="absolute inset-0 z-10 cursor-grab"></div>
         // </div>
       ))}

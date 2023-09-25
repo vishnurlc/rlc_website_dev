@@ -141,12 +141,13 @@ const Footer = () => {
                       <Image
                         src={item}
                         fill
+                        loading="lazy"
                         alt="Instagram links"
                         style={{
                           objectFit: 'cover',
                           borderRadius: '5px',
                         }}
-                        sizes="20vw"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     </div>
                   );

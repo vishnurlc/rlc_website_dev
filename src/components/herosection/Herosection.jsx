@@ -30,7 +30,7 @@ const Herosection = ({ url, type, posterurl, alt, btntext }) => {
             style={{
               objectFit: 'cover',
             }}
-            sizes="100vw"
+            izes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         )}
 

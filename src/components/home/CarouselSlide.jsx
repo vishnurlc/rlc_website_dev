@@ -14,6 +14,7 @@ const CarouselSlide = ({ url, title, price }) => {
           objectPosition: '50%',
           borderRadius: '5px',
         }}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
       <div className="absolute inset-0 z-10 flex items-start p-6 md:p-10 justify-end flex-col gap-4">
         <div className=" text-white ">

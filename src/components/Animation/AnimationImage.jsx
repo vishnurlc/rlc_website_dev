@@ -25,7 +25,7 @@ function AnimationImage({ children }) {
       initial="hidden"
       animate={controls}
       variants={variants}
-      className="h-full"
+      className="h-full relative"
       transition={{ duration: 1, ease: 'easeOut' }}
     >
       {children}
