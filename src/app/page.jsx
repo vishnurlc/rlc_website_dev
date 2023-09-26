@@ -9,7 +9,7 @@ import Aboutsection from '@/components/home/aboutsection';
 import Faq from '@/components/home/faq';
 
 export const metadata = {
-  title: 'Richylife Club',
+  title: 'Experience Luxury Like Never Before',
   description:
     'Experience ultimate luxury with Richylife Club: premium car rentals, private yacht charters, water sports, and more. Redefine luxury today!',
   keywords: [
@@ -28,7 +28,7 @@ export const metadata = {
     'private jet tours Dubai',
   ],
   openGraph: {
-    title: 'Welcome to Richylife Club - Luxury Experiences',
+    title: 'Experience Luxury Like Never Before',
     description:
       'Experience luxury like never before with Richylife Club. Explore luxury car rentals, yacht rentals, water sports, and more.',
     siteName: 'Richylife Club',

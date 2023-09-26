@@ -4,12 +4,12 @@ import {
   HeroCarousel,
   RichTextComponent,
   YachtTechnicalSpec,
-} from "@/components";
-import Amenitys from "@/components/amenitys/Amenitys";
-import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
+} from '@/components';
+import Amenitys from '@/components/amenitys/Amenitys';
+import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
 
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link';
+import React from 'react';
 
 export async function generateMetadata({ params }) {
   try {
@@ -22,18 +22,16 @@ export async function generateMetadata({ params }) {
       }
     ).then((res) => res.json());
     return {
-      title:
-        yacht.data[0].attributes.name || "Luxury Yachts for Rental In Dubai ",
+      title: yacht.data[0].attributes.name || '| Rent Exotic Yachts in Dubai',
       description:
         yacht.data[0].attributes.description ||
-        "Luxury Yachts rental with Richylife Club",
+        'Luxury Yachts rental with Richylife Club',
       openGraph: {
-        type: "website",
-        title:
-          yacht.data[0].attributes.name || "Luxury Yachts for Rental In Dubai ",
+        type: 'website',
+        title: yacht.data[0].attributes.name || '| Rent Exotic Yachts in Dubai',
         description:
           yacht.data[0].attributes.description ||
-          "Luxury Yachts rental with Richylife Club",
+          'Luxury Yachts rental with Richylife Club',
         images: [
           {
             url: `${yacht.data[0].attributes.image.data[0].attributes.url}`,
@@ -69,7 +67,7 @@ export async function getData(slug) {
 
     return data;
   } catch (error) {
-    console.log("s", error);
+    console.log('s', error);
     return {};
   }
 }
@@ -91,9 +89,9 @@ export default async function YacthDetail({ params: { slug } }) {
               </h2>
 
               <AnimatedBtn
-                styles={"rounded-sm bg-primary text-white"}
-                text={"Book Now"}
-                msg={"Hi, I would like to know about your services."}
+                styles={'rounded-sm bg-primary text-white'}
+                text={'Book Now'}
+                msg={'Hi, I would like to know about your services.'}
               />
             </div>
           </div>
@@ -111,7 +109,7 @@ export default async function YacthDetail({ params: { slug } }) {
               <RichTextComponent
                 bio={yacht.data[0].attributes.description}
                 style={
-                  "text-sm md:text-base text-justify md:text-left text-gray-500"
+                  'text-sm md:text-base text-justify md:text-left text-gray-500'
                 }
               />
             </div>
@@ -124,7 +122,7 @@ export default async function YacthDetail({ params: { slug } }) {
               <RichTextComponent
                 bio={yacht.data[0].attributes.destinations}
                 style={
-                  "text-sm md:text-base text-justify md:text-left text-gray-500"
+                  'text-sm md:text-base text-justify md:text-left text-gray-500'
                 }
               />
             </div>
@@ -159,9 +157,9 @@ export default async function YacthDetail({ params: { slug } }) {
           </div>
         </div> */}
             <ContactForm
-              title={"Sail in Luxury"}
+              title={'Sail in Luxury'}
               description={
-                "Book your journey with our luxury yacht rentals now"
+                'Book your journey with our luxury yacht rentals now'
               }
             />
           </div>
