@@ -1,7 +1,6 @@
 import RootLayout from '@/components/rootLayout/RootLayout';
 import './globals.css';
 import { Inter, Poppins, Nunito_Sans } from 'next/font/google';
-import Script from 'next/script';
 
 export const inter = Inter({
   subsets: ['latin'],
