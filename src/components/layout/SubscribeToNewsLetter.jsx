@@ -48,9 +48,9 @@ const SubscribeToNewsLetter = () => {
 
   return (
     <div className="flex text-base items-center justify-center gap-4 flex-col w-full">
-      <h4 className="text-xl text-white capitalize">
+      <h3 className="text-xl text-white capitalize">
         Subscribe to our Newsletter
-      </h4>
+      </h3>
       {submitted === 0 ? (
         <div className="w-full md:w-1/2">
           <form onSubmit={handleSubmit} className="w-full flex  py-2">

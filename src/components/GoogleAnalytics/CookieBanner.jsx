@@ -62,7 +62,7 @@ export default function CookieBanner() {
           </div>
           <div className="flex gap-2">
             <button
-              className="px-5 py-2 rounded-md text-gray-300"
+              className="px-5 py-2 rounded-md text-gray-500"
               onClick={declineCookies}
             >
               Decline

@@ -197,7 +197,7 @@ export default function Header() {
                   ? 'assets/logos/logo-dark.svg'
                   : '/assets/logos/richy-logoX.png'
               }
-              alt="Richy life Club"
+              alt="Richy life Club Logo"
               className="aspect-square h-auto w-[60px] md:w-[80px]"
             />
           </Link>
