@@ -188,7 +188,7 @@ export default function Header() {
       >
         <div className="flex ">
           <Link href="/">
-            <span className="sr-only">Richylife Club</span>
+            <span className="sr-only">Richy life Club</span>
             <Image
               width={100}
               height={100}
@@ -197,7 +197,7 @@ export default function Header() {
                   ? 'assets/logos/logo-dark.svg'
                   : '/assets/logos/richy-logoX.png'
               }
-              alt="Richylife Club"
+              alt="Richy life Club"
               className="aspect-square h-auto w-[60px] md:w-[80px]"
             />
           </Link>

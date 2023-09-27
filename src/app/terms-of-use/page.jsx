@@ -3,9 +3,9 @@ import React from 'react';
 export const metadata = {
   title: 'Terms of Use',
   description:
-    'Explore the terms and conditions for using Richylife Club services. Learn about the policies that govern your use of our luxury car rentals, private jets, yachts, and more.',
+    'Explore the terms and conditions for using Richy life Club services. Learn about the policies that govern your use of our luxury car rentals, private jets, yachts, and more.',
   keywords: [
-    'Richylife Club',
+    'Richy life Club',
     'Terms of Use',
     'Terms and Conditions',
     'Luxury Services',
@@ -18,8 +18,8 @@ export const metadata = {
   openGraph: {
     title: 'Terms of Use',
     description:
-      "Discover the terms and conditions for enjoying Richylife Club's luxury services. Explore premium car rentals, private jet charters, luxury yachts, and helicopter services.",
-    siteName: 'Richylife Club',
+      "Discover the terms and conditions for enjoying Richy life Club's luxury services. Explore premium car rentals, private jet charters, luxury yachts, and helicopter services.",
+    siteName: 'Richy life Club',
     images: [
       {
         url: `${process.env.WEB_URL}/assets/terms-of-use/bannerimg.png`,
@@ -76,8 +76,8 @@ const TermsAndConditions = () => {
             <p>
               <strong>Company</strong> (referred to as either &quot;the
               Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot;
-              in this Agreement) refers to Richylife Club , Suite A406, The Opus
-              By Omniyat, Burj Khalifa District, Business Bay, Dubai.
+              in this Agreement) refers to Richy life Club , Suite A406, The
+              Opus By Omniyat, Burj Khalifa District, Business Bay, Dubai.
             </p>
           </li>
           <li>
@@ -118,7 +118,8 @@ const TermsAndConditions = () => {
           </li>
           <li>
             <p>
-              <strong>Website</strong> refers to Richylife Club, accessible from{' '}
+              <strong>Website</strong> refers to Richy life Club, accessible
+              from{' '}
               <a href="https://richylife.ae" rel="noreferrer" target="_blank">
                 https://richylife.ae
               </a>

@@ -7,22 +7,22 @@ import AnimatedBtn from './AnimatedBtn';
 const Whyus = () => {
   return (
     <div>
-      <SectionHeading title={'Jet Ski Adventures in Dubai with Richylife'} />
+      <SectionHeading title={'Jet Ski Adventures in Dubai with Richy life'} />
       <p className="text-center text-gray-500">
         Dubai, the city of grandeur, where sky-high buildings touch the clouds
         and luxury knows no bounds. If you&apos;re planning to visit this
         awe-inspiring city, we&apos;ve got an adventure that will make your trip
         truly unforgettable – Jet Skiing on the pristine waters of the Arabian
-        Gulf. Welcome to Richylife&apos;s Jet Ski Rental Services in Dubai!
+        Gulf. Welcome to Richy life&apos;s Jet Ski Rental Services in Dubai!
       </p>
       <div className="text-gray-500 my-9">
-        <h3 className="text-2xl text-primary mb-4">Why Choose Richylife:</h3>
+        <h3 className="text-2xl text-primary mb-4">Why Choose Richy life:</h3>
         <p>
           Dubai is all about pushing the limits, and we&apos;re no different.
-          What sets Richylife apart? It&apos;s not just about renting a jet ski;
-          it&apos;s about experiencing the thrill of the open sea while being in
-          safe hands. We prioritize your safety while ensuring you have an
-          exhilarating ride.
+          What sets Richy life apart? It&apos;s not just about renting a jet
+          ski; it&apos;s about experiencing the thrill of the open sea while
+          being in safe hands. We prioritize your safety while ensuring you have
+          an exhilarating ride.
         </p>
         <div className="mt-6 flex flex-col gap-6">
           <div>
@@ -38,7 +38,7 @@ const Whyus = () => {
           </div>
           <div>
             <h4 className="font-semibold text-gray-600 text-lg">
-              Why Richylife?
+              Why Richy life?
             </h4>
 
             <ul className="pl-4">
@@ -164,7 +164,7 @@ const Whyus = () => {
             </div>
             <p>
               Dubai&apos;s breathtaking skyline takes on a new dimension when
-              you experience it from the water. Richylife&apos;s Jet Ski
+              you experience it from the water. Richy life&apos;s Jet Ski
               Adventures are designed to combine adrenaline-pumping fun with
               safety and awe-inspiring views. Whether you&apos;re a beginner or
               a seasoned rider, our jet ski tours will add an extra layer of

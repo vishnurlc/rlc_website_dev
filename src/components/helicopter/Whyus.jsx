@@ -7,19 +7,19 @@ const Whyus = () => {
     <div>
       <SectionHeading
         title={
-          'Discover Dubai from Above with Richylife&apos;s Helicopter Tours'
+          'Discover Dubai from Above with Richy life&apos;s Helicopter Tours'
         }
       />
       <p className="text-center text-gray-500">
         There&apos;s no better way to experience Dubai&apos;s grandeur and
-        beauty than from the sky, and Richylife is your gateway to these
+        beauty than from the sky, and Richy life is your gateway to these
         breathtaking aerial adventures. We offer private charter helicopter
         services that allow you to explore Dubai like never before.
       </p>
       <div className="text-gray-500 my-9">
         <h3 className="text-2xl text-primary mb-4">What Makes Us Special:</h3>
         <p>
-          At Richylife, we understand that your journey should be as unique as
+          At Richy life, we understand that your journey should be as unique as
           you are. Our private charter helicopter services provide you with the
           opportunity to explore Dubai at your own pace, in your own style.
           Here&apos;s why you should choose us:
@@ -104,15 +104,15 @@ const Whyus = () => {
               Booking and Cancellation:
             </h4>
             <p className="text-base">
-              Booking with Richylife is flexible and hassle-free. You can choose
-              to arrange pickup and drop-off from your hotel or residence. Our
-              cancellation policy is designed to accommodate your needs, with
-              charges applicable only for last-minute cancellations.
+              Booking with Richy life is flexible and hassle-free. You can
+              choose to arrange pickup and drop-off from your hotel or
+              residence. Our cancellation policy is designed to accommodate your
+              needs, with charges applicable only for last-minute cancellations.
               <br />
               <br />
               Don&apos;t miss the opportunity to see Dubai from a whole new
               perspective. Whether you&apos;re a visitor or a resident, our
-              helicopter tours offer an unparalleled experience. Let Richylife
+              helicopter tours offer an unparalleled experience. Let Richy life
               be your guide to discovering Dubai&apos;s splendor from the skies.
               Contact us today to plan your aerial adventure.
             </p>

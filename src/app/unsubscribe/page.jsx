@@ -56,7 +56,7 @@ const UnsubscribePage = () => {
         }}
       >
         <h1 className="text-xl mb-6">
-          <span className="text-red-500">Unsubscribe</span> from Richylife Club
+          <span className="text-red-500">Unsubscribe</span> from Richy life Club
           Newsletter
         </h1>
         <div>

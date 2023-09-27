@@ -25,7 +25,7 @@ const PetExperience = ({ data }) => {
       <div className="absolute inset-0 ">
         <Image
           src="/assets/petpage/bg.png"
-          alt="exotic vip pet services"
+          alt="Exotic vip pet services Dubai UAE"
           fill
           style={{
             objectFit: 'cover',

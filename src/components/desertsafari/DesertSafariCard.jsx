@@ -38,7 +38,7 @@ const DesertSafariCard = ({ item }) => {
       <div className="relative w-full h-full min-h-[250px]">
         <Image
           src={item.attributes.image.data[0].attributes.url}
-          alt="Yamaha Golden Jetski "
+          alt="Premium Desert Safari Packages | Richy life Club "
           fill
           style={{
             objectFit: 'cover',

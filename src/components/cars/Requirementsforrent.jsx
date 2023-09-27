@@ -4,7 +4,7 @@ import { SectionHeading } from '..';
 const Requirementsforrent = () => {
   return (
     <div>
-      <SectionHeading title={'Richylife Club Luxury Car Rentals in Dubai'} />
+      <SectionHeading title={'Richy life Club Luxury Car Rentals in Dubai'} />
       <p className="text-center text-gray-500">
         Welcome to the pinnacle of luxury and style with RichyLife Club&apos;s
         exclusive luxury car rental services in Dubai. Whether you&apos;re in

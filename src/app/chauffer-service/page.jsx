@@ -26,7 +26,7 @@ export const metadata = {
     title: 'Luxury Chauffeur Service in Dubai',
     description:
       'Book a luxury chauffeur service in Dubai for your airport transfers, half and full day car rentals, full Dubai tours, or events pickup and drop',
-    siteName: 'Richylife Club',
+    siteName: 'Richy life Club',
     images: [
       {
         url: `${process.env.WEB_URL}/assets/chauffer/hero.png`,

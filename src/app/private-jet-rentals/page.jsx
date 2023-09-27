@@ -14,7 +14,7 @@ import React from 'react';
 export const metadata = {
   title: 'Private Jet Charters in Dubai',
   description:
-    'Experience unparalleled luxury and comfort with private jet rentals in Dubai. Explore our fleet of exclusive jets for personalized travel and jet charters with Richylife Club.',
+    'Experience unparalleled luxury and comfort with private jet rentals in Dubai. Explore our fleet of exclusive jets for personalized travel and jet charters with Richy life Club.',
   keywords: [
     'Private Jet Rentals Dubai',
     'Luxury Jet Charters',
@@ -39,8 +39,8 @@ export const metadata = {
   openGraph: {
     title: 'Private Jet Charters in Dubai',
     description:
-      'Experience the thrill of riding premium jetskis in Dubai&apos;s crystal-clear waters. Book your exclusive jetski adventure with Richylife Club and enjoy adrenaline-pumping watersports.',
-    siteName: 'Richylife Club',
+      'Experience the thrill of riding premium jetskis in Dubai&apos;s crystal-clear waters. Book your exclusive jetski adventure with Richy life Club and enjoy adrenaline-pumping watersports.',
+    siteName: 'Richy life Club',
     images: [
       {
         url: `${process.env.WEB_URL}/assets/privatejet/bannerimg.png`,
@@ -83,7 +83,7 @@ export default async function PrivateJet() {
   const jets = await getData();
   return (
     <main>
-      <h1 className="sr-only ">Private Jet Rentals - Richylife Club</h1>
+      <h1 className="sr-only ">Private Jet Rentals - Richy life Club</h1>
       <HeroSection2
         type={'video'}
         heading1={'Private Jets'}
@@ -125,7 +125,7 @@ export default async function PrivateJet() {
             <h2 className="text-center text-primary text-xl">
               No Private Jets available.{' '}
               <Link
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=I would like to know more about Richylife Club Private Jet Rentals?`}
+                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=I would like to know more about Richy life Club Private Jet Rentals?`}
               >
                 Contact us
               </Link>

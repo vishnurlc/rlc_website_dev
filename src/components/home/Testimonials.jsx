@@ -23,7 +23,7 @@ const data = [
   {
     image: '/assets/home/testimonials/4.jpeg',
     comment:
-      'Renting a car from Richylife was a breeze. Luxury at its finest! Highly recommended.',
+      'Renting a car from Richy life was a breeze. Luxury at its finest! Highly recommended.',
     name: '- Happy Customer',
   },
 ];

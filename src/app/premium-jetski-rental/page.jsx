@@ -28,7 +28,7 @@ const locations = [
 export const metadata = {
   title: 'Premium Jetski Rental in Dubai',
   description:
-    'Experience the thrill of riding premium jetskis in Dubai&apos;s crystal-clear waters. Book your exclusive jetski adventure with Richylife Club and enjoy adrenaline-pumping watersports.',
+    'Experience the thrill of riding premium jetskis in Dubai&apos;s crystal-clear waters. Book your exclusive jetski adventure with Richy life Club and enjoy adrenaline-pumping watersports.',
   keywords: [
     'Premium Jetski Rental Dubai',
     'Luxury Jetski Hire',
@@ -46,8 +46,8 @@ export const metadata = {
   openGraph: {
     title: 'Premium Jetski Rental in Dubai',
     description:
-      'Experience the thrill of riding premium jetskis in Dubai&apos;s crystal-clear waters. Book your exclusive jetski adventure with Richylife Club and enjoy adrenaline-pumping watersports.',
-    siteName: 'Richylife Club',
+      'Experience the thrill of riding premium jetskis in Dubai&apos;s crystal-clear waters. Book your exclusive jetski adventure with Richy life Club and enjoy adrenaline-pumping watersports.',
+    siteName: 'Richy life Club',
     images: [
       {
         url: `${process.env.WEB_URL}/assets/jetskipage/jetskibanner.png`,
@@ -105,7 +105,7 @@ export default async function JetSkiPage() {
               <Image
                 src="/assets/jetskipage/jetskisample.jpg"
                 fill
-                alt="Premium jet ski"
+                alt="Premium jet ski Rental Adrenaline Boost | Richy life Club"
                 style={{
                   objectFit: 'cover',
                   borderRadius: '8px',
@@ -139,7 +139,7 @@ export default async function JetSkiPage() {
                 <div className="relative  w-full aspect-[357/406]" key={index}>
                   <Image
                     src={item.attributes.image.data[0].attributes.url}
-                    alt={item.attributes.name}
+                    alt={`${item.attributes.name} rental | Richy life Club`}
                     fill
                     style={{
                       objectFit: 'cover',
@@ -193,7 +193,7 @@ export default async function JetSkiPage() {
             <div className="relative w-full h-full min-h-[250px]">
               <Image
                 src={'/assets/premiumgoldjetski/goldenjetski.png'}
-                alt="Yamaha Golden Jetski "
+                alt="Golden Jetski Rental |Richy life Club UAE "
                 fill
                 style={{
                   objectFit: 'cover',
@@ -212,7 +212,7 @@ export default async function JetSkiPage() {
                 <div className="relative  w-full aspect-[357/406]" key={index}>
                   <Image
                     src={item.url}
-                    alt={item.location}
+                    alt={`Jetski rentatl at ${item.location} | Richy life club UAE`}
                     fill
                     style={{
                       objectFit: 'cover',

@@ -6,10 +6,10 @@ const Whyus = () => {
   return (
     <div>
       <SectionHeading
-        title={'Discover the Magic of Exotic Pets with Richylife'}
+        title={'Discover the Magic of Exotic Pets with Richy life'}
       />
       <p className="text-center text-gray-500">
-        Welcome to Richylife, where we&apos;re all about extraordinary
+        Welcome to Richy life, where we&apos;re all about extraordinary
         experiences, even if that means making new furry, feathery, or scaly
         friends! Our Exotic Pet Encounters are all about bringing you
         face-to-face with some of the world&apos;s most incredible creatures.

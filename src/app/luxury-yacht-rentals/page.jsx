@@ -11,7 +11,7 @@ import React from 'react';
 export const metadata = {
   title: 'Luxury Yacht Rental in Dubai | 100+ Luxury Yachts Options',
   description:
-    "Immerse yourself in luxury and style with Richylife Club's ultimate yacht rental experience in Dubai. Explore our fleet of exclusive yachts for unforgettable charters and sea adventures",
+    "Immerse yourself in luxury and style with Richy life Club's ultimate yacht rental experience in Dubai. Explore our fleet of exclusive yachts for unforgettable charters and sea adventures",
   keywords: [
     'Luxury Yacht Rental Dubai',
     'Exclusive Yacht Charters',
@@ -34,8 +34,8 @@ export const metadata = {
   openGraph: {
     title: 'Luxury Yacht Rental in Dubai | 100+ Luxury Yachts Options',
     description:
-      "Immerse yourself in luxury and style with Richylife Club's ultimate yacht rental experience in Dubai. Explore our fleet of exclusive yachts for unforgettable charters and sea adventures",
-    siteName: 'Richylife Club',
+      "Immerse yourself in luxury and style with Richy life Club's ultimate yacht rental experience in Dubai. Explore our fleet of exclusive yachts for unforgettable charters and sea adventures",
+    siteName: 'Richy life Club',
     images: [
       {
         url: `${process.env.WEB_URL}/assets/privateyachts/opengraphimage.png`,
@@ -78,7 +78,7 @@ export default async function page() {
   const yachts = await getData();
   return (
     <main>
-      <h1 className="sr-only ">Luxury Yacht Rentals - Richylife Club</h1>
+      <h1 className="sr-only ">Luxury Yacht Rentals - Richy life Club</h1>
       <HeroSection2
         type={'image'}
         heading1={'Luxury Yacht'}

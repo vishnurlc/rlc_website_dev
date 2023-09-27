@@ -5,7 +5,7 @@ import React from 'react';
 export const metadata = {
   title: 'Helicopter Rentals Dubai',
   description:
-    "Experience Dubai from a new perspective with Richylife Club's luxury helicopter rental. Enjoy VIP helicopter tours over Dubai&apos;s iconic landmarks and breathtaking views.",
+    "Experience Dubai from a new perspective with Richy life Club's luxury helicopter rental. Enjoy VIP helicopter tours over Dubai&apos;s iconic landmarks and breathtaking views.",
   keywords: [
     'Helicopter Rental Dubai',
     'VIP Helicopter Tours',
@@ -25,14 +25,14 @@ export const metadata = {
     'Explore Dubai from Above',
     'Helicopter Ride Dubai',
     'VIP Sky Tours',
-    'Richylife Club',
+    'Richy life Club',
     'Dubai UAE',
   ],
   openGraph: {
     title: 'Luxury Helicopter Rental Dubai',
     description:
-      "Experience Dubai from a new perspective with Richylife Club's luxury helicopter rental. Enjoy VIP helicopter tours over Dubai&apos;s iconic landmarks and breathtaking views.",
-    siteName: 'Richylife Club',
+      "Experience Dubai from a new perspective with Richy life Club's luxury helicopter rental. Enjoy VIP helicopter tours over Dubai&apos;s iconic landmarks and breathtaking views.",
+    siteName: 'Richy life Club',
     images: [
       {
         url: `${process.env.WEB_URL}/assets/helicopter/banner.png`,

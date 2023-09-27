@@ -4,7 +4,7 @@ import { SectionHeading } from '..';
 const Whyus = () => {
   return (
     <div>
-      <SectionHeading title={'Richylife Club Luxury Yacht Charters'} />
+      <SectionHeading title={'Richy life Club Luxury Yacht Charters'} />
       <p className="text-center text-gray-500">
         Our fleet of luxury yachts is as diverse as our clientele. From the
         intimate 48-footers to the majestic 101-footers, we&apos;ve got yachts
@@ -14,7 +14,7 @@ const Whyus = () => {
         vessels; they are gateways to opulence on the waters of Dubai.
       </p>
       <div className="text-gray-500 my-9">
-        <h3 className="text-2xl text-primary">Why choose Richylife Club? </h3>
+        <h3 className="text-2xl text-primary">Why choose Richy life Club? </h3>
 
         <div className="mt-6 flex flex-col gap-6">
           <div>
@@ -79,13 +79,13 @@ const Whyus = () => {
               Discover Dubai&apos;s Iconic Landmarks
             </h4>
             <p className="text-base">
-              When you sail with Richylife Club, you get to witness Dubai&apos;s
-              most iconic landmarks up close. Our carefully planned routes take
-              you past breathtaking sights such as the Palm Jumeirah, Jumeirah
-              Beach Residence, the Palm Lagoon, Atlantis Hotel, Burj Al Arab,
-              and the newly opened Dubai Water Canal. It&apos;s a sightseeing
-              experience like no other, and it&apos;s all from the comfort of
-              your luxury yacht.
+              When you sail with Richy life Club, you get to witness
+              Dubai&apos;s most iconic landmarks up close. Our carefully planned
+              routes take you past breathtaking sights such as the Palm
+              Jumeirah, Jumeirah Beach Residence, the Palm Lagoon, Atlantis
+              Hotel, Burj Al Arab, and the newly opened Dubai Water Canal.
+              It&apos;s a sightseeing experience like no other, and it&apos;s
+              all from the comfort of your luxury yacht.
             </p>
           </div>
           <div>
@@ -109,7 +109,7 @@ const Whyus = () => {
               Luxury Within Reach
             </h4>
             <p className="text-base">
-              Don&apos;t assume luxury comes with a hefty price tag. Richylife
+              Don&apos;t assume luxury comes with a hefty price tag. Richy life
               Club offers competitive pricing for luxury yacht rentals in Dubai.
               We believe that opulent experiences should be accessible to all.
               You can indulge in a world-class yachting adventure without
@@ -151,7 +151,7 @@ const Whyus = () => {
               Your Maritime Dreams Await
             </h4>
             <p className="text-base">
-              We invite you to dive into unparalleled luxury with Richylife
+              We invite you to dive into unparalleled luxury with Richy life
               Club. Book your yacht adventure today and set sail on a journey
               filled with opulence, adventure, and relaxation. Dubai&apos;s
               breathtaking coastline beckons, and we&apos;re here to make your
@@ -163,7 +163,7 @@ const Whyus = () => {
               Explore Exclusive Destinations with Us
             </h4>
             <p className="text-base">
-              At Richylife Club, we don&apos;t just offer yacht rentals; we
+              At Richy life Club, we don&apos;t just offer yacht rentals; we
               provide you with the keys to exclusive experiences. Our customized
               trips take you beyond the ordinary, introducing you to some of the
               most breathtaking destinations in the UAE. Whether you dream of
@@ -180,8 +180,8 @@ const Whyus = () => {
             <p className="text-base">
               Moon Island is a hidden gem in the UAE&apos;s crown of natural
               wonders. This pristine island, with its untouched beaches and
-              crystal-clear waters, offers a secluded oasis like no other.
-              Richylife Club can take you on a voyage to Moon Island, where
+              crystal-clear waters, offers a secluded oasis like no other. Richy
+              life Club can take you on a voyage to Moon Island, where
               you&apos;ll have the chance to explore its untouched beauty. Swim
               in the azure waters, bask in the sun on the pristine shores, and
               experience the serenity of this secret paradise.
@@ -194,9 +194,9 @@ const Whyus = () => {
             <p className="text-base">
               Abu Dhabi, the capital of the UAE, is a city of opulence and
               cultural richness. We offer you the opportunity to discover Abu
-              Dhabi in true Richylife style. Sail from Dubai to Abu Dhabi aboard
-              our luxury yachts, enjoying the scenic coastal views along the
-              way. Explore the city&apos;s iconic landmarks, including the
+              Dhabi in true Richy life style. Sail from Dubai to Abu Dhabi
+              aboard our luxury yachts, enjoying the scenic coastal views along
+              the way. Explore the city&apos;s iconic landmarks, including the
               Sheikh Zayed Grand Mosque, the Louvre Abu Dhabi, and the stunning
               Corniche. Immerse yourself in the culture, cuisine, and splendor
               of this remarkable city.
@@ -207,7 +207,7 @@ const Whyus = () => {
               Exclusive Fishing Services
             </h4>
             <p className="text-base">
-              For the avid angler or the curious novice, Richylife Club offers
+              For the avid angler or the curious novice, Richy life Club offers
               an unforgettable deep-sea fishing experience in Dubai. Our
               seasoned fishermen and state-of-the-art equipment ensure an
               adventure filled with excitement. Cast your line into the deep
@@ -226,7 +226,7 @@ const Whyus = () => {
               Our commitment to excellence extends to every aspect of your
               journey. From planning your customized trip to providing expert
               fishing guidance, we ensure that every detail is taken care of.
-              When you embark on a Richylife adventure, you can trust that
+              When you embark on a Richy life adventure, you can trust that
               you&apos;re in the hands of professionals dedicated to delivering
               the best.
             </p>
@@ -236,7 +236,7 @@ const Whyus = () => {
               Your Exclusive Voyage Awaits
             </h4>
             <p className="text-base">
-              We invite you to elevate your travels with Richylife Club. Beyond
+              We invite you to elevate your travels with Richy life Club. Beyond
               our luxury yachts, we open the door to extraordinary destinations
               and exhilarating fishing experiences. Whether you seek tranquility
               on Moon Island, the grandeur of Abu Dhabi, or the thrill of

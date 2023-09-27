@@ -4,9 +4,9 @@ import React from 'react';
 export const metadata = {
   title: 'Contact Us',
   description:
-    'Get in touch with Richylife Club for unforgettable luxury experiences in Dubai. Contact us for inquiries, reservations, and more."',
+    'Get in touch with Richy life Club for unforgettable luxury experiences in Dubai. Contact us for inquiries, reservations, and more."',
   keywords: [
-    'Contact Richylife Club',
+    'Contact Richy life Club',
     'Luxury Experiences Dubai',
     'Get in Touch',
     'Inquiries',
@@ -24,13 +24,13 @@ export const metadata = {
     'Dubai Holidays',
     'VIP Support',
     'Contact Us Form',
-    'Richylife Club',
+    'Richy life Club',
   ],
   openGraph: {
     title: 'Contact Us',
     description:
-      'Get in touch with Richylife Club for unforgettable luxury experiences in Dubai. Contact us for inquiries, reservations, and more."',
-    siteName: 'Richylife Club',
+      'Get in touch with Richy life Club for unforgettable luxury experiences in Dubai. Contact us for inquiries, reservations, and more."',
+    siteName: 'Richy life Club',
     images: [
       {
         url: `${process.env.WEB_URL}/assets/home/heroposter.webp`,
@@ -51,7 +51,7 @@ export const metadata = {
 const page = () => {
   return (
     <main>
-      <h1 className="sr-only">Contact Us - Richylife Club</h1>
+      <h1 className="sr-only">Contact Us - Richy life Club</h1>
       <HeroSection
         posterurl={'/assets/chauffer/hero.png'}
         type={''}

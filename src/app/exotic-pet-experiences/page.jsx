@@ -10,7 +10,7 @@ import React from 'react';
 export const metadata = {
   title: 'Private Zoo Visit in Dubai',
   description:
-    "Embark on a unique adventure with Richylife Club's Exotic Pet Experience in Dubai. See, touch, and play with exclusive animals up close in a private zoo setting.",
+    "Embark on a unique adventure with Richy life Club's Exotic Pet Experience in Dubai. See, touch, and play with exclusive animals up close in a private zoo setting.",
   keywords: [
     'Exotic Pet Experience',
     'Private Zoo Visit Dubai',
@@ -30,14 +30,14 @@ export const metadata = {
     'Exotic Animal Interaction',
     'Book Private Zoo',
     'Dubai UAE',
-    'Richylife Club',
+    'Richy life Club',
   ],
 
   openGraph: {
     title: 'Private Zoo Visit in Dubai',
     description:
-      "Embark on a unique adventure with Richylife Club's Exotic Pet Experience in Dubai. See, touch, and play with exclusive animals up close in a private zoo setting.",
-    siteName: 'Richylife Club',
+      "Embark on a unique adventure with Richy life Club's Exotic Pet Experience in Dubai. See, touch, and play with exclusive animals up close in a private zoo setting.",
+    siteName: 'Richy life Club',
     images: [
       {
         url: `${process.env.WEB_URL}/assets/petpage/vippetbanner.png`,

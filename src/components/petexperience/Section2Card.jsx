@@ -8,7 +8,7 @@ const Section2Card = ({ data, hovered, setHovered }) => {
       <div className="relative" onMouseOver={() => setHovered(data.id)}>
         <Image
           src={data.img}
-          alt="Animal Name"
+          alt="Exotic Pet Encounters in Dubai"
           width={800}
           height={422}
           style={{

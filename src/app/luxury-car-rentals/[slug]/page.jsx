@@ -27,14 +27,14 @@ export async function generateMetadata({ params }) {
         car.data[0].attributes.name || '| Rent Exotic & Super Cars in Dubai',
       description:
         car.data[0].attributes.description ||
-        'Luxury Cars rental with Richylife Club',
+        'Luxury Cars rental with Richy life Club',
       openGraph: {
         type: 'website',
         title:
           car.data[0].attributes.name || '| Rent Exotic & Super Cars in Dubai',
         description:
           car.data[0].attributes.description ||
-          'Luxury Cars rental with Richylife Club',
+          'Luxury Cars rental with Richy life Club',
         images: [
           {
             url: `${car.data[0].attributes.image.data[0].attributes.url}`,

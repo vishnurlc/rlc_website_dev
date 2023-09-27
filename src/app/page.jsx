@@ -11,7 +11,7 @@ import Faq from '@/components/home/faq';
 export const metadata = {
   title: 'Experience Luxury Like Never Before',
   description:
-    'Experience ultimate luxury with Richylife Club: premium car rentals, private yacht charters, water sports, and more. Redefine luxury today!',
+    'Experience ultimate luxury with Richy life Club: premium car rentals, private yacht charters, water sports, and more. Redefine luxury today!',
   keywords: [
     'Luxury Experiences Dubai',
     'Luxury Car Rentals dubai',
@@ -30,8 +30,8 @@ export const metadata = {
   openGraph: {
     title: 'Experience Luxury Like Never Before',
     description:
-      'Experience luxury like never before with Richylife Club. Explore luxury car rentals, yacht rentals, water sports, and more.',
-    siteName: 'Richylife Club',
+      'Experience luxury like never before with Richy life Club. Explore luxury car rentals, yacht rentals, water sports, and more.',
+    siteName: 'Richy life Club',
     images: [
       {
         url: `${process.env.WEB_URL}/assets/home/opengraphimage.png`,
@@ -53,7 +53,7 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       <h1 className="sr-only">
-        Welcome to Richylife Club - Experience Luxury in Dubai
+        Welcome to Richy life Club - Experience Luxury in Dubai
       </h1>
       <HeroSection
         posterurl={'/assets/home/heroposter1.webp'}

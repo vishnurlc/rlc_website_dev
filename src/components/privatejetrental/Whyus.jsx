@@ -6,10 +6,10 @@ const Whyus = () => {
   return (
     <div>
       <SectionHeading
-        title={'Your Ultimate UAE Private Jet Experience with Richylife Club'}
+        title={'Your Ultimate UAE Private Jet Experience with Richy life Club'}
       />
       <p className="text-center text-gray-500">
-        Welcome to Richylife Club, where your journey begins with a touch of
+        Welcome to Richy life Club, where your journey begins with a touch of
         luxury. We&apos;re not just about renting jets; we&apos;re here to give
         you an experience you&apos;ll remember.
       </p>
@@ -17,7 +17,7 @@ const Whyus = () => {
         <div className="mt-6 flex flex-col gap-6">
           <div>
             <h3 className="text-2xl text-primary mb-4">
-              Why Choose Richylife Club for Your UAE Adventure:
+              Why Choose Richy life Club for Your UAE Adventure:
             </h3>
 
             <ul className="pl-4">
@@ -79,7 +79,7 @@ const Whyus = () => {
               Get Ready for the UAE Experience:
             </h4>
             <p className="text-base">
-              Richylife Club isn&apos;t just about renting a jet; it&apos;s
+              Richy life Club isn&apos;t just about renting a jet; it&apos;s
               about giving you a taste of the UAE&apos;s opulence.
               <Link
                 href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}

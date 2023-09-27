@@ -32,7 +32,7 @@ const Herosection2 = ({
           <Image
             src={url}
             fill
-            alt="Hero Section Image"
+            alt="Richy life Club UAE"
             style={{
               objectFit: 'cover',
               objectPosition: 'center',

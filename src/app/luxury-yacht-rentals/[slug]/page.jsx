@@ -25,13 +25,13 @@ export async function generateMetadata({ params }) {
       title: yacht.data[0].attributes.name || '| Rent Exotic Yachts in Dubai',
       description:
         yacht.data[0].attributes.description ||
-        'Luxury Yachts rental with Richylife Club',
+        'Luxury Yachts rental with Richy life Club',
       openGraph: {
         type: 'website',
         title: yacht.data[0].attributes.name || '| Rent Exotic Yachts in Dubai',
         description:
           yacht.data[0].attributes.description ||
-          'Luxury Yachts rental with Richylife Club',
+          'Luxury Yachts rental with Richy life Club',
         images: [
           {
             url: `${yacht.data[0].attributes.image.data[0].attributes.url}`,

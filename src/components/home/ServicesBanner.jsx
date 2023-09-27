@@ -75,7 +75,7 @@ const ServicesBanner = () => {
                     '/assets/home/bannerservicebg1.webp'
                   }
                   fill
-                  alt="Banner Service Bg"
+                  alt="Richy life Club Services Background "
                   style={{
                     objectFit: 'cover',
                   }}
@@ -126,7 +126,7 @@ const ServicesBanner = () => {
                         src={item.attributes.image.data.attributes.url}
                         width={427}
                         height={464}
-                        alt={item.title || 'Service Banner'}
+                        alt={item.title || 'Service Banner image'}
                         style={{
                           objectFit: 'cover',
                           display: 'block',

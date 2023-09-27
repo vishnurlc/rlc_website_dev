@@ -25,7 +25,7 @@ const Herosection = ({ url, type, posterurl, alt, btntext }) => {
           <Image
             src={url}
             fill
-            alt={alt || 'Hero Section Image'}
+            alt={alt || 'Richy life Club UAE'}
             priority
             style={{
               objectFit: 'cover',

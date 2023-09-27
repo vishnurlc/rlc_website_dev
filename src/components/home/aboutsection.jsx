@@ -45,7 +45,7 @@ function Aboutsection() {
               src="/assets/home/bugattitop.webp"
               fill
               priority
-              alt="car"
+              alt="Blue Bugatti Top View "
               style={{
                 objectFit: 'contain',
                 borderRadius: '5px',

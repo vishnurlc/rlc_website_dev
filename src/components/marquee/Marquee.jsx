@@ -23,7 +23,7 @@ const Marqueesection = ({ make, handleFilters, scrollIntoView }) => {
               key={index}
               fill
               src={e.attributes.logo.data.attributes.url}
-              alt={`Car Logo ${index}`}
+              alt={`Richy life Club Car Brands -  ${index}`}
               className=" mr-10 w-52 object-contain"
             />
           </div>

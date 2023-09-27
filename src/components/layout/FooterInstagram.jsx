@@ -32,7 +32,7 @@ const FooterInstagram = ({ images }) => {
             loading="lazy"
             fill
             src={e}
-            alt="Instagram Images Richylife"
+            alt="Instagram Images Richy life"
             style={{
               objectFit: 'cover',
             }}

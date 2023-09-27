@@ -12,7 +12,7 @@ import React, { Suspense } from 'react';
 export const metadata = {
   title: 'Luxury Car Rentals in Dubai | 200+ Luxury Cars',
   description:
-    "Experience the thrill of driving a luxury car in Dubai with Richylife Club's premium car rental service. Choose from a fleet of exotic cars, including Bentleys, Ferraris, and Lamborghinis, and enjoy a memorable driving experience.",
+    "Experience the thrill of driving a luxury car in Dubai with Richy life Club's premium car rental service. Choose from a fleet of exotic cars, including Bentleys, Ferraris, and Lamborghinis, and enjoy a memorable driving experience.",
   keywords: [
     'Luxury Car Rental Dubai',
     'Exotic Car Hire',
@@ -35,10 +35,10 @@ export const metadata = {
     'Lamborghini rentals Dubai',
   ],
   openGraph: {
-    title: 'Luxury Car Rental in Dubai | 200+ Luxury Cars',
+    title: 'Luxury Car Rental | Rent Exotic & Super Cars in Dubai',
     description:
-      "Experience the thrill of driving a luxury car in Dubai with Richylife Club's premium car rental service. Choose from a fleet of exotic cars, including Bentleys, Ferraris, and Lamborghinis, and enjoy a memorable driving experience.",
-    siteName: 'Richylife Club',
+      "Experience the thrill of driving a luxury car in Dubai with Richy life Club's premium car rental service. Choose from a fleet of exotic cars, including Bentleys, Ferraris, and Lamborghinis, and enjoy a memorable driving experience.",
+    siteName: 'Richy life Club',
     images: [
       {
         url: `${process.env.WEB_URL}/assets/rentacar/opengraphimage.png`,
@@ -82,7 +82,7 @@ export default async function page() {
 
   return (
     <main>
-      <h1 className="sr-only">Luxury Car Rentals - Richylife Club</h1>
+      <h1 className="sr-only">Luxury Car Rentals - Richy life Club</h1>
       <HeroSection2
         type={'image'}
         heading1={'Luxury Car'}

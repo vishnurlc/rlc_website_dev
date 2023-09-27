@@ -58,7 +58,7 @@ function Card({ variant, data }) {
         <div className="col-span-3 relative w-full aspect-[2/1] min-h-[220px] ">
           <Image
             src={data.attributes.image.data[0].attributes.url}
-            alt={data.attributes.name}
+            alt={`Rent ${data.attributes.name} with Richy life Club`}
             fill
             style={{
               objectFit: 'cover',

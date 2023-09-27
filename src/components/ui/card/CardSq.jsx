@@ -32,7 +32,7 @@ function CardSq({ data }) {
 
         <AnimatedBtn
           text={'Book Now'}
-          msg={`I would like to book ${data.title} from Richylife Club`}
+          msg={`I would like to book ${data.title} from Richy life Club`}
           styles={'mt-2 px-2 py-1 bg-primary text-gold rounded-sm'}
         />
       </div>

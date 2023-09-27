@@ -5,9 +5,9 @@ import React from 'react';
 export const metadata = {
   title: 'About Us',
   description:
-    'Discover unforgettable luxury experiences in Dubai with Richylife Club. Contact us for inquiries, reservations, and more.',
+    'Discover unforgettable luxury experiences in Dubai with Richy life Club. Contact us for inquiries, reservations, and more.',
   keywords: [
-    'Richylife Club',
+    'Richy life Club',
     'Luxury Experiences Dubai',
     'Contact Information',
     'Inquiries',
@@ -23,14 +23,14 @@ export const metadata = {
   openGraph: {
     title: 'About Us',
     description:
-      'Discover unforgettable luxury experiences in Dubai with Richylife Club. Contact us for inquiries, reservations, and more.',
-    siteName: 'Richylife Club',
+      'Discover unforgettable luxury experiences in Dubai with Richy life Club. Contact us for inquiries, reservations, and more.',
+    siteName: 'Richy life Club',
     images: [
       {
         url: `${process.env.WEB_URL}/`,
         width: 800,
         height: 600,
-        alt: 'Richylife Club Luxury Experiences in Dubai',
+        alt: 'Richy life Club Luxury Experiences in Dubai',
       },
     ],
     locale: 'en_US',
@@ -41,7 +41,7 @@ export const metadata = {
 const page = () => {
   return (
     <div>
-      <h1 className="sr-only">About Richylife Club</h1>
+      <h1 className="sr-only">About Richy life Club</h1>
       <HeroSection
         posterurl={'/assets/home/heroposter1.webp'}
         type={'video'}
@@ -56,28 +56,29 @@ const page = () => {
               About Us
             </h3>
             <p className="text-gray-500 my-6 ">
-              Welcome to Richylife Club, where the pursuit of luxury travel and
+              Welcome to Richy life Club, where the pursuit of luxury travel and
               life&apos;s finest indulgences converges with a vibrant community
               of like-minded individuals. Our mission is to redefine the way you
               experience the world, curating extraordinary journeys that
               encompass elegance, exclusivity, and meaningful connections.
             </p>
             <p className="text-gray-500 my-6 ">
-              At Richylife Club, we go beyond the ordinary, curating exceptional
-              experiences that epitomize the art of luxury travel. Our team of
-              experts scours the globe to handpick the most exquisite hotels,
-              resorts, dining establishments, and activities, ensuring that each
-              recommendation is a testament to unparalleled quality. We pride
-              ourselves on providing our members with exclusive access to hidden
-              gems, from secluded villas to behind-the-scenes encounters,
-              transforming your travels into remarkable stories of opulence and
-              adventure. But Richylife Club is more than just a showcase of
-              lavishness; it&apos;s a community where friendships flourish and
-              memories are created. Through curated group trips, themed events,
-              and an online platform designed for interaction, we foster
-              connections that transcend borders and cultures. Join us in
-              embracing a life where luxury knows no bounds and where every
-              journey becomes a celebration of the finer things in life.
+              At Richy life Club, we go beyond the ordinary, curating
+              exceptional experiences that epitomize the art of luxury travel.
+              Our team of experts scours the globe to handpick the most
+              exquisite hotels, resorts, dining establishments, and activities,
+              ensuring that each recommendation is a testament to unparalleled
+              quality. We pride ourselves on providing our members with
+              exclusive access to hidden gems, from secluded villas to
+              behind-the-scenes encounters, transforming your travels into
+              remarkable stories of opulence and adventure. But Richy life Club
+              is more than just a showcase of lavishness; it&apos;s a community
+              where friendships flourish and memories are created. Through
+              curated group trips, themed events, and an online platform
+              designed for interaction, we foster connections that transcend
+              borders and cultures. Join us in embracing a life where luxury
+              knows no bounds and where every journey becomes a celebration of
+              the finer things in life.
             </p>
           </div>
         </div>
@@ -86,7 +87,7 @@ const page = () => {
             <Image
               src="/assets/footer/6.webp"
               fill
-              alt="Premium jet ski"
+              alt="Luxury Car rentals Dubai Richy life Club"
               style={{
                 objectFit: 'cover',
                 borderRadius: '8px',
@@ -117,7 +118,7 @@ const page = () => {
               Our Mission
             </h3>
             <p className="text-gray-500 my-6 ">
-              At Richylife Club, our mission is to curate and cultivate a
+              At Richy life Club, our mission is to curate and cultivate a
               world-class community of individuals who are passionate about
               luxury travel and the finer things in life. Through meticulous
               curation, exclusive access, and heartfelt connections, we are
@@ -134,7 +135,7 @@ const page = () => {
             <Image
               src="/assets/footer/8.webp"
               fill
-              alt="Premium jet ski"
+              alt="Rich People Partying in Yachts Richy life Club"
               style={{
                 objectFit: 'cover',
                 borderRadius: '8px',

@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Premium Gold Jetski Rental in Dubai ',
-  description: `Experience the ultimate luxury with premium gold jetski rentals in Dubai. Enjoy the thrill of riding high-performance watercrafts and explore Dubai&apos;s waters in style with Richylife Club.`,
+  description: `Experience the ultimate luxury with premium gold jetski rentals in Dubai. Enjoy the thrill of riding high-performance watercrafts and explore Dubai&apos;s waters in style with Richy life Club.`,
   keywords: [
     'Premium Gold Jetski Rental Dubai',
     'Exclusive Jetski Experiences',
@@ -21,13 +21,13 @@ export const metadata = {
     'Luxury Jetskiing',
     'Jetski Rental Packages',
     'Dubai Watersports',
-    'Richylife Club',
+    'Richy life Club',
   ],
   openGraph: {
     title: 'Premium Gold Jetski Rental in Dubai',
-    description: `Experience the ultimate luxury with premium gold jetski rentals in Dubai. Enjoy the thrill of riding high-performance watercrafts and explore Dubai&apos;s waters in style with Richylife Club.`,
+    description: `Experience the ultimate luxury with premium gold jetski rentals in Dubai. Enjoy the thrill of riding high-performance watercrafts and explore Dubai&apos;s waters in style with Richy life Club.`,
 
-    siteName: 'Richylife Club',
+    siteName: 'Richy life Club',
     images: [
       {
         url: `${process.env.WEB_URL}/assets/premiumgoldjetski/goldenjetski.png`,
@@ -97,7 +97,7 @@ const page = () => {
             <div className="relative w-full h-full min-h-[200px]">
               <Image
                 src={'/assets/premiumgoldjetski/goldenjetski.png'}
-                alt="Yamaha Golden Jetski "
+                alt="Yamaha Golden Jetski Rental Dubai"
                 fill
                 style={{
                   objectFit: 'cover',

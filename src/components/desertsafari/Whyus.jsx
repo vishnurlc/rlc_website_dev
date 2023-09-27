@@ -7,11 +7,11 @@ const Whyus = () => {
     <div>
       <SectionHeading
         title={
-          'Richylife Club&apos;s VIP Desert Safari: Dive into Luxury and Adventure'
+          'Richy life Club&apos;s VIP Desert Safari: Dive into Luxury and Adventure'
         }
       />
       <p className="text-center text-gray-500">
-        At Richylife Club, we&apos;re all about crafting unforgettable
+        At Richy life Club, we&apos;re all about crafting unforgettable
         adventures with a touch of luxury. Our VIP Desert Safari in Dubai is
         your gateway to an experience like no other.
       </p>
@@ -19,7 +19,7 @@ const Whyus = () => {
         <div className="mt-6 flex flex-col gap-6">
           <div>
             <h3 className="text-2xl text-primary mb-4">
-              Why Choose Richylife Club&apos;s VIP Desert Safari:
+              Why Choose Richy life Club&apos;s VIP Desert Safari:
             </h3>
 
             <ul className="pl-4">
@@ -137,7 +137,7 @@ const Whyus = () => {
               height, please book a private vehicle and provide their details
               during booking.
               <br />
-              Richylife Club&apos;s VIP Desert Safari is your key to an
+              Richy life Club&apos;s VIP Desert Safari is your key to an
               unparalleled Dubai adventure. Book now and prepare for an
               unforgettable journey!
             </p>
@@ -170,9 +170,9 @@ const Whyus = () => {
             </ul>
           </div>
           <p>
-            Embark on the adventure of a lifetime with Richylife Club&apos;s VIP
-            Desert Safari. Book today and create memories that will stay with
-            you forever!
+            Embark on the adventure of a lifetime with Richy life Club&apos;s
+            VIP Desert Safari. Book today and create memories that will stay
+            with you forever!
           </p>
         </div>
       </div>

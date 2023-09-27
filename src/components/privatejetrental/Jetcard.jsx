@@ -13,7 +13,7 @@ const Jetcard = ({ data }) => {
       <div className="max-w-[1152px] mx-auto relative rounded-md overflow-hidden">
         <Image
           src={data.url}
-          alt={data.title}
+          alt={`${data.title} charters - Private Jet Charters | Richy life Club`}
           width={1152}
           height={550}
           style={{

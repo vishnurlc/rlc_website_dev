@@ -76,7 +76,7 @@ export const metadata = {
     title: 'Premium Desert Safari in Dubai',
     description:
       'Experience the magic of the Dubai desert on a thrilling desert safari. Enjoy dune bashing, camel riding, and sandboarding, and savor a delicious barbecue dinner under the stars.',
-    siteName: 'Richylife Club',
+    siteName: 'Richy life Club',
     images: [
       {
         url: `${process.env.WEB_URL}/assets/footer/1.webp`,
@@ -115,7 +115,7 @@ export default async function page() {
               <Image
                 src="/assets/footer/5.webp"
                 fill
-                alt="Premium jet ski"
+                alt="Dune bashing Dubai | Adventures with Richy life Club"
                 style={{
                   objectFit: 'cover',
                   borderRadius: '8px',

@@ -5,18 +5,18 @@ import Link from 'next/link';
 const Whyus = () => {
   return (
     <div>
-      <SectionHeading title={`Richylife's Luxury Chauffeur Service`} />
+      <SectionHeading title={`Richy life's Luxury Chauffeur Service`} />
       <p className="text-center text-gray-500">
-        Explore Dubai in unmatched luxury with Richylife&apos;s chauffeur-driven
-        cars. Our professional chauffeurs ensure a stress-free journey as you
-        discover the city&apos;s iconic sights, dine at world-class restaurants,
-        and indulge in opulence at every turn.
+        Explore Dubai in unmatched luxury with Richy life&apos;s
+        chauffeur-driven cars. Our professional chauffeurs ensure a stress-free
+        journey as you discover the city&apos;s iconic sights, dine at
+        world-class restaurants, and indulge in opulence at every turn.
       </p>
       <div className="text-gray-500 my-9">
         <p>
           When you visit the epitome of opulence, there&apos;s no better way to
           explore Dubai than by hiring a luxury car with a professional
-          chauffeur from Richylife. In a city known for its extravagance,
+          chauffeur from Richy life. In a city known for its extravagance,
           experiencing the iconic sights from the back seat of a prestigious
           vehicle adds an extra layer of luxury to your trip. Our professional
           chauffeurs provide exceptional service, following your chosen
@@ -129,10 +129,10 @@ const Whyus = () => {
           </div>
           <div>
             <h4 className="font-semibold text-gray-600 text-lg">
-              Experience Luxury with Richylife
+              Experience Luxury with Richy life
             </h4>
             <p className="text-base">
-              Richylife offers one of the most extensive fleets of prestigious
+              Richy life offers one of the most extensive fleets of prestigious
               cars available for hire in Dubai. Our curated collection includes
               coveted models, limited editions, and prestige vehicles that allow
               you to experience the city of opulence in the finest surroundings.

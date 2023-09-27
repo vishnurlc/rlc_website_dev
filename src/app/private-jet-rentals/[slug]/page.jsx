@@ -18,7 +18,7 @@ export async function generateMetadata({ params }) {
       title: jet.data[0].attributes.name || 'Private Jet for Rental In Dubai ',
       description:
         jet.data[0].attributes.description ||
-        'Private Jet rental with Richylife Club',
+        'Private Jet rental with Richy life Club',
 
       openGraph: {
         type: 'website',
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }) {
           jet.data[0].attributes.name || 'Private Jet for Rental In Dubai ',
         description:
           jet.data[0].attributes.description ||
-          'Private Jet rental with Richylife Club',
+          'Private Jet rental with Richy life Club',
         images: [
           {
             url: `${jet.data[0].attributes.image.data[0].attributes.url}`,

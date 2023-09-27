@@ -49,7 +49,7 @@ const RootLayout = ({ children }) => {
               <BsTelephoneFill color="#DCA24B" className="w-full h-full" />
             </Link>
             <Link
-              href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=I would like to know more about Richylife Club Services in UAE?`}
+              href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=I would like to know more about Richy life Club Services in UAE?`}
               className="backdrop-blur-md p-2 block rounded-full w-[48px] h-[48px] hover:scale-110 transition-all"
             >
               <IoLogoWhatsapp color="#25d366" className="w-full h-full" />

@@ -5,7 +5,7 @@ export const metadata = {
   description:
     'Do you have questions ? No worries! all the question related to dubai, luxury auto rentals , yachts, parties, luxury lifestyles are answered here.',
   keywords: [
-    'Richylife Club',
+    'Richy life Club',
     'Luxury Experiences Dubai',
     'Contact Information',
     'Inquiries',
@@ -22,13 +22,13 @@ export const metadata = {
     title: 'Frequently Asked Questions',
     description:
       'Do you have questions ? No worries! all the question related to dubai, luxury auto rentals , yachts, parties, luxury lifestyles are answered here.',
-    siteName: 'Richylife Club',
+    siteName: 'Richy life Club',
     images: [
       {
         url: `${process.env.WEB_URL}/`,
         width: 800,
         height: 600,
-        alt: 'Richylife Club Luxury Experiences in Dubai',
+        alt: 'Richy life Club Luxury Experiences in Dubai',
       },
     ],
     locale: 'en_US',
