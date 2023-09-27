@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '../button/Button';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { BsPeople, BsCarFrontFill, BsFillFuelPumpFill } from 'react-icons/bs';

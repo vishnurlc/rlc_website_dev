@@ -6,7 +6,6 @@ import {
   YachtListing,
 } from '@/components';
 import Faq from '@/components/home/faq';
-import React from 'react';
 
 export const metadata = {
   title: 'Luxury Yacht Rental in Dubai | 100+ Luxury Yachts Options',

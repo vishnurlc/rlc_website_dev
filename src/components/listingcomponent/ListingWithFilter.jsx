@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Loader, PaginationComponent, SectionHeading } from '..';
 import Card from '../ui/card/card';
 import { useRouter, useSearchParams } from 'next/navigation';

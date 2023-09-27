@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+
 import AnimatedBtn from '../premiumjetski/AnimatedBtn';
 import Image from 'next/image';
 import { useCurrency } from '@/context/currencyContext';

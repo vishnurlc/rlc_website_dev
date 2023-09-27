@@ -1,6 +1,6 @@
 'use client';
 import { sendEmail } from '@/lib/emailSend';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BsWhatsapp } from 'react-icons/bs';
 import { Button } from '../ui/button/Button';
 

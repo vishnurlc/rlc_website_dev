@@ -1,4 +1,3 @@
-import React from 'react';
 import { SectionHeading } from '..';
 import Link from 'next/link';
 

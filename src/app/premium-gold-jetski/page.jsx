@@ -1,6 +1,6 @@
 import { ContactForm, HeroSection2, SectionHeading } from '@/components';
 import Image from 'next/image';
-import React from 'react';
+
 import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
 import Link from 'next/link';
 

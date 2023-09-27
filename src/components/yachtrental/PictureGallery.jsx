@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './yacht.module.scss'; // Update the import path
 import Image from 'next/image';
 

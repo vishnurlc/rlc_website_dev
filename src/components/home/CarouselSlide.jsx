@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react';
+
 import { Button } from '../ui/button/Button';
 
 const CarouselSlide = ({ url, title, price }) => {

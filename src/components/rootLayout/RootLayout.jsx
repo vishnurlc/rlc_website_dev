@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { CookieBanner, Header } from '@/components';
 import Footer from '@/components/layout/Footer';
 import { BsTelephoneFill } from 'react-icons/bs';

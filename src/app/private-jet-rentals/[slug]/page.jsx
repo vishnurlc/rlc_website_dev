@@ -2,7 +2,7 @@ import { ContactForm, HeroCarousel } from '@/components';
 import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 
 export async function generateMetadata({ params }) {
   try {

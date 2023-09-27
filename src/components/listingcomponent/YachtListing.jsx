@@ -1,4 +1,3 @@
-import React from 'react';
 import { SectionHeading } from '..';
 import Card from '../ui/card/card';
 const ListingComponent = ({ variant, data }) => {

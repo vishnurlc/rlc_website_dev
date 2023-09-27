@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import FaqAccordation from '../ui/accordation/accordation';
 import { Loader } from '..';
 

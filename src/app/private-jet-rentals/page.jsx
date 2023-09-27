@@ -9,7 +9,6 @@ import Faq from '@/components/home/faq';
 
 import Jetcard from '@/components/privatejetrental/Jetcard';
 import Link from 'next/link';
-import React from 'react';
 
 export const metadata = {
   title: 'Private Jet Charters in Dubai',

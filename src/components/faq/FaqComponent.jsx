@@ -1,7 +1,7 @@
 'use client';
 import { FilterBtn, Loader } from '@/components';
 import FaqAccordation from '@/components/ui/accordation/accordation';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 async function getData({ value }) {
   try {

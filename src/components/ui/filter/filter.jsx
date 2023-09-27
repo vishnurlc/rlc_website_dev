@@ -1,10 +1,10 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { TbArrowsSort } from "react-icons/tb";
-import { BiChevronDown } from "react-icons/bi";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
+'use client';
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { TbArrowsSort } from 'react-icons/tb';
+import { BiChevronDown } from 'react-icons/bi';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 function Filter() {
   const [bodyTypeOpen, setBodyTypeOpen] = useState(false);
@@ -30,7 +30,7 @@ function Filter() {
 
   useEffect(() => {
     if (window) {
-      window.history.pushState({}, "", "?" + "key=filter");
+      window.history.pushState({}, '', '?' + 'key=filter');
     }
   }, [filter]);
 
@@ -39,7 +39,7 @@ function Filter() {
       <div className="flex md:justify-end gap-5 min-w-[150px] overflow-x-scroll overflow-y-visible hide-scrollbar">
         <div
           className={`${
-            bodyTypeOpen ? "bg-teal-900 bg-opacity-10 text-white" : ""
+            bodyTypeOpen ? 'bg-teal-900 bg-opacity-10 text-white' : ''
           } border border-teal-900  px-5 py-2 rounded-3xl cursor-pointer min-w-[150px] relative`}
           onClick={toggleBodyTypeDropdown}
         >
@@ -51,16 +51,16 @@ function Filter() {
               {bodyTypeOpen && (
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
+                  animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
                   className="w-52 border px-5 py-2 inline-flex items-center gap-3 bg-teal-900 bg-opacity-10 min-w-[150px] text-black"
                 >
                   {/* Dropdown content here */}
                   <ul>
-                    <li onClick={() => handleClick("home1")}>home</li>
-                    <li onClick={() => handleClick("home")}>home</li>
+                    <li onClick={() => handleClick('home1')}>home</li>
+                    <li onClick={() => handleClick('home')}>home</li>
                     <li>
-                      <Link href={"/luxury-car-rentals?link"} shallow={true}>
+                      <Link href={'/luxury-car-rentals?link'} shallow={true}>
                         LInk
                       </Link>
                     </li>
@@ -75,7 +75,7 @@ function Filter() {
 
         <div
           className={`${
-            priceOpen ? "bg-teal-900 bg-opacity-10 text-white" : ""
+            priceOpen ? 'bg-teal-900 bg-opacity-10 text-white' : ''
           } border border-teal-900  px-5 py-2 rounded-3xl cursor-pointer relative`}
           onClick={togglePriceDropdown}
         >
@@ -87,7 +87,7 @@ function Filter() {
               {priceOpen && (
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
+                  animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
                   className="w-52 border px-5 py-2 inline-flex items-center gap-3 bg-teal-900 bg-opacity-10 text-black"
                 >

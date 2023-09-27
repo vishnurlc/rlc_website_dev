@@ -6,7 +6,6 @@ import {
 } from '@/components';
 import Faq from '@/components/home/faq';
 import CardSq from '@/components/ui/card/CardSq';
-import React from 'react';
 
 export const metadata = {
   title: 'Luxury Chauffeur Service in Dubai',

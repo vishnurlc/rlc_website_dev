@@ -1,5 +1,3 @@
-import React from 'react';
-
 const SectionHeading = ({ title, description, title_color }) => {
   return (
     <div className="text-center max-w-[600px] mx-auto">

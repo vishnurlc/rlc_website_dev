@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react';
+
 import AboutCounter from './AboutCounter';
 import AnimationImage from '../Animation/AnimationImage';
 

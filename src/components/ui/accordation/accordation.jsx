@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import FaqCard from './faqcard';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';

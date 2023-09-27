@@ -1,4 +1,3 @@
-import React from 'react';
 import AsyncSelect from 'react-select/async';
 import { components } from 'react-select';
 import { BsSearch } from 'react-icons/bs';

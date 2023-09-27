@@ -7,7 +7,7 @@ import {
   Requirementforrent,
 } from '@/components';
 import Faq from '@/components/home/faq';
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 
 export const metadata = {
   title: 'Luxury Car Rentals in Dubai | 200+ Luxury Cars',

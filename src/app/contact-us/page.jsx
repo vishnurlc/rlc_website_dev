@@ -1,5 +1,4 @@
 import { ContactForm, HeroSection } from '@/components';
-import React from 'react';
 
 export const metadata = {
   title: 'Contact Us',

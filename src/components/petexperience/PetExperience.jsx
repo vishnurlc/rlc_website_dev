@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react';
+
 import { SectionHeading } from '..';
 import Section2 from './Section2';
 import { Button } from '../ui/button/Button';

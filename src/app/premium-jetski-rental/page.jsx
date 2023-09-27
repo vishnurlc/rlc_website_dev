@@ -5,7 +5,6 @@ import LocationCard from '@/components/premiumjetski/LocationCard';
 import { Button } from '@/components/ui/button/Button';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 
 const locations = [
   {

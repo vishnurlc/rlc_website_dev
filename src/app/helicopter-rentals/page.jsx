@@ -1,6 +1,5 @@
 import { ContactForm, HeroSection2, Whyushelicopter } from '@/components';
 import Faq from '@/components/home/faq';
-import React from 'react';
 
 export const metadata = {
   title: 'Helicopter Rentals Dubai',

@@ -1,4 +1,3 @@
-import React from 'react';
 import { SectionHeading } from '..';
 import Image from 'next/image';
 import FooterInstagram from './FooterInstagram';

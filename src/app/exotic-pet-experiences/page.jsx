@@ -5,7 +5,6 @@ import {
   WhyusPet,
 } from '@/components';
 import Faq from '@/components/home/faq';
-import React from 'react';
 
 export const metadata = {
   title: 'Private Zoo Visit in Dubai',

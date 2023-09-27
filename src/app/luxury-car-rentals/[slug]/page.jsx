@@ -10,7 +10,6 @@ import { Button } from '@/components/ui/button/Button';
 import Image from 'next/image';
 import Link from 'next/link';
 import qs from 'qs';
-import React from 'react';
 
 export async function generateMetadata({ params }) {
   try {

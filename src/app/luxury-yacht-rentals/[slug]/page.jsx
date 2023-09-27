@@ -9,7 +9,6 @@ import Amenitys from '@/components/amenitys/Amenitys';
 import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
 
 import Link from 'next/link';
-import React from 'react';
 
 export async function generateMetadata({ params }) {
   try {

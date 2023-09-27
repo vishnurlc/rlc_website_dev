@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 const BioComponent = ({ bio, style, pl }) => {
   return (

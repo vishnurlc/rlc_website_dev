@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+
 import { Button } from '../ui/button/Button';
 import { motion } from 'framer-motion';
 import AnimatedBtn from '../premiumjetski/AnimatedBtn';

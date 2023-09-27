@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import React from 'react';
+
 import { AnimatePresence, motion } from 'framer-motion';
 const Section2Card = ({ data, hovered, setHovered }) => {
   return (

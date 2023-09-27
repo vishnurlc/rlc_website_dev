@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+
 import { FiLoader } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 const Loader = ({ color }) => {

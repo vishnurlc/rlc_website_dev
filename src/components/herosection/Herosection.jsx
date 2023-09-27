@@ -1,9 +1,7 @@
 'use client';
-import React from 'react';
-import { Button } from '../ui/button/Button';
+
 import Image from 'next/image';
 import AnimatedBtn from '../premiumjetski/AnimatedBtn';
-import Link from 'next/link';
 
 const Herosection = ({ url, type, posterurl, alt, btntext }) => {
   return (

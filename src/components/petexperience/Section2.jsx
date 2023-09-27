@@ -1,6 +1,6 @@
-"use client";
-import React, { useState } from "react";
-import Section2Card from "./Section2Card";
+'use client';
+import { useState } from 'react';
+import Section2Card from './Section2Card';
 
 const Section2 = ({ data }) => {
   const [hovered, setHovered] = useState(0);
@@ -14,9 +14,9 @@ const Section2 = ({ data }) => {
             data={{
               id: index,
               img: item.attributes.image.data.attributes.url,
-              title: "",
-              description: "",
-              buttontext: "Book an appointment",
+              title: '',
+              description: '',
+              buttontext: 'Book an appointment',
             }}
             hovered={hovered}
             setHovered={setHovered}

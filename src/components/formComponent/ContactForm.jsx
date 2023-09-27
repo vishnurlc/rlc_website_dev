@@ -1,4 +1,4 @@
-import React from 'react';
+
 import FormComponent from './FormComponent';
 import SeactionHeading from '../SectionHeading/SectionHeading';
 

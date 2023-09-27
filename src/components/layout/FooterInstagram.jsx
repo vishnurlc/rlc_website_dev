@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import React, { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 const FooterInstagram = ({ images }) => {
   const containerRef = useRef(null);

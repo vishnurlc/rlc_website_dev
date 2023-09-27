@@ -1,7 +1,7 @@
 'use client';
 import { useCurrency } from '@/context/currencyContext';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
 
 const currencies = [
