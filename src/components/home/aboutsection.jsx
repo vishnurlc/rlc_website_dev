@@ -44,7 +44,7 @@ function Aboutsection() {
             <Image
               src="/assets/home/bugattitop.webp"
               fill
-              priority
+              loading="lazy"
               alt="Blue Bugatti Top View "
               style={{
                 objectFit: 'contain',
