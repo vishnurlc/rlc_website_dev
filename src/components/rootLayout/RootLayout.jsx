@@ -1,5 +1,4 @@
 'use client';
-import { useEffect } from 'react';
 import { CookieBanner, Header } from '@/components';
 import Footer from '@/components/layout/Footer';
 import { BsTelephoneFill } from 'react-icons/bs';
@@ -36,7 +35,6 @@ const RootLayout = ({ children }) => {
    })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTAG_ID}');
         `}
       </Script>
-
       <body>
         <CurrencyProvider>
           <Header />
