@@ -1,13 +1,14 @@
-import {
-  ContactForm,
-  HeroSection,
-  OurServices,
-  ServiceBanner,
-  Testimonials,
-} from '@/components';
-import Aboutsection from '@/components/home/aboutsection';
-import Faq from '@/components/home/faq';
-
+import dynamic from 'next/dynamic';
+import { HeroSection, OurServices } from '@/components';
+const Aboutsection = dynamic(() => import('../components/home/aboutsection'));
+const ServiceBanner = dynamic(() =>
+  import('../components/home/ServicesBanner')
+);
+const Faq = dynamic(() => import('../components/home/faq'));
+const Testimonials = dynamic(() => import('../components/home/Testimonials'));
+const ContactForm = dynamic(() =>
+  import('../components/formComponent/ContactForm')
+);
 export const metadata = {
   title: 'Experience Luxury Like Never Before',
   description:
