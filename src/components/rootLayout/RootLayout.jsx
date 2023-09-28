@@ -10,7 +10,7 @@ import Script from 'next/script';
 const RootLayout = ({ children }) => {
   return (
     <>
-      <Script id="gtm-manager-init">
+      <Script id="gtm-manager-init" strategy="afterInteractive">
         {`
   window.dataLayer = window.dataLayer || [];
   function gtag(params) {
