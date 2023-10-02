@@ -99,7 +99,7 @@ const YachtTechnicalSpec = ({ yacht }) => {
             </span>
           </motion.li>
         )}
-        <motion.li
+        {/* <motion.li
           variants={itemVariant}
           className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] "
         >
@@ -107,7 +107,7 @@ const YachtTechnicalSpec = ({ yacht }) => {
           <span className="text-[#8a97a4]">
             {yacht.data[0].attributes.technicalspec.make_year}
           </span>
-        </motion.li>
+        </motion.li> */}
         <motion.li
           variants={itemVariant}
           className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] "

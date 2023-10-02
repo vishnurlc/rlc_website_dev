@@ -244,11 +244,11 @@ function YachtDetail({ data }) {
           </div>
         </div>
 
-        <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
+        {/* <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
           <div className="text-primary flex items-center gap-2 text-sm md:text-base font-medium leading-tight">
             <LiaToolsSolid /> {data.attributes.technicalspec.make_year}
           </div>
-        </div>
+        </div> */}
         <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
           <div className="text-primary text-sm md:text-base font-medium flex items-center gap-2 leading-tight">
             <LiaRulerCombinedSolid /> {data.attributes.technicalspec.length}
