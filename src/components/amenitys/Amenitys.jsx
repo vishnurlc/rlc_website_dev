@@ -13,7 +13,11 @@ import {
   FaConciergeBell,
   FaTemperatureHigh,
 } from 'react-icons/fa';
-
+import { BiSolidSpeaker, BiSolidFridge } from 'react-icons/bi';
+import { BsProjectorFill } from 'react-icons/bs';
+import { TbGps } from 'react-icons/tb';
+import { MdBathroom } from 'react-icons/md';
+import { GiLifeJacket, GiTowel } from 'react-icons/gi';
 function Amenitys({ data }) {
   const amenitiesIcons = {
     'wi-fi': <FaWifi size={24} key="wifi" />,
@@ -27,6 +31,13 @@ function Amenitys({ data }) {
     entertainment: <FaMusic size={24} key="music" />,
     heating: <FaTemperatureHigh size={24} key="temp" />,
     'room-service': <FaConciergeBell size={24} key="con" />,
+    speaker: <BiSolidSpeaker size={24} key="speaker" />,
+    projector: <BsProjectorFill size={24} key={'projector'} />,
+    gps: <TbGps size={24} key={'gps'} />,
+    bathroom: <MdBathroom size={24} key="bathroom" />,
+    refrigerator: <BiSolidFridge size={24} key={'fridge'} />,
+    lifejacket: <GiLifeJacket size={24} key="lifejacket" />,
+    towel: <GiTowel size={24} key={'towel'} />,
   };
   return (
     <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-7 justify-items-center">
