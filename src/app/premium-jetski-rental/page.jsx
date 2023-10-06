@@ -109,6 +109,7 @@ export default async function JetSkiPage() {
                   objectFit: 'cover',
                   borderRadius: '8px',
                 }}
+                sizes="(max-width: 1200px) 50vw , 100vw "
               />
             </div>
             <div className=" flex flex-col items-start justify-center">

@@ -52,8 +52,11 @@ const SubscribeToNewsLetter = () => {
         Subscribe to our Newsletter
       </h3>
       {submitted === 0 ? (
-        <div className="w-full md:w-1/2">
-          <form onSubmit={handleSubmit} className="w-full flex  py-2">
+        <div className="w-full md:w-1/2 px-4 ">
+          <form
+            onSubmit={handleSubmit}
+            className="w-full flex py-2 flex-col md:flex-row gap-4"
+          >
             <input
               type="email"
               id="email"
@@ -65,7 +68,7 @@ const SubscribeToNewsLetter = () => {
               className="bg-transparent py-2 text-white pl-2 flex-1 border-b border-white outline-none"
             />
             <button
-              className="bg-primary text-white ml-4 rounded-sm text-sm px-6 py-2"
+              className="bg-primary text-white rounded-sm text-sm px-6 py-2"
               type="submit"
             >
               Subscribe
