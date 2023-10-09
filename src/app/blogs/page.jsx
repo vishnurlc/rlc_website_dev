@@ -73,17 +73,29 @@ export default async function Blogs() {
         <h1 className="text-gold text-4xl md:text-[64px] leading-tight font-poppins font-bold text-center">
           News & <span className="text-primary">Blogs</span>
         </h1>
-        <LatestNewsCarousel blogs={blogs} />
-        <div className="mt-10">
-          <h2 className="uppercase text-xl md:text-3xl ">You may also like</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 gap-7">
-            {blogs.data
-              .filter((blog) => !blog.attributes.latest)
-              .map((item, index) => (
-                <NewsCard blog={item} key={index} />
-              ))}
+        {blogs.data.length > 0 ? (
+          <>
+            <LatestNewsCarousel blogs={blogs} />
+            <div className="mt-10">
+              <h2 className="uppercase text-xl md:text-3xl ">
+                You may also like
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 gap-7">
+                {blogs.data
+                  .filter((blog) => !blog.attributes.latest)
+                  .map((item, index) => (
+                    <NewsCard blog={item} key={index} />
+                  ))}
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="min-h-[50vh] flex items-center justify-center">
+            <h2 className="text-center text-2xl md:text-3xl text-primary">
+              There is no blogs at the moments. Stay tuned !
+            </h2>
           </div>
-        </div>
+        )}
       </div>
       <div className="my-9 md:my-16 px-6 ">
         <ContactForm
