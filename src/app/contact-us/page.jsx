@@ -32,12 +32,12 @@ export const metadata = {
     siteName: 'Richy life Club',
     images: [
       {
-        url: `${process.env.WEB_URL}/assets/home/heroposter.webp`,
+        url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/home/heroposter.webp`,
         width: 800,
         height: 600,
       },
       {
-        url: `${process.env.WEB_URL}/assets/home/heroposter.webp`,
+        url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/home/heroposter.webp`,
         width: 300,
         height: 200,
       },

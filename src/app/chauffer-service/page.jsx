@@ -27,12 +27,12 @@ export const metadata = {
     siteName: 'Richy life Club',
     images: [
       {
-        url: `${process.env.WEB_URL}/assets/chauffer/hero.png`,
+        url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/chauffer/hero.png`,
         width: 800,
         height: 600,
       },
       {
-        url: `${process.env.WEB_URL}/assets/chauffer/hero.png`,
+        url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/chauffer/hero.png`,
         width: 300,
         height: 200,
       },

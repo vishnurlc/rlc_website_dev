@@ -25,7 +25,7 @@ export const metadata = {
     siteName: 'Richy life Club',
     images: [
       {
-        url: `${process.env.WEB_URL}/`,
+        url: `${process.env.NEXT_PUBLIC_WEB_URL}/`,
         width: 800,
         height: 600,
         alt: 'Richy life Club Luxury Experiences in Dubai',
