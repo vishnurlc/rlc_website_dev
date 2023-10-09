@@ -52,3 +52,4 @@ export { default as FilterBtn } from './ui/faqfilter/FilterBtn';
 export { default as LatestNewsCarousel } from './blogs/LatestNewsCarousel';
 export { default as NewsCard } from './blogs/NewsCard';
 export { default as DescriptionComponent } from './blogs/DescriptionComponent';
+export { default as LatestNewsComponent } from './blogs/LatestNewsComponent';

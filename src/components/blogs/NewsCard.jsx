@@ -24,11 +24,11 @@ const NewsCard = ({ blog }) => {
             borderRadius: '4px',
           }}
         />
-        <div className="py-4">
-          <span className="text-xl md:text-3xl font-inter">
+        <div className="py-4 font-sans">
+          <span className="text-xl md:text-3xl">
             {blog.attributes.heading}&nbsp;
           </span>
-          <span className="text-sm text-gray-500">
+          <span className="text-base text-gray-600">
             {blog.attributes.subheading}
           </span>
           <p className="mt-5 text-sm font-thin text-gray-500">

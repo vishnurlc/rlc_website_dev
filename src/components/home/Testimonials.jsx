@@ -60,7 +60,7 @@ const Testimonials = () => {
             key={`${index}_content`}
           >
             <p className="text-sm">{item.comment}</p>
-            <spa className="font-medium">{item.name}</spa>
+            <span className="font-medium">{item.name}</span>
           </div>
         </div>
       ))}

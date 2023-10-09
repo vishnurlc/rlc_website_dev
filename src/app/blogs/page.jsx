@@ -1,4 +1,4 @@
-import { LatestNewsCarousel, NewsCard } from '@/components';
+import { ContactForm, LatestNewsCarousel, NewsCard } from '@/components';
 export const metadata = {
   title: 'News & Blogs',
   description:
@@ -80,10 +80,16 @@ export default async function Blogs() {
             {blogs.data
               .filter((blog) => !blog.attributes.latest)
               .map((item, index) => (
-                <NewsCard blog={item} />
+                <NewsCard blog={item} key={index} />
               ))}
           </div>
         </div>
+      </div>
+      <div className="my-9 md:my-16 px-6 ">
+        <ContactForm
+          title={'Get in Touch with Us'}
+          description={'Experience Elegance & Convenience'}
+        />
       </div>
     </div>
   );
