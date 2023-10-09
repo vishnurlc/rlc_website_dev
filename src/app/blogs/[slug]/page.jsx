@@ -69,7 +69,6 @@ export async function getData() {
 export default async function BlogDetail({ params: { slug } }) {
   const blogs = await getData();
   const blog = blogs.data.filter((item) => item.attributes.slug === slug);
-  console.log(blog);
   return (
     <div>
       {blog.length > 0 ? (
