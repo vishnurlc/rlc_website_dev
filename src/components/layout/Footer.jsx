@@ -53,7 +53,7 @@ const Footer = () => {
         link: '/contact-us',
       },
       {
-        title: 'Blogs',
+        title: 'News & Events',
         link: '/blogs',
       },
       {

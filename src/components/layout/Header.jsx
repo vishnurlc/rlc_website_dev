@@ -120,6 +120,10 @@ const links = [
         name: 'Rent A Car',
         href: '/luxury-car-rentals',
       },
+      {
+        name: 'News & Events',
+        href: '/blogs',
+      },
     ],
   },
   {
