@@ -29,7 +29,7 @@ export const metadata = {
     'private jet tours Dubai',
   ],
   openGraph: {
-    title: 'Experience Luxury Like Never Before',
+    title: 'Experience Luxury Like Never Before with Richy life Club',
     description:
       'Experience luxury like never before with Richy life Club. Explore luxury car rentals, yacht rentals, water sports, and more.',
     siteName: 'Richy life Club',
