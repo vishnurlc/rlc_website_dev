@@ -186,3 +186,19 @@ export default async function BlogDetail({ params: { slug } }) {
     </div>
   );
 }
+
+export const generateStaticParams = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/blogs`, {
+    next: {
+      revalidate: 40,
+    },
+    headers: {
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
+    },
+  });
+
+  const data = await res.json();
+  return data.data.map((blog) => ({
+    slug: blog.attributes.slug,
+  }));
+};
