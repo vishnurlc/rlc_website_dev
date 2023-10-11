@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const NewsCard = ({ blog }) => {
   return (
-    <Link href={blog.attributes.slug}>
+    <Link href={`/blogs/${blog.attributes.slug}`}>
       <div
         style={{
           boxShadow: 'rgba(33, 35, 38, 0.1) 0px 10px 10px -10px',
