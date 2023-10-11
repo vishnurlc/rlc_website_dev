@@ -34,36 +34,43 @@ const LatestNewsComponent = ({ currentvalue }) => {
     fetchData();
   }, []);
   return (
-    <div className="mt-6 flex flex-col gap-8">
-      {data.length > 0 ? (
-        data.map((blog, index) => (
-          <Link href={`/blogs/${blog.attributes['slug']}`} key={index}>
-            <motion.div
-              whileHover={{
-                scale: 1.05,
-              }}
-              style={{
-                padding: '12px 16px',
-                borderRadius: '8px',
-                boxShadow:
-                  'rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px',
-              }}
-            >
-              <h4>{blog.attributes.heading}</h4>
-              <p className="text-sm text-gray-500 mt-2">
-                {blog.attributes.subheading}{' '}
-              </p>
-              <br />
-              <p className="text-sm text-gray-500">
-                {formatDate(blog.attributes.date)}
-              </p>
-            </motion.div>
-          </Link>
-        ))
-      ) : (
-        <Loader color={'gray'} />
+    <>
+      {data.length > 1 && (
+        <>
+          <h3 className="text-2xl font-medium text-primary">The Latest</h3>
+          <div className="mt-6 flex flex-col gap-8">
+            {data.length > 0 ? (
+              data.map((blog, index) => (
+                <Link href={`/blogs/${blog.attributes['slug']}`} key={index}>
+                  <motion.div
+                    whileHover={{
+                      scale: 1.05,
+                    }}
+                    style={{
+                      padding: '12px 16px',
+                      borderRadius: '8px',
+                      boxShadow:
+                        'rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px',
+                    }}
+                  >
+                    <h4>{blog.attributes.heading}</h4>
+                    <p className="text-sm text-gray-500 mt-2">
+                      {blog.attributes.subheading}{' '}
+                    </p>
+                    <br />
+                    <p className="text-sm text-gray-500">
+                      {formatDate(blog.attributes.date)}
+                    </p>
+                  </motion.div>
+                </Link>
+              ))
+            ) : (
+              <Loader color={'gray'} />
+            )}
+          </div>
+        </>
       )}
-    </div>
+    </>
   );
 };
 

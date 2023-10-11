@@ -76,18 +76,21 @@ export default async function Blogs() {
         {blogs.data.length > 0 ? (
           <>
             <LatestNewsCarousel blogs={blogs} />
-            <div className="mt-10">
-              <h2 className="uppercase text-xl md:text-3xl ">
-                You may also like
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 gap-7">
-                {blogs.data
-                  .filter((blog) => !blog.attributes.latest)
-                  .map((item, index) => (
-                    <NewsCard blog={item} key={index} />
-                  ))}
+            {blogs.data.filter((blog) => !blog.attributes.latest).length >
+              0 && (
+              <div className="mt-10">
+                <h2 className="uppercase text-xl md:text-3xl ">
+                  You may also like
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 gap-7">
+                  {blogs.data
+                    .filter((blog) => !blog.attributes.latest)
+                    .map((item, index) => (
+                      <NewsCard blog={item} key={index} />
+                    ))}
+                </div>
               </div>
-            </div>
+            )}
           </>
         ) : (
           <div className="min-h-[50vh] flex items-center justify-center">
