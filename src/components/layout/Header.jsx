@@ -66,7 +66,7 @@ const links = [
   },
   {
     name: 'Helicopter Rentals',
-    href: '/helicopter-rentals',
+    link: '/helicopter-rentals',
   },
   // {
   //   name: 'Exclusive Water Sports',
@@ -97,25 +97,14 @@ const links = [
         href: '/chauffeur-service',
       },
       {
-        name: 'Premium Jetski',
-        href: '/premium-jetski-rental',
-      },
-      {
-        name: 'Premium Gold Jetski',
-        href: '/premium-gold-jetski',
-      },
-      {
         name: 'Premium Desert Adventure',
         href: '/premium-desert-adventure',
-      },
-      {
-        name: 'Helicopter Rentals',
-        href: '/helicopter-rentals',
       },
       {
         name: 'Private Jet Charter',
         href: '/private-jet-rentals',
       },
+
       {
         name: 'Luxury Yacht Rentals',
         href: '/luxury-yacht-rentals',
@@ -123,6 +112,14 @@ const links = [
       {
         name: 'Rent A Car',
         href: '/luxury-car-rentals',
+      },
+      {
+        name: 'Premium Jetski',
+        href: '/premium-jetski-rental',
+      },
+      {
+        name: 'Premium Gold Jetski',
+        href: '/premium-gold-jetski',
       },
       {
         name: 'News & Events',

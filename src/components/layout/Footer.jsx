@@ -24,10 +24,7 @@ const Footer = () => {
         title: 'Luxury Yacht Rentals',
         link: '/luxury-yacht-rentals',
       },
-      {
-        title: 'Premium Jetski Rentals',
-        link: '/premium-jetski-rental',
-      },
+
       {
         title: 'Private Jet Charter',
         link: '/private-jet-rentals',
@@ -43,6 +40,10 @@ const Footer = () => {
       {
         title: 'Helicopter Rentals',
         link: '/helicopter-rentals',
+      },
+      {
+        title: 'Premium Jetski Rentals',
+        link: '/premium-jetski-rental',
       },
       {
         title: 'About us',
