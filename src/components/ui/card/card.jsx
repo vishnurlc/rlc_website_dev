@@ -137,7 +137,7 @@ function Card({ variant, data }) {
                     {variant === 'car' ? '/Day' : '/hour'}
                   </span>
                 </span>
-                {variant === 'car' && (
+                {variant === 'car' ? (
                   <span className="text-primary text-xs">
                     {data.attributes.deposit.data && (
                       <div className="text-primary flex items-center gap-1  font-medium leading-tight">
@@ -145,18 +145,29 @@ function Card({ variant, data }) {
                         'No Deposit' ? (
                           <>
                             <AiOutlineCheckCircle />{' '}
-                            {data.attributes.deposit.data?.attributes.type}
+                            <span>
+                              {data.attributes.deposit.data?.attributes.type}
+                            </span>
                           </>
                         ) : (
                           <>
-                            <AiOutlineExclamationCircle /> Deposit:&nbsp;
-                            {convertPrice(
-                              data.attributes.deposit.data.attributes.type
-                            )}
+                            <AiOutlineExclamationCircle />
+                            <span>
+                              Deposit:&nbsp;
+                              {convertPrice(
+                                data.attributes.deposit.data.attributes.type
+                              )}
+                            </span>
                           </>
                         )}
                       </div>
                     )}
+                  </span>
+                ) : (
+                  <span className="text-primary text-xs">
+                    <div className="text-primary flex items-center gap-1  font-medium leading-tight">
+                      <AiOutlineExclamationCircle /> Min booking 3 hours
+                    </div>
                   </span>
                 )}
               </div>

@@ -37,8 +37,8 @@ const Footer = () => {
         link: '/exotic-pet-experiences',
       },
       {
-        title: 'Chauffer Services',
-        link: '/chauffer-service',
+        title: 'Chauffeur Services',
+        link: '/chauffeur-service',
       },
       {
         title: 'Helicopter Rentals',
@@ -100,8 +100,8 @@ const Footer = () => {
             <div className="flex-col justify-start items-start gap-10 flex  mb-4">
               <div className="md:w-56 pr-2 pb-px justify-start items-start inline-flex">
                 <div className="text-white text-sm font-normal leading-tight">
-                  The moments you spend with us will be the best days of your
-                  life.
+                  Welcome to Richy Life Privilege World. Become a Richy Life
+                  Club member. Join Now
                 </div>
               </div>
             </div>

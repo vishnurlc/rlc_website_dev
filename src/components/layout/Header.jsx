@@ -89,8 +89,8 @@ const links = [
     dropdown: true,
     products: [
       {
-        name: 'Chauffer service',
-        href: '/chauffer-service',
+        name: 'Chauffeur service',
+        href: '/chauffeur-service',
       },
       {
         name: 'Premium Jetski',

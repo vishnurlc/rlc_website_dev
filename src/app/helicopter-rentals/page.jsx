@@ -53,8 +53,8 @@ const page = () => {
     <main>
       <HeroSection2
         type="image"
-        heading1="Helicopters for"
-        heading2="Rental in Dubai"
+        heading1="Helicopters Tours &"
+        heading2="Transfers in Dubai"
         subheading={'Experience the adventurous Journey'}
         btntext={'Book you ride'}
         url="/assets/helicopter/banner.png"

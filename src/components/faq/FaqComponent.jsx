@@ -31,7 +31,7 @@ const categoryData = [
   { value: 'Luxury Yacht Rental', category: 'yacht' },
   { value: 'Exclusive Water Sports', category: 'jetski' },
   { value: 'Exotic Pet VIP Experience', category: 'pet' },
-  { value: 'Chauffer Service', category: 'chauffer' },
+  { value: 'Chauffeur Service', category: 'chauffeur' },
   { value: 'Helicopter Charters', category: 'helicopter' },
   { value: 'Private Jet Charters', category: 'privatejet' },
   { value: 'Premium Desert Adventure', category: 'desertsafari' },

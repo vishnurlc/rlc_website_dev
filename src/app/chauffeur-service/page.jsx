@@ -27,12 +27,12 @@ export const metadata = {
     siteName: 'Richy life Club',
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/chauffer/hero.png`,
+        url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/chauffeur/hero.png`,
         width: 800,
         height: 600,
       },
       {
-        url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/chauffer/hero.png`,
+        url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/chauffeur/hero.png`,
         width: 300,
         height: 200,
       },
@@ -46,34 +46,34 @@ const page = () => {
   const data = [
     {
       title: 'Airport Transfer',
-      image: '/assets/chauffer/transfers.jpeg',
+      image: '/assets/chauffeur/transfers.jpeg',
     },
     {
       title: 'Half/Full Day',
-      image: '/assets/chauffer/halfday.avif',
+      image: '/assets/chauffeur/halfday.avif',
     },
     {
       title: 'Dubai City Tour',
-      image: '/assets/chauffer/dubaitour.jpeg',
+      image: '/assets/chauffeur/dubaitour.jpeg',
     },
     // {
     //   title: 'A-B Transfer',
-    //   image: '/assets/chauffer/a-b.jpeg',
+    //   image: '/assets/chauffeur/a-b.jpeg',
     // },
     {
       title: 'Events',
-      image: '/assets/chauffer/event.png',
+      image: '/assets/chauffeur/event.png',
     },
   ];
   return (
     <main>
       <HeroSection2
         type="image"
-        heading1="Luxury Chauffer"
+        heading1="Luxury Chauffeur"
         heading2="Services"
         subheading={'Your Voyage into Elegance and Comfort'}
         btntext={'Book Now'}
-        url="/assets/chauffer/hero.png"
+        url="/assets/chauffeur/hero.png"
       />
 
       <div className="mt-10 max-w-[1200px] mx-auto px-5">
@@ -88,7 +88,7 @@ const page = () => {
         <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
           <WhyusChauffer />
         </div>
-        <Faq category={'chauffer'} />
+        <Faq category={'chauffeur'} />
         <div className="my-9 md:my-16 px-6 ">
           <ContactForm
             title={'Get in Touch with Us'}
