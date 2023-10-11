@@ -65,20 +65,24 @@ const links = [
     link: '/luxury-yacht-rentals',
   },
   {
-    name: 'Exclusive Water Sports',
-    link: '/exclusive-water-sports',
-    dropdown: true,
-    products: [
-      {
-        name: 'Premium Jetski',
-        href: '/premium-jetski-rental',
-      },
-      {
-        name: 'Premium Gold Jetski',
-        href: '/premium-gold-jetski',
-      },
-    ],
+    name: 'Helicopter Rentals',
+    href: '/helicopter-rentals',
   },
+  // {
+  //   name: 'Exclusive Water Sports',
+  //   link: '/exclusive-water-sports',
+  //   dropdown: true,
+  //   products: [
+  //     {
+  //       name: 'Premium Jetski',
+  //       href: '/premium-jetski-rental',
+  //     },
+  //     {
+  //       name: 'Premium Gold Jetski',
+  //       href: '/premium-gold-jetski',
+  //     },
+  //   ],
+  // },
   {
     name: 'Exotic Pet VIP Experiences',
     link: '/exotic-pet-experiences',
