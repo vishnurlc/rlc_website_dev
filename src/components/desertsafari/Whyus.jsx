@@ -6,7 +6,7 @@ const Whyus = () => {
     <div>
       <SectionHeading
         title={
-          'Richy life Club&apos;s VIP Desert Safari: Dive into Luxury and Adventure'
+          "Richy life Club's VIP Desert Safari: Dive into Luxury and Adventure"
         }
       />
       <p className="text-center text-gray-500">
