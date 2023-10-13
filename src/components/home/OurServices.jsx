@@ -16,7 +16,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 const getData = async () => {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/services?populate=*`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/services?populate=*&sort=order:asc`,
       {
         headers: {
           Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
