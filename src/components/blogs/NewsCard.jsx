@@ -25,7 +25,7 @@ const NewsCard = ({ blog }) => {
           }}
         />
         <div className="py-4 font-sans">
-          <span className="text-xl md:text-3xl">
+          <span className="text-xl md:text-2xl">
             {blog.attributes.heading}&nbsp;
           </span>
           <span className="text-base text-gray-600">

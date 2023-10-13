@@ -167,7 +167,10 @@ export default async function BlogDetail({ params: { slug } }) {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 gap-7">
                   {blogs.data
-                    .filter((blog) => !blog.attributes.latest)
+                    .filter(
+                      (blog) =>
+                        !blog.attributes.latest && blog.attributes.slug !== slug
+                    )
                     .map((item, index) => (
                       <NewsCard blog={item} key={index} />
                     ))}
