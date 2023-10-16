@@ -134,6 +134,7 @@ const Ourservices = () => {
                         }
                         title={service.attributes.name}
                         price={service.attributes.price}
+                        link={service.attributes.url}
                       />
                     </SwiperSlide>
                   ))}

@@ -1,8 +1,10 @@
 import Image from 'next/image';
 
 import { Button } from '../ui/button/Button';
+import AnimatedBtn from '../premiumjetski/AnimatedBtn';
+import Link from 'next/link';
 
-const CarouselSlide = ({ url, title, price }) => {
+const CarouselSlide = ({ url, title, price, link }) => {
   return (
     <div className="relative w-full h-full ">
       <Image
@@ -25,12 +27,12 @@ const CarouselSlide = ({ url, title, price }) => {
             AED {price}
           </span> */}
         </div>
-        <Button
-          variant="whiteborder"
-          msg={`I'm writing to you today to inquire about the ${title}. I'm interested in learning more about its specifications, price, and availability.`}
+        <Link
+          href={link}
+          className="border border-white text-white px-4 py-2 rounded"
         >
-          Book now
-        </Button>
+          Book Now
+        </Link>
       </div>
       <div className="absolute inset-0 opacity-30 bg-[#142f39]"></div>
     </div>
