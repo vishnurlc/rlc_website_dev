@@ -1,15 +1,16 @@
 import { HeroSection, MembershipForm } from '@/components';
+import MembershipHerosection from '@/components/herosection/MembershipHeroSection';
 
 const RichylifeClubMembership = () => {
   return (
     <main>
       <h1 className="sr-only">Be a Member - Richy life Club</h1>
-      <HeroSection
-        posterurl={'/assets/chauffeur/hero.png'}
-        type={''}
-        alt="Luxury Car rentals"
-        url={'/assets/chauffeur/hero.png'}
-        btntext={'Get in touch'}
+      <MembershipHerosection
+        url={'/assets/membership/banner.webp'}
+        alt="Richy Life Club Premium Membership Club"
+        subheading={'Become a member to'}
+        heading1={'Experience'}
+        heading2={'The Extraordinary'}
       />
       <div className="mt-5 px-5 md:p-0">
         <MembershipForm
