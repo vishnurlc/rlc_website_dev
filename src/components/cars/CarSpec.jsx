@@ -28,7 +28,7 @@ const CarSpec = ({ car }) => {
         Car Specifications
       </motion.h2>
       <motion.ul
-        className="grid grid-cols-1 list-disc"
+        className="grid grid-cols-1 md:grid-cols-2 "
         variants={parentVariant}
       >
         {car.data[0].attributes.features.data.map((feature, index) => (

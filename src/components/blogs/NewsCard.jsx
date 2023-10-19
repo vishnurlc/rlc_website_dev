@@ -6,6 +6,7 @@ const NewsCard = ({ blog }) => {
   return (
     <Link href={`/blogs/${blog.attributes.slug}`}>
       <div
+        className="min-h-[470px] flex flex-col"
         style={{
           boxShadow: 'rgba(33, 35, 38, 0.1) 0px 10px 10px -10px',
         }}
@@ -24,13 +25,15 @@ const NewsCard = ({ blog }) => {
             borderRadius: '4px',
           }}
         />
-        <div className="py-4 font-sans">
-          <span className="text-xl md:text-2xl">
-            {blog.attributes.heading}&nbsp;
-          </span>
-          <span className="text-base text-gray-600">
-            {blog.attributes.subheading}
-          </span>
+        <div className="py-4 font-sans flex-auto flex justify-between flex-col">
+          <div className="h-[144px] overflow-hidden">
+            <span className="text-xl md:text-2xl">
+              {blog.attributes.heading}&nbsp;
+            </span>
+            <span className="text-base text-gray-600">
+              {blog.attributes.subheading}
+            </span>
+          </div>
           <p className="mt-5 text-sm font-thin text-gray-500">
             {formatDate(blog.attributes.date)}
           </p>
