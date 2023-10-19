@@ -3,6 +3,7 @@ import { sendEmail } from '@/lib/emailSend';
 import { useState } from 'react';
 import { BsWhatsapp } from 'react-icons/bs';
 import { Button } from '../ui/button/Button';
+import Link from 'next/link';
 
 const FormComponent = () => {
   const [formData, setFormData] = useState({
@@ -12,9 +13,11 @@ const FormComponent = () => {
     phone: '',
     subject: '',
     message: '',
+    consent: false,
   });
   const [isSending, setIsSending] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [consentError, setConsentError] = useState(false);
   const [submitMessage, setSubmitMessage] = useState(
     'Thank you for your submission!'
   );
@@ -27,10 +30,11 @@ const FormComponent = () => {
     message: '',
   });
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
+    const newValue = type === 'checkbox' ? checked : value;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]: newValue,
     }));
   };
   const validateEmail = (email) => {
@@ -45,7 +49,12 @@ const FormComponent = () => {
 
   const validateForm = () => {
     const errors = {};
-
+    if (!formData.consent) {
+      setConsentError(true);
+      return;
+    } else {
+      setConsentError(false);
+    }
     if (!formData.firstName.trim()) {
       errors.firstName = 'First Name is required';
     }
@@ -101,6 +110,7 @@ const FormComponent = () => {
             phone: '',
             subject: '',
             message: '',
+            consent: false,
           });
         }, 2000);
       } else {
@@ -210,6 +220,25 @@ const FormComponent = () => {
               </p>
             )}
           </div>
+        </div>
+        <div className="mt-10 flex items-center">
+          <input
+            type="checkbox"
+            name="consent"
+            checked={formData.consent}
+            onChange={handleChange}
+            className="mr-2"
+          />
+          <label
+            htmlFor="consent"
+            className={`text-sm  ${
+              consentError ? 'text-red-400' : 'text-gray-600'
+            }`}
+          >
+            I confirm that I have read and agree with the{' '}
+            <Link href={'/terms-of-use'}>Terms & Conditions</Link> and{' '}
+            <Link href={'/privacy-policy'}>Privacy Policy.</Link>
+          </label>
         </div>
         <div className="grid grid-cols-2 gap-8 items-center justify-center mt-8 md:mt-12 max-w-[400px] mx-auto">
           <button

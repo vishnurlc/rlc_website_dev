@@ -58,6 +58,10 @@ const Footer = () => {
         link: '/blogs',
       },
       {
+        title: 'Become a Member',
+        link: '/membership',
+      },
+      {
         title: 'Faq',
         link: '/faq',
       },
