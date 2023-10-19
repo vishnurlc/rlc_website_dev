@@ -8,7 +8,9 @@ const DetailComponent = ({ imagePath, description, heading, order }) => {
   return (
     <section>
       <div className="grid grid-cols-1 md:grid-cols-5">
-        <div className={`order-${imageCol} col-span-1 md:col-span-3 relative`}>
+        <div
+          className={`order-${textCol} md:order-${imageCol} col-span-1 md:col-span-3 relative min-h-[50vh]`}
+        >
           <Image
             src={imagePath}
             alt="Image"

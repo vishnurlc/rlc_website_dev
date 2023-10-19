@@ -11,7 +11,7 @@ const MembershipHerosection = ({
   heading2,
 }) => {
   return (
-    <div className="w-full relative h-[70vh] md:h-[80vh] ">
+    <div className="w-full relative h-screen md:h-[80vh] ">
       <div className="w-full h-full  relative aspect-[16:9]">
         <Image
           src={url}
