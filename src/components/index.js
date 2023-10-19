@@ -55,3 +55,4 @@ export { default as DescriptionComponent } from './blogs/DescriptionComponent';
 export { default as LatestNewsComponent } from './blogs/LatestNewsComponent';
 
 export { default as MembershipForm } from './formComponent/MembershipForm';
+export { default as DetailComponent } from './membership/DetailComponent';
