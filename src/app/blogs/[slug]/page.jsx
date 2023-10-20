@@ -27,8 +27,9 @@ export async function generateMetadata({ params }) {
       keywords: blog.data[0].attributes.SEO.keywords,
       openGraph: {
         type: 'website',
-        title: blog.data[0].attributes.name || '| News & Events',
-        description: blog.data[0].attributes.description || 'News & Events ',
+        title: blog.data[0].attributes.SEO.title || '| News & Events',
+        description:
+          blog.data[0].attributes.SEO.description || 'News & Events ',
         images: [
           {
             url: `${blog.data[0].attributes.image.data.attributes.url}`,
