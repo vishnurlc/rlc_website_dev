@@ -88,16 +88,20 @@ export default async function BlogDetail({ params: { slug } }) {
               }}
             />
 
-            <div className="absolute w-3/4 max-w-[900px]  rounded-sm text-white px-4 py-2 z-10 left-[5vw] bottom-1/4 backdrop-blur-sm">
-              <h2 className="uppercase font-bold font-inter text-xl md:text-4xl">
-                {blog[0].attributes.heading}
-              </h2>
-              <p className="hidden sm:block md:text-xl font-extralight mt-2 font-inter">
-                {blog[0].attributes.subheading}
-              </p>
-              <p className="mt-5 text-sm font-thin text-gray-300">
-                {formatDate(blog[0].attributes.date)}
-              </p>
+            <div className="absolute inset-0">
+              <div className=" flex items-end md:items-center h-full max-w-[1500px] mx-auto px-6 md:px-9 pb-8 ">
+                <div className="w-3/4 max-w-[900px] rounded-sm text-white px-4 py-2 z-10 backdrop-blur-sm">
+                  <h2 className="uppercase font-bold font-inter text-xl md:text-4xl">
+                    {blog[0].attributes.heading}
+                  </h2>
+                  <p className="hidden sm:block md:text-xl font-extralight mt-2 font-inter">
+                    {blog[0].attributes.subheading}
+                  </p>
+                  <p className="mt-5 text-sm font-thin text-gray-300">
+                    {formatDate(blog[0].attributes.date)}
+                  </p>
+                </div>
+              </div>
             </div>
             <div className="absolute inset-0 select-none z-0 bg-black bg-opacity-40"></div>
           </div>
