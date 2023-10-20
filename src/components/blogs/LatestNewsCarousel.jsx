@@ -31,11 +31,12 @@ const LatestNewsCarousel = ({ blogs }) => {
             <Image
               src={item.attributes.image.data.attributes.formats.medium.url}
               fill
-              alt={'Luxury Car'}
+              alt={item.attributes.heading}
               style={{
                 objectFit: 'cover',
                 objectPosition: 'center',
               }}
+              sizes="100vw"
             />
             <div className="absolute w-3/4 rounded-sm text-white px-4 py-2 z-10 left-5 bottom-0 md:top-1/2 translate-y-0 md:-translate-y-1/2 backdrop-blur-sm">
               <h2 className="uppercase font-bold font-inter text-base sm:text-xl md:text-4xl">
