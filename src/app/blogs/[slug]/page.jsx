@@ -114,7 +114,7 @@ export default async function BlogDetail({ params: { slug } }) {
                 <DescriptionComponent bio={blog[0].attributes.description} />
               </div>
               <div className="grid col-span-1 ">
-                <div className="relative md:sticky top-28 h-fit">
+                <div className="relative md:sticky top-0 md:top-28 h-fit">
                   <h3 className="text-2xl font-medium text-primary">
                     Follow Us
                   </h3>
