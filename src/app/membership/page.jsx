@@ -9,12 +9,12 @@ const contents = [
    Richy Life Club Membership is an exclusive opportunity for individuals residing in the United Arab Emirates who aspire to elevate both their professional and personal lifestyles through meaningful connections and a thriving community. When you become a part of our prestigious network, you open doors to engage with like-minded individuals from diverse industries and backgrounds. Our calendar is adorned with regular, complimentary members-only events, meticulously designed to foster networking opportunities, enabling you to meet inspiring personalities, exchange ideas, and delve into potential ventures.
    
    
-   Moreover, our dedicated lifestyle concierge services team, driven by cutting-edge technology and supported by a digital members app, is right at your fingertips to guarantee a seamless and enriching journey. Whether you seek priority access to exquisite restaurants, beach clubs, opulent hotels, or unforgettable experiences and events, our team is wholeheartedly devoted to ensuring you relish unparalleled privileges and receive the utmost in hospitality.
+   Whether you seek priority access to exquisite restaurants, beach clubs, opulent hotels, or unforgettable experiences and events, our team is wholeheartedly devoted to ensuring you relish unparalleled privileges and receive the utmost in hospitality.
     `,
   },
   {
     title: `Elevate with Richy Life Club's Exclusive Membership`,
-    image: '/assets/membership/general.webp',
+    image: '/assets/membership/image2.avif',
     description: `At Richy Life Club, we offer the Premium Membership, designed exclusively for high-achieving individuals, C-level executives, successful entrepreneurs, and high-net-worth individuals. As a Premium member, you're not just a part of a club; you're part of a community that shares your vision for success. Beyond the benefits enjoyed by our other members, you'll gain access to intimate, Premium members-only events. These exclusive gatherings provide the perfect backdrop for networking with like-minded individuals who understand your level of accomplishment and drive.
     
     
@@ -34,8 +34,23 @@ const RichylifeClubMembership = () => {
         heading1={'Experience'}
         heading2={'The Extraordinary'}
       />
+      <section className="my-16 px-4 max-w-[1200px] mx-auto text-center">
+        <h2 className="text-gold text-xl md:text-3xl">
+          Richy Life Club: Where Luxury Meets Exclusivity
+        </h2>
+        <p className="mt-8 text-gray-600 text-lg">
+          Richy Life Club stands as Dubai&apos;s foremost exclusive membership
+          network, where you enter a world of unparalleled networking and luxury
+          lifestyle experiences. Imagine becoming part of an elite community,
+          forging connections with individuals who share your ambitions,
+          exchanging ideas, conducting business, and forming lasting
+          friendships. As a Richy Life Club member, you unlock exclusive
+          privileges and gain priority access to the most exceptional venues and
+          lifestyle experiences in the region.
+        </p>
+      </section>
 
-      <div className="mb-16">
+      <div className="my-16">
         <DetailComponent
           imagePath={contents[0].image}
           description={contents[0].description}
