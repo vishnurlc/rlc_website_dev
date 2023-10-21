@@ -10,7 +10,7 @@ const ContactForm = dynamic(() =>
   import('../components/formComponent/ContactForm')
 );
 export const metadata = {
-  title: 'Experience Luxury Like Never Before',
+  title: 'Richy Life Club - Premium LifeStyle Club',
   description:
     'Experience ultimate luxury with Richy life Club: premium car rentals, private yacht charters, water sports, and more. Redefine luxury today!',
   keywords: [
@@ -29,7 +29,7 @@ export const metadata = {
     'private jet tours Dubai',
   ],
   openGraph: {
-    title: 'Experience Luxury Like Never Before with Richy life Club',
+    title: 'Richy Life Club - Premium LifeStyle Club',
     description:
       'Experience luxury like never before with Richy life Club. Explore luxury car rentals, yacht rentals, water sports, and more.',
     siteName: 'Richy life Club',
@@ -53,9 +53,7 @@ export const metadata = {
 export default function Home() {
   return (
     <main className="overflow-hidden">
-      <h1 className="sr-only">
-        Welcome to Richy life Club - Experience Luxury in Dubai
-      </h1>
+      <h1 className="sr-only">Richy life Club - Experience Luxury in Dubai</h1>
       <HeroSection
         posterurl={'/assets/home/heroposter1.webp'}
         type={'video'}

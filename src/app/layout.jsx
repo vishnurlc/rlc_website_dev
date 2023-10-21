@@ -25,7 +25,7 @@ export const poppins = Poppins({
 export const metadata = {
   metadataBase: new URL(`${process.env.NEXT_PUBLIC_WEB_URL}`),
   title: {
-    default: 'Experience the Luxury',
+    default: 'Richy Life Club ',
     template: '%s | Richy life Club',
   },
 };
