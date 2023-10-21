@@ -45,6 +45,10 @@ const CurrencyDropdown = () => {
           alt={selectedCurrency}
           width={20}
           height={12}
+          style={{
+            width: '20px',
+            height: '12px',
+          }}
         />
         {selectedCurrency} <FiChevronDown />
       </div>
@@ -61,6 +65,10 @@ const CurrencyDropdown = () => {
                 alt={currency.currency}
                 width={20}
                 height={12}
+                style={{
+                  width: '20px',
+                  height: '12px',
+                }}
               />
               {currency.currency}
             </div>

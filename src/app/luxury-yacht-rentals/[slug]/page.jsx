@@ -2,6 +2,7 @@ import {
   ContactForm,
   GalleryJet,
   HeroCarousel,
+  PriceComponent,
   RichTextComponent,
   YachtTechnicalSpec,
 } from '@/components';
@@ -84,10 +85,9 @@ export default async function YacthDetail({ params: { slug } }) {
               name={yacht.data[0].attributes.name}
             />
             <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5 max-w-[1200px] mx-auto">
-              <h2 className="text-right">
-                <span className="text-xl text-primary">
-                  AED{yacht.data[0].attributes.price}/hour
-                </span>
+              <h2 className="text-right text-xl text-primary">
+                <PriceComponent cost={yacht.data[0].attributes.price} />
+                /hour
               </h2>
 
               <AnimatedBtn

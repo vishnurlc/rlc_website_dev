@@ -3,6 +3,7 @@ import {
   ContactForm,
   GalleryJet,
   HeroCarousel,
+  PriceComponent,
   TechnicalSpec,
 } from '@/components';
 import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
@@ -105,10 +106,9 @@ export default async function CarDetail({ params: { slug } }) {
           name={car.data[0].attributes.name}
         />
         <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5 max-w-[1200px] mx-auto">
-          <h2 className="text-right">
-            <span className="text-xl text-primary">
-              AED{car.data[0].attributes.price}/Day
-            </span>
+          <h2 className="text-right text-xl text-primary">
+            <PriceComponent cost={car.data[0].attributes.price} />
+            /Day
           </h2>
 
           <AnimatedBtn

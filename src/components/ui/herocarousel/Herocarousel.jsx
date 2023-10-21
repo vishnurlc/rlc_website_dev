@@ -1,5 +1,4 @@
 'use client';
-import { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Navigation, Autoplay } from 'swiper/modules';
@@ -35,7 +34,6 @@ export default function HeroCarousel({ data, name }) {
               <Image
                 src={item.attributes.url}
                 fill
-                priority
                 alt={name || 'Richy Life Club'}
                 style={{
                   objectFit: 'cover',
