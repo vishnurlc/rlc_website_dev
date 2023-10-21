@@ -18,6 +18,7 @@ export const metadata = {
     'Bespoke Services',
     'Dubai Holidays',
     'VIP Support',
+    'richylife club',
   ],
   openGraph: {
     title: 'About Us',

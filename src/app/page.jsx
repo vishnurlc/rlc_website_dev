@@ -27,6 +27,8 @@ export const metadata = {
     'private jet rentals Dubai',
     'private jet business flights Dubai',
     'private jet tours Dubai',
+    'Richy Life Club',
+    'richylife club',
   ],
   openGraph: {
     title: 'Richy Life Club - Premium LifeStyle Club',

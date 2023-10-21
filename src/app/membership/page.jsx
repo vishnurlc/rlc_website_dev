@@ -1,6 +1,48 @@
 import { DetailComponent, MembershipForm } from '@/components';
 import MembershipHerosection from '@/components/herosection/MembershipHeroSection';
 
+export const metadata = {
+  title: 'Richy Life Club Membership',
+  description:
+    "Richy Life Club stands as Dubai's foremost exclusive membership network, where you enter a world of unparalleled networking and luxury lifestyle experiences",
+  keywords: [
+    'richylife club',
+    'dubai night clubs',
+    'premium clubs',
+    'premium club memberships',
+    'club membership dubai',
+    'luxury clubs dubai',
+    'invite only clubs dubai',
+    'hnwi clubs',
+    'nightlife in dubai',
+    'business clubs in dubai',
+    'travel club',
+    'clubs in dubai',
+    'billionaire nightclub dubai',
+    'most expensive club membership in dubai',
+  ],
+  openGraph: {
+    title: 'Richy Life Club Membership',
+    description:
+      "Richy Life Club stands as Dubai's foremost exclusive membership network, where you enter a world of unparalleled networking and luxury lifestyle experiences",
+    siteName: 'Richy life Club',
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/membership/club.png`,
+        width: 800,
+        height: 600,
+      },
+      {
+        url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/membership/club.png`,
+        width: 300,
+        height: 200,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+};
+
 const contents = [
   {
     title: ' Premium Membership',

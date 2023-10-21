@@ -18,6 +18,8 @@ export const metadata = {
     'car rentals dubai',
     'full dubai tours',
     'events pickup and drop dubai',
+    'Richy Life Club chauffer service',
+    'richylife club chauffer service',
   ],
 
   openGraph: {

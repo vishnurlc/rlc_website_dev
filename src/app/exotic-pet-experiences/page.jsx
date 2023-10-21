@@ -29,7 +29,8 @@ export const metadata = {
     'Exotic Animal Interaction',
     'Book Private Zoo',
     'Dubai UAE',
-    'Richy life Club',
+    'Richy Life Club',
+    'richylife club',
   ],
 
   openGraph: {

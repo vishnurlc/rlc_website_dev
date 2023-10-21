@@ -24,7 +24,8 @@ export const metadata = {
     'Explore Dubai from Above',
     'Helicopter Ride Dubai',
     'VIP Sky Tours',
-    'Richy life Club',
+    'Richy Life Club',
+    'richylife club',
     'Dubai UAE',
   ],
   openGraph: {

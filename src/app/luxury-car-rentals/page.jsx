@@ -33,6 +33,8 @@ export const metadata = {
     'Audi rentals Dubai',
     'Porsche rentals Dubai',
     'Lamborghini rentals Dubai',
+    'Richy Life Club car rental',
+    'richylife club rent a car',
   ],
   openGraph: {
     title: 'Luxury Car Rental | Rent Exotic & Super Cars in Dubai',
