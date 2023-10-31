@@ -12,7 +12,10 @@ const NewsCard = ({ blog }) => {
         }}
       >
         <Image
-          src={blog.attributes.image.data.attributes.formats.medium.url}
+          src={
+            blog.attributes.image.data.attributes.formats.medium?.url ||
+            blog.attributes.image.data.attributes.url
+          }
           width={400}
           height={300}
           alt="Title tags"
