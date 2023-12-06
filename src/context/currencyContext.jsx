@@ -19,7 +19,7 @@ export const CurrencyProvider = ({ children }) => {
 
   // Load conversion rates from an API or other source and update state
   useEffect(() => {
-    const apiEndpoint = `https://api.currencybeacon.com/v1/latest?api_key=${process.env.NEXT_PUBLIC_CURRENCY_BEACON_API}&base=AED`;
+    const apiEndpoint = `/api/currency`;
 
     fetch(apiEndpoint)
       .then((response) => response.json())
