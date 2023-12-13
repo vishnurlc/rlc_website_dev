@@ -6,6 +6,7 @@ import { IoLogoWhatsapp } from 'react-icons/io';
 import Link from 'next/link';
 import { CurrencyProvider } from '@/context/currencyContext';
 import Script from 'next/script';
+import Image from 'next/image';
 
 const RootLayout = ({ children }) => {
   return (
@@ -55,10 +56,13 @@ const RootLayout = ({ children }) => {
       />
       <body>
         <noscript>
-          <img
+          <Image
             height="1"
             width="1"
-            style="display:none"
+            alt="fbpixel"
+            style={{
+              display: 'none',
+            }}
             src="https://www.facebook.com/tr?id=374541755133413&ev=PageView&noscript=1"
           />
         </noscript>
