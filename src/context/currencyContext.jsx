@@ -11,7 +11,7 @@ export const useCurrency = () => {
 };
 
 export const CurrencyProvider = ({ children }) => {
-  const [selectedCurrency, setSelectedCurrency] = useState('AED'); // Default currency
+  const [selectedCurrency, setSelectedCurrency] = useState('USD'); // Default currency
   const [conversionRates, setConversionRates] = useState({
     base: '',
     rates: {},

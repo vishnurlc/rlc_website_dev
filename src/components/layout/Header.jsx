@@ -84,8 +84,8 @@ const links = [
   //   ],
   // },
   {
-    name: 'Exotic Pet VIP Experiences',
-    link: '/exotic-pet-experiences',
+    name: 'Chauffeur service',
+    link: '/chauffeur-service',
   },
   {
     name: 'Services',
@@ -93,8 +93,8 @@ const links = [
     dropdown: true,
     products: [
       {
-        name: 'Chauffeur service',
-        href: '/chauffeur-service',
+        name: 'Exotic Pet VIP Experiences',
+        href: '/exotic-pet-experiences',
       },
       {
         name: 'Premium Desert Adventure',
