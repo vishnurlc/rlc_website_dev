@@ -4,6 +4,7 @@ import {
   SectionHeading,
   WhyusChauffer,
 } from '@/components';
+import Ourfleets from '@/components/chaufferservice/Ourfleets';
 import Faq from '@/components/home/faq';
 import CardSq from '@/components/ui/card/CardSq';
 
@@ -86,6 +87,9 @@ const page = () => {
               <CardSq data={e} key={index} />
             ))}
           </div>
+        </div>
+        <div className='my-9 md:my-16 px-6 max-w-[1200px] mx-auto"'>
+          <Ourfleets />
         </div>
         <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
           <WhyusChauffer />
