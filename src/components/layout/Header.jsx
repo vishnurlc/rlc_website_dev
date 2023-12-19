@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { AnimatePresence } from 'framer-motion';
-import { HiOutlineChevronDown } from 'react-icons/hi';
-import { BiMenuAltRight } from 'react-icons/bi';
-import { AiOutlineClose } from 'react-icons/ai';
-import { motion } from 'framer-motion';
-import CurrencyDropdown from './CurrencyDropdown';
-import MobileCurrency from './MobileCurrency';
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { AnimatePresence } from "framer-motion";
+import { HiOutlineChevronDown } from "react-icons/hi";
+import { BiMenuAltRight } from "react-icons/bi";
+import { AiOutlineClose } from "react-icons/ai";
+import { motion } from "framer-motion";
+import CurrencyDropdown from "./CurrencyDropdown";
+import MobileCurrency from "./MobileCurrency";
 const dropdownvariant = {
   visible: {
     opacity: 1,
@@ -40,7 +40,7 @@ const mobileMenuVariant = {
   open: {
     opacity: 1,
     transition: {
-      type: 'spring',
+      type: "spring",
       duration: 0.4,
       // delayChildren: 0.2,
       staggerChildren: 0.05,
@@ -57,17 +57,18 @@ const menuitemVariant = {
 
 const links = [
   {
-    name: 'Rent A Car',
-    link: '/luxury-car-rentals',
+    name: "Premium Transfers",
+    link: "/chauffeur-service",
   },
   {
-    name: 'Luxury Yacht Rentals',
-    link: '/luxury-yacht-rentals',
+    name: "Rent A Car",
+    link: "/luxury-car-rentals",
   },
   {
-    name: 'Helicopter Rentals',
-    link: '/helicopter-rentals',
+    name: "Luxury Yacht Rentals",
+    link: "/luxury-yacht-rentals",
   },
+
   // {
   //   name: 'Exclusive Water Sports',
   //   link: '/exclusive-water-sports',
@@ -83,53 +84,55 @@ const links = [
   //     },
   //   ],
   // },
+
   {
-    name: 'Chauffeur service',
-    link: '/chauffeur-service',
-  },
-  {
-    name: 'Services',
-    link: '#',
+    name: "Services",
+    link: "#",
     dropdown: true,
     products: [
       {
-        name: 'Exotic Pet VIP Experiences',
-        href: '/exotic-pet-experiences',
+        name: "Tours & Excursions",
+        href: "/tours-excursions",
       },
       {
-        name: 'Premium Desert Adventure',
-        href: '/premium-desert-adventure',
-      },
-      {
-        name: 'Private Jet Charter',
-        href: '/private-jet-rentals',
+        name: "Clubs & Restaurants",
+        href: "/clubs-restaurants",
       },
 
       {
-        name: 'Luxury Yacht Rentals',
-        href: '/luxury-yacht-rentals',
+        name: "Premium Desert Adventure",
+        href: "/premium-desert-adventure",
       },
       {
-        name: 'Rent A Car',
-        href: '/luxury-car-rentals',
+        name: "Helicopter",
+        href: "/helicopter-rentals",
       },
       {
-        name: 'Premium Jetski',
-        href: '/premium-jetski-rental',
+        name: "Private Jet Charter",
+        href: "/private-jet-rentals",
+      },
+
+      {
+        name: "Premium Jetski",
+        href: "/premium-jetski-rental",
       },
       {
-        name: 'Premium Gold Jetski',
-        href: '/premium-gold-jetski',
+        name: "Premium Gold Jetski",
+        href: "/premium-gold-jetski",
       },
       {
-        name: 'News & Events',
-        href: '/blogs',
+        name: "Exotic Pet VIP Experiences",
+        href: "/exotic-pet-experiences",
+      },
+      {
+        name: "News & Events",
+        href: "/blogs",
       },
     ],
   },
   {
-    name: 'Contact Us',
-    link: '/contact-us',
+    name: "Contact Us",
+    link: "/contact-us",
   },
 ];
 
@@ -182,8 +185,8 @@ export default function Header() {
       style={{
         background:
           headerType === 1 || mobileMenuOpen
-            ? '#fff'
-            : 'linear-gradient(180deg, #000 0%, rgba(41, 41, 41, .1) 100%)',
+            ? "#fff"
+            : "linear-gradient(180deg, #000 0%, rgba(41, 41, 41, .1) 100%)",
       }}
       onMouseLeave={handleDropdownLeave}
     >
@@ -199,8 +202,8 @@ export default function Header() {
               height={100}
               src={
                 mobileMenuOpen
-                  ? 'assets/logos/logo-dark.svg'
-                  : '/assets/logos/richy-logoX.png'
+                  ? "assets/logos/logo-dark.svg"
+                  : "/assets/logos/richy-logoX.png"
               }
               alt="Richy life Club Logo"
               className="aspect-square h-auto w-[60px] md:w-[80px]"
@@ -217,7 +220,7 @@ export default function Header() {
               <BiMenuAltRight
                 className="h-6 w-6"
                 aria-hidden="true"
-                color={headerType === 1 ? '#214842' : 'white'}
+                color={headerType === 1 ? "#214842" : "white"}
                 onClick={() => setMobileMenuOpen(true)}
               />
             ) : (
@@ -237,13 +240,13 @@ export default function Header() {
                 <div className="relative group">
                   <div
                     className={`flex items-center gap-x-1 text-sm font-inter leading-6 cursor-pointer nav_link ${
-                      headerType === 1 ? 'text-primary' : 'text-white'
+                      headerType === 1 ? "text-primary" : "text-white"
                     }  focus:outline-none`}
                   >
                     {item.name}
                     <HiOutlineChevronDown
                       className={`h-5 w-5 flex-none ${
-                        headerType === 1 ? 'text-primary' : 'text-white'
+                        headerType === 1 ? "text-primary" : "text-white"
                       } `}
                       aria-hidden="true"
                     />
@@ -252,9 +255,9 @@ export default function Header() {
                     {activeDropdown === index && (
                       <motion.div
                         variants={dropdownvariant}
-                        animate={'visible'}
+                        animate={"visible"}
                         initial="hidden"
-                        exit={'exit'}
+                        exit={"exit"}
                         className={` py-2 absolute right-0 top-full z-10 mt-3  overflow-hidden rounded-sm bg-white shadow-lg ring-1 ring-gray-900/5 `}
                         onMouseLeave={handleDropdownLeave}
                       >
@@ -279,7 +282,7 @@ export default function Header() {
                 <Link
                   href={item.link}
                   className={`text-sm leading-6 nav_link ${
-                    headerType === 1 ? 'text-primary' : 'text-white'
+                    headerType === 1 ? "text-primary" : "text-white"
                   } font-inter`}
                 >
                   {item.name}
@@ -292,7 +295,7 @@ export default function Header() {
       </nav>
       <div
         className={`xl:hidden h-screen ${
-          mobileMenuOpen ? 'block bg-white' : 'hidden'
+          mobileMenuOpen ? "block bg-white" : "hidden"
         } px-8`}
       >
         <div className="flex flex-col space-y-4 py-6">
@@ -317,12 +320,12 @@ export default function Header() {
                       <motion.div
                         key={index}
                         className={`py-2 relative ${
-                          mobileMenuOpen ? 'block' : 'hidden'
+                          mobileMenuOpen ? "block" : "hidden"
                         }`}
                         variants={mobileMenuVariant}
                         initial="closed"
                         exit="closed"
-                        animate={mobileMenuDropdown ? 'open' : 'closed'}
+                        animate={mobileMenuDropdown ? "open" : "closed"}
                       >
                         {item.products.map((product) => (
                           <motion.div
@@ -353,7 +356,7 @@ export default function Header() {
             </span>
           ))}
           <Link
-            href={'/faq'}
+            href={"/faq"}
             className={`text-sm md:text-base leading-6 text-primary font-inter`}
           >
             Faq
