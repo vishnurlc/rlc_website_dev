@@ -65,7 +65,7 @@ const Ourfleets = () => {
                 </h2>
                 {item.price && (
                   <span className="text-gray-400 text-sm">
-                    Starting from AED {item.price}
+                    Starting from {convertPrice(item.price)}
                   </span>
                 )}
               </div>
