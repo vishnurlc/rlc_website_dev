@@ -1,4 +1,5 @@
 import { ContactForm, HeroSection2, Whyushelicopter } from '@/components';
+import PackageCard from '@/components/helicopter/PackageCard';
 import Faq from '@/components/home/faq';
 
 export const metadata = {
@@ -49,6 +50,29 @@ export const metadata = {
     type: 'website',
   },
 };
+
+const data = [
+  {
+    image: '/assets/helicopter/1.webp',
+    title: '12 Mins Helicopter Tour',
+    price: '710',
+  },
+  {
+    image: '/assets/helicopter/2.jpeg',
+    title: '17 Mins Helicopter Tour',
+    price: '945',
+  },
+  {
+    image: '/assets/helicopter/3.jpeg',
+    title: '22 Mins Helicopter Tour',
+    price: '1299',
+  },
+  {
+    image: '/assets/helicopter/4.jpeg',
+    title: '30 Mins Helicopter Tour',
+    price: '1770',
+  },
+];
 const page = () => {
   return (
     <main>
@@ -61,6 +85,11 @@ const page = () => {
         url="/assets/helicopter/banner.png"
       />
 
+      <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto grid grid-cols-2 gap-9 ">
+        {data.map((item, index) => (
+          <PackageCard data={item} key={index} />
+        ))}
+      </div>
       <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
         <Whyushelicopter />
       </div>
