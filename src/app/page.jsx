@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import { HeroSection, OurServices } from '@/components';
+import VideoSection from '@/components/home/VideoSection';
 const Aboutsection = dynamic(() => import('../components/home/aboutsection'));
 const ServiceBanner = dynamic(() =>
   import('../components/home/ServicesBanner')
@@ -56,15 +57,12 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       <h1 className="sr-only">Richy life Club - Experience Luxury in Dubai</h1>
-      <HeroSection
-        posterurl={'/assets/home/heroposter1.webp'}
-        type={'video'}
-        url={'https://admin.richylife.ae/rlchome.mp4'}
-        btntext={'Experience Luxury'}
-      />
       <OurServices />
       <Aboutsection />
-
+      <VideoSection
+        posterurl={'/assets/home/heroposter1.webp'}
+        url={'https://admin.richylife.ae/rlchome.mp4'}
+      />
       <ServiceBanner />
       <Faq category={'car'} />
       <Testimonials />

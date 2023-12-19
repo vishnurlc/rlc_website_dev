@@ -62,7 +62,7 @@ const Ourservices = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
-      className="px-8 py-20  flex justify-center items-center"
+      className="px-8 py-20  flex justify-center items-center pt-28"
     >
       {data && (
         <div>
