@@ -139,43 +139,9 @@ export default async function page() {
           </div>
           <div className="my-10">
             {desert.data?.map((item, index) => (
-              <DesertSafariCard item={item} key={index} />
+              <DesertSafariCard item={item} key={index} order={index} />
             ))}
           </div>
-
-          {/* <div className=" flex flex-col gap-8 items-center justify-center w-full">
-            <h3 className="text-2xl text-center md:text-5xl text-gold capitalize font-inter">
-              Our Service Locations
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-              {locations.map((item, index) => (
-                <div className="relative  w-full aspect-[357/406]" key={index}>
-                  <Image
-                    src={item.url}
-                    alt={item.location}
-                    fill
-                    style={{
-                      objectFit: "cover",
-                    }}
-                  />
-                  <div className="absolute p-4 text-white w-full h-fit bg-black bg-opacity-60 bottom-0 left-0 right-0 z-10">
-                    <div>
-                      <h2 className="uppercase font-medium tracking-wide text-xl font-poppins">
-                        {item.location}
-                      </h2>
-                      <span className="text-gray-400 text-sm">
-                        Starting from AED{item.price}
-                      </span>
-                    </div>
-
-                    <Button className="mt-4 px-4 py-2 bg-primary text-gold">
-                      Book Now
-                    </Button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div> */}
         </div>
       </div>
       <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
