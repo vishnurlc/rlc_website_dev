@@ -57,7 +57,7 @@ const menuitemVariant = {
 
 const links = [
   {
-    name: "Transfer",
+    name: "Premium Transfers",
     link: "/chauffeur-service",
   },
   {
@@ -67,14 +67,6 @@ const links = [
   {
     name: "Luxury Yacht Rentals",
     link: "/luxury-yacht-rentals",
-  },
-  {
-    name: "Tours & Excursions",
-    link: "/tours-excursions",
-  },
-  {
-    name: "Clubs & Restaurants",
-    link: "/clubs-restaurants",
   },
 
   // {
@@ -99,9 +91,14 @@ const links = [
     dropdown: true,
     products: [
       {
-        name: "Exotic Pet VIP Experiences",
-        href: "/exotic-pet-experiences",
+        name: "Tours & Excursions",
+        href: "/tours-excursions",
       },
+      {
+        name: "Clubs & Restaurants",
+        href: "/clubs-restaurants",
+      },
+
       {
         name: "Premium Desert Adventure",
         href: "/premium-desert-adventure",
@@ -116,20 +113,16 @@ const links = [
       },
 
       {
-        name: "Luxury Yacht Rentals",
-        href: "/luxury-yacht-rentals",
-      },
-      {
-        name: "Rent A Car",
-        href: "/luxury-car-rentals",
-      },
-      {
         name: "Premium Jetski",
         href: "/premium-jetski-rental",
       },
       {
         name: "Premium Gold Jetski",
         href: "/premium-gold-jetski",
+      },
+      {
+        name: "Exotic Pet VIP Experiences",
+        href: "/exotic-pet-experiences",
       },
       {
         name: "News & Events",
