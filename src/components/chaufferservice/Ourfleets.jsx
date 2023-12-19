@@ -14,17 +14,17 @@ const jetski = [
   {
     name: 'sedan',
     image: '/assets/chauffeur/sedan.avif',
-    price: '1600',
+    price: '360',
   },
   {
     name: 'van',
     image: '/assets/chauffeur/van.jpeg',
-    price: '1600',
+    price: '360',
   },
   {
     name: 'SUV',
     image: '/assets/chauffeur/suv.avif',
-    price: '1600',
+    price: '360',
   },
 ];
 
