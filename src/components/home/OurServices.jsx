@@ -12,6 +12,7 @@ import CarouselSlide from './CarouselSlide';
 import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
 import { Loader } from '..';
 import { AnimatePresence, motion } from 'framer-motion';
+import ServiceCard2 from './ServiceCard2';
 
 const getData = async () => {
   try {
@@ -45,7 +46,7 @@ const headingVariant = {
 
 const Ourservices = () => {
   const [data, setData] = useState([]);
-  const [slideIndex, setSlideIndex] = useState(data?.length / 2 || 2);
+  // const [slideIndex, setSlideIndex] = useState(data?.length / 2 || 2);
   useEffect(() => {
     const fetchData = async () => {
       const data = await getData();
@@ -62,7 +63,7 @@ const Ourservices = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
-      className="px-8 py-20  flex justify-center items-center pt-28"
+      className="px-8 py-20 pt-28"
     >
       {data && (
         <div>
@@ -70,7 +71,7 @@ const Ourservices = () => {
             <h2 className="uppercase font-inter text-base md:text-xl font-light text-grey">
               Our Services
             </h2>
-            <div className="relative w-full min-h-[56px] md:min-h-[88px]">
+            {/* <div className="relative w-full min-h-[56px] md:min-h-[88px]">
               <AnimatePresence>
                 <motion.div
                   className="w-full absolute flex flex-col items-center justify-center"
@@ -91,9 +92,32 @@ const Ourservices = () => {
                   </h3>
                 </motion.div>
               </AnimatePresence>
-            </div>
+            </div> */}
           </div>
-          <div className="min-h-[350px]">
+
+          <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 min-h-[350px]">
+            {data.length > 0 ? (
+              <>
+                {data.map((service, index) => (
+                  <ServiceCard2
+                    key={index}
+                    url={
+                      service.attributes.image.data.attributes.formats.medium
+                        .url || service.attributes.image.data.attributes.url
+                    }
+                    title={service.attributes.name}
+                    price={service.attributes.price}
+                    link={service.attributes.url}
+                  />
+                ))}
+              </>
+            ) : (
+              <div className="w-full flex justify-center items-center col-span-3">
+                <Loader />
+              </div>
+            )}
+          </div>
+          {/* <div className="min-h-[350px]">
             {data.length > 0 ? (
               <>
                 <Swiper
@@ -161,7 +185,7 @@ const Ourservices = () => {
             ) : (
               <Loader />
             )}
-          </div>
+          </div> */}
         </div>
       )}
     </div>
