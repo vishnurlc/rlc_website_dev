@@ -206,6 +206,7 @@ export default function Header() {
                   : '/assets/logos/rlclogowhite.png'
               }
               alt="Richy life Club Logo"
+              priority
               className="aspect-square h-auto w-[60px] md:w-[80px]"
             />
           </Link>
