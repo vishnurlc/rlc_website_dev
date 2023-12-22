@@ -1,6 +1,6 @@
 import React from 'react';
 import { RichTextComponent } from '..';
-import styles from '../blogs/blog.module.scss';
+import styles from './tours.module.scss';
 const ItineraryComponent = ({ itinerary }) => {
   return (
     <div className={`text-gray-400 ${styles.blogbody}`}>

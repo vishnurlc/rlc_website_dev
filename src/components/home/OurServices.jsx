@@ -67,11 +67,11 @@ const Ourservices = () => {
     >
       {data && (
         <div>
-          <div className="mb-10 md:mb-20 flex flex-col gap-6 md:gap-10 items-center justify-center ">
-            {/* <h2 className="uppercase font-inter text-base md:text-3xl font-light text-grey">
+          {/* <div className="mb-10 md:mb-20 flex flex-col gap-6 md:gap-10 items-center justify-center "> */}
+          {/* <h2 className="uppercase font-inter text-base md:text-3xl font-light text-grey">
               Our Services
             </h2> */}
-            {/* <div className="relative w-full min-h-[56px] md:min-h-[88px]">
+          {/* <div className="relative w-full min-h-[56px] md:min-h-[88px]">
               <AnimatePresence>
                 <motion.div
                   className="w-full absolute flex flex-col items-center justify-center"
@@ -93,7 +93,7 @@ const Ourservices = () => {
                 </motion.div>
               </AnimatePresence>
             </div> */}
-          </div>
+          {/* </div> */}
 
           <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 min-h-[350px]">
             {data.length > 0 ? (
