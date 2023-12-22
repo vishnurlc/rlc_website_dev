@@ -57,6 +57,7 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       <h1 className="sr-only">Richy life Club - Experience Luxury in Dubai</h1>
+      <OurServices />
       <HeroSection
         alt={'Richy Life Club Luxury Lifestyle Networking Destination Compnay'}
         posterurl={'/assets/home/heroposter.png'}
@@ -64,7 +65,7 @@ export default function Home() {
         type={'video'}
         btntext={'Explore More'}
       />
-      <OurServices />
+
       <Aboutsection />
       {/* <VideoSection
         posterurl={'/assets/home/heroposter1.webp'}

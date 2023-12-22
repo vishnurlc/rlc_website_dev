@@ -49,30 +49,7 @@ export const metadata = {
   },
 };
 
-async function getData() {
-  let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/car-makes?populate=*`;
-
-  try {
-    const res = await fetch(api, {
-      next: { revalidate: 10 },
-      headers: {
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
-      },
-    });
-    const data = await res.json();
-    if (data == {}) {
-      setStatus(true);
-    }
-    return data;
-  } catch (error) {
-    console.log(error);
-    return {};
-  }
-}
-
 export default async function page() {
-  const make = await getData();
-
   return (
     <main>
       <h1 className="sr-only">Tours and Excursions - Richy life Club</h1>

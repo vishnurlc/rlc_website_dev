@@ -5,6 +5,7 @@ import AnimatedBtn from '../premiumjetski/AnimatedBtn';
 import { useCurrency } from '@/context/currencyContext';
 
 const TravelCard = ({ item }) => {
+  console.log(item);
   const { selectedCurrency, conversionRates } = useCurrency();
   const [showFullDescription, setShowFullDescription] = useState(false);
 
@@ -26,7 +27,10 @@ const TravelCard = ({ item }) => {
   };
 
   return (
-    <div className="relative w-full rounded-lg overflow-hidden shadow-md ">
+    <Link
+      href={`/tours-excursions/${item.attributes.slug}`}
+      className="relative w-full rounded-lg overflow-hidden shadow-md "
+    >
       <Image
         className="w-full h-auto object-cover aspect-[16:9]"
         src={item.attributes.image.data[0].attributes.url}
@@ -72,7 +76,7 @@ const TravelCard = ({ item }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
