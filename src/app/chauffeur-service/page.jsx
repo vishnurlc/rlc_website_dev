@@ -88,7 +88,7 @@ const page = () => {
             ))}
           </div>
         </div>
-        <div className='my-9 md:my-16 px-6 max-w-[1200px] mx-auto"'>
+        <div className="my-9 md:my-16 px-0 md:px-6 max-w-[1200px] mx-auto">
           <Ourfleets />
         </div>
         <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">

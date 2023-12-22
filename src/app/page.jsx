@@ -57,12 +57,19 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       <h1 className="sr-only">Richy life Club - Experience Luxury in Dubai</h1>
+      <HeroSection
+        alt={'Richy Life Club Luxury Lifestyle Networking Destination Compnay'}
+        posterurl={'/assets/home/heroposter.png'}
+        url={'https://admin.richylife.ae/rlchome2.mp4'}
+        type={'video'}
+        btntext={'Explore More'}
+      />
       <OurServices />
       <Aboutsection />
-      <VideoSection
+      {/* <VideoSection
         posterurl={'/assets/home/heroposter1.webp'}
         url={'https://admin.richylife.ae/rlchome.mp4'}
-      />
+      /> */}
       <ServiceBanner />
       <Faq category={'car'} />
       <Testimonials />

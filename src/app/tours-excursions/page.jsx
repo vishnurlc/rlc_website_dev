@@ -3,6 +3,7 @@ import {
   HeroSection2,
   ListingComponent,
   Loader,
+  ToursListingComponent,
 } from '@/components';
 import { Suspense } from 'react';
 
@@ -86,7 +87,9 @@ export default async function page() {
         overlay={1}
       />
       <div className="mx-auto max-w-[1200px]">
-        <Suspense fallback={<Loader />}> </Suspense>
+        <Suspense fallback={<Loader />}>
+          <ToursListingComponent />
+        </Suspense>
       </div>
 
       <div className="my-9 md:my-16 px-6">

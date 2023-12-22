@@ -58,3 +58,5 @@ export { default as MembershipForm } from './formComponent/MembershipForm';
 export { default as DetailComponent } from './membership/DetailComponent';
 
 export { default as PriceComponent } from './ui/priceComponent/PriceComponent';
+
+export { default as ToursListingComponent } from './tours/ListingComponent';

@@ -55,7 +55,10 @@ function Card({ variant, data }) {
         // animate={animationControl}
         className="grid grid-cols-1 w-full lg:grid-cols-5  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-[#fbfbfb]"
       >
-        <div className="col-span-3 relative w-full aspect-[2/1] min-h-[220px] ">
+        <Link
+          href={`${path}/${data.attributes.slug}`}
+          className="col-span-3 relative w-full aspect-[2/1] min-h-[220px] "
+        >
           <Image
             src={data.attributes.image.data[0].attributes.url}
             alt={`Rent ${data.attributes.name} with Richy life Club`}
@@ -90,7 +93,7 @@ function Card({ variant, data }) {
               {data.attributes.image.data.length} Photo
             </button>
           </div> */}
-        </div>
+        </Link>
         <div className="p-5 col-span-1 md:col-span-2">
           <div className="text-black h-full flex flex-col items-start justify-between">
             <h3 className="text-primary text-2xl font-bold leading-[29.04px]">
