@@ -50,7 +50,7 @@ async function page() {
                   Exquisite beauty meets the future in a sensuous wonderland to
                   revolutionize Bangkok nightlife.
                 </p>
-                <p className="pl-10">
+                <p className=" md:pl-10">
                   Fuchsia is a sensory wonderland of alluring entertainment,
                   music, and fantasy like never before.
                 </p>
@@ -58,7 +58,7 @@ async function page() {
             </div>
             <div className="div2 relative">
               <Image
-                src={"/assets/club/IMG_9670.jpeg"}
+                src={"/assets/club/club1.jpg"}
                 fill
                 alt={"Richy life Club UAE"}
                 priority
@@ -68,9 +68,9 @@ async function page() {
               />
             </div>
             <div className="div3 relative">
-              <div className="flex justify-between min-h-[400px]">
+              <div className="flex justify-between h-full">
                 <Image
-                  src={"/assets/club/GOF_9038.jpg"}
+                  src={"/assets/club/club2.jpg"}
                   fill
                   alt={"Richy life Club UAE"}
                   priority
@@ -78,15 +78,19 @@ async function page() {
                     objectFit: "cover",
                   }}
                 />
-                {/* <Image
-                  src={"/assets/test/farrari.png"}
+              </div>
+            </div>
+            <div className="div4 relative">
+              <div className="flex justify-between h-full">
+                <Image
+                  src={"/assets/club/club.png"}
                   fill
                   alt={"Richy life Club UAE"}
                   priority
                   style={{
                     objectFit: "cover",
                   }}
-                /> */}
+                />
               </div>
             </div>
           </div>
