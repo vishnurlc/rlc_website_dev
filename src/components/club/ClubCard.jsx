@@ -3,7 +3,7 @@
 import AnimatedBtn from "../premiumjetski/AnimatedBtn";
 import Image from "next/image";
 import { useCurrency } from "@/context/currencyContext";
-const DesertSafariCard = ({ item, order }) => {
+const ClubCard = ({ item, order }) => {
   const { selectedCurrency, conversionRates } = useCurrency();
   const convertPrice = (price) => {
     const rate = conversionRates.rates[selectedCurrency];
@@ -22,8 +22,8 @@ const DesertSafariCard = ({ item, order }) => {
       <div className={`order-${order}`}>
         <div className="text-white mb-7">
           <h2 className=" text-2xl md:text-4xl mb-6">{item.attributes.name}</h2>
-          <p className="text-sm md:text-xl text-gray-400">
-            Starting from {convertPrice(item.attributes.price)}/person
+          <p className="text-sm md:text-xl text-gray-400 pb-5">
+            {item.attributes.price}
           </p>
           <p className="text-gray-500 text-sm md:text-base tracking-wide ">
             {item.attributes.description}
@@ -52,4 +52,4 @@ const DesertSafariCard = ({ item, order }) => {
   );
 };
 
-export default DesertSafariCard;
+export default ClubCard;

@@ -67,7 +67,8 @@ const ListingComponent = ({ variant, title, description, make }) => {
       },
     });
 
-    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?${queryString}&populate=*&pagination[page]=${params.pageNumber}&pagination[pageSize]=${pageSize}&sort=id:desc`;
+    // let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?${queryString}&populate=*&pagination[page]=${params.pageNumber}&pagination[pageSize]=${pageSize}&sort=id:desc`;
+    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?${queryString}&populate=*&filters[tags][tag][$eq]=chauffeur&pagination[page]=${params.pageNumber}&pagination[pageSize]=${pageSize}&sort=id:desc`;
 
     try {
       const res = await fetch(api, {
@@ -184,7 +185,7 @@ const ListingComponent = ({ variant, title, description, make }) => {
 
   return (
     <div className="w-full overflow-hidden" ref={scrollRef}>
-      <div className="w-full my-[40px] ">
+      {/* <div className="w-full my-[40px] ">
         <motion.div
           ref={containerRef}
           className="relative flex items-center justify-start md:justify-center gap-4 md:gap-5 px-6 z-40"
@@ -210,7 +211,7 @@ const ListingComponent = ({ variant, title, description, make }) => {
             selectedValue={filters.price}
           />
         </motion.div>
-      </div>
+      </div> */}
 
       <div className="my-[40px] flex flex-col items-center gap-8 md:gap-16 px-6">
         <SectionHeading title={title} description={description} />
