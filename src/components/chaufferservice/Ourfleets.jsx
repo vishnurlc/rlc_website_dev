@@ -1,30 +1,33 @@
-'use client';
-import React from 'react';
-import { SectionHeading } from '..';
-import Image from 'next/image';
-import { Button } from '../ui/button/Button';
-import { RiWhatsappFill } from 'react-icons/ri';
-import Link from 'next/link';
-import { FaPhoneAlt } from 'react-icons/fa';
-import { AiOutlineExclamationCircle } from 'react-icons/ai';
-import { useCurrency } from '@/context/currencyContext';
-import { usePathname } from 'next/navigation';
+"use client";
+import React from "react";
+import { SectionHeading } from "..";
+import Image from "next/image";
+import { Button } from "../ui/button/Button";
+import { RiWhatsappFill } from "react-icons/ri";
+import Link from "next/link";
+import { FaPhoneAlt } from "react-icons/fa";
+import { AiOutlineExclamationCircle } from "react-icons/ai";
+import { useCurrency } from "@/context/currencyContext";
+import { usePathname } from "next/navigation";
 
 const jetski = [
   {
-    name: 'sedan',
-    image: '/assets/chauffeur/sedan.avif',
-    price: '360',
+    name: "sedan",
+    image: "/assets/chauffeur/sedan.avif",
+    price: "360",
+    link: "sedan",
   },
   {
-    name: 'van',
-    image: '/assets/chauffeur/van.jpeg',
-    price: '360',
+    name: "van",
+    image: "/assets/chauffeur/van.jpeg",
+    price: "360",
+    link: "van",
   },
   {
-    name: 'SUV',
-    image: '/assets/chauffeur/suv.avif',
-    price: '360',
+    name: "SUV",
+    image: "/assets/chauffeur/suv.avif",
+    price: "360",
+    link: "suv",
   },
 ];
 
@@ -36,8 +39,8 @@ const Ourfleets = () => {
     const rate = conversionRates.rates[selectedCurrency];
 
     const amt = Math.round(Number(price) * rate);
-    const priceFormatted = new Intl.NumberFormat('ae', {
-      style: 'currency',
+    const priceFormatted = new Intl.NumberFormat("ae", {
+      style: "currency",
       currency: selectedCurrency,
       minimumFractionDigits: 0, // Set minimumFractionDigits to 0
       maximumFractionDigits: 0, // Set maximumFractionDigits to 0
@@ -50,14 +53,16 @@ const Ourfleets = () => {
       <div className="mt-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-8">
         {jetski.map((item, index) => (
           <div className="relative  w-full aspect-[357/406]" key={index}>
-            <Image
-              src={item.image}
-              alt={`${item.name} rental | Richy life Club`}
-              fill
-              style={{
-                objectFit: 'cover',
-              }}
-            />
+            <Link href={`/chauffeur-service/ss?body=${item.link}`}>
+              <Image
+                src={item.image}
+                alt={`${item.name} rental | Richy life Club`}
+                fill
+                style={{
+                  objectFit: "cover",
+                }}
+              />
+            </Link>
             <div className="absolute p-4 text-white w-full h-fit bg-black bg-opacity-60 bottom-0 left-0 right-0 z-10">
               <div>
                 <h2 className="uppercase font-medium tracking-wide text-xl font-poppins">
