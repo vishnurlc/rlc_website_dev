@@ -230,3 +230,66 @@ ul {
     .div3 { grid-area: 9 / 3 / 18 / 6; }
     .div4 { grid-area: 6 / 1 / 14 / 4; }
   }
+
+  .button-container{
+    display: block;
+    width: 200px;
+  }
+
+  .button-container button{
+    display: block;
+    width: 200px;
+    /* border-radius: 40px; */
+    border: none;
+    padding: 20px;
+    background-color: #dca24b;
+    columns: white;
+  }
+
+  .effect-container{
+    position: relative;
+    overflow: hidden;
+    /* border-radius: 40px; */
+
+    --effect-name:ripple;
+    --effect-duration: 1000ms;
+    --effect-top:0px;
+    --effect-left:0px;
+    --effect-height:100px;
+    --effect-width:100px;
+    --effect-color:white;
+
+
+   }
+
+   .effect-container::before{
+    content:"";
+    position: absolute;
+    opacity: 0.3;
+
+    top: var(--effect-top);
+    left: var(--effect-left);
+    height: var(--effect-height);
+    width: var(--effect-width);
+    border-radius: 50%;
+    transform: scale(0);
+    background-color: var(--effect-color);
+
+   }
+
+   .effect-container.active::before{
+    border-radius: 50%;
+    animation: ripple var(--effect-duration) linear forwards;
+   }
+
+   @keyframes ripple {
+    from{
+      transform: scale(0);
+  
+    }
+
+    to{
+      transform: scale(6);
+      opacity: 0;
+    }
+   }

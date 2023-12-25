@@ -27,6 +27,7 @@ export async function getData() {
 }
 async function page() {
   const desert = await getData();
+
   return (
     <div className="bg-black">
       <div>
@@ -42,7 +43,7 @@ async function page() {
         <h2 className="text-white text-3xl uppercase pt-10">
           New Nightlife Vision
         </h2>
-        <div className="test text-white">
+        <div className="text-white">
           <div className="parent">
             <div className="div1 relative">
               <div className="p-2">
