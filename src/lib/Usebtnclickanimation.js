@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-export const btnclickanimation = (element, config) => {
+export const Usebtnclickanimation = (element, config) => {
   const { size = 100, color = "#fff", duration = 800 } = config;
   useEffect(() => {
     const applayanimation = () => {

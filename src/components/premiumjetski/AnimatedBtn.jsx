@@ -1,11 +1,11 @@
 "use client";
-import { btnclickanimation } from "@/lib/btnclickanimation";
+import { Usebtnclickanimation } from "@/lib/Usebtnclickanimation";
 import Link from "next/link";
 import { useRef } from "react";
 
 const AnimatedBtn = ({ styles, text, msg }) => {
   const buttonRef = useRef();
-  btnclickanimation(buttonRef, {});
+  Usebtnclickanimation(buttonRef, {});
   return (
     <button
       className={`px-6 py-2 hover:scale-105 ${styles} transition-all`}
