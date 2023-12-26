@@ -1,9 +1,16 @@
-'use client';
-import Link from 'next/link';
+"use client";
+import { Usebtnclickanimation } from "@/lib/Usebtnclickanimation";
+import Link from "next/link";
+import { useRef } from "react";
 
 const AnimatedBtn = ({ styles, text, msg }) => {
+  const buttonRef = useRef();
+  Usebtnclickanimation(buttonRef, {});
   return (
-    <button className={`px-6 py-2 hover:scale-105 ${styles} transition-all`}>
+    <button
+      className={`px-6 py-2 hover:scale-105 ${styles} transition-all`}
+      ref={buttonRef}
+    >
       <Link
         href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${msg}?`}
         target="_blank"
