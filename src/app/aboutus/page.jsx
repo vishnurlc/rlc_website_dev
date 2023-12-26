@@ -92,6 +92,7 @@ const page = () => {
                 objectFit: 'cover',
                 borderRadius: '8px',
               }}
+              sizes="50vw"
             />
           </div>
           <div className=" flex flex-col items-start justify-center text-justify">
@@ -140,6 +141,7 @@ const page = () => {
                 objectFit: 'cover',
                 borderRadius: '8px',
               }}
+              sizes="50vw"
             />
           </div>
         </div>

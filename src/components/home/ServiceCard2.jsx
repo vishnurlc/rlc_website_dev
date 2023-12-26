@@ -36,6 +36,7 @@ function ServiceCard2({ url, title, price, link }) {
           style={{
             objectFit: 'cover',
           }}
+          sizes="100vw"
         />
         <div className="absolute p-4 text-white w-full h-fit bg-black bg-opacity-60 bottom-0 left-0 right-0 z-10">
           <div>
