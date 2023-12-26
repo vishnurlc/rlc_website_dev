@@ -44,7 +44,8 @@ const FormComponent = () => {
 
   const validatePhone = (phone) => {
     const regex = /^[0-9]{10}$/;
-    return regex.test(phone);
+    // return regex.test(phone);
+    return true;
   };
 
   const validateForm = () => {
@@ -75,13 +76,13 @@ const FormComponent = () => {
       errors.phone = 'Invalid phone number format';
     }
 
-    if (!formData.subject.trim()) {
-      errors.subject = 'Subject is required';
-    }
+    // if (!formData.subject.trim()) {
+    //   errors.subject = 'Subject is required';
+    // }
 
-    if (!formData.message.trim()) {
-      errors.message = 'Message is required';
-    }
+    // if (!formData.message.trim()) {
+    //   errors.message = 'Message is required';
+    // }
 
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
