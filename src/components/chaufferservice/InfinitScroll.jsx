@@ -54,7 +54,8 @@ function InfinitScroll() {
         {status === 0 && <Loader color={"#000"} />}
       </div>
       {/* loadmore */}
-      <div className="flex justify-center mt-10">
+
+      <div className={status === 1 ? "hidden" : `flex justify-center mt-10`}>
         <button
           onClick={() => setPagination((prevPage) => prevPage + 1)}
           className="w-52 bg-lime-900 rounded-xl h-8 text-white"
