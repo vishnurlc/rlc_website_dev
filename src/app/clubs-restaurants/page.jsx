@@ -1,9 +1,9 @@
-import { HeroSection } from '@/components';
-import VideoSection from '@/components/home/VideoSection';
-import React from 'react';
-import Image from 'next/image';
-import DesertSafariCard from '@/components/desertsafari/DesertSafariCard';
-import ClubCard from '@/components/club/ClubCard';
+import { HeroSection } from "@/components";
+import VideoSection from "@/components/home/VideoSection";
+import React from "react";
+import Image from "next/image";
+import DesertSafariCard from "@/components/desertsafari/DesertSafariCard";
+import ClubCard from "@/components/club/ClubCard";
 
 export async function getData() {
   try {
@@ -21,7 +21,7 @@ export async function getData() {
 
     return data;
   } catch (error) {
-    console.log('s', error);
+    console.log("s", error);
     return {};
   }
 }
@@ -32,10 +32,10 @@ async function page() {
     <div className="bg-black">
       <div>
         <HeroSection
-          posterurl={'/assets/home/heroposter1.webp'}
-          type={'video'}
-          url={'https://admin.richylife.ae/rlchome.mp4'}
-          btntext={'Experience Luxury'}
+          posterurl={"/assets/home/heroposter1.webp"}
+          type={"video"}
+          url={"https://admin.richylife.ae/rlchome.mp4"}
+          btntext={"Experience Luxury"}
         />
       </div>
 
@@ -59,26 +59,26 @@ async function page() {
             </div>
             <div className="div2 relative">
               <Image
-                src={'/assets/club/club1.jpg'}
+                src={"/assets/club/club1.jpg"}
                 fill
                 sizes="100vw"
-                alt={'Richy life Club UAE'}
+                alt={"Richy life Club UAE"}
                 priority
                 style={{
-                  objectFit: 'cover',
+                  objectFit: "cover",
                 }}
               />
             </div>
             <div className="div3 relative">
               <div className="flex justify-between h-full">
                 <Image
-                  src={'/assets/club/club2.jpg'}
+                  src={"/assets/club/club2.jpg"}
                   fill
                   sizes="100vw"
-                  alt={'Richy life Club UAE'}
+                  alt={"Richy life Club UAE"}
                   priority
                   style={{
-                    objectFit: 'cover',
+                    objectFit: "cover",
                   }}
                 />
               </div>
@@ -86,12 +86,13 @@ async function page() {
             <div className="div4 relative">
               <div className="flex justify-between h-full">
                 <Image
-                  src={'/assets/club/club.png'}
+                  src={"/assets/club/club.png"}
                   fill
-                  alt={'Richy life Club UAE'}
+                  sizes="100vw"
+                  alt={"Richy life Club UAE"}
                   priority
                   style={{
-                    objectFit: 'cover',
+                    objectFit: "cover",
                   }}
                 />
               </div>

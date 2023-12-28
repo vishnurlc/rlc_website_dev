@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Card from "../ui/card/card";
 import { Loader } from "..";
 import CardChauffer from "./CardChauffer";
 
@@ -13,8 +12,6 @@ function InfinitScroll() {
 
   async function getData(pagination) {
     const pageSize = 5;
-    // let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/car-makes?populate=*`;
-    // let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?${queryString}&populate=*&filters[tags][tag][$eq]=chauffeur&pagination[page]=${params.pageNumber}&pagination[pageSize]=${pageSize}&sort=id:desc`;
     let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?populate=*&filters[tags][tag][$eq]=chauffeur&pagination[page]=${pagination}&pagination[pageSize]=${pageSize}&sort=id:desc`;
 
     try {
@@ -38,7 +35,6 @@ function InfinitScroll() {
 
   useEffect(() => {
     getData(pagination).then((newData) => {
-      console.log(newData.data);
       setMeta(newData);
       setCars((prevData) => [...prevData, ...newData.data]);
     });

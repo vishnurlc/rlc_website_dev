@@ -1,19 +1,14 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
-import { BsPeople, BsCarFrontFill, BsFillFuelPumpFill } from "react-icons/bs";
 import { RiWhatsappFill } from "react-icons/ri";
 import { IoAirplaneOutline } from "react-icons/io5";
 import {
   AiOutlineCheckCircle,
   AiOutlineExclamationCircle,
-  AiOutlinePlayCircle,
 } from "react-icons/ai";
-import { IoMdPhotos } from "react-icons/io";
-import { LiaToolsSolid, LiaRulerCombinedSolid } from "react-icons/lia";
-import { BiBadgeCheck, BiCategoryAlt, BiSolidColor } from "react-icons/bi";
-import { MdOutlineAirlineSeatReclineExtra, MdAccessTime } from "react-icons/md";
+import { MdAccessTime } from "react-icons/md";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";

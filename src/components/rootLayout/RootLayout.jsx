@@ -1,12 +1,12 @@
-'use client';
-import { CookieBanner, Header } from '@/components';
-import Footer from '@/components/layout/Footer';
-import { BsTelephoneFill } from 'react-icons/bs';
-import { IoLogoWhatsapp } from 'react-icons/io';
-import Link from 'next/link';
-import { CurrencyProvider } from '@/context/currencyContext';
-import Script from 'next/script';
-import Image from 'next/image';
+"use client";
+import { CookieBanner, Header } from "@/components";
+import Footer from "@/components/layout/Footer";
+import { BsTelephoneFill } from "react-icons/bs";
+import { IoLogoWhatsapp } from "react-icons/io";
+import Link from "next/link";
+import { CurrencyProvider } from "@/context/currencyContext";
+import Script from "next/script";
+import Image from "next/image";
 
 const RootLayout = ({ children }) => {
   return (
@@ -61,7 +61,7 @@ const RootLayout = ({ children }) => {
             width="1"
             alt="fbpixel"
             style={{
-              display: 'none',
+              display: "none",
             }}
             src="https://www.facebook.com/tr?id=374541755133413&ev=PageView&noscript=1"
           />
@@ -90,7 +90,7 @@ const RootLayout = ({ children }) => {
             src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTAG_ID}`}
             height="0"
             width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
+            style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
         <CookieBanner />
