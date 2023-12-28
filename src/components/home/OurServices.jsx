@@ -63,7 +63,7 @@ const Ourservices = () => {
       //   backgroundSize: 'cover',
       //   backgroundPosition: 'center',
       // }}
-      className="px-8 py-20 pt-28  bg-white"
+      className="px-4 py-20 pt-28  bg-white"
     >
       {data && (
         <div>
@@ -95,7 +95,7 @@ const Ourservices = () => {
             </div> */}
           {/* </div> */}
 
-          <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 min-h-[350px]">
+          <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 min-h-[350px]">
             {data.length > 0 ? (
               <>
                 {data.map((service, index) => (

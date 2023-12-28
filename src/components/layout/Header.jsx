@@ -6,11 +6,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence } from 'framer-motion';
 import { HiOutlineChevronDown } from 'react-icons/hi';
-import { BiMenuAltRight } from 'react-icons/bi';
+import { BiArrowToBottom, BiMenuAltRight, BiPhoneCall } from 'react-icons/bi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import CurrencyDropdown from './CurrencyDropdown';
 import MobileCurrency from './MobileCurrency';
+import { FaChevronDown, FaMobileAlt, FaWhatsapp } from 'react-icons/fa';
 const dropdownvariant = {
   visible: {
     opacity: 1,
@@ -142,6 +143,11 @@ export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState(null); // Keep track of active dropdown
   const [mobileMenuDropdown, setMobileMenuDropdown] = useState(null);
   const path = usePathname();
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const handleArrowClick = () => {
+    setShowDropdown(!showDropdown);
+  };
 
   useEffect(() => {
     setMobileMenuOpen(false);
@@ -183,13 +189,36 @@ export default function Header() {
     <header
       className="fixed w-screen top-0 z-50 transition-all backdrop-blur-lg"
       style={{
-        background:
-          headerType === 1 || mobileMenuOpen
-            ? '#fff'
-            : 'linear-gradient(180deg, #000 0%, rgba(41, 41, 41, .1) 100%)',
+        background: headerType === 1 || mobileMenuOpen ? '#fff' : '#214842',
       }}
       onMouseLeave={handleDropdownLeave}
     >
+      <div className=" bg-white px-6">
+        <div className="max-w-[1200px] mx-auto relative text-primary flex items-center justify-end  text-xs gap-4 py-2 ">
+          Call us 24 hours, 7 days{' '}
+          <span className="flex gap-2 items-center">
+            <BiPhoneCall /> +971 505 5889 55
+            <FaChevronDown onClick={handleArrowClick} />
+          </span>
+          {showDropdown && (
+            <div className="absolute top-full right-2 mt-2 bg-white border border-gray-300 rounded shadow-md">
+              <Link
+                href={`tel:NEXT_PUBLIC_WHATSAPP_NUMBER`}
+                className="flex gap-2 items-center justify-start px-4 py-2 text-gray-800 hover:bg-gray-200 text-sm"
+              >
+                <FaMobileAlt /> Call
+              </Link>
+              <Link
+                href={``}
+                className="flex gap-2 items-center justify-start px-4 py-2 text-gray-800 hover:bg-gray-200 text-sm"
+              >
+                <FaWhatsapp />
+                WhatsApp
+              </Link>
+            </div>
+          )}
+        </div>
+      </div>
       <nav
         className="px-6 py-2 mx-auto flex max-w-7xl items-center justify-between lg:px-8"
         aria-label="Global"
