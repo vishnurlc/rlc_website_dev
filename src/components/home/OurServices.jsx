@@ -57,13 +57,13 @@ const Ourservices = () => {
 
   return (
     <div
-      style={{
-        background: "url('/assets/servicecarousel/bg.png')",
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-      className="px-8 py-20 pt-28"
+      // style={{
+      //   background: "url('/assets/servicecarousel/bg.png')",
+      //   backgroundRepeat: 'no-repeat',
+      //   backgroundSize: 'cover',
+      //   backgroundPosition: 'center',
+      // }}
+      className="px-8 py-20 pt-28  bg-white"
     >
       {data && (
         <div>

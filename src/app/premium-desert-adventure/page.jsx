@@ -96,17 +96,18 @@ export default async function page() {
   const desert = await getData();
 
   return (
-    <main>
-      <HeroSection2
-        type="video"
-        heading1="Desert Adventure"
-        heading2="Experiences"
-        subheading={'Journey into the Extraordinary'}
-        btntext={'Book an appointment'}
-        posterurl={'/assets//premiumdesert/desert.png'}
-        url="/assets/premiumdesert/bannervideo.mov"
-      />
-
+    <main className="pt-[100px] md:pt-0">
+      <div className="hidden md:block">
+        <HeroSection2
+          type="video"
+          heading1="Desert Adventure"
+          heading2="Experiences"
+          subheading={'Journey into the Extraordinary'}
+          btntext={'Book an appointment'}
+          posterurl={'/assets//premiumdesert/desert.png'}
+          url="/assets/premiumdesert/bannervideo.mov"
+        />
+      </div>
       <div className="bg-black px-6 py-9 md:py-16 ">
         <div className="max-w-[1200px] mx-auto flex flex-col gap-8 md:gap-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

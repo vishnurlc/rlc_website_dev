@@ -75,15 +75,17 @@ const data = [
 ];
 const page = () => {
   return (
-    <main>
-      <HeroSection2
-        type="image"
-        heading1="Helicopters Tours &"
-        heading2="Transfers in Dubai"
-        subheading={'Experience the adventurous Journey'}
-        btntext={'Book you ride'}
-        url="/assets/helicopter/banner.png"
-      />
+    <main className="pt-[100px] md:pt-0">
+      <div className="hidden md:block">
+        <HeroSection2
+          type="image"
+          heading1="Helicopters Tours &"
+          heading2="Transfers in Dubai"
+          subheading={'Experience the adventurous Journey'}
+          btntext={'Book you ride'}
+          url="/assets/helicopter/banner.png"
+        />
+      </div>
 
       <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto grid grid-cols-2 gap-9 ">
         {data.map((item, index) => (

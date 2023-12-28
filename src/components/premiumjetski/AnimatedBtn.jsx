@@ -1,9 +1,9 @@
-"use client";
-import { Usebtnclickanimation } from "@/lib/Usebtnclickanimation";
-import Link from "next/link";
-import { useRef } from "react";
+'use client';
+import { Usebtnclickanimation } from '@/lib/Usebtnclickanimation';
+import Link from 'next/link';
+import { useRef } from 'react';
 
-const AnimatedBtn = ({ styles, text, msg }) => {
+const AnimatedBtn = ({ styles, text, msg, whstapp }) => {
   const buttonRef = useRef();
   Usebtnclickanimation(buttonRef, {});
   return (

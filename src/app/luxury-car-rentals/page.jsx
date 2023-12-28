@@ -83,18 +83,20 @@ export default async function page() {
   const make = await getData();
 
   return (
-    <main>
+    <main className="pt-[100px] md:pt-0">
       <h1 className="sr-only">Luxury Car Rentals - Richy life Club</h1>
-      <HeroSection2
-        type={'image'}
-        heading1={'Luxury Car'}
-        heading2={'Rental in Dubai'}
-        subheading={'Experience luxury on wheels'}
-        posterurl={'/assets/rentacar/banner.png'}
-        btntext={'Book your ride'}
-        url={'/assets/rentacar/banner.png'}
-        overlay={1}
-      />
+      <div className="hidden md:block">
+        <HeroSection2
+          type={'image'}
+          heading1={'Luxury Car'}
+          heading2={'Rental in Dubai'}
+          subheading={'Experience luxury on wheels'}
+          posterurl={'/assets/rentacar/banner.png'}
+          btntext={'Book your ride'}
+          url={'/assets/rentacar/banner.png'}
+          overlay={1}
+        />
+      </div>
       <div className="mx-auto max-w-[1200px]">
         <Suspense fallback={<Loader />}>
           <ListingComponent

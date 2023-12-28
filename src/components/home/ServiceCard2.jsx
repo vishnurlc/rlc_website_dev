@@ -38,19 +38,19 @@ function ServiceCard2({ url, title, price, link }) {
           }}
           sizes="100vw"
         />
-        <div className="absolute p-4 text-white w-full h-fit bg-black bg-opacity-60 bottom-0 left-0 right-0 z-10">
+        <div className="absolute p-4 text-white w-full h-fit bottom-0 left-0 right-0 z-10">
           <div>
             <h2 className="uppercase font-medium tracking-wide text-xs md:text-sm font-poppins">
               {title}
             </h2>
-            <span className="text-gray-400 text-sm">
+            {/* <span className="text-gray-400 text-sm">
               Starting from {convertPrice(price.split('/')[0])}/
               {price.split('/')[1]}
-            </span>
+            </span> */}
           </div>
 
           <AnimatedBtn
-            text={'Book Now'}
+            text={'View More'}
             msg={`I would like to book ${title} from Richy life Club`}
             styles={'mt-2 px-2 py-1 bg-gold text-white rounded-sm'}
           />

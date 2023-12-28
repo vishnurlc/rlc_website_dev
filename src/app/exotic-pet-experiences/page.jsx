@@ -80,16 +80,18 @@ export default async function PetPage() {
   const data = await getData();
 
   return (
-    <main>
-      <HeroSection2
-        type="video"
-        heading1="Exotic Pet"
-        heading2="Experiences"
-        subheading={'Journey into the Extraordinary'}
-        btntext={'Book an appointment'}
-        posterurl="/assets/petpage/vippetbanner.png"
-        url="/assets/petpage/pets.mov"
-      />
+    <main className="pt-[100px] md:pt-0">
+      <div className="hidden md:block">
+        <HeroSection2
+          type="video"
+          heading1="Exotic Pet"
+          heading2="Experiences"
+          subheading={'Journey into the Extraordinary'}
+          btntext={'Book an appointment'}
+          posterurl="/assets/petpage/vippetbanner.png"
+          url="/assets/petpage/pets.mov"
+        />
+      </div>
       <PetExperience data={data} />
       <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
         <WhyusPet />
