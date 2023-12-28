@@ -63,7 +63,7 @@ const Ourservices = () => {
       //   backgroundSize: 'cover',
       //   backgroundPosition: 'center',
       // }}
-      className="px-4 py-20 pt-28  bg-white"
+      className="px-4 py-20 pt-36  bg-white"
     >
       {data && (
         <div>
