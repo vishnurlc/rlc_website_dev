@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "../ui/card/card";
 import { Loader } from "..";
+import CardChauffer from "./CardChauffer";
 
 function InfinitScroll() {
   const pageSize = 5;
@@ -46,7 +47,7 @@ function InfinitScroll() {
     <div>
       <div className="flex flex-col gap-8 w-full min-h-screen">
         {cars?.map((car, index) => (
-          <Card variant={"cars"} data={car} key={index} />
+          <CardChauffer variant={"cars"} data={car} key={index} />
         ))}
         {status === 1 && (
           <p className="text-center text-xl ">No Cars found !</p>
@@ -60,7 +61,7 @@ function InfinitScroll() {
           onClick={() => setPagination((prevPage) => prevPage + 1)}
           className="w-52 bg-lime-900 rounded-xl h-8 text-white"
         >
-          Load more
+          Load More
         </button>
       </div>
     </div>
