@@ -76,18 +76,20 @@ export async function getData() {
 export default async function page() {
   const yachts = await getData();
   return (
-    <main>
+    <main className="pt-[100px] md:pt-0">
       <h1 className="sr-only ">Luxury Yacht Rentals - Richy life Club</h1>
-      <HeroSection2
-        type={'image'}
-        heading1={'Luxury Yacht'}
-        heading2={'Rental in Dubai'}
-        subheading={'Experience the sea breeze in luxury'}
-        posterurl={'/assets/privateyachts/banner.png'}
-        btntext={'Book your trip'}
-        url={'/assets/privateyachts/banner.png'}
-        overlay={1}
-      />
+      <div className="hidden md:block">
+        <HeroSection2
+          type={'image'}
+          heading1={'Luxury Yacht'}
+          heading2={'Rental in Dubai'}
+          subheading={'Experience the sea breeze in luxury'}
+          posterurl={'/assets/privateyachts/banner.png'}
+          btntext={'Book your trip'}
+          url={'/assets/privateyachts/banner.png'}
+          overlay={1}
+        />
+      </div>
       <div className="mx-auto max-w-[1200px]">
         <YachtListing data={yachts} variant={'yacht'} />
       </div>

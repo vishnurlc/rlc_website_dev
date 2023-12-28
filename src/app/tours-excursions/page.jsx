@@ -51,18 +51,20 @@ export const metadata = {
 
 export default async function page() {
   return (
-    <main>
+    <main className="pt-[100px] md:pt-0">
       <h1 className="sr-only">Tours and Excursions - Richy life Club</h1>
-      <HeroSection2
-        type={'image'}
-        heading1={'Tours And'}
-        heading2={'Excursions'}
-        subheading={'Curating the best travel experiences'}
-        posterurl={'/assets/tours/bannerimage.jpeg'}
-        btntext={'Book your ride'}
-        url={'/assets/tours/bimage.avif'}
-        overlay={1}
-      />
+      <div className="hidden md:block">
+        <HeroSection2
+          type={'image'}
+          heading1={'Tours And'}
+          heading2={'Excursions'}
+          subheading={'Curating the best travel experiences'}
+          posterurl={'/assets/tours/bannerimage.jpeg'}
+          btntext={'Book your ride'}
+          url={'/assets/tours/bimage.avif'}
+          overlay={1}
+        />
+      </div>
       <div className="mx-auto max-w-[1200px]">
         <Suspense fallback={<Loader />}>
           <ToursListingComponent />

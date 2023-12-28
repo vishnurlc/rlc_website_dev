@@ -81,17 +81,19 @@ export async function getData() {
 export default async function PrivateJet() {
   const jets = await getData();
   return (
-    <main>
+    <main className="pt-[100px] md:pt-0">
       <h1 className="sr-only ">Private Jet Rentals - Richy life Club</h1>
-      <HeroSection2
-        type={'video'}
-        heading1={'Private Jets'}
-        heading2={'Chaters in Dubai'}
-        subheading={'Experience the extreme luxury with us'}
-        posterurl={'/assets/privatejet/bannerimg.png'}
-        btntext={'Book Now'}
-        overlay={0}
-      />
+      <div className="hidden md:block">
+        <HeroSection2
+          type={'video'}
+          heading1={'Private Jets'}
+          heading2={'Chaters in Dubai'}
+          subheading={'Experience the extreme luxury with us'}
+          posterurl={'/assets/privatejet/bannerimg.png'}
+          btntext={'Book Now'}
+          overlay={0}
+        />
+      </div>
 
       <div className="py-[43px] md:py-[86px]">
         {jets.data.length > 0 ? (
