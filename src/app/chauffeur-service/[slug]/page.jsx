@@ -91,7 +91,7 @@ const page = async ({ params }) => {
   console.log(params.slug);
   return (
     <main className="pt-[100px] md:pt-0">
-      <div className="hidden md:block">
+      <div className="hidden">
         <HeroSection2
           type="image"
           heading1="Luxury Chauffeur"

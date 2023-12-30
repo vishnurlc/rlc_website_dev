@@ -73,7 +73,7 @@ const page = async () => {
 
   return (
     <main className="pt-[100px] md:pt-0">
-      <div className="hidden md:block">
+      <div className="hidden">
         <HeroSection2
           type="image"
           heading1="Luxury Chauffeur"
@@ -84,7 +84,7 @@ const page = async () => {
         />
       </div>
 
-      <div className="mt-10 max-w-[1200px] mx-auto px-5">
+      <div className="mt-32 max-w-[1200px] mx-auto px-5">
         {/* <SectionHeading title={'Our Services'} description={''} />
         <div className="container mx-auto mt-10 ">
           <div className="grid grid-cols-1 md:grid-cols-2  gap-4 ">
