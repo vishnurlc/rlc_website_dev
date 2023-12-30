@@ -11,6 +11,7 @@ export function Button({
   width = 'auto',
   msg,
   children,
+  action,
 }) {
   const baseButtonClasses = 'font-medium text-center py-2 px-6';
 
@@ -37,15 +38,14 @@ export function Button({
       whileHover={{
         scale: 1.05,
       }}
+      onClick={action}
+      style={{
+        cursor: 'pointer',
+      }}
     >
-      <Link
-        href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${msg}?`}
-        target="_blank"
-        rel="noreferrer"
-        className="flex justify-center items-center gap-4"
-      >
+      <div className="flex justify-center items-center gap-4 cursor-pointer">
         {children}
-      </Link>
+      </div>
     </motion.div>
   );
 }

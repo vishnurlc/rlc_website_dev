@@ -1,31 +1,32 @@
-"use client";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { Button } from "../button/Button";
-import { FaPhoneAlt } from "react-icons/fa";
-import { BsPeople, BsCarFrontFill, BsFillFuelPumpFill } from "react-icons/bs";
-import { RiWhatsappFill } from "react-icons/ri";
+'use client';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { Button } from '../button/Button';
+import { FaPhoneAlt } from 'react-icons/fa';
+import { BsPeople, BsCarFrontFill, BsFillFuelPumpFill } from 'react-icons/bs';
+import { RiWhatsappFill } from 'react-icons/ri';
 import {
   AiOutlineCheckCircle,
   AiOutlineExclamationCircle,
   AiOutlinePlayCircle,
-} from "react-icons/ai";
-import { IoMdPhotos } from "react-icons/io";
-import { LiaToolsSolid, LiaRulerCombinedSolid } from "react-icons/lia";
-import { BiBadgeCheck, BiCategoryAlt, BiSolidColor } from "react-icons/bi";
-import { MdOutlineAirlineSeatReclineExtra } from "react-icons/md";
+} from 'react-icons/ai';
+import { IoMdPhotos } from 'react-icons/io';
+import { LiaToolsSolid, LiaRulerCombinedSolid } from 'react-icons/lia';
+import { BiBadgeCheck, BiCategoryAlt, BiSolidColor } from 'react-icons/bi';
+import { MdOutlineAirlineSeatReclineExtra } from 'react-icons/md';
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import { CustomVideoPlayer, ModalComponent } from "@/components";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useCurrency } from "@/context/currencyContext";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { BookingModal, CustomVideoPlayer, ModalComponent } from '@/components';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useCurrency } from '@/context/currencyContext';
 
 function Card({ variant, data }) {
   const [open, setOpen] = useState(false);
+  const [bookingOpen, setBookingOpen] = useState(false);
   const [videoModal, setVideoModal] = useState(false);
   const { selectedCurrency, conversionRates } = useCurrency();
   const path = usePathname();
@@ -34,8 +35,8 @@ function Card({ variant, data }) {
     const rate = conversionRates.rates[selectedCurrency];
 
     const amt = Math.round(Number(price) * rate);
-    const priceFormatted = new Intl.NumberFormat("ae", {
-      style: "currency",
+    const priceFormatted = new Intl.NumberFormat('ae', {
+      style: 'currency',
       currency: selectedCurrency,
       minimumFractionDigits: 0, // Set minimumFractionDigits to 0
       maximumFractionDigits: 0, // Set maximumFractionDigits to 0
@@ -64,8 +65,8 @@ function Card({ variant, data }) {
             alt={`Rent ${data.attributes.name} with Richy life Club`}
             fill
             style={{
-              objectFit: "cover",
-              objectPosition: "center",
+              objectFit: 'cover',
+              objectPosition: 'center',
             }}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 80vw"
           />
@@ -100,7 +101,7 @@ function Card({ variant, data }) {
               <Link href={`${path}/${data.attributes.slug}`}>
                 {data.attributes.name}
               </Link>
-              {variant === "yacht" && (
+              {variant === 'yacht' && (
                 <p className="text-gray-500 text-base font-normal">
                   {data.attributes.make.data.attributes.make}
                 </p>
@@ -121,7 +122,7 @@ function Card({ variant, data }) {
                 {data.attributes.rating}.00 rating
               </span>
             </p> */}
-            {variant === "car" ? (
+            {variant === 'car' ? (
               <CarDetail data={data} />
             ) : (
               <YachtDetail data={data} />
@@ -135,19 +136,19 @@ function Card({ variant, data }) {
               <div className="w-full md:w-fit">
                 {/* <p className="text-secondary text-sm">From</p> */}
                 <span className="text-primary font-normal text-2xl">
-                  {convertPrice(data.attributes.price)}{" "}
+                  {convertPrice(data.attributes.price)}{' '}
                   <span className="text-secondary text-sm font-normal">
-                    {variant === "car" ? "/Day" : "/hour"}
+                    {variant === 'car' ? '/Day' : '/hour'}
                   </span>
                 </span>
-                {variant === "car" ? (
+                {variant === 'car' ? (
                   <span className="text-primary text-xs">
                     {data.attributes.deposit.data && (
                       <div className="text-primary flex items-center gap-1  font-medium leading-tight">
                         {data.attributes.deposit.data?.attributes.type ===
-                        "No Deposit" ? (
+                        'No Deposit' ? (
                           <>
-                            <AiOutlineCheckCircle />{" "}
+                            <AiOutlineCheckCircle />{' '}
                             <span>
                               {data.attributes.deposit.data?.attributes.type}
                             </span>
@@ -194,6 +195,7 @@ function Card({ variant, data }) {
                   </Link>
                 </div>
                 <Button
+                  action={() => setBookingOpen(true)}
                   msg={`I would like to know more about ${data.attributes.name} booking`}
                 >
                   Book Now
@@ -203,6 +205,12 @@ function Card({ variant, data }) {
           </div>
         </div>
       </div>
+
+      <BookingModal
+        open={bookingOpen}
+        setOpen={setBookingOpen}
+        item={variant}
+      />
 
       <ModalComponent open={open} setOpen={setOpen}>
         <div className="h-[50vh] max-h-[500px]">
@@ -281,8 +289,8 @@ function CarDetail({ data }) {
     const rate = conversionRates.rates[selectedCurrency];
 
     const amt = Math.round(Number(price) * rate);
-    const priceFormatted = new Intl.NumberFormat("ae", {
-      style: "currency",
+    const priceFormatted = new Intl.NumberFormat('ae', {
+      style: 'currency',
       currency: selectedCurrency,
       minimumFractionDigits: 0, // Set minimumFractionDigits to 0
       maximumFractionDigits: 0, // Set maximumFractionDigits to 0
@@ -298,7 +306,7 @@ function CarDetail({ data }) {
       </div>
       <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-sm md:text-base flex items-center gap-2 font-medium leading-tight">
-          <MdOutlineAirlineSeatReclineExtra />{" "}
+          <MdOutlineAirlineSeatReclineExtra />{' '}
           {data.attributes.seat.data.attributes.seat} Seats
         </div>
       </div>
@@ -315,10 +323,10 @@ function CarDetail({ data }) {
       </div>
       <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-sm md:text-base font-medium flex items-center gap-2 leading-tight">
-          <BiSolidColor />{" "}
+          <BiSolidColor />{' '}
           {data.attributes.car_colors.data
             .map((item) => item.attributes.color)
-            .join(",")}
+            .join(',')}
         </div>
       </div>
     </div>

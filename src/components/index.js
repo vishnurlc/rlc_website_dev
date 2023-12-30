@@ -60,3 +60,5 @@ export { default as DetailComponent } from './membership/DetailComponent';
 export { default as PriceComponent } from './ui/priceComponent/PriceComponent';
 
 export { default as ToursListingComponent } from './tours/ListingComponent';
+
+export { default as BookingModal } from './BookingModal/Bookingmodal';

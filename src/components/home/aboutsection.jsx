@@ -56,7 +56,7 @@ function Aboutsection() {
         </div>
         <div className="bg-white text-black  md:mx-20 flex-1">
           <h2 className="text-teal-900 text-[42px] font-extrabold leading-10">
-            RICHYLIFE <br />
+            RICHY LIFE <br />
             CLUB{' '}
           </h2>
 
