@@ -1,16 +1,16 @@
-'use client';
-import { useEffect, useRef, useState } from 'react';
-import { Loader, PaginationComponent, SectionHeading } from '..';
-import Card from '../ui/card/card';
-import { useRouter, useSearchParams } from 'next/navigation';
-import CarbodyFilter from '../filters/CarBodyFilter';
-import CarBrandFilter from '../filters/CarBrandFilter';
-import PriceFilter from '../filters/PriceFilter';
-import CaryearFilter from '../filters/CarYearfilter';
-import { motion } from 'framer-motion';
-import qs from 'qs';
-import Marquee from '@/components/marquee/Marquee';
-import SearchFilter from '../filters/SearchFilter';
+"use client";
+import { useEffect, useRef, useState } from "react";
+import { Loader, PaginationComponent, SectionHeading } from "..";
+import Card from "../ui/card/card";
+import { useRouter, useSearchParams } from "next/navigation";
+import CarbodyFilter from "../filters/CarBodyFilter";
+import CarBrandFilter from "../filters/CarBrandFilter";
+import PriceFilter from "../filters/PriceFilter";
+import CaryearFilter from "../filters/CarYearfilter";
+import { motion } from "framer-motion";
+import qs from "qs";
+import Marquee from "@/components/marquee/Marquee";
+import SearchFilter from "../filters/SearchFilter";
 const ListingComponent = ({ variant, title, description, make }) => {
   const containerRef = useRef(null);
   const scrollRef = useRef(null);
@@ -18,21 +18,21 @@ const ListingComponent = ({ variant, title, description, make }) => {
   const [cars, setCars] = useState({});
   const [drag, setDrag] = useState(false);
   const searchParams = useSearchParams();
-  const [pageNumber, _] = useState(searchParams.get('pageNumber') || '');
+  const [pageNumber, _] = useState(searchParams.get("pageNumber") || "");
   const pageSize = 5;
   const [status, setStatus] = useState(0);
   const [filters, setFilters] = useState({
-    make: searchParams.get('make') || '',
-    body: searchParams.get('body') || '',
-    price: searchParams.get('price') || '',
-    year: searchParams.get('year') || '',
-    pageNumber: '',
+    make: searchParams.get("make") || "",
+    body: searchParams.get("body") || "",
+    price: searchParams.get("price") || "",
+    year: searchParams.get("year") || "",
+    pageNumber: "",
   });
 
   async function getData({ params }) {
     const queryParameters = {};
     setStatus(0);
-    if (params.body && params.body !== 'all') {
+    if (params.body && params.body !== "all") {
       queryParameters.body = {
         slug: {
           $eq: params.body,
@@ -47,8 +47,8 @@ const ListingComponent = ({ variant, title, description, make }) => {
       };
     }
     if (params.price) {
-      let pricemin = parseInt(params.price.split('-')[0]);
-      let pricemax = parseInt(params.price.split('-')[1]);
+      let pricemin = parseInt(params.price.split("-")[0]);
+      let pricemax = parseInt(params.price.split("-")[1]);
       queryParameters.price = {
         $between: [pricemin, pricemax],
       };
@@ -113,7 +113,7 @@ const ListingComponent = ({ variant, title, description, make }) => {
     }
 
     // Update URL without triggering a full page reload
-    window.history.pushState({}, '', '?' + newSearchParams.toString());
+    window.history.pushState({}, "", "?" + newSearchParams.toString());
 
     // Update local state with the new filters
     setFilters(newFilters);
@@ -121,7 +121,7 @@ const ListingComponent = ({ variant, title, description, make }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (containerRef.current && typeof window !== 'undefined') {
+      if (containerRef.current && typeof window !== "undefined") {
         if (window.innerWidth < 700) {
           setDrag(true);
         } else {
@@ -133,10 +133,10 @@ const ListingComponent = ({ variant, title, description, make }) => {
 
     handleResize(); // Call the function once on initial load
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [containerRef]);
 
@@ -150,7 +150,7 @@ const ListingComponent = ({ variant, title, description, make }) => {
       ...prevFilters,
       ...urlFilters,
     }));
-    urlFilters['pageNumber'] = pageNumber;
+    urlFilters["pageNumber"] = pageNumber;
     getData({ params: urlFilters }).then((newData) => {
       setCars(newData);
     });
@@ -176,7 +176,7 @@ const ListingComponent = ({ variant, title, description, make }) => {
     }
 
     // Update URL without triggering a full page reload
-    window.history.pushState({}, '', '?' + newSearchParams.toString());
+    window.history.pushState({}, "", "?" + newSearchParams.toString());
 
     // Update local state with the new page number
     setFilters(newFilters);
@@ -213,11 +213,11 @@ const ListingComponent = ({ variant, title, description, make }) => {
       </div>
 
       <div className="my-[40px] flex flex-col items-center gap-8 md:gap-16 px-6">
-        <SectionHeading
+        {/* <SectionHeading
           title={title}
           description={description}
           mobile={false}
-        />
+        /> */}
         <div className="flex flex-col gap-8 w-full min-h-screen">
           {cars.data?.map((car, index) => (
             <Card variant={variant} data={car} key={index} />
@@ -225,7 +225,7 @@ const ListingComponent = ({ variant, title, description, make }) => {
           {status === 1 && (
             <p className="text-center text-xl ">No Cars found !</p>
           )}
-          {status === 0 && <Loader color={'#000'} />}
+          {status === 0 && <Loader color={"#000"} />}
         </div>
         {cars.meta && (
           <div>
