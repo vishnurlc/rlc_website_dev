@@ -13,20 +13,20 @@ import Motionslider from "../ui/slidermotion/motionslider";
 
 const jetski = [
   {
-    name: "sedan",
-    image: "/assets/chauffeur/sedan.avif",
+    name: "Lexus",
+    image: "/assets/chauffeur/ES300H.jpeg",
     price: "360",
     link: "sedan",
   },
   {
-    name: "van",
-    image: "/assets/chauffeur/van.jpeg",
+    name: "Genesis G80",
+    image: "/assets/chauffeur/G80 EXT.png",
     price: "360",
     link: "van",
   },
   {
-    name: "SUV",
-    image: "/assets/chauffeur/suv.avif",
+    name: "Highlander",
+    image: "/assets/chauffeur/HIGHLANDER.jpg",
     price: "360",
     link: "suv",
   },
@@ -54,11 +54,9 @@ const Ourfleets = () => {
       <div className="mt-7">
         <Motionslider>
           {jetski.map((item, index) => (
-            <div
-              className="relative  w-full min-w-[227px] aspect-[357/406] rounded-md overflow-hidden"
-              key={index}
-            >
-              <Link href={`/chauffeur-service/ss?body=${item.link}`}>
+            <div key={index}>
+              <div className="relative  w-full min-w-[297px] aspect-[357/200] rounded-md overflow-hidden">
+                {/* <Link href={`/chauffeur-service/ss?body=${item.link}`}> */}
                 <Image
                   src={item.image}
                   alt={`${item.name} rental | Richy life Club`}
@@ -67,23 +65,24 @@ const Ourfleets = () => {
                     objectFit: "cover",
                   }}
                 />
-              </Link>
-              <div className="absolute p-4 text-white w-full h-fit  bottom-0 left-0 right-0 z-10">
-                <div>
-                  <h2 className="uppercase font-medium tracking-wide text-sm md:text-xl font-poppins">
-                    {item.name}
-                  </h2>
-                  {item.price && (
+                {/* </Link> */}
+                <div className="absolute p-4 text-black w-full h-fit  bottom-0 left-0 right-0 z-10">
+                  <div>
+                    {/* {item.price && (
                     <span className="text-gray-400 text-sm">
-                      {/* Starting from {convertPrice(item.price)} */}
+                      Starting from {convertPrice(item.price)}
                     </span>
-                  )}
-                </div>
+                  )} */}
+                  </div>
 
-                {/* <Button className="text-sm mt-4 md:px-4 py-2 bg-gold text-white rounded-sm">
+                  {/* <Button className="text-sm mt-4 md:px-4 py-2 bg-gold text-white rounded-sm">
                   Book Now
                 </Button> */}
+                </div>
               </div>
+              <h2 className="uppercase text-center font-medium tracking-wide text-sm md:text-xl font-poppins">
+                {item.name}
+              </h2>
             </div>
           ))}
         </Motionslider>
