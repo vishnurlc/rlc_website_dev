@@ -49,8 +49,7 @@ function CardChauffer({ variant, data }) {
           <Image
             src={data.attributes.images?.data[0].attributes.url}
             alt={`Rent ${data.attributes.name} with Richy life Club`}
-            width={500}
-            height={600}
+            fill
             style={{
               objectFit: "contain",
               objectPosition: "center",
@@ -75,7 +74,7 @@ function CardChauffer({ variant, data }) {
                 <span className="text-primary font-normal text-2xl">
                   {convertPrice(data.attributes.price)}{" "}
                   <span className="text-secondary text-sm font-normal">
-                    {variant === "car" ? "/Day" : "/hour"}
+                    {variant === "car" ? "/Day" : "Starting Price"}
                   </span>
                 </span>
                 {variant === "car" ? (
@@ -107,7 +106,7 @@ function CardChauffer({ variant, data }) {
                 ) : (
                   <span className="text-primary text-xs">
                     <div className="text-primary flex items-center gap-1  font-medium leading-tight">
-                      <AiOutlineExclamationCircle /> Min booking 3 hours
+                      {/* <AiOutlineExclamationCircle /> Min booking 3 hours */}
                     </div>
                   </span>
                 )}
@@ -195,34 +194,32 @@ function CarDetail({ data }) {
   };
   return (
     <div className="py-3 flex gap-5 flex-wrap">
-      <div className="p-2 bg-slate-100 flex items-center justify-center">
+      <div className="p-2 py-2 bg-slate-100 flex items-center justify-center">
         <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
-          <MdAccessTime /> 10 hours <br />
-          AED {data.attributes.tenhours}
+          <MdAccessTime /> 10 hours {convertPrice(data.attributes.tenhours)}
         </div>
       </div>
-      <div className="px-2 bg-slate-100 flex items-center justify-center">
+      <div className="px-2 py-2 bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-sm md:text-base flex items-center gap-2 font-medium leading-tight">
-          <MdAccessTime /> 5 hours <br /> AED {data.attributes.fivehours}
+          <MdAccessTime /> 5 hours {convertPrice(data.attributes.fivehours)}
         </div>
       </div>
 
-      <div className="px-2  bg-slate-100 flex items-center justify-center">
+      <div className="px-2 py-2 bg-slate-100 flex items-center justify-center">
         <div className="text-primary flex items-center gap-2 text-sm md:text-base font-medium leading-tight">
-          <IoAirplaneOutline /> Airport <br />
-          AED {data.attributes.airport}
+          <IoAirplaneOutline /> Airport {convertPrice(data.attributes.airport)}
         </div>
       </div>
-      <div className="px-2  bg-slate-100 flex items-center justify-center">
+      <div className="px-2 py-2  bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-sm md:text-base font-medium flex items-center gap-2 leading-tight">
-          <MdAccessTime /> Ext. hours <br />
-          AED {data.attributes.extensionpirce}
+          <MdAccessTime /> Ext. hours{" "}
+          {convertPrice(data.attributes.extensionpirce)}
         </div>
       </div>
-      <div className="px-2  bg-slate-100 flex items-center justify-center">
+      <div className="px-2 py-2 bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-sm md:text-base font-medium flex items-center gap-2 leading-tight">
-          <IoAirplaneOutline /> Addit. Emirate <br />
-          AED {data.attributes.additionalcity}
+          <IoAirplaneOutline /> Addit. Emirate{" "}
+          {convertPrice(data.attributes.additionalcity)}
         </div>
       </div>
     </div>
