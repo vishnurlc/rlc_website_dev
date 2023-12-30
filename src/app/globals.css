@@ -297,3 +297,11 @@ ul {
    input:focus-visible{
     outline-color: #3A5B22;
    }
+
+   #selectDisable{
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}

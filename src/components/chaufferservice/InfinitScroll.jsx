@@ -12,7 +12,7 @@ function InfinitScroll() {
 
   async function getData(pagination) {
     const pageSize = 5;
-    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?populate=*&filters[tags][tag][$eq]=chauffeur&pagination[page]=${pagination}&pagination[pageSize]=${pageSize}&sort=id:desc`;
+    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/chauffeur-cars?populate=*&pagination[page]=${pagination}&pagination[pageSize]=${pageSize}&sort=id:desc`;
 
     try {
       const res = await fetch(api, {
@@ -35,8 +35,11 @@ function InfinitScroll() {
 
   useEffect(() => {
     getData(pagination).then((newData) => {
-      setMeta(newData);
-      setCars((prevData) => [...prevData, ...newData.data]);
+      console.log(newData);
+      if (status !== 1 && Object.keys(newData).length !== 0) {
+        setMeta(newData);
+        setCars((prevData) => [...prevData, ...newData.data]);
+      }
     });
   }, [pagination]);
   return (

@@ -2,16 +2,24 @@
 import React from "react";
 import { SectionHeading } from "..";
 import Image from "next/image";
-import { Button } from "../ui/button/Button";
-import { RiWhatsappFill } from "react-icons/ri";
-import Link from "next/link";
-import { FaPhoneAlt } from "react-icons/fa";
-import { AiOutlineExclamationCircle } from "react-icons/ai";
 import { useCurrency } from "@/context/currencyContext";
 import { usePathname } from "next/navigation";
 import Motionslider from "../ui/slidermotion/motionslider";
 
 const jetski = [
+  {
+    name: "Mercedes benz",
+    image:
+      "/assets/chauffeur/2016-mercedes-benz-s-class-2015-mercedes-benz-s-class-maybach-maybach-removebg-preview.png",
+    price: "360",
+    link: "sedan",
+  },
+  {
+    name: "Rolls Royce",
+    image: "/assets/chauffeur/8d1f807192f03bc85b03d74893e69c09.png",
+    price: "360",
+    link: "sedan",
+  },
   {
     name: "Lexus",
     image: "/assets/chauffeur/ES300H.jpeg",
@@ -23,6 +31,12 @@ const jetski = [
     image: "/assets/chauffeur/G80 EXT.png",
     price: "360",
     link: "van",
+  },
+  {
+    name: "Highlander",
+    image: "/assets/chauffeur/HIGHLANDER.jpg",
+    price: "360",
+    link: "suv",
   },
   {
     name: "Highlander",
@@ -51,10 +65,10 @@ const Ourfleets = () => {
   return (
     <div>
       <SectionHeading title={`Our fleets`} mobile={false} />
-      <div className="mt-7">
+      <div className="mt-7 w-screen overflow-hidden">
         <Motionslider>
           {jetski.map((item, index) => (
-            <div key={index}>
+            <div key={index} id="selectDisable">
               <div className="relative  w-full min-w-[297px] aspect-[357/200] rounded-md overflow-hidden">
                 {/* <Link href={`/chauffeur-service/ss?body=${item.link}`}> */}
                 <Image
@@ -63,7 +77,10 @@ const Ourfleets = () => {
                   fill
                   style={{
                     objectFit: "cover",
+                    userSelect: "none !important",
                   }}
+                  id="selectDisable"
+                  draggable="false"
                 />
                 {/* </Link> */}
                 <div className="absolute p-4 text-black w-full h-fit  bottom-0 left-0 right-0 z-10">
