@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { ModalComponent } from '..';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { sendEmail } from '@/lib/emailSend';
 const Bookingmodal = ({ item, setOpen, open }) => {
   console.log(item);
   const [formData, setFormData] = useState({
@@ -14,15 +15,19 @@ const Bookingmodal = ({ item, setOpen, open }) => {
       deliveryPlace: '',
       bookingFromDate: '',
       returnDate: '',
+      bookingFromTime: '',
+      bookingToTime: '',
     }),
     ...(item === 'chauffeurService' && {
       pickupDate: '',
+      pickupTime: '',
       fromLocation: '',
       toLocation: '',
     }),
     ...(item === 'yacht' && {
       bookingDate: '',
       bookingHours: '',
+      bookingTime: '',
       numberOfPax: '',
     }),
     ...(item === 'tourAndExcursion' && {
@@ -47,7 +52,11 @@ const Bookingmodal = ({ item, setOpen, open }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add your form submission logic here
-    console.log('Form submitted:', formData);
+    try {
+      sendEmail({ data: formData, membership: false });
+    } catch (error) {
+      console.log('Error Sending Email', error);
+    }
     // Close the form after submission
     setOpen(false);
   };
@@ -147,6 +156,26 @@ const Bookingmodal = ({ item, setOpen, open }) => {
               </div>
               <div className="mb-4">
                 <label
+                  htmlFor="bookingFromTime"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Booking From Time
+                </label>
+                <DatePicker
+                  selected={formData.bookingFromTime}
+                  onChange={(date) => handleDateChange(date, 'bookingFromTime')}
+                  showTimeSelect
+                  showTimeSelectOnly
+                  timeIntervals={15}
+                  timeCaption="Time"
+                  dateFormat="h:mm aa"
+                  className="mt-1 p-2 border rounded-md w-full"
+                  required
+                />
+              </div>
+
+              <div className="mb-4">
+                <label
                   htmlFor="returnDate"
                   className="block text-sm font-medium text-gray-700"
                 >
@@ -155,6 +184,25 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                 <DatePicker
                   selected={formData.returnDate}
                   onChange={(date) => handleDateChange(date, 'returnDate')}
+                  className="mt-1 p-2 border rounded-md w-full"
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="bookingToTime"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Booking To Time
+                </label>
+                <DatePicker
+                  selected={formData.bookingToTime}
+                  onChange={(date) => handleDateChange(date, 'bookingToTime')}
+                  showTimeSelect
+                  showTimeSelectOnly
+                  timeIntervals={15}
+                  timeCaption="Time"
+                  dateFormat="h:mm aa"
                   className="mt-1 p-2 border rounded-md w-full"
                   required
                 />
@@ -177,6 +225,26 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                   required
                 />
               </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="pickupTime"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Pickup Time
+                </label>
+                <DatePicker
+                  selected={formData.pickupTime}
+                  onChange={(date) => handleDateChange(date, 'pickupTime')}
+                  showTimeSelect
+                  showTimeSelectOnly
+                  timeIntervals={15}
+                  timeCaption="Time"
+                  dateFormat="h:mm aa"
+                  className="mt-1 p-2 border rounded-md w-full"
+                  required
+                />
+              </div>
+
               <div className="mb-4">
                 <label
                   htmlFor="fromLocation"
@@ -225,6 +293,25 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                 <DatePicker
                   selected={formData.bookingDate}
                   onChange={(date) => handleDateChange(date, 'bookingDate')}
+                  className="mt-1 p-2 border rounded-md w-full"
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="bookingTime"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Booking Time
+                </label>
+                <DatePicker
+                  selected={formData.bookingTime}
+                  onChange={(date) => handleDateChange(date, 'bookingTime')}
+                  showTimeSelect
+                  showTimeSelectOnly
+                  timeIntervals={15}
+                  timeCaption="Time"
+                  dateFormat="h:mm aa"
                   className="mt-1 p-2 border rounded-md w-full"
                   required
                 />
