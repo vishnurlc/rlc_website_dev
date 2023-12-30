@@ -93,7 +93,7 @@ const Footer = () => {
             <div className="pr-16 justify-start inline-flex">
               <div className="justify-start items-start flex">
                 <div className="text-gold text-2xl font-black leading-none">
-                  Richy
+                  Richy &nbsp;
                 </div>
               </div>
               <div className="justify-start items-start flex">

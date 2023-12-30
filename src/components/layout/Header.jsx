@@ -189,19 +189,19 @@ export default function Header() {
     <header
       className="fixed w-screen top-0 z-50 transition-all backdrop-blur-lg"
       style={{
-        background: headerType === 1 || mobileMenuOpen ? '#fff' : '#214842',
+        background: headerType === 1 || mobileMenuOpen ? '#fff' : '#006039',
       }}
       onMouseLeave={handleDropdownLeave}
     >
       <div className=" bg-white px-6">
-        <div className="max-w-[1200px] mx-auto relative text-primary flex items-center justify-end  text-xs gap-4 py-2 ">
-          Call us 24 hours, 7 days{' '}
+        <div className="max-w-[1200px] mx-auto relative text-gold flex items-center justify-end  text-xs gap-4 py-2 ">
+          Private Assistant 24/7{' '}
           <span className="flex gap-2 items-center">
             <BiPhoneCall /> +971 505 5889 55
             <FaChevronDown onClick={handleArrowClick} />
           </span>
           {showDropdown && (
-            <div className="absolute top-full right-2 mt-2 bg-white border border-gray-300 rounded shadow-md">
+            <div className="absolute top-full right-2 mt-2 bg-white border border-gray-300 rounded shadow-md z-50">
               <Link
                 href={`tel:NEXT_PUBLIC_WHATSAPP_NUMBER`}
                 className="flex gap-2 items-center justify-start px-4 py-2 text-gray-800 hover:bg-gray-200 text-sm"

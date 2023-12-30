@@ -8,6 +8,7 @@ import {
 } from '@/components';
 import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
 import ItineraryComponent from '@/components/tours/ItineraryComponent';
+import PriceAndBookNow from '@/components/tours/PriceAndBookNow';
 import qs from 'qs';
 
 export async function generateMetadata({ params }) {
@@ -82,18 +83,7 @@ export default async function CarDetail({ params: { slug } }) {
           data={car.data[0].attributes.image}
           name={car.data[0].attributes.name}
         />
-        <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5 max-w-[1200px] mx-auto">
-          <h2 className="text-right text-xl text-primary">
-            <PriceComponent cost={car.data[0].attributes.price} />
-            /Day
-          </h2>
-
-          <AnimatedBtn
-            styles={'rounded-md bg-primary text-white'}
-            text={'Book Now'}
-            msg={'Hi, I would like to know about your services.'}
-          />
-        </div>
+        <PriceAndBookNow cost={car.data[0].attributes.price} />
       </div>
 
       <div className="max-w-[1200px] mx-auto py-10 md:py-16 px-6 flex flex-col gap-8 md:gap-16">
