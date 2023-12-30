@@ -192,32 +192,32 @@ function CarDetail({ data }) {
   };
   return (
     <div className="py-3 flex gap-5 flex-wrap">
-      <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
+      <div className="p-2 bg-slate-100 flex items-center justify-center">
         <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
           <MdAccessTime /> 10 hours <br />{" "}
           {data.attributes.fuel.data.attributes.type}
         </div>
       </div>
-      <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
+      <div className="px-2 bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-sm md:text-base flex items-center gap-2 font-medium leading-tight">
           <MdAccessTime /> 5 hours <br />{" "}
           {data.attributes.seat.data.attributes.seat} Seats
         </div>
       </div>
 
-      <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
+      <div className="px-2  bg-slate-100 flex items-center justify-center">
         <div className="text-primary flex items-center gap-2 text-sm md:text-base font-medium leading-tight">
           <IoAirplaneOutline /> Airport <br />
           {data.attributes.year.data.attributes.year}
         </div>
       </div>
-      <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
+      <div className="px-2  bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-sm md:text-base font-medium flex items-center gap-2 leading-tight">
           <MdAccessTime /> Ext. hours <br />
           {data.attributes.body.data.attributes.type}
         </div>
       </div>
-      <div className="px-2 h-[37.19px] bg-slate-100 flex items-center justify-center">
+      <div className="px-2  bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-sm md:text-base font-medium flex items-center gap-2 leading-tight">
           <IoAirplaneOutline /> Addit. Emirate <br />
           {data.attributes.car_colors.data

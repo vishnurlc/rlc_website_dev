@@ -213,7 +213,11 @@ const ListingComponent = ({ variant, title, description, make }) => {
       </div>
 
       <div className="my-[40px] flex flex-col items-center gap-8 md:gap-16 px-6">
-        <SectionHeading title={title} description={description} />
+        <SectionHeading
+          title={title}
+          description={description}
+          mobile={false}
+        />
         <div className="flex flex-col gap-8 w-full min-h-screen">
           {cars.data?.map((car, index) => (
             <Card variant={variant} data={car} key={index} />
