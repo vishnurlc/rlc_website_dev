@@ -41,21 +41,23 @@ function CardChauffer({ variant, data }) {
 
   return (
     <div>
-      <div className="grid grid-cols-1 w-full lg:grid-cols-5  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-[#fbfbfb]">
+      <div className="grid grid-cols-1 w-full lg:grid-cols-5  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-white]">
         <div
           // href={`${path}/${data.attributes.slug}`}
-          className="col-span-3 relative w-full aspect-[2/1] min-h-[220px] "
+          className="col-span-3 relative w-full aspect-[2/1] min-h-[120px] "
         >
           <Image
             src={data.attributes.images?.data[0].attributes.url}
             alt={`Rent ${data.attributes.name} with Richy life Club`}
-            fill
+            width={500}
+            height={600}
             style={{
-              objectFit: "cover",
+              objectFit: "contain",
               objectPosition: "center",
             }}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 80vw"
             id="selectDisable"
+            className="mx-auto"
           />
         </div>
         <div className="p-5 col-span-1 md:col-span-2">
@@ -201,7 +203,7 @@ function CarDetail({ data }) {
       </div>
       <div className="px-2 bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-sm md:text-base flex items-center gap-2 font-medium leading-tight">
-          <MdAccessTime /> 5 hours <br /> AED {data.attributes.fivehours} Seats
+          <MdAccessTime /> 5 hours <br /> AED {data.attributes.fivehours}
         </div>
       </div>
 

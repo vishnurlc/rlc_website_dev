@@ -1,5 +1,4 @@
 "use client";
-
 import AnimatedBtn from "../premiumjetski/AnimatedBtn";
 import Image from "next/image";
 import { useCurrency } from "@/context/currencyContext";
@@ -30,7 +29,7 @@ const ClubCard = ({ item, order }) => {
           </p>
         </div>
         <AnimatedBtn
-          text={"Book Now"}
+          text={"Reservce Now"}
           styles={"bg-gold text-white rounded-sm"}
           msg={`I'm writing to you today to inquire about the ${item.attributes.name}. I'm interested in learning more about its specifications, price, and availability.`}
         />
