@@ -50,7 +50,7 @@ const Ourfleets = () => {
   };
   return (
     <div>
-      <SectionHeading title={`Our fleets`} />
+      <SectionHeading title={`Our fleets`} mobile={false} />
       <div className="mt-7">
         <Motionslider>
           {jetski.map((item, index) => (
