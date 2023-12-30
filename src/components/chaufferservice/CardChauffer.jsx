@@ -42,12 +42,12 @@ function CardChauffer({ variant, data }) {
   return (
     <div>
       <div className="grid grid-cols-1 w-full lg:grid-cols-5  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-[#fbfbfb]">
-        <Link
-          href={`${path}/${data.attributes.slug}`}
+        <div
+          // href={`${path}/${data.attributes.slug}`}
           className="col-span-3 relative w-full aspect-[2/1] min-h-[220px] "
         >
           <Image
-            src={data.attributes.image.data[0].attributes.url}
+            src={data.attributes.images?.data[0].attributes.url}
             alt={`Rent ${data.attributes.name} with Richy life Club`}
             fill
             style={{
@@ -55,8 +55,9 @@ function CardChauffer({ variant, data }) {
               objectPosition: "center",
             }}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 80vw"
+            id="selectDisable"
           />
-        </Link>
+        </div>
         <div className="p-5 col-span-1 md:col-span-2">
           <div className="text-black h-full flex flex-col items-start justify-between">
             <h3 className="text-primary text-2xl font-bold leading-[29.04px]">
@@ -147,7 +148,7 @@ function CardChauffer({ variant, data }) {
             <CustomVideoPlayer url={data.attributes.video_url} />
           ) : (
             <Carousel
-              data={data.attributes.image.data}
+              data={data.attributes.image?.data}
               name={data.attributes.name}
             />
           )}
@@ -194,35 +195,32 @@ function CarDetail({ data }) {
     <div className="py-3 flex gap-5 flex-wrap">
       <div className="p-2 bg-slate-100 flex items-center justify-center">
         <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
-          <MdAccessTime /> 10 hours <br />{" "}
-          {data.attributes.fuel.data.attributes.type}
+          <MdAccessTime /> 10 hours <br />
+          AED {data.attributes.tenhours}
         </div>
       </div>
       <div className="px-2 bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-sm md:text-base flex items-center gap-2 font-medium leading-tight">
-          <MdAccessTime /> 5 hours <br />{" "}
-          {data.attributes.seat.data.attributes.seat} Seats
+          <MdAccessTime /> 5 hours <br /> AED {data.attributes.fivehours} Seats
         </div>
       </div>
 
       <div className="px-2  bg-slate-100 flex items-center justify-center">
         <div className="text-primary flex items-center gap-2 text-sm md:text-base font-medium leading-tight">
           <IoAirplaneOutline /> Airport <br />
-          {data.attributes.year.data.attributes.year}
+          AED {data.attributes.airport}
         </div>
       </div>
       <div className="px-2  bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-sm md:text-base font-medium flex items-center gap-2 leading-tight">
           <MdAccessTime /> Ext. hours <br />
-          {data.attributes.body.data.attributes.type}
+          AED {data.attributes.extensionpirce}
         </div>
       </div>
       <div className="px-2  bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-sm md:text-base font-medium flex items-center gap-2 leading-tight">
           <IoAirplaneOutline /> Addit. Emirate <br />
-          {data.attributes.car_colors.data
-            .map((item) => item.attributes.color)
-            .join(",")}
+          AED {data.attributes.additionalcity}
         </div>
       </div>
     </div>

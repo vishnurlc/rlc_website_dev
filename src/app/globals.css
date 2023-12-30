@@ -305,6 +305,29 @@ input:focus-visible {
   outline-color: #3a5b22;
 }
 
+   @keyframes ripple {
+    from{
+      transform: scale(0);
+  
+    }
+
+    to{
+      transform: scale(6);
+      opacity: 0;
+    }
+   }
+
+   input:focus-visible{
+    outline-color: #3A5B22;
+   }
+
+   #selectDisable{
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
 .react-datepicker-wrapper,
 .react-datepicker__input-container,
 .react-datepicker__input-container input {
