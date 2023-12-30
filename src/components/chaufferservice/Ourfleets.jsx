@@ -1,34 +1,34 @@
-"use client";
-import React from "react";
-import { SectionHeading } from "..";
-import Image from "next/image";
-import { Button } from "../ui/button/Button";
-import { RiWhatsappFill } from "react-icons/ri";
-import Link from "next/link";
-import { FaPhoneAlt } from "react-icons/fa";
-import { AiOutlineExclamationCircle } from "react-icons/ai";
-import { useCurrency } from "@/context/currencyContext";
-import { usePathname } from "next/navigation";
-import Motionslider from "../ui/slidermotion/motionslider";
+'use client';
+import React from 'react';
+import { SectionHeading } from '..';
+import Image from 'next/image';
+import { Button } from '../ui/button/Button';
+import { RiWhatsappFill } from 'react-icons/ri';
+import Link from 'next/link';
+import { FaPhoneAlt } from 'react-icons/fa';
+import { AiOutlineExclamationCircle } from 'react-icons/ai';
+import { useCurrency } from '@/context/currencyContext';
+import { usePathname } from 'next/navigation';
+import Motionslider from '../ui/slidermotion/Motionslider';
 
 const jetski = [
   {
-    name: "Lexus",
-    image: "/assets/chauffeur/ES300H.jpeg",
-    price: "360",
-    link: "sedan",
+    name: 'Lexus',
+    image: '/assets/chauffeur/ES300H.jpeg',
+    price: '360',
+    link: 'sedan',
   },
   {
-    name: "Genesis G80",
-    image: "/assets/chauffeur/G80 EXT.png",
-    price: "360",
-    link: "van",
+    name: 'Genesis G80',
+    image: '/assets/chauffeur/G80 EXT.png',
+    price: '360',
+    link: 'van',
   },
   {
-    name: "Highlander",
-    image: "/assets/chauffeur/HIGHLANDER.jpg",
-    price: "360",
-    link: "suv",
+    name: 'Highlander',
+    image: '/assets/chauffeur/HIGHLANDER.jpg',
+    price: '360',
+    link: 'suv',
   },
 ];
 
@@ -40,8 +40,8 @@ const Ourfleets = () => {
     const rate = conversionRates.rates[selectedCurrency];
 
     const amt = Math.round(Number(price) * rate);
-    const priceFormatted = new Intl.NumberFormat("ae", {
-      style: "currency",
+    const priceFormatted = new Intl.NumberFormat('ae', {
+      style: 'currency',
       currency: selectedCurrency,
       minimumFractionDigits: 0, // Set minimumFractionDigits to 0
       maximumFractionDigits: 0, // Set maximumFractionDigits to 0
@@ -62,7 +62,7 @@ const Ourfleets = () => {
                   alt={`${item.name} rental | Richy life Club`}
                   fill
                   style={{
-                    objectFit: "cover",
+                    objectFit: 'cover',
                   }}
                 />
                 {/* </Link> */}
