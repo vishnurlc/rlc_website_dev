@@ -27,16 +27,16 @@ const jetski = [
     link: "sedan",
   },
   {
-    name: 'Genesis G80',
-    image: '/assets/chauffeur/G80 EXT.png',
-    price: '360',
-    link: 'van',
+    name: "Genesis G80",
+    image: "/assets/chauffeur/G80 EXT.png",
+    price: "360",
+    link: "van",
   },
   {
-    name: 'Highlander',
-    image: '/assets/chauffeur/HIGHLANDER.jpg',
-    price: '360',
-    link: 'suv',
+    name: "Highlander",
+    image: "/assets/chauffeur/HIGHLANDER.jpg",
+    price: "360",
+    link: "suv",
   },
   {
     name: "Highlander",
@@ -54,8 +54,8 @@ const Ourfleets = () => {
     const rate = conversionRates.rates[selectedCurrency];
 
     const amt = Math.round(Number(price) * rate);
-    const priceFormatted = new Intl.NumberFormat('ae', {
-      style: 'currency',
+    const priceFormatted = new Intl.NumberFormat("ae", {
+      style: "currency",
       currency: selectedCurrency,
       minimumFractionDigits: 0, // Set minimumFractionDigits to 0
       maximumFractionDigits: 0, // Set maximumFractionDigits to 0
@@ -65,23 +65,19 @@ const Ourfleets = () => {
   return (
     <div>
       <SectionHeading title={`Our fleets`} mobile={false} />
-      <div className="mt-7 w-screen overflow-hidden">
+      <div className="mt-7 w-full overflow-hidden">
         <Motionslider>
           {jetski.map((item, index) => (
             <div key={index} id="selectDisable">
-              <div className="relative  w-full min-w-[297px] aspect-[357/200] rounded-md overflow-hidden">
+              <div className="relative  w-full min-w-[297px] aspect-[357/200] rounded-md">
                 {/* <Link href={`/chauffeur-service/ss?body=${item.link}`}> */}
                 <Image
                   src={item.image}
                   alt={`${item.name} rental | Richy life Club`}
                   fill
                   style={{
-<<<<<<< HEAD
                     objectFit: "cover",
                     userSelect: "none !important",
-=======
-                    objectFit: 'cover',
->>>>>>> dd517a36bd6319a028efdf8a95e6209779adee23
                   }}
                   id="selectDisable"
                   draggable="false"
