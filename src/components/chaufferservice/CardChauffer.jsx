@@ -1,24 +1,24 @@
-'use client';
-import Image from 'next/image';
-import { useState } from 'react';
-import { FaPhoneAlt } from 'react-icons/fa';
-import { RiWhatsappFill } from 'react-icons/ri';
-import { IoAirplaneOutline } from 'react-icons/io5';
+"use client";
+import Image from "next/image";
+import { useState } from "react";
+import { FaPhoneAlt } from "react-icons/fa";
+import { RiWhatsappFill } from "react-icons/ri";
+import { IoAirplaneOutline } from "react-icons/io5";
 import {
   AiOutlineCheckCircle,
   AiOutlineExclamationCircle,
-} from 'react-icons/ai';
-import { MdAccessTime } from 'react-icons/md';
+} from "react-icons/ai";
+import { MdAccessTime } from "react-icons/md";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { BookingModal, CustomVideoPlayer, ModalComponent } from '@/components';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useCurrency } from '@/context/currencyContext';
-import { Button } from '../ui/button/Button';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import { BookingModal, CustomVideoPlayer, ModalComponent } from "@/components";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useCurrency } from "@/context/currencyContext";
+import { Button } from "../ui/button/Button";
 
 function CardChauffer({ variant, data }) {
   const [open, setOpen] = useState(false);
@@ -31,8 +31,8 @@ function CardChauffer({ variant, data }) {
     const rate = conversionRates.rates[selectedCurrency];
 
     const amt = Math.round(Number(price) * rate);
-    const priceFormatted = new Intl.NumberFormat('ae', {
-      style: 'currency',
+    const priceFormatted = new Intl.NumberFormat("ae", {
+      style: "currency",
       currency: selectedCurrency,
       minimumFractionDigits: 0, // Set minimumFractionDigits to 0
       maximumFractionDigits: 0, // Set maximumFractionDigits to 0
@@ -52,8 +52,8 @@ function CardChauffer({ variant, data }) {
             alt={`Rent ${data.attributes.name} with Richy life Club`}
             fill
             style={{
-              objectFit: 'contain',
-              objectPosition: 'center',
+              objectFit: "contain",
+              objectPosition: "center",
             }}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 80vw"
             id="selectDisable"
@@ -63,9 +63,7 @@ function CardChauffer({ variant, data }) {
         <div className="p-5 col-span-1 md:col-span-2">
           <div className="text-black h-full flex flex-col items-start justify-between">
             <h3 className="text-primary text-2xl font-bold leading-[29.04px]">
-              {/* <Link href={`${path}/${data.attributes.slug}`}> */}
-              {data.attributes.name}
-              {/* </Link> */}
+              <Link href={`${path}/${data.id}`}>{data.attributes.name}</Link>
             </h3>
 
             <CarDetail data={data} />
@@ -73,19 +71,19 @@ function CardChauffer({ variant, data }) {
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full py-5 gap-6">
               <div className="w-full md:w-fit">
                 <span className="text-primary font-normal text-2xl">
-                  {convertPrice(data.attributes.price)}{' '}
+                  {convertPrice(data.attributes.price)}{" "}
                   <span className="text-secondary text-sm font-normal">
-                    {variant === 'car' ? '/Day' : 'Starting Price'}
+                    {variant === "car" ? "/Day" : "Starting Price"}
                   </span>
                 </span>
-                {variant === 'car' ? (
+                {variant === "car" ? (
                   <span className="text-primary text-xs">
                     {data.attributes.deposit.data && (
                       <div className="text-primary flex items-center gap-1  font-medium leading-tight">
                         {data.attributes.deposit.data?.attributes.type ===
-                        'No Deposit' ? (
+                        "No Deposit" ? (
                           <>
-                            <AiOutlineCheckCircle />{' '}
+                            <AiOutlineCheckCircle />{" "}
                             <span>
                               {data.attributes.deposit.data?.attributes.type}
                             </span>
@@ -191,8 +189,8 @@ function CarDetail({ data }) {
     const rate = conversionRates.rates[selectedCurrency];
 
     const amt = Math.round(Number(price) * rate);
-    const priceFormatted = new Intl.NumberFormat('ae', {
-      style: 'currency',
+    const priceFormatted = new Intl.NumberFormat("ae", {
+      style: "currency",
       currency: selectedCurrency,
       minimumFractionDigits: 0, // Set minimumFractionDigits to 0
       maximumFractionDigits: 0, // Set maximumFractionDigits to 0
@@ -219,13 +217,13 @@ function CarDetail({ data }) {
       </div>
       <div className="px-2 py-2  bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-sm md:text-base font-medium flex items-center gap-2 leading-tight">
-          <MdAccessTime /> Ext. hours{' '}
+          <MdAccessTime /> Ext. hours{" "}
           {convertPrice(data.attributes.extensionpirce)}
         </div>
       </div>
       <div className="px-2 py-2 bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-sm md:text-base font-medium flex items-center gap-2 leading-tight">
-          <IoAirplaneOutline /> Addit. Emirate{' '}
+          <IoAirplaneOutline /> Addit. Emirate{" "}
           {convertPrice(data.attributes.additionalcity)}
         </div>
       </div>

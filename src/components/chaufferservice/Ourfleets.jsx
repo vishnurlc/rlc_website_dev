@@ -19,7 +19,7 @@ const jetski = [
   {
     id: 9,
     name: "Rolls Royce",
-    image: "/assets/chauffeur/8d1f807192f03bc85b03d74893e69c09.png",
+    image: "/assets/chauffeur/rolls.png",
     price: "360",
     link: "sedan",
   },
