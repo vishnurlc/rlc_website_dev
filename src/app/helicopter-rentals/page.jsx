@@ -87,7 +87,7 @@ const page = () => {
         />
       </div>
 
-      <div className=" my-9 md:my-16 px-6 max-w-[1200px] mx-auto grid grid-cols-1 gap-9 ">
+      <div className=" my-9 md:my-16 px-6 max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-9 ">
         {data.map((item, index) => (
           <PackageCard data={item} key={index} />
         ))}
