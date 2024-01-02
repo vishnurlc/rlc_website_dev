@@ -209,7 +209,7 @@ export default function Header() {
                 <FaMobileAlt /> Call
               </Link>
               <Link
-                href={``}
+                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=I would like to connect with Private Assistant of RLC?`}
                 className="flex gap-2 items-center justify-start px-4 py-2 text-gray-800 hover:bg-gray-200 text-sm"
               >
                 <FaWhatsapp />
