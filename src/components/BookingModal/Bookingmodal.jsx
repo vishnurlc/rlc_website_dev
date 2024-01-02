@@ -196,6 +196,9 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                 </label>
                 <DatePicker
                   dateFormat="dd/MM/yyyy"
+                  minDate={
+                    new Date(new Date().getTime() + 2 * 24 * 60 * 60 * 1000)
+                  }
                   selected={formData.bookingFromDate}
                   onChange={(date) => handleDateChange(date, 'bookingFromDate')}
                   className="mt-1 p-2 border rounded-md w-full"
@@ -230,6 +233,9 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                   Return Date
                 </label>
                 <DatePicker
+                  minDate={
+                    new Date(new Date().getTime() + 2 * 24 * 60 * 60 * 1000)
+                  }
                   dateFormat="dd/MM/yyyy"
                   selected={formData.returnDate}
                   onChange={(date) => handleDateChange(date, 'returnDate')}
@@ -268,6 +274,9 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                   Pickup Date
                 </label>
                 <DatePicker
+                  minDate={
+                    new Date(new Date().getTime() + 2 * 24 * 60 * 60 * 1000)
+                  }
                   dateFormat="dd/MM/yyyy"
                   selected={formData.pickupDate}
                   onChange={(date) => handleDateChange(date, 'pickupDate')}
@@ -341,6 +350,9 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                   Booking Date
                 </label>
                 <DatePicker
+                  minDate={
+                    new Date(new Date().getTime() + 2 * 24 * 60 * 60 * 1000)
+                  }
                   dateFormat="dd/MM/yyyy"
                   selected={formData.bookingDate}
                   onChange={(date) => handleDateChange(date, 'bookingDate')}
@@ -413,6 +425,9 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                   Booking Date
                 </label>
                 <DatePicker
+                  minDate={
+                    new Date(new Date().getTime() + 2 * 24 * 60 * 60 * 1000)
+                  }
                   dateFormat="dd/MM/yyyy"
                   selected={formData.bookingDate}
                   onChange={(date) => handleDateChange(date, 'bookingDate')}
@@ -449,6 +464,9 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                   Booking Date
                 </label>
                 <DatePicker
+                  minDate={
+                    new Date(new Date().getTime() + 2 * 24 * 60 * 60 * 1000)
+                  }
                   dateFormat="dd/MM/yyyy"
                   selected={formData.bookingDate}
                   onChange={(date) => handleDateChange(date, 'bookingDate')}
