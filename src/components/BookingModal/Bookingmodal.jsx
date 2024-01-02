@@ -5,7 +5,11 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { sendEmail } from '@/lib/emailSend';
 const Bookingmodal = ({ item, setOpen, open }) => {
-  console.log(item);
+  const [isSending, setIsSending] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState(
+    'Thank you for your submission!'
+  );
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -49,16 +53,59 @@ const Bookingmodal = ({ item, setOpen, open }) => {
     setFormData((prevData) => ({ ...prevData, [name]: date }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSending(true);
     // Add your form submission logic here
     try {
-      sendEmail({ data: formData, membership: false });
+      const res = await sendEmail({ data: formData, membership: false });
+      if (res === 'success') {
+        setTimeout(() => {
+          setIsSending(false);
+          setIsSubmitted(true);
+          setOpen(false);
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            // Additional fields based on the item
+            ...(item === 'car' && {
+              deliveryPlace: '',
+              bookingFromDate: '',
+              returnDate: '',
+              bookingFromTime: '',
+              bookingToTime: '',
+            }),
+            ...(item === 'chauffeurService' && {
+              pickupDate: '',
+              pickupTime: '',
+              fromLocation: '',
+              toLocation: '',
+            }),
+            ...(item === 'yacht' && {
+              bookingDate: '',
+              bookingHours: '',
+              bookingTime: '',
+              numberOfPax: '',
+            }),
+            ...(item === 'tourAndExcursion' && {
+              bookingDate: '',
+              numberOfPax: '',
+            }),
+            ...(item === 'helicopterBooking' && {
+              bookingDate: '',
+              bookingTime: '',
+              numberOfPax: '',
+            }),
+          });
+        }, 2000);
+      } else {
+        setSubmitMessage('Sorry, Something went wrong!');
+      }
     } catch (error) {
       console.log('Error Sending Email', error);
     }
     // Close the form after submission
-    setOpen(false);
   };
   if (!open) return null;
   return (
@@ -148,6 +195,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                   Booking From Date
                 </label>
                 <DatePicker
+                  dateFormat="dd/MM/yyyy"
                   selected={formData.bookingFromDate}
                   onChange={(date) => handleDateChange(date, 'bookingFromDate')}
                   className="mt-1 p-2 border rounded-md w-full"
@@ -182,6 +230,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                   Return Date
                 </label>
                 <DatePicker
+                  dateFormat="dd/MM/yyyy"
                   selected={formData.returnDate}
                   onChange={(date) => handleDateChange(date, 'returnDate')}
                   className="mt-1 p-2 border rounded-md w-full"
@@ -219,6 +268,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                   Pickup Date
                 </label>
                 <DatePicker
+                  dateFormat="dd/MM/yyyy"
                   selected={formData.pickupDate}
                   onChange={(date) => handleDateChange(date, 'pickupDate')}
                   className="mt-1 p-2 border rounded-md w-full"
@@ -291,6 +341,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                   Booking Date
                 </label>
                 <DatePicker
+                  dateFormat="dd/MM/yyyy"
                   selected={formData.bookingDate}
                   onChange={(date) => handleDateChange(date, 'bookingDate')}
                   className="mt-1 p-2 border rounded-md w-full"
@@ -362,6 +413,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                   Booking Date
                 </label>
                 <DatePicker
+                  dateFormat="dd/MM/yyyy"
                   selected={formData.bookingDate}
                   onChange={(date) => handleDateChange(date, 'bookingDate')}
                   className="mt-1 p-2 border rounded-md w-full"
@@ -397,6 +449,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                   Booking Date
                 </label>
                 <DatePicker
+                  dateFormat="dd/MM/yyyy"
                   selected={formData.bookingDate}
                   onChange={(date) => handleDateChange(date, 'bookingDate')}
                   className="mt-1 p-2 border rounded-md w-full"
@@ -447,9 +500,14 @@ const Bookingmodal = ({ item, setOpen, open }) => {
             type="submit"
             className="bg-gold text-white  px-4 py-2 rounded-md mt-4"
           >
-            Submit
+            {isSending ? 'Submitting...' : 'Submit'}
           </button>
         </form>
+        {isSubmitted && (
+          <div className="mt-4 text-center">
+            <p className="text-green-500">{submitMessage}</p>
+          </div>
+        )}
       </div>
     </ModalComponent>
   );
