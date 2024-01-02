@@ -11,8 +11,8 @@ function InfinitScroll() {
   const [status, setStatus] = useState(0);
 
   async function getData(pagination) {
-    const pageSize = 5;
-    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/chauffeur-cars?populate=*&pagination[page]=${pagination}&pagination[pageSize]=${pageSize}&sort=id:desc`;
+    const pageSize = 25;
+    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/chauffeur-cars?populate=*&pagination[page]=${pagination}&pagination[pageSize]=${pageSize}&sort[0]=name:asc`;
 
     try {
       const res = await fetch(api, {

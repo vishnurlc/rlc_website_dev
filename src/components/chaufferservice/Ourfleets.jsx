@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const jetski = [
   {
-    id: 1,
+    id: 9,
     name: "Mercedes benz",
     image:
       "/assets/chauffeur/2016-mercedes-benz-s-class-2015-mercedes-benz-s-class-maybach-maybach-removebg-preview.png",
@@ -17,7 +17,7 @@ const jetski = [
     link: "sedan",
   },
   {
-    id: 2,
+    id: 9,
     name: "Rolls Royce",
     image: "/assets/chauffeur/8d1f807192f03bc85b03d74893e69c09.png",
     price: "360",
@@ -57,13 +57,17 @@ const Ourfleets = () => {
   };
   return (
     <div>
-      <SectionHeading title={`Our fleets`} mobile={false} />
+      {/* <SectionHeading title={`Our fleets`} mobile={false} /> */}
       <div className="mt-7 w-full overflow-hidden">
         <Motionslider>
           {jetski.map((item, index) => (
             <div key={index} id="selectDisable">
               <div className="relative  w-full min-w-[297px] aspect-[357/200] rounded-md">
-                <Link href={`/chauffeur-service/${item.id}`}>
+                <Link
+                  href={`/chauffeur-service/#cars${item.id}`}
+                  className="select-none"
+                  draggable="false"
+                >
                   <Image
                     src={item.image}
                     alt={`${item.name} rental | Richy life Club`}
