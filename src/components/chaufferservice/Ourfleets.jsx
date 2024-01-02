@@ -24,13 +24,6 @@ const jetski = [
     link: "sedan",
   },
   {
-    id: 3,
-    name: "Genesis G80",
-    image: "/assets/chauffeur/G80 EXT.png",
-    price: "360",
-    link: "van",
-  },
-  {
     id: 4,
     name: "Lexus",
     image: "/assets/chauffeur/ES300H.jpeg",
