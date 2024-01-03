@@ -1,18 +1,20 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import { Loader } from '..';
-import CardChauffer from './CardChauffer';
+"use client";
+import React, { useEffect, useState } from "react";
+import { Loader } from "..";
+import CardChauffer from "./CardChauffer";
+import { data } from "autoprefixer";
 
-function InfinitScroll() {
+function InfinitScroll({ fetchApi }) {
   const pageSize = 5;
   const [cars, setCars] = useState([]);
   const [meta, setMeta] = useState();
   const [pagination, setPagination] = useState(1);
   const [status, setStatus] = useState(0);
+  const [cardComp, setCardComp] = useState();
 
-  async function getData(pagination) {
+  async function getData(apiEndpoint, pagination) {
     const pageSize = 25;
-    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/chauffeur-cars?populate=*&pagination[page]=${pagination}&pagination[pageSize]=${pageSize}&sort[0]=name:asc`;
+    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${apiEndpoint}?populate=*&pagination[page]=${pagination}&pagination[pageSize]=${pageSize}&sort[0]=name:asc`;
 
     try {
       const res = await fetch(api, {
@@ -34,28 +36,50 @@ function InfinitScroll() {
   }
 
   useEffect(() => {
-    getData(pagination).then((newData) => {
+    getData(fetchApi, pagination).then((newData) => {
       console.log(newData);
       if (status !== 1 && Object.keys(newData).length !== 0) {
         setMeta(newData);
         setCars((prevData) => [...prevData, ...newData.data]);
       }
     });
-  }, [pagination]);
+  }, [pagination, fetchApi]);
+
+  const returnComp = ({ api, data, index }) => {
+    switch (api) {
+      case "chauffeur-cars":
+        return (
+          <CardChauffer variant={"chauffeurService"} data={data} key={index} />
+        );
+        break;
+    }
+  };
+
   return (
     <div>
       <div className="flex flex-col gap-8 w-full min-h-screen">
-        {cars?.map((car, index) => (
-          <CardChauffer variant={'chauffeurService'} data={car} key={index} />
-        ))}
+        {cars?.map((car, index) => {
+          switch (fetchApi) {
+            case "chauffeur-cars":
+              return (
+                <CardChauffer
+                  variant={"chauffeurService"}
+                  data={car}
+                  key={index}
+                />
+              );
+            default:
+              break;
+          }
+        })}
         {status === 1 && (
           <p className="text-center text-xl ">No Cars found !</p>
         )}
-        {status === 0 && <Loader color={'#000'} />}
+        {status === 0 && <Loader color={"#000"} />}
       </div>
       {/* loadmore */}
 
-      <div className={status === 1 ? 'hidden' : `flex justify-center mt-10`}>
+      <div className={status === 1 ? "hidden" : `flex justify-center mt-10`}>
         <button
           onClick={() => setPagination((prevPage) => prevPage + 1)}
           className="w-52 bg-lime-900 rounded-xl h-8 text-white"

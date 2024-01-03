@@ -39,7 +39,7 @@ async function page() {
         />
       </div>
 
-      <div className="bg-black reletive max-w-[1200px] mx-auto px-6">
+      <div className="bg-black reletive max-w-[1200px] mx-auto px-6 hidden md:visible">
         <h2 className="text-white text-3xl uppercase pt-10">
           New Nightlife Vision
         </h2>

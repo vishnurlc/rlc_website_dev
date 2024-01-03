@@ -1,7 +1,4 @@
-import { useState } from "react";
-
 export default async function fetchData(apiEndpoint) {
-  const [status, setStatus] = useState();
   try {
     const res = await fetch(apiEndpoint, {
       next: { revalidate: 10 },
@@ -11,16 +8,9 @@ export default async function fetchData(apiEndpoint) {
     });
     const data = await res.json();
 
-    // Check if the response contains data
-    if (data.data.length === 0) {
-      setStatus(1); // Set your status accordingly
-    } else {
-      setStatus(2); // Set your status accordingly
-    }
-
-    return { data, status };
+    return data;
   } catch (error) {
     setStatus(0);
-    return { data: null, status };
+    return {};
   }
 }

@@ -8,7 +8,7 @@ import fetchData from "@/lib/feacthData";
 const jetski = [
   {
     id: 9,
-    name: "Mercedes benz",
+    name: "Mercedes Benz S Class",
     image:
       "/assets/chauffeur/2016-mercedes-benz-s-class-2015-mercedes-benz-s-class-maybach-maybach-removebg-preview.png",
     price: "360",
@@ -33,6 +33,7 @@ const jetski = [
 const Ourfleets = () => {
   const api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/chauffeur-cars?populate=*`;
   const { data, status } = fetchData(api);
+  console.log(data);
 
   return (
     <div>

@@ -96,7 +96,6 @@ const page = async ({ params }) => {
     },
   ];
 
-  console.log("th9is uisn", car.data.attributes.images);
   return (
     <main>
       <div className="md:mt-[100px]">
