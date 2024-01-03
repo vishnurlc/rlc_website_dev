@@ -1,8 +1,16 @@
-import { ContactForm, HeroSection2, Loader } from "@/components";
+import {
+  ContactForm,
+  HeroCarousel,
+  Loader,
+  PriceComponent,
+  TechnicalSpec,
+} from "@/components";
 import CardChauffer from "@/components/chaufferservice/CardChauffer";
 import ChaufferCard from "@/components/chaufferservice/ChaufferCard";
+import ChaufferSpec from "@/components/chaufferservice/ChaufferSpec";
 import Ourfleets from "@/components/chaufferservice/Ourfleets";
 import Faq from "@/components/home/faq";
+import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
 import { Suspense } from "react";
 
 export const metadata = {
@@ -88,44 +96,57 @@ const page = async ({ params }) => {
     },
   ];
 
-  console.log(params.slug);
+  console.log("th9is uisn", car.data.attributes.images);
   return (
-    <main className="pt-[100px] md:pt-0">
-      <div className="hidden">
-        <HeroSection2
-          type="image"
-          heading1="Luxury Chauffeur"
-          heading2="Services"
-          subheading={"Your Voyage into Elegance and Comfort"}
-          btntext={"Book Now"}
-          url="/assets/chauffeur/hero.png"
+    <main>
+      <div className="md:mt-[100px]">
+        <HeroCarousel
+          data={car.data.attributes.images}
+          name={car.data.attributes.name}
         />
-      </div>
-      <div className="my-9 md:my-16 px-0 md:px-6 max-w-[1200px] mx-auto">
-        <Ourfleets />
-      </div>
+        <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5 max-w-[1200px] mx-auto">
+          <h2 className="text-right text-xl text-primary">
+            <PriceComponent cost={car.data.attributes.price} />
+            /Day
+          </h2>
 
-      <div className="mt-10 max-w-[1200px] mx-auto px-5">
-        <div>
-          <Suspense fallback={<Loader />}>
-            <CardChauffer variant={"cars"} data={car.data} key={1} />
-            {/* <ChaufferCard
-              variant={"car"}
-              title={"Crafting Driving Experiences"}
-              description={
-                "Choose from Our Handpicked Selection of Luxurious Cars for an Unforgettable Ride"
-              }
-              make={make}
-            /> */}
-          </Suspense>
-        </div>
-        <Faq category={"chauffeur"} />
-        <div className="my-9 md:my-16 px-6 ">
-          <ContactForm
-            title={"Get in Touch with Us"}
-            description={"Experience Elegance & Convenience"}
+          <AnimatedBtn
+            styles={"rounded-md bg-primary text-white"}
+            text={"Book Now"}
+            msg={"Hi, I would like to know about your services."}
           />
         </div>
+      </div>
+      <div className="max-w-[1200px] mx-auto py-10 md:py-16 px-6 flex flex-col gap-8 md:gap-16">
+        <div>
+          <div>
+            <h1 className="text-sm md:text-base text-justify md:text-left text-gray-500">
+              {/* {car.data.attributes.make.data.attributes.make} */}
+            </h1>
+            <span className=" inline-block my-2 md:my-4 font-inter text-primary font-semibold text-2xl md:text-[40px]">
+              {car.data.attributes.name}
+            </span>
+          </div>
+          <p className="text-sm md:text-base text-justify md:text-left text-gray-500">
+            {car.data.attributes.description}
+          </p>
+        </div>
+
+        {/* <TechnicalSpec car={car} /> */}
+        <ChaufferSpec car={car} />
+        {/* <CarSpec car={car} /> */}
+        {/* <div>
+        <h2 className="inline-block mb-8 font-inter text-primary font-semibold text-xl md:text-[40px]">
+          Gallery
+        </h2>
+        <div>
+          <GalleryJet />
+        </div>
+      </div> */}
+        <ContactForm
+          title={"Experience the ultimate Luxury"}
+          description={"Book your journey with our luxury car rentals now"}
+        />
       </div>
     </main>
   );
