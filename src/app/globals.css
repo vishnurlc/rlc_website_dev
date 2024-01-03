@@ -6,10 +6,9 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-
 }
 
-html{
+html {
   scroll-behavior: smooth;
   scroll-padding-top: 150px;
 }
@@ -311,32 +310,36 @@ input:focus-visible {
   outline-color: #3a5b22;
 }
 
-   @keyframes ripple {
-    from{
-      transform: scale(0);
-  
-    }
+@keyframes ripple {
+  from {
+    transform: scale(0);
+  }
 
-    to{
-      transform: scale(6);
-      opacity: 0;
-    }
-   }
+  to {
+    transform: scale(6);
+    opacity: 0;
+  }
+}
 
-   input:focus-visible{
-    outline-color: #3A5B22;
-   }
+input:focus-visible {
+  outline-color: #3a5b22;
+}
 
-   #selectDisable{
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-    user-select: none;
+#selectDisable {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 .react-datepicker-wrapper,
 .react-datepicker__input-container,
 .react-datepicker__input-container input {
   display: block;
   width: 100%;
+}
+
+.react-tel-input .selected-flag:hover,
+.react-tel-input .selected-flag:focus {
+  background-color: transparent !important;
 }

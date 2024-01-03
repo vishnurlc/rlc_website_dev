@@ -4,6 +4,9 @@ import { ModalComponent } from '..';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { sendEmail } from '@/lib/emailSend';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
+import styles from './bookingModal.module.scss';
 const Bookingmodal = ({ item, setOpen, open }) => {
   const [isSending, setIsSending] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -156,7 +159,22 @@ const Bookingmodal = ({ item, setOpen, open }) => {
               >
                 Phone
               </label>
-              <input
+              <PhoneInput
+                country={'ae'}
+                value={formData.phone}
+                name="phone"
+                inputProps={{
+                  'data-color': formData.phone.length > 3 ? 'true' : 'false',
+                }}
+                containerClass={styles.picontainerclass}
+                inputClass={styles.piInputClass}
+                buttonClass={styles.buttonClass}
+                onChange={handleChange}
+                enableSearch={true}
+                searchClass={styles.searchClass}
+                searchNotFound={'No country found'}
+              />
+              {/* <input
                 type="tel"
                 id="phone"
                 name="phone"
@@ -164,7 +182,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                 onChange={handleChange}
                 className="mt-1 p-2 border rounded-md w-full"
                 required
-              />
+              /> */}
             </div>
           </>
 
