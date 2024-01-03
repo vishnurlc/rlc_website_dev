@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Motionslider from "../ui/slidermotion/Motionslider";
 import Link from "next/link";
@@ -31,16 +31,20 @@ const jetski = [
 ];
 
 const Ourfleets = () => {
-  const api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/chauffeur-cars?populate=*`;
-  const { data, status } = fetchData(api);
-  console.log(data);
-
+  const [fleetData, setFleetData] = useState();
+  const api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/chauffeur-makes?populate=*`;
+  useEffect(() => {
+    const handelFeatch = async () => {
+      const data = await fetchData(api);
+      setFleetData(data.data);
+    };
+    handelFeatch();
+  }, []);
   return (
     <div>
-      {/* <SectionHeading title={`Our fleets`} mobile={false} /> */}
       <div className="mt-7 w-full overflow-hidden">
         <Motionslider>
-          {jetski.map((item, index) => (
+          {fleetData?.map((item, index) => (
             <div key={index} id="selectDisable">
               <div className="relative  w-full min-w-[297px] aspect-[357/200] rounded-md">
                 <Link
@@ -49,7 +53,7 @@ const Ourfleets = () => {
                   draggable="false"
                 >
                   <Image
-                    src={item.image}
+                    src={item.attributes.image?.data.attributes.url}
                     alt={`${item.name} rental | Richy life Club`}
                     fill
                     style={{
@@ -62,7 +66,7 @@ const Ourfleets = () => {
                 </Link>
               </div>
               <h2 className="uppercase text-center font-medium tracking-wide text-sm md:text-xl font-poppins">
-                {item.name}
+                {item.attributes.name}
               </h2>
             </div>
           ))}
