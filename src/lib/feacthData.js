@@ -1,7 +1,4 @@
-import { useState } from "react";
-
 export default async function fetchData(apiEndpoint) {
-  const [status, setStatus] = useState();
   try {
     const res = await fetch(apiEndpoint, {
       next: { revalidate: 10 },
