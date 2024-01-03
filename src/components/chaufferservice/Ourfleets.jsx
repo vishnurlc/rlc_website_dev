@@ -1,11 +1,9 @@
 "use client";
 import React from "react";
-import { SectionHeading } from "..";
 import Image from "next/image";
-import { useCurrency } from "@/context/currencyContext";
-import { usePathname } from "next/navigation";
 import Motionslider from "../ui/slidermotion/Motionslider";
 import Link from "next/link";
+import fetchData from "@/lib/feacthData";
 
 const jetski = [
   {
@@ -33,21 +31,9 @@ const jetski = [
 ];
 
 const Ourfleets = () => {
-  const { selectedCurrency, conversionRates } = useCurrency();
-  const path = usePathname();
+  const api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/chauffeur-cars?populate=*`;
+  const { data, status } = fetchData(api);
 
-  const convertPrice = (price) => {
-    const rate = conversionRates.rates[selectedCurrency];
-
-    const amt = Math.round(Number(price) * rate);
-    const priceFormatted = new Intl.NumberFormat("ae", {
-      style: "currency",
-      currency: selectedCurrency,
-      minimumFractionDigits: 0, // Set minimumFractionDigits to 0
-      maximumFractionDigits: 0, // Set maximumFractionDigits to 0
-    }).format(amt);
-    return priceFormatted;
-  };
   return (
     <div>
       {/* <SectionHeading title={`Our fleets`} mobile={false} /> */}
@@ -73,19 +59,6 @@ const Ourfleets = () => {
                     draggable="false"
                   />
                 </Link>
-                <div className="absolute p-4 text-black w-full h-fit  bottom-0 left-0 right-0 z-10">
-                  <div>
-                    {/* {item.price && (
-                    <span className="text-gray-400 text-sm">
-                      Starting from {convertPrice(item.price)}
-                    </span>
-                  )} */}
-                  </div>
-
-                  {/* <Button className="text-sm mt-4 md:px-4 py-2 bg-gold text-white rounded-sm">
-                  Book Now
-                </Button> */}
-                </div>
               </div>
               <h2 className="uppercase text-center font-medium tracking-wide text-sm md:text-xl font-poppins">
                 {item.name}
