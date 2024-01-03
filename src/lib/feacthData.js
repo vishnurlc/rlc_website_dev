@@ -11,16 +11,9 @@ export default async function fetchData(apiEndpoint) {
     });
     const data = await res.json();
 
-    // Check if the response contains data
-    if (data.data.length === 0) {
-      setStatus(1); // Set your status accordingly
-    } else {
-      setStatus(2); // Set your status accordingly
-    }
-
-    return { data, status };
+    return data;
   } catch (error) {
     setStatus(0);
-    return { data: null, status };
+    return {};
   }
 }

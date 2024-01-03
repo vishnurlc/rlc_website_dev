@@ -97,7 +97,7 @@ const page = async () => {
           <Ourfleets />
         </div>
         {/* cars */}
-        <InfinitScroll />
+        <InfinitScroll fetchApi={"chauffeur-cars"} />
 
         <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
           <WhyusChauffer />

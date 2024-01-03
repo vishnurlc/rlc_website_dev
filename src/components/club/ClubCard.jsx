@@ -27,6 +27,9 @@ const ClubCard = ({ item, order }) => {
           <p className="text-gray-500 text-sm md:text-base tracking-wide ">
             {item.attributes.description}
           </p>
+          <p className="text-gray-500 text-sm md:text-base tracking-wide ">
+            {/* {item.attributes.place} */}
+          </p>
         </div>
         <AnimatedBtn
           text={"Reservce Now"}
