@@ -29,6 +29,8 @@ const ChaufferSpec = ({ car }) => {
     }).format(amt);
     return priceFormatted;
   };
+
+  console.log(car);
   return (
     <motion.div
       ref={ref}
@@ -85,7 +87,7 @@ const ChaufferSpec = ({ car }) => {
           variants={itemVariant}
           className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] "
         >
-          <span>Interior Color</span>
+          <span>Seats</span>
           <span className="text-[#8a97a4]">
             {/* {car.data[0].attributes.technicalspec.interior_colors.data
               .map((item) => item.attributes.color)
@@ -96,81 +98,26 @@ const ChaufferSpec = ({ car }) => {
           variants={itemVariant}
           className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] "
         >
-          <span>Exterior Color</span>
+          <span>Luggage</span>
+          <span className="text-[#8a97a4]"></span>
+        </motion.li>
+        <motion.li
+          variants={itemVariant}
+          className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] "
+        >
+          <span>Ext. Hours</span>
           <span className="text-[#8a97a4]">
-            {/* {car.data[0].attributes.car_colors.data
-              .map((item) => item.attributes.color)
-              .join(",")} */}
+            {convertPrice(car.data.attributes.extensionpirce)}
           </span>
         </motion.li>
         <motion.li
           variants={itemVariant}
           className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] "
         >
-          <span>Seats</span>
+          <span>Addit. Emirate</span>
           <span className="text-[#8a97a4]">
-            {/* {car.data[0].attributes.seat.data.attributes.seat} */}
+            {convertPrice(car.data.attributes.additionalcity)}
           </span>
-        </motion.li>
-        <motion.li
-          variants={itemVariant}
-          className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] "
-        >
-          <span>Transmission</span>
-          <span className="text-[#8a97a4]">
-            {/* {
-              car.data[0].attributes.technicalspec.transmission.data.attributes
-                .type
-            } */}
-          </span>
-        </motion.li>
-        <motion.li
-          variants={itemVariant}
-          className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] "
-        >
-          <span>Horse Power</span>
-          <span className="text-[#8a97a4]">
-            {/* {car.data[0].attributes.technicalspec.horsepower} */}
-          </span>
-        </motion.li>
-        <motion.li
-          variants={itemVariant}
-          className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] "
-        >
-          <span>Engine Capacity</span>
-          <span className="text-[#8a97a4]">
-            {/* {car.data[0].attributes.technicalspec.engine_capacity} */}
-          </span>
-        </motion.li>
-        <motion.li
-          variants={itemVariant}
-          className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] "
-        >
-          <span>Year</span>
-          <span className="text-[#8a97a4]">
-            {/* {car.data[0].attributes.year.data.attributes.year} */}
-          </span>
-        </motion.li>
-        <motion.li
-          variants={itemVariant}
-          className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] "
-        >
-          <span>Mileage Limit</span>
-          <span className="text-[#8a97a4]">
-            {/* {car.data[0].attributes.technicalspec.mileage_limit} */}
-          </span>
-        </motion.li>
-        <motion.li
-          variants={itemVariant}
-          className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] "
-        >
-          <span>Deposit</span>
-          {/* <span className="text-[#8a97a4]">
-            {car.data[0].attributes.deposit.data.attributes.type ===
-            "No Deposit"
-              ? car.data[0].attributes.deposit.data.attributes.type
-              : `AED ${car.data[0].attributes.deposit.data.attributes.type}`}
-          </span> */}
         </motion.li>
       </motion.ul>
     </motion.div>

@@ -1,7 +1,6 @@
 import {
   ContactForm,
   HeroCarousel,
-  HeroSection2,
   Loader,
   PriceComponent,
   TechnicalSpec,
