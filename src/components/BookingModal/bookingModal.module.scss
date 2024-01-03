@@ -3,8 +3,9 @@
 
   .piInputClass {
     width: 100%;
-    padding: 10px;
+    padding-left: 65px;
     font-size: 14px;
+    color: #777;
     border: 1px solid #ddd;
     border-radius: 4px;
     margin-bottom: 1rem;
@@ -12,10 +13,6 @@
     &:focus {
       outline: none;
       border-color: rgb(229, 231, 235); // Primary color
-    }
-
-    &[data-color='true'] {
-      color: rgb(229, 231, 235); // Primary color
     }
   }
 

@@ -52,6 +52,9 @@ const Bookingmodal = ({ item, setOpen, open }) => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  const phoneChange = (val) => {
+    setFormData((prevData) => ({ ...prevData, phone: val }));
+  };
   const handleDateChange = (date, name) => {
     setFormData((prevData) => ({ ...prevData, [name]: date }));
   };
@@ -169,7 +172,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                 containerClass={styles.picontainerclass}
                 inputClass={styles.piInputClass}
                 buttonClass={styles.buttonClass}
-                onChange={handleChange}
+                onChange={(val) => phoneChange(val)}
                 enableSearch={true}
                 searchClass={styles.searchClass}
                 searchNotFound={'No country found'}
