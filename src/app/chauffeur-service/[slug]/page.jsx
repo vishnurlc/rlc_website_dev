@@ -4,35 +4,35 @@ import {
   Loader,
   PriceComponent,
   TechnicalSpec,
-} from "@/components";
-import CardChauffer from "@/components/chaufferservice/CardChauffer";
-import ChaufferCard from "@/components/chaufferservice/ChaufferCard";
-import ChaufferSpec from "@/components/chaufferservice/ChaufferSpec";
-import Ourfleets from "@/components/chaufferservice/Ourfleets";
-import Faq from "@/components/home/faq";
-import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
-import { Suspense } from "react";
+} from '@/components';
+import CardChauffer from '@/components/chaufferservice/CardChauffer';
+import ChaufferCard from '@/components/chaufferservice/ChaufferCard';
+import ChaufferSpec from '@/components/chaufferservice/ChaufferSpec';
+import Ourfleets from '@/components/chaufferservice/Ourfleets';
+import Faq from '@/components/home/faq';
+import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
+import { Suspense } from 'react';
 
 export const metadata = {
-  title: "Luxury Chauffeur Service in Dubai",
+  title: 'Luxury Chauffeur Service in Dubai',
   description:
-    "Book a luxury chauffeur service in Dubai for your airport transfers, half and full day car rentals, full Dubai tours, or events pickup and drop",
+    'Book a luxury chauffeur service in Dubai for your airport transfers, half and full day car rentals, full Dubai tours, or events pickup and drop',
   keywords: [
-    "chauffeur service dubai",
-    "luxury chauffeur service dubai",
-    " airport transfers dubai",
-    "car rentals dubai",
-    "full dubai tours",
-    "events pickup and drop dubai",
-    "Richy Life Club chauffer service",
-    "richylife club chauffer service",
+    'chauffeur service dubai',
+    'luxury chauffeur service dubai',
+    ' airport transfers dubai',
+    'car rentals dubai',
+    'full dubai tours',
+    'events pickup and drop dubai',
+    'Richy Life Club chauffer service',
+    'richy life club chauffer service',
   ],
 
   openGraph: {
-    title: "Luxury Chauffeur Service in Dubai",
+    title: 'Luxury Chauffeur Service in Dubai',
     description:
-      "Book a luxury chauffeur service in Dubai for your airport transfers, half and full day car rentals, full Dubai tours, or events pickup and drop",
-    siteName: "Richy life Club",
+      'Book a luxury chauffeur service in Dubai for your airport transfers, half and full day car rentals, full Dubai tours, or events pickup and drop',
+    siteName: 'Richy life Club',
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/chauffeur/hero.png`,
@@ -45,8 +45,8 @@ export const metadata = {
         height: 200,
       },
     ],
-    locale: "en_US",
-    type: "website",
+    locale: 'en_US',
+    type: 'website',
   },
 };
 
@@ -75,24 +75,24 @@ const page = async ({ params }) => {
   const car = await getData(params);
   const data = [
     {
-      title: "Airport Transfer",
-      image: "/assets/chauffeur/transfers.jpeg",
+      title: 'Airport Transfer',
+      image: '/assets/chauffeur/transfers.jpeg',
     },
     {
-      title: "Half/Full Day",
-      image: "/assets/chauffeur/halfday.avif",
+      title: 'Half/Full Day',
+      image: '/assets/chauffeur/halfday.avif',
     },
     {
-      title: "Dubai City Tour",
-      image: "/assets/chauffeur/dubaitour.jpeg",
+      title: 'Dubai City Tour',
+      image: '/assets/chauffeur/dubaitour.jpeg',
     },
     // {
     //   title: 'A-B Transfer',
     //   image: '/assets/chauffeur/a-b.jpeg',
     // },
     {
-      title: "Events",
-      image: "/assets/chauffeur/event.png",
+      title: 'Events',
+      image: '/assets/chauffeur/event.png',
     },
   ];
 
@@ -110,9 +110,9 @@ const page = async ({ params }) => {
           </h2>
 
           <AnimatedBtn
-            styles={"rounded-md bg-primary text-white"}
-            text={"Book Now"}
-            msg={"Hi, I would like to know about your services."}
+            styles={'rounded-md bg-primary text-white'}
+            text={'Book Now'}
+            msg={'Hi, I would like to know about your services.'}
           />
         </div>
       </div>
@@ -143,8 +143,8 @@ const page = async ({ params }) => {
         </div>
       </div> */}
         <ContactForm
-          title={"Experience the ultimate Luxury"}
-          description={"Book your journey with our luxury car rentals now"}
+          title={'Experience the ultimate Luxury'}
+          description={'Book your journey with our luxury car rentals now'}
         />
       </div>
     </main>

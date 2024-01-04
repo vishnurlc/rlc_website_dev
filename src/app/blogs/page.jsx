@@ -2,7 +2,7 @@ import { ContactForm, LatestNewsCarousel, NewsCard } from '@/components';
 export const metadata = {
   title: 'News & Blogs',
   description:
-    "Get a glimpse into the luxury lifestyle with Richylife Club's news and blog. Discover insider tips, travel inspirations, and stories of unforgettable experiences that await you",
+    "Get a glimpse into the luxury lifestyle with Richy life Club's news and blog. Discover insider tips, travel inspirations, and stories of unforgettable experiences that await you",
   keywords: [
     'Contact Richy life Club',
     'Luxury Experiences Dubai',
@@ -27,7 +27,7 @@ export const metadata = {
   openGraph: {
     title: 'News & Blogs',
     description:
-      "Get a glimpse into the luxury lifestyle with Richylife Club's news and blog. Discover insider tips, travel inspirations, and stories of unforgettable experiences that await you",
+      "Get a glimpse into the luxury lifestyle with Richy life Club's news and blog. Discover insider tips, travel inspirations, and stories of unforgettable experiences that await you",
     siteName: 'Richy life Club',
     images: [
       {
