@@ -14,7 +14,7 @@ import Image from 'next/image';
 const SwiperSlider = ({ fleetData }) => {
   return (
     <Swiper
-      spaceBetween={30}
+      slidesPerView={1.5}
       freeMode={true}
       pagination={{
         clickable: true,
@@ -22,46 +22,45 @@ const SwiperSlider = ({ fleetData }) => {
       modules={[FreeMode]}
       breakpoints={{
         640: {
-          slidesPerView: 2,
+          slidesPerView: 1.5,
+          spaceBetween: 20,
         },
-
         768: {
-          slidesPerView: 2,
+          slidesPerView: 3,
+          spaceBetween: 30,
         },
-
         1024: {
-          slidesPerView: 3, // for big screens
+          slidesPerView: 3,
+          spaceBetween: 50,
         },
       }}
     >
       {fleetData?.map((item, index) => (
         <SwiperSlide key={index}>
-          {fleetData?.map((item, index) => (
-            <div key={index} id="selectDisable">
-              <div className="relative  w-full min-w-[297px] aspect-[357/200] rounded-md">
-                <Link
-                  href={`/chauffeur-service/#${item.attributes.slug}`}
-                  className="select-none"
+          <div id="selectDisable">
+            <div className="relative w-full max-w-[297px] aspect-[357/200] rounded-md">
+              <Link
+                href={`/chauffeur-service/#${item.attributes.slug}`}
+                className="select-none"
+                draggable="false"
+              >
+                <Image
+                  src={item.attributes.image?.data.attributes.url}
+                  alt={`${item.name} rental | Richy life Club`}
+                  fill
+                  style={{
+                    objectFit: 'contain',
+                    userSelect: 'none !important',
+                  }}
+                  id="selectDisable"
                   draggable="false"
-                >
-                  <Image
-                    src={item.attributes.image?.data.attributes.url}
-                    alt={`${item.name} rental | Richy life Club`}
-                    fill
-                    style={{
-                      objectFit: 'contain',
-                      userSelect: 'none !important',
-                    }}
-                    id="selectDisable"
-                    draggable="false"
-                  />
-                </Link>
-              </div>
-              <h2 className="uppercase text-center font-medium tracking-wide text-sm md:text-xl font-poppins">
-                {item.attributes.name}
-              </h2>
+                />
+              </Link>
             </div>
-          ))}
+            <h2 className="uppercase text-center font-medium tracking-wide text-sm md:text-xl font-poppins">
+              {item.attributes.name}
+            </h2>
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>
