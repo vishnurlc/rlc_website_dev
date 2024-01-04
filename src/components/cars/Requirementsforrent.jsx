@@ -5,7 +5,7 @@ const Requirementsforrent = () => {
     <div>
       <SectionHeading title={'Richy life Club Luxury Car Rentals in Dubai'} />
       <p className="text-center text-gray-500">
-        Welcome to the pinnacle of luxury and style with RichyLife Club&apos;s
+        Welcome to the pinnacle of luxury and style with Richy Life Club&apos;s
         exclusive luxury car rental services in Dubai. Whether you&apos;re in
         town for business or leisure, our exquisite fleet of high-end vehicles
         offers the perfect blend of performance, elegance, and prestige.
@@ -25,7 +25,7 @@ const Requirementsforrent = () => {
             </h4>
             <p className="text-base">
               Select a brand that resonates with your personal style and
-              preferences. At RichyLife Club, we offer an impressive array of
+              preferences. At Richy Life Club, we offer an impressive array of
               prestigious brands to cater to your discerning taste, from the raw
               power of Lamborghini to Rolls-Royce&apos;s timeless elegance.
             </p>
@@ -47,10 +47,10 @@ const Requirementsforrent = () => {
               3. Selecting the Right Car Rental Company:
             </h4>
             <p className="text-base">
-              At RichyLife Club, we&apos;re committed to providing our customers
-              with the best possible luxury car rental experience. We&apos;re
-              transparent about our pricing and policies, and we go above and
-              beyond to make sure that our customers are satisfied.
+              At Richy Life Club, we&apos;re committed to providing our
+              customers with the best possible luxury car rental experience.
+              We&apos;re transparent about our pricing and policies, and we go
+              above and beyond to make sure that our customers are satisfied.
             </p>
           </div>
           <div>
@@ -114,8 +114,9 @@ const Requirementsforrent = () => {
             </ul>
             <p className="my-4">
               In addition to these renowned brands, we also offer luxury cars
-              from Mercedes, Audi, BMW, and more. At RichyLife Club, you&apos;ll
-              find the perfect luxury car to elevate your Dubai experience.
+              from Mercedes, Audi, BMW, and more. At Richy Life Club,
+              you&apos;ll find the perfect luxury car to elevate your Dubai
+              experience.
             </p>
           </div>
           <div>
@@ -168,7 +169,7 @@ const Requirementsforrent = () => {
               plate to avoid fines.
             </p>
             <p className="text-base mt-4">
-              At RichyLife Club, we strive to provide you with a comprehensive
+              At Richy Life Club, we strive to provide you with a comprehensive
               luxury car rental experience that goes beyond expectations. Choose
               us for your next Dubai adventure and embrace the epitome of style
               and sophistication.
@@ -176,10 +177,10 @@ const Requirementsforrent = () => {
           </div>
           <div>
             <h4 className="font-semibold text-gray-600 text-lg">
-              Why Choose RichyLife Club for Your Luxury Car Rental in Dubai?
+              Why Choose Richy Life Club for Your Luxury Car Rental in Dubai?
             </h4>
             <p className="text-base">
-              At RichyLife Club, we strive to provide you with a comprehensive
+              At Richy Life Club, we strive to provide you with a comprehensive
               luxury car rental experience that goes beyond expectations. We
               offer:
             </p>
