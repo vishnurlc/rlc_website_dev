@@ -1,14 +1,9 @@
-<<<<<<< HEAD
-import { ContactForm, HeroCarousel, PriceComponent } from "@/components";
-import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
-=======
 import { ContactForm, HeroCarousel, PriceComponent } from '@/components';
 import GoogleMapComponent from '@/components/mapComponent/GoogleMapComponent';
 
 import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
 import Link from 'next/link';
 import { FaLocationDot } from 'react-icons/fa6';
->>>>>>> 0944dc1e19282970f8a960459a98d5b6b3a49335
 
 export const metadata = {
   title: "Luxury Chauffeur Service in Dubai",
