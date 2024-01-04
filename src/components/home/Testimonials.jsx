@@ -4,19 +4,19 @@ const data = [
   {
     image: '/assets/home/testimonials/1.webp',
     comment:
-      "Im a car enthusiast, and RichyLife Club's premium car rentals allowed me to experience some of the finest cars in the world. It&apos;s like having a garage of dreams! ",
+      "Im a car enthusiast, and Richy Life Club's premium car rentals allowed me to experience some of the finest cars in the world. It&apos;s like having a garage of dreams! ",
     name: '- Thrilled Guest',
   },
   {
     image: '/assets/home/testimonials/2.webp',
     comment:
-      'Being a UAE resident, RichyLife Club has shown me the hidden gems of my own country through their exclusive services. An amazing way to explore! ',
+      'Being a UAE resident, Richy Life Club has shown me the hidden gems of my own country through their exclusive services. An amazing way to explore! ',
     name: '- Joyful Adventurer',
   },
   {
     image: '/assets/home/testimonials/3.webp',
     comment:
-      'RichyLife Club turned my dream of cruising on a luxury yacht into reality. Their attention to detail and impeccable service made my day truly extraordinary.',
+      'Richy Life Club turned my dream of cruising on a luxury yacht into reality. Their attention to detail and impeccable service made my day truly extraordinary.',
     name: '- Delighted Client',
   },
   {
