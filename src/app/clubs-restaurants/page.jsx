@@ -31,17 +31,17 @@ async function page() {
   const desert = await getData();
 
   return (
-    <div className="bg-black">
+    <div className="mt-[150px]">
       <div>
-        <HeroSection
+        {/* <HeroSection
           posterurl={"/assets/home/heroposter1.webp"}
           type={"video"}
           url={"https://admin.richylife.ae/rlchome.mp4"}
           btntext={"Experience Luxury"}
-        />
+        /> */}
       </div>
 
-      <div className="bg-black reletive max-w-[1200px] mx-auto px-6 hidden md:visible">
+      <div className=" reletive max-w-[1200px] mx-auto px-6 hidden md:visible">
         <h2 className="text-white text-3xl uppercase pt-10">
           New Nightlife Vision
         </h2>
@@ -105,9 +105,9 @@ async function page() {
 
       <div className="max-w-[1200px] mx-auto px-6 pb-10">
         <InfinitScroll fetchApi="club-packages" />
-        {desert.data?.map((item, index) => (
+        {/* {desert.data?.map((item, index) => (
           <ClubCard data={item} key={index} order={index} />
-        ))}
+        ))} */}
       </div>
     </div>
   );

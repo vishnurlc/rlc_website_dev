@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Loader } from "..";
 import CardChauffer from "./CardChauffer";
 import CardBasic from "../ui/card/CardBasic";
+import ClubCard from "../club/ClubCard";
 
 function InfinitScroll({ fetchApi }) {
   const pageSize = 5;
@@ -76,6 +77,8 @@ function InfinitScroll({ fetchApi }) {
                   key={index}
                 />
               );
+            case "club-packages":
+              return <ClubCard data={car} key={index} order={index} />;
 
             default:
               break;
