@@ -36,30 +36,32 @@ const SwiperSlider = ({ fleetData }) => {
     >
       {fleetData?.map((item, index) => (
         <SwiperSlide key={index}>
-          <div id="selectDisable">
-            <div className="relative  w-full min-w-[170px] aspect-[357/200] rounded-md">
-              <Link
-                href={`/chauffeur-service/#cars${item.id}`}
-                className="select-none"
-                draggable="false"
-              >
-                <Image
-                  src={item.attributes.image?.data.attributes.url}
-                  alt={`${item.name} rental | Richy life Club`}
-                  fill
-                  style={{
-                    objectFit: 'contain',
-                    userSelect: 'none !important',
-                  }}
-                  id="selectDisable"
+          {fleetData?.map((item, index) => (
+            <div key={index} id="selectDisable">
+              <div className="relative  w-full min-w-[297px] aspect-[357/200] rounded-md">
+                <Link
+                  href={`/chauffeur-service/#${item.attributes.slug}`}
+                  className="select-none"
                   draggable="false"
-                />
-              </Link>
+                >
+                  <Image
+                    src={item.attributes.image?.data.attributes.url}
+                    alt={`${item.name} rental | Richy life Club`}
+                    fill
+                    style={{
+                      objectFit: 'contain',
+                      userSelect: 'none !important',
+                    }}
+                    id="selectDisable"
+                    draggable="false"
+                  />
+                </Link>
+              </div>
+              <h2 className="uppercase text-center font-medium tracking-wide text-sm md:text-xl font-poppins">
+                {item.attributes.name}
+              </h2>
             </div>
-            <h2 className="uppercase text-center font-medium tracking-wide text-sm md:text-xl font-poppins">
-              {item.attributes.name}
-            </h2>
-          </div>
+          ))}
         </SwiperSlide>
       ))}
     </Swiper>

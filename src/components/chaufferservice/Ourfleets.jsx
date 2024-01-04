@@ -38,6 +38,7 @@ const Ourfleets = () => {
     const handelFeatch = async () => {
       const data = await fetchData(api);
       setFleetData(data.data);
+      console.log(data.data);
     };
     handelFeatch();
   }, []);

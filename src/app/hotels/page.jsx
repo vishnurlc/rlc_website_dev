@@ -1,11 +1,11 @@
-import InfinitScroll from '@/components/chaufferservice/InfinitScroll';
+import InfinitScroll from "@/components/chaufferservice/InfinitScroll";
 
-import React from 'react';
+import React from "react";
 
 const page = () => {
   return (
-    <div>
-      <InfinitScroll fetchApi={'chauffeur-cars'} />
+    <div className="mt-[150px]">
+      <InfinitScroll fetchApi={"chauffeur-cars"} />
     </div>
   );
 };
