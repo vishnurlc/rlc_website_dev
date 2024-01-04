@@ -47,8 +47,8 @@ function CardChauffer({ variant, data }) {
   return (
     <div id={data.attributes.chauffeur_make.data?.attributes.slug}>
       <div className="grid grid-cols-1 w-full lg:grid-cols-5  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-white]">
-        <div
-          // href={`${path}/${data.attributes.slug}`}
+        <Link
+          href={`${path}/${data.id}`}
           className="col-span-3 relative w-full aspect-[2/1] min-h-[120px] "
         >
           <Image
@@ -63,7 +63,7 @@ function CardChauffer({ variant, data }) {
             id="selectDisable"
             className="mx-auto"
           />
-        </div>
+        </Link>
         <div className="p-5 col-span-1 md:col-span-2">
           <div className="text-black h-full flex flex-col items-start justify-between">
             <h3 className="text-primary text-2xl font-bold leading-[29.04px]">

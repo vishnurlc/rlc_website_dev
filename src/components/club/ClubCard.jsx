@@ -66,7 +66,10 @@ const ClubCard = ({ data, order }) => {
     //   </div>
     // </div>
     <div className="grid grid-cols-1 w-full lg:grid-cols-5  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-white] mb-5">
-      <div className="col-span-3 relative w-full aspect-[2/1] min-h-[120px] ">
+      <Link
+        href={`/clubs-restaurants/${data.id}`}
+        className="col-span-3 relative w-full aspect-[2/1] min-h-[120px] "
+      >
         <Image
           src={data.attributes.image?.data[0].attributes.url}
           alt={`Rent ${data.attributes.name} with Richy life Club`}
@@ -79,7 +82,7 @@ const ClubCard = ({ data, order }) => {
           id="selectDisable"
           // className="mx-auto"
         />
-      </div>
+      </Link>
       <div className="p-5 col-span-1 md:col-span-2">
         <div className="text-black h-full flex flex-col items-start justify-between">
           <h3 className="text-primary text-2xl font-bold leading-[29.04px]">
@@ -95,8 +98,10 @@ const ClubCard = ({ data, order }) => {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full py-5 gap-6">
             <div className="w-full md:w-fit">
               <span className="text-primary font-normal text-2xl">
-                {convertPrice(data.attributes.avg_price_per_person)}{" "}
-                <span className="text-secondary text-sm font-normal"></span>
+                {convertPrice(data.attributes.avg_price_per_person)}
+                <span className="text-secondary text-sm font-normal">
+                  /Person
+                </span>
               </span>
             </div>
             <div className="flex justify-between md:justify-start items-center gap-4 w-full md:w-fit">
