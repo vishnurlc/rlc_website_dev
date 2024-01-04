@@ -37,6 +37,7 @@ const Ourfleets = () => {
     const handelFeatch = async () => {
       const data = await fetchData(api);
       setFleetData(data.data);
+      console.log(data.data);
     };
     handelFeatch();
   }, []);
@@ -48,7 +49,7 @@ const Ourfleets = () => {
             <div key={index} id="selectDisable">
               <div className="relative  w-full min-w-[297px] aspect-[357/200] rounded-md">
                 <Link
-                  href={`/chauffeur-service/#cars${item.id}`}
+                  href={`/chauffeur-service/#${item.attributes.slug}`}
                   className="select-none"
                   draggable="false"
                 >
