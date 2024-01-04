@@ -221,13 +221,13 @@ function CarDetail({ data }) {
       </div>
       <div className="px-2 py-2  bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-sm md:text-base font-medium flex items-center gap-2 leading-tight">
-          <MdOutlineAirlineSeatReclineExtra /> Seats{" "}
-          {data.attributes.extensionpirce}
+          <MdOutlineAirlineSeatReclineExtra />
+          {data.attributes.seatingcapacity}
         </div>
       </div>
       <div className="px-2 py-2 bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-sm md:text-base font-medium flex items-center gap-2 leading-tight">
-          <MdLuggage /> Luggage {data.attributes.additionalcity}
+          <MdLuggage /> {data.attributes.luggage} bags
         </div>
       </div>
     </div>

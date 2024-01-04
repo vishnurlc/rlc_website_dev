@@ -89,9 +89,7 @@ const ChaufferSpec = ({ car }) => {
         >
           <span>Seats</span>
           <span className="text-[#8a97a4]">
-            {/* {car.data[0].attributes.technicalspec.interior_colors.data
-              .map((item) => item.attributes.color)
-              .join("+")} */}
+            {car.data.attributes.seatingcapacity}
           </span>
         </motion.li>
         <motion.li
@@ -99,7 +97,9 @@ const ChaufferSpec = ({ car }) => {
           className="flex font-inter text-sm md:text-lg w-full items-center justify-between py-2 md:py-4  border-b border-[#E4EBF0] "
         >
           <span>Luggage</span>
-          <span className="text-[#8a97a4]"></span>
+          <span className="text-[#8a97a4]">
+            {car.data.attributes.luggage} bags
+          </span>
         </motion.li>
         <motion.li
           variants={itemVariant}

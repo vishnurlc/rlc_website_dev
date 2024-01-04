@@ -4,6 +4,8 @@ import React from "react";
 import Image from "next/image";
 import DesertSafariCard from "@/components/desertsafari/DesertSafariCard";
 import ClubCard from "@/components/club/ClubCard";
+import CardBasic from "@/components/ui/card/CardBasic";
+import InfinitScroll from "@/components/chaufferservice/InfinitScroll";
 
 export async function getData() {
   try {
@@ -102,8 +104,9 @@ async function page() {
       </div>
 
       <div className="max-w-[1200px] mx-auto px-6 pb-10">
+        <InfinitScroll fetchApi="club-packages" />
         {desert.data?.map((item, index) => (
-          <ClubCard item={item} key={index} order={index} />
+          <ClubCard data={item} key={index} order={index} />
         ))}
       </div>
     </div>
