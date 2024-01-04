@@ -30,7 +30,7 @@ const SwiperSlider = ({ fleetData }) => {
           spaceBetween: 30,
         },
         1024: {
-          slidesPerView: 3,
+          slidesPerView: 3.5,
           spaceBetween: 50,
         },
       }}
