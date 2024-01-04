@@ -49,17 +49,17 @@ export default function HeroCarousel({ data, name }) {
           whileHover={{
             scale: 1.05,
           }}
-          className="hero-carousel__button--right w-10 h-10 rounded-full  flex items-center justify-center text-white cursor-pointer border border-solid border-white"
+          className="hero-carousel__button--right w-10 h-10 rounded-full  flex items-center justify-center text-white cursor-pointer border-2 border-solid border-gold"
         >
-          <BiChevronLeft size={28} color="#fff" />
+          <BiChevronLeft size={28} color="#DCA24B" />
         </motion.div>
         <motion.div
           whileHover={{
             scale: 1.05,
           }}
-          className="hero-carousel__button--left w-10 h-10 rounded-full  flex items-center justify-center text-white cursor-pointer border border-solid border-white"
+          className="hero-carousel__button--left w-10 h-10 rounded-full  flex items-center justify-center text-white cursor-pointer border-2 border-solid border-gold"
         >
-          <BiChevronRight size={28} color="#fff" />
+          <BiChevronRight size={28} color="#DCA24B" />
         </motion.div>
       </div>
     </div>
