@@ -1,32 +1,32 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import Motionslider from "../ui/slidermotion/Motionslider";
-import Link from "next/link";
-import fetchData from "@/lib/feacthData";
+'use client';
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import Motionslider from '../ui/slidermotion/Motionslider';
+import Link from 'next/link';
+import fetchData from '@/lib/feacthData';
 
 const jetski = [
   {
     id: 9,
-    name: "Mercedes Benz S Class",
+    name: 'Mercedes Benz S Class',
     image:
-      "/assets/chauffeur/2016-mercedes-benz-s-class-2015-mercedes-benz-s-class-maybach-maybach-removebg-preview.png",
-    price: "360",
-    link: "sedan",
+      '/assets/chauffeur/2016-mercedes-benz-s-class-2015-mercedes-benz-s-class-maybach-maybach-removebg-preview.png',
+    price: '360',
+    link: 'sedan',
   },
   {
     id: 9,
-    name: "Rolls Royce",
-    image: "/assets/chauffeur/rolls.png",
-    price: "360",
-    link: "sedan",
+    name: 'Rolls Royce',
+    image: '/assets/chauffeur/rolls.png',
+    price: '360',
+    link: 'sedan',
   },
   {
     id: 4,
-    name: "Lexus",
-    image: "/assets/chauffeur/ES300H.jpeg",
-    price: "360",
-    link: "sedan",
+    name: 'Lexus',
+    image: '/assets/chauffeur/ES300H.jpeg',
+    price: '360',
+    link: 'sedan',
   },
 ];
 
@@ -58,8 +58,8 @@ const Ourfleets = () => {
                     alt={`${item.name} rental | Richy life Club`}
                     fill
                     style={{
-                      objectFit: "cover",
-                      userSelect: "none !important",
+                      objectFit: 'contain',
+                      userSelect: 'none !important',
                     }}
                     id="selectDisable"
                     draggable="false"

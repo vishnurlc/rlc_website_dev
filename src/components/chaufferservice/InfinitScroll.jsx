@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { Loader } from "..";
 import CardChauffer from "./CardChauffer";
-import { data } from "autoprefixer";
 import CardBasic from "../ui/card/CardBasic";
 
 function InfinitScroll({ fetchApi }) {
