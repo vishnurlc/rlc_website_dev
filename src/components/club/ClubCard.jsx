@@ -67,7 +67,7 @@ const ClubCard = ({ data, order }) => {
     // </div>
     <div className="grid grid-cols-1 w-full lg:grid-cols-5  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-white] mb-5">
       <Link
-        href={`/clubs-restaurants/${data.id}`}
+        href={`/clubs-restaurants/${data.attributes.slug}`}
         className="col-span-3 relative w-full aspect-[2/1] min-h-[120px] "
       >
         <Image
@@ -86,7 +86,7 @@ const ClubCard = ({ data, order }) => {
       <div className="p-5 col-span-1 md:col-span-2">
         <div className="text-black h-full flex flex-col items-start justify-between">
           <h3 className="text-primary text-2xl font-bold leading-[29.04px]">
-            <Link href={`/clubs-restaurants/${data.id}`}>
+            <Link href={`/clubs-restaurants/${data.attributes.slug}`}>
               {data.attributes.name}
             </Link>
           </h3>

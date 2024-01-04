@@ -1,10 +1,5 @@
-import { HeroSection } from "@/components";
-import VideoSection from "@/components/home/VideoSection";
 import React from "react";
 import Image from "next/image";
-import DesertSafariCard from "@/components/desertsafari/DesertSafariCard";
-import ClubCard from "@/components/club/ClubCard";
-import CardBasic from "@/components/ui/card/CardBasic";
 import InfinitScroll from "@/components/chaufferservice/InfinitScroll";
 
 export async function getData() {

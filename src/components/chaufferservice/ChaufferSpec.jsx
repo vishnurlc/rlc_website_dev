@@ -56,7 +56,7 @@ const ChaufferSpec = ({ car }) => {
           <span>5 hours</span>
           <span className="text-[#8a97a4]">
             {/* {car.data.attributes.body} */}
-            {convertPrice(car.data.attributes.fivehours)}
+            {convertPrice(car.data[0].attributes.fivehours)}
           </span>
         </motion.li>
         <motion.li
@@ -65,7 +65,7 @@ const ChaufferSpec = ({ car }) => {
         >
           <span>10 hours</span>
           <span className="text-[#8a97a4]">
-            {convertPrice(car.data.attributes.tenhours)}
+            {convertPrice(car.data[0].attributes.tenhours)}
             {/* {car.data.attributes.fuel.data.attributes.type} */}
           </span>
         </motion.li>
@@ -76,7 +76,7 @@ const ChaufferSpec = ({ car }) => {
         >
           <span>Airport</span>
           <span className="text-[#8a97a4]">
-            {convertPrice(car.data.attributes.airport)}
+            {convertPrice(car.data[0].attributes.airport)}
             {/* {
               car.data.attributes.technicalspec.cylinder.data.attributes
                 .cylinders
@@ -89,7 +89,7 @@ const ChaufferSpec = ({ car }) => {
         >
           <span>Seats</span>
           <span className="text-[#8a97a4]">
-            {car.data.attributes.seatingcapacity}
+            {car.data[0].attributes.seatingcapacity}
           </span>
         </motion.li>
         <motion.li
@@ -98,7 +98,7 @@ const ChaufferSpec = ({ car }) => {
         >
           <span>Luggage</span>
           <span className="text-[#8a97a4]">
-            {car.data.attributes.luggage} bags
+            {car.data[0].attributes.luggage} bags
           </span>
         </motion.li>
         <motion.li
@@ -107,7 +107,7 @@ const ChaufferSpec = ({ car }) => {
         >
           <span>Ext. Hours</span>
           <span className="text-[#8a97a4]">
-            {convertPrice(car.data.attributes.extensionpirce)}
+            {convertPrice(car.data[0].attributes.extensionpirce)}
           </span>
         </motion.li>
         <motion.li
@@ -116,7 +116,7 @@ const ChaufferSpec = ({ car }) => {
         >
           <span>Addit. Emirate</span>
           <span className="text-[#8a97a4]">
-            {convertPrice(car.data.attributes.additionalcity)}
+            {convertPrice(car.data[0].attributes.additionalcity)}
           </span>
         </motion.li>
       </motion.ul>
