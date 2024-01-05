@@ -102,7 +102,7 @@ const page = async ({ params }) => {
   }
 
   return (
-    <main className="pt-[100px]">
+    <main className="pt-[108px] md:pt-[128px]">
       <div>
         <HeroCarousel
           data={car.data[0].attributes.images}

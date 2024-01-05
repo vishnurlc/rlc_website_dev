@@ -72,7 +72,7 @@ const page = async () => {
   ];
 
   return (
-    <main className="pt-[120px]">
+    <main className="pt-[108px] md:pt-[128px]">
       <div className="hidden">
         <HeroSection2
           type="image"

@@ -40,7 +40,7 @@ export const metadata = {
 
 const page = () => {
   return (
-    <main className="pt-[100px]">
+    <main className="pt-[108px] md:pt-[128px]">
       <h1 className="sr-only">About Richy life Club</h1>
       <HeroSection
         posterurl={'/assets/home/heroposter1.webp'}

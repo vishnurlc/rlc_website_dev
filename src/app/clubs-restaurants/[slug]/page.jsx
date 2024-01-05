@@ -65,8 +65,8 @@ const page = async ({ params }) => {
   console.log(car);
 
   return (
-    <main>
-      <div className="mt-[100px]">
+    <main className="pt-[108px] md:pt-[128px]">
+      <div>
         <HeroCarousel
           data={car.data[0].attributes.image}
           name={car.data[0].attributes.name}

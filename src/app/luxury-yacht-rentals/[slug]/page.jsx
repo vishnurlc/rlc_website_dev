@@ -76,7 +76,7 @@ export default async function YacthDetail({ params: { slug } }) {
   const yacht = await getData(slug);
 
   return (
-    <main className="pt-[105px]">
+    <main className="pt-[108px] md:pt-[128px]">
       {yacht && (
         <>
           <div>
