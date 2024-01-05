@@ -72,7 +72,7 @@ async function getData(slug) {
 const page = async ({ params }) => {
   const car = await getData(params);
 
-  if (car.data.length !== 0) {
+  if (car.data.length === 0) {
     // console.log(car.data.attributes);
     return 'loading';
   }
