@@ -72,11 +72,6 @@ async function getData(slug) {
 const page = async ({ params }) => {
   const car = await getData(params);
 
-  if (car.data.length === 0) {
-    // console.log(car.data.attributes);
-    return 'loading';
-  }
-
   return (
     <main className="pt-[108px] md:pt-[128px]">
       <div>
