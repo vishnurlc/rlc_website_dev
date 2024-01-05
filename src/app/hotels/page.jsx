@@ -5,7 +5,7 @@ import React from "react";
 const page = () => {
   return (
     <div className="mt-[150px]">
-      <InfinitScroll fetchApi={"chauffeur-cars"} />
+      <InfinitScroll fetchApi={"club-packages"} />
     </div>
   );
 };
