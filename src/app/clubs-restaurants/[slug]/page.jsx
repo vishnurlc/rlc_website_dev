@@ -5,56 +5,49 @@ import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
 import Link from 'next/link';
 import { FaLocationDot } from 'react-icons/fa6';
 
-export const metadata = {
-  title:
-    'Luxury Clubs & Restaurants in Dubai | 200+ Luxury Clubs & Restaurants',
-  description:
-    "Discover Dubai's luxury nightlife with Richy Life Club. Cruise in style with our premium car rental service, offering a fleet of exotic cars—Bentleys, Ferraris, Lamborghinis—for an unforgettable driving experience. Elevate your evenings with our curated list of top Luxury Clubs & Restaurants. Indulge in exquisite dining and exclusive atmospheres, where opulence meets perfection. Experience Dubai's finest establishments with Richy Life Club.",
-  keywords: [
-    'Luxury Car Rental Dubai',
-    'Exotic Car Hire',
-    'Premium Car Rentals',
-    'Exotic Car Rental Dubai',
-    'High-End Car Rentals',
-    'Nightlife',
-    'Supercar Hire Dubai',
-    'Rent Exotic Cars',
-    'Luxury Clubs',
-    'Dubai Luxury Car Hire',
-    'Dubai luxury car rental',
-    'luxury car hire',
-    'exotic car rental.',
-    ' luxury Rolls-Royce rentals Dubai',
-    'Bentley rentals Dubai',
-    'luxury Maserati rentals Dubai',
-    'Audi rentals Dubai',
-    'Porsche rentals Dubai',
-    'Lamborghini rentals Dubai',
-    'Richy Life Club car rental',
-    'richylife club rent a car',
-  ],
-  openGraph: {
-    title:
-      'Luxury Clubs & Restaurants in Dubai | 200+ Luxury Clubs & Restaurants',
-    description:
-      "Discover Dubai's luxury nightlife with Richy Life Club. Cruise in style with our premium car rental service, offering a fleet of exotic cars—Bentleys, Ferraris, Lamborghinis—for an unforgettable driving experience. Elevate your evenings with our curated list of top Luxury Clubs & Restaurants. Indulge in exquisite dining and exclusive atmospheres, where opulence meets perfection. Experience Dubai's finest establishments with Richy Life Club.",
-    siteName: 'Richy life Club',
-    images: [
+export async function generateMetadata({ params }) {
+  try {
+    const car = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/club-packages?filters[slug][$eq]=${params.slug}&populate=image`,
       {
-        url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/rentacar/opengraphimage.png`,
-        width: 800,
-        height: 600,
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
+        },
+      }
+    ).then((res) => res.json());
+
+    return {
+      title:
+        car.data[0].attributes.name || '| Luxury Clubs & Restaurants in Dubai',
+      description:
+        car.data[0].attributes.description ||
+        ' Luxury Clubs & Restaurants in Dubai',
+      openGraph: {
+        type: 'website',
+        title:
+          car.data[0].attributes.name ||
+          '| Luxury Clubs & Restaurants in Dubai',
+        description:
+          car.data[0].attributes.description ||
+          'Luxury Clubs & Restaurants in Dubai',
+        images: [
+          {
+            url: `${car.data[0].attributes.image.data[0].attributes.url}`,
+            width: 800,
+            height: 600,
+          },
+          {
+            url: `${car.data[0].attributes.image.data[0].attributes.url}`,
+            width: 300,
+            height: 200,
+          },
+        ],
       },
-      {
-        url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/rentacar/opengraphimage.png`,
-        width: 300,
-        height: 200,
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-};
+    };
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 async function getData(slug) {
   let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/club-packages?filters[slug][$eq]=${slug.slug}&populate=*`;
@@ -220,3 +213,23 @@ const page = async ({ params }) => {
 };
 
 export default page;
+
+export const generateStaticParams = async () => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/club-packages`,
+    {
+      next: {
+        revalidate: 40,
+      },
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
+      },
+    }
+  );
+
+  const data = await res.json();
+
+  return data.data.map((blog) => ({
+    slug: blog.attributes.slug,
+  }));
+};
