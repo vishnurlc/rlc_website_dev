@@ -144,10 +144,10 @@ const page = async ({ params }) => {
                     <div className="text-gray-500 mt-7 dark:text-gray-200 text-center md:text-start">
                       <p className="text-primary text-lg">Cuisines</p>
                       <p>
-                        {car.data[0].attributes.Cuisines.map(
+                        {car.data[0].attributes.restuarant_cuisines.data.map(
                           (item, index, array) => (
                             <span key={index}>
-                              {item.cuisine}
+                              {item.attributes.cuisine}
                               {index < array.length - 1 && ','}{' '}
                             </span>
                           )
