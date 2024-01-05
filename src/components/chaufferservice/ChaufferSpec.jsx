@@ -1,9 +1,9 @@
-"use client";
-import { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { itemVariant, parentVariant } from "@/lib/animation";
-import { useInView } from "react-intersection-observer";
-import { useCurrency } from "@/context/currencyContext";
+'use client';
+import { useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { itemVariant, parentVariant } from '@/lib/animation';
+import { useInView } from 'react-intersection-observer';
+import { useCurrency } from '@/context/currencyContext';
 const ChaufferSpec = ({ car }) => {
   const { selectedCurrency, conversionRates } = useCurrency();
   const animationControl = useAnimation();
@@ -13,7 +13,7 @@ const ChaufferSpec = ({ car }) => {
 
   useEffect(() => {
     if (inView) {
-      animationControl.start("visible");
+      animationControl.start('visible');
     }
   }, [inView]);
 
@@ -21,8 +21,8 @@ const ChaufferSpec = ({ car }) => {
     const rate = conversionRates.rates[selectedCurrency];
 
     const amt = Math.round(Number(price) * rate);
-    const priceFormatted = new Intl.NumberFormat("ae", {
-      style: "currency",
+    const priceFormatted = new Intl.NumberFormat('ae', {
+      style: 'currency',
       currency: selectedCurrency,
       minimumFractionDigits: 0, // Set minimumFractionDigits to 0
       maximumFractionDigits: 0, // Set maximumFractionDigits to 0
@@ -30,11 +30,10 @@ const ChaufferSpec = ({ car }) => {
     return priceFormatted;
   };
 
-  console.log(car);
   return (
     <motion.div
       ref={ref}
-      initial={"hidden"}
+      initial={'hidden'}
       animate={animationControl}
       variants={parentVariant}
     >

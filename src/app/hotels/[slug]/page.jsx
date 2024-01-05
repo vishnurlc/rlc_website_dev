@@ -62,7 +62,6 @@ async function getData(slug) {
 
 const page = async ({ params }) => {
   const car = await getData(params);
-  console.log(car);
 
   return (
     <main>

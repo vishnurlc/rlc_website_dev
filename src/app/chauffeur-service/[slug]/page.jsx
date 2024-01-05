@@ -1,54 +1,51 @@
-import {
-  ContactForm,
-  HeroCarousel,
-  Loader,
-  PriceComponent,
-  TechnicalSpec,
-} from '@/components';
-import CardChauffer from '@/components/chaufferservice/CardChauffer';
-import ChaufferCard from '@/components/chaufferservice/ChaufferCard';
+import { ContactForm, HeroCarousel, PriceComponent } from '@/components';
+
 import ChaufferSpec from '@/components/chaufferservice/ChaufferSpec';
-import Ourfleets from '@/components/chaufferservice/Ourfleets';
-import Faq from '@/components/home/faq';
+
 import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
-import { Suspense } from 'react';
 
-export const metadata = {
-  title: 'Luxury Chauffeur Service in Dubai',
-  description:
-    'Book a luxury chauffeur service in Dubai for your airport transfers, half and full day car rentals, full Dubai tours, or events pickup and drop',
-  keywords: [
-    'chauffeur service dubai',
-    'luxury chauffeur service dubai',
-    ' airport transfers dubai',
-    'car rentals dubai',
-    'full dubai tours',
-    'events pickup and drop dubai',
-    'Richy Life Club chauffer service',
-    'richy life club chauffer service',
-  ],
+export async function generateMetadata({ params }) {
+  try {
+    const car = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/chauffeur-cars?filters[slug][$eq]=${params.slug}&populate=images`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
+        },
+      }
+    ).then((res) => res.json());
 
-  openGraph: {
-    title: 'Luxury Chauffeur Service in Dubai',
-    description:
-      'Book a luxury chauffeur service in Dubai for your airport transfers, half and full day car rentals, full Dubai tours, or events pickup and drop',
-    siteName: 'Richy life Club',
-    images: [
-      {
-        url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/chauffeur/hero.png`,
-        width: 800,
-        height: 600,
+    return {
+      title:
+        car.data[0].attributes.name || '| Luxury Chauffeur Service in Dubai',
+      description:
+        car.data[0].attributes.description ||
+        ' Luxury Chauffeur Service with Richy life Club',
+      openGraph: {
+        type: 'website',
+        title:
+          car.data[0].attributes.name || '| Luxury Chauffeur Service in Dubai',
+        description:
+          car.data[0].attributes.description ||
+          ' Luxury Chauffeur Service with Richy life Club',
+        images: [
+          {
+            url: `${car.data[0].attributes.images.data[0].attributes.url}`,
+            width: 800,
+            height: 600,
+          },
+          {
+            url: `${car.data[0].attributes.images.data[0].attributes.url}`,
+            width: 300,
+            height: 200,
+          },
+        ],
       },
-      {
-        url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/chauffeur/hero.png`,
-        width: 300,
-        height: 200,
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-};
+    };
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 async function getData(slug) {
   let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/chauffeur-cars?filters[slug][$eq]=${slug.slug}&populate=*`;
@@ -61,6 +58,7 @@ async function getData(slug) {
       },
     });
     const data = await res.json();
+
     if (data == {}) {
       setStatus(true);
     }
@@ -73,32 +71,10 @@ async function getData(slug) {
 
 const page = async ({ params }) => {
   const car = await getData(params);
-  const data = [
-    {
-      title: 'Airport Transfer',
-      image: '/assets/chauffeur/transfers.jpeg',
-    },
-    {
-      title: 'Half/Full Day',
-      image: '/assets/chauffeur/halfday.avif',
-    },
-    {
-      title: 'Dubai City Tour',
-      image: '/assets/chauffeur/dubaitour.jpeg',
-    },
-    // {
-    //   title: 'A-B Transfer',
-    //   image: '/assets/chauffeur/a-b.jpeg',
-    // },
-    {
-      title: 'Events',
-      image: '/assets/chauffeur/event.png',
-    },
-  ];
 
   if (car.data.length !== 0) {
-    console.log(car.data.attributes);
-    // return "loading";
+    // console.log(car.data.attributes);
+    return 'loading';
   }
 
   return (
@@ -157,3 +133,23 @@ const page = async ({ params }) => {
 };
 
 export default page;
+
+export const generateStaticParams = async () => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/chauffeur-cars`,
+    {
+      next: {
+        revalidate: 40,
+      },
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
+      },
+    }
+  );
+
+  const data = await res.json();
+
+  return data.data.map((blog) => ({
+    slug: blog.attributes.slug,
+  }));
+};

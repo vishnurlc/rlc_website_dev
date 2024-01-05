@@ -8,7 +8,6 @@ import Link from 'next/link';
 function ServiceCard2({ url, title, price, link }) {
   const { selectedCurrency, conversionRates } = useCurrency();
 
-  console.log(price);
   const convertPrice = (cost) => {
     const rate = conversionRates.rates[selectedCurrency];
 
