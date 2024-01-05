@@ -19,16 +19,16 @@ const NewsCard = ({ blog }) => {
           width={400}
           height={300}
           alt="Title tags"
+          className="rounded-none md:rounded"
           style={{
             objectFit: 'cover',
             objectPosition: 'center',
             width: '100%',
             height: 'auto',
             aspectRatio: 'calc(400/300)',
-            borderRadius: '4px',
           }}
         />
-        <div className="py-4 font-sans flex-auto flex justify-between flex-col">
+        <div className="py-4 font-sans flex-auto flex justify-between flex-col px-4">
           <div className="h-[144px] overflow-hidden">
             <span className="text-xl md:text-2xl">
               {blog.attributes.heading}&nbsp;

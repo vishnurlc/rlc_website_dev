@@ -1,8 +1,8 @@
-import { SectionHeading } from "..";
-import Card from "../ui/card/card";
+import { SectionHeading } from '..';
+import Card from '../ui/card/card';
 const ListingComponent = ({ variant, data }) => {
   return (
-    <div className="py-[40px] flex flex-col items-center gap-8 md:gap-16 px-6">
+    <div className="py-[40px] flex flex-col items-center gap-8 md:gap-16 md:px-6">
       {/* <SectionHeading
         title={"Sail in Splendor"}
         description={

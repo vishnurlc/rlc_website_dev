@@ -99,7 +99,7 @@ export default async function CarDetail({ params: { slug } }) {
   const car = await getData(slug);
 
   return (
-    <main className="">
+    <main className="pt-[108px]">
       <div>
         <HeroCarousel
           data={car.data[0].attributes.image}

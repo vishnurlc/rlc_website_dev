@@ -9,8 +9,8 @@ const Jetcard = ({ data }) => {
   const pathName = usePathname();
 
   return (
-    <div className=" px-5">
-      <div className="max-w-[1152px] mx-auto relative rounded-md overflow-hidden">
+    <div className=" md:px-5">
+      <div className="max-w-[1152px] mx-auto relative md:rounded-md overflow-hidden">
         <Image
           src={data.url}
           alt={`${data.title} charters - Private Jet Charters | Richy life Club`}

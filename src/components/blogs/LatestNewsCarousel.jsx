@@ -12,7 +12,7 @@ const LatestNewsCarousel = ({ blogs }) => {
   return (
     <div className="relative">
       <Swiper
-        className="herocarousel rounded-lg"
+        className="herocarousel md:rounded-lg"
         speed={1500}
         autoplay={{
           delay: 3500,

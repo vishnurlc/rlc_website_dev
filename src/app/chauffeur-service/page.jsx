@@ -84,7 +84,7 @@ const page = async () => {
         />
       </div>
 
-      <div className="md:mt-32 max-w-[1200px] mx-auto px-5">
+      <div className="md:mt-32 max-w-[1200px] mx-auto px-0 md:px-5">
         {/* <SectionHeading title={'Our Services'} description={''} />
         <div className="container mx-auto mt-10 ">
           <div className="grid grid-cols-1 md:grid-cols-2  gap-4 ">
