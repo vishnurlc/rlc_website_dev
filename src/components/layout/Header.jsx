@@ -203,7 +203,7 @@ export default function Header() {
           {showDropdown && (
             <div className="absolute top-full right-2 mt-2 bg-white border border-gray-300 rounded shadow-md z-50">
               <Link
-                href={`tel:NEXT_PUBLIC_WHATSAPP_NUMBER`}
+                href={`tel:${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
                 className="flex gap-2 items-center justify-start px-4 py-2 text-gray-800 hover:bg-gray-200 text-sm"
               >
                 <FaMobileAlt /> Call
