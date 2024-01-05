@@ -11,7 +11,6 @@ function InfinitScroll({ fetchApi }) {
   const [meta, setMeta] = useState();
   const [pagination, setPagination] = useState(1);
   const [status, setStatus] = useState(0);
-  const [cardComp, setCardComp] = useState();
 
   async function getData(apiEndpoint, pagination) {
     const pageSize = 25;
@@ -25,7 +24,7 @@ function InfinitScroll({ fetchApi }) {
         },
       });
       const data = await res.json();
-      if (data.data.length === 0) {
+      if (data?.data.length === 0) {
         setStatus(1);
       } else {
         setStatus(2);
@@ -45,16 +44,6 @@ function InfinitScroll({ fetchApi }) {
       }
     });
   }, [pagination, fetchApi]);
-
-  const returnComp = ({ api, data, index }) => {
-    switch (api) {
-      case "chauffeur-cars":
-        return (
-          <CardChauffer variant={"chauffeurService"} data={data} key={index} />
-        );
-        break;
-    }
-  };
 
   return (
     <div>
