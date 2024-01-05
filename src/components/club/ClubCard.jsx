@@ -1,27 +1,27 @@
-"use client";
-import AnimatedBtn from "../premiumjetski/AnimatedBtn";
-import Image from "next/image";
-import Link from "next/link";
-import { FaPhoneAlt } from "react-icons/fa";
-import { RiWhatsappFill } from "react-icons/ri";
-import { Button } from "../ui/button/Button";
+'use client';
+import AnimatedBtn from '../premiumjetski/AnimatedBtn';
+import Image from 'next/image';
+import Link from 'next/link';
+import { FaPhoneAlt } from 'react-icons/fa';
+import { RiWhatsappFill } from 'react-icons/ri';
+import { Button } from '../ui/button/Button';
 
 import {
   MdAccessTime,
   MdOutlineLocationOn,
   MdOutlinePersonOutline,
-} from "react-icons/md";
-import { IoAirplaneOutline } from "react-icons/io5";
+} from 'react-icons/md';
+import { IoAirplaneOutline } from 'react-icons/io5';
 
-import { useCurrency } from "@/context/currencyContext";
+import { useCurrency } from '@/context/currencyContext';
 const ClubCard = ({ data, order }) => {
   const { selectedCurrency, conversionRates } = useCurrency();
   const convertPrice = (price) => {
     const rate = conversionRates.rates[selectedCurrency];
 
     const amt = Math.round(Number(price) * rate);
-    const priceFormatted = new Intl.NumberFormat("ae", {
-      style: "currency",
+    const priceFormatted = new Intl.NumberFormat('ae', {
+      style: 'currency',
       currency: selectedCurrency,
       minimumFractionDigits: 0, // Set minimumFractionDigits to 0
       maximumFractionDigits: 0, // Set maximumFractionDigits to 0
@@ -29,7 +29,6 @@ const ClubCard = ({ data, order }) => {
     return priceFormatted;
   };
 
-  console.log(data);
   return (
     // <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-9 md:my-20">
     //   <div className={`order-${order}`}>
@@ -75,8 +74,8 @@ const ClubCard = ({ data, order }) => {
           alt={`Rent ${data.attributes.name} with Richy life Club`}
           fill
           style={{
-            objectFit: "cover",
-            objectPosition: "center",
+            objectFit: 'cover',
+            objectPosition: 'center',
           }}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 80vw"
           id="selectDisable"
@@ -143,8 +142,8 @@ function CarDetail({ data }) {
     const rate = conversionRates.rates[selectedCurrency];
 
     const amt = Math.round(Number(price) * rate);
-    const priceFormatted = new Intl.NumberFormat("ae", {
-      style: "currency",
+    const priceFormatted = new Intl.NumberFormat('ae', {
+      style: 'currency',
       currency: selectedCurrency,
       minimumFractionDigits: 0, // Set minimumFractionDigits to 0
       maximumFractionDigits: 0, // Set maximumFractionDigits to 0
@@ -165,8 +164,8 @@ function CarDetail({ data }) {
       </div>
       <div className="px-2 py-2 bg-slate-100 flex items-center justify-center">
         <div className="text-primary flex items-center gap-2 text-sm md:text-base font-medium leading-tight">
-          {"$".repeat(data.attributes.dollarcountmin)} -{" "}
-          {"$".repeat(data.attributes.dollarcountmax)}
+          {'$'.repeat(data.attributes.dollarcountmin)} -{' '}
+          {'$'.repeat(data.attributes.dollarcountmax)}
         </div>
       </div>
     </div>

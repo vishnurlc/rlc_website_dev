@@ -37,7 +37,6 @@ function InfinitScroll({ fetchApi }) {
 
   useEffect(() => {
     getData(fetchApi, pagination).then((newData) => {
-      console.log(newData);
       if (status !== 1 && Object.keys(newData).length !== 0) {
         setMeta(newData);
         setCars((prevData) => [...prevData, ...newData.data]);
