@@ -69,6 +69,7 @@ const page = async ({ params }) => {
       <div className="mt-[100px]">
         <HeroCarousel
           data={car.data[0].attributes.image}
+          fgo
           name={car.data[0].attributes.name}
         />
         <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5 max-w-[1200px] mx-auto">
