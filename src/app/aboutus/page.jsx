@@ -40,7 +40,7 @@ export const metadata = {
 
 const page = () => {
   return (
-    <div>
+    <main className="pt-[100px]">
       <h1 className="sr-only">About Richy life Club</h1>
       <HeroSection
         posterurl={'/assets/home/heroposter1.webp'}
@@ -152,7 +152,7 @@ const page = () => {
           />
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

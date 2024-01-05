@@ -66,7 +66,7 @@ const page = async ({ params }) => {
 
   return (
     <main>
-      <div className="md:mt-[100px]">
+      <div className="mt-[100px]">
         <HeroCarousel
           data={car.data[0].attributes.image}
           name={car.data[0].attributes.name}

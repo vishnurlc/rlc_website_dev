@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import InfinitScroll from "@/components/chaufferservice/InfinitScroll";
+import React from 'react';
+import Image from 'next/image';
+import InfinitScroll from '@/components/chaufferservice/InfinitScroll';
 
 export async function getData() {
   try {
@@ -18,7 +18,7 @@ export async function getData() {
 
     return data;
   } catch (error) {
-    console.log("s", error);
+    console.log('s', error);
     return {};
   }
 }
@@ -26,7 +26,7 @@ async function page() {
   const desert = await getData();
 
   return (
-    <div className="mt-[150px]">
+    <main className="pt-[150px]">
       <div>
         {/* <HeroSection
           posterurl={"/assets/home/heroposter1.webp"}
@@ -36,75 +36,13 @@ async function page() {
         /> */}
       </div>
 
-      <div className=" reletive max-w-[1200px] mx-auto px-6 hidden md:visible">
-        <h2 className="text-white text-3xl uppercase pt-10">
-          New Nightlife Vision
-        </h2>
-        <div className="text-white">
-          <div className="parent">
-            <div className="div1 relative">
-              <div className="p-2">
-                <p className=" md:text-2xl py-5 w-3/4">
-                  Exquisite beauty meets the future in a sensuous wonderland to
-                  revolutionize Bangkok nightlife.
-                </p>
-                <p className=" md:pl-10">
-                  Fuchsia is a sensory wonderland of alluring entertainment,
-                  music, and fantasy like never before.
-                </p>
-              </div>
-            </div>
-            <div className="div2 relative">
-              <Image
-                src={"/assets/club/club1.jpg"}
-                fill
-                sizes="100vw"
-                alt={"Richy life Club UAE"}
-                priority
-                style={{
-                  objectFit: "cover",
-                }}
-              />
-            </div>
-            <div className="div3 relative">
-              <div className="flex justify-between h-full">
-                <Image
-                  src={"/assets/club/club2.jpg"}
-                  fill
-                  sizes="100vw"
-                  alt={"Richy life Club UAE"}
-                  priority
-                  style={{
-                    objectFit: "cover",
-                  }}
-                />
-              </div>
-            </div>
-            <div className="div4 relative">
-              <div className="flex justify-between h-full">
-                <Image
-                  src={"/assets/club/club.png"}
-                  fill
-                  sizes="100vw"
-                  alt={"Richy life Club UAE"}
-                  priority
-                  style={{
-                    objectFit: "cover",
-                  }}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-[1200px] mx-auto px-6 pb-10">
+      <div className="max-w-[1200px] mx-auto px-0 md:px-6 pb-10">
         <InfinitScroll fetchApi="club-packages" />
         {/* {desert.data?.map((item, index) => (
           <ClubCard data={item} key={index} order={index} />
         ))} */}
       </div>
-    </div>
+    </main>
   );
 }
 
