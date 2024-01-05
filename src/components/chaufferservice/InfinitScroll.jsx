@@ -25,11 +25,6 @@ function InfinitScroll({ fetchApi }) {
         },
       });
       const data = await res.json();
-      if (data.data.length === 0) {
-        setStatus(1);
-      } else {
-        setStatus(2);
-      }
       return data;
     } catch (error) {
       return {};

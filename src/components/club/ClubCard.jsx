@@ -65,7 +65,7 @@ const ClubCard = ({ data, order }) => {
     //     <div className="bg-black bg-opacity-10 absolute inset-0"></div>
     //   </div>
     // </div>
-    <div className="grid grid-cols-1 w-full lg:grid-cols-5  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-white] mb-5">
+    <div className="grid grid-cols-1 w-full bg-[#fbfbfb] lg:grid-cols-5  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-white] mb-5">
       <Link
         href={`/clubs-restaurants/${data.attributes.slug}`}
         className="col-span-3 relative w-full aspect-[2/1] min-h-[120px] "
@@ -80,7 +80,6 @@ const ClubCard = ({ data, order }) => {
           }}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 80vw"
           id="selectDisable"
-          // className="mx-auto"
         />
       </Link>
       <div className="p-5 col-span-1 md:col-span-2">

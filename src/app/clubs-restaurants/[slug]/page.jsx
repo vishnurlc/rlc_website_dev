@@ -1,44 +1,58 @@
-import { ContactForm, HeroCarousel, PriceComponent } from '@/components';
-import GoogleMapComponent from '@/components/mapComponent/GoogleMapComponent';
+import { ContactForm, HeroCarousel, PriceComponent } from "@/components";
+import GoogleMapComponent from "@/components/mapComponent/GoogleMapComponent";
 
-import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
-import Link from 'next/link';
-import { FaLocationDot } from 'react-icons/fa6';
+import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
+import Link from "next/link";
+import { FaLocationDot } from "react-icons/fa6";
 
 export const metadata = {
-  title: 'Luxury Chauffeur Service in Dubai',
+  title:
+    "Luxury Clubs & Restaurants in Dubai | 200+ Luxury Clubs & Restaurants",
   description:
-    'Book a luxury chauffeur service in Dubai for your airport transfers, half and full day car rentals, full Dubai tours, or events pickup and drop',
+    "Discover Dubai's luxury nightlife with Richy Life Club. Cruise in style with our premium car rental service, offering a fleet of exotic cars—Bentleys, Ferraris, Lamborghinis—for an unforgettable driving experience. Elevate your evenings with our curated list of top Luxury Clubs & Restaurants. Indulge in exquisite dining and exclusive atmospheres, where opulence meets perfection. Experience Dubai's finest establishments with Richy Life Club.",
   keywords: [
-    'chauffeur service dubai',
-    'luxury chauffeur service dubai',
-    ' airport transfers dubai',
-    'car rentals dubai',
-    'full dubai tours',
-    'events pickup and drop dubai',
-    'Richy Life Club chauffer service',
-    'richylife club chauffer service',
+    "Luxury Car Rental Dubai",
+    "Exotic Car Hire",
+    "Premium Car Rentals",
+    "Exotic Car Rental Dubai",
+    "High-End Car Rentals",
+    "Nightlife",
+    "Supercar Hire Dubai",
+    "Rent Exotic Cars",
+    "Luxury Clubs",
+    "Dubai Luxury Car Hire",
+    "Dubai luxury car rental",
+    "luxury car hire",
+    "exotic car rental.",
+    " luxury Rolls-Royce rentals Dubai",
+    "Bentley rentals Dubai",
+    "luxury Maserati rentals Dubai",
+    "Audi rentals Dubai",
+    "Porsche rentals Dubai",
+    "Lamborghini rentals Dubai",
+    "Richy Life Club car rental",
+    "richylife club rent a car",
   ],
-
   openGraph: {
-    title: 'Luxury Chauffeur Service in Dubai',
+    title:
+      "Luxury Clubs & Restaurants in Dubai | 200+ Luxury Clubs & Restaurants",
     description:
-      'Book a luxury chauffeur service in Dubai for your airport transfers, half and full day car rentals, full Dubai tours, or events pickup and drop',
-    siteName: 'Richy life Club',
+      "Discover Dubai's luxury nightlife with Richy Life Club. Cruise in style with our premium car rental service, offering a fleet of exotic cars—Bentleys, Ferraris, Lamborghinis—for an unforgettable driving experience. Elevate your evenings with our curated list of top Luxury Clubs & Restaurants. Indulge in exquisite dining and exclusive atmospheres, where opulence meets perfection. Experience Dubai's finest establishments with Richy Life Club.",
+    siteName: "Richy life Club",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/chauffeur/hero.png`,
+        url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/rentacar/opengraphimage.png`,
         width: 800,
         height: 600,
       },
       {
-        url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/chauffeur/hero.png`,
+        url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/rentacar/opengraphimage.png`,
         width: 300,
         height: 200,
       },
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
 };
 
@@ -80,9 +94,9 @@ const page = async ({ params }) => {
           </h2>
 
           <AnimatedBtn
-            styles={'rounded-md bg-gold text-white'}
-            text={'Reserve Now'}
-            msg={'Hi, I would like to know about your services.'}
+            styles={"rounded-md bg-gold text-white"}
+            text={"Reserve Now"}
+            msg={"Hi, I would like to know about your services."}
           />
         </div>
       </div>
@@ -96,7 +110,7 @@ const page = async ({ params }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <FaLocationDot color="green" /> &nbsp;{' '}
+                <FaLocationDot color="green" /> &nbsp;{" "}
                 {car.data[0].attributes.place}
               </Link>
             </h1>
@@ -133,7 +147,7 @@ const page = async ({ params }) => {
                     </div>
                     <div className="text-gray-500 dark:text-gray-200 text-center md:text-start">
                       <p>
-                        Average spending Per Person :{' '}
+                        Average spending Per Person :{" "}
                         <span>
                           <PriceComponent
                             cost={car.data[0].attributes.avg_price_per_person}
@@ -148,7 +162,7 @@ const page = async ({ params }) => {
                           (item, index, array) => (
                             <span key={index}>
                               {item.attributes.cuisine}
-                              {index < array.length - 1 && ','}{' '}
+                              {index < array.length - 1 && ","}{" "}
                             </span>
                           )
                         )}
@@ -189,14 +203,14 @@ const page = async ({ params }) => {
                           target="_blank"
                           rel="noreferrer"
                         >
-                          <FaLocationDot color="green" /> &nbsp;{' '}
+                          <FaLocationDot color="green" /> &nbsp;{" "}
                           {car.data[0].attributes.place}
                         </Link>
                       </h3>
 
                       <AnimatedBtn
-                        text={'Reserve now'}
-                        styles={'rounded-md bg-gold text-white mt-4 '}
+                        text={"Reserve now"}
+                        styles={"rounded-md bg-gold text-white mt-4 "}
                         msg={`I would like to reserve a table at ${car.data[0].attributes.name}`}
                       />
                     </div>
@@ -206,8 +220,8 @@ const page = async ({ params }) => {
             </div>
 
             <ContactForm
-              title={'Experience the ultimate Luxury'}
-              description={'Book your journey with our luxury car rentals now'}
+              title={"Experience the ultimate Luxury"}
+              description={"Book your journey with our luxury car rentals now"}
             />
           </div>
         </div>
