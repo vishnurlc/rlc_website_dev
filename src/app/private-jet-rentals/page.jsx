@@ -4,42 +4,42 @@ import {
   Loader,
   SectionHeading,
   WhyusPrivatejet,
-} from "@/components";
-import Faq from "@/components/home/faq";
+} from '@/components';
+import Faq from '@/components/home/faq';
 
-import Jetcard from "@/components/privatejetrental/Jetcard";
-import Link from "next/link";
+import Jetcard from '@/components/privatejetrental/Jetcard';
+import Link from 'next/link';
 
 export const metadata = {
-  title: "Private Jet Charters in Dubai",
+  title: 'Private Jet Charters in Dubai',
   description:
-    "Experience unparalleled luxury and comfort with private jet rentals in Dubai. Explore our fleet of exclusive jets for personalized travel and jet charters with Richy life Club.",
+    'Experience unparalleled luxury and comfort with private jet rentals in Dubai. Explore our fleet of exclusive jets for personalized travel and jet charters with Richy life Club.',
   keywords: [
-    "Private Jet Rentals Dubai",
-    "Luxury Jet Charters",
-    "Private Jet Charter Services",
-    "Exclusive Jet Hire",
-    "Private Jet Charter Dubai",
-    "Luxury Aircraft Rentals",
-    "Personalized Jet Travel",
-    "Jet Charter Packages",
-    "Luxury Jet Experiences",
-    "Private Aviation Dubai",
-    "Jet Rental Offers",
-    "Jet Travel Services",
-    "VIP Jet Flights",
-    "Executive Jet Rentals",
-    "Dubai Jet Charters",
-    "Luxury Air Travel",
-    "private jet business flights Dubai",
-    "private jet flights Dubai",
-    "private jet tours Dubai",
+    'Private Jet Rentals Dubai',
+    'Luxury Jet Charters',
+    'Private Jet Charter Services',
+    'Exclusive Jet Hire',
+    'Private Jet Charter Dubai',
+    'Luxury Aircraft Rentals',
+    'Personalized Jet Travel',
+    'Jet Charter Packages',
+    'Luxury Jet Experiences',
+    'Private Aviation Dubai',
+    'Jet Rental Offers',
+    'Jet Travel Services',
+    'VIP Jet Flights',
+    'Executive Jet Rentals',
+    'Dubai Jet Charters',
+    'Luxury Air Travel',
+    'private jet business flights Dubai',
+    'private jet flights Dubai',
+    'private jet tours Dubai',
   ],
   openGraph: {
-    title: "Private Jet Charters in Dubai",
+    title: 'Private Jet Charters in Dubai',
     description:
-      "Experience the thrill of riding premium jetskis in Dubai&apos;s crystal-clear waters. Book your exclusive jetski adventure with Richy life Club and enjoy adrenaline-pumping watersports.",
-    siteName: "Richy life Club",
+      'Experience the thrill of riding premium jetskis in Dubai&apos;s crystal-clear waters. Book your exclusive jetski adventure with Richy life Club and enjoy adrenaline-pumping watersports.',
+    siteName: 'Richy life Club',
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/privatejet/bannerimg.png`,
@@ -52,8 +52,8 @@ export const metadata = {
         height: 200,
       },
     ],
-    locale: "en_US",
-    type: "website",
+    locale: 'en_US',
+    type: 'website',
   },
 };
 
@@ -73,7 +73,7 @@ export async function getData() {
 
     return data;
   } catch (error) {
-    console.log("s", error);
+    console.log('s', error);
     return {};
   }
 }
@@ -81,16 +81,16 @@ export async function getData() {
 export default async function PrivateJet() {
   const jets = await getData();
   return (
-    <main className="pt-[100px] md:pt-0">
+    <main className="pt-[108px] md:pt-0">
       <h1 className="sr-only ">Private Jet Rentals - Richy life Club</h1>
       <div className="hidden">
         <HeroSection2
-          type={"video"}
-          heading1={"Private Jets"}
-          heading2={"Chaters in Dubai"}
-          subheading={"Experience the extreme luxury with us"}
-          posterurl={"/assets/privatejet/bannerimg.png"}
-          btntext={"Book Now"}
+          type={'video'}
+          heading1={'Private Jets'}
+          heading2={'Chaters in Dubai'}
+          subheading={'Experience the extreme luxury with us'}
+          posterurl={'/assets/privatejet/bannerimg.png'}
+          btntext={'Book Now'}
           overlay={0}
         />
       </div>
@@ -124,7 +124,7 @@ export default async function PrivateJet() {
         ) : (
           <div className="min-h-[50vh] flex flex-col items-center justify-center">
             <h2 className="text-center text-primary text-xl">
-              No Private Jets available.{" "}
+              No Private Jets available.{' '}
               <Link
                 href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=I would like to know more about Richy life Club Private Jet Rentals?`}
               >
@@ -137,11 +137,11 @@ export default async function PrivateJet() {
         <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
           <WhyusPrivatejet />
         </div>
-        <Faq category={"privatejet"} />
+        <Faq category={'privatejet'} />
         <div className="px-4">
           <ContactForm
-            title={"Soar to New Heights"}
-            description={"Book your journey with our private jet rental now"}
+            title={'Soar to New Heights'}
+            description={'Book your journey with our private jet rental now'}
           />
         </div>
       </div>

@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import AnimatedBtn from "../premiumjetski/AnimatedBtn";
-import Image from "next/image";
-import { useCurrency } from "@/context/currencyContext";
+import AnimatedBtn from '../premiumjetski/AnimatedBtn';
+import Image from 'next/image';
+import { useCurrency } from '@/context/currencyContext';
 
 const DesertSafariCard = ({ item, order }) => {
   const { selectedCurrency, conversionRates } = useCurrency();
@@ -10,8 +10,8 @@ const DesertSafariCard = ({ item, order }) => {
     const rate = conversionRates.rates[selectedCurrency];
 
     const amt = Math.round(Number(price) * rate);
-    const priceFormatted = new Intl.NumberFormat("ae", {
-      style: "currency",
+    const priceFormatted = new Intl.NumberFormat('ae', {
+      style: 'currency',
       currency: selectedCurrency,
       minimumFractionDigits: 0, // Set minimumFractionDigits to 0
       maximumFractionDigits: 0, // Set maximumFractionDigits to 0
@@ -29,8 +29,8 @@ const DesertSafariCard = ({ item, order }) => {
           <Detail data={item.attributes.desert_safari_features} />
         </div>
         <AnimatedBtn
-          text={"Book Now"}
-          styles={"bg-gold text-white rounded-sm"}
+          text={'Book Now'}
+          styles={'bg-gold text-white rounded-sm'}
           msg={`I'm writing to you today to inquire about the ${item.attributes.name}. I'm interested in learning more about its specifications, price, and availability.`}
         />
       </div>
@@ -40,8 +40,8 @@ const DesertSafariCard = ({ item, order }) => {
           alt="Premium Desert Safari Packages | Richy life Club "
           fill
           style={{
-            objectFit: "cover",
-            objectPosition: "50%",
+            objectFit: 'cover',
+            objectPosition: '50%',
           }}
           izes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
@@ -55,7 +55,10 @@ function Detail({ data }) {
   return (
     <div className="py-3 flex gap-5 flex-wrap">
       {data.data.map((e, index) => (
-        <div className="p-2 py-2 bg-slate-100 flex items-center justify-center">
+        <div
+          key={index}
+          className="p-2 py-2 bg-slate-100 flex items-center justify-center"
+        >
           <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
             {e.attributes.feature}
           </div>

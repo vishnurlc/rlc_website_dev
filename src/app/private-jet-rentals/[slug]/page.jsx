@@ -71,7 +71,7 @@ export default async function JetDetail({ params: { slug } }) {
   const jets = await getData(slug);
 
   return (
-    <main>
+    <main className="pt-[108px] md:pt-[128px]">
       <Suspense fallback="Loading">
         <div>
           <HeroCarousel

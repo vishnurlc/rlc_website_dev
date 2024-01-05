@@ -79,8 +79,8 @@ const page = async ({ params }) => {
   console.log(car);
 
   return (
-    <main>
-      <div className="mt-[100px]">
+    <main className="pt-[108px] md:pt-[128px]">
+      <div>
         <HeroCarousel
           data={car.data[0].attributes.image}
           name={car.data[0].attributes.name}
@@ -117,22 +117,12 @@ const page = async ({ params }) => {
             <span className=" inline-block my-2 md:my-4 font-inter text-primary font-semibold text-2xl md:text-[40px]">
               {car.data[0].attributes.name}
             </span>
+
+            <p className="text-sm md:text-base text-justify md:text-left text-gray-500">
+              {car.data[0].attributes.description}
+            </p>
           </div>
           <div className="max-w-[1200px] mx-auto py-10 md:py-16 px-6 flex flex-col gap-8 md:gap-16">
-            <div>
-              <div>
-                <h1 className="text-sm md:text-base text-justify md:text-left text-gray-500">
-                  {car.data[0].attributes.place}
-                </h1>
-                <span className=" inline-block my-2 md:my-4 font-inter text-primary font-semibold text-2xl md:text-[40px]">
-                  {car.data[0].attributes.name}
-                </span>
-              </div>
-              <p className="text-sm md:text-base text-justify md:text-left text-gray-500">
-                {car.data[0].attributes.description}
-              </p>
-            </div>
-
             {/* product detail */}
 
             <div className="w-full h-full ">

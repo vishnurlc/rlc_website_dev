@@ -75,7 +75,7 @@ async function page() {
   const desert = await getData();
 
   return (
-    <main className="pt-[150px]">
+    <main className="pt-[108px] md:pt-[150px]">
       <div>
         {/* <HeroSection
           posterurl={"/assets/home/heroposter1.webp"}
