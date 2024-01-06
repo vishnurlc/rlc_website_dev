@@ -49,7 +49,7 @@ function TopDestination() {
                 />
                 <div className="absolute p-4 text-white w-full h-fit bottom-0 left-0 right-0 z-10">
                   <div>
-                    <h2 className="uppercase font-medium tracking-wide text-xs md:text-sm font-poppins">
+                    <h2 className="uppercase mb-10 font-bold tracking-wide text-3xl text-center font-poppins">
                       {e.title}
                     </h2>
                   </div>
