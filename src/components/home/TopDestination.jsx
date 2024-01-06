@@ -7,7 +7,7 @@ import AnimatedBtn from "../premiumjetski/AnimatedBtn";
 import { usePathname } from "next/navigation";
 
 function TopDestination() {
-  const [currentUrl, setCurrentUrl] = useState(".com");
+  const [currentUrl, setCurrentUrl] = useState();
   useEffect(() => {
     // setCurrentUrl(window.location.href);
   }, []);
@@ -67,7 +67,7 @@ function TopDestination() {
       </div>
     );
   } else {
-    return null;
+    return <div className="pt-32"> </div>;
   }
 }
 
