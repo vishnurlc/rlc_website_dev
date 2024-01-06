@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 function TopDestination() {
   const [currentUrl, setCurrentUrl] = useState();
   useEffect(() => {
-    // setCurrentUrl(window.location.href);
+    setCurrentUrl(window.location.href);
   }, []);
 
   const data = [
