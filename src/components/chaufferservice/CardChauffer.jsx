@@ -210,11 +210,6 @@ function CarDetail({ data }) {
           <MdAccessTime /> 10 hours {convertPrice(data.attributes.tenhours)}
         </div>
       </div>
-      {/* <div className="px-2 py-2 bg-slate-100 flex items-center justify-center">
-        <div className="text-primary text-sm md:text-base flex items-center gap-2 font-medium leading-tight">
-          <MdAccessTime /> 5 hours {convertPrice(data.attributes.fivehours)}
-        </div>
-      </div> */}
 
       <div className="px-2 py-2 bg-slate-100 flex items-center justify-center">
         <div className="text-primary flex items-center gap-2 text-sm md:text-base font-medium leading-tight">
@@ -224,12 +219,12 @@ function CarDetail({ data }) {
       <div className="px-2 py-2  bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-sm md:text-base font-medium flex items-center gap-2 leading-tight">
           <MdOutlineAirlineSeatReclineExtra />
-          {data.attributes.seatingcapacity}
+          {data.attributes.seatingcapacity} Seats
         </div>
       </div>
       <div className="px-2 py-2 bg-slate-100 flex items-center justify-center">
         <div className="text-primary text-sm md:text-base font-medium flex items-center gap-2 leading-tight">
-          <MdLuggage /> {data.attributes.luggage} bags
+          <MdLuggage /> {data.attributes.luggage} Luggages
         </div>
       </div>
     </div>

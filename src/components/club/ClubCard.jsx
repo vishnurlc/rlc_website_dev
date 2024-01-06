@@ -99,19 +99,6 @@ const ClubCard = ({ data, order }) => {
 
 function CarDetail({ data }) {
   const { selectedCurrency, conversionRates } = useCurrency();
-
-  const convertPrice = (price) => {
-    const rate = conversionRates.rates[selectedCurrency];
-
-    const amt = Math.round(Number(price) * rate);
-    const priceFormatted = new Intl.NumberFormat("ae", {
-      style: "currency",
-      currency: selectedCurrency,
-      minimumFractionDigits: 0, // Set minimumFractionDigits to 0
-      maximumFractionDigits: 0, // Set maximumFractionDigits to 0
-    }).format(amt);
-    return priceFormatted;
-  };
   return (
     <div className="py-3 flex gap-5 flex-wrap">
       <div className="p-2 py-2 bg-slate-100 flex items-center justify-center">
@@ -128,6 +115,11 @@ function CarDetail({ data }) {
         <div className="text-primary flex items-center gap-2 text-sm md:text-base font-medium leading-tight">
           {"$".repeat(data.attributes.dollarcountmin)} -{" "}
           {"$".repeat(data.attributes.dollarcountmax)}
+        </div>
+      </div>
+      <div className="px-2 py-2 bg-slate-100 flex items-center justify-center">
+        <div className="text-primary flex items-center gap-2 text-sm md:text-base font-medium leading-tight">
+          {data.attributes.restaurant_types.data[0].attributes.type}
         </div>
       </div>
     </div>

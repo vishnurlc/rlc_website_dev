@@ -1,18 +1,18 @@
-'use client';
-import { useEffect, useState } from 'react';
+"use client";
+import { useEffect, useState } from "react";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import CarouselSlide from './CarouselSlide';
-import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
-import { Loader } from '..';
-import { AnimatePresence, motion } from 'framer-motion';
-import ServiceCard2 from './ServiceCard2';
+import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import CarouselSlide from "./CarouselSlide";
+import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
+import { Loader } from "..";
+import { AnimatePresence, motion } from "framer-motion";
+import ServiceCard2 from "./ServiceCard2";
 
 const getData = async () => {
   try {
@@ -63,7 +63,7 @@ const Ourservices = () => {
       //   backgroundSize: 'cover',
       //   backgroundPosition: 'center',
       // }}
-      className="px-4 py-20 pt-36  bg-white"
+      className="px-4 py-20  bg-white"
     >
       {data && (
         <div>
