@@ -185,7 +185,7 @@ const ListingComponent = ({ variant, title, description, make }) => {
   return (
     <div className="w-full overflow-hidden" ref={scrollRef}>
       <div className="w-full my-[40px] ">
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <motion.div
             ref={containerRef}
             className="relative flex items-center justify-start md:justify-center gap-4 md:gap-5 px-6 z-10"
@@ -213,7 +213,7 @@ const ListingComponent = ({ variant, title, description, make }) => {
           </motion.div>
         </div>
 
-        <div className=" flex flex-wrap md:hidden items-center justify-center md:justify-center gap-4 md:gap-5 z-10">
+        <div className=" flex flex-wrap lg:hidden items-center justify-center md:justify-center gap-4 md:gap-5 z-10">
           <SearchFilter />
           <CarbodyFilter
             handleFilters={handleFilters}
