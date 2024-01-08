@@ -8,10 +8,12 @@ const AutocompleteSearch = () => {
 
   const debouncedFetchSearchResults = debounce(async (term) => {
     try {
-      // Replace 'your-api-endpoint' with the actual endpoint to fetch data from Strapi
-      const response = await fetch(
-        `http://localhost:1337/your-api-endpoint?_q=${term}`
-      );
+      const api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/chauffeur-cars?_q=${term}&populate=*&sort[0]=name:asc`;
+      const response = await fetch(api, {
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
+        },
+      });
       const data = await response.json();
 
       // Update search results in the state
@@ -19,7 +21,7 @@ const AutocompleteSearch = () => {
     } catch (error) {
       console.error("Error fetching data:", error);
     }
-  }, 300); // Adjust the debounce delay as needed (300 milliseconds in this example)
+  }, 300);
 
   useEffect(() => {
     // Fetch results only if the search term is not empty
@@ -32,7 +34,7 @@ const AutocompleteSearch = () => {
 
     // Cleanup function to cancel debounced function on component unmount
     return () => debouncedFetchSearchResults.cancel();
-  }, [searchTerm, debouncedFetchSearchResults]);
+  }, [searchTerm]);
 
   return (
     <div>
@@ -44,8 +46,8 @@ const AutocompleteSearch = () => {
       />
 
       <ul>
-        {searchResults.map((result) => (
-          <li key={result.id}>{result.name}</li>
+        {searchResults?.data?.map((result) => (
+          <li key={result.id}>{result.attributes.name}</li>
           // Adjust 'name' based on the field you want to display in the results
         ))}
       </ul>
