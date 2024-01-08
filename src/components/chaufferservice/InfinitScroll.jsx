@@ -4,17 +4,22 @@ import { Loader } from "..";
 import CardChauffer from "./CardChauffer";
 import CardBasic from "../ui/card/CardBasic";
 import ClubCard from "../club/ClubCard";
+import qs from "qs";
+import { useSearchParams } from "next/navigation";
 
 function InfinitScroll({ fetchApi }) {
-  const pageSize = 5;
   const [cars, setCars] = useState([]);
   const [meta, setMeta] = useState();
   const [pagination, setPagination] = useState(1);
   const [status, setStatus] = useState(0);
 
-  async function getData(apiEndpoint, pagination) {
+  async function getData(apiEndpoint, pagination, params) {
     const pageSize = 25;
+
     let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${apiEndpoint}?populate=*&pagination[page]=${pagination}&pagination[pageSize]=${pageSize}&sort[0]=name:asc`;
+    if (params) {
+      api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${apiEndpoint}?_q=${params}&populate=*&pagination[page]=${pagination}&pagination[pageSize]=${pageSize}&sort[0]=name:asc`;
+    }
 
     try {
       const res = await fetch(api, {
@@ -35,14 +40,20 @@ function InfinitScroll({ fetchApi }) {
     }
   }
 
+  const searchParams = useSearchParams();
+  const search = searchParams.get("search");
+
   useEffect(() => {
-    getData(fetchApi, pagination).then((newData) => {
+    console.log(search);
+
+    getData(fetchApi, pagination, search).then((newData) => {
       if (status !== 1 && Object.keys(newData).length !== 0) {
         setMeta(newData);
         setCars((prevData) => [...prevData, ...newData.data]);
       }
+      console.log(newData);
     });
-  }, [pagination, fetchApi]);
+  }, [pagination, fetchApi, search]);
 
   return (
     <div>
