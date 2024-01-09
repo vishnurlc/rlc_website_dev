@@ -16,7 +16,7 @@ export function Button({
   const baseButtonClasses = "font-medium text-center py-2 px-6";
 
   const variants = {
-    primary: `${baseButtonClasses} bg-gold text-white rounded font-bold`,
+    primary: `${baseButtonClasses} bg-gold text-white rounded font-bold whitespace-nowrap`,
     secondary: `${baseButtonClasses} bg-white border border-teal-900 text-teal-900`,
     whiteborder: `${baseButtonClasses} border border-white text-white`,
   };

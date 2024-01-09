@@ -1,37 +1,37 @@
-'use client';
-import { sendEmail } from '@/lib/emailSend';
-import { useState } from 'react';
-import { BsWhatsapp } from 'react-icons/bs';
-import { Button } from '../ui/button/Button';
-import Link from 'next/link';
+"use client";
+import { sendEmail } from "@/lib/emailSend";
+import { useState } from "react";
+import { BsWhatsapp } from "react-icons/bs";
+import { Button } from "../ui/button/Button";
+import Link from "next/link";
 
 const FormComponent = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
     consent: false,
   });
   const [isSending, setIsSending] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [consentError, setConsentError] = useState(false);
   const [submitMessage, setSubmitMessage] = useState(
-    'Thank you for your submission!'
+    "Thank you for your submission!"
   );
   const [formErrors, setFormErrors] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
   });
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    const newValue = type === 'checkbox' ? checked : value;
+    const newValue = type === "checkbox" ? checked : value;
     setFormData((prevData) => ({
       ...prevData,
       [name]: newValue,
@@ -57,23 +57,23 @@ const FormComponent = () => {
       setConsentError(false);
     }
     if (!formData.firstName.trim()) {
-      errors.firstName = 'First Name is required';
+      errors.firstName = "First Name is required";
     }
 
     if (!formData.lastName.trim()) {
-      errors.lastName = 'Last Name is required';
+      errors.lastName = "Last Name is required";
     }
 
     if (!formData.email.trim()) {
-      errors.email = 'Email is required';
+      errors.email = "Email is required";
     } else if (!validateEmail(formData.email)) {
-      errors.email = 'Invalid email format';
+      errors.email = "Invalid email format";
     }
 
     if (!formData.phone.trim()) {
-      errors.phone = 'Phone is required';
+      errors.phone = "Phone is required";
     } else if (!validatePhone(formData.phone)) {
-      errors.phone = 'Invalid phone number format';
+      errors.phone = "Invalid phone number format";
     }
 
     // if (!formData.subject.trim()) {
@@ -91,7 +91,7 @@ const FormComponent = () => {
     // Clear the error for the focused input
     setFormErrors((prevErrors) => ({
       ...prevErrors,
-      [name]: '',
+      [name]: "",
     }));
   };
 
@@ -100,25 +100,25 @@ const FormComponent = () => {
     if (validateForm()) {
       setIsSending(true);
       const res = await sendEmail({ data: formData });
-      if (res === 'success') {
+      if (res === "success") {
         setTimeout(() => {
           setIsSending(false);
           setIsSubmitted(true);
           setFormData({
-            firstName: '',
-            lastName: '',
-            email: '',
-            phone: '',
-            subject: '',
-            message: '',
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            subject: "",
+            message: "",
             consent: false,
           });
         }, 2000);
       } else {
-        setSubmitMessage('Sorry, Something went wrong!');
+        setSubmitMessage("Sorry, Something went wrong!");
       }
     } else {
-      console.log('not done');
+      console.log("not done");
     }
   };
 
@@ -132,7 +132,7 @@ const FormComponent = () => {
                 type="text"
                 name="firstName"
                 value={formData.firstName}
-                onFocus={() => handleInputFocus('firstName')}
+                onFocus={() => handleInputFocus("firstName")}
                 onChange={handleChange}
                 className="col-span-1 w-full px-3 md:px-6 py-3 md:py-5 bg-[#f4f4f4] placeholder-[#6C757D] font-inter text-sm md:text-base font-normal focus:outline-none rounded-none md:rounded"
                 placeholder="First Name"
@@ -233,12 +233,12 @@ const FormComponent = () => {
           <label
             htmlFor="consent"
             className={`text-sm  ${
-              consentError ? 'text-red-400' : 'text-gray-600'
+              consentError ? "text-red-400" : "text-gray-600"
             }`}
           >
-            I confirm that I have read and agree with the{' '}
-            <Link href={'/terms-of-use'}>Terms & Conditions</Link> and{' '}
-            <Link href={'/privacy-policy'}>Privacy Policy.</Link>
+            I confirm that I have read and agree with the{" "}
+            <Link href={"/terms-of-use"}>Terms & Conditions</Link> and{" "}
+            <Link href={"/privacy-policy"}>Privacy Policy.</Link>
           </label>
         </div>
         <div className="grid grid-cols-2 gap-8 items-center justify-center mt-8 md:mt-12 max-w-[400px] mx-auto">
@@ -247,7 +247,7 @@ const FormComponent = () => {
             type="submit"
             className="px-4 md:px-10 py-2 md:py-3 text-white font-medium bg-primary border border-solid border-primary"
           >
-            {isSending ? 'Submitting...' : 'Submit'}
+            {isSending ? "Submitting..." : "Submit"}
           </button>
           <Button
             variant="secondary"
@@ -256,7 +256,7 @@ const FormComponent = () => {
             className="px-2 md:px-10 py-2 md:py-3 flex items-center justify-center font-medium border border-solid border-primary text-primary gap-2"
           >
             <BsWhatsapp />
-            <span>Talk to us</span>
+            <span className="whitespace-nowrap">Talk to us</span>
           </Button>
         </div>
       </form>
