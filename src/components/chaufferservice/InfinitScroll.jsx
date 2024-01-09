@@ -83,9 +83,9 @@ function InfinitScroll({ fetchApi }) {
               break;
           }
         })}
-        {status === 1 && (
-          <p className="text-center text-xl ">No Cars found !</p>
-        )}
+        {status === 1 &&
+          // <p className="text-center text-xl ">No Cars found !</p>
+          ""}
         {status === 0 && <Loader color={"#000"} />}
       </div>
       {/* loadmore */}

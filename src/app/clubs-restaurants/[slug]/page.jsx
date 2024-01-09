@@ -203,7 +203,7 @@ const page = async ({ params }) => {
 
             <ContactForm
               title={"Experience the ultimate Luxury"}
-              description={"Book your journey with our luxury car rentals now"}
+              description={"Reserve your exclusive dining experience"}
             />
           </div>
         </div>
