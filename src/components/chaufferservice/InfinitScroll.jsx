@@ -53,6 +53,8 @@ function InfinitScroll({ fetchApi }) {
     });
   }, [pagination, fetchApi, search]);
 
+  console.log(meta);
+
   return (
     <div>
       <div className="flex flex-col gap-8 w-full min-h-screen">
@@ -89,14 +91,18 @@ function InfinitScroll({ fetchApi }) {
       </div>
       {/* loadmore */}
 
-      <div className={status === 1 ? "hidden" : `flex justify-center mt-10`}>
-        <button
-          onClick={() => setPagination((prevPage) => prevPage + 1)}
-          className="w-52 bg-lime-900 rounded-xl h-8 text-white"
-        >
-          Load More
-        </button>
-      </div>
+      {meta?.meta.pagination.pageCount === meta?.meta.pagination.page ? (
+        <></>
+      ) : (
+        <div className={status === 1 ? "hidden" : `flex justify-center mt-10`}>
+          <button
+            onClick={() => setPagination((prevPage) => prevPage + 1)}
+            className="w-52 bg-lime-900 rounded-xl h-8 text-white"
+          >
+            Load More
+          </button>
+        </div>
+      )}
     </div>
   );
 }
