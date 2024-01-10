@@ -1,12 +1,13 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { useState } from 'react';
-import AnimatedBtn from '../premiumjetski/AnimatedBtn';
-import { useCurrency } from '@/context/currencyContext';
-import { FaPhoneAlt } from 'react-icons/fa';
-import { RiWhatsappFill } from 'react-icons/ri';
-import { Button } from '../ui/button/Button';
-import { BookingModal } from '..';
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
+import AnimatedBtn from "../premiumjetski/AnimatedBtn";
+import { useCurrency } from "@/context/currencyContext";
+import { FaPhoneAlt } from "react-icons/fa";
+import { MdAccessTime } from "react-icons/md";
+import { RiWhatsappFill } from "react-icons/ri";
+import { Button } from "../ui/button/Button";
+import { BookingModal } from "..";
 
 const TravelCard = ({ item }) => {
   const { selectedCurrency, conversionRates } = useCurrency();
@@ -16,8 +17,8 @@ const TravelCard = ({ item }) => {
     const rate = conversionRates.rates[selectedCurrency];
 
     const amt = Math.round(Number(price) * rate);
-    const priceFormatted = new Intl.NumberFormat('ae', {
-      style: 'currency',
+    const priceFormatted = new Intl.NumberFormat("ae", {
+      style: "currency",
       currency: selectedCurrency,
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
@@ -47,7 +48,7 @@ const TravelCard = ({ item }) => {
             <div className="text-2xl font-semibold text-gray-600 mb-2">
               {item.attributes.title}
             </div>
-            <div className="text-sm text-gray-500 mb-2">
+            {/* <div className="text-sm text-gray-500 mb-2">
               {showFullDescription
                 ? item.attributes.description
                 : `${item.attributes.description.slice(0, 100)}...`}
@@ -57,12 +58,19 @@ const TravelCard = ({ item }) => {
               >
                 {showFullDescription ? 'Read Less' : 'Read More'}
               </button>
+            </div> */}
+            <div className="py-3 flex gap-5 flex-wrap">
+              <div className="p-2 py-2 bg-slate-100 flex items-center justify-center">
+                <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
+                  <MdAccessTime /> {item.attributes.duration}
+                </div>
+              </div>
             </div>
             <div className="text-xs text-gray-500">{item.duration}</div>
           </div>
           <div className="flex gap-6 flex-col w-full">
             <div className="text-2xl font-semibold ">
-              {convertPrice(item.attributes.price)}{' '}
+              {convertPrice(item.attributes.price)}{" "}
               <span className="text-xs font-light text-gray-500 ">
                 per {item.attributes.pax} Person
               </span>

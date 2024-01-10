@@ -5,6 +5,7 @@ import {
   Loader,
   ToursListingComponent,
 } from "@/components";
+import InfinitScroll from "@/components/chaufferservice/InfinitScroll";
 import { Suspense } from "react";
 
 export const metadata = {
@@ -66,9 +67,8 @@ export default async function page() {
         />
       </div>
       <div className=" mx-auto max-w-[1200px]">
-        <Suspense fallback={<Loader />}>
-          <ToursListingComponent />
-        </Suspense>
+        <ToursListingComponent />
+        {/* <InfinitScroll fetchApi={"packages"} /> */}
       </div>
 
       <div className="my-9 md:my-16 px-6">

@@ -1,10 +1,10 @@
 "use client";
-import AnimatedBtn from "../premiumjetski/AnimatedBtn";
+import AnimatedBtn from "../../premiumjetski/AnimatedBtn";
 import Image from "next/image";
 import Link from "next/link";
 import { FaPhoneAlt } from "react-icons/fa";
 import { RiWhatsappFill } from "react-icons/ri";
-import { Button } from "../ui/button/Button";
+import { Button } from "../button/Button";
 
 import {
   MdAccessTime,
@@ -14,7 +14,7 @@ import {
 import { IoAirplaneOutline } from "react-icons/io5";
 
 import { useCurrency } from "@/context/currencyContext";
-const ClubCard = ({ data, order }) => {
+const ToursCard = ({ data, order }) => {
   const { selectedCurrency, conversionRates } = useCurrency();
   const convertPrice = (price) => {
     const rate = conversionRates.rates[selectedCurrency];
@@ -54,11 +54,11 @@ const ClubCard = ({ data, order }) => {
               {data.attributes.name}
             </Link>
           </h3>
-          <CarDetail data={data} />
+          {/* <CarDetail data={data} /> */}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full py-5 gap-6">
             <div className="w-full md:w-fit">
               <span className="text-primary font-normal text-2xl">
-                {convertPrice(data.attributes.avg_price_per_person)}
+                {convertPrice(data.attributes.price)}
                 <span className="text-secondary text-sm font-normal">
                   /Person
                 </span>
@@ -126,4 +126,4 @@ function CarDetail({ data }) {
   );
 }
 
-export default ClubCard;
+export default ToursCard;
