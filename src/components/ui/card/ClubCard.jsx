@@ -57,12 +57,12 @@ const ClubCard = ({ data, order }) => {
           <CarDetail data={data} />
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full py-5 gap-6">
             <div className="w-full md:w-fit">
-              <span className="text-primary font-normal text-2xl">
+              {/* <span className="text-primary font-normal text-2xl">
                 {convertPrice(data.attributes.avg_price_per_person)}
                 <span className="text-secondary text-sm font-normal">
                   /Person
                 </span>
-              </span>
+              </span> */}
             </div>
             <div className="flex justify-between md:justify-start items-center gap-4 w-full md:w-fit">
               <div className="flex gap-4 ">
@@ -102,8 +102,8 @@ function CarDetail({ data }) {
   return (
     <div className="py-3 flex gap-5 flex-wrap">
       <div className="p-2 py-2 bg-slate-100 flex items-center justify-center">
-        <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
-          <MdOutlineLocationOn /> {data.attributes.place}
+        <div className="text-primary flex gap-2 text-base font-medium leading-tight capitalize">
+          <MdOutlineLocationOn size={"2rem"} /> {data.attributes.place}
         </div>
       </div>
       <div className="px-2 py-2 bg-slate-100 flex items-center justify-center">
@@ -117,11 +117,16 @@ function CarDetail({ data }) {
           {"$".repeat(data.attributes.dollarcountmax)}
         </div>
       </div>
-      <div className="px-2 py-2 bg-slate-100 flex items-center justify-center">
-        <div className="text-primary flex items-center gap-2 text-sm md:text-base font-medium leading-tight">
-          {data.attributes.restaurant_types.data[0].attributes.type}
+      {data.attributes.restaurant_types.data.map((e, index) => (
+        <div
+          key={index}
+          className="px-2 py-2 bg-slate-100 flex items-center justify-center"
+        >
+          <div className="text-primary flex items-center gap-2 text-sm md:text-base font-medium leading-tight">
+            {e.attributes.type}
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 }

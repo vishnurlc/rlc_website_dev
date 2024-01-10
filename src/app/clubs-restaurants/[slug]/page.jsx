@@ -70,6 +70,8 @@ async function getData(slug) {
 const page = async ({ params }) => {
   const car = await getData(params);
 
+  console.log(car.data[0].attributes);
+
   return (
     <main className="pt-[108px] md:pt-[128px]">
       <div>
@@ -122,22 +124,25 @@ const page = async ({ params }) => {
                 <div className="border w-full  rounded-lg shadow-lg">
                   <div className="flex flex-col items-center md:items-start px-6 py-4">
                     <div className="flex flex-col w-24">
-                      <h2 className="font-bold text-xl dark:text-gray-100">
+                      <h2 className="font-bold text-xl text-center lg:text-left">
                         Details
                       </h2>
                       <div className="border-2 border-gray-300 mb-3 text"></div>
                     </div>
-                    <div className="text-gray-500 dark:text-gray-200 text-center md:text-start">
+                    <div className="text-gray-500  text-center md:text-start">
                       <p>
                         Average spending Per Person :{" "}
-                        <span>
-                          <PriceComponent
+                        {/* <PriceComponent
                             cost={car.data[0].attributes.avg_price_per_person}
-                          />
+                          /> */}
+                        <span className="text-primary items-center gap-2 text-sm md:text-base font-medium leading-tight">
+                          {"$".repeat(car.data[0].attributes.dollarcountmin)} -{" "}
+                          {"$".repeat(car.data[0].attributes.dollarcountmax)}
                         </span>
                       </p>
                     </div>
-                    <div className="text-gray-500 mt-7 dark:text-gray-200 text-center md:text-start">
+
+                    <div className="text-gray-500 mt-7  text-center md:text-start">
                       <p className="text-primary text-lg">Cuisines</p>
                       <p>
                         {car.data[0].attributes.restuarant_cuisines.data.map(
@@ -150,7 +155,7 @@ const page = async ({ params }) => {
                         )}
                       </p>
                     </div>
-                    <div className="text-gray-500 mt-7 dark:text-gray-200 text-center md:text-start flex items-center justify-start gap-2 flex-wrap">
+                    <div className="text-gray-500 mt-7  text-center md:text-start flex items-center justify-start gap-2 flex-wrap">
                       {car.data[0].attributes.restaurant_types.data.map(
                         (item, index) => (
                           <p
@@ -167,9 +172,7 @@ const page = async ({ params }) => {
                 <div className="border w-full  rounded-lg shadow-lg">
                   <div className="px-6 py-4">
                     <div className="flex flex-col w-24">
-                      <h2 className="font-bold text-xl dark:text-gray-100">
-                        Location
-                      </h2>
+                      <h2 className="font-bold text-xl">Location</h2>
                       <div className="border-2 border-gray-300 mb-3 text"></div>
                     </div>
                     <div>
@@ -181,11 +184,11 @@ const page = async ({ params }) => {
                       <h3 className="text-sm md:text-base text-justify md:text-left text-gray-500 ">
                         <Link
                           href={car.data[0].attributes.locationlink}
-                          className="flex items-center"
+                          className="flex gap-2"
                           target="_blank"
                           rel="noreferrer"
                         >
-                          <FaLocationDot color="green" /> &nbsp;{" "}
+                          <FaLocationDot color="green" />
                           {car.data[0].attributes.place}
                         </Link>
                       </h3>
