@@ -53,8 +53,6 @@ function InfinitScroll({ fetchApi }) {
     });
   }, [pagination, fetchApi, search]);
 
-  console.log(meta);
-
   return (
     <div>
       <div className="flex flex-col gap-8 w-full min-h-screen">
