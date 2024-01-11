@@ -1,9 +1,9 @@
-import { ContactForm, HeroCarousel, PriceComponent } from "@/components";
-import GoogleMapComponent from "@/components/mapComponent/GoogleMapComponent";
+import { ContactForm, HeroCarousel, PriceComponent } from '@/components';
+import GoogleMapComponent from '@/components/mapComponent/GoogleMapComponent';
 
-import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
-import Link from "next/link";
-import { FaLocationDot } from "react-icons/fa6";
+import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
+import Link from 'next/link';
+import { FaLocationDot } from 'react-icons/fa6';
 
 export async function generateMetadata({ params }) {
   try {
@@ -18,18 +18,18 @@ export async function generateMetadata({ params }) {
 
     return {
       title:
-        car.data[0].attributes.name || "| Luxury Clubs & Restaurants in Dubai",
+        car.data[0].attributes.name || '| Luxury Clubs & Restaurants in Dubai',
       description:
         car.data[0].attributes.description ||
-        " Luxury Clubs & Restaurants in Dubai",
+        ' Luxury Clubs & Restaurants in Dubai',
       openGraph: {
-        type: "website",
+        type: 'website',
         title:
           car.data[0].attributes.name ||
-          "| Luxury Clubs & Restaurants in Dubai",
+          '| Luxury Clubs & Restaurants in Dubai',
         description:
           car.data[0].attributes.description ||
-          "Luxury Clubs & Restaurants in Dubai",
+          'Luxury Clubs & Restaurants in Dubai',
         images: [
           {
             url: `${car.data[0].attributes.image.data[0].attributes.url}`,
@@ -77,7 +77,7 @@ const page = async ({ params }) => {
           data={car.data[0].attributes.image}
           name={car.data[0].attributes.name}
         />
-        <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5 max-w-[1200px] mx-auto">
+        {/* <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5 max-w-[1200px] mx-auto">
           <h2 className="text-right text-xl text-primary">
             <PriceComponent
               cost={car.data[0].attributes.avg_price_per_person}
@@ -90,7 +90,7 @@ const page = async ({ params }) => {
             text={"Reserve Now"}
             msg={"Hi, I would like to know about your services."}
           />
-        </div>
+        </div> */}
       </div>
 
       <div className="max-w-[1200px] mx-auto py-10 md:py-16 flex flex-col gap-8 md:gap-16">
@@ -103,7 +103,7 @@ const page = async ({ params }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <FaLocationDot color="green" /> &nbsp;{" "}
+                <FaLocationDot color="green" /> &nbsp;{' '}
                 {car.data[0].attributes.place}
               </Link>
             </h1>
@@ -129,7 +129,7 @@ const page = async ({ params }) => {
                     </div>
                     <div className="text-gray-500 dark:text-gray-200 text-center md:text-start">
                       <p>
-                        Average spending Per Person :{" "}
+                        Average spending Per Person :{' '}
                         <span>
                           <PriceComponent
                             cost={car.data[0].attributes.avg_price_per_person}
@@ -144,7 +144,7 @@ const page = async ({ params }) => {
                           (item, index, array) => (
                             <span key={index}>
                               {item.attributes.cuisine}
-                              {index < array.length - 1 && ","}{" "}
+                              {index < array.length - 1 && ','}{' '}
                             </span>
                           )
                         )}
@@ -185,14 +185,14 @@ const page = async ({ params }) => {
                           target="_blank"
                           rel="noreferrer"
                         >
-                          <FaLocationDot color="green" /> &nbsp;{" "}
+                          <FaLocationDot color="green" /> &nbsp;{' '}
                           {car.data[0].attributes.place}
                         </Link>
                       </h3>
 
                       <AnimatedBtn
-                        text={"Reserve now"}
-                        styles={"rounded-md bg-gold text-white mt-4 "}
+                        text={'Reserve now'}
+                        styles={'rounded-md bg-gold text-white mt-4 '}
                         msg={`I would like to reserve a table at ${car.data[0].attributes.name}`}
                       />
                     </div>
@@ -202,8 +202,8 @@ const page = async ({ params }) => {
             </div>
 
             <ContactForm
-              title={"Experience the ultimate Luxury"}
-              description={"Reserve your exclusive dining experience"}
+              title={'Experience the ultimate Luxury'}
+              description={'Reserve your exclusive dining experience'}
             />
           </div>
         </div>
