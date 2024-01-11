@@ -77,20 +77,20 @@ const page = async ({ params }) => {
           data={car.data[0].attributes.image}
           name={car.data[0].attributes.name}
         />
-        {/* <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5 max-w-[1200px] mx-auto">
-          <h2 className="text-right text-xl text-primary">
+        <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5 max-w-[1200px] mx-auto">
+          {/* <h2 className="text-right text-xl text-primary">
             <PriceComponent
               cost={car.data[0].attributes.avg_price_per_person}
             />
             /Person
-          </h2>
+          </h2> */}
 
           <AnimatedBtn
-            styles={"rounded-md bg-gold text-white"}
-            text={"Reserve Now"}
-            msg={"Hi, I would like to know about your services."}
+            styles={'rounded-md bg-gold text-white'}
+            text={'Reserve Now'}
+            msg={'Hi, I would like to know about your services.'}
           />
-        </div> */}
+        </div>
       </div>
 
       <div className="max-w-[1200px] mx-auto py-10 md:py-16 flex flex-col gap-8 md:gap-16">
