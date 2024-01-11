@@ -51,9 +51,9 @@ export const metadata = {
 
 export default async function page() {
   return (
-    <main className="pt-[100px] md:pt-0">
+    <main className="pt-[150px]">
       <h1 className="sr-only">Tours and Excursions - Richy life Club</h1>
-      <div className="hidden ">
+      <div className="hidden">
         <HeroSection2
           type={'image'}
           heading1={'Tours And'}
@@ -65,7 +65,7 @@ export default async function page() {
           overlay={1}
         />
       </div>
-      <div className=" mx-auto max-w-[1200px]">
+      <div className="mx-auto max-w-[1200px]">
         <Suspense fallback={<Loader />}>
           <ToursListingComponent />
         </Suspense>
