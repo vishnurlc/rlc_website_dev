@@ -1,11 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Loader } from "..";
-import CardChauffer from "./CardChauffer";
+import CardChauffer from "../ui/card/CardChauffer";
 import CardBasic from "../ui/card/CardBasic";
-import ClubCard from "../club/ClubCard";
+import ClubCard from "../ui/card/ClubCard";
 import qs from "qs";
 import { useSearchParams } from "next/navigation";
+import ToursCard from "../ui/card/ToursCard";
 
 function InfinitScroll({ fetchApi }) {
   const [cars, setCars] = useState([]);
@@ -44,14 +45,11 @@ function InfinitScroll({ fetchApi }) {
   const search = searchParams.get("search");
 
   useEffect(() => {
-    console.log(search);
-
     getData(fetchApi, pagination, search).then((newData) => {
       if (status !== 1 && Object.keys(newData).length !== 0) {
         setMeta(newData);
         setCars((prevData) => [...prevData, ...newData.data]);
       }
-      console.log(newData);
     });
   }, [pagination, fetchApi, search]);
 
@@ -78,7 +76,8 @@ function InfinitScroll({ fetchApi }) {
               );
             case "club-packages":
               return <ClubCard data={car} key={index} order={index} />;
-
+            case "packages":
+              return <ToursCard data={car} key={index} order={index} />;
             default:
               break;
           }
@@ -90,14 +89,18 @@ function InfinitScroll({ fetchApi }) {
       </div>
       {/* loadmore */}
 
-      <div className={status === 1 ? "hidden" : `flex justify-center mt-10`}>
-        <button
-          onClick={() => setPagination((prevPage) => prevPage + 1)}
-          className="w-52 bg-lime-900 rounded-xl h-8 text-white"
-        >
-          Load More
-        </button>
-      </div>
+      {meta?.meta.pagination.pageCount === meta?.meta.pagination.page ? (
+        <></>
+      ) : (
+        <div className={status === 1 ? "hidden" : `flex justify-center mt-10`}>
+          <button
+            onClick={() => setPagination((prevPage) => prevPage + 1)}
+            className="w-52 bg-lime-900 rounded-xl h-8 text-white"
+          >
+            Load More
+          </button>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,27 +1,27 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import Tourlist from './Tourlist';
-import DestinationFilter from './DestinationFilter';
-import qs from 'qs';
-import { Loader } from '..';
+import { useEffect, useState } from "react";
+import Tourlist from "./Tourlist";
+import DestinationFilter from "./DestinationFilter";
+import qs from "qs";
+import { Loader } from "..";
 const destinations = [
   {
-    name: 'UAE',
-    slug: 'uae',
+    name: "UAE",
+    slug: "uae",
   },
   {
-    name: 'Turkey',
-    slug: 'turkey',
+    name: "Turkey",
+    slug: "turkey",
   },
   {
-    name: 'Maldives',
-    slug: 'maldives',
+    name: "Maldives",
+    slug: "maldives",
   },
 ];
 
 const ListingComponent = () => {
-  const [destination, setDestination] = useState('uae');
+  const [destination, setDestination] = useState("uae");
   const [packages, setPackages] = useState([]);
   const [status, setStatus] = useState(0);
   async function getData({ params }) {
@@ -76,7 +76,7 @@ const ListingComponent = () => {
         {status === 1 && (
           <p className="text-center text-xl ">No Packages found !</p>
         )}
-        {status === 0 && <Loader color={'#000'} />}
+        {status === 0 && <Loader color={"#000"} />}
       </div>
     </div>
   );

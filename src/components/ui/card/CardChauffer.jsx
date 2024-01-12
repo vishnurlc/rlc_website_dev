@@ -22,7 +22,7 @@ import { BookingModal, CustomVideoPlayer, ModalComponent } from "@/components";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCurrency } from "@/context/currencyContext";
-import { Button } from "../ui/button/Button";
+import { Button } from "../button/Button";
 
 function CardChauffer({ variant, data }) {
   const [open, setOpen] = useState(false);
