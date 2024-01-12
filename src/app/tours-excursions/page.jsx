@@ -52,9 +52,9 @@ export const metadata = {
 
 export default async function page() {
   return (
-    <main className="pt-[100px]">
+    <main className="pt-[150px]">
       <h1 className="sr-only">Tours and Excursions - Richy life Club</h1>
-      <div className="hidden ">
+      <div className="hidden">
         <HeroSection2
           type={"image"}
           heading1={"Tours And"}

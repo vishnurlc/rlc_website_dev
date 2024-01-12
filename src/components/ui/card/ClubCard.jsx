@@ -62,9 +62,9 @@ const ClubCard = ({ data, order }) => {
               {/* <span className="text-primary font-normal text-2xl">
                 {convertPrice(data.attributes.avg_price_per_person)}
                 <span className="text-secondary text-sm font-normal">
-                  /Person
-                </span>
-              </span> */}
+                  {/* /Person */}
+              {/* </span> */}
+              {/* </span>  */}
             </div>
             <div className="flex justify-between md:justify-start items-center gap-4 w-full md:w-fit">
               <div className="flex gap-4 ">
@@ -89,7 +89,7 @@ const ClubCard = ({ data, order }) => {
                 action={() => setBookingOpen(true)}
                 msg={`I would like to know more about ${data.attributes.name} booking`}
               >
-                Book Now
+                Reserve Now
               </Button>
             </div>
           </div>
