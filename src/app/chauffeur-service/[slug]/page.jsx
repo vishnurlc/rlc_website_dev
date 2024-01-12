@@ -81,8 +81,7 @@ const page = async ({ params }) => {
         />
         <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5 max-w-[1200px] mx-auto">
           <h2 className="text-right text-xl text-primary">
-            <PriceComponent cost={car.data[0].attributes.price} />
-            /Day
+            From <PriceComponent cost={car.data[0].attributes.price} />
           </h2>
 
           <AnimatedBtn
