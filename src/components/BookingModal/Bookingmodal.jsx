@@ -66,9 +66,10 @@ const Bookingmodal = ({ item, setOpen, open }) => {
     try {
       const res = await sendEmail({ data: formData, membership: false });
       if (res === 'success') {
+        setIsSubmitted(true);
         setTimeout(() => {
           setIsSending(false);
-          setIsSubmitted(true);
+          setIsSubmitted(false);
           setOpen(false);
           setFormData({
             name: '',
