@@ -85,12 +85,11 @@ const ClubCard = ({ data, order }) => {
                   <RiWhatsappFill size={24} color="#25D366" />
                 </Link>
               </div>
-              <Button
-                action={() => setBookingOpen(true)}
-                msg={`I would like to know more about ${data.attributes.name} booking`}
-              >
-                Reserve Now
-              </Button>
+              <AnimatedBtn
+                text={"Reserve now"}
+                styles={"rounded-md bg-gold text-white mt-4 "}
+                msg={`I would like to reserve a table at ${data.attributes.name}`}
+              />
             </div>
           </div>
         </div>
