@@ -64,13 +64,12 @@ const ListingComponent = () => {
   }, [destination]);
   return (
     <div className="py-20 max-w-[1200px] mx-auto px-6">
-      <DestinationFilter
+      {/* <DestinationFilter
         destinations={destinations}
         selectedDestination={destination}
         setDestination={setDestination}
-      />
+      /> */}
 
-      <hr />
       <div className="mt-8 md:mt-12 px-0 md:px-6">
         {status !== 0 && <Tourlist packages={packages} />}
         {status === 1 && (
