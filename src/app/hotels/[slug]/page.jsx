@@ -2,6 +2,7 @@ import { ContactForm, HeroCarousel, PriceComponent } from "@/components";
 import GoogleMapComponent from "@/components/mapComponent/GoogleMapComponent";
 
 import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
+import CardHotel from "@/components/ui/card/CardHotel";
 import Link from "next/link";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdPerson2 } from "react-icons/md";
@@ -71,6 +72,8 @@ async function getData(slug) {
 const page = async ({ params }) => {
   const car = await getData(params);
 
+  console.log(car);
+
   return (
     <main className="pt-[108px] md:pt-[128px]">
       <div>
@@ -78,7 +81,7 @@ const page = async ({ params }) => {
           data={car.data[0].attributes.image}
           name={car.data[0].attributes.name}
         />
-        <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5 max-w-[1200px] mx-auto">
+        {/* <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5 max-w-[1200px] mx-auto">
           <h2 className="text-right text-xl text-primary">
             <PriceComponent
               cost={car.data[0].attributes.avg_price_per_person}
@@ -91,7 +94,7 @@ const page = async ({ params }) => {
             text={"Reserve Now"}
             msg={"Hi, I would like to know about your services."}
           />
-        </div>
+        </div> */}
       </div>
       <div className="max-w-[1200px] mx-auto py-10 md:py-16 px-6 flex flex-col gap-8 md:gap-16">
         <div>
@@ -115,8 +118,11 @@ const page = async ({ params }) => {
               {car.data[0].attributes.description}
             </p>
           </div>
-          <div className="max-w-[1200px] mx-auto py-10 md:py-16 px-6 flex flex-col gap-8 md:gap-16">
+          <div className="max-w-[1200px] mx-auto py-10 md:py-16 md:px-6 flex flex-col gap-8 md:gap-16">
             {/* product detail */}
+            <RoomsType />
+
+            {/* <CardHotel variant={"club-packages"} data={car} key={index} /> */}
             <div>
               <div className="w-full h-full ">
                 <div className="grid grid-cols-1 md:grid-cols-2 max-w-[1200px] mx-auto gap-8">
@@ -164,38 +170,6 @@ const page = async ({ params }) => {
                             </p>
                           )
                         )}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="border w-full  rounded-lg shadow-lg">
-                    <div className="px-6 py-4">
-                      <div className="flex flex-col w-24">
-                        <h2 className="font-bold text-xl">Location</h2>
-                        <div className="border-2 border-gray-300 mb-3 text"></div>
-                      </div>
-                      <div>
-                        <GoogleMapComponent
-                          location={car.data[0].attributes.embeddedsrcmap}
-                        />
-                      </div>
-                      <div className="mt-6">
-                        <h3 className="text-sm md:text-base text-justify md:text-left text-gray-500 ">
-                          <Link
-                            href={car.data[0].attributes.locationlink}
-                            className="flex items-center"
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            <FaLocationDot color="green" /> &nbsp;{" "}
-                            {car.data[0].attributes.place}
-                          </Link>
-                        </h3>
-
-                        <AnimatedBtn
-                          text={"Reserve now"}
-                          styles={"rounded-md bg-gold text-white mt-4 "}
-                          msg={`I would like to reserve a table at ${car.data[0].attributes.name}`}
-                        />
                       </div>
                     </div>
                   </div>
@@ -295,6 +269,103 @@ const page = async ({ params }) => {
 };
 
 export default page;
+
+const RoomsType = () => {
+  return (
+    <table class="min-w-full border-collapse block md:table">
+      <thead class="block md:table-header-group">
+        <tr class=" md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto  md:relative ">
+          <th class=" p-2 text-gray-700 font-extrabold text-left block md:table-cell">
+            Accommodation Type
+          </th>
+          <th class=" p-2 text-gray-700 font-extrabold text-left block md:table-cell">
+            Number of guests
+          </th>
+        </tr>
+      </thead>
+      <tbody class="text-blue-gray-900 block md:table-row-group">
+        <tr class="bg-gray-300 md:border-none block md:table-row">
+          <td class="p-2 md:border-b md:border-blue-gray-200 text-left block md:table-cell">
+            <span class="inline-block w-1/2 md:hidden font-bold">
+              Accommodation Type
+            </span>
+            King Room
+          </td>
+          <td class="p-2 md:border-b md:border-blue-gray-200 text-left block md:table-cell">
+            <span class="inline-block w-1/2 md:hidden font-bold">
+              Number of guests
+            </span>
+            <div className="inline-block">
+              <div className="flex">
+                <MdPerson2 />
+                <MdPerson2 />
+              </div>
+            </div>
+          </td>
+
+          <td class="p-2 md:border-b md:border-blue-gray-200 text-left block md:table-cell">
+            <span class="inline-block w-1/2 md:hidden font-bold"></span>
+            <button class="bg-gold hover:bg-gold text-white font-bold py-1 px-2 border rounded">
+              Book now
+            </button>
+          </td>
+        </tr>
+        <tr class=" md:border-none block md:table-row">
+          <td class="p-2 md:border-b md:border-blue-gray-200 text-left block md:table-cell">
+            <span class="inline-block w-1/2 md:hidden font-bold">
+              Accommodation Type
+            </span>
+            King Room
+          </td>
+          <td class="p-2 md:border-b md:border-blue-gray-200 text-left block md:table-cell">
+            <span class="inline-block w-1/2 md:hidden font-bold">
+              Number of guests
+            </span>
+            <div className="inline-block">
+              <div className="flex">
+                <MdPerson2 />
+                <MdPerson2 />
+              </div>
+            </div>
+          </td>
+
+          <td class="p-2 md:border-b md:border-blue-gray-200 text-left block md:table-cell">
+            <span class="inline-block w-1/2 md:hidden font-bold"></span>
+            <button class="bg-gold hover:bg-gold text-white font-bold py-1 px-2 border rounded">
+              Book now
+            </button>
+          </td>
+        </tr>
+        <tr class="bg-gray-300 md:border-none block md:table-row">
+          <td class="p-2 md:border-b md:border-blue-gray-200 text-left block md:table-cell">
+            <span class="inline-block w-1/2 md:hidden font-bold">
+              Accommodation Type
+            </span>
+            King Room
+          </td>
+          <td class="p-2 md:border-b md:border-blue-gray-200 text-left block md:table-cell">
+            <span class="inline-block w-1/2 md:hidden font-bold">
+              Number of guests
+            </span>
+            <div className="inline-block">
+              <div className="flex">
+                <MdPerson2 />
+                <MdPerson2 />
+              </div>
+            </div>
+          </td>
+
+          <td class="p-2 md:border-b md:border-blue-gray-200 text-left block md:table-cell">
+            <span class="inline-block w-1/2 md:hidden font-bold"></span>
+            <button class="bg-gold hover:bg-gold text-white font-bold py-1 px-2 border rounded">
+              Book now
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  );
+};
 
 export const generateStaticParams = async () => {
   const res = await fetch(

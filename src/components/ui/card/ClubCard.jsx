@@ -29,8 +29,6 @@ const ClubCard = ({ data, order }) => {
     return priceFormatted;
   };
 
-  console.log(data);
-
   return (
     <div className="grid grid-cols-1 w-full bg-[#fbfbfb] lg:grid-cols-5  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-white] mb-5">
       <Link
