@@ -1,50 +1,50 @@
-'use client';
-import { useState } from 'react';
-import { ModalComponent } from '..';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import { sendEmail } from '@/lib/emailSend';
-import PhoneInput from 'react-phone-input-2';
-import 'react-phone-input-2/lib/style.css';
-import styles from './bookingModal.module.scss';
+"use client";
+import { useState } from "react";
+import { ModalComponent } from "..";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { sendEmail } from "@/lib/emailSend";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import styles from "./bookingModal.module.scss";
 const Bookingmodal = ({ item, setOpen, open }) => {
   const [isSending, setIsSending] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitMessage, setSubmitMessage] = useState(
-    'Thank you for your submission!'
+    "Thank you for your submission!"
   );
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
+    name: "",
+    email: "",
+    phone: "",
     // Additional fields based on the item
-    ...(item === 'car' && {
-      deliveryPlace: '',
-      bookingFromDate: '',
-      returnDate: '',
-      bookingFromTime: '',
-      bookingToTime: '',
+    ...(item === "car" && {
+      deliveryPlace: "",
+      bookingFromDate: "",
+      returnDate: "",
+      bookingFromTime: "",
+      bookingToTime: "",
     }),
-    ...(item === 'chauffeurService' && {
-      pickupDate: '',
-      pickupTime: '',
-      fromLocation: '',
-      toLocation: '',
+    ...(item === "chauffeurService" && {
+      pickupDate: "",
+      pickupTime: "",
+      fromLocation: "",
+      toLocation: "",
     }),
-    ...(item === 'yacht' && {
-      yachtBookingDate: '',
-      yachtBookingHours: '',
-      yachtBookingTime: '',
-      yachtNumberOfPax: '',
+    ...(item === "yacht" && {
+      yachtBookingDate: "",
+      yachtBookingHours: "",
+      yachtBookingTime: "",
+      yachtNumberOfPax: "",
     }),
-    ...(item === 'tourAndExcursion' && {
-      excursionBookingDate: '',
-      excursionNumberOfPax: '',
+    ...(item === "tourAndExcursion" && {
+      excursionBookingDate: "",
+      excursionNumberOfPax: "",
     }),
-    ...(item === 'helicopterBooking' && {
-      helicopterBookingDate: '',
-      helicopterBookingTime: '',
-      helicopterNumberOfPax: '',
+    ...(item === "helicopterBooking" && {
+      helicopterBookingDate: "",
+      helicopterBookingTime: "",
+      helicopterNumberOfPax: "",
     }),
   });
   const handleChange = (e) => {
@@ -65,52 +65,52 @@ const Bookingmodal = ({ item, setOpen, open }) => {
     // Add your form submission logic here
     try {
       const res = await sendEmail({ data: formData, membership: false });
-      if (res === 'success') {
+      if (res === "success") {
         setIsSubmitted(true);
         setTimeout(() => {
           setIsSending(false);
           setIsSubmitted(false);
           setOpen(false);
           setFormData({
-            name: '',
-            email: '',
-            phone: '',
+            name: "",
+            email: "",
+            phone: "",
             // Additional fields based on the item
-            ...(item === 'car' && {
-              deliveryPlace: '',
-              bookingFromDate: '',
-              returnDate: '',
-              bookingFromTime: '',
-              bookingToTime: '',
+            ...(item === "car" && {
+              deliveryPlace: "",
+              bookingFromDate: "",
+              returnDate: "",
+              bookingFromTime: "",
+              bookingToTime: "",
             }),
-            ...(item === 'chauffeurService' && {
-              pickupDate: '',
-              pickupTime: '',
-              fromLocation: '',
-              toLocation: '',
+            ...(item === "chauffeurService" && {
+              pickupDate: "",
+              pickupTime: "",
+              fromLocation: "",
+              toLocation: "",
             }),
-            ...(item === 'yacht' && {
-              yachtBookingDate: '',
-              yachtBookingHours: '',
-              yachtBookingTime: '',
-              yachtNumberOfPax: '',
+            ...(item === "yacht" && {
+              yachtBookingDate: "",
+              yachtBookingHours: "",
+              yachtBookingTime: "",
+              yachtNumberOfPax: "",
             }),
-            ...(item === 'tourAndExcursion' && {
-              excursionBookingDate: '',
-              excursionNumberOfPax: '',
+            ...(item === "tourAndExcursion" && {
+              excursionBookingDate: "",
+              excursionNumberOfPax: "",
             }),
-            ...(item === 'helicopterBooking' && {
-              helicopterBookingDate: '',
-              helicopterBookingTime: '',
-              helicopterNumberOfPax: '',
+            ...(item === "helicopterBooking" && {
+              helicopterBookingDate: "",
+              helicopterBookingTime: "",
+              helicopterNumberOfPax: "",
             }),
           });
         }, 2000);
       } else {
-        setSubmitMessage('Sorry, Something went wrong!');
+        setSubmitMessage("Sorry, Something went wrong!");
       }
     } catch (error) {
-      console.log('Error Sending Email', error);
+      console.log("Error Sending Email", error);
     }
     // Close the form after submission
   };
@@ -164,11 +164,11 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                 Phone
               </label>
               <PhoneInput
-                country={'ae'}
+                country={"ae"}
                 value={formData.phone}
                 name="phone"
                 inputProps={{
-                  'data-color': formData.phone.length > 3 ? 'true' : 'false',
+                  "data-color": formData.phone.length > 3 ? "true" : "false",
                 }}
                 containerClass={styles.picontainerclass}
                 inputClass={styles.piInputClass}
@@ -176,7 +176,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                 onChange={(val) => phoneChange(val)}
                 enableSearch={true}
                 searchClass={styles.searchClass}
-                searchNotFound={'No country found'}
+                searchNotFound={"No country found"}
               />
               {/* <input
                 type="tel"
@@ -190,7 +190,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
             </div>
           </>
 
-          {item === 'car' && (
+          {item === "car" && (
             <>
               <div className="mb-4">
                 <label
@@ -222,7 +222,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                     new Date(new Date().getTime() + 2 * 24 * 60 * 60 * 1000)
                   }
                   selected={formData.bookingFromDate}
-                  onChange={(date) => handleDateChange(date, 'bookingFromDate')}
+                  onChange={(date) => handleDateChange(date, "bookingFromDate")}
                   className="mt-1 p-2 border rounded-md w-full"
                   required
                 />
@@ -236,7 +236,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                 </label>
                 <DatePicker
                   selected={formData.bookingFromTime}
-                  onChange={(date) => handleDateChange(date, 'bookingFromTime')}
+                  onChange={(date) => handleDateChange(date, "bookingFromTime")}
                   showTimeSelect
                   showTimeSelectOnly
                   timeIntervals={15}
@@ -260,7 +260,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                   }
                   dateFormat="dd/MM/yyyy"
                   selected={formData.returnDate}
-                  onChange={(date) => handleDateChange(date, 'returnDate')}
+                  onChange={(date) => handleDateChange(date, "returnDate")}
                   className="mt-1 p-2 border rounded-md w-full"
                   required
                 />
@@ -274,7 +274,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                 </label>
                 <DatePicker
                   selected={formData.bookingToTime}
-                  onChange={(date) => handleDateChange(date, 'bookingToTime')}
+                  onChange={(date) => handleDateChange(date, "bookingToTime")}
                   showTimeSelect
                   showTimeSelectOnly
                   timeIntervals={15}
@@ -286,7 +286,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
               </div>
             </>
           )}
-          {item === 'chauffeurService' && (
+          {item === "chauffeurService" && (
             <>
               <div className="mb-4">
                 <label
@@ -301,7 +301,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                   }
                   dateFormat="dd/MM/yyyy"
                   selected={formData.pickupDate}
-                  onChange={(date) => handleDateChange(date, 'pickupDate')}
+                  onChange={(date) => handleDateChange(date, "pickupDate")}
                   className="mt-1 p-2 border rounded-md w-full"
                   required
                 />
@@ -315,7 +315,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                 </label>
                 <DatePicker
                   selected={formData.pickupTime}
-                  onChange={(date) => handleDateChange(date, 'pickupTime')}
+                  onChange={(date) => handleDateChange(date, "pickupTime")}
                   showTimeSelect
                   showTimeSelectOnly
                   timeIntervals={15}
@@ -362,7 +362,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
               </div>
             </>
           )}
-          {item === 'yacht' && (
+          {item === "yacht" && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6">
               <div className="mb-4 col-span-1">
                 <label
@@ -378,7 +378,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                   dateFormat="dd/MM/yyyy"
                   selected={formData.yachtBookingDate}
                   onChange={(date) =>
-                    handleDateChange(date, 'yachtBookingDate')
+                    handleDateChange(date, "yachtBookingDate")
                   }
                   className="mt-1 p-2 border rounded-md w-full"
                   required
@@ -394,7 +394,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                 <DatePicker
                   selected={formData.yachtBookingTime}
                   onChange={(date) =>
-                    handleDateChange(date, 'yachtBookingTime')
+                    handleDateChange(date, "yachtBookingTime")
                   }
                   showTimeSelect
                   showTimeSelectOnly
@@ -441,7 +441,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
               </div>
             </div>
           )}
-          {item === 'tourAndExcursion' && (
+          {item === "tourAndExcursion" && (
             <>
               <div className="mb-4">
                 <label
@@ -457,7 +457,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                   dateFormat="dd/MM/yyyy"
                   selected={formData.excursionBookingDate}
                   onChange={(date) =>
-                    handleDateChange(date, 'excursionBookingDate')
+                    handleDateChange(date, "excursionBookingDate")
                   }
                   className="mt-1 p-2 border rounded-md w-full"
                   required
@@ -482,7 +482,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
               </div>
             </>
           )}
-          {item === 'helicopterBooking' && (
+          {item === "helicopterBooking" && (
             <div className="grid grid-cols-1 md:grid-cols-2 ">
               <div className="mb-4 col-span-1">
                 <label
@@ -498,7 +498,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                   dateFormat="dd/MM/yyyy"
                   selected={formData.helicopterBookingDate}
                   onChange={(date) =>
-                    handleDateChange(date, 'helicopterBookingDate')
+                    handleDateChange(date, "helicopterBookingDate")
                   }
                   className="mt-1 p-2 border rounded-md w-full"
                   required
@@ -514,7 +514,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                 <DatePicker
                   selected={formData.helicopterBookingTime}
                   onChange={(date) =>
-                    handleDateChange(date, 'helicopterBookingTime')
+                    handleDateChange(date, "helicopterBookingTime")
                   }
                   showTimeSelect
                   showTimeSelectOnly
@@ -550,7 +550,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
             type="submit"
             className="bg-gold text-white  px-4 py-2 rounded-md mt-4"
           >
-            {isSending ? 'Submitting...' : 'Submit'}
+            {isSending ? "Sending..." : "Send"}
           </button>
         </form>
         {isSubmitted && (
