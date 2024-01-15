@@ -16,14 +16,17 @@ function TopDestination() {
     {
       title: "Turkey",
       image: "/assets/home/com/turkey.jpg",
+      link: "services",
     },
     {
       title: "Dubai",
       image: "/assets/home/com/dubai.jpg",
+      link: "services",
     },
     {
       title: "Maldives",
       image: "/assets/home/com/maldives.jpg",
+      link: "services",
     },
   ];
   if (currentUrl && currentUrl.includes(".com")) {
@@ -31,7 +34,7 @@ function TopDestination() {
       <div className="px-4 pt-36  bg-white">
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 min-h-[350px]">
           {data.map((e, index) => (
-            <Link href={"#"} key={index}>
+            <Link href={`#${e.link}`} key={index}>
               <motion.div
                 className="relative w-full aspect-[1/1.5] max-h-[35vh] rounded overflow-hidden"
                 whileHover={{

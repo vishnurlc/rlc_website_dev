@@ -95,7 +95,10 @@ const Ourservices = () => {
             </div> */}
           {/* </div> */}
 
-          <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 min-h-[350px]">
+          <div
+            className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 min-h-[350px]"
+            id="services"
+          >
             {data.length > 0 ? (
               <>
                 {data.map((service, index) => (
