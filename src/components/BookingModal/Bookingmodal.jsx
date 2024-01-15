@@ -15,8 +15,10 @@ const Bookingmodal = ({ item, setOpen, open }) => {
   );
   const [formData, setFormData] = useState({
     name: "",
+    surname: "",
     email: "",
     phone: "",
+    note: "",
     // Additional fields based on the item
     ...(item === "car" && {
       deliveryPlace: "",
@@ -73,8 +75,11 @@ const Bookingmodal = ({ item, setOpen, open }) => {
           setOpen(false);
           setFormData({
             name: "",
+            surname: "",
             email: "",
             phone: "",
+            note: "",
+
             // Additional fields based on the item
             ...(item === "car" && {
               deliveryPlace: "",
@@ -122,22 +127,41 @@ const Bookingmodal = ({ item, setOpen, open }) => {
         <form onSubmit={handleSubmit}>
           {/* Common fields */}
           <>
-            <div className="mb-4">
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="mt-1 p-2 border rounded-md w-full"
-                required
-              />
+            <div className=" md:flex gap-8 ">
+              <div className="w-full md:w-1/2 mb-4">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="mt-1 p-2 border rounded-md w-full"
+                  required
+                />
+              </div>
+              <div className="w-full md:w-1/2 mb-4">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Surname
+                </label>
+                <input
+                  type="text"
+                  id="surname"
+                  name="surname"
+                  value={formData.surname}
+                  onChange={handleChange}
+                  className="mt-1 p-2 border rounded-md w-full"
+                  required
+                />
+              </div>
             </div>
             <div className="mb-4">
               <label
@@ -544,6 +568,25 @@ const Bookingmodal = ({ item, setOpen, open }) => {
               </div>
             </div>
           )}
+
+          {/* text */}
+          <div className="mb-4">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Note
+            </label>
+            <textarea
+              id="message"
+              rows="4"
+              name="note"
+              value={formData.note}
+              onChange={handleChange}
+              className="mt-1 p-2 border rounded-md w-full"
+              placeholder="Leave a comment..."
+            ></textarea>
+          </div>
 
           {/* Submit button */}
           <button
