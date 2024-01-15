@@ -1,19 +1,19 @@
-'use client';
-import { useCurrency } from '@/context/currencyContext';
-import Image from 'next/image';
-import { useState } from 'react';
-import { FiChevronDown } from 'react-icons/fi';
+"use client";
+import { useCurrency } from "@/context/currencyContext";
+import Image from "next/image";
+import { useState } from "react";
+import { FiChevronDown } from "react-icons/fi";
 
 const currencies = [
   {
     id: 0,
-    currency: 'AED',
-    flag: '/assets/currencyFlag/uae.svg',
+    currency: "AED",
+    flag: "/assets/currencyFlag/uae.svg",
   },
   {
     id: 1,
-    currency: 'USD',
-    flag: '/assets/currencyFlag/usa.svg',
+    currency: "USD",
+    flag: "/assets/currencyFlag/usa.svg",
   },
 ];
 
@@ -37,7 +37,7 @@ const CurrencyDropdown = () => {
   return (
     <div className="relative">
       <div
-        className="flex items-center gap-x-2 cursor-pointer text-white text-sm"
+        className="flex items-center gap-x-2 cursor-pointer text-gold text-sm"
         onClick={toggleDropdown}
       >
         <Image
@@ -46,11 +46,11 @@ const CurrencyDropdown = () => {
           width={20}
           height={12}
           style={{
-            width: '20px',
-            height: '12px',
+            width: "20px",
+            height: "12px",
           }}
         />
-        {selectedCurrency} <FiChevronDown />
+        {selectedCurrency} <FiChevronDown className="text-gold" />
       </div>
       {isDropdownOpen && (
         <div className="absolute mt-2 bg-white border border-gray-300  shadow-md p-2 z-10">
@@ -66,8 +66,8 @@ const CurrencyDropdown = () => {
                 width={20}
                 height={12}
                 style={{
-                  width: '20px',
-                  height: '12px',
+                  width: "20px",
+                  height: "12px",
                 }}
               />
               {currency.currency}

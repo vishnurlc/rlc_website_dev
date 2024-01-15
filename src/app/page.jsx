@@ -74,7 +74,6 @@ export default function Home() {
         url={'https://admin.richylife.ae/rlchome.mp4'}
       /> */}
       <ServiceBanner />
-      <Faq category={"car"} />
       <Testimonials />
       <div className="my-9 md:my-16 px-6 ">
         <ContactForm
@@ -82,6 +81,7 @@ export default function Home() {
           description={"Experience Elegance & Convenience"}
         />
       </div>
+      <Faq category={"car"} />
     </main>
   );
 }

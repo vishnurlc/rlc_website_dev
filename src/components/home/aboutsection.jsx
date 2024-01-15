@@ -1,39 +1,39 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import AboutCounter from './AboutCounter';
-import AnimationImage from '../Animation/AnimationImage';
+import AboutCounter from "./AboutCounter";
+import AnimationImage from "../Animation/AnimationImage";
 
 function Aboutsection() {
   const data = [
     {
-      title: 'Years Of Experience',
-      startNumber: '1',
-      endNumber: '5',
-      suffix: '',
+      title: "Years Of Experience",
+      startNumber: "15",
+      endNumber: "30",
+      suffix: "",
     },
     {
-      title: 'Customer Satisfaction',
-      startNumber: '30',
-      endNumber: '100',
-      suffix: '%',
+      title: "Customer Satisfaction",
+      startNumber: "30",
+      endNumber: "100",
+      suffix: "%",
     },
     {
-      title: 'Concierge Assistance',
-      startNumber: '1000',
-      endNumber: '2000',
-      suffix: '+',
+      title: "Concierge Assistance",
+      startNumber: "1000",
+      endNumber: "2000",
+      suffix: "+",
     },
     {
-      title: 'Private events ',
-      startNumber: '3',
-      endNumber: '6',
-      suffix: 'k',
+      title: "Private events ",
+      startNumber: "80",
+      endNumber: "120",
+      suffix: "",
     },
     {
-      title: 'Customized Experiences',
-      startNumber: '800',
-      endNumber: '1400',
-      suffix: '+',
+      title: "Customized Experiences",
+      startNumber: "800",
+      endNumber: "1400",
+      suffix: "+",
     },
   ];
   return (
@@ -47,8 +47,8 @@ function Aboutsection() {
               loading="lazy"
               alt="Blue Bugatti Top View "
               style={{
-                objectFit: 'contain',
-                borderRadius: '5px',
+                objectFit: "contain",
+                borderRadius: "5px",
               }}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
@@ -57,7 +57,7 @@ function Aboutsection() {
         <div className="bg-white text-black  md:mx-20 flex-1">
           <h2 className="text-teal-900 text-[42px] font-extrabold leading-10">
             RICHY LIFE <br />
-            CLUB{' '}
+            CLUB{" "}
           </h2>
 
           <p className="py-10 text-md font-thin text-secondary">

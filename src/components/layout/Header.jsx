@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { AnimatePresence } from 'framer-motion';
-import { HiOutlineChevronDown } from 'react-icons/hi';
-import { BiArrowToBottom, BiMenuAltRight, BiPhoneCall } from 'react-icons/bi';
-import { AiOutlineClose } from 'react-icons/ai';
-import { motion } from 'framer-motion';
-import CurrencyDropdown from './CurrencyDropdown';
-import MobileCurrency from './MobileCurrency';
-import { FaChevronDown, FaMobileAlt, FaWhatsapp } from 'react-icons/fa';
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { AnimatePresence } from "framer-motion";
+import { HiOutlineChevronDown } from "react-icons/hi";
+import { BiArrowToBottom, BiMenuAltRight, BiPhoneCall } from "react-icons/bi";
+import { AiOutlineClose } from "react-icons/ai";
+import { motion } from "framer-motion";
+import CurrencyDropdown from "./CurrencyDropdown";
+import MobileCurrency from "./MobileCurrency";
+import { FaChevronDown, FaMobileAlt, FaWhatsapp } from "react-icons/fa";
 const dropdownvariant = {
   visible: {
     opacity: 1,
@@ -41,7 +41,7 @@ const mobileMenuVariant = {
   open: {
     opacity: 1,
     transition: {
-      type: 'spring',
+      type: "spring",
       duration: 0.4,
       // delayChildren: 0.2,
       staggerChildren: 0.05,
@@ -58,16 +58,16 @@ const menuitemVariant = {
 
 const links = [
   {
-    name: 'Premium Transfers',
-    link: '/chauffeur-service',
+    name: "Premium Transfers",
+    link: "/chauffeur-service",
   },
   {
-    name: 'Rent A Car',
-    link: '/luxury-car-rentals',
+    name: "Rent A Car",
+    link: "/luxury-car-rentals",
   },
   {
-    name: 'Luxury Yacht Rentals',
-    link: '/luxury-yacht-rentals',
+    name: "Luxury Yacht Rentals",
+    link: "/luxury-yacht-rentals",
   },
 
   // {
@@ -87,53 +87,53 @@ const links = [
   // },
 
   {
-    name: 'Services',
-    link: '#',
+    name: "Services",
+    link: "#",
     dropdown: true,
     products: [
       {
-        name: 'Tours & Excursions',
-        href: '/tours-excursions',
+        name: "Tours & Excursions",
+        href: "/tours-excursions",
       },
       {
-        name: 'Clubs & Restaurants',
-        href: '/clubs-restaurants',
-      },
-
-      {
-        name: 'Premium Desert Adventure',
-        href: '/premium-desert-adventure',
-      },
-      {
-        name: 'Helicopter',
-        href: '/helicopter-rentals',
-      },
-      {
-        name: 'Private Jet Charter',
-        href: '/private-jet-rentals',
+        name: "Clubs & Restaurants",
+        href: "/clubs-restaurants",
       },
 
       {
-        name: 'Premium Jetski',
-        href: '/premium-jetski-rental',
+        name: "Premium Desert Adventure",
+        href: "/premium-desert-adventure",
       },
       {
-        name: 'Premium Gold Jetski',
-        href: '/premium-gold-jetski',
+        name: "Helicopter",
+        href: "/helicopter-rentals",
       },
       {
-        name: 'Exotic Pet VIP Experiences',
-        href: '/exotic-pet-experiences',
+        name: "Private Jet Charter",
+        href: "/private-jet-rentals",
+      },
+
+      {
+        name: "Premium Jetski",
+        href: "/premium-jetski-rental",
       },
       {
-        name: 'News & Events',
-        href: '/blogs',
+        name: "Premium Gold Jetski",
+        href: "/premium-gold-jetski",
+      },
+      {
+        name: "Exotic Pet VIP Experiences",
+        href: "/exotic-pet-experiences",
+      },
+      {
+        name: "News & Events",
+        href: "/blogs",
       },
     ],
   },
   {
-    name: 'Contact Us',
-    link: '/contact-us',
+    name: "Contact Us",
+    link: "/contact-us",
   },
 ];
 
@@ -189,17 +189,18 @@ export default function Header() {
     <header
       className="fixed w-screen top-0 z-50 transition-all backdrop-blur-lg"
       style={{
-        background: headerType === 1 || mobileMenuOpen ? '#fff' : '#006039',
+        background: headerType === 1 || mobileMenuOpen ? "#fff" : "#006039",
       }}
       onMouseLeave={handleDropdownLeave}
     >
-      <div className=" bg-white px-6">
+      <div className=" bg-white px-5">
         <div className="max-w-[1200px] mx-auto relative text-gold flex items-center justify-end  text-xs gap-4 py-2 ">
-          Private Assistant 24/7{' '}
+          Private Assistant 24/7{" "}
           <span className="flex gap-2 items-center">
             <BiPhoneCall /> +971 505 5889 55
             <FaChevronDown onClick={handleArrowClick} />
           </span>
+          <CurrencyDropdown />
           {showDropdown && (
             <div className="absolute top-full right-2 mt-2 bg-white border border-gray-300 rounded shadow-md z-50">
               <Link
@@ -231,8 +232,8 @@ export default function Header() {
               height={100}
               src={
                 mobileMenuOpen
-                  ? '/assets/logos/rlclogogreen.png'
-                  : '/assets/logos/rlclogowhite.png'
+                  ? "/assets/logos/rlclogogreen.png"
+                  : "/assets/logos/rlclogowhite.png"
               }
               alt="Richy life Club Logo"
               priority
@@ -250,7 +251,7 @@ export default function Header() {
               <BiMenuAltRight
                 className="h-6 w-6"
                 aria-hidden="true"
-                color={headerType === 1 ? '#214842' : 'white'}
+                color={headerType === 1 ? "#214842" : "white"}
                 onClick={() => setMobileMenuOpen(true)}
               />
             ) : (
@@ -270,13 +271,13 @@ export default function Header() {
                 <div className="relative group">
                   <div
                     className={`flex items-center gap-x-1 text-sm font-inter leading-6 cursor-pointer nav_link ${
-                      headerType === 1 ? 'text-primary' : 'text-white'
+                      headerType === 1 ? "text-primary" : "text-white"
                     }  focus:outline-none`}
                   >
                     {item.name}
                     <HiOutlineChevronDown
                       className={`h-5 w-5 flex-none ${
-                        headerType === 1 ? 'text-primary' : 'text-white'
+                        headerType === 1 ? "text-primary" : "text-white"
                       } `}
                       aria-hidden="true"
                     />
@@ -285,9 +286,9 @@ export default function Header() {
                     {activeDropdown === index && (
                       <motion.div
                         variants={dropdownvariant}
-                        animate={'visible'}
+                        animate={"visible"}
                         initial="hidden"
-                        exit={'exit'}
+                        exit={"exit"}
                         className={` py-2 absolute right-0 top-full z-10 mt-3  overflow-hidden rounded-sm bg-white shadow-lg ring-1 ring-gray-900/5 `}
                         onMouseLeave={handleDropdownLeave}
                       >
@@ -312,7 +313,7 @@ export default function Header() {
                 <Link
                   href={item.link}
                   className={`text-sm leading-6 nav_link ${
-                    headerType === 1 ? 'text-primary' : 'text-white'
+                    headerType === 1 ? "text-primary" : "text-white"
                   } font-inter`}
                 >
                   {item.name}
@@ -320,12 +321,12 @@ export default function Header() {
               )}
             </span>
           ))}
-          <CurrencyDropdown />
+          {/* <CurrencyDropdown /> */}
         </div>
       </nav>
       <div
         className={`xl:hidden h-screen ${
-          mobileMenuOpen ? 'block bg-white' : 'hidden'
+          mobileMenuOpen ? "block bg-white" : "hidden"
         } px-8`}
       >
         <div className="flex flex-col space-y-4 py-6">
@@ -350,12 +351,12 @@ export default function Header() {
                       <motion.div
                         key={index}
                         className={`py-2 relative ${
-                          mobileMenuOpen ? 'block' : 'hidden'
+                          mobileMenuOpen ? "block" : "hidden"
                         }`}
                         variants={mobileMenuVariant}
                         initial="closed"
                         exit="closed"
-                        animate={mobileMenuDropdown ? 'open' : 'closed'}
+                        animate={mobileMenuDropdown ? "open" : "closed"}
                       >
                         {item.products.map((product) => (
                           <motion.div
@@ -386,7 +387,7 @@ export default function Header() {
             </span>
           ))}
           <Link
-            href={'/faq'}
+            href={"/faq"}
             className={`text-sm md:text-base leading-6 text-primary font-inter`}
           >
             Faq
