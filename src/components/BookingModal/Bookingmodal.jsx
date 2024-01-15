@@ -32,19 +32,19 @@ const Bookingmodal = ({ item, setOpen, open }) => {
       toLocation: '',
     }),
     ...(item === 'yacht' && {
-      bookingDate: '',
-      bookingHours: '',
-      bookingTime: '',
-      numberOfPax: '',
+      yachtBookingDate: '',
+      yachtBookingHours: '',
+      yachtBookingTime: '',
+      yachtNumberOfPax: '',
     }),
     ...(item === 'tourAndExcursion' && {
-      bookingDate: '',
-      numberOfPax: '',
+      excursionBookingDate: '',
+      excursionNumberOfPax: '',
     }),
     ...(item === 'helicopterBooking' && {
-      bookingDate: '',
-      bookingTime: '',
-      numberOfPax: '',
+      helicopterBookingDate: '',
+      helicopterBookingTime: '',
+      helicopterNumberOfPax: '',
     }),
   });
   const handleChange = (e) => {
@@ -90,19 +90,19 @@ const Bookingmodal = ({ item, setOpen, open }) => {
               toLocation: '',
             }),
             ...(item === 'yacht' && {
-              bookingDate: '',
-              bookingHours: '',
-              bookingTime: '',
-              numberOfPax: '',
+              yachtBookingDate: '',
+              yachtBookingHours: '',
+              yachtBookingTime: '',
+              yachtNumberOfPax: '',
             }),
             ...(item === 'tourAndExcursion' && {
-              bookingDate: '',
-              numberOfPax: '',
+              excursionBookingDate: '',
+              excursionNumberOfPax: '',
             }),
             ...(item === 'helicopterBooking' && {
-              bookingDate: '',
-              bookingTime: '',
-              numberOfPax: '',
+              helicopterBookingDate: '',
+              helicopterBookingTime: '',
+              helicopterNumberOfPax: '',
             }),
           });
         }, 2000);
@@ -366,7 +366,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6">
               <div className="mb-4 col-span-1">
                 <label
-                  htmlFor="bookingDate"
+                  htmlFor="yachtBookingDate"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Booking Date
@@ -376,22 +376,26 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                     new Date(new Date().getTime() + 2 * 24 * 60 * 60 * 1000)
                   }
                   dateFormat="dd/MM/yyyy"
-                  selected={formData.bookingDate}
-                  onChange={(date) => handleDateChange(date, 'bookingDate')}
+                  selected={formData.yachtBookingDate}
+                  onChange={(date) =>
+                    handleDateChange(date, 'yachtBookingDate')
+                  }
                   className="mt-1 p-2 border rounded-md w-full"
                   required
                 />
               </div>
               <div className="mb-4">
                 <label
-                  htmlFor="bookingTime"
+                  htmlFor="yachtBookingTime"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Booking Time
                 </label>
                 <DatePicker
-                  selected={formData.bookingTime}
-                  onChange={(date) => handleDateChange(date, 'bookingTime')}
+                  selected={formData.yachtBookingTime}
+                  onChange={(date) =>
+                    handleDateChange(date, 'yachtBookingTime')
+                  }
                   showTimeSelect
                   showTimeSelectOnly
                   timeIntervals={15}
@@ -403,16 +407,16 @@ const Bookingmodal = ({ item, setOpen, open }) => {
               </div>
               <div className="mb-4 col-span-1">
                 <label
-                  htmlFor="bookingHours"
+                  htmlFor="yachtBookingHours"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Booking Hours (min 3 hours)
                 </label>
                 <input
                   type="text"
-                  id="bookingHours"
-                  name="bookingHours"
-                  value={formData.bookingHours}
+                  id="yachtBookingHours"
+                  name="yachtBookingHours"
+                  value={formData.yachtBookingHours}
                   onChange={handleChange}
                   className="mt-1 p-2 border rounded-md w-full"
                   required
@@ -420,16 +424,16 @@ const Bookingmodal = ({ item, setOpen, open }) => {
               </div>
               <div className="mb-4">
                 <label
-                  htmlFor="numberOfPax"
+                  htmlFor="yachtNumberOfPax"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Number of Pax
                 </label>
                 <input
                   type="number"
-                  id="numberOfPax"
-                  name="numberOfPax"
-                  value={formData.numberOfPax}
+                  id="yachtNumberOfPax"
+                  name="yachtNumberOfPax"
+                  value={formData.yachtNumberOfPax}
                   onChange={handleChange}
                   className="mt-1 p-2 border rounded-md w-full"
                   required
@@ -441,7 +445,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
             <>
               <div className="mb-4">
                 <label
-                  htmlFor="bookingDate"
+                  htmlFor="excursionBookingDate"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Booking Date
@@ -451,24 +455,26 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                     new Date(new Date().getTime() + 2 * 24 * 60 * 60 * 1000)
                   }
                   dateFormat="dd/MM/yyyy"
-                  selected={formData.bookingDate}
-                  onChange={(date) => handleDateChange(date, 'bookingDate')}
+                  selected={formData.excursionBookingDate}
+                  onChange={(date) =>
+                    handleDateChange(date, 'excursionBookingDate')
+                  }
                   className="mt-1 p-2 border rounded-md w-full"
                   required
                 />
               </div>
               <div className="mb-4">
                 <label
-                  htmlFor="numberOfPax"
+                  htmlFor="excursionNumberOfPax"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Number of Pax
                 </label>
                 <input
                   type="number"
-                  id="numberOfPax"
-                  name="numberOfPax"
-                  value={formData.numberOfPax}
+                  id="excursionNumberOfPax"
+                  name="excursionNumberOfPax"
+                  value={formData.excursionNumberOfPax}
                   onChange={handleChange}
                   className="mt-1 p-2 border rounded-md w-full"
                   required
@@ -480,7 +486,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 ">
               <div className="mb-4 col-span-1">
                 <label
-                  htmlFor="bookingDate"
+                  htmlFor="helicopterBookingDate"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Booking Date
@@ -490,22 +496,26 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                     new Date(new Date().getTime() + 2 * 24 * 60 * 60 * 1000)
                   }
                   dateFormat="dd/MM/yyyy"
-                  selected={formData.bookingDate}
-                  onChange={(date) => handleDateChange(date, 'bookingDate')}
+                  selected={formData.helicopterBookingDate}
+                  onChange={(date) =>
+                    handleDateChange(date, 'helicopterBookingDate')
+                  }
                   className="mt-1 p-2 border rounded-md w-full"
                   required
                 />
               </div>
               <div className="mb-4 col-span-1">
                 <label
-                  htmlFor="bookingTime"
+                  htmlFor="helicopterBookingTime"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Booking Time
                 </label>
                 <DatePicker
-                  selected={formData.bookingTime}
-                  onChange={(date) => handleDateChange(date, 'bookingTime')}
+                  selected={formData.helicopterBookingTime}
+                  onChange={(date) =>
+                    handleDateChange(date, 'helicopterBookingTime')
+                  }
                   showTimeSelect
                   showTimeSelectOnly
                   timeIntervals={15}
@@ -517,16 +527,16 @@ const Bookingmodal = ({ item, setOpen, open }) => {
               </div>
               <div className="mb-4 col-span-2">
                 <label
-                  htmlFor="numberOfPax"
+                  htmlFor="helicopterNumberOfPax"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Number of Pax
                 </label>
                 <input
                   type="number"
-                  id="numberOfPax"
-                  name="numberOfPax"
-                  value={formData.numberOfPax}
+                  id="helicopterNumberOfPax"
+                  name="helicopterNumberOfPax"
+                  value={formData.helicopterNumberOfPax}
                   onChange={handleChange}
                   className="mt-1 p-2 border rounded-md w-full"
                   required
