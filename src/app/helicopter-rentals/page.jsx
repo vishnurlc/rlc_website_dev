@@ -1,39 +1,39 @@
-import { ContactForm, HeroSection2, Whyushelicopter } from '@/components';
-import PackageCard from '@/components/helicopter/PackageCard';
-import Faq from '@/components/home/faq';
+import { ContactForm, HeroSection2, Whyushelicopter } from "@/components";
+import PackageCard from "@/components/helicopter/PackageCard";
+import Faq from "@/components/home/faq";
 
 export const metadata = {
-  title: 'Helicopter Rentals Dubai',
+  title: "Helicopter Rentals Dubai",
   description:
     "Experience Dubai from a new perspective with Richy life Club's luxury helicopter rental. Enjoy VIP helicopter tours over Dubai&apos;s iconic landmarks and breathtaking views.",
   keywords: [
-    'Helicopter Rental Dubai',
-    'VIP Helicopter Tours',
-    'Luxury Helicopter Rentals',
-    'Helicopter Charter Dubai',
-    'Aerial Tours Dubai',
-    'Helicopter Sightseeing',
-    'Dubai Landmarks',
-    'Breathtaking Views',
-    'Aerial Perspective',
-    'Helicopter Adventure',
-    'Dubai Skyline',
-    'Private Helicopter Flights',
-    'Iconic Landmarks',
-    'Helicopter Excursions',
-    'Dubai Aerial Experience',
-    'Explore Dubai from Above',
-    'Helicopter Ride Dubai',
-    'VIP Sky Tours',
-    'Richy Life Club',
-    'richylife club',
-    'Dubai UAE',
+    "Helicopter Rental Dubai",
+    "VIP Helicopter Tours",
+    "Luxury Helicopter Rentals",
+    "Helicopter Charter Dubai",
+    "Aerial Tours Dubai",
+    "Helicopter Sightseeing",
+    "Dubai Landmarks",
+    "Breathtaking Views",
+    "Aerial Perspective",
+    "Helicopter Adventure",
+    "Dubai Skyline",
+    "Private Helicopter Flights",
+    "Iconic Landmarks",
+    "Helicopter Excursions",
+    "Dubai Aerial Experience",
+    "Explore Dubai from Above",
+    "Helicopter Ride Dubai",
+    "VIP Sky Tours",
+    "Richy Life Club",
+    "richylife club",
+    "Dubai UAE",
   ],
   openGraph: {
-    title: 'Luxury Helicopter Rental Dubai',
+    title: "Luxury Helicopter Rental Dubai",
     description:
       "Experience Dubai from a new perspective with Richy life Club's luxury helicopter rental. Enjoy VIP helicopter tours over Dubai&apos;s iconic landmarks and breathtaking views.",
-    siteName: 'Richy life Club',
+    siteName: "Richy life Club",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/helicopter/banner.png`,
@@ -46,31 +46,31 @@ export const metadata = {
         height: 200,
       },
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
 };
 
 const data = [
   {
-    image: '/assets/helicopter/1.webp',
-    title: '12 Mins Helicopter Tour',
-    price: '710',
+    image: "/assets/helicopter/1.webp",
+    title: "12 Mins Helicopter Tour",
+    price: "710",
   },
   {
-    image: '/assets/helicopter/2.jpeg',
-    title: '17 Mins Helicopter Tour',
-    price: '945',
+    image: "/assets/helicopter/2.jpeg",
+    title: "17 Mins Helicopter Tour",
+    price: "945",
   },
   {
-    image: '/assets/helicopter/3.jpeg',
-    title: '22 Mins Helicopter Tour',
-    price: '1299',
+    image: "/assets/helicopter/3.jpeg",
+    title: "22 Mins Helicopter Tour",
+    price: "1299",
   },
   {
-    image: '/assets/helicopter/4.jpeg',
-    title: '30 Mins Helicopter Tour',
-    price: '1770',
+    image: "/assets/helicopter/4.jpeg",
+    title: "30 Mins Helicopter Tour",
+    price: "1770",
   },
 ];
 const page = () => {
@@ -81,8 +81,8 @@ const page = () => {
           type="image"
           heading1="Helicopters Tours &"
           heading2="Transfers in Dubai"
-          subheading={'Experience the adventurous Journey'}
-          btntext={'Book you ride'}
+          subheading={"Experience the adventurous Journey"}
+          btntext={"Book you ride"}
           url="/assets/helicopter/banner.png"
         />
       </div>
@@ -92,12 +92,12 @@ const page = () => {
           <PackageCard data={item} key={index} />
         ))}
       </div>
-      <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
+      <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto hidden">
         <Whyushelicopter />
       </div>
-      <Faq category={'helicopter'} />
+      <Faq category={"helicopter"} />
       <div className="my-9 md:my-16 px-6">
-        <ContactForm title={'Get in touch with us'} />
+        <ContactForm title={"Get in touch with us"} />
       </div>
     </main>
   );
