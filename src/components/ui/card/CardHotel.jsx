@@ -130,7 +130,7 @@ function CardHotel({ variant, data }) {
                     className="cursor-pointer"
                     href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=I would like to know more about ${data.attributes.name} booking`}
                   >
-                    <RiWhatsappFill size={24} color="#25D366" />
+                    <RiWhatsappFill size={24} color="#006039" />
                   </Link>
                 </div>
                 <Button

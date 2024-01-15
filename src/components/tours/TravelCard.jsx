@@ -98,7 +98,7 @@ const TravelCard = ({ item }) => {
                     item.attributes.price
                   )} for ${item.attributes.pax} people`}
                 >
-                  <RiWhatsappFill size={24} color="#25D366" />
+                  <RiWhatsappFill size={24} color="#006039" />
                 </Link>
               </div>
               <Button>See Details</Button>

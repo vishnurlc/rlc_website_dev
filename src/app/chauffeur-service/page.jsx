@@ -92,7 +92,7 @@ const page = async () => {
         {/* cars */}
         <InfinitScroll fetchApi={"chauffeur-cars"} />
 
-        <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
+        <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto hidden">
           <WhyusChauffer />
         </div>
         <Faq category={"chauffeur"} />
