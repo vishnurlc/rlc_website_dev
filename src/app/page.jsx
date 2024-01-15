@@ -2,7 +2,9 @@ import dynamic from "next/dynamic";
 import { HeroSection, OurServices } from "@/components";
 import VideoSection from "@/components/home/VideoSection";
 import TopDestination from "@/components/home/TopDestination";
+
 const Aboutsection = dynamic(() => import("../components/home/aboutsection"));
+const Blog = dynamic(() => import("../components/home/Blog"));
 const ServiceBanner = dynamic(() =>
   import("../components/home/ServicesBanner")
 );
@@ -74,6 +76,7 @@ export default function Home() {
         url={'https://admin.richylife.ae/rlchome.mp4'}
       /> */}
       <ServiceBanner />
+      <Blog />
       <Testimonials />
       <div className="my-9 md:my-16 px-6 ">
         <ContactForm
