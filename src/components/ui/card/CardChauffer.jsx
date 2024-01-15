@@ -46,7 +46,7 @@ function CardChauffer({ variant, data }) {
 
   return (
     <div id={data.attributes.chauffeur_make.data?.attributes.slug}>
-      <div className="grid grid-cols-1 w-full lg:grid-cols-5  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-white]">
+      <div className="grid grid-cols-1 w-full lg:grid-cols-5  max-w-[1200px] rounded-sm overflow-hidden mx-auto ">
         <Link
           href={`${path}/${data.attributes.slug}`}
           className="col-span-3 relative w-full aspect-[2/1] min-h-[120px] "
@@ -64,7 +64,7 @@ function CardChauffer({ variant, data }) {
             className="mx-auto"
           />
         </Link>
-        <div className="p-5 col-span-1 md:col-span-2">
+        <div className="p-5 col-span-1 md:col-span-2 bg-[#fbfbfb]">
           <div className="text-black h-full flex flex-col items-start justify-between">
             <h3 className="text-primary text-2xl font-bold leading-[29.04px]">
               <Link href={`${path}/${data.attributes.slug}`}>

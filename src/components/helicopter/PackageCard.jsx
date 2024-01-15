@@ -43,7 +43,7 @@ function PackageCard({ data }) {
           </h2>
           <span className="text-gray-400 text-sm">
             {" "}
-            Starting from {convertPrice(data.price)}
+            {/* Starting from {convertPrice(data.price)} */}
           </span>
         </div>
 

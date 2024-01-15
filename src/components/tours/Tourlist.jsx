@@ -8,7 +8,9 @@ const Tourlist = ({ packages }) => {
       {packages.data.map((item, index) => (
         <>
           {/* <TravelCard item={item} key={index} /> */}
-          <CardBasic data={item} />
+          <div className="pb-10" key={index}>
+            <CardBasic data={item} />
+          </div>
         </>
       ))}
     </div>

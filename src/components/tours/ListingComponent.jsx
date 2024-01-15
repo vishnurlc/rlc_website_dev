@@ -27,17 +27,17 @@ const ListingComponent = () => {
   async function getData({ params }) {
     setStatus(0);
 
-    const queryString = qs.stringify({
-      filters: {
-        destination: {
-          slug: {
-            $eq: params.slug,
-          },
-        },
-      },
-    });
+    // const queryString = qs.stringify({
+    //   filters: {
+    //     destination: {
+    //       slug: {
+    //         $eq: params.slug,
+    //       },
+    //     },
+    //   },
+    // });
 
-    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/packages?${queryString}&populate=*`;
+    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/packages?populate=*`;
 
     try {
       const res = await fetch(api, {
