@@ -32,6 +32,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
       pickupTime: "",
       fromLocation: "",
       toLocation: "",
+      ChauffeurNumberOfPax: "",
     }),
     ...(item === "yacht" && {
       yachtBookingDate: "",
@@ -93,6 +94,7 @@ const Bookingmodal = ({ item, setOpen, open }) => {
               pickupTime: "",
               fromLocation: "",
               toLocation: "",
+              ChauffeurNumberOfPax: "",
             }),
             ...(item === "yacht" && {
               yachtBookingDate: "",
@@ -345,6 +347,23 @@ const Bookingmodal = ({ item, setOpen, open }) => {
                   timeIntervals={15}
                   timeCaption="Time"
                   dateFormat="h:mm aa"
+                  className="mt-1 p-2 border rounded-md w-full"
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="NumberOfPax"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Number of Pax
+                </label>
+                <input
+                  type="number"
+                  id="ChauffeurNumberOfPax"
+                  name="ChauffeurNumberOfPax"
+                  value={formData.ChauffeurNumberOfPax}
+                  onChange={handleChange}
                   className="mt-1 p-2 border rounded-md w-full"
                   required
                 />

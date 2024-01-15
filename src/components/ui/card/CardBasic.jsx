@@ -76,13 +76,13 @@ function CardBasic({ variant, data }) {
                 <div className="text-sm text-gray-500 my-2">
                   {showFullDescription
                     ? data.attributes.description
-                    : `${data.attributes.description.slice(0, 350)}...`}
-                  {/* <button
-                    className="text-blue-500 underline cursor-pointer"
-                    onClick={toggleDescription}
+                    : `${data.attributes.description.slice(0, 150)}...`}
+                  <Link
+                    href={`${path}/${data.attributes.slug}`}
+                    className="text-primary underline cursor-pointer"
                   >
                     {showFullDescription ? "Read Less" : "Read More"}
-                  </button> */}
+                  </Link>
                 </div>
               </h3>
 
@@ -130,7 +130,7 @@ function CardBasic({ variant, data }) {
         <BookingModal
           open={bookingOpen}
           setOpen={setBookingOpen}
-          item={variant}
+          item={"tourAndExcursion"}
         />
 
         <ModalComponent open={open} setOpen={setOpen}>
