@@ -1,7 +1,7 @@
 import React from 'react';
 import { NewsCard, SectionHeading } from '..';
 import Link from 'next/link';
-
+import { HiMiniArrowUpRight } from 'react-icons/hi2';
 export async function getData(slug) {
   try {
     const res = await fetch(
@@ -39,7 +39,7 @@ export default async function Blog() {
         href="/blogs"
         className="bg-gold text-white rounded  whitespace-nowrap font-medium text-center py-2 px-6 mx-auto block w-fit"
       >
-        See more
+        See more <HiMiniArrowUpRight />
       </Link>
     </div>
   );
