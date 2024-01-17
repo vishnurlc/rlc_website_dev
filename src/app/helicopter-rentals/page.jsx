@@ -77,6 +77,18 @@ const data = [
     price: "1770",
     slug: "5",
   },
+  {
+    image: "/assets/helicopter/4.jpeg",
+    title: "40 Mins Helicopter Tour",
+    price: "1770",
+    slug: "6",
+  },
+  {
+    image: "/assets/helicopter/4.jpeg",
+    title: "Private charter helicopter",
+    price: "1770",
+    slug: "7",
+  },
 ];
 const page = () => {
   return (
