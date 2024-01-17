@@ -1,6 +1,7 @@
 import { ContactForm, HeroSection2, Whyushelicopter } from "@/components";
 import PackageCard from "@/components/helicopter/PackageCard";
 import Faq from "@/components/home/faq";
+import Link from "next/link";
 
 export const metadata = {
   title: "Helicopter Rentals Dubai",
@@ -56,21 +57,25 @@ const data = [
     image: "/assets/helicopter/1.webp",
     title: "12 Mins Helicopter Tour",
     price: "710",
+    slug: "1",
   },
   {
     image: "/assets/helicopter/2.jpeg",
     title: "17 Mins Helicopter Tour",
     price: "945",
+    slug: "2",
   },
   {
     image: "/assets/helicopter/3.jpeg",
     title: "22 Mins Helicopter Tour",
     price: "1299",
+    slug: "3",
   },
   {
     image: "/assets/helicopter/4.jpeg",
     title: "30 Mins Helicopter Tour",
     price: "1770",
+    slug: "5",
   },
 ];
 const page = () => {
@@ -89,7 +94,9 @@ const page = () => {
 
       <div className=" my-9 md:my-16 px-6 max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-9 ">
         {data.map((item, index) => (
-          <PackageCard data={item} key={index} />
+          <Link href={`/helicopter-rentals/${item.slug}`} key={index}>
+            <PackageCard data={item} />
+          </Link>
         ))}
       </div>
       <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto hidden">
