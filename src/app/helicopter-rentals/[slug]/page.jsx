@@ -5,48 +5,48 @@ import HelicopSpec from "@/components/helicopter/HelicopSpec";
 
 import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
 
-export async function generateMetadata({ params }) {
-  try {
-    const car = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/chauffeur-cars?filters[slug][$eq]=${params.slug}&populate=images`,
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
-        },
-      }
-    ).then((res) => res.json());
+// export async function generateMetadata({ params }) {
+//   try {
+//     const car = await fetch(
+//       `${process.env.NEXT_PUBLIC_BACKEND_URL}/chauffeur-cars?filters[slug][$eq]=${params.slug}&populate=images`,
+//       {
+//         headers: {
+//           Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
+//         },
+//       }
+//     ).then((res) => res.json());
 
-    return {
-      title:
-        car.data[0].attributes.name || "| Luxury Chauffeur Service in Dubai",
-      description:
-        car.data[0].attributes.description ||
-        " Luxury Chauffeur Service with Richy life Club",
-      openGraph: {
-        type: "website",
-        title:
-          car.data[0].attributes.name || "| Luxury Chauffeur Service in Dubai",
-        description:
-          car.data[0].attributes.description ||
-          " Luxury Chauffeur Service with Richy life Club",
-        images: [
-          {
-            url: `${car.data[0].attributes.images.data[0].attributes.url}`,
-            width: 800,
-            height: 600,
-          },
-          {
-            url: `${car.data[0].attributes.images.data[0].attributes.url}`,
-            width: 300,
-            height: 200,
-          },
-        ],
-      },
-    };
-  } catch (error) {
-    console.log(error);
-  }
-}
+//     return {
+//       title:
+//         car.data[0].attributes.name || "| Luxury Chauffeur Service in Dubai",
+//       description:
+//         car.data[0].attributes.description ||
+//         " Luxury Chauffeur Service with Richy life Club",
+//       openGraph: {
+//         type: "website",
+//         title:
+//           car.data[0].attributes.name || "| Luxury Chauffeur Service in Dubai",
+//         description:
+//           car.data[0].attributes.description ||
+//           " Luxury Chauffeur Service with Richy life Club",
+//         images: [
+//           {
+//             url: `${car.data[0].attributes.images.data[0].attributes.url}`,
+//             width: 800,
+//             height: 600,
+//           },
+//           {
+//             url: `${car.data[0].attributes.images.data[0].attributes.url}`,
+//             width: 300,
+//             height: 200,
+//           },
+//         ],
+//       },
+//     };
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
 async function getData(slug) {
   let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/chauffeur-cars?filters[slug][$eq]=${slug.slug}&populate=*`;
@@ -192,14 +192,14 @@ const page = async ({ params }) => {
             <p>
               Richy Life Club is the ultimate destination for premier helicopter
               services in Dubai. When you secure your ticket with Richy Life
-              Club, you're not just booking a helicopter ride; you're immersing
+              Club, youre not just booking a helicopter ride, youre immersing
               yourself in a world-class experience. Create extraordinary
               memories and embark on an unforgettable journey. Richy Life Club
               presents an array of helicopter ride options in Dubai, each
               offering a distinctive adventure. Our diverse package options
               ensure that every flight is a unique and thrilling experience.
               Purchase your tickets now through our official website and elevate
-              your life with Richy Life Club's exclusive helicopter rides.
+              your life with Richy Life Clubs exclusive helicopter rides.
             </p>
             <br />
             <p>{car.data[0].attributes.description}</p>
@@ -287,22 +287,22 @@ const page = async ({ params }) => {
 
 export default page;
 
-export const generateStaticParams = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/chauffeur-cars`,
-    {
-      next: {
-        revalidate: 40,
-      },
-      headers: {
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
-      },
-    }
-  );
+// export const generateStaticParams = async () => {
+//   const res = await fetch(
+//     `${process.env.NEXT_PUBLIC_BACKEND_URL}/chauffeur-cars`,
+//     {
+//       next: {
+//         revalidate: 40,
+//       },
+//       headers: {
+//         Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
+//       },
+//     }
+//   );
 
-  const data = await res.json();
+//   const data = await res.json();
 
-  return data.data.map((blog) => ({
-    slug: blog.attributes.slug,
-  }));
-};
+//   return data.data.map((blog) => ({
+//     slug: blog.attributes.slug,
+//   }));
+// };
