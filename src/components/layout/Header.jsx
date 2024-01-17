@@ -194,7 +194,7 @@ export default function Header() {
       onMouseLeave={handleDropdownLeave}
     >
       <div className=" bg-white px-1">
-        <div className="md:max-w-[1200px] mx-auto relative text-gold flex items-center justify-between  md:justify-end  text-xs gap-1 md:gap-5 py-2 ">
+        <div className="md:max-w-[1200px] mx-auto relative text-gold flex items-center justify-between  sm:justify-end  text-xs sm:gap-5 py-2 ">
           Private Assistant 24/7{" "}
           <span className="flex gap-2 items-center">
             <BiPhoneCall /> +971 505 5889 55
