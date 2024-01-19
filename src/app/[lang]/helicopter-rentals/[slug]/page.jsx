@@ -119,6 +119,7 @@ const page = async ({ params }) => {
       title: "Private charter helicopter",
       price: "1770",
       slug: "7",
+      private_charter: true,
     },
   ];
 
@@ -154,6 +155,7 @@ const page = async ({ params }) => {
           name: selectedItem.title,
           price: selectedItem.price,
           description: selectedItem.description,
+          private_charter: selectedItem.private_charter,
         },
       },
     ],
@@ -189,20 +191,20 @@ const page = async ({ params }) => {
             </span>
           </div>
           <p className="text-sm md:text-base text-justify md:text-left text-gray-500">
-            <p>
-              Richy Life Club is the ultimate destination for premier helicopter
-              services in Dubai. When you secure your ticket with Richy Life
-              Club, youre not just booking a helicopter ride, youre immersing
-              yourself in a world-class experience. Create extraordinary
-              memories and embark on an unforgettable journey. Richy Life Club
-              presents an array of helicopter ride options in Dubai, each
-              offering a distinctive adventure. Our diverse package options
-              ensure that every flight is a unique and thrilling experience.
-              Purchase your tickets now through our official website and elevate
-              your life with Richy Life Clubs exclusive helicopter rides.
-            </p>
+            Richy Life Club is the ultimate destination for premier helicopter
+            services in Dubai. When you secure your ticket with Richy Life Club,
+            youre not just booking a helicopter ride, youre immersing yourself
+            in a world-class experience. Create extraordinary memories and
+            embark on an unforgettable journey. Richy Life Club presents an
+            array of helicopter ride options in Dubai, each offering a
+            distinctive adventure. Our diverse package options ensure that every
+            flight is a unique and thrilling experience. Purchase your tickets
+            now through our official website and elevate your life with Richy
+            Life Clubs exclusive helicopter rides.
             <br />
-            <p>{car.data[0].attributes.description}</p>
+          </p>
+          <p className="text-sm md:text-base text-justify md:text-left text-gray-500">
+            {car.data[0].attributes.description}
           </p>
         </div>
 
@@ -240,26 +242,30 @@ const page = async ({ params }) => {
                   </div>
                 </div>
               </div> */}
-              <div className="border w-full  rounded-lg shadow-lg">
-                <div className="relative w-full aspect-[1/1.5] max-h-[35vh] rounded overflow-hidden">
-                  <Image
-                    src={
-                      car.data[0].attributes.map.images.data[0].attributes.url
-                    }
-                    fill
-                    alt={"Richy Life Club"}
-                    style={{
-                      objectFit: "cover",
-                      objectPosition: "center",
-                    }}
-                  />
-                </div>
-                {/* <AnimatedBtn
+              {car.data[0].attributes.private_charter === true ? (
+                <></>
+              ) : (
+                <div className="border w-full  rounded-lg shadow-lg">
+                  <div className="relative w-full aspect-[1/1.5] max-h-[35vh] rounded overflow-hidden">
+                    <Image
+                      src={
+                        car.data[0].attributes.map.images.data[0].attributes.url
+                      }
+                      fill
+                      alt={"Richy Life Club"}
+                      style={{
+                        objectFit: "cover",
+                        objectPosition: "center",
+                      }}
+                    />
+                  </div>
+                  {/* <AnimatedBtn
                     text={"Reserve now"}
                     styles={"rounded-md bg-gold text-white mt-4 "}
                     msg={`I would like to reserve a table at ${car.data[0].attributes.name}`}
                   /> */}
-              </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
