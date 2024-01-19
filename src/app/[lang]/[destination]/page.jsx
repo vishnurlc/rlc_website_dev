@@ -3,13 +3,19 @@ import { HeroSection, OurServices } from "@/components";
 import VideoSection from "@/components/home/VideoSection";
 import TopDestination from "@/components/home/TopDestination";
 
-const Aboutsection = dynamic(() => import("@/components/home/aboutsection"));
-const Blog = dynamic(() => import("@/components/home/Blog"));
-const ServiceBanner = dynamic(() => import("@/components/home/ServicesBanner"));
-const Faq = dynamic(() => import("@/components/home/faq"));
-const Testimonials = dynamic(() => import("@/components/home/Testimonials"));
+const Aboutsection = dynamic(() =>
+  import("../../../components/home/aboutsection")
+);
+const Blog = dynamic(() => import("../../../components/home/Blog"));
+const ServiceBanner = dynamic(() =>
+  import("../../../components/home/ServicesBanner")
+);
+const Faq = dynamic(() => import("../../../components/home/faq"));
+const Testimonials = dynamic(() =>
+  import("../../../components/home/Testimonials")
+);
 const ContactForm = dynamic(() =>
-  import("@/components/formComponent/ContactForm")
+  import("../../../components/formComponent/ContactForm")
 );
 export const metadata = {
   title: "Richy Life Club - Premium LifeStyle Club",
