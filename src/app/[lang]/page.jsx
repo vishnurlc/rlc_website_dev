@@ -70,8 +70,7 @@ export default async function Home({ params }) {
         type={"video"}
         btntext={"Explore More"}
       />
-
-      <Aboutsection languageData={languageData} />
+      {languageData && <Aboutsection languageData={languageData} />}
       {/* <VideoSection
         posterurl={'/assets/home/heroposter1.webp'}
         url={'https://admin.richylife.ae/rlchome.mp4'}

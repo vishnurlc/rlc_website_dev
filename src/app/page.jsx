@@ -68,7 +68,7 @@ export default function Home() {
         btntext={"Explore More"}
       />
 
-      <Aboutsection />
+      {/* <Aboutsection /> */}
       {/* <VideoSection
         posterurl={'/assets/home/heroposter1.webp'}
         url={'https://admin.richylife.ae/rlchome.mp4'}

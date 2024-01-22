@@ -5,8 +5,8 @@ const dictionaries = {
 
 export const getDictionary = async (locale) => {
   try {
-    const module = await (locale ? dictionaries[locale]() : dictionaries.en());
-    return module;
+    const dic = await (locale ? dictionaries[locale]() : dictionaries.en());
+    return dic;
   } catch (error) {
     console.error(`Error loading dictionary for locale ${locale}:`, error);
     throw error; // Rethrow the error for further handling
