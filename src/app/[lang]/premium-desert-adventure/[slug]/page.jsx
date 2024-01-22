@@ -22,14 +22,12 @@ export async function generateMetadata({ params }) {
       }
     ).then((res) => res.json());
     return {
-      title: car.data[0].attributes.title || "| Experience Tours & Excursions",
-      description:
-        car.data[0].attributes.description || "Experience Tours & Excursions",
+      title: car.data[0].attributes.name || "| Desert Safari",
+      description: car.data[0].attributes.description || "Desert Safari",
       openGraph: {
         type: "website",
-        title: car.data[0].attributes.name || "| Experience Tours & Excursions",
-        description:
-          car.data[0].attributes.description || "Experience Tours & Excursions",
+        title: car.data[0].attributes.name || "| Desert Safari",
+        description: car.data[0].attributes.description || " Desert Safari",
         images: [
           {
             url: `${car.data[0].attributes.image.data[0].attributes.url}`,
@@ -120,14 +118,17 @@ export default async function CarDetail({ params: { slug } }) {
 }
 
 export const generateStaticParams = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/packages`, {
-    next: {
-      revalidate: 40,
-    },
-    headers: {
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
-    },
-  });
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/desert-safari-packages`,
+    {
+      next: {
+        revalidate: 40,
+      },
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
+      },
+    }
+  );
 
   const data = await res.json();
   return data.data.map((car) => ({
