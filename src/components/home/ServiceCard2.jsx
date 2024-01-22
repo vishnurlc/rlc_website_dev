@@ -21,22 +21,24 @@ function ServiceCard2({ url, title, price, link }) {
     return priceFormatted;
   };
   return (
-    <Link href={link}>
+    <div>
       <motion.div
         className="relative w-full aspect-[1/1.5] max-h-[35vh] rounded overflow-hidden"
         whileHover={{
           scale: 1.02,
         }}
       >
-        <Image
-          src={url}
-          alt={title}
-          fill
-          style={{
-            objectFit: 'cover',
-          }}
-          sizes="100vw"
-        />
+        <Link href={link}>
+          <Image
+            src={url}
+            alt={title}
+            fill
+            style={{
+              objectFit: 'cover',
+            }}
+            sizes="100vw"
+          />
+        </Link>
         <div className="absolute p-4 text-white w-full h-fit bottom-0 left-0 right-0 z-10">
           <div>
             <h2 className="uppercase font-medium tracking-wide text-xs md:text-sm font-poppins">
@@ -55,7 +57,7 @@ function ServiceCard2({ url, title, price, link }) {
           />
         </div>
       </motion.div>
-    </Link>
+    </div>
   );
 }
 
