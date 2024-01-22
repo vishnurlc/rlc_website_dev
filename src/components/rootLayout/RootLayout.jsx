@@ -8,7 +8,7 @@ import { CurrencyProvider } from "@/context/currencyContext";
 import Script from "next/script";
 import Image from "next/image";
 
-const RootLayout = ({ children }) => {
+const RootLayout = ({ children, lang }) => {
   return (
     <>
       <Script id="gtm-manager-init" strategy="afterInteractive">
@@ -67,7 +67,7 @@ const RootLayout = ({ children }) => {
           />
         </noscript>
         <CurrencyProvider>
-          <Header />
+          <Header lang={lang} />
           {children}
           <div className="fixed bottom-[30px] right-[30px] z-20 flex flex-col gap-5">
             <Link

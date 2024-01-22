@@ -12,6 +12,8 @@ import { motion } from "framer-motion";
 import CurrencyDropdown from "./CurrencyDropdown";
 import MobileCurrency from "./MobileCurrency";
 import { FaChevronDown, FaMobileAlt, FaWhatsapp } from "react-icons/fa";
+import { getDictionary } from "@/dectionaries";
+import jsonData from "../../dictionaries/en.json";
 const dropdownvariant = {
   visible: {
     opacity: 1,
@@ -56,88 +58,8 @@ const menuitemVariant = {
   transition: { opacity: { duration: 0.2 } },
 };
 
-const links = [
-  {
-    name: "Premium Transfers",
-    link: "/chauffeur-service",
-  },
-  {
-    name: "Rent A Car",
-    link: "/luxury-car-rentals",
-  },
-  {
-    name: "Luxury Yacht Rentals",
-    link: "/luxury-yacht-rentals",
-  },
-
-  // {
-  //   name: 'Exclusive Water Sports',
-  //   link: '/exclusive-water-sports',
-  //   dropdown: true,
-  //   products: [
-  //     {
-  //       name: 'Premium Jetski',
-  //       href: '/premium-jetski-rental',
-  //     },
-  //     {
-  //       name: 'Premium Gold Jetski',
-  //       href: '/premium-gold-jetski',
-  //     },
-  //   ],
-  // },
-
-  {
-    name: "Services",
-    link: "#",
-    dropdown: true,
-    products: [
-      {
-        name: "Tours & Excursions",
-        href: "/tours-excursions",
-      },
-      {
-        name: "Clubs & Restaurants",
-        href: "/clubs-restaurants",
-      },
-
-      {
-        name: "Premium Desert Adventure",
-        href: "/premium-desert-adventure",
-      },
-      {
-        name: "Helicopter",
-        href: "/helicopter-rentals",
-      },
-      {
-        name: "Private Jet Charter",
-        href: "/private-jet-rentals",
-      },
-
-      {
-        name: "Premium Jetski",
-        href: "/premium-jetski-rental",
-      },
-      {
-        name: "Premium Gold Jetski",
-        href: "/premium-gold-jetski",
-      },
-      {
-        name: "Exotic Pet VIP Experiences",
-        href: "/exotic-pet-experiences",
-      },
-      {
-        name: "News & Events",
-        href: "/blogs",
-      },
-    ],
-  },
-  {
-    name: "Contact Us",
-    link: "/contact-us",
-  },
-];
-
-export default function Header() {
+export default function Header({ lang }) {
+  const [headerData, setHeaderData] = useState(jsonData);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [headerType, setHeaderType] = useState(0);
   const [activeDropdown, setActiveDropdown] = useState(null); // Keep track of active dropdown
@@ -152,6 +74,15 @@ export default function Header() {
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [path]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const dict = await getDictionary(lang);
+
+      setHeaderData(dict.layout.header);
+    };
+    fetchData();
+  }, [lang]);
 
   // Function to handle dropdown hover
   const handleDropdownHover = (index) => {
@@ -185,6 +116,87 @@ export default function Header() {
   //     window.removeEventListener('scroll', handleScroll);
   //   };
   // }, []);
+
+  const links = [
+    {
+      name: "Premium Transfers",
+      link: "/chauffeur-service",
+    },
+    {
+      name: "Rent A Car",
+      link: "/luxury-car-rentals",
+    },
+    {
+      name: "Luxury Yacht Rentals",
+      link: "/luxury-yacht-rentals",
+    },
+
+    // {
+    //   name: 'Exclusive Water Sports',
+    //   link: '/exclusive-water-sports',
+    //   dropdown: true,
+    //   products: [
+    //     {
+    //       name: 'Premium Jetski',
+    //       href: '/premium-jetski-rental',
+    //     },
+    //     {
+    //       name: 'Premium Gold Jetski',
+    //       href: '/premium-gold-jetski',
+    //     },
+    //   ],
+    // },
+
+    {
+      name: "Services",
+      link: "#",
+      dropdown: true,
+      products: [
+        {
+          name: "Tours & Excursions",
+          href: "/tours-excursions",
+        },
+        {
+          name: "Clubs & Restaurants",
+          href: "/clubs-restaurants",
+        },
+
+        {
+          name: "Premium Desert Adventure",
+          href: "/premium-desert-adventure",
+        },
+        {
+          name: "Helicopter",
+          href: "/helicopter-rentals",
+        },
+        {
+          name: "Private Jet Charter",
+          href: "/private-jet-rentals",
+        },
+
+        {
+          name: "Premium Jetski",
+          href: "/premium-jetski-rental",
+        },
+        {
+          name: "Premium Gold Jetski",
+          href: "/premium-gold-jetski",
+        },
+        {
+          name: "Exotic Pet VIP Experiences",
+          href: "/exotic-pet-experiences",
+        },
+        {
+          name: "News & Events",
+          href: "/blogs",
+        },
+      ],
+    },
+    {
+      name: "Contact Us",
+      link: "/contact-us",
+    },
+  ];
   return (
     <header
       className="fixed w-screen top-0 z-50 transition-all backdrop-blur-lg"
@@ -195,7 +207,7 @@ export default function Header() {
     >
       <div className=" bg-white px-1">
         <div className="md:max-w-[1200px] mx-auto relative text-gold flex items-center justify-between  sm:justify-end  text-xs sm:gap-5 py-2 ">
-          Private Assistant 24/7{" "}
+          {headerData.pvta} 24/7{" "}
           <span className="flex gap-2 items-center">
             <BiPhoneCall /> +971 505 5889 55
             <FaChevronDown onClick={handleArrowClick} />
@@ -207,14 +219,14 @@ export default function Header() {
                 href={`tel:${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
                 className="flex gap-2 items-center justify-start px-4 py-2 text-gray-800 hover:bg-gray-200 text-sm"
               >
-                <FaMobileAlt /> Call
+                <FaMobileAlt /> {headerData.call}
               </Link>
               <Link
                 href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=I would like to connect with Private Assistant of RLC?`}
                 className="flex gap-2 items-center justify-start px-4 py-2 text-gray-800 hover:bg-gray-200 text-sm"
               >
                 <FaWhatsapp />
-                WhatsApp
+                {headerData.whatsapp}
               </Link>
             </div>
           )}

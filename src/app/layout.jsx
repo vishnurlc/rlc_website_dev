@@ -30,13 +30,14 @@ export const metadata = {
   },
 };
 
-export default function Layout({ children }) {
+export default function Layout({ children, params }) {
+  const { lang } = params;
   return (
     <html
       lang="en"
       className={`${inter.variable} ${nunito_sans.variable} ${poppins.variable}`}
     >
-      <RootLayout>{children}</RootLayout>
+      <RootLayout lang={lang}>{children}</RootLayout>
     </html>
   );
 }

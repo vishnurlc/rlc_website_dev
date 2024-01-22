@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import { HeroSection, OurServices } from "@/components";
 import VideoSection from "@/components/home/VideoSection";
 import TopDestination from "@/components/home/TopDestination";
+import { getDictionary } from "@/dectionaries";
 
 const Aboutsection = dynamic(() => import("@/components/home/aboutsection"));
 const Blog = dynamic(() => import("@/components/home/Blog"));
@@ -54,7 +55,9 @@ export const metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home({ params }) {
+  const { lang } = params;
+  const languageData = await getDictionary(lang);
   return (
     <main className="overflow-hidden">
       <h1 className="sr-only">Richy life Club - Experience Luxury in Dubai</h1>
@@ -68,7 +71,7 @@ export default function Home() {
         btntext={"Explore More"}
       />
 
-      <Aboutsection />
+      <Aboutsection languageData={languageData} />
       {/* <VideoSection
         posterurl={'/assets/home/heroposter1.webp'}
         url={'https://admin.richylife.ae/rlchome.mp4'}

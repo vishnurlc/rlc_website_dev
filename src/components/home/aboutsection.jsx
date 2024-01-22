@@ -3,34 +3,34 @@ import Image from "next/image";
 import AboutCounter from "./AboutCounter";
 import AnimationImage from "../Animation/AnimationImage";
 
-function Aboutsection() {
+function Aboutsection({ languageData }) {
   const data = [
     {
-      title: "Years Of Experience",
+      title: languageData.aboutus.aboutcounter.c1,
       startNumber: "15",
       endNumber: "30",
       suffix: "",
     },
     {
-      title: "Customer Satisfaction",
+      title: languageData.aboutus.aboutcounter.c2,
       startNumber: "30",
       endNumber: "100",
       suffix: "%",
     },
     {
-      title: "Concierge Assistance",
+      title: languageData.aboutus.aboutcounter.c3,
       startNumber: "1000",
       endNumber: "2000",
       suffix: "+",
     },
     {
-      title: "Private events ",
+      title: languageData.aboutus.aboutcounter.c4,
       startNumber: "80",
       endNumber: "120",
       suffix: "",
     },
     {
-      title: "Customized Experiences",
+      title: languageData.aboutus.aboutcounter.c5,
       startNumber: "800",
       endNumber: "1400",
       suffix: "+",
@@ -61,26 +61,10 @@ function Aboutsection() {
           </h2>
 
           <p className="py-10 text-md font-thin text-secondary">
-            Richy Life, based in Dubai and Turkey, is a leading provider of
-            luxurious holidays. Visit Richy Life for your next fantastic getaway
-            from your bustling daily schedule and to live life to the fullest.
-            We serve as a substitute for and synonym for the opulent existence.
-            There is no better site than Richy Life if you want to have an
-            enjoyable vacation away from home. We welcome visitors and travelers
-            who want to stay in luxurious villas and opulent bungalows. Our
-            acclaimed and exclusive trip packages are available to travelers
-            worldwide.
+            {languageData.aboutus.d1}
           </p>
           <p className=" text-md font-thin text-secondary">
-            At Richy Life, everything is lavish and upscale. The moment you make
-            a reservation with us, you begin living a grand and opulent
-            existence. High-class automobiles, helicopters, private aircraft,
-            and yacht are available to our guests for luxurious and exotic
-            excursions. Your time with us will be some of the finest times of
-            your life. Your luxury vacations will be planned and mapped out by
-            our highly skilled and experienced team of travel experts. Our goal
-            is to provide our visitors a vacation like none they&apos;ve had
-            before.
+            {languageData.aboutus.d2}
           </p>
         </div>
       </div>
