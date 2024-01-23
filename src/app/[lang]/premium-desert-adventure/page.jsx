@@ -1,25 +1,25 @@
-import { ContactForm, HeroSection2, WhyusdesertSafari } from "@/components";
-import DesertSafariCard from "@/components/desertsafari/DesertSafariCard";
-import Faq from "@/components/home/faq";
-import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
-import { Button } from "@/components/ui/button/Button";
-import Image from "next/image";
-import Link from "next/link";
+import { ContactForm, HeroSection2, WhyusdesertSafari } from '@/components';
+import DesertSafariCard from '@/components/desertsafari/DesertSafariCard';
+import Faq from '@/components/home/faq';
+import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
+import { Button } from '@/components/ui/button/Button';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const locations = [
   {
-    url: "/assets/jetskipage/jumeirah.webp", // Replace with actual image path
-    location: "ABU DHABI",
+    url: '/assets/jetskipage/jumeirah.webp', // Replace with actual image path
+    location: 'ABU DHABI',
     price: 150,
   },
   {
-    url: "/assets/jetskipage/burjalarab.avif", // Replace with actual image path
-    location: "Burj Al Arab",
+    url: '/assets/jetskipage/burjalarab.avif', // Replace with actual image path
+    location: 'Burj Al Arab',
     price: 250,
   },
   {
-    url: "/assets/jetskipage/atlantisview.jpeg", // Replace with actual image path
-    location: "Atlantis View",
+    url: '/assets/jetskipage/atlantisview.jpeg', // Replace with actual image path
+    location: 'Atlantis View',
     price: 180,
   },
 ];
@@ -39,43 +39,43 @@ export async function getData() {
 
     return data;
   } catch (error) {
-    console.log("s", error);
+    console.log('s', error);
     return {};
   }
 }
 
 export const metadata = {
-  title: "Premium Desert Safari in Dubai",
+  title: 'Premium Desert Safari in Dubai',
   description:
-    "Experience the magic of the Dubai desert on a thrilling desert safari. Enjoy dune bashing, camel riding, and sandboarding, and savor a delicious barbecue dinner under the stars.",
+    'Experience the magic of the Dubai desert on a thrilling desert safari. Enjoy dune bashing, camel riding, and sandboarding, and savor a delicious barbecue dinner under the stars.',
   keywords: [
-    "Desert Safari Dubai",
-    "Luxury Desert Safari",
-    "Desert Adventure Tours",
-    "VIP Desert Safari",
-    "Private Desert Tours",
-    "Sunset Desert Safari",
-    "Dune Bashing Experience",
-    "Camel Riding Safari",
-    "Desert Camps in Dubai",
-    "Arabian Nights in the Desert",
-    "Dubai Desert Wildlife",
-    "Luxury 4x4 Desert Tours",
-    "Quad Biking in the Desert",
-    "Sandboarding Adventure",
-    "Desert Photography Tours",
-    "Desert Safari Packages and deals",
-    "Best Desert Safari in Dubai",
-    "Romantic Desert Getaways",
-    "Dune bashing, Camel riding",
-    "traditional Arabic entertainment Dubai",
-    "BBQ dinner Dubai, belly dancing Dubai",
+    'Desert Safari Dubai',
+    'Luxury Desert Safari',
+    'Desert Adventure Tours',
+    'VIP Desert Safari',
+    'Private Desert Tours',
+    'Sunset Desert Safari',
+    'Dune Bashing Experience',
+    'Camel Riding Safari',
+    'Desert Camps in Dubai',
+    'Arabian Nights in the Desert',
+    'Dubai Desert Wildlife',
+    'Luxury 4x4 Desert Tours',
+    'Quad Biking in the Desert',
+    'Sandboarding Adventure',
+    'Desert Photography Tours',
+    'Desert Safari Packages and deals',
+    'Best Desert Safari in Dubai',
+    'Romantic Desert Getaways',
+    'Dune bashing, Camel riding',
+    'traditional Arabic entertainment Dubai',
+    'BBQ dinner Dubai, belly dancing Dubai',
   ],
   openGraph: {
-    title: "Premium Desert Safari in Dubai",
+    title: 'Premium Desert Safari in Dubai',
     description:
-      "Experience the magic of the Dubai desert on a thrilling desert safari. Enjoy dune bashing, camel riding, and sandboarding, and savor a delicious barbecue dinner under the stars.",
-    siteName: "Richy life Club",
+      'Experience the magic of the Dubai desert on a thrilling desert safari. Enjoy dune bashing, camel riding, and sandboarding, and savor a delicious barbecue dinner under the stars.',
+    siteName: 'Richy life Club',
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/footer/1.webp`,
@@ -88,8 +88,8 @@ export const metadata = {
         height: 200,
       },
     ],
-    locale: "en_US",
-    type: "website",
+    locale: 'en_US',
+    type: 'website',
   },
 };
 export default async function page() {
@@ -102,9 +102,9 @@ export default async function page() {
           type="video"
           heading1="Desert Adventure"
           heading2="Experiences"
-          subheading={"Journey into the Extraordinary"}
-          btntext={"Book an appointment"}
-          posterurl={"/assets//premiumdesert/desert.png"}
+          subheading={'Journey into the Extraordinary'}
+          btntext={'Book an appointment'}
+          posterurl={'/assets//premiumdesert/desert.png'}
           url="/assets/premiumdesert/bannervideo.mov"
         />
       </div>
@@ -117,8 +117,8 @@ export default async function page() {
                 fill
                 alt="Dune bashing Dubai | Adventures with Richy life Club"
                 style={{
-                  objectFit: "cover",
-                  borderRadius: "8px",
+                  objectFit: 'cover',
+                  borderRadius: '8px',
                 }}
               />
             </div>
@@ -126,7 +126,7 @@ export default async function page() {
               <h3 className="text-2xl md:text-5xl text-gold capitalize font-inter">
                 Unveil the Enchantment of Dubai&apos;s Desert Wonders
               </h3>
-              <p className="text-gray-300 my-6 ">
+              <p className="text-gray-600 my-6 ">
                 Embark on an immersive journey into the heart of Dubai&apos;s
                 majestic desert landscape with our captivating Desert Safari
                 experience. Brace yourself for a thrilling adventure that will
@@ -148,11 +148,11 @@ export default async function page() {
       <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
         <WhyusdesertSafari />
       </div>
-      <Faq category={"desertsafari"} />
+      <Faq category={'desertsafari'} />
       <div className="my-9 md:my-16 px-6">
         <ContactForm
-          title={"Get In Touch"}
-          description={"Experience The Ultimate Adrenaline Rush"}
+          title={'Get In Touch'}
+          description={'Experience The Ultimate Adrenaline Rush'}
         />
       </div>
     </main>
