@@ -113,7 +113,7 @@ export default async function page() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="relative w-full h-[30vh]  md:h-[50vh] max-h-[700px]">
               <Image
-                src="/assets/footer/5.webp"
+                src="/assets/premiumdesert/3.jpg"
                 fill
                 alt="Dune bashing Dubai | Adventures with Richy life Club"
                 style={{
