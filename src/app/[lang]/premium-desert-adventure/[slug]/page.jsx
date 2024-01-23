@@ -1,15 +1,16 @@
 import {
   CarSpec,
   ContactForm,
+  DescriptionComponent,
   GalleryJet,
   HeroCarousel,
   PriceComponent,
   TechnicalSpec,
-} from "@/components";
-import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
-import ItineraryComponent from "@/components/tours/ItineraryComponent";
-import PriceAndBookNow from "@/components/tours/PriceAndBookNow";
-import qs from "qs";
+} from '@/components';
+import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
+import ItineraryComponent from '@/components/tours/ItineraryComponent';
+import PriceAndBookNow from '@/components/tours/PriceAndBookNow';
+import qs from 'qs';
 
 export async function generateMetadata({ params }) {
   try {
@@ -22,12 +23,12 @@ export async function generateMetadata({ params }) {
       }
     ).then((res) => res.json());
     return {
-      title: car.data[0].attributes.name || "| Desert Safari",
-      description: car.data[0].attributes.description || "Desert Safari",
+      title: car.data[0].attributes.name || '| Desert Safari',
+      description: car.data[0].attributes.description || 'Desert Safari',
       openGraph: {
-        type: "website",
-        title: car.data[0].attributes.name || "| Desert Safari",
-        description: car.data[0].attributes.description || " Desert Safari",
+        type: 'website',
+        title: car.data[0].attributes.name || '| Desert Safari',
+        description: car.data[0].attributes.description || ' Desert Safari',
         images: [
           {
             url: `${car.data[0].attributes.image.data[0].attributes.url}`,
@@ -49,7 +50,7 @@ export async function generateMetadata({ params }) {
 
 export async function getData(slug) {
   const query = qs.stringify({
-    populate: "*",
+    populate: '*',
   });
   try {
     const res = await fetch(
@@ -66,7 +67,7 @@ export async function getData(slug) {
 
     return data;
   } catch (error) {
-    console.log("s", error);
+    console.log('s', error);
     return {};
   }
 }
@@ -91,9 +92,10 @@ export default async function CarDetail({ params: { slug } }) {
               {car.data[0].attributes.name}
             </span>
           </div>
-          <p className="text-sm md:text-base text-justify md:text-left text-gray-500">
+          <DescriptionComponent bio={car.data[0].attributes.details} />
+          {/* <p className="text-sm md:text-base text-justify md:text-left text-gray-500">
             {car.data[0].attributes.details}
-          </p>
+          </p> */}
         </div>
         {/* <ItineraryComponent itinerary={car.data[0].attributes.itinerary} /> */}
         <div className="text-gray-500 mt-7  text-center md:text-start flex items-center justify-start gap-2 flex-wrap">
@@ -109,8 +111,8 @@ export default async function CarDetail({ params: { slug } }) {
           )}
         </div>
         <ContactForm
-          title={"Connect with us"}
-          description={"Book your dream vacation with us"}
+          title={'Connect with us'}
+          description={'Book your dream vacation with us'}
         />
       </div>
     </main>
