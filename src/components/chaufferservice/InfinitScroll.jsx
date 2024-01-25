@@ -8,6 +8,7 @@ import qs from "qs";
 import { useSearchParams } from "next/navigation";
 import ToursCard from "../ui/card/ToursCard";
 import CardHotel from "../ui/card/CardHotel";
+import JetskiCard from "../ui/card/JetskiCard";
 
 function InfinitScroll({ fetchApi }) {
   const [cars, setCars] = useState([]);
@@ -75,6 +76,8 @@ function InfinitScroll({ fetchApi }) {
               return <ClubCard data={car} key={index} order={index} />;
             case "packages":
               return <ToursCard data={car} key={index} order={index} />;
+            case "jetskis":
+              return <JetskiCard data={car} key={index} order={index} />;
             default:
               break;
           }

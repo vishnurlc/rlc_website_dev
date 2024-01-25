@@ -1,4 +1,5 @@
 import { ContactForm, HeroSection2, WhyusJetski } from "@/components";
+import InfinitScroll from "@/components/chaufferservice/InfinitScroll";
 import Faq from "@/components/home/faq";
 import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
 import LocationCard from "@/components/premiumjetski/LocationCard";
@@ -87,8 +88,8 @@ export async function getData() {
 export default async function JetSkiPage() {
   const jetski = await getData();
   return (
-    <main className="pt-[100px] md:pt-0">
-      <div className="hidden md:block">
+    <main className="pt-[140px]">
+      <div className="hidden">
         <HeroSection2
           type={"video"}
           heading1={"Luxury Jetski"}
@@ -99,9 +100,9 @@ export default async function JetSkiPage() {
           overlay={1}
         />
       </div>
-      <div className="bg-black px-6 py-9 md:py-16 ">
+      <div className="px-6 py-9 md:py-16 ">
         <div className="max-w-[1200px] mx-auto flex flex-col gap-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="relative w-full h-[30vh]  md:h-[50vh] max-h-[700px]">
               <Image
                 src="/assets/jetskipage/jetskisample.jpg"
@@ -130,12 +131,17 @@ export default async function JetSkiPage() {
                 indelible memory.
               </p>
             </div>
-          </div>
+          </div> */}
 
           <div>
             <h3 className=" text-center mb-9 text-2xl md:text-5xl text-gold capitalize font-inter">
               Our Premium Jetski
             </h3>
+
+            <div className="max-w-[1200px] mx-auto px-0 md:px-6 pb-10">
+              <InfinitScroll fetchApi="jetskis" />
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-8">
               {jetski.data.map((item, index) => (
                 <div className="relative  w-full aspect-[357/406]" key={index}>
