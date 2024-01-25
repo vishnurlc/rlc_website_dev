@@ -13,6 +13,7 @@ import {
   FaConciergeBell,
   FaTemperatureHigh,
 } from 'react-icons/fa';
+import { GiFruitBowl } from 'react-icons/gi';
 //dsa
 import { BiSolidSpeaker, BiSolidFridge } from 'react-icons/bi';
 import { BsProjectorFill } from 'react-icons/bs';
@@ -39,6 +40,7 @@ function Amenitys({ data }) {
     refrigerator: <BiSolidFridge size={24} key={'fridge'} />,
     lifejacket: <GiLifeJacket size={24} key="lifejacket" />,
     towel: <GiTowel size={24} key={'towel'} />,
+    'fruit-platter': <GiFruitBowl size={24} key={'fruitplatter'} />,
   };
   return (
     <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-7 justify-items-center">

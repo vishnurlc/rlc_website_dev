@@ -62,7 +62,7 @@ const Footer = () => {
         link: '/membership',
       },
       {
-        title: 'Faq',
+        title: 'Questions and Answers',
         link: '/faq',
       },
     ],

@@ -2,7 +2,7 @@ import { SectionHeading } from '..';
 
 const Whyus = () => {
   return (
-    <div>
+    <div className="sr-only">
       <SectionHeading title={'Richy life Club Luxury Yacht Charters'} />
       <p className="text-center text-gray-500">
         Our fleet of luxury yachts is as diverse as our clientele. From the
