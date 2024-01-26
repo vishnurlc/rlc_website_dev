@@ -139,7 +139,7 @@ export default function Header({ lang }) {
       link: "/clubs-restaurants",
     },
     {
-      name: "Tours & Excursions",
+      name: "Excursions",
       link: "#",
       dropdown: true,
       products: [
@@ -191,7 +191,7 @@ export default function Header({ lang }) {
     },
 
     {
-      name: "Tours & Excursions",
+      name: "Excursions",
       link: "#",
       dropdown: true,
       products: [
