@@ -19,7 +19,15 @@ function InfinitScroll({ fetchApi }) {
   async function getData(apiEndpoint, pagination, params) {
     const pageSize = 25;
 
-    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${apiEndpoint}?populate=*&pagination[page]=${pagination}&pagination[pageSize]=${pageSize}&sort[0]=name:asc`;
+    let api;
+    switch (fetchApi) {
+      case "club-packages":
+        api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${apiEndpoint}?sort=sort_key:asc&populate=*&pagination[page]=${pagination}&pagination[pageSize]=${pageSize}`;
+        break;
+      default:
+        api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${apiEndpoint}?populate=*&pagination[page]=${pagination}&pagination[pageSize]=${pageSize}&sort=id:asc`;
+    }
+    // api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${apiEndpoint}?sort=sort_key:asc&populate=*&pagination[page]=${pagination}&pagination[pageSize]=${pageSize}`;
     if (params) {
       api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${apiEndpoint}?_q=${params}&populate=*&pagination[page]=${pagination}&pagination[pageSize]=${pageSize}&sort[0]=name:asc`;
     }
