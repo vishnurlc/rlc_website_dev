@@ -55,7 +55,7 @@ export const metadata = {
 export async function getData() {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/yachts?populate=*&sort=id:desc`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/yachts?populate=*&sort=price:asc`,
       {
         next: { revalidate: 40 },
         headers: {

@@ -49,13 +49,13 @@ function ServiceCard2({ url, title, price, link }) {
               {price.split('/')[1]}
             </span> */}
           </div>
-          <div className="flex justify-center">
+          {/* <div className="flex justify-center">
             <AnimatedBtn
               text={"View More"}
               msg={`I would like to book ${title} from Richy life Club`}
               styles={"mt-2 px-2 py-1 bg-gold text-white rounded-sm"}
             />
-          </div>
+          </div> */}
         </div>
       </motion.div>
     </div>
