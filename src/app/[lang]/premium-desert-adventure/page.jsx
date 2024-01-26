@@ -108,7 +108,7 @@ export default async function page() {
           url="/assets/premiumdesert/bannervideo.mov"
         />
       </div>
-      <div className=" px-6 py-9 md:py-16 ">
+      <div className=" px-6 py-9 md:py-16">
         <div className="max-w-[1200px] mx-auto flex flex-col gap-8 md:gap-16 ">
           <div className="hidden grid-cols-1 md:grid-cols-2 gap-6 ">
             <div className="relative w-full h-[30vh]  md:h-[50vh] max-h-[700px]">
