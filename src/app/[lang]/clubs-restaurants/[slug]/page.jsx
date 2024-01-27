@@ -70,8 +70,6 @@ async function getData(slug) {
 const page = async ({ params }) => {
   const car = await getData(params);
 
-  console.log(car.data[0].attributes);
-
   return (
     <main className="pt-[108px] md:pt-[128px]">
       <div>
@@ -133,7 +131,7 @@ const page = async ({ params }) => {
                       <p>
                         Time :{" "}
                         <span className="text-primary items-center gap-2 text-sm md:text-base font-medium leading-tight">
-                          {car.data[0].attributes.timingppp}
+                          {car.data[0].attributes.timing}
                         </span>
                       </p>
                     </div>
