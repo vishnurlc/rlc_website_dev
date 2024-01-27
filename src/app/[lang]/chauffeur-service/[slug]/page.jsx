@@ -1,8 +1,8 @@
-import { ContactForm, HeroCarousel, PriceComponent } from '@/components';
+import { ContactForm, HeroCarousel, PriceComponent } from "@/components";
 
-import ChaufferSpec from '@/components/chaufferservice/ChaufferSpec';
+import ChaufferSpec from "@/components/chaufferservice/ChaufferSpec";
 
-import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
+import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
 
 export async function generateMetadata({ params }) {
   try {
@@ -17,17 +17,17 @@ export async function generateMetadata({ params }) {
 
     return {
       title:
-        car.data[0].attributes.name || '| Luxury Chauffeur Service in Dubai',
+        car.data[0].attributes.name || "| Luxury Chauffeur Service in Dubai",
       description:
         car.data[0].attributes.description ||
-        ' Luxury Chauffeur Service with Richy life Club',
+        " Luxury Chauffeur Service with Richy life Club",
       openGraph: {
-        type: 'website',
+        type: "website",
         title:
-          car.data[0].attributes.name || '| Luxury Chauffeur Service in Dubai',
+          car.data[0].attributes.name || "| Luxury Chauffeur Service in Dubai",
         description:
           car.data[0].attributes.description ||
-          ' Luxury Chauffeur Service with Richy life Club',
+          " Luxury Chauffeur Service with Richy life Club",
         images: [
           {
             url: `${car.data[0].attributes.images.data[0].attributes.url}`,
@@ -85,9 +85,9 @@ const page = async ({ params }) => {
           </h2>
 
           <AnimatedBtn
-            styles={'rounded-md bg-primary text-white'}
-            text={'Book Now'}
-            msg={'Hi, I would like to know about your services.'}
+            styles={"rounded-md bg-primary text-white"}
+            text={"Book Now"}
+            msg={"Hi, I would like to know about your services."}
           />
         </div>
       </div>
@@ -117,9 +117,38 @@ const page = async ({ params }) => {
           <GalleryJet />
         </div>
       </div> */}
+        {/* transfer price */}
+
+        <div className=" flex justify-center w-full">
+          <div className="relative overflow-x-auto shadow-md sm:rounded-lg max-w-[780px] w-full">
+            <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+              <thead className="text-xs text-primary uppercase bg-gray-50 ">
+                <tr>
+                  <th scope="col" className="px-6 py-3">
+                    From
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    To
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Price
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="odd:bg-white even:bg-gray-50 border-b">
+                  <td className="px-6 py-4">Airport</td>
+                  <td className="px-6 py-4">Dubai Mall</td>
+                  <td className="px-6 py-4">$2999</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         <ContactForm
-          title={'Experience the ultimate Luxury'}
-          description={'Book your journey with our luxury car rentals now'}
+          title={"Experience the ultimate Luxury"}
+          description={"Book your journey with our luxury car rentals now"}
         />
       </div>
     </main>
