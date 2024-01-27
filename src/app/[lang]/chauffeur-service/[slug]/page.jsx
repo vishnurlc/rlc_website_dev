@@ -119,7 +119,7 @@ const page = async ({ params }) => {
       </div> */}
         {/* transfer price */}
 
-        <div className=" flex justify-center w-full">
+        <div className="hidden justify-center w-full">
           <div className="relative overflow-x-auto shadow-md sm:rounded-lg max-w-[780px] w-full">
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
               <thead className="text-xs text-primary uppercase bg-gray-50 ">
