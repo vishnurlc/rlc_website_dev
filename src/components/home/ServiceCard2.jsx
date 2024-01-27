@@ -41,9 +41,14 @@ function ServiceCard2({ url, title, price, link }) {
         </Link>
         <div className="absolute p-4 text-white w-full h-fit top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
           <div className="drop-shadow-2xl">
-            <h2 className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] uppercase font-medium tracking-wide text-xs md:text-2xl font-poppins text-center">
+            <Link
+              href={link}
+              className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] uppercase
+              font-medium tracking-wide text-xs md:text-2xl font-poppins
+              text-center"
+            >
               {title}
-            </h2>
+            </Link>
             {/* <span className="text-gray-400 text-sm">
               Starting from {convertPrice(price.split('/')[0])}/
               {price.split('/')[1]}
