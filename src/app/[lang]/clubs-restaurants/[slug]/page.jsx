@@ -131,6 +131,14 @@ const page = async ({ params }) => {
                     </div>
                     <div className="text-gray-500  text-center md:text-start">
                       <p>
+                        Time :{" "}
+                        <span className="text-primary items-center gap-2 text-sm md:text-base font-medium leading-tight">
+                          {car.data[0].attributes.timingppp}
+                        </span>
+                      </p>
+                    </div>
+                    <div className="text-gray-500  text-center md:text-start">
+                      <p>
                         Price Range :{" "}
                         {/* <PriceComponent
                             cost={car.data[0].attributes.avg_price_per_person}
