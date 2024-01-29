@@ -1,4 +1,6 @@
 import { ContactForm, LatestNewsCarousel, NewsCard } from '@/components';
+import Bloglist from '@/components/blogs/Bloglist';
+import EventsList from '@/components/blogs/EventsList';
 export const metadata = {
   title: 'News & Blogs',
   description:
@@ -68,27 +70,28 @@ export async function getData(slug) {
 export default async function Blogs() {
   const blogs = await getData();
   return (
-    <div className="mt-[120px]  md:px-16 max-w-[1200px] mx-auto">
+    <div className="mt-[120px] md:px-16 max-w-[1200px] mx-auto">
       <div className="flex flex-col gap-8">
         <h1 className="text-gold text-4xl md:text-[64px] leading-tight font-poppins font-bold text-center">
           News & <span className="text-primary">Blogs</span>
         </h1>
+
+        {blogs.data.length > 0 && <LatestNewsCarousel blogs={blogs} />}
+
+        <h2 className="px-4 md:px-0 uppercase text-xl md:text-3xl mt-7 ">
+          Upcoming Events
+        </h2>
+        <EventsList />
         {blogs.data.length > 0 ? (
           <>
-            <LatestNewsCarousel blogs={blogs} />
             {blogs.data.filter((blog) => !blog.attributes.latest).length >
               0 && (
               <div className="mt-10">
                 <h2 className="px-4 md:px-0 uppercase text-xl md:text-3xl ">
                   You may also like
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 gap-7">
-                  {blogs.data
-                    .filter((blog) => !blog.attributes.latest)
-                    .map((item, index) => (
-                      <NewsCard blog={item} key={index} />
-                    ))}
-                </div>
+
+                <Bloglist />
               </div>
             )}
           </>
