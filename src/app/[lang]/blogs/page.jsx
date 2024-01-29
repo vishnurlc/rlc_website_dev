@@ -1,4 +1,5 @@
 import { ContactForm, LatestNewsCarousel, NewsCard } from '@/components';
+import EventsList from '@/components/blogs/EventsList';
 export const metadata = {
   title: 'News & Blogs',
   description:
@@ -73,9 +74,15 @@ export default async function Blogs() {
         <h1 className="text-gold text-4xl md:text-[64px] leading-tight font-poppins font-bold text-center">
           News & <span className="text-primary">Blogs</span>
         </h1>
+
+        {blogs.data.length > 0 && <LatestNewsCarousel blogs={blogs} />}
+
+        <h2 className="px-4 md:px-0 uppercase text-xl md:text-3xl mt-7 ">
+          Upcoming Events
+        </h2>
+        <EventsList />
         {blogs.data.length > 0 ? (
           <>
-            <LatestNewsCarousel blogs={blogs} />
             {blogs.data.filter((blog) => !blog.attributes.latest).length >
               0 && (
               <div className="mt-10">

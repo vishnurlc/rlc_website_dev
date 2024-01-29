@@ -1,10 +1,10 @@
-"use client";
-import Image from "next/image";
+'use client';
+import Image from 'next/image';
 
-import { useCurrency } from "@/context/currencyContext";
-import { motion } from "framer-motion";
-import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
-import Link from "next/link";
+import { useCurrency } from '@/context/currencyContext';
+import { motion } from 'framer-motion';
+import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
+import Link from 'next/link';
 function ServiceCard2({ url, title, price, link }) {
   const { selectedCurrency, conversionRates } = useCurrency();
 
@@ -12,8 +12,8 @@ function ServiceCard2({ url, title, price, link }) {
     const rate = conversionRates.rates[selectedCurrency];
 
     const amt = Math.round(Number(cost) * rate);
-    const priceFormatted = new Intl.NumberFormat("ae", {
-      style: "currency",
+    const priceFormatted = new Intl.NumberFormat('ae', {
+      style: 'currency',
       currency: selectedCurrency,
       minimumFractionDigits: 0, // Set minimumFractionDigits to 0
       maximumFractionDigits: 0, // Set maximumFractionDigits to 0
@@ -34,7 +34,7 @@ function ServiceCard2({ url, title, price, link }) {
             alt={title}
             fill
             style={{
-              objectFit: "cover",
+              objectFit: 'cover',
             }}
             sizes="100vw"
           />
@@ -44,7 +44,7 @@ function ServiceCard2({ url, title, price, link }) {
             <Link
               href={link}
               className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] uppercase
-              font-medium tracking-wide text-xs md:text-2xl font-poppins
+              font-medium tracking-wide text-2xl font-poppins block
               text-center"
             >
               {title}
