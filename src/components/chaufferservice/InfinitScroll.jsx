@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { Loader } from '..';
+import { Loader, NewsCard } from '..';
 import CardChauffer from '../ui/card/CardChauffer';
 import CardBasic from '../ui/card/CardBasic';
 import ClubCard from '../ui/card/ClubCard';
@@ -11,7 +11,7 @@ import CardHotel from '../ui/card/CardHotel';
 import JetskiCard from '../ui/card/JetskiCard';
 import EventCard from '../blogs/EventCard';
 
-function InfinitScroll({ fetchApi }) {
+function InfinitScroll({ fetchApi, blog }) {
   const [cars, setCars] = useState([]);
   const [meta, setMeta] = useState();
   const [pagination, setPagination] = useState(1);
@@ -26,7 +26,7 @@ function InfinitScroll({ fetchApi }) {
         api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${apiEndpoint}?sort=sort_key:asc&populate=*&pagination[page]=${pagination}&pagination[pageSize]=${pageSize}`;
         break;
       default:
-        api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${apiEndpoint}?populate=*&pagination[page]=${pagination}&pagination[pageSize]=${pageSize}&sort=id:asc`;
+        api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${apiEndpoint}?populate=*&pagination[page]=${pagination}&pagination[pageSize]=${pageSize}&sort=id:desc`;
     }
     // api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${apiEndpoint}?sort=sort_key:asc&populate=*&pagination[page]=${pagination}&pagination[pageSize]=${pageSize}`;
     if (params) {
@@ -66,7 +66,13 @@ function InfinitScroll({ fetchApi }) {
 
   return (
     <div>
-      <div className="flex flex-col gap-8 w-full ">
+      <div
+        className={
+          blog
+            ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 gap-7'
+            : 'flex flex-col gap-8 w-full '
+        }
+      >
         {cars?.map((car, index) => {
           switch (fetchApi) {
             case 'chauffeur-cars':
@@ -89,6 +95,8 @@ function InfinitScroll({ fetchApi }) {
               return <JetskiCard data={car} key={index} order={index} />;
             case 'events':
               return <EventCard blog={car} />;
+            case 'blogs':
+              return <NewsCard blog={car} />;
             default:
               break;
           }

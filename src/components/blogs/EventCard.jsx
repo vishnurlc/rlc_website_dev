@@ -19,7 +19,7 @@ const EventCard = ({ blog }) => {
     return priceFormatted;
   };
   return (
-    <Link href={`/blogs/${blog.attributes.slug}`}>
+    <Link href={`/blogs/events/${blog.attributes.slug}`}>
       <div
         className=" flex flex-col"
         style={{
