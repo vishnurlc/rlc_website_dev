@@ -1,5 +1,5 @@
 import { ContactForm, HeroCarousel, PriceComponent } from "@/components";
-
+import qs from "qs";
 import ChaufferSpec from "@/components/chaufferservice/ChaufferSpec";
 
 import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
@@ -48,7 +48,17 @@ export async function generateMetadata({ params }) {
 }
 
 async function getData(slug) {
-  let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/chauffeur-cars?filters[slug][$eq]=${slug.slug}&populate=*`;
+  const queryString = qs.stringify({
+    populate: {
+      pc: {
+        populate: "*",
+      },
+      images: {
+        populate: "*",
+      },
+    },
+  });
+  let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/chauffeur-cars?filters[slug][$eq]=${slug.slug}&${queryString}`;
 
   try {
     const res = await fetch(api, {
@@ -119,7 +129,7 @@ const page = async ({ params }) => {
       </div> */}
         {/* transfer price */}
 
-        <div className="hidden justify-center w-full">
+        <div className="flex justify-center w-full">
           <div className="relative overflow-x-auto shadow-md sm:rounded-lg max-w-[780px] w-full">
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
               <thead className="text-xs text-primary uppercase bg-gray-50 ">
@@ -136,11 +146,21 @@ const page = async ({ params }) => {
                 </tr>
               </thead>
               <tbody>
-                <tr className="odd:bg-white even:bg-gray-50 border-b">
-                  <td className="px-6 py-4">Airport</td>
-                  <td className="px-6 py-4">Dubai Mall</td>
-                  <td className="px-6 py-4">$2999</td>
-                </tr>
+                {car.data[0].attributes.pc?.map((e, index) => (
+                  <tr
+                    className="odd:bg-white even:bg-gray-50 border-b"
+                    key={index}
+                  >
+                    <td className="px-6 py-4">
+                      {e.cfs.data[0].attributes.name}
+                    </td>
+                    <td className="px-6 py-4">
+                      {" "}
+                      {e.cts.data[0].attributes.name}
+                    </td>
+                    <td className="px-6 py-4">{e.price}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
