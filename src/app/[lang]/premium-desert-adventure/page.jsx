@@ -145,14 +145,14 @@ export default async function page() {
           </div>
         </div>
 
-        <div className=" md:flex gap-2">
-          <div className="relative">
+        <div className="max-w-[1200px] md:flex gap-2 justify-center mx-auto">
+          <div className="relative w-full aspect-[1/1.5] max-h-[35vh] rounded overflow-hidden">
             <Image
-              src={"/assets/premiumdesert/2.png"}
+              src={"/assets/premiumdesert/1.png"}
               alt="Premium Desert Safari Packages | Richy life Club "
-              // fill
-              width={400}
-              height={100}
+              fill
+              // width={400}
+              // height={100}
               style={{
                 objectFit: "cover",
                 objectPosition: "50%",
@@ -165,13 +165,11 @@ export default async function page() {
               </p>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative w-full aspect-[1/1.5] max-h-[35vh] rounded overflow-hidden">
             <Image
               src={"/assets/premiumdesert/2.png"}
               alt="Premium Desert Safari Packages | Richy life Club "
-              // fill
-              width={400}
-              height={100}
+              fill
               style={{
                 objectFit: "cover",
                 objectPosition: "50%",
@@ -184,13 +182,11 @@ export default async function page() {
               </p>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative w-full aspect-[1/1.5] max-h-[35vh] rounded overflow-hidden">
             <Image
-              src={"/assets/premiumdesert/2.png"}
+              src={"/assets/premiumdesert/desert.png"}
               alt="Premium Desert Safari Packages | Richy life Club "
-              // fill
-              width={400}
-              height={100}
+              fill
               style={{
                 objectFit: "cover",
                 objectPosition: "50%",
