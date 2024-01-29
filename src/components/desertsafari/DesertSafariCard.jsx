@@ -31,7 +31,7 @@ const DesertSafariCard = ({ item, order }) => {
             objectFit: "cover",
             objectPosition: "50%",
           }}
-          izes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className="bg-black bg-opacity-10 absolute inset-0"></div>
       </div>

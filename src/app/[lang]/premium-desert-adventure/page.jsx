@@ -144,8 +144,69 @@ export default async function page() {
             ))}
           </div>
         </div>
+
+        <div className=" md:flex gap-2">
+          <div className="relative">
+            <Image
+              src={"/assets/premiumdesert/2.png"}
+              alt="Premium Desert Safari Packages | Richy life Club "
+              // fill
+              width={400}
+              height={100}
+              style={{
+                objectFit: "cover",
+                objectPosition: "50%",
+              }}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+            <div className="absolute p-4 text-white w-full h-fit top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+              <p className="uppercase font-medium tracking-wide text-2xl font-poppins text-center bg-[#475569] bg-opacity-30">
+                Buggy Single 30min 400Aed
+              </p>
+            </div>
+          </div>
+          <div className="relative">
+            <Image
+              src={"/assets/premiumdesert/2.png"}
+              alt="Premium Desert Safari Packages | Richy life Club "
+              // fill
+              width={400}
+              height={100}
+              style={{
+                objectFit: "cover",
+                objectPosition: "50%",
+              }}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+            <div className="absolute p-4 text-white w-full h-fit top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+              <p className="uppercase font-medium tracking-wide text-2xl font-poppins text-center bg-[#475569] bg-opacity-30">
+                Buggy Double Rzr 30min 400Aed
+              </p>
+            </div>
+          </div>
+          <div className="relative">
+            <Image
+              src={"/assets/premiumdesert/2.png"}
+              alt="Premium Desert Safari Packages | Richy life Club "
+              // fill
+              width={400}
+              height={100}
+              style={{
+                objectFit: "cover",
+                objectPosition: "50%",
+              }}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+            <div className="absolute p-4 text-white w-full h-fit top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+              <p className="uppercase font-medium tracking-wide text-2xl font-poppins text-center bg-[#475569] bg-opacity-30">
+                Buggy Rzr 1000cc 4Seater 30min 500Aed
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto">
+
+      <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto sr-only">
         <WhyusdesertSafari />
       </div>
       <Faq category={"desertsafari"} />
