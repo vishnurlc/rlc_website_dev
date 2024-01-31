@@ -2,7 +2,7 @@
 
 import { useCurrency } from '@/context/currencyContext';
 
-const PriceComponent = ({ cost }) => {
+const PriceComponent = ({ cost, white }) => {
   const { selectedCurrency, conversionRates } = useCurrency();
   const convertPrice = (price) => {
     const rate = conversionRates.rates[selectedCurrency];
@@ -17,7 +17,11 @@ const PriceComponent = ({ cost }) => {
     return priceFormatted;
   };
 
-  return <span className="text-xl text-primary">{convertPrice(cost)}</span>;
+  return (
+    <span className={white ? 'text-xl text-white' : 'text-xl text-primary'}>
+      {convertPrice(cost)}
+    </span>
+  );
 };
 
 export default PriceComponent;

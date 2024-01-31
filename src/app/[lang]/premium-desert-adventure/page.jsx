@@ -1,25 +1,30 @@
-import { ContactForm, HeroSection2, WhyusdesertSafari } from "@/components";
-import DesertSafariCard from "@/components/desertsafari/DesertSafariCard";
-import Faq from "@/components/home/faq";
-import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
-import { Button } from "@/components/ui/button/Button";
-import Image from "next/image";
-import Link from "next/link";
+import {
+  ContactForm,
+  HeroSection2,
+  PriceComponent,
+  WhyusdesertSafari,
+} from '@/components';
+import DesertSafariCard from '@/components/desertsafari/DesertSafariCard';
+import Faq from '@/components/home/faq';
+import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
+import { Button } from '@/components/ui/button/Button';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const locations = [
   {
-    url: "/assets/jetskipage/jumeirah.webp", // Replace with actual image path
-    location: "ABU DHABI",
+    url: '/assets/jetskipage/jumeirah.webp', // Replace with actual image path
+    location: 'ABU DHABI',
     price: 150,
   },
   {
-    url: "/assets/jetskipage/burjalarab.avif", // Replace with actual image path
-    location: "Burj Al Arab",
+    url: '/assets/jetskipage/burjalarab.avif', // Replace with actual image path
+    location: 'Burj Al Arab',
     price: 250,
   },
   {
-    url: "/assets/jetskipage/atlantisview.jpeg", // Replace with actual image path
-    location: "Atlantis View",
+    url: '/assets/jetskipage/atlantisview.jpeg', // Replace with actual image path
+    location: 'Atlantis View',
     price: 180,
   },
 ];
@@ -39,43 +44,43 @@ export async function getData() {
 
     return data;
   } catch (error) {
-    console.log("s", error);
+    console.log('s', error);
     return {};
   }
 }
 
 export const metadata = {
-  title: "Premium Desert Safari in Dubai",
+  title: 'Premium Desert Safari in Dubai',
   description:
-    "Experience the magic of the Dubai desert on a thrilling desert safari. Enjoy dune bashing, camel riding, and sandboarding, and savor a delicious barbecue dinner under the stars.",
+    'Experience the magic of the Dubai desert on a thrilling desert safari. Enjoy dune bashing, camel riding, and sandboarding, and savor a delicious barbecue dinner under the stars.',
   keywords: [
-    "Desert Safari Dubai",
-    "Luxury Desert Safari",
-    "Desert Adventure Tours",
-    "VIP Desert Safari",
-    "Private Desert Tours",
-    "Sunset Desert Safari",
-    "Dune Bashing Experience",
-    "Camel Riding Safari",
-    "Desert Camps in Dubai",
-    "Arabian Nights in the Desert",
-    "Dubai Desert Wildlife",
-    "Luxury 4x4 Desert Tours",
-    "Quad Biking in the Desert",
-    "Sandboarding Adventure",
-    "Desert Photography Tours",
-    "Desert Safari Packages and deals",
-    "Best Desert Safari in Dubai",
-    "Romantic Desert Getaways",
-    "Dune bashing, Camel riding",
-    "traditional Arabic entertainment Dubai",
-    "BBQ dinner Dubai, belly dancing Dubai",
+    'Desert Safari Dubai',
+    'Luxury Desert Safari',
+    'Desert Adventure Tours',
+    'VIP Desert Safari',
+    'Private Desert Tours',
+    'Sunset Desert Safari',
+    'Dune Bashing Experience',
+    'Camel Riding Safari',
+    'Desert Camps in Dubai',
+    'Arabian Nights in the Desert',
+    'Dubai Desert Wildlife',
+    'Luxury 4x4 Desert Tours',
+    'Quad Biking in the Desert',
+    'Sandboarding Adventure',
+    'Desert Photography Tours',
+    'Desert Safari Packages and deals',
+    'Best Desert Safari in Dubai',
+    'Romantic Desert Getaways',
+    'Dune bashing, Camel riding',
+    'traditional Arabic entertainment Dubai',
+    'BBQ dinner Dubai, belly dancing Dubai',
   ],
   openGraph: {
-    title: "Premium Desert Safari in Dubai",
+    title: 'Premium Desert Safari in Dubai',
     description:
-      "Experience the magic of the Dubai desert on a thrilling desert safari. Enjoy dune bashing, camel riding, and sandboarding, and savor a delicious barbecue dinner under the stars.",
-    siteName: "Richy life Club",
+      'Experience the magic of the Dubai desert on a thrilling desert safari. Enjoy dune bashing, camel riding, and sandboarding, and savor a delicious barbecue dinner under the stars.',
+    siteName: 'Richy life Club',
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/footer/1.webp`,
@@ -88,8 +93,8 @@ export const metadata = {
         height: 200,
       },
     ],
-    locale: "en_US",
-    type: "website",
+    locale: 'en_US',
+    type: 'website',
   },
 };
 export default async function page() {
@@ -102,9 +107,9 @@ export default async function page() {
           type="video"
           heading1="Desert Adventure"
           heading2="Experiences"
-          subheading={"Journey into the Extraordinary"}
-          btntext={"Book an appointment"}
-          posterurl={"/assets//premiumdesert/desert.png"}
+          subheading={'Journey into the Extraordinary'}
+          btntext={'Book an appointment'}
+          posterurl={'/assets//premiumdesert/desert.png'}
           url="/assets/premiumdesert/bannervideo.mov"
         />
       </div>
@@ -117,8 +122,8 @@ export default async function page() {
                 fill
                 alt="Dune bashing Dubai | Adventures with Richy life Club"
                 style={{
-                  objectFit: "cover",
-                  borderRadius: "8px",
+                  objectFit: 'cover',
+                  borderRadius: '8px',
                 }}
               />
             </div>
@@ -148,54 +153,59 @@ export default async function page() {
         <div className="max-w-[1200px] md:flex gap-2 justify-center mx-auto">
           <div className="relative w-full aspect-[1/1.5] max-h-[35vh] rounded overflow-hidden">
             <Image
-              src={"/assets/premiumdesert/1.png"}
+              src={'/assets/premiumdesert/1.png'}
               alt="Premium Desert Safari Packages | Richy life Club "
               fill
               // width={400}
               // height={100}
               style={{
-                objectFit: "cover",
-                objectPosition: "50%",
+                objectFit: 'cover',
+                objectPosition: '50%',
+                borderRadius: '4px',
               }}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             <div className="absolute p-4 text-white w-full h-fit top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-              <p className="uppercase font-medium tracking-wide text-2xl font-poppins text-center bg-[#475569] bg-opacity-30">
-                Buggy Single 30min 400Aed
+              <p className="uppercase font-medium max-w-[250px] mx-auto tracking-wide text-2xl font-poppins text-center bg-[#475569] bg-opacity-30">
+                Buggy Single 30min <PriceComponent cost={'520'} white={true} />
               </p>
             </div>
           </div>
           <div className="relative w-full aspect-[1/1.5] max-h-[35vh] rounded overflow-hidden">
             <Image
-              src={"/assets/premiumdesert/2.png"}
+              src={'/assets/premiumdesert/2.png'}
               alt="Premium Desert Safari Packages | Richy life Club "
               fill
               style={{
-                objectFit: "cover",
-                objectPosition: "50%",
+                objectFit: 'cover',
+                objectPosition: '50%',
+                borderRadius: '4px',
               }}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             <div className="absolute p-4 text-white w-full h-fit top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-              <p className="uppercase font-medium tracking-wide text-2xl font-poppins text-center bg-[#475569] bg-opacity-30">
-                Buggy Double Rzr 30min 400Aed
+              <p className="uppercase font-medium max-w-[250px] mx-auto tracking-wide text-2xl font-poppins text-center bg-[#475569] bg-opacity-30">
+                Buggy Double Rzr 30min{' '}
+                <PriceComponent cost={'600'} white={true} />
               </p>
             </div>
           </div>
           <div className="relative w-full aspect-[1/1.5] max-h-[35vh] rounded overflow-hidden">
             <Image
-              src={"/assets/premiumdesert/desert.png"}
+              src={'/assets/premiumdesert/desert.png'}
               alt="Premium Desert Safari Packages | Richy life Club "
               fill
               style={{
-                objectFit: "cover",
-                objectPosition: "50%",
+                objectFit: 'cover',
+                objectPosition: '50%',
+                borderRadius: '4px',
               }}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             <div className="absolute p-4 text-white w-full h-fit top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-              <p className="uppercase font-medium tracking-wide text-2xl font-poppins text-center bg-[#475569] bg-opacity-30">
-                Buggy Rzr 1000cc 4Seater 30min 500Aed
+              <p className="uppercase font-medium max-w-[250px] mx-auto tracking-wide text-2xl font-poppins text-center bg-[#475569] bg-opacity-30">
+                Buggy Rzr 1000cc 4Seater 30min{' '}
+                <PriceComponent cost={'700'} white={true} />
               </p>
             </div>
           </div>
@@ -205,11 +215,11 @@ export default async function page() {
       <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto sr-only">
         <WhyusdesertSafari />
       </div>
-      <Faq category={"desertsafari"} />
+      <Faq category={'desertsafari'} />
       <div className="my-9 md:my-16 px-6">
         <ContactForm
-          title={"Get In Touch"}
-          description={"Experience The Ultimate Adrenaline Rush"}
+          title={'Get In Touch'}
+          description={'Experience The Ultimate Adrenaline Rush'}
         />
       </div>
     </main>
