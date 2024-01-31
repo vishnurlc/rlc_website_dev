@@ -76,7 +76,7 @@ const page = async ({ params }) => {
       image: "/assets/helicopter/1.webp",
       map: "/assets/helicopter/map/12 Min tour.png",
       title: "12 Mins Helicopter Tour",
-      price: "710",
+      price: "715",
       slug: "1",
       description: `With our 12-Mins Iconic helicopter tour in Dubai, you’ll get a
       great panoramic perspective. Get close to Dubai’s most famous

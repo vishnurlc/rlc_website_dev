@@ -152,11 +152,11 @@ const page = async ({ params }) => {
                     key={index}
                   >
                     <td className="px-6 py-4">
-                      {e.cfs.data[0].attributes.name}
+                      {e.cfs.data[0]?.attributes.name}
                     </td>
                     <td className="px-6 py-4">
                       {" "}
-                      {e.cts.data[0].attributes.name}
+                      {e.cts.data[0]?.attributes.name}
                     </td>
                     <td className="px-6 py-4">{e.price}</td>
                   </tr>

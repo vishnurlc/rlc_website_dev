@@ -56,7 +56,7 @@ const data = [
   {
     image: "/assets/helicopter/1.webp",
     title: "12 Mins Helicopter Tour",
-    price: "710",
+    price: "715",
     slug: "1",
   },
   {
