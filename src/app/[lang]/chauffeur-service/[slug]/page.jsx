@@ -131,83 +131,88 @@ const page = async ({ params }) => {
         </div>
       </div> */}
         {/* transfer price */}
-
         <div className="md:flex gap-10 justify-center w-full">
-          <div className="relative overflow-x-auto shadow-md sm:rounded-lg max-w-[780px] w-full">
-            <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-              <thead className="text-xs text-primary uppercase bg-gray-50 ">
-                <tr>
-                  <th scope="col" className="px-6 py-3">
-                    From
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    To
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Price
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {car.data[0].attributes.pc?.map((e, index) => (
-                  <tr
-                    className="odd:bg-white even:bg-gray-50 border-b"
-                    key={index}
-                  >
-                    <td className="px-6 py-4">
-                      {e.cfs.data[0]?.attributes.name}
-                    </td>
-                    <td className="px-6 py-4">
-                      {" "}
-                      {e.cts.data[0]?.attributes.name}
-                    </td>
-                    <td className="px-6 py-4">{e.price}</td>
+          {car.data[0].attributes.pc.length > 1 && (
+            <div className="relative overflow-x-auto shadow-md sm:rounded-lg max-w-[780px] w-full">
+              <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead className="text-xs text-primary uppercase bg-gray-50 ">
+                  <tr>
+                    <th scope="col" className="px-6 py-3">
+                      From
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      To
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Price
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-            {/* next tabel */}
-          </div>
-          <div className="md:hidden">
-            <h2 className="inline-block my-8 font-inter text-primary font-semibold text-xl md:text-[40px]">
-              Intercity
-            </h2>
-          </div>
-          <div className="relative overflow-x-auto shadow-md sm:rounded-lg max-w-[780px] w-full">
-            <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-              <thead className="text-xs text-primary uppercase bg-gray-50 ">
-                <tr>
-                  <th scope="col" className="px-6 py-3">
-                    From
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    To
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Price
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {car.data[0].attributes.pc2?.map((e, index) => (
-                  <tr
-                    className="odd:bg-white even:bg-gray-50 border-b"
-                    key={index}
-                  >
-                    <td className="px-6 py-4">
-                      {e.cfs.data[0]?.attributes.name}
-                    </td>
-                    <td className="px-6 py-4">
-                      {" "}
-                      {e.cts.data[0]?.attributes.name}
-                    </td>
-                    <td className="px-6 py-4">{e.price}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            {/* next tabel */}
-          </div>
+                </thead>
+                <tbody>
+                  {car.data[0].attributes.pc?.map((e, index) => (
+                    <tr
+                      className="odd:bg-white even:bg-gray-50 border-b"
+                      key={index}
+                    >
+                      <td className="px-6 py-4">
+                        {e.cfs.data[0]?.attributes.name}
+                      </td>
+                      <td className="px-6 py-4">
+                        {" "}
+                        {e.cts.data[0]?.attributes.name}
+                      </td>
+                      <td className="px-6 py-4">{e.price}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              {/* next tabel */}
+            </div>
+          )}
+          {car.data[0].attributes.pc2.length > 1 && (
+            <>
+              <div className="md:hidden">
+                <h2 className="inline-block my-8 font-inter text-primary font-semibold text-xl md:text-[40px]">
+                  Intercity Transfers
+                </h2>
+              </div>
+              <div className="relative overflow-x-auto shadow-md sm:rounded-lg max-w-[780px] w-full">
+                <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                  <thead className="text-xs text-primary uppercase bg-gray-50 ">
+                    <tr>
+                      <th scope="col" className="px-6 py-3">
+                        From
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        To
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        Price
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {car.data[0].attributes.pc2?.map((e, index) => (
+                      <tr
+                        className="odd:bg-white even:bg-gray-50 border-b"
+                        key={index}
+                      >
+                        <td className="px-6 py-4">
+                          {e.cfs.data[0]?.attributes.name}
+                        </td>
+                        <td className="px-6 py-4">
+                          {" "}
+                          {e.cts.data[0]?.attributes.name}
+                        </td>
+                        <td className="px-6 py-4">{e.price}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                {/* next tabel */}
+              </div>
+            </>
+          )}
         </div>
 
         <ContactForm
