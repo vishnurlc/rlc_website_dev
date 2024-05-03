@@ -1,8 +1,8 @@
-import { ContactForm, HeroCarousel, PriceComponent } from "@/components";
-import qs from "qs";
-import ChaufferSpec from "@/components/chaufferservice/ChaufferSpec";
+import { ContactForm, HeroCarousel, PriceComponent } from '@/components';
+import qs from 'qs';
+import ChaufferSpec from '@/components/chaufferservice/ChaufferSpec';
 
-import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
+import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
 
 export async function generateMetadata({ params }) {
   try {
@@ -17,17 +17,17 @@ export async function generateMetadata({ params }) {
 
     return {
       title:
-        car.data[0].attributes.name || "| Luxury Chauffeur Service in Dubai",
+        car.data[0].attributes.name || '| Luxury Chauffeur Service in Dubai',
       description:
         car.data[0].attributes.description ||
-        " Luxury Chauffeur Service with Richy life Club",
+        ' Luxury Chauffeur Service with Richy life Club',
       openGraph: {
-        type: "website",
+        type: 'website',
         title:
-          car.data[0].attributes.name || "| Luxury Chauffeur Service in Dubai",
+          car.data[0].attributes.name || '| Luxury Chauffeur Service in Dubai',
         description:
           car.data[0].attributes.description ||
-          " Luxury Chauffeur Service with Richy life Club",
+          ' Luxury Chauffeur Service with Richy life Club',
         images: [
           {
             url: `${car.data[0].attributes.images.data[0].attributes.url}`,
@@ -51,13 +51,13 @@ async function getData(slug) {
   const queryString = qs.stringify({
     populate: {
       pc: {
-        populate: "*",
+        populate: '*',
       },
       pc2: {
-        populate: "*",
+        populate: '*',
       },
       images: {
-        populate: "*",
+        populate: '*',
       },
     },
   });
@@ -98,9 +98,9 @@ const page = async ({ params }) => {
           </h2>
 
           <AnimatedBtn
-            styles={"rounded-md bg-primary text-white"}
-            text={"Book Now"}
-            msg={"Hi, I would like to know about your services."}
+            styles={'rounded-md bg-primary text-white'}
+            text={'Book Now'}
+            msg={'Hi, I would like to know about your services.'}
           />
         </div>
       </div>
@@ -158,7 +158,7 @@ const page = async ({ params }) => {
                         {e.cfs.data[0]?.attributes.name}
                       </td>
                       <td className="px-6 py-4">
-                        {" "}
+                        {' '}
                         {e.cts.data[0]?.attributes.name}
                       </td>
                       <td className="px-6 py-4">{e.price}</td>
@@ -169,7 +169,7 @@ const page = async ({ params }) => {
               {/* next tabel */}
             </div>
           )}
-          {car.data[0].attributes.pc2.length > 1 && (
+          {/* {car.data[0].attributes.pc2.length > 1 && (
             <>
               <div className="md:hidden">
                 <h2 className="inline-block my-8 font-inter text-primary font-semibold text-xl md:text-[40px]">
@@ -209,15 +209,14 @@ const page = async ({ params }) => {
                     ))}
                   </tbody>
                 </table>
-                {/* next tabel */}
               </div>
             </>
-          )}
+          )} */}
         </div>
 
         <ContactForm
-          title={"Experience the ultimate Luxury"}
-          description={"Book your journey with our luxury car rentals now"}
+          title={'Experience the ultimate Luxury'}
+          description={'Book your journey with our luxury car rentals now'}
         />
       </div>
     </main>
