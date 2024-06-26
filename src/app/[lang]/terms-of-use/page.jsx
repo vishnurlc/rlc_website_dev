@@ -137,45 +137,48 @@ const TermsAndConditions = () => {
         <h2>Booking Terms and Conditions</h2>
         <p>
           By using the website or mobile application of RICHYLIFE CLUB TRAVEL
-          L.L.C. (collectively "the Site" or “the App”), you agree to the terms
-          and conditions set out herein.
+          L.L.C. ( &quot;collectively the Site&quot; or &quot;the App&quot;),
+          you agree to the terms and conditions set out herein.
         </p>
         <p>
           This agreement is between you and RICHYLIFE CLUB TRAVEL L.L.C.
-          (hereafter referred to as "RichyLife," "we," "our," or "us"). On the
-          Site and in these booking conditions, RichyLife and entities that are
-          related to or affiliated with it in the provision of the services it
-          agrees to provide (where the context admits, together with its and
-          their employees and agents) are included in the expressions "Company,"
-          "RichyLife," "we," "our," or "us." A person taking advantage of the
-          services offered by RichyLife, and all other persons (if any) included
-          with that person in the booking, are included in the expressions
-          "you," "your," "client," or "passenger."
+          (hereafter referred to as &quot;RichyLife,&quot; &quot;we,&quot;
+          &quot;our,&quot; or &quot;us&quot;). On the Site and in these booking
+          conditions, RichyLife and entities that are related to or affiliated
+          with it in the provision of the services it agrees to provide (where
+          the context admits, together with its and their employees and agents)
+          are included in the expressions &quot;Company,&quot;
+          &quot;RichyLife,&quot; &quot;we,&quot; &quot;our,&quot; or
+          &quot;us.&quot; A person taking advantage of the services offered by
+          RichyLife, and all other persons (if any) included with that person in
+          the booking, are included in the expressions &quot;you,&quot;
+          &quot;your,&quot; &quot;client,&quot; or &quot;passenger.&quot;
         </p>
         <p>
           RichyLife sells bookings, ticketing, and other ancillary services for
-          travel, accommodation, and other leisure activities (“Arrangements”).
-          RichyLife is neither a common carrier nor a private carrier and does
-          not provide any of the travel, accommodation, or other activities
-          described on this site (“Travel Products”). RichyLife acts as your
-          agent in making the Arrangements with third-party suppliers who
-          provide Travel Products as principals (“Suppliers”). RichyLife is not
-          the agent of any such principal. You will also be subject to the terms
-          and conditions of any third-party suppliers in addition to these terms
-          and conditions.
+          travel, accommodation, and other leisure activities
+          (&quot;Arrangements&quot;). RichyLife is neither a common carrier nor
+          a private carrier and does not provide any of the travel,
+          accommodation, or other activities described on this site
+          (&quot;Travel Products&quot;). RichyLife acts as your agent in making
+          the Arrangements with third-party suppliers who provide Travel
+          Products as principals (&quot;Suppliers&quot;). RichyLife is not the
+          agent of any such principal. You will also be subject to the terms and
+          conditions of any third-party suppliers in addition to these terms and
+          conditions.
         </p>
 
         <h2>User Agreement</h2>
         <p>
           This agreement is between you and RICHYLIFE CLUB TRAVEL L.L.C. By
           visiting and/or using the Site or App, you agree to be bound by the
-          terms of this agreement ("agreement"). We may modify our terms and
-          conditions without notice at any time where such amendment does not
-          substantially affect your rights and obligations. If such changes to
-          our terms and conditions substantially affect your rights and
-          obligations, we will notify you by email with these changes as they
-          occur. By using our site to search for and/or book the products and/or
-          services offered, you are indicating:
+          terms of this agreement (&quot;agreement&quot;). We may modify our
+          terms and conditions without notice at any time where such amendment
+          does not substantially affect your rights and obligations. If such
+          changes to our terms and conditions substantially affect your rights
+          and obligations, we will notify you by email with these changes as
+          they occur. By using our site to search for and/or book the products
+          and/or services offered, you are indicating:
         </p>
         <ul>
           <li>That you have read this User Agreement; and</li>
@@ -184,11 +187,11 @@ const TermsAndConditions = () => {
 
         <h2>Registration</h2>
         <p>
-          In order to purchase any item (and access certain ‘members only’ areas
-          of the Site or App), you need to be a registered member of the Site or
-          App. When registering to become a member, you must provide Personal
-          Information, including your first and last name, and a valid email
-          address.
+          In order to purchase any item (and access certain &quot;members
+          only&quot; areas of the Site or App), you need to be a registered
+          member of the Site or App. When registering to become a member, you
+          must provide Personal Information, including your first and last name,
+          and a valid email address.
         </p>
         <p>
           You agree to provide accurate and complete information and to keep
@@ -249,25 +252,26 @@ const TermsAndConditions = () => {
         <h2>Information on this Site and App</h2>
         <p>
           Information about offers on the Site and App may be based on material
-          provided by third-party businesses ("merchants"). We do our best to
-          verify the information provided to us by merchants, but we cannot
-          guarantee its accuracy on all occasions. You understand and agree that
-          we cannot be held responsible for errors or omissions caused by
-          incorrect or inadequate information supplied to us or by merchants.
-          You agree to make your own enquiries to verify information provided
-          and to assess the suitability of products before you purchase. All
-          imagery and video on the Site and App are for representational
-          purposes only.
+          provided by third-party businesses (&quot;merchants&quot;). We do our
+          best to verify the information provided to us by merchants, but we
+          cannot guarantee its accuracy on all occasions. You understand and
+          agree that we cannot be held responsible for errors or omissions
+          caused by incorrect or inadequate information supplied to us or by
+          merchants. You agree to make your own enquiries to verify information
+          provided and to assess the suitability of products before you
+          purchase. All imagery and video on the Site and App are for
+          representational purposes only.
         </p>
 
         <h2>Orders</h2>
         <p>
           Purchases made by you to purchase a travel offer are made under the
           specific terms and conditions in this agreement, together with any
-          merchant-specific terms and conditions listed under the “Fine Print”
-          of the offer, together with any specific terms and conditions of the
-          merchant. Promotion of offers on the site does not constitute a
-          legally binding offer, but rather, are an invitation to treat.
+          merchant-specific terms and conditions listed under the &quot;Fine
+          Print&quot; of the offer, together with any specific terms and
+          conditions of the merchant. Promotion of offers on the site does not
+          constitute a legally binding offer, but rather, are an invitation to
+          treat.
         </p>
         <p>
           We reserve the right to accept or reject your order for any reason (or
