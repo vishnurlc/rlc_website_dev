@@ -1,26 +1,26 @@
 export const metadata = {
-  title: 'Privacy Policy',
+  title: "Privacy Policy",
   description:
-    'Learn about how Richy life Club collects, uses, and protects your personal information. Explore our commitment to privacy and data security in luxury services.',
+    "Learn about how Richy life Club collects, uses, and protects your personal information. Explore our commitment to privacy and data security in luxury services.",
   keywords: [
-    'Richy life Club',
-    'Privacy Policy',
-    'Data Protection',
-    'Personal Information',
-    'Privacy Commitment',
-    'Data Security',
-    'Luxury Services',
-    'Premium Car Rentals',
-    'Private Jet Charters',
-    'Luxury Yacht Rentals',
-    'Helicopter Services',
-    'UAE-based',
+    "Richy life Club",
+    "Privacy Policy",
+    "Data Protection",
+    "Personal Information",
+    "Privacy Commitment",
+    "Data Security",
+    "Luxury Services",
+    "Premium Car Rentals",
+    "Private Jet Charters",
+    "Luxury Yacht Rentals",
+    "Helicopter Services",
+    "UAE-based",
   ],
   openGraph: {
-    title: 'Privacy Policy',
+    title: "Privacy Policy",
     description:
-      'Discover how Richy life Club safeguards your personal information. Explore our privacy commitment and data security practices in luxury car rentals, private jets, yachts, and more.',
-    siteName: 'Richy life Club',
+      "Discover how Richy life Club safeguards your personal information. Explore our privacy commitment and data security practices in luxury car rentals, private jets, yachts, and more.",
+    siteName: "Richy life Club",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/privacy-policy/bannerimg.png`,
@@ -33,8 +33,8 @@ export const metadata = {
         height: 200,
       },
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
 };
 
@@ -45,7 +45,7 @@ const page = () => {
         <h1>Privacy Policy for Richy Life Club</h1>
 
         <p>
-          At Richy life Club, accessible from{' '}
+          At Richy life Club, accessible from{" "}
           <a href="/">https://www.richylife.ae</a>, one of our main priorities
           is the privacy of our visitors. This Privacy Policy document contains
           types of information that is collected and recorded by Richy life Club
@@ -91,6 +91,35 @@ const page = () => {
           email address, and telephone number.
         </p>
 
+        <h2>Collection of personal information</h2>
+        <p>
+          Richylife collects Personal Information about customers, prospective
+          customers, and website users that is necessary for our operations.
+          This information may include, but is not limited to:
+        </p>
+        <ul>
+          <li>Registration information provided on our website</li>
+          <li>Information provided via phone or email</li>
+          <li>Data obtained through third-party service providers</li>
+        </ul>
+        <p>
+          The types of Personal Information we collect include your name,
+          address, contact details, payment information, and other details
+          relevant to our services. We may also collect sensitive information,
+          such as health or lifestyle details, with your consent when necessary.
+        </p>
+        <p>
+          If you refer a friend to Richylife, they must register themselves. We
+          do not enter Personal Information on their behalf.
+        </p>
+        <p>
+          We will inform you of the purposes for collecting your Personal
+          Information at or before the time of collection, or as soon as
+          practicable afterward.
+        </p>
+        <p>
+          Richylife will not sell your Personal Information to any third party.
+        </p>
         <h2>How we use your information</h2>
 
         <p>We use the information we collect in various ways, including to:</p>
@@ -106,10 +135,37 @@ const page = () => {
             updates and other information relating to the website, and for
             marketing and promotional purposes
           </li>
+          <li>
+            We use cookies and similar technologies to enhance your browsing
+            experience and provide personalized advertising.
+          </li>
           <li>Send you emails</li>
           <li>Find and prevent fraud</li>
         </ul>
 
+        <h2>Direct Marketing</h2>
+        <p>
+          Richylife may use your Personal Information for direct marketing
+          purposes. You can opt-out of receiving marketing communications at any
+          time.
+        </p>
+        <p>
+          We will include an opt-out option in each marketing communication.
+        </p>
+        <h2>Ensuring Information Is Accurate And Up To Date</h2>
+        <p>
+          Richylife takes reasonable measures to protect your Personal
+          Information from misuse, loss, and unauthorized access or disclosure.
+        </p>
+        <p>
+          We retain your Personal Information for as long as necessary to
+          provide our services and fulfill our legal obligations.
+        </p>
+        <h2>How You Can Access, Correct Or Control Your Information</h2>
+        <p>
+          You have the right to access, correct, or delete your Personal
+          Information. Please contact us to make such requests.
+        </p>
         <h2>Log Files</h2>
 
         <p>
@@ -154,7 +210,7 @@ const page = () => {
           advertisers or websites. Thus, we are advising you to consult the
           respective Privacy Policies of these third-party ad servers for more
           detailed information. It may include their practices and instructions
-          about how to opt-out of certain options.{' '}
+          about how to opt-out of certain options.{" "}
         </p>
 
         <p>
@@ -254,7 +310,7 @@ const page = () => {
         </p>
 
         <p>
-          Our Privacy Policy was created with the help of the{' '}
+          Our Privacy Policy was created with the help of the{" "}
           <a href="https://www.termsfeed.com/privacy-policy-generator/">
             Privacy Policy Generator
           </a>
@@ -265,7 +321,7 @@ const page = () => {
 
         <p>
           If you have any questions or suggestions about our Privacy Policy, do
-          not hesitate to contact us by{' '}
+          not hesitate to contact us by{" "}
           <a href="mailto:info@richylife.ae">info@richylife.ae</a>
         </p>
       </div>

@@ -1,23 +1,23 @@
 export const metadata = {
-  title: 'Terms of Use',
+  title: "Terms of Use",
   description:
-    'Explore the terms and conditions for using Richy life Club services. Learn about the policies that govern your use of our luxury car rentals, private jets, yachts, and more.',
+    "Explore the terms and conditions for using Richy life Club services. Learn about the policies that govern your use of our luxury car rentals, private jets, yachts, and more.",
   keywords: [
-    'Richy life Club',
-    'Terms of Use',
-    'Terms and Conditions',
-    'Luxury Services',
-    'Premium Car Rentals',
-    'Private Jet Charters',
-    'Luxury Yacht Rentals',
-    'Helicopter Services',
-    'UAE-based',
+    "Richy life Club",
+    "Terms of Use",
+    "Terms and Conditions",
+    "Luxury Services",
+    "Premium Car Rentals",
+    "Private Jet Charters",
+    "Luxury Yacht Rentals",
+    "Helicopter Services",
+    "UAE-based",
   ],
   openGraph: {
-    title: 'Terms of Use',
+    title: "Terms of Use",
     description:
       "Discover the terms and conditions for enjoying Richy life Club's luxury services. Explore premium car rentals, private jet charters, luxury yachts, and helicopter services.",
-    siteName: 'Richy life Club',
+    siteName: "Richy life Club",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_WEB_URL}/assets/terms-of-use/bannerimg.png`,
@@ -30,8 +30,8 @@ export const metadata = {
         height: 200,
       },
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
 };
 
@@ -40,7 +40,7 @@ const TermsAndConditions = () => {
     <main className="privacy-container">
       <div className="container mx-auto p-6 privacycontent">
         <h1>Terms and Conditions</h1>
-        <p>Last updated: August 25, 2023</p>
+        <p>Last updated: June 26, 2024</p>
         <p>
           Please read these terms and conditions carefully before using Our
           Service.
@@ -95,7 +95,7 @@ const TermsAndConditions = () => {
               &quot;Terms&quot;) mean these Terms and Conditions that form the
               entire agreement between You and the Company regarding the use of
               the Service. This Terms and Conditions agreement has been created
-              with the help of the{' '}
+              with the help of the{" "}
               <a
                 href="https://www.termsfeed.com/terms-conditions-generator/"
                 target="_blank"
@@ -117,7 +117,7 @@ const TermsAndConditions = () => {
           <li>
             <p>
               <strong>Website</strong> refers to Richy life Club, accessible
-              from{' '}
+              from{" "}
               <a href="https://richylife.ae" rel="noreferrer" target="_blank">
                 https://richylife.ae
               </a>
@@ -131,6 +131,177 @@ const TermsAndConditions = () => {
             </p>
           </li>
         </ul>
+        {/* ss */}
+
+        <h1>General Terms & Conditions</h1>
+        <h2>Booking Terms and Conditions</h2>
+        <p>
+          By using the website or mobile application of RICHYLIFE CLUB TRAVEL
+          L.L.C. (collectively "the Site" or “the App”), you agree to the terms
+          and conditions set out herein.
+        </p>
+        <p>
+          This agreement is between you and RICHYLIFE CLUB TRAVEL L.L.C.
+          (hereafter referred to as "RichyLife," "we," "our," or "us"). On the
+          Site and in these booking conditions, RichyLife and entities that are
+          related to or affiliated with it in the provision of the services it
+          agrees to provide (where the context admits, together with its and
+          their employees and agents) are included in the expressions "Company,"
+          "RichyLife," "we," "our," or "us." A person taking advantage of the
+          services offered by RichyLife, and all other persons (if any) included
+          with that person in the booking, are included in the expressions
+          "you," "your," "client," or "passenger."
+        </p>
+        <p>
+          RichyLife sells bookings, ticketing, and other ancillary services for
+          travel, accommodation, and other leisure activities (“Arrangements”).
+          RichyLife is neither a common carrier nor a private carrier and does
+          not provide any of the travel, accommodation, or other activities
+          described on this site (“Travel Products”). RichyLife acts as your
+          agent in making the Arrangements with third-party suppliers who
+          provide Travel Products as principals (“Suppliers”). RichyLife is not
+          the agent of any such principal. You will also be subject to the terms
+          and conditions of any third-party suppliers in addition to these terms
+          and conditions.
+        </p>
+
+        <h2>User Agreement</h2>
+        <p>
+          This agreement is between you and RICHYLIFE CLUB TRAVEL L.L.C. By
+          visiting and/or using the Site or App, you agree to be bound by the
+          terms of this agreement ("agreement"). We may modify our terms and
+          conditions without notice at any time where such amendment does not
+          substantially affect your rights and obligations. If such changes to
+          our terms and conditions substantially affect your rights and
+          obligations, we will notify you by email with these changes as they
+          occur. By using our site to search for and/or book the products and/or
+          services offered, you are indicating:
+        </p>
+        <ul>
+          <li>That you have read this User Agreement; and</li>
+          <li>Your acceptance of this User Agreement.</li>
+        </ul>
+
+        <h2>Registration</h2>
+        <p>
+          In order to purchase any item (and access certain ‘members only’ areas
+          of the Site or App), you need to be a registered member of the Site or
+          App. When registering to become a member, you must provide Personal
+          Information, including your first and last name, and a valid email
+          address.
+        </p>
+        <p>
+          You agree to provide accurate and complete information and to keep
+          this information current. Your information is stored securely, and
+          will only be used and disclosed in accordance with our Privacy Policy.
+          You are solely responsible for the activity that occurs on your
+          account, and you must keep your account password secure. If you
+          suspect or become aware of any unauthorized use of your account or
+          that your password is no longer secure, you should notify us
+          immediately at{" "}
+          <a href="mailto:info@richylife.ae">info@richylife.ae</a>. We are not
+          liable for any unauthorized use of your account.
+        </p>
+
+        <h2>Capacity</h2>
+        <p>
+          By making a purchase through the Site or App, you warrant that you are
+          over 18 and that you have the legal right and ability to enter into a
+          legally binding agreement with us. No persons under the age of
+          eighteen (18) are permitted to use the Site or App or to sign up as a
+          member of the Site or App.
+        </p>
+
+        <h2>Website and App Changes</h2>
+        <p>
+          We reserve the right to change, alter, vary, or amend the Site or App
+          at any time. We may, in our sole discretion, terminate your account or
+          restrict your access to the Site or App. If we do this, you may be
+          prevented from accessing all or parts of the Site or App, your account
+          details, or other content contained in your account. In the event that
+          this occurs, you will still be entitled to access those packages that
+          you had previously purchased through the Site or App.
+        </p>
+
+        <h2>Disclaimer</h2>
+        <p>
+          For orders on RichyLife, the prices that are listed at the time of
+          your order on the product page apply. The prices are final prices
+          inclusive of VAT (where applicable) and all other price components
+          (including relevant taxes and charges).
+        </p>
+
+        <h2>Use of Site and App by You</h2>
+        <p>
+          You agree not to access (or attempt to access) any part of the Site or
+          App by any means other than through the interface provided by us. You
+          agree that you will not engage in any activity that interferes with or
+          disrupts the Site or App or the servers and networks that host the
+          Site or App. You may not use data mining, robots, screen scraping, or
+          similar data gathering and extraction tools on the Site or App except
+          with our prior written consent. You agree not to, or attempt to,
+          circumvent, disable, or otherwise interfere with security-related
+          features of the Site or App or features that prevent or restrict use
+          or copying of any content or enforce limitations on the use of the
+          Site or App or the content therein.
+        </p>
+
+        <h2>Information on this Site and App</h2>
+        <p>
+          Information about offers on the Site and App may be based on material
+          provided by third-party businesses ("merchants"). We do our best to
+          verify the information provided to us by merchants, but we cannot
+          guarantee its accuracy on all occasions. You understand and agree that
+          we cannot be held responsible for errors or omissions caused by
+          incorrect or inadequate information supplied to us or by merchants.
+          You agree to make your own enquiries to verify information provided
+          and to assess the suitability of products before you purchase. All
+          imagery and video on the Site and App are for representational
+          purposes only.
+        </p>
+
+        <h2>Orders</h2>
+        <p>
+          Purchases made by you to purchase a travel offer are made under the
+          specific terms and conditions in this agreement, together with any
+          merchant-specific terms and conditions listed under the “Fine Print”
+          of the offer, together with any specific terms and conditions of the
+          merchant. Promotion of offers on the site does not constitute a
+          legally binding offer, but rather, are an invitation to treat.
+        </p>
+        <p>
+          We reserve the right to accept or reject your order for any reason (or
+          no reason) at any time after that order has been made, including, but
+          not limited to, the unavailability of any product or service, an error
+          in the price or product or service description, or an error in your
+          order. If we cancel your order, we will provide a full refund of any
+          payment received. Once placed, you cannot cancel your order except as
+          set out in this agreement.
+        </p>
+
+        <h2>Price</h2>
+        <p>
+          The prices of offers include all taxes and charges, including VAT
+          (where applicable) except where stated otherwise. There may be
+          additional surcharges which are payable directly to the hotel which
+          will be referred to in the relevant travel offer. Prices of products
+          and services are current at time of display however are subject to
+          change.
+        </p>
+
+        <h2>Payment</h2>
+        <p>
+          All payments must be made in accordance with the instructions provided
+          on the Site or App. Payments can be made by credit card or any other
+          method authorized by us. In the event of payment by credit card, you
+          warrant that you are fully authorized to use the credit card for that
+          purpose.
+        </p>
+
+        <h2>Refunds</h2>
+        <p>Any refunds are made in accordance with our Refund Policy.</p>
+
+        {/* ss */}
         <h1>Acknowledgment</h1>
         <p>
           These are the Terms and Conditions governing the use of this Service
