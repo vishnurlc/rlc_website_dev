@@ -44,15 +44,17 @@ function CardHotel({ variant, data }) {
     return priceFormatted;
   };
 
+  console.log(data);
+
   return (
-    <div id={data.attributes.chauffeur_make.data?.attributes.slug}>
+    <div id={data.attributes.slug}>
       <div className="grid grid-cols-1 w-full lg:grid-cols-5  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-white]">
         <div
           // href={`${path}/${data.attributes.slug}`}
           className="col-span-3 relative w-full aspect-[2/1] min-h-[120px] "
         >
           <Image
-            src={data.attributes.images?.data[0].attributes.url}
+            src={data.attributes.image?.data[0].attributes.url}
             alt={`Rent ${data.attributes.name} with Richy life Club`}
             fill
             style={{
@@ -67,7 +69,7 @@ function CardHotel({ variant, data }) {
         <div className="p-5 col-span-1 md:col-span-2">
           <div className="text-black h-full flex flex-col items-start justify-between">
             <h3 className="text-primary text-2xl font-bold leading-[29.04px]">
-              <Link href={`${path}/${data.id}`}>{data.attributes.name}</Link>
+              <Link href={`${path}/1-oak-dubai`}>{data.attributes.name}</Link>
             </h3>
 
             {/* <CarDetail data={data} /> */}
