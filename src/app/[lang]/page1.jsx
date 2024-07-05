@@ -1,14 +1,8 @@
 import dynamic from "next/dynamic";
-import {
-  HeroSection,
-  HeroSection2,
-  Herosectionbyz,
-  OurServices,
-} from "@/components";
+import { HeroSection, OurServices } from "@/components";
 import VideoSection from "@/components/home/VideoSection";
 import TopDestination from "@/components/home/TopDestination";
 import { getDictionary } from "@/dectionaries";
-import herosectionbyz from "@/components/herosection/Herosectionbyz";
 
 const Aboutsection = dynamic(() => import("@/components/home/aboutsection"));
 const Blog = dynamic(() => import("@/components/home/Blog"));
@@ -67,16 +61,6 @@ export default async function Home({ params }) {
   return (
     <main className="overflow-hidden">
       <h1 className="sr-only">Richy life Club - Experience Luxury in Dubai</h1>
-      <Herosectionbyz
-        type={"image"}
-        heading1={"ELEVATE"}
-        heading2={"YOUR ANY DAY..."}
-        subheading={"Experience the sea breeze in luxury"}
-        posterurl={"/assets/privateyachts/banner.png"}
-        btntext={"Book your trip"}
-        url={"/assets/privateyachts/banner.png"}
-        overlay={1}
-      />
       <TopDestination />
       <OurServices />
       <HeroSection
