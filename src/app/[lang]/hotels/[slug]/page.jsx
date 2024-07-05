@@ -58,7 +58,7 @@ export async function generateMetadata({ params }) {
 }
 
 async function getData(slug) {
-  let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/club-packages?filters[slug][$eq]=${slug.slug}&populate=*`;
+  let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/hotels?filters[slug][$eq]=${slug.slug}&populate=*`;
 
   try {
     const res = await fetch(api, {
@@ -204,9 +204,7 @@ const page = async ({ params }) => {
         <div className="pt-4 px-6 flex items-center justify-start md:justify-end gap-5 max-w-[1200px] mx-auto">
           <h2 className="text-right text-xl text-primary">
             Starting from &nbsp;
-            <PriceComponent
-              cost={car.data[0].attributes.avg_price_per_person}
-            />
+            <PriceComponent cost={car.data[0].attributes.starting_price} />
           </h2>
 
           <AnimatedBtn
@@ -250,7 +248,7 @@ const page = async ({ params }) => {
 
         <div className="w-full h-full ">
           <div className="grid grid-cols-1 md:grid-cols-2 max-w-[1200px] mx-auto gap-8">
-            <div className="border w-full  rounded-lg shadow-lg">
+            {/* <div className="border w-full  rounded-lg shadow-lg">
               <div className="flex flex-col items-center md:items-start px-6 py-4">
                 <div className="flex flex-col w-24">
                   <h2 className="font-bold text-xl text-center lg:text-left">
@@ -268,10 +266,10 @@ const page = async ({ params }) => {
                 </div>
                 <div className="text-gray-500  text-center md:text-start">
                   <p>
-                    Price Range :{" "}
-                    {/* <PriceComponent
-                            cost={car.data[0].attributes.avg_price_per_person}
-                          /> */}
+                    starting price :{" "}
+                    <PriceComponent
+                      cost={car.data[0].attributes.starting_price}
+                    />
                     <span className="text-primary items-center gap-2 text-sm md:text-base font-medium leading-tight">
                       {"$".repeat(car.data[0].attributes.dollarcountmin)} -{" "}
                       {"$".repeat(car.data[0].attributes.dollarcountmax)}
@@ -305,7 +303,7 @@ const page = async ({ params }) => {
                   )}
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="border w-full  rounded-lg shadow-lg">
               <div className="px-6 py-4">
                 <div className="flex flex-col w-24">
@@ -345,7 +343,7 @@ const page = async ({ params }) => {
           <h2 className="inline-block mb-4 md:mb-8 font-inter text-primary font-semibold text-xl md:text-[40px]">
             Amenities
           </h2>
-          <Amenitys data={amnityData} />
+          <Amenitys data={car.data[0].attributes.amenities} />
         </div>
 
         <ContactForm

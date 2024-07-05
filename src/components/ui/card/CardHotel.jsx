@@ -69,7 +69,9 @@ function CardHotel({ variant, data }) {
         <div className="p-5 col-span-1 md:col-span-2">
           <div className="text-black h-full flex flex-col items-start justify-between">
             <h3 className="text-primary text-2xl font-bold leading-[29.04px]">
-              <Link href={`${path}/1-oak-dubai`}>{data.attributes.name}</Link>
+              <Link href={`${path}/${data.attributes.slug}`}>
+                {data.attributes.name}
+              </Link>
             </h3>
 
             {/* <CarDetail data={data} /> */}
