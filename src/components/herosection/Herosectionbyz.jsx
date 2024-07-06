@@ -49,7 +49,7 @@ const Herosectionbyz = ({
           btntext={btntext}
         />
         {overlay === 1 ? (
-          <div className="absolute inset-0 select-none z-0 bg-[#625A4A] bg-opacity-50"></div>
+          <div className="absolute inset-0 select-none z-0 "></div>
         ) : (
           <div
             className="absolute inset-0 select-none z-1 "

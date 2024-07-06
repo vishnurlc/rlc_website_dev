@@ -72,11 +72,12 @@ export default async function Home({ params }) {
         heading1={"ELEVATE"}
         heading2={"YOUR ANY DAY..."}
         subheading={"Experience the sea breeze in luxury"}
-        posterurl={"/assets/privateyachts/banner.png"}
+        posterurl={"/assets/home/background.png"}
         btntext={"Book your trip"}
-        url={"/assets/privateyachts/banner.png"}
+        url={"/assets/home/background.png"}
         overlay={1}
       />
+
       <TopDestination />
       <OurServices />
       <HeroSection

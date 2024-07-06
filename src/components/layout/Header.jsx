@@ -101,21 +101,21 @@ export default function Header({ lang }) {
       setMobileMenuDropdown(index);
     }
   };
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY > 500) {
-  //       setHeaderType(1);
-  //     } else {
-  //       setHeaderType(0);
-  //     }
-  //   };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setHeaderType(1);
+      } else {
+        setHeaderType(0);
+      }
+    };
 
-  //   window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const links = [
     {
@@ -238,9 +238,10 @@ export default function Header({ lang }) {
   ];
   return (
     <header
-      className="fixed w-screen top-0 z-50 transition-all backdrop-blur-lg"
+      className="fixed w-screen top-0 z-50 transition-all"
       style={{
-        background: headerType === 1 || mobileMenuOpen ? "#fff" : "#006039",
+        background:
+          headerType === 1 || mobileMenuOpen ? "#006039" : "transparent",
       }}
       onMouseLeave={handleDropdownLeave}
     >
@@ -323,13 +324,13 @@ export default function Header({ lang }) {
                 <div className="relative group">
                   <div
                     className={`flex items-center gap-x-1 text-sm font-inter leading-6 cursor-pointer nav_link ${
-                      headerType === 1 ? "text-primary" : "text-white"
+                      headerType === 1 ? "text-white " : "text-white"
                     }  focus:outline-none`}
                   >
                     {item.name}
                     <HiOutlineChevronDown
                       className={`h-5 w-5 flex-none ${
-                        headerType === 1 ? "text-primary" : "text-white"
+                        headerType === 1 ? "text-white" : "text-white"
                       } `}
                       aria-hidden="true"
                     />
@@ -365,7 +366,7 @@ export default function Header({ lang }) {
                 <Link
                   href={item.link}
                   className={`text-sm leading-6 nav_link ${
-                    headerType === 1 ? "text-primary" : "text-white"
+                    headerType === 1 ? "text-white" : "text-white"
                   } font-inter`}
                 >
                   {item.name}
