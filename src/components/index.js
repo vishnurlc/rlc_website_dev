@@ -1,5 +1,6 @@
 export { default as Header } from "./layout/Header";
 export { default as SectionHeading } from "./SectionHeading/SectionHeading";
+export { default as SectionHeadingTwoLine } from "./SectionHeading/SectionHeadingTwoLine";
 
 export { default as HeroSection } from "./herosection/Herosection";
 export { default as HeroSection2 } from "./herosection/Herosection2";

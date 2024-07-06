@@ -4,6 +4,8 @@ import {
   HeroSection2,
   Herosectionbyz,
   OurServices,
+  SectionHeading,
+  SectionHeadingTwoLine,
 } from "@/components";
 import VideoSection from "@/components/home/VideoSection";
 import TopDestination from "@/components/home/TopDestination";
@@ -77,7 +79,11 @@ export default async function Home({ params }) {
         url={"/assets/home/background.png"}
         overlay={1}
       />
-
+      <SectionHeadingTwoLine
+        title={"DISCOVER OUR"}
+        title1={"DESTINATIONS"}
+        mobile={true}
+      />
       <TopDestination />
       <OurServices />
       <HeroSection
