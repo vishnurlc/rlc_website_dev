@@ -8,6 +8,7 @@ export { default as Herosectionbyz } from "./herosection/Herosectionbyz";
 export { default as ServiceBanner } from "./home/ServicesBanner";
 export { default as OurServices } from "./home/OurServices";
 export { default as Testimonials } from "./home/Testimonials";
+export { default as DestinationCard } from "./home/DestinationCard";
 
 export { default as ContactForm } from "./formComponent/ContactForm";
 export { default as FormComponent } from "./formComponent/FormComponent";
@@ -64,3 +65,5 @@ export { default as PriceComponent } from "./ui/priceComponent/PriceComponent";
 export { default as ToursListingComponent } from "./tours/ListingComponent";
 
 export { default as BookingModal } from "./BookingModal/Bookingmodal";
+
+// new componets
