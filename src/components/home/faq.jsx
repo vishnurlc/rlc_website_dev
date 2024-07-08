@@ -30,7 +30,7 @@ function Faq({ category }) {
     fetchData();
   }, []);
   return (
-    <div className="bg-white px-5 py-8 md:py-16">
+    <div className="bg-[#F8F8F8] px-5 py-8 md:py-16">
       <div className="flex flex-col gap-6 md:gap-10 max-w-[1200px] mx-auto">
         <h3 className="text-primary font-sans text-3xl md:text-4xl font-extrabold text-center">
           Frequently Asked Questions

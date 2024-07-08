@@ -13,6 +13,7 @@ import VideoSection from "@/components/home/VideoSection";
 import TopDestination from "@/components/home/TopDestination";
 import { getDictionary } from "@/dectionaries";
 import herosectionbyz from "@/components/herosection/Herosectionbyz";
+import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
 
 const Aboutsection = dynamic(() => import("@/components/home/aboutsection"));
 const Blog = dynamic(() => import("@/components/home/Blog"));
@@ -69,7 +70,7 @@ export default async function Home({ params }) {
   const { lang } = params;
   const languageData = await getDictionary(lang);
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden bg-[#F8F8F8]">
       <h1 className="sr-only">Richy life Club - Experience Luxury in Dubai</h1>
       <Herosectionbyz
         type={"image"}
@@ -94,19 +95,27 @@ export default async function Home({ params }) {
       />
       <CardServices />
       {/* <TopDestination /> */}
-      <OurServices />
-      <HeroSection
+      {/* <OurServices /> */}
+      {/* <HeroSection
         alt={"Richy Life Club Luxury Lifestyle Networking Destination Compnay"}
         posterurl={"/assets/home/heroposter.png"}
         url={"https://admin.richylife.ae/rlchome2.mp4"}
         type={"video"}
         btntext={"Explore More"}
-      />
+      /> */}
+      <div className="relative mt-10">
+        <AnimatedBtn
+          styles="absolute bottom-6 left-1/2 -translate-x-1/2 text-black py-2 bg-[#006039] text-white rounded-sm border border-solid border-gray-500 border-opacity-50 hover:bg-[#CBB87E] hover:border-white"
+          text={"Contact Us Now"}
+          msg={"Hi, I would like to know about your services."}
+        />
+      </div>
       <Aboutsection languageData={languageData} />
       {/* <VideoSection
         posterurl={'/assets/home/heroposter1.webp'}
         url={'https://admin.richylife.ae/rlchome.mp4'}
       /> */}
+
       <ServiceBanner />
       <Blog />
       <Testimonials />
