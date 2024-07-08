@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import {
+  CardServices,
   DestinationCard,
   HeroSection,
   HeroSection2,
@@ -85,15 +86,14 @@ export default async function Home({ params }) {
         title1={"DESTINATIONS"}
         mobile={true}
       />
-
       <DestinationCard />
       <SectionHeadingTwoLine
         title={"OUR"}
         title1={"PREMIUM SERVICES"}
         mobile={true}
       />
-
-      <TopDestination />
+      <CardServices />
+      {/* <TopDestination /> */}
       <OurServices />
       <HeroSection
         alt={"Richy Life Club Luxury Lifestyle Networking Destination Compnay"}

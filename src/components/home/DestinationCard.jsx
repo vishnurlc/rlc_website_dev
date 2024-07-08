@@ -49,7 +49,7 @@ function DestinationCard() {
                   aspectRatio: "calc(400/300)",
                 }}
               />
-              <div className="py-4 font-sans flex-auto flex justify-between flex-col">
+              <div className="px-6 md:px-0 py-4 font-sans flex-auto flex justify-between flex-col">
                 <div className="h-[144px] overflow-hidden">
                   <h4 className="text-xl md:text-5xl">{e.title}</h4>
                   <p className="text-[#CBB87E] ">{e.sub ? e.sub : ""}</p>
@@ -60,11 +60,13 @@ function DestinationCard() {
                   </p>
                 </div>
               </div>
-              <AnimatedBtn
-                styles="w-fit text-black py-2 bg-opacity-80 rounded-sm border border-solid border-gray-500 border-opacity-50 hover:bg-[#CBB87E] hover:border-white"
-                text={"Discover Now"}
-                msg={"Hi, I would like to know about your services."}
-              />
+              <div className="px-6 md:px-0">
+                <AnimatedBtn
+                  styles="w-fit text-black py-2 bg-opacity-80 rounded-sm border border-solid border-gray-500 border-opacity-50 hover:bg-[#CBB87E] hover:border-white"
+                  text={"Discover Now"}
+                  msg={"Hi, I would like to know about your services."}
+                />
+              </div>
             </div>
           </Link>
         ))}
