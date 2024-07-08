@@ -286,7 +286,9 @@ export default function Header({ lang }) {
               src={
                 mobileMenuOpen
                   ? "/assets/logos/rlclogogreen.png"
-                  : "/assets/logos/rlclogowhite.png"
+                  : headerType === 1 || mobileMenuOpen
+                  ? "/assets/logos/rlclogomatewhite.png"
+                  : "/assets/logos/whiterlclogo.png"
               }
               alt="Richy life Club Logo"
               priority
