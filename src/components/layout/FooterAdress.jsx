@@ -1,5 +1,5 @@
-'use client';
-import Link from 'next/link';
+"use client";
+import Link from "next/link";
 
 import {
   BsFacebook,
@@ -7,9 +7,9 @@ import {
   BsLinkedin,
   BsTwitter,
   BsYoutube,
-} from 'react-icons/bs';
-import { FaPhoneAlt } from 'react-icons/fa';
-import { MdLocationPin, MdOutlineAvTimer } from 'react-icons/md';
+} from "react-icons/bs";
+import { FaPhoneAlt } from "react-icons/fa";
+import { MdLocationPin, MdOutlineAvTimer } from "react-icons/md";
 
 function FooterAdress() {
   return (
@@ -23,10 +23,10 @@ function FooterAdress() {
             href={`tel:${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
             className=" text-white text-sm font-normal leading-tight"
           >
-            +971 50 995 3399
+            +971 501 9603 38
           </Link>
           <Link
-            href={'mailto:info@richylife.ae'}
+            href={"mailto:info@richylife.ae"}
             className="text-white text-sm font-normal leading-tight"
           >
             info@richylife.ae
@@ -47,25 +47,25 @@ function FooterAdress() {
         </div>
       </div>
       <div className="flex mt-4 items-center justify-start w-full gap-8 pl-1">
-        <Link href={'https://www.instagram.com/richylifecom/'} target="_blank">
+        <Link href={"https://www.instagram.com/richylifecom/"} target="_blank">
           <BsInstagram color="#DCA24B" size={24} />
         </Link>
         <Link
-          href={'https://www.youtube.com/channel/UCnMbmjAfQqUf42K_ClJaYww'}
+          href={"https://www.youtube.com/channel/UCnMbmjAfQqUf42K_ClJaYww"}
           target="_blank"
           rel="noreferrer"
         >
           <BsYoutube color="#DCA24B" size={24} />
         </Link>
         <Link
-          href={'https://www.facebook.com/profile.php?id=61550870554790'}
+          href={"https://www.facebook.com/profile.php?id=61550870554790"}
           target="_blank"
           rel="noreferrer"
         >
           <BsFacebook color="#DCA24B" size={24} />
         </Link>
         <Link
-          href={'https://www.linkedin.com/company/richylife-club/'}
+          href={"https://www.linkedin.com/company/richylife-club/"}
           target="_blank"
           rel="noreferrer"
         >

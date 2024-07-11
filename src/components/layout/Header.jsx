@@ -249,7 +249,7 @@ export default function Header({ lang }) {
         <div className="md:max-w-[1200px] mx-auto relative text-[#CBB87E] flex items-center justify-between  sm:justify-end  text-xs sm:gap-5 py-2 ">
           {headerData.pvta} 24/7{" "}
           <span className="flex gap-2 items-center">
-            <BiPhoneCall /> +971 505 5889 55
+            <BiPhoneCall /> +971 501 9603 38
             <FaChevronDown onClick={handleArrowClick} />
           </span>
           <CurrencyDropdown />
