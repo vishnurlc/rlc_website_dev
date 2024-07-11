@@ -246,7 +246,7 @@ export default function Header({ lang }) {
       onMouseLeave={handleDropdownLeave}
     >
       <div className=" bg-[#F8F8F8] px-1">
-        <div className="md:max-w-[1200px] mx-auto relative text-gold flex items-center justify-between  sm:justify-end  text-xs sm:gap-5 py-2 ">
+        <div className="md:max-w-[1200px] mx-auto relative text-[#CBB87E] flex items-center justify-between  sm:justify-end  text-xs sm:gap-5 py-2 ">
           {headerData.pvta} 24/7{" "}
           <span className="flex gap-2 items-center">
             <BiPhoneCall /> +971 505 5889 55

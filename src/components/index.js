@@ -68,3 +68,4 @@ export { default as ToursListingComponent } from "./tours/ListingComponent";
 export { default as BookingModal } from "./BookingModal/Bookingmodal";
 
 // new componets
+export { default as DestinationFilter } from "./destination/DestinationFilter";

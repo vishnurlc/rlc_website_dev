@@ -7,28 +7,28 @@ import AnimatedBtn from "../premiumjetski/AnimatedBtn";
 function DestinationCard() {
   const data = [
     {
-      title: "Turkey",
+      title: "Turkiye",
       image: "/assets/home/com/turkey.jpg",
-      link: "services",
+      link: "turkiye",
       sub: "Bodrum - Antalya - Cappadocia",
     },
     {
       title: "Dubai",
       image: "/assets/home/com/dubai.jpg",
-      link: "services",
+      link: "dubai",
       sub: "Dubai - Adu Dhabi",
     },
     {
       title: "Maldives",
       image: "/assets/home/com/maldives.jpg",
-      link: "services",
+      link: "maldives",
     },
   ];
   return (
     <div className="max-w-[1200px] mx-auto">
       <div className="pb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 gap-7">
         {data.map((e, index) => (
-          <Link href={`/`} key={index}>
+          <Link href={`en/service?destination=${e.link}`} key={index}>
             <div
               className="min-h-[470px] flex flex-col"
               // style={{
