@@ -93,9 +93,9 @@ export default async function Home({ params }) {
         title1={"PREMIUM SERVICES"}
         mobile={true}
       />
-      <CardServices />
+      <OurServices />
       {/* <TopDestination /> */}
-      {/* <OurServices /> */}
+
       {/* <HeroSection
         alt={"Richy Life Club Luxury Lifestyle Networking Destination Compnay"}
         posterurl={"/assets/home/heroposter.png"}

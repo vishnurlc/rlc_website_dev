@@ -36,7 +36,7 @@ function DestinationFilter() {
           {DestinationData.map((e, index) => (
             <h3
               key={index}
-              className={`min-w-[200px]  text-3xl font-bold text-center cursor-pointer border-b-2 border-black  ${
+              className={`min-w-[200px]  text-3xl font-bold text-center cursor-pointer border-b-2 border-black pb-2 ${
                 activeDestination === e.slug ? "opacity" : "opacity-50"
               }`}
               onClick={() => handelPramsChange(e.slug)}
@@ -50,6 +50,9 @@ function DestinationFilter() {
         <SectionHeadingTwoLine
           title={`DISCOVER ${activeDestination}'s`}
           title1={"DESTINATIONS"}
+          description={
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus fugiat saepe, blanditiis molestias nemo voluptates dolores excepturi alias omnis sit modi, libero quo!Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus fugiat saepe, blanditiis molestias nemo voluptates dolores excepturi alias omnis sit modi, libero quo!"
+          }
           mobile={true}
         />
       </div>

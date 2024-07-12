@@ -27,7 +27,7 @@ function SectionHeadingTwoLine({
         <p
           className={`${
             title_color ? `text-${title_color}` : "text-[#777777]"
-          } text-sm md:text-base font-thin font-inter text-center`}
+          } text-sm md:text-base font-thin font-inter`}
         >
           {description}
         </p>
