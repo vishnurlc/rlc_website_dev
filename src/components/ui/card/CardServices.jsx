@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
 function CardServices({ service }) {
-  console.log("working", service);
   return (
     <div>
       <div className="max-w-[1200px] mx-auto px-6 md:px-0">

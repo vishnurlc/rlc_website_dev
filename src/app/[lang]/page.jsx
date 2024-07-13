@@ -94,15 +94,7 @@ export default async function Home({ params }) {
         mobile={true}
       />
       <OurServices />
-      {/* <TopDestination /> */}
 
-      {/* <HeroSection
-        alt={"Richy Life Club Luxury Lifestyle Networking Destination Compnay"}
-        posterurl={"/assets/home/heroposter.png"}
-        url={"https://admin.richylife.ae/rlchome2.mp4"}
-        type={"video"}
-        btntext={"Explore More"}
-      /> */}
       <div className="relative mt-10">
         <AnimatedBtn
           styles="absolute bottom-6 left-1/2 -translate-x-1/2 text-black py-2 bg-[#006039] text-white rounded-sm border border-solid border-gray-500 border-opacity-50 hover:bg-[#CBB87E] hover:border-white"
@@ -111,10 +103,6 @@ export default async function Home({ params }) {
         />
       </div>
       <Aboutsection languageData={languageData} />
-      {/* <VideoSection
-        posterurl={'/assets/home/heroposter1.webp'}
-        url={'https://admin.richylife.ae/rlchome.mp4'}
-      /> */}
 
       <ServiceBanner />
       <Blog />

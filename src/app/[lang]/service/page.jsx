@@ -6,9 +6,10 @@ import {
   SectionHeadingTwoLine,
 } from "@/components";
 import Link from "next/link";
+import DestinationServiceFilter from "@/components/filters/DestinationServiceFilter";
 
-async function getData() {
-  let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/destinations?fields[0]=name&fields[1]=slug&populate[cities][fields][0]=city&populate[cities][fields][1]=slug`;
+async function getData(url) {
+  let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${url}`;
 
   try {
     const res = await fetch(api, {
@@ -29,8 +30,13 @@ async function getData() {
 }
 
 export default async function page({ params, searchParams }) {
-  // const make = await getData();
-  console.log("working", searchParams);
+  // const destinationData = await getData(
+  //   "destinations?fields[0]=name&fields[1]=slug&populate[cities][fields][0]=city&populate[cities][fields][1]=slug"
+  // );
+  // const serviceData = await getData(
+  //   `services?populate=*&filters[destinations][name][$eq]=${searchParams.destination}&sort=order:asc`
+  // );
+  // console.log("working", serviceData);
 
   return (
     <div>
@@ -52,8 +58,6 @@ export default async function page({ params, searchParams }) {
           <div>
             <DestinationFilter />
           </div>
-
-          <CardServices />
         </div>
       </main>
     </div>

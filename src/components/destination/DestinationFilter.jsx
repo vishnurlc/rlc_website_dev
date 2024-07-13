@@ -2,6 +2,7 @@
 import { useSearchParams } from "next/navigation";
 import React, { useState } from "react";
 import { SectionHeadingTwoLine } from "..";
+import DestinationServiceFilter from "../filters/DestinationServiceFilter";
 
 function DestinationFilter() {
   const searchParams = useSearchParams();
@@ -13,7 +14,6 @@ function DestinationFilter() {
     // Update URL without triggering a full page reload
     window.history.pushState({}, "", "?destination=" + destination);
     setActiveDestination(destination);
-    console.log(activeDestination);
   };
   const DestinationData = [
     {
@@ -56,6 +56,8 @@ function DestinationFilter() {
           mobile={true}
         />
       </div>
+
+      <DestinationServiceFilter query={activeDestination} />
     </div>
   );
 }

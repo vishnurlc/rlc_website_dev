@@ -13,7 +13,7 @@ function DestinationCard() {
       sub: "Bodrum - Antalya - Cappadocia",
     },
     {
-      title: "Dubai",
+      title: "UAE",
       image: "/assets/home/com/dubai.jpg",
       link: "dubai",
       sub: "Dubai - Adu Dhabi",
@@ -28,7 +28,10 @@ function DestinationCard() {
     <div className="max-w-[1200px] mx-auto">
       <div className="pb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 gap-7">
         {data.map((e, index) => (
-          <Link href={`en/service?destination=${e.link}`} key={index}>
+          <Link
+            href={`en/service?destination=${e.link}`}
+            key={"destination" + index}
+          >
             <div
               className="min-h-[470px] flex flex-col"
               // style={{
