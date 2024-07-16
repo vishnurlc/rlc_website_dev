@@ -78,18 +78,16 @@ export default async function page() {
   return (
     <main className="pt-[108px] md:pt-0">
       <h1 className="sr-only ">Luxury Yacht Rentals - Richy life Club</h1>
-      <div className="hidden">
-        <HeroSection2
-          type={"image"}
-          heading1={"Luxury Yacht"}
-          heading2={"Rental in Dubai"}
-          subheading={"Experience the sea breeze in luxury"}
-          posterurl={"/assets/privateyachts/banner.png"}
-          btntext={"Book your trip"}
-          url={"/assets/privateyachts/banner.png"}
-          overlay={1}
-        />
-      </div>
+      <HeroSection2
+        type={"image"}
+        heading1={"Luxury Yacht"}
+        heading2={"Rental in Dubai"}
+        subheading={"Experience the sea breeze in luxury"}
+        posterurl={"/assets/privateyachts/banner.png"}
+        btntext={"Book your trip"}
+        url={"/assets/privateyachts/banner.png"}
+        overlay={1}
+      />
       <div className="mx-auto max-w-[1200px]">
         <YachtListing data={yachts} variant={"yacht"} />
       </div>

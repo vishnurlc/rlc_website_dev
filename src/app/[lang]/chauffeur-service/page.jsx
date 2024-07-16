@@ -65,17 +65,15 @@ const page = async () => {
   ];
 
   return (
-    <main className="pt-[108px] md:pt-[128px]">
-      <div className="hidden">
-        <HeroSection2
-          type="image"
-          heading1="Luxury Chauffeur"
-          heading2="Services"
-          subheading={"Your Voyage into Elegance and Comfort"}
-          btntext={"Book Now"}
-          url="/assets/chauffeur/hero.png"
-        />
-      </div>
+    <main>
+      <HeroSection2
+        type="image"
+        heading1="Luxury Chauffeur"
+        heading2="Services"
+        subheading={"Your Voyage into Elegance and Comfort"}
+        btntext={"Book Now"}
+        url="/assets/chauffeur/hero.png"
+      />
 
       <div className="md:mt-32 max-w-[1200px] mx-auto px-0 md:px-5">
         {/* <SectionHeading title={'Our Services'} description={''} />

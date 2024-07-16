@@ -1,6 +1,6 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import AnimatedHeroText from './AnimatedHeroText';
+import AnimatedHeroText from "./AnimatedHeroText";
 
 const Herosection2 = ({
   type,
@@ -13,9 +13,9 @@ const Herosection2 = ({
   overlay,
 }) => {
   return (
-    <div className="w-full h-[60vh] md:h-screen relative">
+    <div className="w-full h-[60vh] md:h-[60vh] relative">
       <div className="w-full h-full  relative aspect-[16:9]">
-        {type === 'video' ? (
+        {type === "video" ? (
           <video
             playsInline
             autoPlay
@@ -33,8 +33,8 @@ const Herosection2 = ({
             fill
             alt="Richy life Club UAE"
             style={{
-              objectFit: 'cover',
-              objectPosition: 'center',
+              objectFit: "cover",
+              objectPosition: "center",
             }}
             priority
             sizes="100vw"
@@ -55,7 +55,7 @@ const Herosection2 = ({
             className="absolute inset-0 select-none z-1 "
             style={{
               background:
-                'linear-gradient(0deg, #162428 0%, rgba(22, 36, 40, 0.00) 100%)',
+                "linear-gradient(0deg, #162428 0%, rgba(22, 36, 40, 0.00) 100%)",
             }}
           ></div>
         )}
