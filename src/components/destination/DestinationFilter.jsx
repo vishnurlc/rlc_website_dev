@@ -36,7 +36,7 @@ function DestinationFilter() {
           {DestinationData.map((e, index) => (
             <h3
               key={index}
-              className={`min-w-[200px]  text-3xl font-bold text-center cursor-pointer border-b-2 border-black pb-2 ${
+              className={`min-w-[100px] md:min-w-[200px]  md:text-3xl font-bold text-center cursor-pointer border-b-2 border-black pb-2 ${
                 activeDestination === e.slug ? "opacity" : "opacity-50"
               }`}
               onClick={() => handelPramsChange(e.slug)}

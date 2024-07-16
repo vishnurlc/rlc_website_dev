@@ -44,8 +44,6 @@ function CardHotel({ variant, data }) {
     return priceFormatted;
   };
 
-  console.log(data);
-
   return (
     <div id={data.attributes.slug}>
       <div className="grid grid-cols-1 w-full lg:grid-cols-5  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-white]">
