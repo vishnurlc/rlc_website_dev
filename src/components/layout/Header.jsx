@@ -119,6 +119,25 @@ export default function Header({ lang }) {
 
   const links = [
     {
+      name: "Destinations",
+      link: "#",
+      dropdown: true,
+      products: [
+        {
+          name: "Turkiye",
+          href: "/service?destination=turkiye",
+        },
+        {
+          name: "UAE",
+          href: "/service?destination=uae",
+        },
+        {
+          name: "Maldives",
+          href: "/service?destination=maldives",
+        },
+      ],
+    },
+    {
       name: "Premium Transfers",
       link: "/chauffeur-service",
     },
@@ -177,6 +196,25 @@ export default function Header({ lang }) {
     },
   ];
   const linksDesktop = [
+    {
+      name: "Destinations",
+      link: "#",
+      dropdown: true,
+      products: [
+        {
+          name: "Turkiye",
+          href: "/service?destination=turkiye",
+        },
+        {
+          name: "UAE",
+          href: "/service?destination=uae",
+        },
+        {
+          name: "Maldives",
+          href: "/service?destination=maldives",
+        },
+      ],
+    },
     {
       name: "Premium Transfers",
       link: "/chauffeur-service",
