@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import qs from "qs";
 import Marquee from "@/components/marquee/Marquee";
 import SearchFilter from "../filters/SearchFilter";
+import DestinationFilter from "../filters/DestinationFilter";
 const ListingComponent = ({ variant, title, description, make }) => {
   const containerRef = useRef(null);
   const scrollRef = useRef(null);
@@ -26,6 +27,8 @@ const ListingComponent = ({ variant, title, description, make }) => {
     body: searchParams.get("body") || "",
     price: searchParams.get("price") || "",
     year: searchParams.get("year") || "",
+    destination: searchParams.get("destination") || "",
+    city: searchParams.get("city") || "",
     pageNumber: "",
   });
 
@@ -57,6 +60,20 @@ const ListingComponent = ({ variant, title, description, make }) => {
       queryParameters.year = {
         year: {
           $eq: params.year,
+        },
+      };
+    }
+    if (params.destination) {
+      queryParameters.destination = {
+        slug: {
+          $eq: params.destination,
+        },
+      };
+    }
+    if (params.city) {
+      queryParameters.city = {
+        slug: {
+          $eq: params.city,
         },
       };
     }
@@ -210,6 +227,11 @@ const ListingComponent = ({ variant, title, description, make }) => {
               handleFilters={handleFilters}
               selectedValue={filters.price}
             />
+            <DestinationFilter
+              handleFilters={handleFilters}
+              selectedValue={filters.destination}
+              selectedValue1={filters.city}
+            />
           </motion.div>
         </div>
 
@@ -230,6 +252,11 @@ const ListingComponent = ({ variant, title, description, make }) => {
           <PriceFilter
             handleFilters={handleFilters}
             selectedValue={filters.price}
+          />
+          <DestinationFilter
+            handleFilters={handleFilters}
+            selectedValue={filters.destination}
+            selectedValue1={filters.city}
           />
         </div>
       </div>
