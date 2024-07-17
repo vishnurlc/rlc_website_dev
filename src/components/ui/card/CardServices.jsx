@@ -3,22 +3,33 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
+import { useSearchParams } from "next/navigation";
 function CardServices({ service }) {
   const midPoint = Math.ceil(service?.length / 2);
   const firstHalf = service?.slice(0, midPoint);
   const secondHalf = service?.slice(midPoint, service?.length);
+  const searchParams = useSearchParams();
+  const query = searchParams.get("destination");
   return (
     <div>
       <div className="max-w-[1200px] mx-auto px-6 md:px-0">
         <div className="mt-8 pb-10 grid grid-cols-2 gap-16 h-auto">
           <div className="grid pl-0 md:pl-16">
             {firstHalf?.map((serviceItem) => (
-              <ServiceItem serviceItem={serviceItem} key={serviceItem.id} />
+              <ServiceItem
+                serviceItem={serviceItem}
+                key={serviceItem.id}
+                query={query}
+              />
             ))}
           </div>
           <div className="grid mt-40 pr-0 md:pl-16">
             {secondHalf?.map((serviceItem) => (
-              <ServiceItem serviceItem={serviceItem} key={serviceItem.id} />
+              <ServiceItem
+                serviceItem={serviceItem}
+                key={serviceItem.id}
+                query={query}
+              />
             ))}
           </div>
         </div>
@@ -27,8 +38,11 @@ function CardServices({ service }) {
   );
 }
 
-const ServiceItem = ({ serviceItem }) => (
-  <Link href={serviceItem.attributes.url} key={serviceItem.id}>
+const ServiceItem = ({ serviceItem, query }) => (
+  <Link
+    href={`/en${serviceItem.attributes.url}?destination=${query}`}
+    key={serviceItem.id}
+  >
     <div className={`md:min-h-[270px] flex flex-col`}>
       <Image
         src={serviceItem.attributes.image.data.attributes.url}
