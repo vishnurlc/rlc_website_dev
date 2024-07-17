@@ -15,7 +15,7 @@ function DestinationCard() {
     {
       title: "UAE",
       image: "/assets/home/com/dubai.jpg",
-      link: "dubai",
+      link: "uae",
       sub: "Dubai - Adu Dhabi",
     },
     {

@@ -69,3 +69,4 @@ export { default as BookingModal } from "./BookingModal/Bookingmodal";
 
 // new componets
 export { default as DestinationFilter } from "./destination/DestinationFilter";
+export { default as ProductListing } from "./productListing/ProductListing";

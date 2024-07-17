@@ -195,7 +195,7 @@ const page = async ({ params }) => {
   };
 
   return (
-    <main className="pt-[108px] md:pt-[128px]">
+    <main className="pt-[108px] md:pt-0">
       <div>
         <HeroCarousel
           data={car.data[0].attributes.image}

@@ -1,24 +1,22 @@
 "use client";
+import React from "react";
 import { useEffect, useRef, useState } from "react";
-import { Loader, PaginationComponent, SectionHeading } from "..";
-import Card from "../ui/card/card";
-import { useRouter, useSearchParams } from "next/navigation";
-import CarbodyFilter from "../filters/CarBodyFilter";
-import CarBrandFilter from "../filters/CarBrandFilter";
-import PriceFilter from "../filters/PriceFilter";
-import CaryearFilter from "../filters/CarYearfilter";
-import { motion } from "framer-motion";
+import { useSearchParams } from "next/navigation";
 import qs from "qs";
-import Marquee from "@/components/marquee/Marquee";
+import Card from "../ui/card/card";
+import { motion } from "framer-motion";
+import { Loader, PaginationComponent } from "..";
+import CardHotel from "../ui/card/CardHotel";
 import SearchFilter from "../filters/SearchFilter";
 import DestinationFilter from "../filters/DestinationFilter";
-const ListingComponent = ({ variant, title, description, make }) => {
+
+function ProductListing() {
   const containerRef = useRef(null);
   const scrollRef = useRef(null);
   const [containerWidth, setContainerWidth] = useState(0);
-  const [cars, setCars] = useState({});
   const [drag, setDrag] = useState(false);
   const searchParams = useSearchParams();
+  const [cars, setCars] = useState({});
   const [pageNumber, _] = useState(searchParams.get("pageNumber") || "");
   const pageSize = 5;
   const [status, setStatus] = useState(0);
@@ -31,38 +29,9 @@ const ListingComponent = ({ variant, title, description, make }) => {
     city: searchParams.get("city") || "",
     pageNumber: "",
   });
-
   async function getData({ params }) {
     const queryParameters = {};
     setStatus(0);
-    if (params.body && params.body !== "all") {
-      queryParameters.body = {
-        slug: {
-          $eq: params.body,
-        },
-      };
-    }
-    if (params.make) {
-      queryParameters.make = {
-        slug: {
-          $eq: params.make,
-        },
-      };
-    }
-    if (params.price) {
-      let pricemin = parseInt(params.price.split("-")[0]);
-      let pricemax = parseInt(params.price.split("-")[1]);
-      queryParameters.price = {
-        $between: [pricemin, pricemax],
-      };
-    }
-    if (params.year) {
-      queryParameters.year = {
-        year: {
-          $eq: params.year,
-        },
-      };
-    }
     if (params.destination) {
       queryParameters.destination = {
         slug: {
@@ -84,7 +53,7 @@ const ListingComponent = ({ variant, title, description, make }) => {
       },
     });
 
-    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?${queryString}&populate=*&pagination[page]=${params.pageNumber}&pagination[pageSize]=${pageSize}&sort=id:desc`;
+    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/hotels?${queryString}&populate=*&pagination[page]=${params.pageNumber}&pagination[pageSize]=${pageSize}&sort=id:desc`;
 
     try {
       const res = await fetch(api, {
@@ -104,6 +73,22 @@ const ListingComponent = ({ variant, title, description, make }) => {
       return {};
     }
   }
+
+  useEffect(() => {
+    // Update filters based on URL query parameters
+    const urlFilters = {};
+    for (const [key, value] of searchParams.entries()) {
+      urlFilters[key] = value;
+    }
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      ...urlFilters,
+    }));
+    urlFilters["pageNumber"] = pageNumber;
+    getData({ params: urlFilters }).then((newData) => {
+      setCars(newData);
+    });
+  }, [searchParams]);
 
   const handleFilters = async ({ name, value }) => {
     // Create a copy of the current filters
@@ -135,44 +120,6 @@ const ListingComponent = ({ variant, title, description, make }) => {
     // Update local state with the new filters
     setFilters(newFilters);
   };
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (containerRef.current && typeof window !== "undefined") {
-        if (window.innerWidth < 700) {
-          setDrag(true);
-        } else {
-          setDrag(false);
-        }
-        setContainerWidth(containerRef.current.scrollWidth - window.innerWidth);
-      }
-    };
-
-    handleResize(); // Call the function once on initial load
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [containerRef]);
-
-  useEffect(() => {
-    // Update filters based on URL query parameters
-    const urlFilters = {};
-    for (const [key, value] of searchParams.entries()) {
-      urlFilters[key] = value;
-    }
-    setFilters((prevFilters) => ({
-      ...prevFilters,
-      ...urlFilters,
-    }));
-    urlFilters["pageNumber"] = pageNumber;
-    getData({ params: urlFilters }).then((newData) => {
-      setCars(newData);
-    });
-  }, [searchParams]);
-
   const scrollToViewMethod = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollIntoView();
@@ -198,61 +145,11 @@ const ListingComponent = ({ variant, title, description, make }) => {
     // Update local state with the new page number
     setFilters(newFilters);
   };
-
   return (
     <div className="w-full overflow-hidden" ref={scrollRef}>
       <div className="w-full my-[40px] ">
-        <div className="hidden">
-          <motion.div
-            ref={containerRef}
-            className="relative flex items-center justify-start md:justify-center gap-4 md:gap-5 px-6 z-10"
-            drag="x"
-            dragConstraints={{ right: 0, left: containerWidth }}
-            dragListener={drag}
-          >
-            <SearchFilter />
-            <CarbodyFilter
-              handleFilters={handleFilters}
-              selectedValue={filters.body}
-            />
-            <CarBrandFilter
-              handleFilters={handleFilters}
-              selectedValue={filters.make}
-            />
-            <CaryearFilter
-              handleFilters={handleFilters}
-              selectedValue={filters.year}
-            />
-            <PriceFilter
-              handleFilters={handleFilters}
-              selectedValue={filters.price}
-            />
-            <DestinationFilter
-              handleFilters={handleFilters}
-              selectedValue={filters.destination}
-              selectedValue1={filters.city}
-            />
-          </motion.div>
-        </div>
-
         <div className=" flex flex-wrap items-center justify-center md:justify-center gap-4 md:gap-5 z-10">
           <SearchFilter />
-          <CarbodyFilter
-            handleFilters={handleFilters}
-            selectedValue={filters.body}
-          />
-          <CarBrandFilter
-            handleFilters={handleFilters}
-            selectedValue={filters.make}
-          />
-          <CaryearFilter
-            handleFilters={handleFilters}
-            selectedValue={filters.year}
-          />
-          <PriceFilter
-            handleFilters={handleFilters}
-            selectedValue={filters.price}
-          />
           <DestinationFilter
             handleFilters={handleFilters}
             selectedValue={filters.destination}
@@ -262,17 +159,12 @@ const ListingComponent = ({ variant, title, description, make }) => {
       </div>
 
       <div className="my-[40px] flex flex-col items-center gap-8 md:gap-16 md:px-6">
-        {/* <SectionHeading
-          title={title}
-          description={description}
-          mobile={false}
-        /> */}
         <div className="flex flex-col gap-8 w-full min-h-screen">
           {cars.data?.map((car, index) => (
-            <Card variant={variant} data={car} key={index} />
+            <CardHotel variant={"club-packages"} data={car} key={index} />
           ))}
           {status === 1 && (
-            <p className="text-center text-xl ">No Cars found !</p>
+            <p className="text-center text-xl ">No Hotel found !</p>
           )}
           {status === 0 && <Loader color={"#000"} />}
         </div>
@@ -287,15 +179,15 @@ const ListingComponent = ({ variant, title, description, make }) => {
           </div>
         )}
       </div>
-      <div className="container mx-auto my-14 md:my-20">
+      {/* <div className="container mx-auto my-14 md:my-20">
         <Marquee
           make={make}
           handleFilters={handleFilters}
           scrollIntoView={scrollToViewMethod}
         />
-      </div>
+      </div> */}
     </div>
   );
-};
+}
 
-export default ListingComponent;
+export default ProductListing;

@@ -125,15 +125,15 @@ export default function Header({ lang }) {
       products: [
         {
           name: "Turkiye",
-          href: "/service?destination=turkiye",
+          href: "service?destination=turkiye",
         },
         {
           name: "UAE",
-          href: "/service?destination=uae",
+          href: "service?destination=uae",
         },
         {
           name: "Maldives",
-          href: "/service?destination=maldives",
+          href: "service?destination=maldives",
         },
       ],
     },
@@ -203,15 +203,15 @@ export default function Header({ lang }) {
       products: [
         {
           name: "Turkiye",
-          href: "/service?destination=turkiye",
+          href: "/en/service?destination=turkiye",
         },
         {
           name: "UAE",
-          href: "/service?destination=uae",
+          href: "/en/service?destination=uae",
         },
         {
           name: "Maldives",
-          href: "/service?destination=maldives",
+          href: "/en/service?destination=maldives",
         },
       ],
     },

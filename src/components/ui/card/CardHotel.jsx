@@ -10,8 +10,8 @@ import {
 } from "react-icons/ai";
 import {
   MdAccessTime,
-  MdLuggage,
-  MdOutlineAirlineSeatReclineExtra,
+  MdOutlineLocationOn,
+  MdOutlinePersonOutline,
 } from "react-icons/md";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -28,6 +28,7 @@ function CardHotel({ variant, data }) {
   const [open, setOpen] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
   const [videoModal, setVideoModal] = useState(false);
+  const [showFullDescription, setShowFullDescription] = useState(false);
   const { selectedCurrency, conversionRates } = useCurrency();
   const path = usePathname();
 
@@ -71,13 +72,23 @@ function CardHotel({ variant, data }) {
                 {data.attributes.name}
               </Link>
             </h3>
-
-            {/* <CarDetail data={data} /> */}
+            <CarDetail data={data} />
+            <div className="text-sm text-gray-500 my-2">
+              {showFullDescription
+                ? data.attributes.description
+                : `${data.attributes.description?.slice(0, 150)}...`}
+              <Link
+                href={`${path}/${data.attributes.slug}`}
+                className="text-primary underline cursor-pointer"
+              >
+                {showFullDescription ? "Read Less" : "Read More"}
+              </Link>
+            </div>
 
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full py-5 gap-6">
               <div className="w-full md:w-fit">
                 <span className="text-primary font-normal text-2xl">
-                  {convertPrice(data.attributes.price)}{" "}
+                  {convertPrice(data.attributes.starting_price)}{" "}
                   <span className="text-secondary text-sm font-normal">
                     {variant === "car" ? "/Day" : "Starting Price"}
                   </span>
@@ -190,42 +201,34 @@ function Carousel({ data, name }) {
 
 function CarDetail({ data }) {
   const { selectedCurrency, conversionRates } = useCurrency();
-
-  const convertPrice = (price) => {
-    const rate = conversionRates.rates[selectedCurrency];
-
-    const amt = Math.round(Number(price) * rate);
-    const priceFormatted = new Intl.NumberFormat("ae", {
-      style: "currency",
-      currency: selectedCurrency,
-      minimumFractionDigits: 0, // Set minimumFractionDigits to 0
-      maximumFractionDigits: 0, // Set maximumFractionDigits to 0
-    }).format(amt);
-    return priceFormatted;
-  };
   return (
     <div className="py-3 flex gap-5 flex-wrap">
       <div className="p-2 py-2 bg-slate-100 flex items-center justify-center">
-        <div className="text-primary flex items-center gap-2 text-base font-medium leading-tight">
-          <MdAccessTime /> 10 hours {convertPrice(data.attributes.tenhours)}
+        <div className="text-primary flex gap-2 text-base font-medium leading-tight capitalize">
+          <MdOutlineLocationOn size={"2rem"} /> {data.attributes.place}
+        </div>
+      </div>
+      {/* <div className="px-2 py-2 bg-slate-100 flex items-center justify-center">
+        <div className="text-primary flex items-center gap-2 text-sm md:text-base font-medium leading-tight">
+          <MdAccessTime /> {data.attributes.timing}
         </div>
       </div>
       <div className="px-2 py-2 bg-slate-100 flex items-center justify-center">
         <div className="text-primary flex items-center gap-2 text-sm md:text-base font-medium leading-tight">
-          <IoAirplaneOutline /> Airport {convertPrice(data.attributes.airport)}
+          {"$".repeat(data.attributes.dollarcountmin)} -{" "}
+          {"$".repeat(data.attributes.dollarcountmax)}
         </div>
       </div>
-      <div className="px-2 py-2  bg-slate-100 flex items-center justify-center">
-        <div className="text-primary text-sm md:text-base font-medium flex items-center gap-2 leading-tight">
-          <MdOutlineAirlineSeatReclineExtra /> Seats{" "}
-          {data.attributes.extensionpirce}
+      {data.attributes.restaurant_types.data.map((e, index) => (
+        <div
+          key={index}
+          className="px-2 py-2 bg-slate-100 flex items-center justify-center"
+        >
+          <div className="text-primary flex items-center gap-2 text-sm md:text-base font-medium leading-tight">
+            {e.attributes.type}
+          </div>
         </div>
-      </div>
-      <div className="px-2 py-2 bg-slate-100 flex items-center justify-center">
-        <div className="text-primary text-sm md:text-base font-medium flex items-center gap-2 leading-tight">
-          <MdLuggage /> Luggage {data.attributes.additionalcity}
-        </div>
-      </div>
+      ))} */}
     </div>
   );
 }

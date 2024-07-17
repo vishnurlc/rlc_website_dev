@@ -5,12 +5,12 @@ import {
   HeroCarousel,
   PriceComponent,
   TechnicalSpec,
-} from '@/components';
-import AnimatedBtn from '@/components/premiumjetski/AnimatedBtn';
-import { Button } from '@/components/ui/button/Button';
-import Image from 'next/image';
-import Link from 'next/link';
-import qs from 'qs';
+} from "@/components";
+import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
+import { Button } from "@/components/ui/button/Button";
+import Image from "next/image";
+import Link from "next/link";
+import qs from "qs";
 
 export async function generateMetadata({ params }) {
   try {
@@ -24,17 +24,17 @@ export async function generateMetadata({ params }) {
     ).then((res) => res.json());
     return {
       title:
-        car.data[0].attributes.name || '| Rent Exotic & Super Cars in Dubai',
+        car.data[0].attributes.name || "| Rent Exotic & Super Cars in Dubai",
       description:
         car.data[0].attributes.description ||
-        'Luxury Cars rental with Richy life Club',
+        "Luxury Cars rental with Richy life Club",
       openGraph: {
-        type: 'website',
+        type: "website",
         title:
-          car.data[0].attributes.name || '| Rent Exotic & Super Cars in Dubai',
+          car.data[0].attributes.name || "| Rent Exotic & Super Cars in Dubai",
         description:
           car.data[0].attributes.description ||
-          'Luxury Cars rental with Richy life Club',
+          "Luxury Cars rental with Richy life Club",
         images: [
           {
             url: `${car.data[0].attributes.image.data[0].attributes.url}`,
@@ -57,22 +57,22 @@ export async function generateMetadata({ params }) {
 export async function getData(slug) {
   const query = qs.stringify({
     populate: [
-      'image',
-      'body',
-      'fuel',
-      'make',
-      'seat',
-      'year',
-      'car_colors',
-      'features.icon',
-      'technicalspec.body',
-      'technicalspec.color',
-      'technicalspec.cylinder',
-      'technicalspec.interior_colors',
-      'technicalspec.seat',
-      'technicalspec.transmission',
-      'technicalspec.fuel',
-      'deposit',
+      "image",
+      "body",
+      "fuel",
+      "make",
+      "seat",
+      "year",
+      "car_colors",
+      "features.icon",
+      "technicalspec.body",
+      "technicalspec.color",
+      "technicalspec.cylinder",
+      "technicalspec.interior_colors",
+      "technicalspec.seat",
+      "technicalspec.transmission",
+      "technicalspec.fuel",
+      "deposit",
     ],
   });
   try {
@@ -90,7 +90,7 @@ export async function getData(slug) {
 
     return data;
   } catch (error) {
-    console.log('s', error);
+    console.log("s", error);
     return {};
   }
 }
@@ -99,7 +99,7 @@ export default async function CarDetail({ params: { slug } }) {
   const car = await getData(slug);
 
   return (
-    <main className="pt-[108px] md:pt-[128px]">
+    <main className="pt-[108px] md:pt-0">
       <div>
         <HeroCarousel
           data={car.data[0].attributes.image}
@@ -112,9 +112,9 @@ export default async function CarDetail({ params: { slug } }) {
           </h2>
 
           <AnimatedBtn
-            styles={'rounded-md bg-primary text-white'}
-            text={'Book Now'}
-            msg={'Hi, I would like to know about your services.'}
+            styles={"rounded-md bg-primary text-white"}
+            text={"Book Now"}
+            msg={"Hi, I would like to know about your services."}
           />
         </div>
       </div>
@@ -144,8 +144,8 @@ export default async function CarDetail({ params: { slug } }) {
           </div>
         </div> */}
         <ContactForm
-          title={'Experience the ultimate Luxury'}
-          description={'Book your journey with our luxury car rentals now'}
+          title={"Experience the ultimate Luxury"}
+          description={"Book your journey with our luxury car rentals now"}
         />
       </div>
     </main>
