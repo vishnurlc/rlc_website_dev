@@ -50,14 +50,14 @@ function CardHotel({ variant, data }) {
       <div className="grid grid-cols-1 w-full lg:grid-cols-5  max-w-[1200px] rounded-sm overflow-hidden mx-auto bg-white]">
         <div
           // href={`${path}/${data.attributes.slug}`}
-          className="col-span-3 relative w-full aspect-[2/1] min-h-[120px] "
+          className="col-span-3 relative w-full aspect-[2/1] min-h-[120px]"
         >
           <Image
             src={data.attributes.image?.data[0].attributes.url}
             alt={`Rent ${data.attributes.name} with Richy life Club`}
             fill
             style={{
-              objectFit: "contain",
+              objectFit: "cover",
               objectPosition: "center",
             }}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 80vw"

@@ -1,15 +1,24 @@
-"client";
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
 import { useSearchParams } from "next/navigation";
-function CardServices({ service }) {
-  const midPoint = Math.ceil(service?.length / 2);
-  const firstHalf = service?.slice(0, midPoint);
-  const secondHalf = service?.slice(midPoint, service?.length);
+function CardServices({ service, query = "uae" }) {
+  const [firstHalf, setFirstHalf] = useState();
+  const [secondHalf, SetSecondHalf] = useState();
+
   const searchParams = useSearchParams();
-  const query = searchParams.get("destination");
+  // const query = searchParams.get("destination");
+
+  useEffect(() => {
+    const midPoint = Math.ceil(service?.length / 2);
+    const firstHalf1 = service?.slice(0, midPoint);
+    const secondHalf1 = service?.slice(midPoint, service?.length);
+    setFirstHalf(firstHalf1);
+    SetSecondHalf(secondHalf1);
+    console.log("end sectio useEfect card");
+  }, [service]);
   return (
     <div>
       <div className="max-w-[1200px] mx-auto px-6 md:px-0">

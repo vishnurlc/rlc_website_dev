@@ -31,11 +31,15 @@ function DestinationServiceFilter({ query }) {
 
   useEffect(() => {
     // handelFetch();
-    console.log("useEffect");
+    console.log("useEffect1223");
     getData();
   }, [query]);
 
-  return <div>{services.data && <CardServices service={services.data} />}</div>;
+  return (
+    <div>
+      {services.data && <CardServices service={services.data} query={query} />}
+    </div>
+  );
 }
 
 export default DestinationServiceFilter;
