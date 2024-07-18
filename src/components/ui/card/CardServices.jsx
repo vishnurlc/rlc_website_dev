@@ -40,6 +40,7 @@ function CardServices({ service, query = "uae" }) {
                 query={query}
               />
             ))}
+            <div className="min-h-[190px] relative"></div>
           </div>
         </div>
       </div>
@@ -55,16 +56,16 @@ const ServiceItem = ({ serviceItem, query }) => (
     <div className={`md:min-h-[270px] flex flex-col`}>
       <Image
         src={serviceItem.attributes.image.data.attributes.url}
-        width={400}
-        height={300}
+        width={383}
+        height={215}
         alt="Title tags"
-        className="rounded-none md:rounded"
+        className="rounded-none md:rounded min-w-[383px]"
         style={{
           objectFit: "cover",
           objectPosition: "center",
           width: "100%",
           height: "auto",
-          aspectRatio: "calc(400/300)",
+          aspectRatio: "calc(383/215)",
         }}
       />
       <div className="py-4 font-sans flex-auto flex justify-between flex-col">

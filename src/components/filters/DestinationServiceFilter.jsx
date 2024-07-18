@@ -7,7 +7,7 @@ function DestinationServiceFilter({ query }) {
   const [services, setServices] = React.useState([]);
 
   async function getData() {
-    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/services?populate=*&filters[destinations][name][$eq]=${query}&sort=order:asc`;
+    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/services?populate=*&filters[destinations][slug][$eq]=${query}&sort=order:asc`;
 
     try {
       const res = await fetch(api, {
@@ -20,7 +20,7 @@ function DestinationServiceFilter({ query }) {
       if (data == {}) {
         setStatus(true);
       }
-      console.log("getdata", data);
+      console.log("service page getdata", data);
       setServices(data);
       return data;
     } catch (error) {
