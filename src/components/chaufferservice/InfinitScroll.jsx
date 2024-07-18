@@ -1,15 +1,15 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import { Loader, NewsCard } from '..';
-import CardChauffer from '../ui/card/CardChauffer';
-import CardBasic from '../ui/card/CardBasic';
-import ClubCard from '../ui/card/ClubCard';
-import qs from 'qs';
-import { useSearchParams } from 'next/navigation';
-import ToursCard from '../ui/card/ToursCard';
-import CardHotel from '../ui/card/CardHotel';
-import JetskiCard from '../ui/card/JetskiCard';
-import EventCard from '../blogs/EventCard';
+"use client";
+import React, { useEffect, useState } from "react";
+import { Loader, NewsCard } from "..";
+import CardChauffer from "../ui/card/CardChauffer";
+import CardBasic from "../ui/card/CardBasic";
+import ClubCard from "../ui/card/ClubCard";
+import qs from "qs";
+import { useSearchParams } from "next/navigation";
+import ToursCard from "../ui/card/ToursCard";
+import CardHotel from "../ui/card/CardHotel";
+import JetskiCard from "../ui/card/JetskiCard";
+import EventCard from "../blogs/EventCard";
 
 function InfinitScroll({ fetchApi, blog }) {
   const [cars, setCars] = useState([]);
@@ -22,7 +22,7 @@ function InfinitScroll({ fetchApi, blog }) {
 
     let api;
     switch (fetchApi) {
-      case 'club-packages':
+      case "club-packages":
         api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${apiEndpoint}?sort=sort_key:asc&populate=*&pagination[page]=${pagination}&pagination[pageSize]=${pageSize}`;
         break;
       default:
@@ -53,7 +53,7 @@ function InfinitScroll({ fetchApi, blog }) {
   }
 
   const searchParams = useSearchParams();
-  const search = searchParams.get('search');
+  const search = searchParams.get("search");
 
   useEffect(() => {
     getData(fetchApi, pagination, search).then((newData) => {
@@ -69,33 +69,33 @@ function InfinitScroll({ fetchApi, blog }) {
       <div
         className={
           blog
-            ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 gap-7'
-            : 'flex flex-col gap-8 w-full '
+            ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 gap-7"
+            : "flex flex-col gap-8 w-full "
         }
       >
         {cars?.map((car, index) => {
           switch (fetchApi) {
-            case 'chauffeur-cars':
+            case "chauffeur-cars":
               return (
                 <CardChauffer
-                  variant={'chauffeurService'}
+                  variant={"chauffeurService"}
                   data={car}
                   key={index}
                 />
               );
-            case 'hotels':
+            case "hotels":
               return (
-                <CardHotel variant={'club-packages'} data={car} key={index} />
+                <CardHotel variant={"club-packages"} data={car} key={index} />
               );
-            case 'club-packages':
+            case "club-packages":
               return <ClubCard data={car} key={index} order={index} />;
-            case 'packages':
+            case "packages":
               return <ToursCard data={car} key={index} order={index} />;
-            case 'jetskis':
+            case "jetskis":
               return <JetskiCard data={car} key={index} order={index} />;
-            case 'events':
+            case "events":
               return <EventCard blog={car} />;
-            case 'blogs':
+            case "blogs":
               return <NewsCard blog={car} />;
             default:
               break;
@@ -103,15 +103,15 @@ function InfinitScroll({ fetchApi, blog }) {
         })}
         {status === 1 &&
           // <p className="text-center text-xl ">No Cars found !</p>
-          ''}
-        {status === 0 && <Loader color={'#000'} />}
+          ""}
+        {status === 0 && <Loader color={"#000"} />}
       </div>
       {/* loadmore */}
 
       {meta?.meta.pagination.pageCount === meta?.meta.pagination.page ? (
         <></>
       ) : (
-        <div className={status === 1 ? 'hidden' : `flex justify-center mt-10`}>
+        <div className={status === 1 ? "hidden" : `flex justify-center mt-10`}>
           <button
             onClick={() => setPagination((prevPage) => prevPage + 1)}
             className="w-52 bg-lime-900 rounded-xl h-8 text-white"

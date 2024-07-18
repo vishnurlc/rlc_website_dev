@@ -164,7 +164,7 @@ function ProductListing() {
             <CardHotel variant={"club-packages"} data={car} key={index} />
           ))}
           {status === 1 && (
-            <p className="text-center text-xl ">No Hotel found !</p>
+            <p className="text-center text-xl ">No service found !</p>
           )}
           {status === 0 && <Loader color={"#000"} />}
         </div>

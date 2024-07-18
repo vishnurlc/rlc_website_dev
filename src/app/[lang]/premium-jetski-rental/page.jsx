@@ -1,4 +1,9 @@
-import { ContactForm, HeroSection2, WhyusJetski } from "@/components";
+import {
+  ContactForm,
+  HeroSection2,
+  ProductListing,
+  WhyusJetski,
+} from "@/components";
 import InfinitScroll from "@/components/chaufferservice/InfinitScroll";
 import Faq from "@/components/home/faq";
 import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
@@ -139,7 +144,8 @@ export default async function JetSkiPage() {
             </h3>
 
             <div className="max-w-[1200px] mx-auto px-0 md:px-6 pb-10">
-              <InfinitScroll fetchApi="jetskis" />
+              {/* <InfinitScroll fetchApi="jetskis" /> */}
+              <ProductListing fetchApi="jetskis" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-8">

@@ -1,5 +1,6 @@
 import React from "react";
 import InfinitScroll from "@/components/chaufferservice/InfinitScroll";
+import ProductListing from "@/components/productListing/ProductListingMain";
 export const metadata = {
   title:
     "Luxury Clubs & Restaurants in Dubai | 200+ Luxury Clubs & Restaurants",
@@ -57,7 +58,8 @@ async function page() {
       <div></div>
 
       <div className="max-w-[1200px] mx-auto px-0 md:px-6 pb-10">
-        <InfinitScroll fetchApi="club-packages" />
+        {/* <InfinitScroll fetchApi="club-packages" /> */}
+        <ProductListing fetchApi="club-packages" />
       </div>
     </main>
   );

@@ -1,5 +1,5 @@
-import { SectionHeading } from '..';
-import Card from '../ui/card/card';
+import { SectionHeading } from "..";
+import Card from "../ui/card/card";
 const ListingComponent = ({ variant, data }) => {
   return (
     <div className="py-[40px] flex flex-col items-center gap-8 md:gap-16 md:px-6">
@@ -11,7 +11,7 @@ const ListingComponent = ({ variant, data }) => {
         mobile={false}
       /> */}
       <div className=" md:mt-32 flex flex-col gap-8 w-full">
-        {data.data.map((yacht, index) => (
+        {data.map((yacht, index) => (
           <Card data={yacht} variant={variant} key={index} />
         ))}
       </div>

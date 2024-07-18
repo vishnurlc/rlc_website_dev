@@ -1,4 +1,9 @@
-import { ContactForm, HeroSection2, WhyusChauffer } from "@/components";
+import {
+  ContactForm,
+  HeroSection2,
+  ProductListing,
+  WhyusChauffer,
+} from "@/components";
 import InfinitScroll from "@/components/chaufferservice/InfinitScroll";
 import Ourfleets from "@/components/chaufferservice/Ourfleets";
 import Faq from "@/components/home/faq";
@@ -88,7 +93,8 @@ const page = async () => {
           <Ourfleets />
         </div>
         {/* cars */}
-        <InfinitScroll fetchApi={"chauffeur-cars"} />
+        {/* <InfinitScroll fetchApi={"chauffeur-cars"} /> */}
+        <ProductListing fetchApi="chauffeur-cars" />
 
         <div className="my-9 md:my-16 px-6 max-w-[1200px] mx-auto hidden">
           <WhyusChauffer />

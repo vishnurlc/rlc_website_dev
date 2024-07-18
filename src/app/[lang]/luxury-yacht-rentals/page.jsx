@@ -2,6 +2,7 @@ import {
   ContactForm,
   HeroSection2,
   PictureGallery,
+  ProductListing,
   Whyus,
   YachtListing,
 } from "@/components";
@@ -89,7 +90,8 @@ export default async function page() {
         overlay={1}
       />
       <div className="mx-auto max-w-[1200px]">
-        <YachtListing data={yachts} variant={"yacht"} />
+        {/* <YachtListing data={yachts} variant={"yacht"} /> */}
+        <ProductListing fetchApi={"yachts"} />
       </div>
       {/* <div className=" my-16 flex flex-col gap-9 md:gap-16">
         <PictureGallery

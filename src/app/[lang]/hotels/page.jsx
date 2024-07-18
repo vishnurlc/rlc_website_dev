@@ -18,7 +18,8 @@ const page = () => {
       />
       <div className="md:mt-10 mx-auto max-w-[1200px]">
         {/* <InfinitScroll fetchApi={"hotels"} /> */}
-        <ProductListing fetchApi={"hotels"} />
+        {/* <ProductListing fetchApi={"hotels"} /> */}
+        <ProductListing fetchApi={"chauffeur-cars"} />
       </div>
     </main>
   );

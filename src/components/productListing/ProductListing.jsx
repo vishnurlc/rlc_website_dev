@@ -5,10 +5,16 @@ import { useSearchParams } from "next/navigation";
 import qs from "qs";
 import Card from "../ui/card/card";
 import { motion } from "framer-motion";
-import { Loader, PaginationComponent } from "..";
+import { Loader, NewsCard, PaginationComponent } from "..";
+import { YachtListing } from "@/components";
 import CardHotel from "../ui/card/CardHotel";
 import SearchFilter from "../filters/SearchFilter";
 import DestinationFilter from "../filters/DestinationFilter";
+import CardChauffer from "../ui/card/CardChauffer";
+import ClubCard from "../ui/card/ClubCard";
+import ToursCard from "../ui/card/ToursCard";
+import JetskiCard from "../ui/card/JetskiCard";
+import EventCard from "../blogs/EventCard";
 
 function ProductListing({ fetchApi }) {
   const containerRef = useRef(null);
@@ -237,9 +243,39 @@ function ProductListing({ fetchApi }) {
 
       <div className="my-[40px] flex flex-col items-center gap-8 md:gap-16 md:px-6">
         <div className="flex flex-col gap-8 w-full min-h-screen">
-          {cars.data?.map((car, index) => (
+          {/* {cars.data?.map((car, index) => (
             <CardHotel variant={"club-packages"} data={car} key={index} />
-          ))}
+          ))} */}
+          {cars.data?.map((car, index) => {
+            switch (fetchApi) {
+              case "chauffeur-cars":
+                return (
+                  <CardChauffer
+                    variant={"chauffeurService"}
+                    data={car}
+                    key={index}
+                  />
+                );
+              case "hotels":
+                return (
+                  <CardHotel variant={"club-packages"} data={car} key={index} />
+                );
+              case "club-packages":
+                return <ClubCard data={car} key={index} order={index} />;
+              case "yachts":
+                return <Card data={car} variant={"yacht"} key={index} />;
+              case "packages":
+                return <ToursCard data={car} key={index} order={index} />;
+              case "jetskis":
+                return <JetskiCard data={car} key={index} order={index} />;
+              case "events":
+                return <EventCard blog={car} />;
+              case "blogs":
+                return <NewsCard blog={car} />;
+              default:
+                break;
+            }
+          })}
           {status === 1 && (
             <p className="text-center text-xl ">No Hotel found !</p>
           )}
