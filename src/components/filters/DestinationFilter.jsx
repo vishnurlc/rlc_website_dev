@@ -23,7 +23,7 @@ const DestinationFilter = ({
 }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [selectedOption1, setSelectedOption1] = useState(null);
-  const [places, setPlaces] = useState(null);
+  const [places, setPlaces] = useState([]);
 
   useEffect(() => {
     const initialSelectedOption = data.find(
@@ -35,6 +35,7 @@ const DestinationFilter = ({
     }
   }, [selectedValue]);
   const handleChange = (option) => {
+    console.log(places, "thi is palce");
     if (option) {
       handleFilters({ name: "destination", value: option?.value });
       getData(option.value);
@@ -116,7 +117,7 @@ const DestinationFilter = ({
         isClearable
         isSearchable={false}
       />
-      {places !== null && (
+      {places.length !== 0 && (
         <Select
           value={selectedOption1}
           onChange={(selectedOption1) => {
