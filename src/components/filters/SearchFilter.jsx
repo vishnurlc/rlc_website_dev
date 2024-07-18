@@ -1,13 +1,13 @@
-import AsyncSelect from 'react-select/async';
-import { components } from 'react-select';
-import { BsSearch } from 'react-icons/bs';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
+import AsyncSelect from "react-select/async";
+import { components } from "react-select";
+import { BsSearch } from "react-icons/bs";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
-const fetchProperties = async (inputValue) => {
+const fetchProperties = async (inputValue, fetchApi) => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/cars?filters[$or][0][name][$containsi]=${inputValue}`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/${fetchApi}?filters[$or][0][name][$containsi]=${inputValue}`,
       {
         next: { revalidate: 10 },
         headers: {
@@ -16,29 +16,30 @@ const fetchProperties = async (inputValue) => {
       }
     );
     const data = await response.json();
+    console.log("search data", data.data);
     return data.data;
   } catch (error) {
-    console.error('Error fetching properties:', error);
+    console.error("Error fetching properties:", error);
     return [];
   }
 };
 
-const loadOptions = (inputValue, callback = (options) => {}) => {
-  fetchProperties(inputValue)
-    .then((cars) => {
-      const options = cars.map((car) => ({
-        label: `${car.attributes.name}`,
-        value: car.attributes.slug,
+const loadOptions = (inputValue, fetchApi, callback) => {
+  fetchProperties(inputValue, fetchApi)
+    .then((properties) => {
+      const options = properties.map((property) => ({
+        label: `${property.attributes.name}`,
+        value: property.attributes.slug,
       }));
       callback(options);
     })
     .catch((error) => {
-      // Handle any errors that occur during the fetch or processing.
       console.error(error);
+      callback([]);
     });
 };
 
-const SearchInput = () => {
+const SearchInput = ({ fetchApi = "cars" }) => {
   const router = useRouter();
   return (
     <AsyncSelect
@@ -57,7 +58,9 @@ const SearchInput = () => {
           <BsSearch />
         </div>
       }
-      loadOptions={loadOptions}
+      loadOptions={(inputValue, callback) =>
+        loadOptions(inputValue, fetchApi, callback)
+      }
       isClearable
       className="react-select-container2"
       classNamePrefix="react-select"

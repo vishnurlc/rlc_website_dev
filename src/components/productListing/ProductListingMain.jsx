@@ -10,7 +10,7 @@ import CardHotel from "../ui/card/CardHotel";
 import SearchFilter from "../filters/SearchFilter";
 import DestinationFilter from "../filters/DestinationFilter";
 
-function ProductListing({ fetchApi }) {
+function ProductListing() {
   const containerRef = useRef(null);
   const scrollRef = useRef(null);
   const [containerWidth, setContainerWidth] = useState(0);
@@ -53,7 +53,7 @@ function ProductListing({ fetchApi }) {
       },
     });
 
-    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${fetchApi}?${queryString}&populate=*&pagination[page]=${params.pageNumber}&pagination[pageSize]=${pageSize}&sort=id:desc`;
+    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/hotels?${queryString}&populate=*&pagination[page]=${params.pageNumber}&pagination[pageSize]=${pageSize}&sort=id:desc`;
 
     try {
       const res = await fetch(api, {
@@ -74,80 +74,6 @@ function ProductListing({ fetchApi }) {
     }
   }
 
-  async function fetchData(fetchApi, queryString, params) {
-    const pageSize = 10; // Define pageSize or get it from params if dynamic
-    const api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${fetchApi}?${queryString}&populate=*&pagination[page]=${params.pageNumber}&pagination[pageSize]=${pageSize}&sort=id:desc`;
-
-    try {
-      const res = await fetch(api, {
-        next: { revalidate: 10 },
-        headers: {
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
-        },
-      });
-
-      const data = await res.json();
-      console.log(data, "fetchData");
-      return data;
-    } catch (error) {
-      console.error("Fetch error:", error);
-      return {};
-    }
-  }
-
-  function generateQuery(params) {
-    const queryParameters = {};
-    if (params.body && params.body !== "all") {
-      queryParameters.body = {
-        slug: {
-          $eq: params.body,
-        },
-      };
-    }
-    if (params.make) {
-      queryParameters.make = {
-        slug: {
-          $eq: params.make,
-        },
-      };
-    }
-    if (params.price) {
-      let pricemin = parseInt(params.price.split("-")[0]);
-      let pricemax = parseInt(params.price.split("-")[1]);
-      queryParameters.price = {
-        $between: [pricemin, pricemax],
-      };
-    }
-    if (params.year) {
-      queryParameters.year = {
-        year: {
-          $eq: params.year,
-        },
-      };
-    }
-    if (params.destination) {
-      queryParameters.destination = {
-        slug: {
-          $eq: params.destination,
-        },
-      };
-    }
-    if (params.city) {
-      queryParameters.city = {
-        slug: {
-          $eq: params.city,
-        },
-      };
-    }
-
-    const queryString = qs.stringify({
-      filters: {
-        ...queryParameters,
-      },
-    });
-
-    return queryString;
-  }
   useEffect(() => {
     // Update filters based on URL query parameters
     const urlFilters = {};
@@ -162,9 +88,6 @@ function ProductListing({ fetchApi }) {
     getData({ params: urlFilters }).then((newData) => {
       setCars(newData);
     });
-    const queryParameters = generateQuery({ params: urlFilters });
-    console.log("useefect step1", queryParameters);
-    fetchData(fetchApi);
   }, [searchParams]);
 
   const handleFilters = async ({ name, value }) => {
@@ -226,7 +149,7 @@ function ProductListing({ fetchApi }) {
     <div className="w-full overflow-hidden" ref={scrollRef}>
       <div className="w-full my-[40px] ">
         <div className=" flex flex-wrap items-center justify-center md:justify-center gap-4 md:gap-5 z-10">
-          <SearchFilter fetchApi={fetchApi} />
+          <SearchFilter />
           <DestinationFilter
             handleFilters={handleFilters}
             selectedValue={filters.destination}
