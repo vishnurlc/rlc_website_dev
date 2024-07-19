@@ -323,7 +323,7 @@ export default function Header({ lang }) {
               height={100}
               src={
                 mobileMenuOpen
-                  ? "/assets/logos/rlclogogreen.png"
+                  ? "/assets/logos/rlclogomatewhite.png"
                   : headerType === 1 || mobileMenuOpen
                   ? "/assets/logos/rlclogomatewhite.png"
                   : "/assets/logos/whiterlclogo.png"
@@ -351,7 +351,7 @@ export default function Header({ lang }) {
               <AiOutlineClose
                 className="h-6 w-6"
                 aria-hidden="true"
-                color="#253242"
+                color="white"
                 onClick={() => setMobileMenuOpen(false)}
               />
             )}
