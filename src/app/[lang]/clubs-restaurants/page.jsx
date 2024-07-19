@@ -1,6 +1,7 @@
 import React from "react";
 import InfinitScroll from "@/components/chaufferservice/InfinitScroll";
 import ProductListing from "@/components/productListing/ProductListingMain";
+import { HeroSection2 } from "@/components";
 export const metadata = {
   title:
     "Luxury Clubs & Restaurants in Dubai | 200+ Luxury Clubs & Restaurants",
@@ -54,8 +55,15 @@ export const metadata = {
 
 async function page() {
   return (
-    <main className="pt-[108px] md:pt-[150px]">
-      <div></div>
+    <main>
+      <HeroSection2
+        type="image"
+        heading1="Club and Restaurant"
+        heading2="Services"
+        subheading={"Your Voyage into Elegance and Comfort"}
+        btntext={"Book Now"}
+        url="/assets/chauffeur/hero.png"
+      />
 
       <div className="max-w-[1200px] mx-auto px-0 md:px-6 pb-10">
         {/* <InfinitScroll fetchApi="club-packages" /> */}

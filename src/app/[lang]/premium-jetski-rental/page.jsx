@@ -93,18 +93,17 @@ export async function getData() {
 export default async function JetSkiPage() {
   const jetski = await getData();
   return (
-    <main className="pt-[140px]">
-      <div className="hidden">
-        <HeroSection2
-          type={"video"}
-          heading1={"Luxury Jetski"}
-          heading2={"Rental in Dubai"}
-          subheading={"Unleash Your Inner Maverick on Jetski"}
-          posterurl={"/assets/jetskipage/jetskibanner.png"}
-          btntext={"Book your ride"}
-          overlay={1}
-        />
-      </div>
+    <main>
+      <HeroSection2
+        type={"video"}
+        heading1={"Luxury Jetski"}
+        heading2={"Rental in Dubai"}
+        subheading={"Unleash Your Inner Maverick on Jetski"}
+        posterurl={"/assets/jetskipage/jetskibanner.png"}
+        btntext={"Book your ride"}
+        overlay={1}
+      />
+
       <div className="px-6 py-9 md:py-16 ">
         <div className="max-w-[1200px] mx-auto flex flex-col gap-16">
           {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

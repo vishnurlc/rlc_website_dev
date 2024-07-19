@@ -59,7 +59,7 @@ const ServiceItem = ({ serviceItem, query }) => (
         width={383}
         height={215}
         alt="Title tags"
-        className="rounded-none md:rounded min-w-[383px]"
+        className="rounded-none md:rounded md:min-w-[383px]"
         style={{
           objectFit: "cover",
           objectPosition: "center",
