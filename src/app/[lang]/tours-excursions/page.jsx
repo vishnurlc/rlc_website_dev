@@ -52,20 +52,18 @@ export const metadata = {
 
 export default async function page() {
   return (
-    <main className="pt-[150px]">
+    <main>
       <h1 className="sr-only">Tours and Excursions - Richy life Club</h1>
-      <div className="hidden">
-        <HeroSection2
-          type={"image"}
-          heading1={"Tours And"}
-          heading2={"Excursions"}
-          subheading={"Curating the best travel experiences"}
-          posterurl={"/assets/tours/bannerimage.jpeg"}
-          btntext={"Book your ride"}
-          url={"/assets/tours/bimage.avif"}
-          overlay={1}
-        />
-      </div>
+      <HeroSection2
+        type={"image"}
+        heading1={"Tours And"}
+        heading2={"Excursions"}
+        subheading={"Curating the best travel experiences"}
+        posterurl={"/assets/tours/bannerimage.jpeg"}
+        btntext={"Book your ride"}
+        url={"/assets/tours/bimage.avif"}
+        overlay={1}
+      />
       <div className=" mx-auto max-w-[1200px]">
         <ToursListingComponent />
         {/* <InfinitScroll fetchApi={"packages"} /> */}

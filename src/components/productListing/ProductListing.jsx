@@ -33,7 +33,7 @@ function ProductListing({ fetchApi }) {
     year: searchParams.get("year") || "",
     destination: searchParams.get("destination") || "",
     city: searchParams.get("city") || "",
-    pageNumber: "",
+    pageNumber: "1",
   });
   async function getData({ params }) {
     const queryParameters = {};
@@ -59,7 +59,7 @@ function ProductListing({ fetchApi }) {
       },
     });
 
-    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${fetchApi}?${queryString}&populate=*&pagination[page]=${params.pageNumber}&pagination[pageSize]=${pageSize}&sort=id:desc`;
+    let api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${fetchApi}?${queryString}&populate=*&pagination[page]=${params?.pageNumber}&pagination[pageSize]=${pageSize}&sort=id:desc`;
 
     try {
       const res = await fetch(api, {
