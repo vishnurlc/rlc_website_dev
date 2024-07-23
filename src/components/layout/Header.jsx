@@ -390,12 +390,12 @@ export default function Header({ lang }) {
                             key={product.name}
                             className="py-2 px-7 text-sm leading-6 hover:bg-gray-50 w-full"
                           >
-                            <Link
+                            <a
                               href={product.href}
                               className="block text-gray-900 whitespace-nowrap nav_link"
                             >
                               {product.name}
-                            </Link>
+                            </a>
                           </div>
                         ))}
                       </motion.div>

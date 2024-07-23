@@ -74,8 +74,8 @@ export default async function Home({ params }) {
       <h1 className="sr-only">Richy life Club - Experience Luxury in Dubai</h1>
       <Herosectionbyz
         type={"image"}
-        heading1={"ELEVATE"}
-        heading2={"YOUR ANY DAY..."}
+        heading1={"Elevating"}
+        heading2={"Luxury Experience"}
         subheading={"Experience the sea breeze in luxury"}
         posterurl={"/assets/home/background.png"}
         btntext={"Book your trip"}

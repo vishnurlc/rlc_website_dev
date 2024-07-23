@@ -73,8 +73,8 @@ const ServiceItem = ({ serviceItem, query }) => (
           <h4 className="text-md md:text-xl font-bold uppercase">
             {serviceItem.attributes.name}
           </h4>
-          <p className="text-gray-500 text-xs">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          <p className="text-gray-500 text-base">
+            {serviceItem.attributes.subheading}
           </p>
         </div>
         <div className="pt-4">
