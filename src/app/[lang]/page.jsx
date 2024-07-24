@@ -75,7 +75,7 @@ export default async function Home({ params }) {
       <Herosectionbyz
         type={"image"}
         heading1={"Elevating"}
-        heading2={"Luxury Experience"}
+        heading2={"Luxury Experiences"}
         subheading={"Experience the sea breeze in luxury"}
         posterurl={"/assets/home/background.png"}
         btntext={"Book your trip"}
