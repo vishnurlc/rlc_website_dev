@@ -22,7 +22,7 @@ function CardServices({ service, query = "uae" }) {
   return (
     <div>
       <div className="max-w-[1200px] mx-auto px-6 md:px-0">
-        <div className="mt-8 pb-10 grid grid-cols-2 gap-16 h-auto">
+        <div className="mt-8 pb-10 md:grid grid-cols-2 gap-1 md:gap-16 h-auto">
           <div className="grid pl-0 md:pl-16">
             {firstHalf?.map((serviceItem) => (
               <ServiceItem
@@ -32,7 +32,7 @@ function CardServices({ service, query = "uae" }) {
               />
             ))}
           </div>
-          <div className="grid mt-40 pr-0 md:pl-16">
+          <div className="grid md:mt-40 pr-0 md:pl-16">
             {secondHalf?.map((serviceItem) => (
               <ServiceItem
                 serviceItem={serviceItem}
@@ -40,7 +40,7 @@ function CardServices({ service, query = "uae" }) {
                 query={query}
               />
             ))}
-            <div className="min-h-[190px] relative"></div>
+            <div className="min-h-[50px] md:min-h-[190px] relative"></div>
           </div>
         </div>
       </div>
