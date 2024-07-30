@@ -238,6 +238,10 @@ export default function Header({ lang }) {
           href: "/tours-excursions",
         },
         {
+          name: "Luxury Hotel",
+          href: "/luxury-hotels",
+        },
+        {
           name: "Clubs & Restaurants",
           href: "/clubs-restaurants",
         },

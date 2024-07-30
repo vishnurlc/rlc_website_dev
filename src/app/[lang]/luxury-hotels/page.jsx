@@ -8,8 +8,7 @@ const page = () => {
     <main className="pt-[108px] md:pt-0">
       <HeroSection2
         type={"image"}
-        heading1={"Luxury Car"}
-        heading2={"Rental in Dubai"}
+        heading1={"Luxury Hotel"}
         subheading={"Experience luxury on wheels"}
         posterurl={"/assets/rentacar/banner.png"}
         btntext={"Book your ride"}

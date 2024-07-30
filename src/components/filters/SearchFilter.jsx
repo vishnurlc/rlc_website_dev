@@ -50,7 +50,7 @@ const SearchInput = ({ fetchApi = "cars" }) => {
       routeApi = "luxury-car-rentals";
       break;
     case "hotels":
-      routeApi = "hotels";
+      routeApi = "luxury-hotels";
       break;
     case "club-packages":
       routeApi = "clubs-restaurants";
