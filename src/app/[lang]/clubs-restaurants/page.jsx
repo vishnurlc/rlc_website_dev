@@ -1,7 +1,6 @@
 import React from "react";
 import InfinitScroll from "@/components/chaufferservice/InfinitScroll";
-import ProductListing from "@/components/productListing/ProductListingMain";
-import { HeroSection2 } from "@/components";
+import { HeroSection2, ProductListing } from "@/components";
 export const metadata = {
   title:
     "Luxury Clubs & Restaurants in Dubai | 200+ Luxury Clubs & Restaurants",

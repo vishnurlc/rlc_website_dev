@@ -71,7 +71,7 @@ const page = async ({ params }) => {
   const car = await getData(params);
 
   return (
-    <main className="pt-[108px] md:pt-[128px]">
+    <main>
       <div>
         <HeroCarousel
           data={car.data[0].attributes.image}

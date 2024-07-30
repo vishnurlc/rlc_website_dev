@@ -35,12 +35,11 @@ const Testimonials = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 ">
       {data.map((item, index) => (
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2" key={index}>
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2" key={item.name}>
           <div
             className={`w-full relative h-full min-h-[279px] ${
               index > 1 && "order-1 sm:order-2"
             }`}
-            key={index}
           >
             <Image
               src={item.image}

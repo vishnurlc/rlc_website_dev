@@ -41,6 +41,30 @@ const loadOptions = (inputValue, fetchApi, callback) => {
 
 const SearchInput = ({ fetchApi = "cars" }) => {
   const router = useRouter();
+  let routeApi;
+  switch (fetchApi) {
+    case "chauffeur-cars":
+      routeApi = "chauffeur-service";
+      break;
+    case "cars":
+      routeApi = "luxury-car-rentals";
+      break;
+    case "hotels":
+      routeApi = "hotels";
+      break;
+    case "club-packages":
+      routeApi = "clubs-restaurants";
+      break;
+    case "yachts":
+      routeApi = "luxury-yacht-rentals";
+      break;
+    case "jetskis":
+      routeApi = "premium-jetski-rental";
+      break;
+    default:
+      break;
+  }
+
   return (
     <AsyncSelect
       cacheOptions
@@ -48,13 +72,11 @@ const SearchInput = ({ fetchApi = "cars" }) => {
       components={{
         DropdownIndicator: () => null,
         IndicatorSeparator: () => null,
-        Option,
+        Option: (props) => <Option {...props} fetchApi={routeApi} />,
       }}
       placeholder={
         <div className="flex items-center justify-between">
-          <span className="pl-4 text-gray-400 font-thin text-sm">
-            Search a car by brand or model
-          </span>
+          <span className="pl-4 text-gray-400 font-thin text-sm">Search</span>
           <BsSearch />
         </div>
       }
@@ -71,8 +93,12 @@ const SearchInput = ({ fetchApi = "cars" }) => {
 export default SearchInput;
 
 const Option = (props) => {
+  const { fetchApi, data } = props;
+
+  console.log(fetchApi);
+
   return (
-    <Link href={`/luxury-car-rentals/${props.data.value}`} className="flex">
+    <Link href={`/${fetchApi}/${data.value}`} className="flex">
       <components.Option {...props} />
     </Link>
   );

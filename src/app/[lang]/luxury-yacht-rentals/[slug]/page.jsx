@@ -1,4 +1,3 @@
-"use client";
 import {
   ContactForm,
   GalleryJet,
@@ -9,48 +8,47 @@ import {
 } from "@/components";
 import Amenitys from "@/components/amenitys/Amenitys";
 import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
-
 import Link from "next/link";
 
-// export async function generateMetadata({ params }) {
-//   try {
-//     const yacht = await fetch(
-//       `${process.env.NEXT_PUBLIC_BACKEND_URL}/yachts?filters[slug][$eq]=${params.slug}&populate=image`,
-//       {
-//         headers: {
-//           Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
-//         },
-//       }
-//     ).then((res) => res.json());
-//     return {
-//       title: yacht.data[0].attributes.name || "| Rent Exotic Yachts in Dubai",
-//       description:
-//         yacht.data[0].attributes.description ||
-//         "Luxury Yachts rental with Richy life Club",
-//       openGraph: {
-//         type: "website",
-//         title: yacht.data[0].attributes.name || "| Rent Exotic Yachts in Dubai",
-//         description:
-//           yacht.data[0].attributes.description ||
-//           "Luxury Yachts rental with Richy life Club",
-//         images: [
-//           {
-//             url: `${yacht.data[0].attributes.image.data[0].attributes.url}`,
-//             width: 800,
-//             height: 600,
-//           },
-//           {
-//             url: `${yacht.data[0].attributes.image.data[0].attributes.url}`,
-//             width: 300,
-//             height: 200,
-//           },
-//         ],
-//       },
-//     };
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
+export async function generateMetadata({ params }) {
+  try {
+    const yacht = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/yachts?filters[slug][$eq]=${params.slug}&populate=image`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
+        },
+      }
+    ).then((res) => res.json());
+    return {
+      title: yacht.data[0].attributes.name || "| Rent Exotic Yachts in Dubai",
+      description:
+        yacht.data[0].attributes.description ||
+        "Luxury Yachts rental with Richy life Club",
+      openGraph: {
+        type: "website",
+        title: yacht.data[0].attributes.name || "| Rent Exotic Yachts in Dubai",
+        description:
+          yacht.data[0].attributes.description ||
+          "Luxury Yachts rental with Richy life Club",
+        images: [
+          {
+            url: `${yacht.data[0].attributes.image.data[0].attributes.url}`,
+            width: 800,
+            height: 600,
+          },
+          {
+            url: `${yacht.data[0].attributes.image.data[0].attributes.url}`,
+            width: 300,
+            height: 200,
+          },
+        ],
+      },
+    };
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 export async function getData(slug) {
   try {
@@ -79,7 +77,7 @@ export default async function YacthDetail({ params: { slug } }) {
   console.log(yacht.data[0].attributes.amenities);
 
   return (
-    <main className="pt-[108px] md:pt-[128px]">
+    <main>
       {yacht && (
         <>
           <div>

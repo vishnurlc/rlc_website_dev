@@ -210,7 +210,7 @@ const ListingComponent = ({ variant, title, description, make }) => {
             dragConstraints={{ right: 0, left: containerWidth }}
             dragListener={drag}
           >
-            <SearchFilter />
+            <SearchFilter fetchApi="car" />
             <CarbodyFilter
               handleFilters={handleFilters}
               selectedValue={filters.body}

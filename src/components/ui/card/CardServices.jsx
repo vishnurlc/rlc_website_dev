@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import AnimatedBtn from "@/components/premiumjetski/AnimatedBtn";
 import { useSearchParams } from "next/navigation";
+import { Button } from "../button/Button";
 function CardServices({ service, query = "uae" }) {
   const [firstHalf, setFirstHalf] = useState();
   const [secondHalf, SetSecondHalf] = useState();
@@ -24,10 +25,10 @@ function CardServices({ service, query = "uae" }) {
       <div className="max-w-[1200px] mx-auto px-6 md:px-0">
         <div className="mt-8 pb-10 md:grid grid-cols-2 gap-1 md:gap-16 h-auto">
           <div className="grid pl-0 md:pl-16">
-            {firstHalf?.map((serviceItem) => (
+            {firstHalf?.map((serviceItem, index) => (
               <ServiceItem
                 serviceItem={serviceItem}
-                key={serviceItem.id}
+                key={`${serviceItem}_${index}`}
                 query={query}
               />
             ))}
@@ -36,7 +37,7 @@ function CardServices({ service, query = "uae" }) {
             {secondHalf?.map((serviceItem) => (
               <ServiceItem
                 serviceItem={serviceItem}
-                key={serviceItem.id}
+                key={`${serviceItem.id}_${serviceItem}`}
                 query={query}
               />
             ))}
@@ -78,11 +79,12 @@ const ServiceItem = ({ serviceItem, query }) => (
           </p>
         </div>
         <div className="pt-4">
-          <AnimatedBtn
-            styles="w-fit text-black py-2 bg-opacity-80 rounded-sm border border-solid border-gray-500 border-opacity-50 hover:bg-[#CBB87E] hover:border-white"
-            text={"Explore More"}
-            msg={"Hi, I would like to know about your services."}
-          />
+          <button
+            className={`px-6 py-2 hover:scale-105 transition-all w-fit text-black bg-opacity-80 rounded-sm border border-solid border-gray-500 border-opacity-50 hover:bg-[#CBB87E] hover:border-white`}
+            // ref={buttonRef}
+          >
+            Explore more
+          </button>
         </div>
       </div>
     </div>

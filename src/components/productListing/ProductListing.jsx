@@ -82,7 +82,7 @@ function ProductListing({ fetchApi }) {
 
   async function fetchData(fetchApi, queryString, params) {
     const pageSize = 10; // Define pageSize or get it from params if dynamic
-    const api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${fetchApi}?${queryString}&populate=*&pagination[page]=${params.pageNumber}&pagination[pageSize]=${pageSize}&sort=id:desc`;
+    const api = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${fetchApi}?${queryString}&populate=*&pagination[page]=${params?.pageNumber}&pagination[pageSize]=${pageSize}&sort=id:desc`;
 
     try {
       const res = await fetch(api, {
